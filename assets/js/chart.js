@@ -181,9 +181,10 @@ function doSomething() {
     nodes.sort(function(a, b) { return b.count - a.count; })
     nodes.sort(function(a, b) { return a.clusterParent - b.clusterParent; })
 
-    var map= new Map
-    var batiy=nodes.forEach(x=>map.set(x.clusterParent))
-    console.log(map)
+    //remove clones in same cluster
+    //var map= new Map
+    //var batiy=nodes.forEach(x=>map.set(x.clusterParent))
+    //console.log(map)
 
     var clientWidth=document.documentElement.clientWidth
     if (clientWidth>=1112) clientWidth=1112
@@ -330,7 +331,7 @@ function doSomething() {
                 .attr("startOffset", "25%")
                 .style("text-anchor", "middle") //place the text halfway on the arc
 
-                .text(level.name.replace(" лобби","") );
+                .text(level.name.replace("Иностранное лобби","Иностранное") );
         })
     }
 
@@ -375,12 +376,12 @@ function doSomething() {
     var links
 
     var first_end=0
-
+/*
     if (clientWidth<=750) {
         nodes = nodes.filter(x => x.clusterParent == '7753')
         clearClusters=clearClusters.filter(x => x.clusterParent == '7753')
     }
-
+*/
     var force = d3.forceSimulation()
         .nodes(nodes.sort((a,b)=>a.cluster-b.cluster))
         .force('collide', collide)
@@ -430,6 +431,29 @@ function doSomething() {
         .attr("y", d => d.y)
         .attr("transform",d=>"translate("+d.x+" "+ d.y+")")
         .each(makeText)
+
+    //add zoom capabilities
+    var svg1=d3.select("#clusters > svg")
+    var g=d3.select("svg > g").attr("class","all")
+    var initialTransform = d3.zoomIdentity
+        .translate(0,0)
+        .scale(1);
+
+    var zoom_handler = d3.zoom()
+        .scaleExtent([1, 2])
+        .on("zoom", zoom_actions);
+
+    //zoom_handler(svg1);
+
+    //Zoom functions
+    function zoom_actions(){
+        g.attr("transform", d3.event.transform)
+    }
+    function zoom_reset() {
+        g.transition()
+            .duration(750)
+            .call(zoom_handler.transform, initialTransform);
+    }
 
     function ShowedClusters(clusters) {
         //first five largest in each group
@@ -828,10 +852,39 @@ function doSomething() {
             });
 
         }
+        function ZoomeToLobby(active){
+            g.call(zoom_handler.transform, initialTransform);
+            if (!active) return
+            active = d3.select("#enclose"+active);
+            if (!active.node()) return
+
+            var bbox = active.node().getBBox(),
+                ctm= active.node().getCTM(),
+                bounds = [[bbox.x+ctm.e, bbox.y+ctm.f],
+                    [bbox.x+ctm.e + bbox.width, bbox.y+ctm.f + bbox.height]];
+
+            var dx = bounds[1][0] - bounds[0][0],
+                dy = bounds[1][1] - bounds[0][1],
+                x = (bounds[0][0] + bounds[1][0]) / 2,
+                y = (bounds[0][1] + bounds[1][1]) / 2,
+                scale = Math.max(1, Math.min(2, 0.9 / Math.max(dx / width, dy / height))),
+                translate = [clientWidth / 2 - scale * x, clientHeight / 2 - scale * y];
+
+            console.log("vars: "+dx,dy,x,y, scale, translate);
+
+            var transform = d3.zoomIdentity
+                .translate(translate[0], translate[1])
+                .scale(scale);
+
+            g.transition()
+                .duration(750)
+                .call(zoom_handler.transform, transform);
+        }
 
         function onchange() {
             var i_search = d3.select('input#search').property('value')
             var s_lobby = d3.select('select#select_lobby').property('value')
+            if (s_lobby!=-1) ZoomeToLobby(s_lobby)
             //var s_method = d3.select('select#select_election_method').property('value')
             /*var s_fraction = d3.select('select#select_fraction').property('value')*/
             var s_comitet = d3.select('select#select_committees').property('value')
@@ -923,6 +976,8 @@ function doSomething() {
             circles.transition().attr("class", d=>d.color).style("opacity",1)
             var n = ShowedClusters(clearClusters).map(x=>x.cluster)
             labels.style("opacity",0).filter(x=>n.includes(x.cluster)).transition().style("opacity",1)
+
+            zoom_reset();
         }
 
     }
