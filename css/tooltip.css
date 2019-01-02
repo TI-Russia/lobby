@@ -1,0 +1,82 @@
+.tooltip {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  padding: 10px;
+  width: 200px;
+  font-size: 12px;
+  z-index: 10; }
+  .tooltip .title {
+    font-size: 13px; }
+  .tooltip .name {
+    font-weight: bold; }
+
+.hidden {
+  display: none;
+  visibility: hidden; }
+
+.visible {
+  display: block;
+  visibility: visible; }
+
+div.convocations {
+  width: 152px;
+  margin-top: 9px; }
+
+.noUi-horizontal {
+  height: 5px; }
+
+.noUi-base .noUi-connect {
+  background-color: #50A2FE; }
+
+.noUi-base .noUi-handle {
+  background-color: #7ACBF9;
+  border: none;
+  border-radius: 2px;
+  box-shadow: none;
+  color: #FFFFFF;
+  display: table;
+  font-size: 15px;
+  height: 10px;
+  left: 0;
+  margin-left: -10px;
+  margin-top: -3.5px;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 20px;
+  z-index: 2; }
+
+.noUi-horizontal .noUi-base .noUi-handle {
+  cursor: ew-resize; }
+
+.noUi-vertical .noUi-base .noUi-handle {
+  cursor: ns-resize;
+  margin-left: -7.5px; }
+
+.noUi-base .noUi-handle:hover {
+  background-color: #5cdbfe; }
+
+.noUi-base .noUi-handle.noUi-active {
+  background-color: #5cdbfe;
+  z-index: 3; }
+
+.noUi-base .noUi-handle::before {
+  background: transparent;
+  content: attr(data-value);
+  display: table-cell;
+  font-size: 10px;
+  font-weight: 100;
+  position: static;
+  width: 100%;
+  vertical-align: middle; }
+
+.noUi-base .noUi-handle::after {
+  display: none; }
+
+/*# sourceMappingURL=tooltip.css.map */
