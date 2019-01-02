@@ -1,7 +1,6 @@
 ---
-
 ---
-$baseurl:'{{ site.baseurl }}';
+$baseurl: "{{ site.baseurl }}";
 @import "bulma/bulma.sass";
 @import "fonts";
 @import "vars";
