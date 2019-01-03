@@ -63,6 +63,11 @@ function dataDepMap(rawdata) {
             enumerable: false
         }
     });
+    function calculateAge(birthday) { // birthday is a date
+        var ageDifMs = Date.now() - birthday.getTime();
+        var ageDate = new Date(ageDifMs); // miliseconds from epoch
+        return Math.abs(ageDate.getUTCFullYear() - 1970);
+    }
     data = rawdata.flatMap((d) => {
         groups = d.groups
         groups.length==0 ? groups=[7917] : groups // кто без групп? -> в группу "Не выявлено"
@@ -76,6 +81,7 @@ function dataDepMap(rawdata) {
                 name: d.fullname,
                 fraction:d.fraction,
                 gender:d.gender,
+                age:calculateAge( new Date(d.birth_date)),
                 group: b,
                 rating: rating.log,
                 election_method:d.election_method,
@@ -149,6 +155,7 @@ function doSomething() {
                 fraction:d.fraction,
                 id: d.id,
                 gender:d.gender,
+                age:d.age,
                 //cluster: +i,
                 cluster: clusterParent2Id ? clusterParent2Id : +i,
                 clusterMin: +i,
@@ -739,7 +746,8 @@ function doSomething() {
         //createSelect("select_election_method", "Способ избрания","election_method")
         //createSelect("select_fraction", "Фракция","fraction")
         createSelect("select_committees", "Комитет","committees")
-        CreateSlider()
+        CreateSliders()
+
 
 
         data2=lobby.sort((a,b)=>a.tree_id-b.tree_id)
@@ -828,10 +836,11 @@ function doSomething() {
                 )
         }
 
-        function CreateSlider() {
-            var slider = document.getElementById('convocations');
+        function CreateSliders() {
+            var conv_slider_div = document.getElementById('convocations');
+            var age_slider_div = document.getElementById('age');
 
-            my_slider=noUiSlider.create(slider, {
+            conv_slider=noUiSlider.create(conv_slider_div, {
                 start: [1, 7],
                 step:1,
                 connect: true,
@@ -841,17 +850,45 @@ function doSomething() {
                 }
             });
 
-            var snapValues = [
+            var snapValues1 = [
                 document.getElementById('slider-snap-value-lower'),
                 document.getElementById('slider-snap-value-upper')
             ];
 
-            slider.noUiSlider.on('update', function (values, handle) {
-                snapValues[handle].innerHTML = values[handle];
+            age_slider=noUiSlider.create(age_slider_div, {
+                start: [GetMinAge(), GetMaxAge()],
+                step:1,
+                connect: true,
+                range: {
+                    'min': GetMinAge(),
+                    'max': GetMaxAge()
+                }
+            });
+
+            var snapValues2 = [
+                document.getElementById('age-slider-snap-value-lower'),
+                document.getElementById('age-slider-snap-value-upper')
+            ];
+
+            conv_slider.on('update', function (values, handle) {
+                snapValues1[handle].innerHTML = values[handle];
                 onchange();
             });
 
+            age_slider.on('update', function (values, handle) {
+                snapValues2[handle].innerHTML = values[handle];
+                onchange();
+            });
         }
+
+        function GetMinAge() {
+            return Math.min(...data.map(x=>+x.age))
+        }
+
+        function GetMaxAge() {
+            return Math.max(...data.map(x=>+x.age))
+        }
+
         function ZoomeToLobby(active){
             g.call(zoom_handler.transform, initialTransform);
             if (!active) return
@@ -889,7 +926,10 @@ function doSomething() {
             /*var s_fraction = d3.select('select#select_fraction').property('value')*/
             var s_comitet = d3.select('select#select_committees').property('value')
 
-            var r_conv=my_slider.get()
+            var r_conv=conv_slider.get()
+
+            var r_age=age_slider.get()
+
 
             var b_fraction, b_method, b_gender
 
@@ -922,6 +962,8 @@ function doSomething() {
                 ((s_comitet!=-1) ? x.committees.includes(s_comitet): true)
                 &&
                 (+x.convocations>=+r_conv[0] && +x.convocations<=+r_conv[1])
+                &&
+                (+x.age>=+r_age[0] && +x.age<=+r_age[1])
                 &&
                 (b_fraction ? (x.fraction==b_fraction) : true)
                 &&
@@ -970,6 +1012,8 @@ function doSomething() {
         }
 
         function hightlightOff() {
+            conv_slider.reset()
+            age_slider.reset()
             d3.selectAll("#search").property("value","")
             d3.selectAll("#controls button").classed("is-active",false)
             d3.selectAll("select").property("selectedIndex", 0)

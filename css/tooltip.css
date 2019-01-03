@@ -23,7 +23,7 @@
   display: block;
   visibility: visible; }
 
-div.convocations {
+div.convocations, div.age {
   width: 152px;
   margin-top: 9px; }
 
