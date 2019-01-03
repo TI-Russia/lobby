@@ -847,6 +847,14 @@ function doSomething() {
                 range: {
                     'min': 1,
                     'max': 7
+                },
+                format: {
+                    from: function(value) {
+                        return parseInt(value);
+                    },
+                    to: function(value) {
+                        return parseInt(value);
+                    }
                 }
             });
 
@@ -862,6 +870,14 @@ function doSomething() {
                 range: {
                     'min': GetMinAge(),
                     'max': GetMaxAge()
+                },
+                format: {
+                    from: function(value) {
+                        return parseInt(value);
+                    },
+                    to: function(value) {
+                        return parseInt(value);
+                    }
                 }
             });
 
