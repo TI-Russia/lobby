@@ -30,6 +30,10 @@ header {
   .c1 {
     flex: 0 0 419px;
     h1 {
+      a,a:hover{
+        text-decoration: none;
+        color:$color-white;
+      }
       font-size: 44px;
       text-transform: uppercase;
       font-family: "Helios-Cond-Bold", "Helvetica Neue", serif;

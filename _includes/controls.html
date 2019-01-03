@@ -1,0 +1,62 @@
+<div id="controls" class="columns is-multiline is-vcentered">
+    <div class="column is-narrow">
+        <div class="field is-grouped is-hidden-mobile" >
+            <div class="buttons  has-addons control" id="fraction">
+                <button class="button is-small is-color-blue" value="Единая Россия">ЕР</button>
+                <button class="button is-small  is-color-red" value="КПРФ">КПРФ</button>
+                <button class="button is-small  is-color-orange" value="Справедливая Россия">СР</button>
+                <button class="button is-small  is-color-yellow" value="ЛДПР">ЛДПР</button>
+                <button class="button is-small is-blue" value="Вне фракций">Вне фракции</button>
+            </div>
+
+            <div class="buttons  has-addons control" id="method">
+                <button value="партийный список" class="button is-small is-color-white">Списочники</button>
+                <button value="одномандатный округ" class="button is-small is-color-white">Одномандатники</button>
+            </div>
+
+            <div class="select is-small control">
+                <select id="select_committees"></select>
+            </div>
+        </div>
+    </div>
+    <div class="column is-narrow">
+        <div class="field is-grouped is-hidden-mobile">
+            <div class="buttons  has-addons control" id="gender">
+                <button class="button is-small is-color-white" value="M">М</button>
+                <button class="button is-small is-color-white" value="F">Ж</button>
+            </div>
+            <div class="control convocations">
+                <div id="convocations"></div>
+                <span id="slider-snap-value-lower"></span>
+                <span id="slider-snap-value-upper"></span>
+            </div>
+            <div class="control"></div>
+            <div class="control has-icons-right ">
+                <input class="input is-small" type="text" id="search" name="q" placeholder="Жириновский"
+                       size="25">
+                <span class="icon is-small is-right">
+                    <i class="fas fa-search"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="column is-narrow">
+        <div class="field is-grouped">
+            <div class="select is-small">
+                <select id="select_lobby"></select>
+            </div>
+            <!--<div class="select is-small">
+                <select id="select_election_method"></select>
+            </div>-->
+            <!--<div class="select is-small">
+                <select id="select_fraction"></select>
+            </div>-->
+            <a class=" control is-small button  is-right is-white" id="clear">
+                <span class="icon">
+                    <i class="fas fa-times"></i>
+                </span>
+                <span>Сбросить фильтры</span>
+            </a>
+        </div>
+    </div>
+</div>

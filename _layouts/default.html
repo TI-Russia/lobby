@@ -1,157 +1,16 @@
+---
+
+---
 <!DOCTYPE html>
-<head>
-    <meta charset="utf-8" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/styles.css">
-</head>
+{% include head.html %}
 <body>
-
 <div class="hero">
-    <header class="hero-head ">
-        <div class="columns is-vcentered is-mobile">
-            <div class="column c1">
-                <h1>Лоббизм в госдуме</h1>
-            </div>
-            <div class="column c2 is-hidden-mobile">
-                <h2>Какие депутаты служат не только народу</h2>
-            </div>
-            <div class="column is-pulled-right c3 "><a href="">О&nbsp;проекте</a>
-            </div>
-            <div class="column is-pulled-right c4 is-hidden-mobile"><a href=""><span class="icon"><i class="fab fa-vk"></i></span></a>
-            </div>
-            <div class="column is-pulled-right c5 is-hidden-mobile"><a href=""><span class="icon"><i class="fab fa-facebook-square"></i></span></a>
-            </div>
-            <div class="column is-pulled-right c6 is-hidden-mobile"><a href=""><span class="icon"><i class="fab fa-twitter"></i></span></a>
-            </div>
-        </div>
-    </header>
+    {% include header.html %}
     <div class="hero-body">
-        <div id="controls" class="columns is-multiline is-vcentered">
-            <div class="column is-narrow">
-                <div class="field is-grouped is-hidden-mobile" >
-                    <div class="buttons  has-addons control" id="fraction">
-                        <button class="button is-small is-color-blue" value="Единая Россия">ЕР</button>
-                        <button class="button is-small  is-color-red" value="КПРФ">КПРФ</button>
-                        <button class="button is-small  is-color-orange" value="Справедливая Россия">СР</button>
-                        <button class="button is-small  is-color-yellow" value="ЛДПР">ЛДПР</button>
-                        <button class="button is-small is-blue" value="Вне фракций">Вне фракции</button>
-                    </div>
-
-                    <div class="buttons  has-addons control" id="method">
-                        <button value="партийный список" class="button is-small is-color-white">Списочники</button>
-                        <button value="одномандатный округ" class="button is-small is-color-white">Одномандатники</button>
-                    </div>
-
-                    <div class="select is-small control">
-                        <select id="select_committees"></select>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-narrow">
-                <div class="field is-grouped is-hidden-mobile">
-                    <div class="buttons  has-addons control" id="gender">
-                        <button class="button is-small is-color-white" value="M">М</button>
-                        <button class="button is-small is-color-white" value="F">Ж</button>
-                    </div>
-                    <div class="control convocations">
-                        <div id="convocations"></div>
-                        <span id="slider-snap-value-lower"></span>
-                        <span id="slider-snap-value-upper"></span>
-                    </div>
-                    <div class="control"></div>
-                    <div class="control has-icons-right ">
-                        <input class="input is-small" type="text" id="search" name="q" placeholder="Жириновский"
-                               size="25">
-                        <span class="icon is-small is-right">
-                    <i class="fas fa-search"></i>
-                </span>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-narrow">
-                <div class="field is-grouped">
-                    <div class="select is-small">
-                        <select id="select_lobby"></select>
-                    </div>
-                    <!--<div class="select is-small">
-                        <select id="select_election_method"></select>
-                    </div>-->
-                    <!--<div class="select is-small">
-                        <select id="select_fraction"></select>
-                    </div>-->
-                    <a class=" control is-small button  is-right is-white" id="clear">
-                <span class="icon">
-                    <i class="fas fa-times"></i>
-                </span>
-                        <span>Сбросить фильтры</span>
-                    </a>
-                </div>
-            </div>
-
-
-        </div>
-
-
-        <div id="clusters"></div>
-
-
-        <div id="card" class="modal">
-            <div>
-                <button class="modal-close fas fa-times" aria-label="close"></button>
-            </div>
-            <div class="columns">
-                <div class="column is-4" id="photo"><div class="image-cropper"><img width="128" height="128"></div></div>
-                <div class="column"><span id="fraction_text"></span><br>
-                    <h1 id="fullname"></h1></div>
-            </div>
-            <div id="position"></div>
-            <div class="columns is-vcentered is-mobile" id="laws">
-                <div class="column law_count is-2 is-4-mobile" id="law_number_vnes"></div>
-                <div class="column law_text is-3 is-4-mobile">законов <br> выдвинуто</div>
-                <div class="column law_count is-2 is-4-mobile" id="law_number_podpis"></div>
-                <div class="column law_text">из них приняты <br> в среднем за <span id="sred_day"></span> дней</div>
-            </div>
-            <div id="lobby"></div>
-            <h2>Биография</h2>
-            <div id="bio"></div>
-            <h2>Участие в законопроектах</h2>
-            <div id="submitted"></div>
-            <h2>Аффиляция и связи</h2>
-            <div id="relations"></div>
-        </div>
-
-
-        <div class="footer">
-
-            <div class="columns is-mobile is-vcentered">
-                <div class="column social is-hidden-desktop">
-                    <a href="" class="vk"><span class="icon"><i class="fab fa-vk"></i></span></a>
-                    <a href="" class="fb"><span class="icon"><i class="fab fa-facebook-square"></i></span></a>
-                    <a href="" class="tw"><span class="icon"><i class="fab fa-twitter"></i></span></a>
-                </div>
-                <div class="column copy">
-                    Источники: сайт&nbsp;<a href="http://duma.gov.ru">Госдумы</a>,<wbr> собственное расследование
-                </div>
-                <div class="column copy is-pulled-right is-narrow">
-                    Проект выполнен <a href="">DataStorytellers</a><wbr> совместно с <a href="">Компанией</a>
-                </div>
-            </div>
-
-        </div>
+        {{content}}
+        {% include footer.html %}
     </div>
 </div>
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="{{site.baseurl}}/assets/js/nouislider.js"></script>
-<script src="//d3js.org/d3.v5.min.js"></script>
-<script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
-<script src="{{site.baseurl}}/assets/js/tooltip.js"></script>
-<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-
-<script src="{{site.baseurl}}/assets/js/chart.js"></script>
-<script src="{{site.baseurl}}/assets/js/card.js"></script>
-
+{% include scripts-common.html %}
 </body>
 </html>
