@@ -442,6 +442,7 @@ function doSomething() {
     //add zoom capabilities
     var svg1=d3.select("#clusters > svg")
     var g=d3.select("svg > g").attr("class","all")
+    var k=1
     var initialTransform = d3.zoomIdentity
         .translate(0,0)
         .scale(1);
@@ -452,15 +453,11 @@ function doSomething() {
         .on("end", zoomEndFunction)
 
     d3.select('#zoom-in').on('click', function() {
-        // Smooth zooming
-        console.log("zoom-in")
-        zoom_handler.scaleBy(svg1.transition().duration(750), 1.3);
+        zoom_handler.scaleBy(svg1.transition().duration(400), 1.3);
     });
 
     d3.select('#zoom-out').on('click', function() {
-        // Ordinal zooming
-        console.log("zoom-out")
-        zoom_handler.scaleBy(svg1, 1 / 1.3);
+        zoom_handler.scaleBy(svg1.transition().duration(400), 1 / 1.3);
     });
 
 
@@ -947,7 +944,7 @@ function zoomEndFunction() {
         }
 
         function ZoomeToLobby(active){
-            g.call(zoom_handler.transform, initialTransform);
+            svg1.call(zoom_handler.transform, initialTransform);
             if (!active) return
             active = d3.select("#enclose"+active);
             if (!active.node()) return
@@ -970,7 +967,7 @@ function zoomEndFunction() {
                 .translate(translate[0], translate[1])
                 .scale(scale);
 
-            g.transition()
+            svg1.transition()
                 .duration(750)
                 .call(zoom_handler.transform, transform);
         }
