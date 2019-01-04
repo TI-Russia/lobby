@@ -258,33 +258,35 @@ function doSomething() {
     function GetCoordinatesForDesktop(element) {
         var curr = element
         switch (curr.clusterParent) {
-            case 7624://федеральное
-                curr.row =2
-                curr.col = 7.5
-                break;
             case 7667://региональное
-                curr.row =10
-                curr.col = 7
+                curr.row =1
+                curr.col = 8
                 break;
             case 7753://отраслевое
-                curr.row =4
-                curr.col = 4
-                break;
-            case 7801://общ-полит
-                curr.row =2
-                curr.col = 0.5
+                curr.row =2.5
+                curr.col = 4.6
                 break;
             case 7813://фин-пром группы
-                curr.row =10
+                curr.row =1.5
                 curr.col = 1
                 break;
-            default:
-                curr.row =11
-                curr.col = 4
+
+            case 7624://федеральное
+                curr.row =6.5
+                curr.col = 2
+                break;
+            case 7801://общ-полит
+                curr.row =6
+                curr.col = 7.5
+                break;
+
+            default://не выявлено
+                curr.row =7.5
+                curr.col = 5.8
         }
         if (curr.cluster==7812) { //иностранное лобби
-            curr.row =15
-            curr.col = 4
+            curr.row =7.5
+            curr.col = 4.5
         }
         return element
     }
