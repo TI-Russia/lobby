@@ -447,16 +447,35 @@ function doSomething() {
         .scale(1);
 
     var zoom_handler = d3.zoom()
-        .scaleExtent([1, 2])
-        .on("zoom", zoom_actions);
+        .scaleExtent([1, 5])
+        .on("zoom", zoom_actions)
 
-    //zoom_handler(svg1);
+
+
+    //zoom_handler(svg1)
+    svg1.call(zoom_handler).on("wheel.zoom", null)
+
+
 
     //Zoom functions
     function zoom_actions(){
+
+        k=d3.event.transform.k
+        var temp2=ShowedClusters(clearClusters).map(x=>x.cluster)
+        var labels_spot=labels.filter(x=>temp2.includes(x.cluster))
+        labels_spot.transition().style("opacity",1)
+
+        if (k>1) labels_spot.classed("mini",true)
+        else labels_spot.classed("mini",false)
+
         g.attr("transform", d3.event.transform)
     }
     function zoom_reset() {
+
+
+        labels.transition().style("opacity",0)
+
+
         g.transition()
             .duration(750)
             .call(zoom_handler.transform, initialTransform);
@@ -467,13 +486,16 @@ function doSomething() {
         var groups= [7624, 7667, 7753, 7801, 7813, null]
         var showedClustersNumbers=[]
         var showedClusters
+        var scale= k
+        console.log("scale=",scale)
         groups.forEach(group=>{
-            showedClustersNumbers+=clusters
+            showedClustersNumbers=showedClustersNumbers.concat(clusters
                 .filter(x=>x.clusterParent==group)
                 .sort((a,b)=>b.count-a.count)
-                .slice(0,5)
-                .map(x=>x.cluster)
+                .slice(0,scale>1 ? 10 : 5)
+                .map(x=>x.cluster))
         })
+        console.log("numbers=",showedClustersNumbers)
         showedClusters=clusters.filter(x=>showedClustersNumbers.includes(x.cluster))
         return showedClusters
     }
@@ -920,7 +942,7 @@ function doSomething() {
                 dy = bounds[1][1] - bounds[0][1],
                 x = (bounds[0][0] + bounds[1][0]) / 2,
                 y = (bounds[0][1] + bounds[1][1]) / 2,
-                scale = Math.max(1, Math.min(2, 0.9 / Math.max(dx / width, dy / height))),
+                scale = Math.max(1, Math.min(5, 0.9 / Math.max(dx / width, dy / height))),
                 translate = [clientWidth / 2 - scale * x, clientHeight / 2 - scale * y];
 
             console.log("vars: "+dx,dy,x,y, scale, translate);

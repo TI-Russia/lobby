@@ -243,6 +243,9 @@ circle:hover {cursor:pointer;}
     opacity: 0.0 !important;
     //transition: 0.1s opacity 0s;
   }
+  &.mini{
+  font-size: 6px;
+  }
 }
 
 div.convocations, div.age{width: 152px;}
