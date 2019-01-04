@@ -147,9 +147,11 @@ function doSomething() {
         if (group.level==0 ) clusterParentId=group.id
         if (group.level==1 ) clusterParentId=lobby.find(x=>x.id==group.parent).id
         if (group.level==2 ) {clusterParentId=lobby.find(x=>x.id==lobby.find(x=>x.id==group.parent).parent).id;clusterParent2Id=lobby.find(x=>x.id==group.parent).id;clusterParent2Name=lobby.find(x=>x.id==group.parent).name}
+
         var i = +d.group,
             j = clusterParent2Id ? clusterParent2Id : +i
-        r =Math.floor(Math.random() * (maxRadius-3))+3,
+            //r =Math.floor(Math.random() * (maxRadius-3))+3,
+            r=d.rating,
             d = {
                 name: d.name,
                 fraction:d.fraction,
@@ -177,6 +179,7 @@ function doSomething() {
 
             };
 
+
         var count=0;
         (clusters[j] ) ? count=clusters[j].count+1 : count=1 //counter of nodes in cluster
         if (!clusters[j] || (r > clusters[j].r)) {
@@ -189,9 +192,18 @@ function doSomething() {
     nodes.sort(function(a, b) { return a.clusterParent - b.clusterParent; })
 
     //remove clones in same cluster
-    //var map= new Map
-    //var batiy=nodes.forEach(x=>map.set(x.clusterParent))
-    //console.log(map)
+
+    nodes.forEach(function (node) {
+        node.cloneClusters="null"
+        var clones=nodes.filter(x=>(x.id==node.id&&x.cluster==node.cluster))
+        if (clones.length>1){
+            clones.forEach(function (clone,i) {
+                if (i>0) {clone.clone="yes"}
+                clone.cloneClusters=clones.map(x=>x.clusterMin)
+            })
+        }
+    })
+    nodes=nodes.filter(x=>x.clone!="yes")
 
     var clientWidth=document.documentElement.clientWidth
     if (clientWidth>=1112) clientWidth=1112
@@ -487,12 +499,8 @@ function zoomEndFunction() {
         g.attr("transform", d3.event.transform)
     }
     function zoom_reset() {
-
-
         labels.transition().style("opacity",0)
-
-
-        g.transition()
+        svg1.transition()
             .duration(750)
             .call(zoom_handler.transform, initialTransform);
     }
@@ -700,13 +708,23 @@ function zoomEndFunction() {
         //var groupname=lobby.find(x => x.id === d.cluster)
         var groupname=lobby.find(x => x.id === d.clusterMin)
 
+        var cloneclustersNames=""
+        if (Array.isArray(d.cloneClusters)){
+            cloneclustersNames = d.cloneClusters.map(x=>lobby.find(y=>y.id==x))
+        }
+
         //circles.filter(e=>e.id!=d.id).transition().attr('fill', "gray");
         //circles.filter(e=>e.cluster===d.cluster).transition().attr('fill', 'blue');
         circles.filter(e=>e.id===d.id).transition().attr('stroke', '#000').attr('stroke-width', '2px');
 
         var content =
-            '<span class="name">'+d.name+' </span><br/>' +
+            '<span class="name">'+d.name+' </span><br/>'
+        if (cloneclustersNames=="")
+            content+=
             '<span class="value">'+groupname.name+'</span><br/>';
+        if (cloneclustersNames!="")
+                content+=
+            '<span class="value">'+cloneclustersNames.map(name=>name.name)+'</span><br/>';
 
         tooltip.showTooltip(content, d3.event);
     }
@@ -1005,6 +1023,7 @@ function zoomEndFunction() {
                 &&
                 ((s_lobby!=-1 && s_lobby) ?
                     (x.cluster==s_lobby ||
+                        x.cloneClusters.includes(+s_lobby) ||
                         x.clusterParent==s_lobby ||
                         x.clusterMin==s_lobby ||
                         x.clusterParentMiddle==s_lobby) : true)
