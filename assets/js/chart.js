@@ -449,25 +449,44 @@ function doSomething() {
     var zoom_handler = d3.zoom()
         .scaleExtent([1, 5])
         .on("zoom", zoom_actions)
+        .on("end", zoomEndFunction)
 
+    d3.select('#zoom-in').on('click', function() {
+        // Smooth zooming
+        console.log("zoom-in")
+        zoom_handler.scaleBy(svg1.transition().duration(750), 1.3);
+    });
+
+    d3.select('#zoom-out').on('click', function() {
+        // Ordinal zooming
+        console.log("zoom-out")
+        zoom_handler.scaleBy(svg1, 1 / 1.3);
+    });
 
 
     //zoom_handler(svg1)
     svg1.call(zoom_handler).on("wheel.zoom", null)
 
+function zoomEndFunction() {
+    console.log("end",d3.event.transform.k)
+    k=d3.event.transform.k
+    var temp2=ShowedClusters(clearClusters).map(x=>x.cluster)
+    var labels_spot=labels.filter(x=>temp2.includes(x.cluster))
+    //labels_spot.transition().style("opacity",1)
 
+    if (k>1) {
+        labels_spot.classed("mini",true)
+        labels_spot.transition().style("opacity",1)
+    }
+    else {
+        d3.selectAll(".mini").style("opacity",0)
+        labels_spot.transition().style("opacity",1)
+        labels.classed("mini",false)
+    }
+}
 
     //Zoom functions
     function zoom_actions(){
-
-        k=d3.event.transform.k
-        var temp2=ShowedClusters(clearClusters).map(x=>x.cluster)
-        var labels_spot=labels.filter(x=>temp2.includes(x.cluster))
-        labels_spot.transition().style("opacity",1)
-
-        if (k>1) labels_spot.classed("mini",true)
-        else labels_spot.classed("mini",false)
-
         g.attr("transform", d3.event.transform)
     }
     function zoom_reset() {
@@ -492,7 +511,7 @@ function doSomething() {
             showedClustersNumbers=showedClustersNumbers.concat(clusters
                 .filter(x=>x.clusterParent==group)
                 .sort((a,b)=>b.count-a.count)
-                .slice(0,scale>1 ? 10 : 5)
+                .slice(0,scale>1 ? 20 : 5)
                 .map(x=>x.cluster))
         })
         console.log("numbers=",showedClustersNumbers)
@@ -781,7 +800,7 @@ function doSomething() {
             .select('select#select_lobby')
             .on('change',onchange)
 
-        d3.selectAll("button").on("click", function () {
+        d3.selectAll(".buttons button").on("click", function () {
             var value=d3.select(this).attr("value")
             var allBtns=d3.select(this.parentNode).selectAll("button")
             //allBtns.classed("myCssClass", !d3.select(this).classed("myCssClass"))
