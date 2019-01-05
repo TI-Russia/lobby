@@ -28,7 +28,7 @@ function showCard(e) {
     position.text(positionText)
     law_number_vnes.text(rating.vnes)
     law_number_podpis.text(rating.podpis)
-    sred_day.text(rating.sred_day)
+    sred_day.text(Math.floor(String(rating.sred_day).replace(',','.')))
     lobby.text(lobbyText)
     bio.html(info.bio)
     relations.html(info.relations)
