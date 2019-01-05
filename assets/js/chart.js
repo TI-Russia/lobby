@@ -812,6 +812,7 @@ function zoomEndFunction() {
         //createSelect("select_fraction", "Фракция","fraction")
         createSelect("select_committees", "Комитет","committees")
         CreateSliders()
+        MakeAutoComplete()
 
 
 
@@ -1075,6 +1076,18 @@ function zoomEndFunction() {
                 (x.name.toLowerCase().includes(term.toLowerCase()) ||
                     x.clusterName.toLowerCase().includes(term.toLowerCase())))
             term!=""? hightlightOn(result): hightlightOff()
+        }
+
+        function MakeAutoComplete() {
+            //d3.select("#search").attr("data-list",data.map(x=>x.name))
+            var input = document.getElementById("search");
+            new Awesomplete(input,
+                {list: rawDep.map(x=>x.fullname)}
+            );
+            input.addEventListener("awesomplete-highlight", function(event) {
+                input.value=event.text.value
+                onchange()
+            });
         }
 
         function hightlightOn(spot) {
