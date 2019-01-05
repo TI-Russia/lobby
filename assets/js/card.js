@@ -20,6 +20,7 @@ function showCard(e) {
     var rating=GetRating(info.person)
     var fraction_class=GetFractionClass(info.fraction)
     var positionText = GetPosition (info)
+    var lobbyText = GetLobbyText(info.groups)
 
     fullname.text(info.fullname)
     photo.attr("alt",info.fullname).attr("src",info.photo)
@@ -28,7 +29,7 @@ function showCard(e) {
     law_number_vnes.text(rating.vnes)
     law_number_podpis.text(rating.podpis)
     sred_day.text(rating.sred_day)
-    lobby.text(info.groups.toString())
+    lobby.text(lobbyText)
     bio.html(info.bio)
     relations.html(info.relations)
     submitted.html(info.submitted)
@@ -92,6 +93,11 @@ function GetPosition(info) {
     return position
 }
 
-function GetLobbyChain(lobby_id) {
-    //lo
+function GetLobbyText(lobbys) {
+    var text=""
+    lobbys.forEach(function (l,i) {
+        i>0 ? text+=", " : null
+        text+=lobby.find(x=>x.id==l).name
+    })
+    return text
 }

@@ -253,3 +253,7 @@ circle:hover {cursor:pointer;}
 
 div.convocations, div.age{width: 152px;}
 .slider_label {text-align: center; font-size: 12px;}
+
+.capitalizeFirsLetter:first-letter{
+  text-transform: capitalize;
+}
