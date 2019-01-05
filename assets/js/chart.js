@@ -1079,7 +1079,6 @@ function zoomEndFunction() {
         }
 
         function MakeAutoComplete() {
-            //d3.select("#search").attr("data-list",data.map(x=>x.name))
             var input = document.getElementById("search");
             new Awesomplete(input,
                 {list: rawDep.map(x=>x.fullname)}

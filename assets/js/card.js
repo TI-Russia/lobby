@@ -12,6 +12,7 @@ function showCard(e) {
         relations=card.select("#relations"),
         submitted=card.select("#submitted")
 
+    d3.selectAll("#card .hidden").classed("hidden",false)
 
     var close_btn=card.select(".modal-close").on("click",() =>  card.attr("class","modal"))
 
@@ -28,6 +29,7 @@ function showCard(e) {
     position.text(positionText)
     law_number_vnes.text(rating.vnes)
     law_number_podpis.text(rating.podpis)
+    if (rating.podpis==0) HideBlockByClass("law_signed")
     sred_day.text(Math.floor(String(rating.sred_day).replace(',','.')))
     lobby.text(lobbyText)
     bio.html(info.bio)
@@ -100,4 +102,8 @@ function GetLobbyText(lobbys) {
         text+=lobby.find(x=>x.id==l).name
     })
     return text
+}
+
+function HideBlockByClass(classname) {
+    d3.selectAll("."+classname+"").classed("hidden",true)
 }
