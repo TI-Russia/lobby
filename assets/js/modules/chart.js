@@ -1,122 +1,27 @@
-var allData=[]
-var cors="https://cors-anywhere.herokuapp.com/"
-var url_lobby="https://dev.declarator.org/api/lobby_group/"
+requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowCard"], function( d3,$,floatingTooltip ,noUiSlider,awesomeplete,Data,ShowCard ) {
 
-
-function getAPI(allData, startFrom,url) {
-    return fetch(startFrom ? cors+startFrom : cors+url, {
-        headers: {
-            'Content-Type': 'application/json',
-            'X-Requested-With':'XMLHttpRequest'
-        },
-    }).then(response => response.json())
-        .then(data => {
-            //console.log("data.next",data.results)
-            allData=allData.concat(data.results);
-            const nextPage = data.next;
-            if (!nextPage)
-                return allData;
-            else
-                return getAPI(allData, nextPage,url);
-        });
-}
-
+    var data
+    var lobby
+    var lobby_level_0
+    var myGroups
+    var myArrGroups
+    var rawDep, rawRating;
 
 // tooltip for mouseover functionality
 var tooltip = floatingTooltip('gates_tooltip', 240);
-
-var data=[];
-var lobby=[];
-var lobby_level_0=[];
-var myGroups = new Set();
-var myArrGroups = new Array()
-var files = ["assets/data/deputates.json", "assets/data/lobby_group.json", "assets/data/rating.json"];
-var promises = [];
-var rawDep, rawRating;
-
-files.forEach(function (url) {
-    promises.push(d3.json(url))
-});
-//promises.push(getAPI(allData,null,url_lobby));
-
-Promise.all(promises).then(function (values) {
-    //console.log("file1", values[0]) //dep
-    //console.log("files2", values[1])//lobby
-    //console.log("url", JSON.stringify(values[2]))//lobby from url
-    rawDep = values[0]
-    var rawLobby = values[1] //2 to load from url
-    rawRating = values[2] //
-    dataDepMap(rawDep)
-    getLobbyMap(rawLobby);
-    doSomething()
-
-});
+Data.then(Data=>{
+    data=Data.data;
+    lobby=Data.lobby;
+    lobby_level_0=Data.lobby_level_0;
+    myGroups =Data.myGroups
+    myArrGroups = Data.myArrGroups
+    rawDep= Data.rawDep,
+    rawRating= Data.rawRating;
+    doChart();
+})
 
 
-function dataDepMap(rawdata) {
-    Object.defineProperties(Array.prototype, {
-        'flatMap': {
-            value: function (lambda) {
-                return Array.prototype.concat.apply([], this.map(lambda));
-            },
-            writeable: false,
-            enumerable: false
-        }
-    });
-    function calculateAge(birthday) { // birthday is a date
-        var ageDifMs = Date.now() - birthday.getTime();
-        var ageDate = new Date(ageDifMs); // miliseconds from epoch
-        return Math.abs(ageDate.getUTCFullYear() - 1970);
-    }
-    data = rawdata.flatMap((d) => {
-        groups = d.groups
-        groups.length==0 ? groups=[7917] : groups // кто без групп? -> в группу "Не выявлено"
-        var rating=Math.floor(Math.random() * (10-4))+4
-        rating=GetRating(d.person)
-        return groups.map((b) => {
-            myGroups.add(b)
-            /*the set provide unique values of lobby groups*/
-            return {
-                id: d.id,
-                name: d.fullname,
-                fraction:d.fraction,
-                gender:d.gender,
-                age:calculateAge( new Date(d.birth_date)),
-                group: b,
-                rating: rating.log,
-                election_method:d.election_method,
-                committees:d.committees,
-                convocations:d.convocations.length!=0 ? d.convocations.length : 1
-            }
-        })
-    });
-    var i = 0
-    myGroups.forEach(function (value) {
-        myArrGroups.push({id: i++, val: value});
-        /*set to array*/
-    });
-    //console.log(data, data.length)
-}
-
-function getLobbyMap(rawdata) {
-    lobby = rawdata.map((d,i) => {
-        return {
-            index:i,
-            id: d.id,
-            name: d.name,
-            parent:d.parent,
-            level:d.level,
-            tree_id:d.tree_id
-        }
-    })
-    lobby_level_0=lobby.filter(x=>x.level==0)
-}
-
-
-
-
-function doSomething() {
-
+function doChart() {
 
     var width = 1200,
         height = 1000,
@@ -438,7 +343,11 @@ function doSomething() {
         .attr("cy", d => d.dy)
         .on('mouseover', showDetail)
         .on('mouseout', hideDetail)
-        .on('click', showCard)
+        .on('click', function (d){
+            var depInfo=GetDepData(d.id)
+            var depRating=GetRating(depInfo.person)
+            var depLobbys=GetLobbyText(depInfo.groups)
+            var t = new ShowCard(depInfo, depRating, depLobbys)})
         .call(d3.drag()
             .on("start", dragstarted)
             .on("drag", dragged)
@@ -481,6 +390,11 @@ function doSomething() {
 
     //zoom_handler(svg1)
     svg1.call(zoom_handler).on("wheel.zoom", null)
+
+    function GetDepData(id) {
+        var deputatInfo = rawDep.find(x=>x.id==id)
+        return deputatInfo;
+    }
 
 function zoomEndFunction() {
     console.log("end",d3.event.transform.k)
@@ -1120,5 +1034,144 @@ function zoomEndFunction() {
 
     }
 
+    function GetRating(id) {
+        var rating = rawRating.find(x=>x.id_declarator==id)
+        var max=d3.max(rawRating.map(x=>+x.podpis/(+x.vnes+x.podpis)*10+1))
+        if (!rating) {rating=rawRating[0];rating.no=true; rating.vnes=-1; rating.podpis=-1; rating.sred_day=-1}
+
+        var domain = [1,max]
+        var range = [4,10]
+        var logScale =  d3.scaleLog().domain(domain).range(range)
+
+        var rating_initial=1
+        if (!rating.no ) rating_initial=(rating.podpis/(rating.podpis+rating.vnes))*10+1
+        if (rating.vnes<5) rating_initial=1
+        if (rating.no ) rating_initial=1
+        var logRating=logScale(rating_initial)
+        rating.log=logRating
+        return rating
+    }
+
+    function GetLobbyText(lobbys) {
+        var text=""
+        lobbys.forEach(function (l,i) {
+            i>0 ? text+=", " : null
+            text+=lobby.find(x=>x.id==l).name
+        })
+        return text
+    }
+
 
 }
+/*Card functions*/
+    /*function showCard(e) {
+        var card=d3.select("#card"),          //container
+            photo=card.select("#photo img"),
+            fullname=card.select("#fullname"),
+            fraction=card.select("#fraction_text"),
+            position=card.select("#position"),
+            law_number_vnes=card.select("#law_number_vnes"),
+            law_number_podpis=card.select("#law_number_podpis"),
+            sred_day=card.select("#sred_day"),
+            lobby=card.select("#lobby"),
+            bio=card.select("#bio"),
+            relations=card.select("#relations"),
+            submitted=card.select("#submitted")
+
+        d3.selectAll("#card .hidden").classed("hidden",false)
+
+        var close_btn=card.select(".modal-close").on("click",() =>  card.attr("class","modal"))
+
+        var id=e.id //iden
+        var info=GetDepData(id)
+        var rating=GetRating(info.person)
+        var fraction_class=GetFractionClass(info.fraction)
+        var positionText = GetPosition (info)
+        var lobbyText = GetLobbyText(info.groups)
+
+        fullname.text(info.fullname)
+        photo.attr("alt",info.fullname).attr("src",info.photo)
+        fraction.text(info.fraction).attr("class",fraction_class)
+        position.text(positionText)
+        law_number_vnes.text(rating.vnes)
+        law_number_podpis.text(rating.podpis)
+        if (rating.podpis==0) HideBlockByClass("law_signed")
+        sred_day.text(Math.floor(String(rating.sred_day).replace(',','.')))
+        lobby.text(lobbyText)
+        bio.html(info.bio)
+        relations.html(info.relations)
+        submitted.html(info.submitted)
+        card.attr("class","modal is-active")
+    }
+
+    function GetDepData(id) {
+        var deputatInfo = rawDep.find(x=>x.id==id)
+        return deputatInfo;
+    }
+
+    function GetFractionClass(fraction) {
+        var arr=[{fraction:'Единая Россия',classname:'er'},
+            {fraction:'КПРФ',classname:'kprf'},
+            {fraction:'ЛДПР',classname:'ldpr'},
+            {fraction:'Справедливая Россия',classname:'sr'}]
+        var classname=arr.find(x=>x.fraction==fraction)
+        if (!classname) classname={fraction:'Вне фракций',classname:'vne'}
+        return classname.classname
+    }
+
+    function GetRating(id) {
+        var rating = rawRating.find(x=>x.id_declarator==id)
+        var max=d3.max(rawRating.map(x=>+x.podpis/(+x.vnes+x.podpis)*10+1))
+        if (!rating) {rating=rawRating[0];rating.no=true; rating.vnes=-1; rating.podpis=-1; rating.sred_day=-1}
+
+        var domain = [1,max]
+        var range = [4,10]
+        var logScale =  d3.scaleLog().domain(domain).range(range)
+
+        var rating_initial=1
+        if (!rating.no ) rating_initial=(rating.podpis/(rating.podpis+rating.vnes))*10+1
+        if (rating.vnes<5) rating_initial=1
+        if (rating.no ) rating_initial=1
+        var logRating=logScale(rating_initial)
+        rating.log=logRating
+        return rating
+    }
+
+
+
+    function GetPosition(info) {
+        var comitet=info.committees[0],
+            sposob=info.election_method,
+            soziv=info.convocations.length,
+            gender=info.gender
+
+
+        gender = !gender ? "м" : gender.toLowerCase()
+        comitet = !comitet ? "" : comitet
+        soziv = !soziv ? 1 : soziv
+
+        var chlen = comitet.replace("Комитет ГД ","Член комитета ")
+        if (comitet) chlen+= ", "
+        var izbran = (gender=="ж" || gender=="f") ? "избрана" : "избран"
+        var kak = (sposob=="одномандатный округ") ? " по одномандатному округу" : " по списку"
+        var raz = (soziv==2 || soziv==3 || soziv==4 ) ? " раза" : " раз"
+        var sozvan = (soziv==1) ? izbran+" впервые" : izbran+' '+soziv+raz
+
+        var position=chlen + izbran + kak+ ', '+ sozvan
+        return position
+    }
+
+    function GetLobbyText(lobbys) {
+        var text=""
+        lobbys.forEach(function (l,i) {
+            i>0 ? text+=", " : null
+            text+=lobby.find(x=>x.id==l).name
+        })
+        return text
+    }
+
+    function HideBlockByClass(classname) {
+        d3.selectAll("."+classname+"").classed("hidden",true)
+    }
+*/
+});
