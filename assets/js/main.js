@@ -1,6 +1,6 @@
 require.config({
     paths: {
-        d3: "http://d3js.org/d3.v5.min",
+        d3: "d3",
         jquery: 'jquery',
         floatingTooltip:'tooltip',
         slider:'nouislider',
