@@ -10,13 +10,13 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
 // tooltip for mouseover functionality
 var tooltip = floatingTooltip('gates_tooltip', 240);
 Data.then(Data=>{
-    data=Data.data;
-    lobby=Data.lobby;
-    lobby_level_0=Data.lobby_level_0;
-    myGroups =Data.myGroups
+    data = Data.data
+    lobby = Data.lobby
+    lobby_level_0= Data.lobby_level_0
+    myGroups = Data.myGroups
     myArrGroups = Data.myArrGroups
-    rawDep= Data.rawDep,
-    rawRating= Data.rawRating;
+    rawDep = Data.rawDep
+    rawRating = Data.rawRating
     doChart();
 })
 
@@ -446,8 +446,9 @@ function zoomEndFunction() {
 
 
     function makeText(d) {
+        var alias=lobby.find(x=>d.clusterName==x.name).alias
         d3.select(this).append("text")
-          .text(d.clusterName.charAt(0).toUpperCase() + d.clusterName.slice(1))
+          .text(alias.charAt(0).toUpperCase() + alias.slice(1))
           .each(wrapText)
           .each(makeBack)
     }

@@ -4,9 +4,14 @@ define(["d3"], function(d3) {
     var lobby_level_0=[];
     var myGroups = new Set();
     var myArrGroups = new Array()
-    var files = ["assets/data/deputates.json", "assets/data/lobby_group.json", "assets/data/rating.json"];
+    var files = [
+        "assets/data/deputates.json",
+        "assets/data/lobby_group.json",
+        "assets/data/rating.json",
+        "assets/data/alias.json"
+    ];
     var promises = [];
-    var rawDep, rawRating;
+    var rawDep, rawRating, rawAlias, aliases;
 
     files.forEach(function (url) {
         promises.push(d3.json(url))
@@ -21,10 +26,13 @@ define(["d3"], function(d3) {
         //console.log("files2", values[1])//lobby
         //console.log("url", JSON.stringify(values[2]))//lobby from url
         rawDep = values[0]
-        var rawLobby = values[1] //2 to load from url
+        var rawLobby = values[1] //change to load from url
         rawRating = values[2] //
+        rawAlias=values[3]
         dataDepMap(rawDep)
-        getLobbyMap(rawLobby);
+        getAliasMap(rawAlias)
+        getLobbyMap(rawLobby,aliases)
+
         return {
             lobby: lobby,
             lobby_level_0: lobby_level_0,
@@ -117,18 +125,35 @@ define(["d3"], function(d3) {
         });
     }
 
-    function getLobbyMap(rawdata) {
+    function getLobbyMap(rawdata,aliases) {
         lobby = rawdata.map((d,i) => {
+            var aliasRow = aliases.find(x=>x.name==d.name)
+            var alias = (aliasRow && aliasRow.alias!="null") ? aliasRow.alias : d.name
+            //console.log( " name: ", d.name," alias: ", alias)
             return {
                 index:i,
                 id: d.id,
                 name: d.name,
                 parent:d.parent,
                 level:d.level,
-                tree_id:d.tree_id
+                tree_id:d.tree_id,
+                alias:alias
             }
         })
         lobby_level_0=lobby.filter(x=>x.level==0)
+    }
+
+    function getAliasMap(rawdata) {
+        aliases=rawdata.map(x=>{
+            if (x.alias=="") x.alias="null"
+            return {
+                id: x.id,
+                name: x.name,
+                alias:x.alias
+            }
+
+        })
+
     }
 
 });
