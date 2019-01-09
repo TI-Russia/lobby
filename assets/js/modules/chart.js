@@ -744,6 +744,7 @@ function zoomEndFunction() {
         createSelect("select_committees", "Комитет","committees")
         CreateSliders()
         MakeAutoComplete()
+        PresetsHandler()
 
 
 
@@ -1017,6 +1018,34 @@ function zoomEndFunction() {
             input.addEventListener("awesomplete-highlight", function(event) {
                 input.value=event.text.value
                 onchange()
+            });
+        }
+
+        function PresetsHandler() {
+
+            var preset1 = document.getElementById("preset1")
+            preset1.addEventListener('click', function (e) {
+                e.preventDefault()
+                hightlightOff()
+                age_slider.set([23, 40]);
+            });
+
+            var preset2 = document.getElementById("preset2")
+            preset2.addEventListener('click', function (e) {
+                e.preventDefault()
+                hightlightOff()
+                d3.select('#method button#odnmnd').classed("is-active",true)
+                d3.select('select#select_lobby').property('value','7773')
+                onchange()
+            });
+
+        }
+        function updateSliderRange(min, max) {
+            age_slider.updateOptions({
+                range: {
+                    'min': min,
+                    'max': max
+                }
             });
         }
 
