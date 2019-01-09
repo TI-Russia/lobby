@@ -22,10 +22,15 @@ Data.then(Data=>{
 
 
 function doChart() {
+    var width, height, maxX, maxY, rows, client_width, client_height // width and heights of chart_grid
 
-    var width = 1200,
-        height = 1000,
-        padding = 2, // separation between same-color nodes
+    const svg = d3.select('#clusters')
+        .append('svg')
+        .append('g')
+
+    SetupSVG()
+
+    var padding = 2, // separation between same-color nodes
         clusterPadding = 15, // separation between different-color nodes
         maxRadius = 10;
 
@@ -110,17 +115,8 @@ function doChart() {
     })
     nodes=nodes.filter(x=>x.clone!="yes")
 
-    var clientWidth=document.documentElement.clientWidth
-    if (clientWidth>=1112) clientWidth=1112
-    var clientHeight= (clientWidth<750) ? 400 : height
 
-    const margin = {top: 100, right: 100, bottom: 100, left: 100};
 
-    const svg = d3.select('#clusters')
-        .append('svg')
-        .attr('height', clientHeight)
-        .attr('width', clientWidth)
-        .append('g')
 
 
     var clearClusters=clusters.filter(function(el) { return el; })//remove null from array
@@ -132,15 +128,16 @@ function doChart() {
 
     var nodes2 = nodes.concat(clearClusters);//merge nodes and clusters signs
 
+    rows = (client_width<750) ? 30 : 8
 
     var columnsTotal=9
     var xScale = d3.scaleLinear()
         .domain([0, columnsTotal-1])
-        .range([80, clientWidth-200]);
+        .range([50, maxX]);
 
     var yScale = d3.scaleLinear()
-        .domain([0, 15])
-        .range([100, height-100]);
+        .domain([0, rows])
+        .range([100, maxY]);
 
     clearClusters[0].col=0; clearClusters[0].row=0
     clearClusters.forEach(function (el,i,arr) {
@@ -166,7 +163,7 @@ function doChart() {
         }*/
 
 
-        (clientWidth<=750) ? GetCoordinatesForMobile(el) : GetCoordinatesForDesktop(el)
+        (width<=750) ? GetCoordinatesForMobile(el) : GetCoordinatesForDesktop(el)
 
 
     })
@@ -198,7 +195,7 @@ function doChart() {
                 break;
 
             default://не выявлено
-                curr.row =7.5
+                curr.row =7.0
                 curr.col = 5.8
         }
         if (curr.cluster==7812) { //иностранное лобби
@@ -211,33 +208,33 @@ function doChart() {
     function GetCoordinatesForMobile(element) {
         var curr = element
         switch (curr.clusterParent) {
-            case 7624://федеральное
-                curr.row =7
-                curr.col = 7
-                break;
-            case 7667://региональное
-                curr.row =12
-                curr.col = 8
-                break;
-            case 7753://отраслевое
-                curr.row =2
+            case 7624://федеральное 2
+                curr.row =8.5
                 curr.col = 7.5
                 break;
-            case 7801://общ-полит
-                curr.row =17
+            case 7667://региональное 3
+                curr.row =13.5
+                curr.col = 7.5
+                break;
+            case 7753://отраслевое 1
+                curr.row =2.5
                 curr.col = 8
                 break;
-            case 7813://фин-пром группы
-                curr.row =22
-                curr.col = 7
+            case 7801://общ-полит 4
+                curr.row =18.5
+                curr.col = 7.5
                 break;
-            default:
-                curr.row =27
-                curr.col = 8
+            case 7813://фин-пром группы 5
+                curr.row =23.5
+                curr.col = 7.5
+                break;
+            default: // не выявлено 6
+                curr.row =28
+                curr.col = 7.5
         }
         if (curr.cluster==7812) { //иностранное лобби
             curr.row =30
-            curr.col = 8
+            curr.col = 7.5
         }
         return element
     }
@@ -386,6 +383,45 @@ function doChart() {
 
     //zoom_handler(svg1)
     svg1.call(zoom_handler).on("wheel.zoom", null)
+
+    window.onresize=function (event) {
+        SetupSVG();
+
+    }
+
+    function SetupSVG() {
+        var headerHeight=document.getElementsByTagName('header')[0].clientHeight,
+            controlsHeight=document.getElementById('controls').clientHeight,
+            footerHeight=document.getElementsByClassName('footer')[0].clientHeight,
+            sumHeight=headerHeight+footerHeight+controlsHeight+100
+
+        var min_width = 812,
+            min_height = 600;
+            client_width=document.documentElement.clientWidth,
+            client_height=document.documentElement.clientHeight-sumHeight
+
+        client_width<=812 ? width=min_width : width=client_width;
+        client_width<=750 ? width=client_width : width=width;
+        height = (client_width<=750) ? 1600 : min_height;
+        (client_height>=height && client_height>=min_height) ? height=client_height : height;
+
+        d3.select('#clusters svg')
+            .attr('height', height)
+            .attr('width', width)
+
+        if   (client_width>750){
+            d3.select('#clusters svg').attr('viewBox','0 0 1000 600')
+                .attr('preserveAspectRatio', 'xMidYMid meet')
+            maxX=800
+            maxY=600
+        }
+        else {
+            d3.select('#clusters svg').attr('viewBox',null)
+                .attr('preserveAspectRatio', 'xMidYMid meet')
+            maxX=width-200
+            maxY=height
+        }
+    }
 
     function GetDepData(id) {
         var deputatInfo = rawDep.find(x=>x.id==id)
@@ -795,6 +831,8 @@ function zoomEndFunction() {
                     d3.select(this).remove()
                 }})
 
+        onchange()
+
 
         function PrependOption(d){
             if (d.level==0) {
@@ -886,13 +924,21 @@ function zoomEndFunction() {
 
             conv_slider.on('update', function (values, handle) {
                 snapValues1[handle].innerHTML = values[handle];
-                onchange();
+                //onchange();
             });
 
             age_slider.on('update', function (values, handle) {
                 snapValues2[handle].innerHTML = values[handle];
+                //onchange();
+            });
+
+            age_slider.on('change', function (values, handle) {
                 onchange();
             });
+            conv_slider.on('change', function (values, handle) {
+                onchange();
+            });
+
         }
 
         function GetMinAge() {
@@ -904,24 +950,31 @@ function zoomEndFunction() {
         }
 
         function ZoomeToLobby(active){
+            svg1.attr('viewBox',null)
             svg1.call(zoom_handler.transform, initialTransform);
+
             if (!active) return
             active = d3.select("#enclose"+active);
             if (!active.node()) return
 
+            var height_loc
+
+            if (width<750) height_loc=document.documentElement.clientHeight-80
+            else height_loc= height
+
             var bbox = active.node().getBBox(),
                 ctm= active.node().getCTM(),
                 bounds = [[bbox.x+ctm.e, bbox.y+ctm.f],
-                    [bbox.x+ctm.e + bbox.width, bbox.y+ctm.f + bbox.height]];
+                    [bbox.x+ctm.e + bbox.width, bbox.y+ctm.f + bbox.height+50]];
 
             var dx = bounds[1][0] - bounds[0][0],
                 dy = bounds[1][1] - bounds[0][1],
                 x = (bounds[0][0] + bounds[1][0]) / 2,
                 y = (bounds[0][1] + bounds[1][1]) / 2,
-                scale = Math.max(1, Math.min(5, 0.9 / Math.max(dx / width, dy / height))),
-                translate = [clientWidth / 2 - scale * x, clientHeight / 2 - scale * y];
+                scale = Math.max(1, Math.min(5, 0.9 / Math.max(dx / width, dy / height_loc))),
+                translate = [width / 2 - scale * x, height_loc / 2 - scale * y+50];
 
-            console.log("vars: "+dx,dy,x,y, scale, translate);
+            //console.log("vars: "+dx,dy,x,y, scale, translate);
 
             var transform = d3.zoomIdentity
                 .translate(translate[0], translate[1])
@@ -935,7 +988,7 @@ function zoomEndFunction() {
         function onchange() {
             var i_search = d3.select('input#search').property('value')
             var s_lobby = d3.select('select#select_lobby').property('value')
-            if (s_lobby!=-1) ZoomeToLobby(s_lobby)
+            if (s_lobby!=-1 && s_lobby!="") ZoomeToLobby(s_lobby)
             //var s_method = d3.select('select#select_election_method').property('value')
             /*var s_fraction = d3.select('select#select_fraction').property('value')*/
             var s_comitet = d3.select('select#select_committees').property('value')
@@ -1066,6 +1119,8 @@ function zoomEndFunction() {
         }
 
         function hightlightOff() {
+            if (client_width>750)
+                d3.select('#clusters svg').attr('viewBox','0 0 1000 600')
             conv_slider.reset()
             age_slider.reset()
             d3.selectAll("#search").property("value","")
