@@ -343,11 +343,7 @@ function doChart() {
         .attr("cy", d => d.dy)
         .on('mouseover', showDetail)
         .on('mouseout', hideDetail)
-        .on('click', function (d){
-            var depInfo=GetDepData(d.id)
-            var depRating=GetRating(depInfo.person)
-            var depLobbys=GetLobbyText(depInfo.groups)
-            var t = new ShowCard(depInfo, depRating, depLobbys)})
+        .on('click', ClickOnCircle)
         .call(d3.drag()
             .on("start", dragstarted)
             .on("drag", dragged)
@@ -616,30 +612,37 @@ function zoomEndFunction() {
         labels.classed("hovered",false)
     }
 
+    function ClickOnCircle(d){
+        HightlightCirclesOff()
+        drawCloneLinks(d)
+        HightlightCirclesOn(d.id)
+        var depInfo=GetDepData(d.id)
+        var depRating=GetRating(depInfo.person)
+        var depLobbys=GetLobbyText(depInfo.groups)
+        var t = new ShowCard(depInfo, depRating, depLobbys)}
+
 
     /*
 * Function called on mouseover to display the
 * details of a bubble in the tooltip.
 */
     function showDetail(d) {
+        var isModalOpen=d3.select("#card").classed("is-active")
         hideLabel(d)
-        drawCloneLinks(d)
-        //circles.style("opacity",1).transition().attr("fill", d=>d.color)
-        //labels.transition().style("opacity",1)
-        // change outline to indicate hover state.
-        //d3.select(this).attr('stroke', 'black');
+
+        if (!isModalOpen)
+            drawCloneLinks(d)
 
         //var groupname=lobby.find(x => x.id === d.cluster)
         var groupname=lobby.find(x => x.id === d.clusterMin)
 
         var cloneclustersNames=""
-        if (Array.isArray(d.cloneClusters)){
+        if (Array.isArray(d.cloneClusters))
             cloneclustersNames = d.cloneClusters.map(x=>lobby.find(y=>y.id==x))
-        }
 
-        //circles.filter(e=>e.id!=d.id).transition().attr('fill', "gray");
-        //circles.filter(e=>e.cluster===d.cluster).transition().attr('fill', 'blue');
-        circles.filter(e=>e.id===d.id).transition().attr('stroke', '#000').attr('stroke-width', '2px');
+
+        if (!isModalOpen)
+            HightlightCirclesOn(d.id)
 
         var content =
             '<span class="name">'+d.name+' </span><br/>'
@@ -651,6 +654,14 @@ function zoomEndFunction() {
             '<span class="value">'+cloneclustersNames.map(name=>name.name)+'</span><br/>';
 
         tooltip.showTooltip(content, d3.event);
+    }
+    
+    function HightlightCirclesOn(id) {
+        circles.filter(e=>e.id===id).transition().attr('stroke', '#000').attr('stroke-width', '2px');
+    }
+
+    function HightlightCirclesOff(id) {
+        circles.transition().attr('stroke', 'none');
     }
 
     function drawCloneLinks(target) {
@@ -692,8 +703,13 @@ function zoomEndFunction() {
  * Hides tooltip
  */
     function hideDetail(d) {
+
+        var isModalOpen=d3.select("#card").classed("is-active")
+
         // reset outline
-        circles.transition().attr('stroke', 'none');
+        if (!isModalOpen)
+        HightlightCirclesOff()
+        //circles.transition().attr('stroke', 'none');
 
         //d3.select(this).attr('stroke', d3.rgb(color(d.cluster / 10)).darker());
         tooltip.hideTooltip();
