@@ -18,6 +18,14 @@ function ShowCard(depInfo, depRating, depLobbys) {
 
     var close_btn=card.select(".modal-close").on("click",() =>  card.attr("class","modal"))
 
+    /*back button should close modal*/
+    window.history.pushState('forward', null, './#id'+depInfo.person);
+    if (window.history && window.history.pushState) {
+        $(window).on('popstate', function () {
+            card.attr("class","modal")
+        });
+    }
+
     //var id=e.id //iden
     var info=depInfo
     var rating=depRating
