@@ -337,10 +337,10 @@ function doChart() {
         .on('mouseover', showDetail)
         .on('mouseout', hideDetail)
         .on('click', ClickOnCircle)
-        .call(d3.drag()
+        /*.call(d3.drag()
             .on("start", dragstarted)
             .on("drag", dragged)
-            .on("end", dragended));
+            .on("end", dragended));*/
 
     const labels = svg.append('g')
         //.datum(ShowedClusters(clearClusters))
@@ -716,18 +716,8 @@ function zoomEndFunction() {
 
         force.force("link", d3.forceLink(links).id(d => d.uniq).strength(0))
         if (force.alpha() <= 0.01){
-            force.restart()
+            force.alpha(0).restart()
             force.force("link", d3.forceLink(links).id(d => d.uniq).strength(0))
-            /*link = svg.append('g').classed("links",true)
-                .datum(clones)
-                .selectAll('.link')
-                .data(d => d)
-                .enter().append('line')
-                .attr('x1', target.x)
-                .attr('y1', target.y)
-                .attr("x2", d => d.x)
-                .attr("y2", d => d.y)
-                .attr("stroke","black")*/
         }
     }
 
@@ -739,8 +729,10 @@ function zoomEndFunction() {
         var isModalOpen=d3.select("#card").classed("is-active")
 
         // reset outline
-        if (!isModalOpen)
-        HightlightCirclesOff()
+        if (!isModalOpen) {
+            svg.select("g.links").remove()//remove clone links
+            HightlightCirclesOff()
+        }
         //circles.transition().attr('stroke', 'none');
 
         //d3.select(this).attr('stroke', d3.rgb(color(d.cluster / 10)).darker());
