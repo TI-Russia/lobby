@@ -26,6 +26,7 @@ function doChart() {
 
     const svg = d3.select('#clusters')
         .append('svg')
+        .attr('id','chart')
         .append('g')
 
     SetupSVG()
@@ -356,8 +357,8 @@ function doChart() {
         .each(makeText)
 
     //add zoom capabilities
-    var svg1=d3.select("#clusters > svg")
-    var g=d3.select("svg > g").attr("class","all")
+    var svg1=d3.select("#clusters > svg#chart")
+    var g=d3.select("svg#chart > g").attr("class","all")
     var k=1
     var initialTransform = d3.zoomIdentity
         .translate(0,0)
@@ -377,7 +378,7 @@ function doChart() {
     });
 
     d3.select('#zoom-home').on('click', function() {
-        zoom_reset()
+        zoom_reset();
     });
 
 
@@ -405,18 +406,18 @@ function doChart() {
         height = (client_width<=750) ? 1600 : min_height;
         (client_height>=height && client_height>=min_height) ? height=client_height : height;
 
-        d3.select('#clusters svg')
+        d3.select('#clusters svg#chart')
             .attr('height', height)
             .attr('width', width)
 
         if   (client_width>750){
-            d3.select('#clusters svg').attr('viewBox','0 0 1000 600')
+            d3.select('#clusters svg#chart').attr('viewBox','0 0 1000 600')
                 .attr('preserveAspectRatio', 'xMidYMid meet')
             maxX=800
             maxY=600
         }
         else {
-            d3.select('#clusters svg').attr('viewBox',null)
+            d3.select('#clusters svg#chart').attr('viewBox',null)
                 .attr('preserveAspectRatio', 'xMidYMid meet')
             maxX=width-200
             maxY=height
@@ -1139,7 +1140,7 @@ function zoomEndFunction() {
 
         function hightlightOff() {
             if (client_width>750)
-                d3.select('#clusters svg').attr('viewBox','0 0 1000 600')
+                d3.select('#clusters svg#chart').attr('viewBox','0 0 1000 600')
             conv_slider.reset()
             age_slider.reset()
             d3.selectAll("#search").property("value","")
