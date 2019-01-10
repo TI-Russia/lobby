@@ -376,6 +376,10 @@ function doChart() {
         zoom_handler.scaleBy(svg1.transition().duration(400), 1 / 1.3);
     });
 
+    d3.select('#zoom-home').on('click', function() {
+        zoom_reset()
+    });
+
 
     //zoom_handler(svg1)
     svg1.call(zoom_handler).on("wheel.zoom", null)

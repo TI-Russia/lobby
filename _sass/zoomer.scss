@@ -1,0 +1,115 @@
+/* control positioning */
+.zoomer-control-container {
+  position: relative;
+}
+
+.zoomer-control {
+  position: relative;
+  z-index: 800;
+  pointer-events: visiblePainted; /* IE 9-10 doesn't have auto */
+  pointer-events: auto;
+}
+.zoomer-top,
+.zoomer-bottom {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+}
+.zoomer-top {
+  top: 0;
+}
+.zoomer-right {
+  right: 0;
+}
+.zoomer-bottom {
+  bottom: 0;
+}
+.zoomer-left {
+  left: 0;
+}
+.zoomer-control {
+  float: left;
+  clear: both;
+}
+.zoomer-right .zoomer-control {
+  float: right;
+}
+.zoomer-top .zoomer-control {
+  margin-top: 10px;
+}
+.zoomer-bottom .zoomer-control {
+  margin-bottom: 10px;
+}
+.zoomer-left .zoomer-control {
+  margin-left: 10px;
+}
+.zoomer-right .zoomer-control {
+  margin-right: 10px;
+}
+
+/* general toolbar styles */
+
+.zoomer-bar {
+  box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+  border-radius: 4px;
+}
+.zoomer-bar a,
+.zoomer-bar a:hover {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+.zoomer-bar a,
+.zoomer-control-layers-toggle {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  display: block;
+}
+.zoomer-bar a:hover {
+  background-color: #f4f4f4;
+}
+.zoomer-bar a:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.zoomer-bar a:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom: none;
+}
+.zoomer-bar a.zoomer-disabled {
+  cursor: default;
+  background-color: #f4f4f4;
+  color: #bbb;
+}
+
+.zoomer-touch .zoomer-bar a {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+.zoomer-touch .zoomer-bar a:first-child {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+.zoomer-touch .zoomer-bar a:last-child {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+/* zoom control */
+
+.zoomer-control-zoom-in,
+.zoomer-control-zoom-out {
+  font: bold 18px 'Lucida Console', Monaco, monospace;
+  text-indent: 1px;
+}
+
+.zoomer-touch .zoomer-control-zoom-in, .zoomer-touch .zoomer-control-zoom-out  {
+  font-size: 22px;
+}
