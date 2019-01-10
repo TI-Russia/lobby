@@ -98,7 +98,7 @@ define(["d3"], function(d3) {
         }
         data = rawdata.flatMap((d) => {
             groups = d.groups
-            groups.length==0 ? groups=[7917] : groups // кто без групп? -> в группу "Не выявлено"
+            groups.length==0 ? groups=[11851] : groups // кто без групп? -> в группу "Не выявлено"
             var rating=Math.floor(Math.random() * (10-4))+4
             rating=GetRating(d.person)
             return groups.map((b) => {
@@ -129,17 +129,19 @@ define(["d3"], function(d3) {
         lobby = rawdata.map((d,i) => {
             var aliasRow = aliases.find(x=>x.name==d.name)
             var alias = (aliasRow && aliasRow.alias!="null") ? aliasRow.alias : d.name
-            //console.log( " name: ", d.name," alias: ", alias)
+            console.log( " name: ", d.name," alias: ", alias)
             return {
                 index:i,
                 id: d.id,
                 name: d.name,
                 parent:d.parent,
+                order:d.order,
                 level:d.level,
                 tree_id:d.tree_id,
                 alias:alias
             }
         })
+        console.log("lobby from data ",lobby)
         lobby_level_0=lobby.filter(x=>x.level==0)
     }
 
@@ -151,7 +153,6 @@ define(["d3"], function(d3) {
                 name: x.name,
                 alias:x.alias
             }
-
         })
 
     }

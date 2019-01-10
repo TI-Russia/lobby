@@ -115,10 +115,6 @@ function doChart() {
     })
     nodes=nodes.filter(x=>x.clone!="yes")
 
-
-
-
-
     var clearClusters=clusters.filter(function(el) { return el; })//remove null from array
     clearClusters.sort(function(a, b) { return b.count - a.count; })
     clearClusters.sort(function(a, b) { return a.clusterParent - b.clusterParent; })
@@ -172,24 +168,24 @@ function doChart() {
     function GetCoordinatesForDesktop(element) {
         var curr = element
         switch (curr.clusterParent) {
-            case 7667://региональное
+            case 11593://региональное
                 curr.row =1
                 curr.col = 8
                 break;
-            case 7753://отраслевое
+            case 11679://отраслевое
                 curr.row =2.5
                 curr.col = 4.6
                 break;
-            case 7813://фин-пром группы
+            case 11739://фин-пром группы
                 curr.row =1.5
                 curr.col = 1
                 break;
 
-            case 7624://федеральное
+            case 11550://федеральное
                 curr.row =6.5
                 curr.col = 2
                 break;
-            case 7801://общ-полит
+            case 11727://общ-полит
                 curr.row =6
                 curr.col = 7.5
                 break;
@@ -198,7 +194,7 @@ function doChart() {
                 curr.row =7.0
                 curr.col = 5.8
         }
-        if (curr.cluster==7812) { //иностранное лобби
+        if (curr.cluster==11738) { //иностранное лобби
             curr.row =7.5
             curr.col = 4.5
         }
@@ -208,23 +204,23 @@ function doChart() {
     function GetCoordinatesForMobile(element) {
         var curr = element
         switch (curr.clusterParent) {
-            case 7624://федеральное 2
+            case 11550://федеральное 2
                 curr.row =8.5
                 curr.col = 7.5
                 break;
-            case 7667://региональное 3
+            case 11593://региональное 3
                 curr.row =13.5
                 curr.col = 7.5
                 break;
-            case 7753://отраслевое 1
+            case 11679://отраслевое 1
                 curr.row =2.5
                 curr.col = 8
                 break;
-            case 7801://общ-полит 4
+            case 11727://общ-полит 4
                 curr.row =18.5
                 curr.col = 7.5
                 break;
-            case 7813://фин-пром группы 5
+            case 11739://фин-пром группы 5
                 curr.row =23.5
                 curr.col = 7.5
                 break;
@@ -232,7 +228,7 @@ function doChart() {
                 curr.row =28
                 curr.col = 7.5
         }
-        if (curr.cluster==7812) { //иностранное лобби
+        if (curr.cluster==11738) { //иностранное лобби
             curr.row =30
             curr.col = 7.5
         }
@@ -459,7 +455,7 @@ function zoomEndFunction() {
 
     function ShowedClusters(clusters) {
         //first five largest in each group
-        var groups= [7624, 7667, 7753, 7801, 7813, null]
+        var groups= [11550, 11593, 11679, 11727, 11739, null]
         var showedClustersNumbers=[]
         var showedClusters
         var scale= k
@@ -786,6 +782,46 @@ function zoomEndFunction() {
 
         data2=lobby.sort((a,b)=>a.tree_id-b.tree_id)
 
+        lobby.forEach(lob=>{
+            if (lob.parent==null) lob.parent=1
+        })
+        lobby.push({id:1,name:"root",parent:"0"})
+        function list_to_tree(list) {
+            var map = {}, node, roots = [], i;
+            for (i = 0; i < list.length; i += 1) {
+                map[list[i].id] = i; // initialize the map
+                list[i].children = []; // initialize the children
+            }
+            for (i = 0; i < list.length; i += 1) {
+                node = list[i];
+                if (node.parent !== "0") {
+                    // if you have dangling branches check that map[node.parent] exists
+                    list[map[node.parent]].children.push(node);
+                } else {
+                    roots.push(node);
+                }
+            }
+            return roots;
+        }
+        var tree=list_to_tree(lobby.sort((a,b)=>a.order-b.order))
+
+        var bfs = function(tree, key, collection) {
+            if (!tree[key] || tree[key].length === 0) return;
+            for (var i=0; i < tree[key].length; i++) {
+                var child = tree[key][i]
+                collection[child.id] = child;
+                bfs(child, key, collection);
+            }
+            return;
+        }
+
+        var flattenedCollection = {};
+        bfs(tree[0],"children", flattenedCollection)
+
+        var list = Object.keys(flattenedCollection).map(function(key) {
+            return flattenedCollection[key]
+        });
+
         data_clusters.sort((a,b)=>a.clusterName-b.clusterName)
             .sort((a,b)=>a.clusterParent-b.clusterParent)
 
@@ -796,7 +832,6 @@ function zoomEndFunction() {
         d3.selectAll(".buttons button").on("click", function () {
             var value=d3.select(this).attr("value")
             var allBtns=d3.select(this.parentNode).selectAll("button")
-            //allBtns.classed("myCssClass", !d3.select(this).classed("myCssClass"))
             allBtns.classed("is-active", false)
             d3.select(this).classed("is-active", true)
             onchange()
@@ -806,7 +841,7 @@ function zoomEndFunction() {
 
         var options = select
             .selectAll('option.opt')
-            .data(data2).enter()
+            .data(list).enter()
             .append('option')
             .classed("opt",true)
             .attr("value",d=>d.id)
@@ -974,8 +1009,6 @@ function zoomEndFunction() {
                 scale = Math.max(1, Math.min(5, 0.9 / Math.max(dx / width, dy / height_loc))),
                 translate = [width / 2 - scale * x, height_loc / 2 - scale * y+50];
 
-            //console.log("vars: "+dx,dy,x,y, scale, translate);
-
             var transform = d3.zoomIdentity
                 .translate(translate[0], translate[1])
                 .scale(scale);
@@ -1044,8 +1077,6 @@ function zoomEndFunction() {
 
         }
 
-
-
         var serchbox=d3.select("#search").on("keyup",onchange)
         var clearbtn=d3.select("#clear").on("click",hightlightOff)
 
@@ -1092,14 +1123,6 @@ function zoomEndFunction() {
                 onchange()
             });
 
-        }
-        function updateSliderRange(min, max) {
-            age_slider.updateOptions({
-                range: {
-                    'min': min,
-                    'max': max
-                }
-            });
         }
 
         function hightlightOn(spot) {
@@ -1161,118 +1184,5 @@ function zoomEndFunction() {
         })
         return text
     }
-
-
 }
-/*Card functions*/
-    /*function showCard(e) {
-        var card=d3.select("#card"),          //container
-            photo=card.select("#photo img"),
-            fullname=card.select("#fullname"),
-            fraction=card.select("#fraction_text"),
-            position=card.select("#position"),
-            law_number_vnes=card.select("#law_number_vnes"),
-            law_number_podpis=card.select("#law_number_podpis"),
-            sred_day=card.select("#sred_day"),
-            lobby=card.select("#lobby"),
-            bio=card.select("#bio"),
-            relations=card.select("#relations"),
-            submitted=card.select("#submitted")
-
-        d3.selectAll("#card .hidden").classed("hidden",false)
-
-        var close_btn=card.select(".modal-close").on("click",() =>  card.attr("class","modal"))
-
-        var id=e.id //iden
-        var info=GetDepData(id)
-        var rating=GetRating(info.person)
-        var fraction_class=GetFractionClass(info.fraction)
-        var positionText = GetPosition (info)
-        var lobbyText = GetLobbyText(info.groups)
-
-        fullname.text(info.fullname)
-        photo.attr("alt",info.fullname).attr("src",info.photo)
-        fraction.text(info.fraction).attr("class",fraction_class)
-        position.text(positionText)
-        law_number_vnes.text(rating.vnes)
-        law_number_podpis.text(rating.podpis)
-        if (rating.podpis==0) HideBlockByClass("law_signed")
-        sred_day.text(Math.floor(String(rating.sred_day).replace(',','.')))
-        lobby.text(lobbyText)
-        bio.html(info.bio)
-        relations.html(info.relations)
-        submitted.html(info.submitted)
-        card.attr("class","modal is-active")
-    }
-
-    function GetDepData(id) {
-        var deputatInfo = rawDep.find(x=>x.id==id)
-        return deputatInfo;
-    }
-
-    function GetFractionClass(fraction) {
-        var arr=[{fraction:'Единая Россия',classname:'er'},
-            {fraction:'КПРФ',classname:'kprf'},
-            {fraction:'ЛДПР',classname:'ldpr'},
-            {fraction:'Справедливая Россия',classname:'sr'}]
-        var classname=arr.find(x=>x.fraction==fraction)
-        if (!classname) classname={fraction:'Вне фракций',classname:'vne'}
-        return classname.classname
-    }
-
-    function GetRating(id) {
-        var rating = rawRating.find(x=>x.id_declarator==id)
-        var max=d3.max(rawRating.map(x=>+x.podpis/(+x.vnes+x.podpis)*10+1))
-        if (!rating) {rating=rawRating[0];rating.no=true; rating.vnes=-1; rating.podpis=-1; rating.sred_day=-1}
-
-        var domain = [1,max]
-        var range = [4,10]
-        var logScale =  d3.scaleLog().domain(domain).range(range)
-
-        var rating_initial=1
-        if (!rating.no ) rating_initial=(rating.podpis/(rating.podpis+rating.vnes))*10+1
-        if (rating.vnes<5) rating_initial=1
-        if (rating.no ) rating_initial=1
-        var logRating=logScale(rating_initial)
-        rating.log=logRating
-        return rating
-    }
-
-
-
-    function GetPosition(info) {
-        var comitet=info.committees[0],
-            sposob=info.election_method,
-            soziv=info.convocations.length,
-            gender=info.gender
-
-
-        gender = !gender ? "м" : gender.toLowerCase()
-        comitet = !comitet ? "" : comitet
-        soziv = !soziv ? 1 : soziv
-
-        var chlen = comitet.replace("Комитет ГД ","Член комитета ")
-        if (comitet) chlen+= ", "
-        var izbran = (gender=="ж" || gender=="f") ? "избрана" : "избран"
-        var kak = (sposob=="одномандатный округ") ? " по одномандатному округу" : " по списку"
-        var raz = (soziv==2 || soziv==3 || soziv==4 ) ? " раза" : " раз"
-        var sozvan = (soziv==1) ? izbran+" впервые" : izbran+' '+soziv+raz
-
-        var position=chlen + izbran + kak+ ', '+ sozvan
-        return position
-    }
-
-    function GetLobbyText(lobbys) {
-        var text=""
-        lobbys.forEach(function (l,i) {
-            i>0 ? text+=", " : null
-            text+=lobby.find(x=>x.id==l).name
-        })
-        return text
-    }
-
-    function HideBlockByClass(classname) {
-        d3.selectAll("."+classname+"").classed("hidden",true)
-    }
-*/
 });
