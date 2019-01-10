@@ -240,7 +240,7 @@ div#card {
 circle:hover {cursor:pointer;}
 .lobby_label{
   fill:#000;
-  font-size: 12px;
+  font-size: 14px;
   paint-order: stroke;
   pointer-events: none;
   stroke-linecap: round;
@@ -261,9 +261,19 @@ circle:hover {cursor:pointer;}
     //transition: 0.1s opacity 0s;
   }
   &.mini{
-  font-size: 6px;
+  font-size: 12px;
+  }
+  &.midi{
+    font-size: 10px;
+  }
+  &.maxi{
+    font-size: 8px;
+  }
+  &.super{
+    font-size: 6px;
   }
 }
+
 
 div.convocations, div.age{width: 152px;}
 .slider_label {text-align: center; font-size: 12px;}

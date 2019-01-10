@@ -1,4 +1,4 @@
-requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowCard"], function( d3,$,floatingTooltip ,noUiSlider,awesomeplete,Data,ShowCard ) {
+requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowCard","ShowedClusters","zoom"], function( d3,$,floatingTooltip ,noUiSlider,awesomeplete,Data,ShowCard,ShowedClusters,zoom ) {
 
     var data
     var lobby
@@ -366,19 +366,24 @@ function doChart() {
 
     var zoom_handler = d3.zoom()
         .scaleExtent([1, 5])
-        .on("zoom", zoom_actions)
-        .on("end", zoomEndFunction)
+        .on("zoom", function () {zoom.zoom_actions(g)})
+        .on("end", function () {
+            zoom.zoomEndFunction(labels,clearClusters)
+        })
 
     d3.select('#zoom-in').on('click', function() {
+        d3.event.preventDefault();
         zoom_handler.scaleBy(svg1.transition().duration(400), 1.3);
     });
 
     d3.select('#zoom-out').on('click', function() {
-        zoom_handler.scaleBy(svg1.transition().duration(400), 1 / 1.3);
+        d3.event.preventDefault();
+        zoom_handler.scaleBy(svg1.transition().duration(400),1/1.3);
     });
 
     d3.select('#zoom-home').on('click', function() {
-        zoom_reset();
+        d3.event.preventDefault();
+        zoom.zoom_reset(labels,svg1,zoom_handler,initialTransform);
     });
 
 
@@ -429,53 +434,6 @@ function doChart() {
         return deputatInfo;
     }
 
-function zoomEndFunction() {
-    console.log("end",d3.event.transform.k)
-    k=d3.event.transform.k
-    var temp2=ShowedClusters(clearClusters).map(x=>x.cluster)
-    var labels_spot=labels.filter(x=>temp2.includes(x.cluster))
-    //labels_spot.transition().style("opacity",1)
-
-    if (k>1) {
-        labels_spot.classed("mini",true)
-        labels_spot.transition().style("opacity",1)
-    }
-    else {
-        d3.selectAll(".mini").style("opacity",0)
-        labels_spot.transition().style("opacity",1)
-        labels.classed("mini",false)
-    }
-}
-
-    //Zoom functions
-    function zoom_actions(){
-        g.attr("transform", d3.event.transform)
-    }
-    function zoom_reset() {
-        labels.transition().style("opacity",0)
-        svg1.transition()
-            .duration(750)
-            .call(zoom_handler.transform, initialTransform);
-    }
-
-    function ShowedClusters(clusters) {
-        //first five largest in each group
-        var groups= [11550, 11593, 11679, 11727, 11739, null]
-        var showedClustersNumbers=[]
-        var showedClusters
-        var scale= k
-        console.log("scale=",scale)
-        groups.forEach(group=>{
-            showedClustersNumbers=showedClustersNumbers.concat(clusters
-                .filter(x=>x.clusterParent==group)
-                .sort((a,b)=>b.count-a.count)
-                .slice(0,scale>1 ? 20 : 5)
-                .map(x=>x.cluster))
-        })
-        console.log("numbers=",showedClustersNumbers)
-        showedClusters=clusters.filter(x=>showedClustersNumbers.includes(x.cluster))
-        return showedClusters
-    }
 
 
     function makeText(d) {
@@ -1129,7 +1087,7 @@ function zoomEndFunction() {
             var circles_clusters=spot.data().map(s=>s.cluster)
 
             var temp=clearClusters.filter(x=>circles_clusters.includes(x.cluster))
-            var temp2=ShowedClusters(temp).map(s=>s.cluster)
+            var temp2=ShowedClusters(temp,k).map(s=>s.cluster)
 
             var labels_spot=labels.filter(x=>circles_clusters.includes(x.cluster))
             labels_spot=labels.filter(x=>temp2.includes(x.cluster))
@@ -1147,10 +1105,10 @@ function zoomEndFunction() {
             d3.selectAll("#controls button").classed("is-active",false)
             d3.selectAll("select").property("selectedIndex", 0)
             circles.transition().attr("class", d=>d.color).style("opacity",1)
-            var n = ShowedClusters(clearClusters).map(x=>x.cluster)
+            var n = ShowedClusters(clearClusters,k).map(x=>x.cluster)
             labels.style("opacity",0).filter(x=>n.includes(x.cluster)).transition().style("opacity",1)
 
-            zoom_reset();
+            zoom.zoom_reset(labels,svg1,zoom_handler,initialTransform);
         }
 
     }

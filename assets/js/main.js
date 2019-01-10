@@ -8,7 +8,9 @@ require.config({
         intro: "modules/intro",
         chart: "modules/chart",
         ShowCard: "modules/card",
-        data: "modules/data"
+        data: "modules/data",
+        ShowedClusters: "tools/showed_clusters",
+        zoom:"tools/zoom"
     },
     shim: {
         awesomeplete:{
