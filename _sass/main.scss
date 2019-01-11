@@ -68,9 +68,7 @@ header {
 }
 
 .hero-body{
-  @include until($tablet){
-    padding: 1rem;
-  }
+  padding: 0;
 }
 
 a{
@@ -115,10 +113,22 @@ div#controls{
   //position: sticky;
   //position: -webkit-sticky;
   //top: 0;
+  padding: 16px 16px 0 16px;
+  margin: 0;
 
   select {width: 152px;}
   .column{
-    padding-top: 0;
+    padding: 0;
+    padding-right: 16px;
+
+    button{
+      margin-bottom: 20px;
+    };
+
+    #clear{
+      border: none;
+      color: $color-red;
+    }
   }
 }
 
