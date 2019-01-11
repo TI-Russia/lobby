@@ -51,7 +51,11 @@ define(['ShowedClusters','d3'], function(ShowedClusters,d3 ) {
     }
 
     function zoom_actions(g,k){
-        if (k==1) return //disable pan when scale is 1
+if (d3.event.sourceEvent!=null)
+        if (d3.event.sourceEvent.type=="touchmove" && k==1){
+            console.log ("touch event : ",d3.event.sourceEvent.type)
+        }
+        console.log ("event ",d3.event.type)
         g.attr("transform", d3.event.transform)
     }
 

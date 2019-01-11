@@ -373,6 +373,7 @@ function doChart() {
             k = d3.event.transform.k
             zoom.zoomEndFunction(labels,clearClusters)
         })
+        .touchable(touched)
 
     d3.select('#zoom-in').on('click', function() {
         d3.event.preventDefault();
@@ -393,6 +394,15 @@ function doChart() {
     //zoom_handler(svg1)
         svg1.call(zoom_handler)
             .on("wheel.zoom", null)
+            //.on("touchmove", null)
+
+
+    //svg1.on("touchstart", nozoom)
+    function touched() {
+            console.log(k)
+            if (k==1) return null
+        else return true
+    }
 
 
     window.onresize=function (event) {
