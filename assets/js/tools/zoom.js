@@ -50,7 +50,8 @@ define(['ShowedClusters','d3'], function(ShowedClusters,d3 ) {
         }
     }
 
-    function zoom_actions(g){
+    function zoom_actions(g,k){
+        if (k==1) return //disable pan when scale is 1
         g.attr("transform", d3.event.transform)
     }
 

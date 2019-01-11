@@ -366,8 +366,11 @@ function doChart() {
 
     var zoom_handler = d3.zoom()
         .scaleExtent([1, 5])
-        .on("zoom", function () {zoom.zoom_actions(g)})
+        .on("zoom", function () {
+            k = d3.event.transform.k
+            zoom.zoom_actions(g,k)})
         .on("end", function () {
+            k = d3.event.transform.k
             zoom.zoomEndFunction(labels,clearClusters)
         })
 
@@ -388,7 +391,9 @@ function doChart() {
 
 
     //zoom_handler(svg1)
-    svg1.call(zoom_handler).on("wheel.zoom", null)
+        svg1.call(zoom_handler)
+            .on("wheel.zoom", null)
+
 
     window.onresize=function (event) {
         SetupSVG(event);
