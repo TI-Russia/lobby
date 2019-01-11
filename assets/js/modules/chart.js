@@ -364,16 +364,24 @@ function doChart() {
         .translate(0,0)
         .scale(1);
 
+
     var zoom_handler = d3.zoom()
-        .scaleExtent([1, 5])
+
+
+    var vb_w=document.getElementById("chart").viewBox.baseVal.width,
+        vb_h=document.getElementById("chart").viewBox.baseVal.height
+
+    if (vb_w<450) vb_h=1600
+    vb_w=svg1.attr("width")
+
+    zoom_handler.scaleExtent([1, 5]).translateExtent([[0,0],[vb_w,vb_h]])
         .on("zoom", function () {
-            k = d3.event.transform.k
             zoom.zoom_actions(g,k)})
         .on("end", function () {
             k = d3.event.transform.k
-            zoom.zoomEndFunction(labels,clearClusters)
+            zoom.zoomEndFunction(labels,clearClusters,zoom_handler)
         })
-        .touchable(touched)
+
 
     d3.select('#zoom-in').on('click', function() {
         d3.event.preventDefault();
@@ -392,6 +400,7 @@ function doChart() {
 
 
     //zoom_handler(svg1)
+
         svg1.call(zoom_handler)
             .on("wheel.zoom", null)
             //.on("touchmove", null)
@@ -400,7 +409,7 @@ function doChart() {
     //svg1.on("touchstart", nozoom)
     function touched() {
             console.log(k)
-            if (k==1) return null
+            if (k==1) return false
         else return true
     }
 
@@ -421,9 +430,10 @@ function doChart() {
             client_width=document.documentElement.clientWidth,
             client_height=document.documentElement.clientHeight-sumHeight
 
+
         client_width<=812 ? width=min_width : width=client_width;
         client_width<=450 ? width=client_width : width=width;
-        height = (client_width<=450 && !resize) ? 1600 : min_height;
+        height = (client_width<=450 && !resize) ? client_height+100 : min_height;
         (client_height>=height && client_height>=min_height) ? height=client_height : height;
 
         d3.select('#clusters svg#chart')
@@ -438,11 +448,11 @@ function doChart() {
             maxY=600
         }
         else {
-            d3.select('#clusters svg#chart').attr('viewBox',null)
+            d3.select('#clusters svg#chart').attr('viewBox','0 0 320 400')
                 .attr('preserveAspectRatio', 'xMidYMid meet')
                 .attr("class","mobile")
             maxX=width
-            maxY=height
+            maxY=1600
         }
     }
 
