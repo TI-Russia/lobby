@@ -55,6 +55,7 @@ define(['ShowedClusters','d3'], function(ShowedClusters,d3 ) {
     }
 
     function zoom_reset(labels,svg1,zoom_handler,initialTransform) {
+        d3.select("svg#chart.desktop").attr('viewBox','0 0 1000 600')
         labels.transition().style("opacity",0)
         svg1.transition()
             .duration(750)

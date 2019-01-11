@@ -125,7 +125,7 @@ function doChart() {
 
     var nodes2 = nodes.concat(clearClusters);//merge nodes and clusters signs
 
-    rows = (client_width<750) ? 30 : 8
+    rows = (client_width<450) ? 30 : 8
 
     var columnsTotal=9
     var xScale = d3.scaleLinear()
@@ -160,7 +160,7 @@ function doChart() {
         }*/
 
 
-        (width<=750) ? GetCoordinatesForMobile(el) : GetCoordinatesForDesktop(el)
+        (width<=450) ? GetCoordinatesForMobile(el) : GetCoordinatesForDesktop(el)
 
 
     })
@@ -207,31 +207,31 @@ function doChart() {
         switch (curr.clusterParent) {
             case 11550://федеральное 2
                 curr.row =8.5
-                curr.col = 7.5
+                curr.col = 3
                 break;
             case 11593://региональное 3
                 curr.row =13.5
-                curr.col = 7.5
+                curr.col = 3
                 break;
             case 11679://отраслевое 1
                 curr.row =2.5
-                curr.col = 8
+                curr.col = 3
                 break;
             case 11727://общ-полит 4
                 curr.row =18.5
-                curr.col = 7.5
+                curr.col = 3
                 break;
             case 11739://фин-пром группы 5
                 curr.row =23.5
-                curr.col = 7.5
+                curr.col = 3
                 break;
             default: // не выявлено 6
                 curr.row =28
-                curr.col = 7.5
+                curr.col = 3
         }
         if (curr.cluster==11738) { //иностранное лобби
             curr.row =30
-            curr.col = 7.5
+            curr.col = 3
         }
         return element
     }
@@ -301,7 +301,7 @@ function doChart() {
 
     var first_end=0
 /*
-    if (clientWidth<=750) {
+    if (clientWidth<=450) {
         nodes = nodes.filter(x => x.clusterParent == '7753')
         clearClusters=clearClusters.filter(x => x.clusterParent == '7753')
     }
@@ -391,11 +391,11 @@ function doChart() {
     svg1.call(zoom_handler).on("wheel.zoom", null)
 
     window.onresize=function (event) {
-        SetupSVG();
+        SetupSVG(event);
 
     }
 
-    function SetupSVG() {
+    function SetupSVG(resize) {
         var headerHeight=document.getElementsByTagName('header')[0].clientHeight,
             controlsHeight=document.getElementById('controls').clientHeight,
             footerHeight=document.getElementsByClassName('footer')[0].clientHeight,
@@ -407,24 +407,26 @@ function doChart() {
             client_height=document.documentElement.clientHeight-sumHeight
 
         client_width<=812 ? width=min_width : width=client_width;
-        client_width<=750 ? width=client_width : width=width;
-        height = (client_width<=750) ? 1600 : min_height;
+        client_width<=450 ? width=client_width : width=width;
+        height = (client_width<=450 && !resize) ? 1600 : min_height;
         (client_height>=height && client_height>=min_height) ? height=client_height : height;
 
         d3.select('#clusters svg#chart')
             .attr('height', height)
             .attr('width', width)
 
-        if   (client_width>750){
+        if   (client_width>450 || resize){
             d3.select('#clusters svg#chart').attr('viewBox','0 0 1000 600')
                 .attr('preserveAspectRatio', 'xMidYMid meet')
+                .attr("class","desktop")
             maxX=800
             maxY=600
         }
         else {
             d3.select('#clusters svg#chart').attr('viewBox',null)
                 .attr('preserveAspectRatio', 'xMidYMid meet')
-            maxX=width-200
+                .attr("class","mobile")
+            maxX=width
             maxY=height
         }
     }
@@ -949,7 +951,7 @@ function doChart() {
 
             var height_loc
 
-            if (width<750) height_loc=document.documentElement.clientHeight-80
+            if (width<450) height_loc=document.documentElement.clientHeight-80
             else height_loc= height
 
             var bbox = active.node().getBBox(),
@@ -969,7 +971,7 @@ function doChart() {
                 .scale(scale);
 
             svg1.transition()
-                .duration(750)
+                .duration(450)
                 .call(zoom_handler.transform, transform);
         }
 
@@ -1097,8 +1099,8 @@ function doChart() {
         }
 
         function hightlightOff() {
-            if (client_width>750)
-                d3.select('#clusters svg#chart').attr('viewBox','0 0 1000 600')
+            if (client_width>450)
+
             conv_slider.reset()
             age_slider.reset()
             d3.selectAll("#search").property("value","")

@@ -129,7 +129,6 @@ define(["d3"], function(d3) {
         lobby = rawdata.map((d,i) => {
             var aliasRow = aliases.find(x=>x.name==d.name)
             var alias = (aliasRow && aliasRow.alias!="null") ? aliasRow.alias : d.name
-            console.log( " name: ", d.name," alias: ", alias)
             return {
                 index:i,
                 id: d.id,
@@ -141,7 +140,6 @@ define(["d3"], function(d3) {
                 alias:alias
             }
         })
-        console.log("lobby from data ",lobby)
         lobby_level_0=lobby.filter(x=>x.level==0)
     }
 

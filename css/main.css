@@ -11,8 +11,8 @@ Error: Undefined variable: "$color-white".
 7:   font-family: "Helios-Cond-Regular", "Helvetica Neue";
 8:   line-height: 1;
 9:   overflow: hidden;
-10: }
-11: 
+10:   min-width: 812px;
+11: }
 
 Backtrace:
 main.scss:6
@@ -67,4 +67,4 @@ C:/Ruby24-x64/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$color-white\".\A         on line 6 of main.scss\A \A 1: @charset \"utf-8\";\A 2: \A 3: html{overflow-y: auto;}\A 4: \A 5: body{\A 6:   background: $color-white;\A 7:   font-family: \"Helios-Cond-Regular\", \"Helvetica Neue\";\A 8:   line-height: 1;\A 9:   overflow: hidden;\A 10: }\A 11: "; }
+  content: "Error: Undefined variable: \"$color-white\".\A         on line 6 of main.scss\A \A 1: @charset \"utf-8\";\A 2: \A 3: html{overflow-y: auto;}\A 4: \A 5: body{\A 6:   background: $color-white;\A 7:   font-family: \"Helios-Cond-Regular\", \"Helvetica Neue\";\A 8:   line-height: 1;\A 9:   overflow: hidden;\A 10:   min-width: 812px;\A 11: }"; }
