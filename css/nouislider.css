@@ -75,7 +75,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
 /* Slider size and handle placement;
  */
 .noUi-horizontal {
-  height: 18px; }
+  height: 18px;
+  margin-right: 23px; }
 
 .noUi-horizontal .noUi-handle {
   width: 34px;
@@ -93,7 +94,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
   top: -17px; }
 
 html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
-  right: -9px;
+  right: -5px;
   left: auto; }
 
 /* Styling;

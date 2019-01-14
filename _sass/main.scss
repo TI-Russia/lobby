@@ -174,9 +174,26 @@ div#controls{
         box-shadow: none;
       }
     }
+
+    #search{
+      border-right: none;
+      border-left: none;
+      border-top: none;
+      box-shadow: none;
+    }
+
     .search_icon{
       height: 1.8rem;
     }
+    .convocations, .age{
+      width: 152px;
+      height: 24px;
+      margin-bottom: 20px;
+      margin-right: 0px;
+    }
+
+    &.sliders {padding-right: 0;}
+
   }
 }
 
@@ -352,12 +369,11 @@ circle:hover {cursor:pointer;}
 }
 
 
-div.convocations, div.age{
-  width: 152px;
-  height: 24px;
-  margin-bottom: 20px;
-}
-.slider_label {text-align: center; font-size: 12px;}
+
+.slider_label {
+  text-align: center;
+  font-size: 12px;
+  width: 135px;}
 
 .capitalizeFirsLetter:first-letter{
   text-transform: capitalize;
