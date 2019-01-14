@@ -8,7 +8,7 @@ body{
   line-height: 1;
   overflow: hidden;
   min-width: 812px;
-  @include until($tablet){
+  @include until($desktop){
     min-width: auto;
   }
 }
@@ -29,10 +29,15 @@ header {
       display: flex;
       align-items: center;
       justify-content: center;
+      &.c3{
+        justify-content: flex-end;
+        }
     }
   }
   .c1 {
     flex: 0 0 419px;
+    margin-left: 60px;
+    padding-left: 0;
     h1 {
       a,a:hover{
         text-decoration: none;
@@ -41,16 +46,35 @@ header {
       font-size: 44px;
       text-transform: uppercase;
       font-family: "Helios-Cond-Bold", "Helvetica Neue", serif;
+      letter-spacing: 0.02em;
       @include until($tablet){
         font-size: 20px;
       }
     }
+    @include until($desktop){
+      margin-left: 32px;
+    }
     @include until($tablet){
       flex: 0 0 205px;
+      margin-left: 16px;
     }
+
   }
   .c2 {
     flex: 0 0 223px;
+    font-size: 20px;
+    line-height: 19px;
+    padding-left: 6px;
+  }
+  .c3{
+    font-size: 20px;
+    line-height: 19px;
+    padding-right: 33px;
+    margin-bottom: 19px;
+    @include until($tablet){
+      padding-right: 16px;
+      margin-bottom: 4px;
+    }
   }
   .c4, .c5, .c6 {
     height: 87px;
@@ -117,8 +141,14 @@ div#controls{
   //position: sticky;
   //position: -webkit-sticky;
   //top: 0;
-  padding: 16px 16px 0 16px;
-  margin: 0;
+  padding: 16px 44px 0 16px;
+  margin: 0 0 0 44px;
+  @include until($desktop){
+    margin-left: 16px;
+  }
+  @include until($tablet){
+    margin-left: 0px;
+  }
 
   select {width: 152px;}
   .column{

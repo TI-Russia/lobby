@@ -18,7 +18,6 @@
 
 .intro-open{
   overflow: hidden;
-  position: fixed;
 }
 
 .cd-intro {
@@ -31,6 +30,9 @@
   display: table;
   background: $color-white;
   overflow: hidden;
+  @include until($tablet){
+    top: 48px;
+  }
 
   .image-cropper{
     position: fixed;
@@ -76,6 +78,10 @@
     .block {
       width: 636px;
       margin: 0 auto;
+      @include until($tablet){
+        width: auto;
+        padding: 16px;
+      }
     }
     a{text-decoration: none;}
     p{margin-bottom: 30px;}

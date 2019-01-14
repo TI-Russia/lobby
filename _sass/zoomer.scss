@@ -35,13 +35,19 @@
   float: right;
 }
 .zoomer-top .zoomer-control {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .zoomer-bottom .zoomer-control {
   margin-bottom: 10px;
 }
 .zoomer-left .zoomer-control {
-  margin-left: 10px;
+  margin-left: 60px;
+  @include until($desktop){
+    margin-left: 32px;
+  }
+  @include until($tablet){
+    margin-left: 16px;
+  }
 }
 .zoomer-right .zoomer-control {
   margin-right: 10px;
