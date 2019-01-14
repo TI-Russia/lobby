@@ -1,10 +1,11 @@
 @charset "utf-8";
 
 html{overflow-y: auto;}
-
+body, button, select, input{
+  font-family: "Helios-Cond-Regular", "Helvetica Neue";
+}
 body{
   background: $color-white;
-  font-family: "Helios-Cond-Regular", "Helvetica Neue";
   line-height: 1;
   overflow: hidden;
   min-width: 812px;
@@ -141,7 +142,7 @@ div#controls{
   //position: sticky;
   //position: -webkit-sticky;
   //top: 0;
-  padding: 16px 44px 0 16px;
+   padding: 16px 44px 0 16px;
   margin: 0 0 0 44px;
   @include until($desktop){
     margin-left: 16px;
