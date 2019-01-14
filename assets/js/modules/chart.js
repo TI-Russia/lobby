@@ -848,7 +848,7 @@ function doChart() {
                     d3.select(this).remove()
                 }})
 
-        onchange()
+        onchange("init")
 
 
         function PrependOption(d){
@@ -1000,7 +1000,8 @@ function doChart() {
                 .call(zoom_handler.transform, transform);
         }
 
-        function onchange() {
+        function onchange(init) {
+            if (!init) d3.select("#clear").classed("is-hidden",false)
             var i_search = d3.select('input#search').property('value')
             var s_lobby = d3.select('select#select_lobby').property('value')
             if (s_lobby!=-1 && s_lobby!="") ZoomeToLobby(s_lobby)
@@ -1124,7 +1125,8 @@ function doChart() {
         }
 
         function hightlightOff() {
-            if (client_width>450)
+            d3.select("#clear").classed("is-hidden",true)
+            //if (client_width>450)
 
             conv_slider.reset()
             age_slider.reset()
