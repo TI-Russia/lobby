@@ -125,13 +125,23 @@ div#controls{
     padding: 0;
     padding-right: 16px;
 
-    button{
+    button, .awesomplete {
       margin-bottom: 20px;
     };
+
+    .select{
+      margin-bottom: 12px;
+    }
 
     #clear{
       border: none;
       color: $color-red;
+      &:focus{
+        box-shadow: none;
+      }
+    }
+    .search_icon{
+      height: 1.8rem;
     }
   }
 }
@@ -290,7 +300,11 @@ circle:hover {cursor:pointer;}
 }
 
 
-div.convocations, div.age{width: 152px;}
+div.convocations, div.age{
+  width: 152px;
+  height: 30px;
+  margin-bottom: 20px;
+}
 .slider_label {text-align: center; font-size: 12px;}
 
 .capitalizeFirsLetter:first-letter{

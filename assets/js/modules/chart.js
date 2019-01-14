@@ -29,6 +29,13 @@ function doChart() {
         .attr('id','chart')
         .append('g')
 
+        svg.append("image")
+        .attr("xlink:href","assets/images/legend.svg")
+        .attr("width", 202)
+        .attr("height", 41)
+            .attr("x", 0)
+            .attr("y", 360)
+
     SetupSVG()
 
     var padding = 2, // separation between same-color nodes
@@ -403,21 +410,14 @@ function doChart() {
 
         svg1.call(zoom_handler)
             .on("wheel.zoom", null)
-            //.on("touchmove", null)
 
-
-    //svg1.on("touchstart", nozoom)
-    function touched() {
-            console.log(k)
-            if (k==1) return false
-        else return true
-    }
 
 
     window.onresize=function (event) {
         SetupSVG(event);
 
     }
+
 
     function SetupSVG(resize) {
         var headerHeight=document.getElementsByTagName('header')[0].clientHeight,
@@ -967,7 +967,7 @@ function doChart() {
         }
 
         function ZoomeToLobby(active){
-            svg1.attr('viewBox',null)
+            //svg1.attr('viewBox',null)
             svg1.call(zoom_handler.transform, initialTransform);
 
             if (!active) return

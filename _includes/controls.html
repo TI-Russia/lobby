@@ -1,6 +1,6 @@
 <div id="controls" class="columns is-multiline is-vcentered">
     <div class="column is-narrow">
-        <div class="field is-grouped is-hidden-mobile" >
+        <div class="field is-grouped is-hidden-mobile">
             <div class="buttons  has-addons control" id="fraction">
                 <button class="button is-small is-color-blue" value="Единая Россия">ЕР</button>
                 <button class="button is-small  is-color-red" value="КПРФ">КПРФ</button>
@@ -8,12 +8,19 @@
                 <button class="button is-small  is-color-yellow" value="ЛДПР">ЛДПР</button>
                 <button class="button is-small is-blue" value="Вне фракций">Вне фракции</button>
             </div>
-
+        </div>
+    </div>
+    <div class="column is-narrow">
+        <div class="field is-grouped is-hidden-mobile">
             <div class="buttons  has-addons control" id="method">
                 <button value="партийный список" class="button is-small is-color-white" id="spis">Списочники</button>
-                <button value="одномандатный округ" class="button is-small is-color-white" id="odnmnd">Одномандатники</button>
+                <button value="одномандатный округ" class="button is-small is-color-white" id="odnmnd">Одномандатники
+                </button>
             </div>
-
+        </div>
+    </div>
+    <div class="column is-narrow">
+        <div class="field is-grouped is-hidden-mobile">
             <div class="select is-small control">
                 <select id="select_committees"></select>
             </div>
@@ -25,11 +32,15 @@
                 <button class="button is-small is-color-white" value="M">М</button>
                 <button class="button is-small is-color-white" value="F">Ж</button>
             </div>
+        </div>
+    </div>
+    <div class="column is-narrow">
+        <div class="field is-grouped is-hidden-mobile">
             <div class="control age">
                 <div class="slider_label">
                     <span id="age-slider-snap-value-lower"></span> -
                     <span id="age-slider-snap-value-upper"></span>
-                     лет
+                    лет
                 </div>
                 <div id="age"></div>
 
@@ -38,16 +49,18 @@
                 <div class="slider_label">
                     <span id="slider-snap-value-lower"></span>
                     -
-                    <span id="slider-snap-value-upper"></span> созывов</div>
+                    <span id="slider-snap-value-upper"></span> созывов
+                </div>
                 <div id="convocations"></div>
-
-
             </div>
-            <div class="control"></div>
+        </div>
+    </div>
+    <div class="column is-narrow">
+        <div class="field is-grouped is-hidden-mobile">
             <div class="control has-icons-right ">
                 <input class="input is-small" type="text" id="search" name="q" placeholder="Жириновский"
                        size="25">
-                <span class="icon is-small is-right">
+                <span class="icon is-small is-right search_icon">
                     <i class="fas fa-search"></i>
                 </span>
             </div>
@@ -58,12 +71,6 @@
             <div class="select is-small">
                 <select id="select_lobby"></select>
             </div>
-            <!--<div class="select is-small">
-                <select id="select_election_method"></select>
-            </div>-->
-            <!--<div class="select is-small">
-                <select id="select_fraction"></select>
-            </div>-->
             <button class="button is-small is-color-white" id="clear">
                 <span class="icon">
                     <i class="fas fa-times"></i>
