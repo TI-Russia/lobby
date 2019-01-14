@@ -1015,7 +1015,7 @@ function doChart() {
 
             var b_fraction, b_method, b_gender
 
-            if (d3.selectAll('#fraction .is-active').node()!=null)
+            if (d3.selectAll('#fraction .is-active').node()!=null && d3.selectAll('#fraction .is-active').size()==1)
                 b_fraction=d3.select('#fraction .is-active').property('value')
 
             if (d3.selectAll('#method .is-active').node()!=null)
@@ -1130,6 +1130,7 @@ function doChart() {
             age_slider.reset()
             d3.selectAll("#search").property("value","")
             d3.selectAll("#controls button").classed("is-active",false)
+            d3.selectAll("#controls #fraction button").classed("is-active",true)
             d3.selectAll("select").property("selectedIndex", 0)
             circles.transition().attr("class", d=>d.color).style("opacity",1)
             var n = ShowedClusters(clearClusters,k).map(x=>x.cluster)
