@@ -182,6 +182,10 @@ div#clusters>svg{
   border-right: none;
 }
 
+div#presets{
+  padding: 10px;
+}
+
 div#card {
   font-family: Arial;
   font-size: $font-size-m;
@@ -267,12 +271,26 @@ div#card {
 
   .copy{
     opacity: 0.3;
+    padding: 16px 60px;
+    @include until($desktop){
+      padding: 16px 32px;
+    }
+    @include until($tablet){
+      padding: 16px 16px;
+      flex: 0 0 190px;
+    }
   }
 
   .social{
     display: flex;
     align-items: self-start;
     font-size: 24px;
+    @include until($desktop){
+      margin-left: 32px;
+    }
+    @include until($tablet){
+      margin-left: 16px;
+    }
 
     a{
       background: #0f81cc;
