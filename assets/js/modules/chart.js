@@ -423,7 +423,7 @@ function doChart() {
         var headerHeight=document.getElementsByTagName('header')[0].clientHeight,
             controlsHeight=document.getElementById('controls').clientHeight,
             footerHeight=document.getElementsByClassName('footer')[0].clientHeight,
-            sumHeight=headerHeight+footerHeight+controlsHeight+100
+            sumHeight=headerHeight+footerHeight+controlsHeight+24
 
         var min_width = 812,
             min_height = 600;
