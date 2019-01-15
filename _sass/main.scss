@@ -13,6 +13,12 @@ body{
     min-width: auto;
   }
 }
+a{
+  &:hover{
+    opacity: 0.8;
+    color:inherit;
+  }
+}
 
 header {
   background: $color-blue;
@@ -80,19 +86,24 @@ header {
   .c4, .c5, .c6 {
     height: 67px;
     flex: 0 0 67px;
+    padding: 0;
   }
-  .c4 {
+  a.c4 {
     background-color: #4C77A6;
   }
-  .c5 {
+  a.c5 {
     background-color: #1FB8EA;
   }
-  .c6 {
+  a.c6 {
     background-color: #435695;
   }
   .icon {
     color:$color-white;
     font-size:24px;
+  }
+  .icon.is-large{
+    height: 67px;
+    width: 67px;
   }
 }
 
@@ -319,7 +330,6 @@ div#card {
   }
 
   .copy{
-    opacity: 0.3;
     padding: 16px 60px;
     @include until($desktop){
       padding: 16px 32px;
