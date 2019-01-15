@@ -1172,6 +1172,7 @@ function doChart() {
         function hightlightOff() {
             d3.select("#clear").classed("is-hidden",true)
             //if (client_width>450)
+            svg1.attr("data-current_enclose",null)
 
             conv_slider.reset()
             age_slider.reset()
