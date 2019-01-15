@@ -277,6 +277,15 @@ div#card {
       width: 100px;
     }
   }
+  .close_btn{
+    position: fixed;
+    top:0px;
+    right: 0px;
+    cursor: pointer;
+    &:hover{
+      opacity: 0.8;
+    }
+  }
 
 }
 

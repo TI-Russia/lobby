@@ -16,7 +16,11 @@ function ShowCard(depInfo, depRating, depLobbys) {
 
     d3.selectAll("#card .hidden").classed("hidden",false)
 
-    var close_btn=card.select(".modal-close").on("click",() =>  card.attr("class","modal"))
+    var close_btn=card.select(".close_btn")
+        .on("click",() =>{
+            document.getElementById('card').scrollTop = 0; // scroll to top
+            card.attr("class","modal")
+        })
 
     /*back button should close modal*/
     window.history.pushState('forward', null, './#id'+depInfo.person);
