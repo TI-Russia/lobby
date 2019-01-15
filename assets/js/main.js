@@ -24,13 +24,13 @@ require.config({
     }
 });
 
-require(["d3","jquery","intro","chart","vk","fb"], function(d3,$,intro,chart,vk,fb) {
+require(["d3","jquery","intro","chart","vk","fb"], function(d3,$,intro,chart,vk,FB) {
     window.d3 = d3;
     intro
     chart
     vk
     document.getElementById('vk_share_button').innerHTML = VK.Share.button({noparse:false}, {type: 'custom ', text:"<span class='icon is-large'><i class='fab fa-vk'></i></span>"});
-    fb
+
 
 });
 
