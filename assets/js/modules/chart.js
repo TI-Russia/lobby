@@ -980,7 +980,6 @@ function doChart() {
                 else return
                 if (svg1.attr("data-current_enclose")==parent.id) return
                 svg1.attr("data-current_enclose",parent.id)
-                debugger
             }
 
 
@@ -1118,8 +1117,6 @@ function doChart() {
                     gender = link.getAttribute("data-gender"),
                     fio = link.getAttribute("data-fio"),
                     fraction = link.getAttribute("data-fraction")
-                debugger
-
 
                 link.addEventListener('click', function (e) {
                     e.preventDefault()
