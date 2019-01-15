@@ -40,8 +40,10 @@ function ShowCard(depInfo, depRating, depLobbys) {
     law_number_vnes.text(rating.vnes)
     law_number_podpis.text(rating.podpis)
     if (rating.podpis==0) HideBlockByClass("law_signed")
+    if (rating.no==true) HideBlockByClass("laws_block")
     sred_day.text(Math.floor(String(rating.sred_day).replace(',','.')))
     lobby.text(lobbyText)
+    if (!lobbyText) HideBlockByClass("lobby_block")
     bio.html(info.bio)
     relations.html(info.relations)
     submitted.html(info.submitted)
@@ -79,7 +81,7 @@ function ShowCard(depInfo, depRating, depLobbys) {
     }
 
     function HideBlockByClass(classname) {
-        d3.selectAll("."+classname+"").classed("hidden",true)
+        d3.selectAll("."+classname+"").classed("is-hidden",true)
     }
 
 }

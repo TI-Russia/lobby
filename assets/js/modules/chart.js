@@ -641,7 +641,8 @@ function doChart() {
         var depInfo=GetDepData(d.id)
         var depRating=GetRating(depInfo.person)
         var depLobbys=GetLobbyText(depInfo.groups)
-        var t = new ShowCard(depInfo, depRating, depLobbys)}
+        var t = new ShowCard(depInfo, depRating, depLobbys)
+    }
 
 
     /*
