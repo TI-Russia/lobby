@@ -18,11 +18,14 @@
 
 .intro-open{
   overflow: hidden;
+  position: fixed;
+  right: 0;
+  left: 0;
 }
 
 .cd-intro {
   position: fixed;
-  top: 87px;
+  top: 67px;
   left: 0;
   height: 100vh;
   z-index: 5;
@@ -72,7 +75,7 @@
   .cd-intro-content {
     display: table-cell;
     vertical-align: middle;
-    text-align: justify;
+    text-align: left;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     .block {

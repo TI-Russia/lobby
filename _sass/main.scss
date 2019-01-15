@@ -22,7 +22,7 @@ header {
   }
   .columns{
     margin: 0 !important;
-    height: 87px;
+    height: 67px;
     @include until($tablet){
       height: 48px;
     }
@@ -78,8 +78,8 @@ header {
     }
   }
   .c4, .c5, .c6 {
-    height: 87px;
-    flex: 0 0 87px;
+    height: 67px;
+    flex: 0 0 67px;
   }
   .c4 {
     background-color: #4C77A6;
@@ -283,7 +283,13 @@ div#card {
 .footer{
   background: inherit;
   padding: 0;
+  padding-bottom: 16px;
   font-size: 16px;
+  .columns{
+    @include until($tablet){
+      margin: 0;
+      }
+  }
 
   .icon{
     opacity: 1;
@@ -297,20 +303,29 @@ div#card {
       padding: 16px 32px;
     }
     @include until($tablet){
-      padding: 16px 16px;
+      padding: 16px 16px 0 16px;
       flex: 0 0 190px;
+    }
+    &.is-pulled-right{
+      @include until($tablet){
+        //padding-bottom: 16px;
+        float: none !important;
+      }
     }
   }
 
   .social{
     display: flex;
     align-items: self-start;
+    margin-right: -8px;
+    padding-right: 0;
     font-size: 24px;
     @include until($desktop){
       margin-left: 32px;
     }
     @include until($tablet){
-      margin-left: 16px;
+      margin-left: 0px;
+      padding: 16px 16px 0 16px;
     }
 
     a{

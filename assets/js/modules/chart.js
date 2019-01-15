@@ -968,11 +968,26 @@ function doChart() {
 
         function ZoomeToLobby(active){
             //svg1.attr('viewBox',null)
-            svg1.call(zoom_handler.transform, initialTransform);
+
 
             if (!active) return
-            active = d3.select("#enclose"+active);
-            if (!active.node()) return
+            active_enclose = d3.select("#enclose"+active);//find enclose
+            if (!active_enclose.node()) {
+                var lob = nodes.find(x=>x.cluster==active || x.clusterMin==active)
+                var parent = lobby.find(x=>x.id == lob.clusterParent)
+                if (parent) active_enclose = d3.select("#enclose"+parent.id)
+                else return
+                if (svg1.attr("data-current_enclose")==parent.id) return
+                svg1.attr("data-current_enclose",parent.id)
+                debugger
+            }
+
+
+
+            svg1.call(zoom_handler.transform, initialTransform);
+
+            active=active_enclose
+
 
             var height_loc
 
