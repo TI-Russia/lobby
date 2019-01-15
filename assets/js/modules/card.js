@@ -14,7 +14,7 @@ function ShowCard(depInfo, depRating, depLobbys) {
         relations=card.select("#relations"),
         submitted=card.select("#submitted")
 
-    d3.selectAll("#card .hidden").classed("hidden",false)
+    d3.selectAll("#card .is-hidden").classed("is-hidden",false)
 
     var close_btn=card.select(".close_btn")
         .on("click",() =>{

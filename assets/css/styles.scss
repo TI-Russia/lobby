@@ -3,6 +3,7 @@
 $baseurl: "{{ site.baseurl }}";
 @import "vars";
 @import "bulma/bulma.sass";
+@import "image";
 @import "fonts";
 
 @import "common";

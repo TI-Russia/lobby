@@ -3,16 +3,30 @@
         <i class="fas fa-times fa-lg"></i>
     </div>
     <div class="columns">
-        <div class="column is-4" id="photo"><div class="image-cropper"><img width="128" height="128"></div></div>
+        <div class="column is-4" id="photo">
+            <div class="image-cropper">
+                <div class="color-black">
+                    <img width="128" height="128">
+                </div>
+            </div>
+        </div>
         <div class="column"><span id="fraction_text"></span><br>
             <h1 id="fullname"></h1></div>
     </div>
     <div id="position"></div>
-    <div class="columns is-vcentered is-mobile laws_block" id="laws">
-        <div class="column law_count is-2 is-4-mobile" id="law_number_vnes"></div>
-        <div class="column law_text is-3 is-4-mobile">законов <br> выдвинуто</div>
-        <div class="column law_count is-2 is-4-mobile law_signed" id="law_number_podpis"></div>
-        <div class="column law_text law_signed">из них приняты <br> в среднем за <span id="sred_day"></span> дней</div>
+    <div class="columns is-vcentered laws_block is-multiline is-mobile" id="laws">
+        <div class="column is-full-mobile is-narrow-tablet">
+            <div class="columns is-mobile is-vcentered">
+                <div class="column is-narrow-tablet is-3-mobile law_count" id="law_number_vnes"></div>
+                <div class="column is-8-mobile is-narrow-tablet law_text">законов <br> выдвинуто</div>
+            </div>
+        </div>
+        <div class="column is-full-mobile is-half-tablet">
+            <div class="columns is-mobile is-vcentered">
+                <div class="column is-narrow-tablet is-3-mobile law_count law_signed" id="law_number_podpis"></div>
+                <div class="column  is-8-mobile is-narrow-tablet law_text law_signed">из них приняты <br> в среднем за <span id="sred_day"></span> дней</div>
+            </div>
+        </div>
     </div>
     <div class="lobby_block">
         <h2>Лобби</h2>

@@ -235,12 +235,18 @@ div#card {
     font-size: $font-size-h1;
     line-height: 28px;
     font-weight: bold;
+    @include until($tablet){
+      font-size: 16px;
+    }
   }
 
   h2 {
     margin-top: $offset-l;
     font-weight: bold;
     line-height: 1.75rem;
+    @include until($tablet){
+
+    }
   }
 
   span#fraction_text{
@@ -249,6 +255,9 @@ div#card {
     &.kprf{color: $color-red;}
     &.ldpr{color: $color-yellow;}
     &.sr{color: $color-orange;}
+    @include until($tablet){
+      font-size: 12px;
+    }
   }
 
   .law_count{
@@ -256,6 +265,9 @@ div#card {
     line-height: 57px;
     text-align: center;
     font-weight: bold;
+    @include until($tablet){
+      font-size: 48px;
+    }
   }
 
   .law_text{
@@ -267,16 +279,17 @@ div#card {
     margin-bottom: 0;
   }
 
-  .image-cropper{
-
-    img {
-      object-fit: cover;
-      object-position: top;
-      border-radius: 50%;
-      height: 100px;
-      width: 100px;
+  .column{
+    @include until($tablet){
+      padding-bottom: 0;
     }
   }
+
+
+  .image-cropper{
+    position: relative;
+  }
+
   .close_btn{
     position: fixed;
     top:0px;
