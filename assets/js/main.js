@@ -1,10 +1,10 @@
 require.config({
     paths: {
-        d3: "d3",
-        jquery: 'jquery',
-        floatingTooltip:'tooltip',
-        slider:'nouislider',
-        awesomeplete: 'awesomplete',
+        d3: "vendor/d3",
+        jquery: 'vendor/jquery',
+        floatingTooltip:'vendor/tooltip',
+        slider:'vendor/nouislider',
+        awesomeplete: 'vendor/awesomplete',
         intro: "modules/intro",
         chart: "modules/chart",
         ShowCard: "modules/card",
@@ -12,7 +12,6 @@ require.config({
         ShowedClusters: "tools/showed_clusters",
         zoom:"tools/zoom",
         vk:"vendor/vk",
-        fb:"vendor/facebook"
     },
     shim: {
         awesomeplete:{
@@ -24,7 +23,7 @@ require.config({
     }
 });
 
-require(["d3","jquery","intro","chart","vk","fb"], function(d3,$,intro,chart,vk,FB) {
+require(["d3","jquery","intro","chart","vk"], function(d3,$,intro,chart,vk) {
     window.d3 = d3;
     intro
     chart
