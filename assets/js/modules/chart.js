@@ -1106,22 +1106,54 @@ function doChart() {
 
         function PresetsHandler() {
 
-            var preset1 = document.getElementById("preset1")
-            preset1.addEventListener('click', function (e) {
-                e.preventDefault()
-                hightlightOff()
-                age_slider.set([23, 40]);
-            });
+            d3.selectAll("#presets-first a").nodes().forEach(function (link) {
+                var id = link.id,
+                    lobby = link.getAttribute("data-lobby"),
+                    age_min = link.getAttribute("data-age_min"),
+                    age_max = link.getAttribute("data-age_max"),
+                    conv_min = link.getAttribute("data-conv_min"),
+                    conv_max = link.getAttribute("data-conv_max"),
+                    method = link.getAttribute("data-method"),
+                    comittee = link.getAttribute("data-comittee"),
+                    gender = link.getAttribute("data-gender"),
+                    fio = link.getAttribute("data-fio"),
+                    fraction = link.getAttribute("data-fraction")
+                debugger
 
-            var preset2 = document.getElementById("preset2")
-            preset2.addEventListener('click', function (e) {
-                e.preventDefault()
-                hightlightOff()
-                d3.select('#method button#odnmnd').classed("is-active",true)
-                d3.select('select#select_lobby').property('value','7773')
-                onchange()
-            });
 
+                link.addEventListener('click', function (e) {
+                    e.preventDefault()
+                    hightlightOff()
+
+                    if (age_min && age_max)
+                    age_slider.set([age_min, age_max]);
+
+                    if (conv_min && conv_max)
+                    conv_slider.set([conv_min, conv_max]);
+
+                    if (method)
+                    d3.select('#method button[value="'+method+'"]').classed("is-active",true)
+
+                    if (fraction)
+                    d3.selectAll('#fraction button').classed("is-active",false)
+                    d3.select('#fraction button[value="'+fraction+'"]').classed("is-active",true)
+
+                    if (comittee)
+                    d3.select('select#select_committees').property('value',comittee)
+
+                    if (gender)
+                    d3.select('#gender button[value="'+gender+'"]').classed("is-active",true)
+
+                    if (fio)
+                    d3.select('input#search').property('value',fio)
+
+                    if (lobby)
+                    d3.select('select#select_lobby').property('value',+lobby)
+
+                    onchange()
+                });
+
+            })
         }
 
         function hightlightOn(spot) {
