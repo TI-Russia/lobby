@@ -11,7 +11,8 @@ require.config({
         data: "modules/data",
         ShowedClusters: "tools/showed_clusters",
         zoom:"tools/zoom",
-        vk:"vendor/vk"
+        vk:"vendor/vk",
+        fb:"vendor/facebook"
     },
     shim: {
         awesomeplete:{
@@ -23,11 +24,13 @@ require.config({
     }
 });
 
-require(["d3","jquery","intro","chart","vk"], function(d3,$,intro,chart,vk) {
+require(["d3","jquery","intro","chart","vk","fb"], function(d3,$,intro,chart,vk,fb) {
     window.d3 = d3;
     intro
     chart
     vk
     document.getElementById('vk_share_button').innerHTML = VK.Share.button({noparse:false}, {type: 'custom ', text:"<span class='icon is-large'><i class='fab fa-vk'></i></span>"});
+    fb
+
 });
 
