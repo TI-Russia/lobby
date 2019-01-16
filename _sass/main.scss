@@ -28,21 +28,26 @@ header {
   }
   .columns{
     margin: 0 !important;
-    height: 67px;
+    height: 48px;
     @include until($tablet){
       height: 48px;
     }
     .column{
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
+      padding-bottom:7px ;
+      padding-top:7px ;
+      @include until($tablet){
+        align-items: center;
+      }
       &.c3{
         justify-content: flex-end;
         }
     }
   }
   .c1 {
-    flex: 0 0 419px;
+    flex: 0 0 336px;
     margin-left: 60px;
     padding-left: 0;
     h1 {
@@ -50,7 +55,7 @@ header {
         text-decoration: none;
         color:$color-white;
       }
-      font-size: 44px;
+      font-size: 35px;
       text-transform: uppercase;
       font-family: "Helios-Cond-Bold", "Helvetica Neue", serif;
       letter-spacing: 0.02em;
@@ -62,14 +67,14 @@ header {
       margin-left: 32px;
     }
     @include until($tablet){
-      flex: 0 0 205px;
+      flex: 0 0 210px;
       margin-left: 16px;
     }
 
   }
   .c2 {
-    flex: 0 0 223px;
-    font-size: 20px;
+    flex: 0 0 169px;
+    font-size: 16px;
     line-height: 19px;
     padding-left: 6px;
   }
@@ -77,16 +82,18 @@ header {
     font-size: 20px;
     line-height: 19px;
     padding-right: 33px;
-    margin-bottom: 19px;
+    padding-bottom: 0 !important;
+    margin-bottom: 15px;
+    align-items: center !important;
     @include until($tablet){
       padding-right: 16px;
       margin-bottom: 4px;
     }
   }
   .c4, .c5, .c6 {
-    height: 67px;
-    flex: 0 0 67px;
-    padding: 0;
+    height: 48px;
+    flex: 0 0 48px;
+    padding: 0 !important;
   }
   a.c4 {
     background-color: #4C77A6;
@@ -102,8 +109,8 @@ header {
     font-size:24px;
   }
   .icon.is-large{
-    height: 67px;
-    width: 67px;
+    height: 48px;
+    width: 48px;
   }
 }
 
@@ -161,6 +168,7 @@ div#controls{
   @include until($tablet){
     margin-left: 0px;
     padding-right: 16px;
+    padding-top: 9px;
   }
 
   select {width: 152px;}
@@ -169,14 +177,20 @@ div#controls{
     padding-right: 16px;
 
     button, .awesomplete {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+      @include until($tablet){
+        margin-bottom: 10px;
+      }
     };
 
     .select{
       margin-bottom: 12px;
     }
     .select.select_lobby{
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+      @include until($tablet){
+        margin-bottom: 10px;
+      }
     }
 
     #clear{
@@ -200,12 +214,22 @@ div#controls{
     .convocations, .age{
       width: 152px;
       height: 24px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       margin-right: 0px;
     }
 
     &.sliders {padding-right: 0;}
 
+  }
+  .presets{
+    height: 1em;
+    overflow: hidden;
+    margin-bottom: 8px;
+    a{
+      color: #2FA3E4;
+      text-decoration: none;
+      padding-right: 16px;
+    }
   }
 }
 
@@ -318,7 +342,11 @@ div#card {
   background: inherit;
   padding: 0;
   padding-bottom: 16px;
+  padding-top: 10px;
   font-size: 16px;
+  @include until($tablet){
+    padding-top: 0;
+  }
   .columns{
     @include until($tablet){
       margin: 0;
