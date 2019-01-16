@@ -1199,9 +1199,12 @@ function doChart() {
     }
 
     function GetRating(id) {
+
         var rating = rawRating.find(x=>x.id_declarator==id)
+
         var max=d3.max(rawRating.map(x=>+x.podpis/(+x.vnes+x.podpis)*10+1))
-        if (!rating) {rating=rawRating[0];rating.no=true; rating.vnes=-1; rating.podpis=-1; rating.sred_day=-1}
+        if (!rating) {rating=Object.assign({}, rawRating[0]);rating.no=true; rating.vnes=-1; rating.podpis=-1; rating.sred_day=-1}
+        console.log(rating,id)
 
         var domain = [1,max]
         var range = [4,10]
