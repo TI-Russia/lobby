@@ -33,8 +33,8 @@ function doChart() {
         .attr("xlink:href","assets/images/legend.svg")
         .attr("width", 202)
         .attr("height", 41)
-            .attr("x", 0)
-            .attr("y", 360)
+            .attr("x", -85)
+            .attr("y", 468)
 
     SetupSVG()
 
@@ -176,35 +176,35 @@ function doChart() {
     function GetCoordinatesForDesktop(element) {
         var curr = element
         switch (curr.clusterParent) {
-            case 11593://региональное
-                curr.row =1
-                curr.col = 8
+            case 11739://фин-пром группы
+								curr.col = 0.2
+                curr.row =1.7
                 break;
             case 11679://отраслевое
-                curr.row =2.5
                 curr.col = 4.6
+								curr.row = 2.2
                 break;
-            case 11739://фин-пром группы
-                curr.row =1.5
-                curr.col = 1
+            case 11593://региональное
+                curr.col = 8.9
+								curr.row = 1.4
                 break;
 
             case 11550://федеральное
-                curr.row =6.5
-                curr.col = 2
+                curr.col = 1.9
+								curr.row =5.5
                 break;
             case 11727://общ-полит
-                curr.row =6
-                curr.col = 7.5
+                curr.col = 8.5
+								curr.row = 5.9
                 break;
 
             default://не выявлено
-                curr.row =7.0
-                curr.col = 5.8
+                curr.col = 6.4
+								curr.row = 6.1
         }
         if (curr.cluster==11738) { //иностранное лобби
-            curr.row =7.5
             curr.col = 4.5
+						curr.row = 6.5
         }
         return element
     }
@@ -213,32 +213,32 @@ function doChart() {
         var curr = element
         switch (curr.clusterParent) {
             case 11550://федеральное 2
-                curr.row =8.5
                 curr.col = 3
+								curr.row =8.5
                 break;
             case 11593://региональное 3
-                curr.row =13.5
                 curr.col = 3
+								curr.row =13.5
                 break;
             case 11679://отраслевое 1
-                curr.row =2.5
                 curr.col = 3
+								curr.row =2.5
                 break;
             case 11727://общ-полит 4
-                curr.row =18.5
                 curr.col = 3
+								curr.row =18.5
                 break;
             case 11739://фин-пром группы 5
-                curr.row =23.5
                 curr.col = 3
+								curr.row =23.5
                 break;
             default: // не выявлено 6
-                curr.row =28
                 curr.col = 3
+								curr.row =28
         }
         if (curr.cluster==11738) { //иностранное лобби
-            curr.row =30
             curr.col = 3
+						curr.row =30
         }
         return element
     }
