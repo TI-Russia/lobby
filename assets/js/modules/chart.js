@@ -423,7 +423,7 @@ function doChart() {
         var headerHeight=document.getElementsByTagName('header')[0].clientHeight,
             controlsHeight=document.getElementById('controls').clientHeight,
             footerHeight=document.getElementsByClassName('footer')[0].clientHeight,
-            sumHeight=headerHeight+footerHeight+controlsHeight+24
+            sumHeight=headerHeight+footerHeight+controlsHeight-30
 
         var min_width = 812,
             min_height = 600;
@@ -983,7 +983,6 @@ function doChart() {
             }
 
 
-
             svg1.call(zoom_handler.transform, initialTransform);
 
             active=active_enclose
@@ -998,6 +997,16 @@ function doChart() {
                 ctm= active.node().getCTM(),
                 bounds = [[bbox.x+ctm.e, bbox.y+ctm.f],
                     [bbox.x+ctm.e + bbox.width, bbox.y+ctm.f + bbox.height+50]];
+               /* bounds = [[bbox.x.matrixTransform(ctm), bbox.y.matrixTransform(ctm)],
+                    [bbox.x.matrixTransform(ctm) + bbox.width, bbox.y.matrixTransform(ctm) + bbox.height+50]];*/
+
+            /*svg.append("line")
+                .attr("x1",bounds[0][0])
+                .attr("y1",bounds[0][1])
+                .attr("x2",bounds[1][0])
+                .attr("y2",bounds[1][1])
+                .attr("stroke","red")
+                .attr("class","test_rect")*/
 
             var dx = bounds[1][0] - bounds[0][0],
                 dy = bounds[1][1] - bounds[0][1],
