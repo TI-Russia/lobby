@@ -441,7 +441,7 @@ function doChart() {
             .attr('width', width)
 
         if   (client_width>450 || resize){
-            d3.select('#clusters svg#chart').attr('viewBox','0 0 1000 600')
+            d3.select('#clusters svg#chart').attr('viewBox','-100 0 1200 600')
                 .attr('preserveAspectRatio', 'xMidYMid meet')
                 .attr("class","desktop")
             maxX=800
