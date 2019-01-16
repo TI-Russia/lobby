@@ -160,6 +160,7 @@ div#controls{
   }
   @include until($tablet){
     margin-left: 0px;
+    padding-right: 16px;
   }
 
   select {width: 152px;}
