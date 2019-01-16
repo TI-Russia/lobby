@@ -212,33 +212,33 @@ function doChart() {
     function GetCoordinatesForMobile(element) {
         var curr = element
         switch (curr.clusterParent) {
+            case 11679://отраслевое 1
+                curr.col = 3.5
+								curr.row = 2.5
+                break;
             case 11550://федеральное 2
-                curr.col = 3
-								curr.row =8.5
+                curr.col = 3.5
+								curr.row = 10.5
                 break;
             case 11593://региональное 3
-                curr.col = 3
-								curr.row =13.5
-                break;
-            case 11679://отраслевое 1
-                curr.col = 3
-								curr.row =2.5
+                curr.col = 3.5
+								curr.row = 16.5
                 break;
             case 11727://общ-полит 4
-                curr.col = 3
-								curr.row =18.5
+                curr.col = 3.5
+								curr.row = 22.5
                 break;
             case 11739://фин-пром группы 5
-                curr.col = 3
-								curr.row =23.5
+                curr.col = 3.5
+								curr.row = 28.5
                 break;
             default: // не выявлено 6
-                curr.col = 3
-								curr.row =28
+                curr.col = 3.5
+								curr.row = 34
         }
         if (curr.cluster==11738) { //иностранное лобби
-            curr.col = 3
-						curr.row =30
+						curr.col = 3.5
+						curr.row =35
         }
         return element
     }
