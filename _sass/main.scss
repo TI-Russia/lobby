@@ -214,9 +214,9 @@ div#controls{
       height: 1.8rem;
     }
     .convocations, .age{
-      width: 152px;
+      width: 89px;
       height: 24px;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       margin-right: 0px;
     }
 
@@ -451,7 +451,8 @@ circle:hover {cursor:pointer;}
 .slider_label {
   text-align: center;
   font-size: 12px;
-  width: 135px;}
+  margin-bottom: 5px;
+  width: 65px;}
 
 .capitalizeFirsLetter:first-letter{
   text-transform: capitalize;
