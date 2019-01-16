@@ -448,10 +448,10 @@ function doChart() {
             maxY=600
         }
         else {
-            d3.select('#clusters svg#chart').attr('viewBox','0 0 320 400')
+            d3.select('#clusters svg#chart').attr('viewBox','0 0 350 '+ height + ' ')
                 .attr('preserveAspectRatio', 'xMidYMid meet')
                 .attr("class","mobile")
-            maxX=width
+            maxX=350
             maxY=1600
         }
     }

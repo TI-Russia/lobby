@@ -1,6 +1,6 @@
 # bundle exec jekyll serve --port 4001 --baseurl ''
 
-title: Лоббизм в госдуме
+title: Лоббизм в Госдуме
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Лоббизм в госдуме. Описание проекта
