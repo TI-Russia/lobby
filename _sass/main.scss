@@ -36,7 +36,7 @@ header {
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      padding-bottom:7px ;
+      padding-bottom:10px ;
       padding-top:7px ;
       @include until($tablet){
         align-items: center;
@@ -55,6 +55,7 @@ header {
         text-decoration: none;
         color:$color-white;
       }
+      line-height: 28px;
       font-size: 35px;
       text-transform: uppercase;
       font-family: "Helios-Cond-Bold", "Helvetica Neue", serif;
@@ -77,13 +78,14 @@ header {
     font-size: 16px;
     line-height: 19px;
     padding-left: 6px;
+    h2{
+      line-height: 15px;
+    }
   }
   .c3{
-    font-size: 20px;
+    font-size: 16px;
     line-height: 19px;
     padding-right: 33px;
-    padding-bottom: 0 !important;
-    margin-bottom: 15px;
     align-items: center !important;
     @include until($tablet){
       padding-right: 16px;
