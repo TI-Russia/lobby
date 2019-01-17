@@ -377,26 +377,29 @@ function doChart() {
     var zoom_handler = d3.zoom()
 
 
-    var vb_w=document.getElementById("chart").viewBox.baseVal.width,
-        vb_h=document.getElementById("chart").viewBox.baseVal.height,
+    var extentXMax=document.getElementById("chart").viewBox.baseVal.width,
+        extentYMax=document.getElementById("chart").viewBox.baseVal.height,
         extentXMin=document.getElementById("chart").viewBox.baseVal.x,
             extentYMin=document.getElementById("chart").viewBox.baseVal.y
 
 
 
-    vb_w=svg1.attr("width")
-    vb_h=svg1.attr("height")
-    if (IsItMobile()) {vb_h=1900; extentXMin=0;}
+    //vb_w=svg1.attr("width")
+    //vb_h=svg1.attr("height")
+    if (IsItMobile()) {extentYMax=1900; extentXMin=0;}
 
-    console.log("translateExtent ", extentXMin, extentYMin, vb_w, vb_h)
+    console.log("translateExtent ", extentXMin, extentYMin, extentXMax, extentYMax)
 
-    zoom_handler.scaleExtent([1, 5]).translateExtent([[extentXMin,extentYMin],[vb_w,vb_h]])
+    zoom_handler.scaleExtent([1, 5])
+        .translateExtent([[extentXMin,extentYMin],[extentXMax,extentYMax]])
+
         .on("zoom", function () {
             zoom.zoom_actions(g,k)})
         .on("end", function () {
             k = d3.event.transform.k
             zoom.zoomEndFunction(labels,clearClusters,zoom_handler)
         })
+    if (!IsItMobile()) zoom_handler.extent([[extentXMin,extentYMin],[extentXMax,extentYMax]])
 
 
     d3.select('#zoom-in').on('click', function() {
