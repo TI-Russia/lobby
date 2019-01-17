@@ -29,12 +29,14 @@ function doChart() {
         .attr('id','chart')
         .append('g')
 
-        svg.append("image")
+    const legend = svg.append("image")
         .attr("xlink:href","assets/images/legend.svg")
         .attr("width", 202)
         .attr("height", 41)
             .attr("x", -85)
             .attr("y", 468)
+
+    if (IsItMobile())legend.attr("x",0).attr("y", 425)
 
     SetupSVG()
 
@@ -167,7 +169,7 @@ function doChart() {
         }*/
 
 
-        (width<=450) ? GetCoordinatesForMobile(el) : GetCoordinatesForDesktop(el)
+        (IsItMobile()) ? GetCoordinatesForMobile(el) : GetCoordinatesForDesktop(el)
 
 
     })
@@ -376,12 +378,19 @@ function doChart() {
 
 
     var vb_w=document.getElementById("chart").viewBox.baseVal.width,
-        vb_h=document.getElementById("chart").viewBox.baseVal.height
+        vb_h=document.getElementById("chart").viewBox.baseVal.height,
+        extentXMin=document.getElementById("chart").viewBox.baseVal.x,
+            extentYMin=document.getElementById("chart").viewBox.baseVal.y
 
-    if (vb_w<450) vb_h=1600
+
+
     vb_w=svg1.attr("width")
+    vb_h=svg1.attr("height")
+    if (IsItMobile()) {vb_h=1900; extentXMin=0;}
 
-    zoom_handler.scaleExtent([1, 5]).translateExtent([[0,0],[vb_w,vb_h]])
+    console.log("translateExtent ", extentXMin, extentYMin, vb_w, vb_h)
+
+    zoom_handler.scaleExtent([1, 5]).translateExtent([[extentXMin,extentYMin],[vb_w,vb_h]])
         .on("zoom", function () {
             zoom.zoom_actions(g,k)})
         .on("end", function () {
@@ -432,15 +441,15 @@ function doChart() {
 
 
         client_width<=812 ? width=min_width : width=client_width;
-        client_width<=450 ? width=client_width : width=width;
-        height = (client_width<=450 && !resize) ? client_height+100 : min_height;
-        (client_height>=height && client_height>=min_height) ? height=client_height : height;
+        IsItMobile() ? width=client_width : width=width;
+        height = (IsItMobile() && !resize) ? client_height+100 : min_height;
+        (client_height>=height && client_height>=min_height) ? height=client_height-40 : height;
 
         d3.select('#clusters svg#chart')
             .attr('height', height)
             .attr('width', width)
 
-        if   (client_width>450 || resize){
+        if   (!IsItMobile() || resize){
             d3.select('#clusters svg#chart').attr('viewBox','-100 0 1200 600')
                 .attr('preserveAspectRatio', 'xMidYMid meet')
                 .attr("class","desktop")
@@ -448,7 +457,7 @@ function doChart() {
             maxY=600
         }
         else {
-            d3.select('#clusters svg#chart').attr('viewBox','0 0 350 '+ height + ' ')
+            d3.select('#clusters svg#chart').attr('viewBox','-10 0 370 '+ height + ' ')
                 .attr('preserveAspectRatio', 'xMidYMid meet')
                 .attr("class","mobile")
             maxX=350
@@ -1224,6 +1233,13 @@ function doChart() {
             text+=lobby.find(x=>x.id==l).name
         })
         return text
+    }
+
+    function IsItMobile() {
+        var isMobile = (document.documentElement.clientWidth<=450) ?
+            true :
+            false;
+        return isMobile
     }
 }
 });
