@@ -51,12 +51,14 @@ define(['ShowedClusters','d3'], function(ShowedClusters,d3 ) {
         }
     }
 
-    function zoom_actions(g,k){
+    function zoom_actions(g,k,svg1){
+        svg1.attr("data-current_enclose",null)
         g.attr("transform", d3.event.transform)
     }
 
     function zoom_reset(labels,svg1,zoom_handler,initialTransform) {
         d3.select("svg#chart.desktop").attr('viewBox','-100 0 1200 600')
+        svg1.attr("data-current_enclose",null)
         labels.transition().style("opacity",0)
         svg1.transition()
             .duration(750)

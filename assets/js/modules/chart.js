@@ -394,7 +394,7 @@ function doChart() {
         .translateExtent([[extentXMin,extentYMin],[extentXMax,extentYMax]])
 
         .on("zoom", function () {
-            zoom.zoom_actions(g,k)})
+            zoom.zoom_actions(g,k,svg1)})
         .on("end", function () {
             k = d3.event.transform.k
             zoom.zoomEndFunction(labels,clearClusters,zoom_handler)
@@ -996,9 +996,20 @@ function doChart() {
             return Math.max(...data.map(x=>+x.age))
         }
 
-        function ZoomeToLobby(active){
-            //svg1.attr('viewBox',null)
+        function getTranslation(transform) {
+            var g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+            g.setAttributeNS(null, "transform", transform);
+            var matrix = g.transform.baseVal.consolidate().matrix;
+            return [matrix.e, matrix.f];
+        }
 
+        function getViewBox(selector) {
+            var svg = document.querySelector(selector);
+            var box = svg.viewBox.baseVal;
+            return box
+        }
+
+        function ZoomeToLobby(active){
 
             if (!active) return
             active_enclose = d3.select("#enclose"+active);//find enclose
@@ -1011,38 +1022,39 @@ function doChart() {
                 svg1.attr("data-current_enclose",parent.id)
             }
 
-
-            svg1.call(zoom_handler.transform, initialTransform);
+            //svg1.call(zoom_handler.transform, initialTransform);
 
             active=active_enclose
 
+            if (IsItMobile()) height=document.documentElement.clientHeight-80
+            else height= getViewBox("svg#chart").height
+            width=getViewBox("svg#chart").width
 
-            var height_loc
+            var transform = getTranslation(active.attr("transform")),
+                x = transform[0],
+                y = transform[1];
 
-            if (width<450) height_loc=document.documentElement.clientHeight-80
-            else height_loc= height
 
             var bbox = active.node().getBBox(),
-                ctm= active.node().getCTM(),
-                bounds = [[bbox.x+ctm.e, bbox.y+ctm.f],
-                    [bbox.x+ctm.e + bbox.width, bbox.y+ctm.f + bbox.height+50]];
-               /* bounds = [[bbox.x.matrixTransform(ctm), bbox.y.matrixTransform(ctm)],
-                    [bbox.x.matrixTransform(ctm) + bbox.width, bbox.y.matrixTransform(ctm) + bbox.height+50]];*/
+                bounds = [[bbox.x+x, bbox.y+y],
+                    [bbox.x+x + bbox.width, bbox.y+y + bbox.height]];
 
-            /*svg.append("line")
-                .attr("x1",bounds[0][0])
-                .attr("y1",bounds[0][1])
-                .attr("x2",bounds[1][0])
-                .attr("y2",bounds[1][1])
+            /*svg.append("rect")
+                .attr("x",bbox.x+x)
+                .attr("y",bbox.y+y)
+                .attr("width",bbox.width)
+                .attr("height",bbox.height)
                 .attr("stroke","red")
+                .attr("fill","none")
                 .attr("class","test_rect")*/
 
             var dx = bounds[1][0] - bounds[0][0],
                 dy = bounds[1][1] - bounds[0][1],
                 x = (bounds[0][0] + bounds[1][0]) / 2,
                 y = (bounds[0][1] + bounds[1][1]) / 2,
-                scale = Math.max(1, Math.min(5, 0.9 / Math.max(dx / width, dy / height_loc))),
-                translate = [width / 2 - scale * x, height_loc / 2 - scale * y+50];
+                scale = Math.max(1, Math.min(5, 0.9 / Math.max(dx / width, dy / height))),
+                translate = [width / 2 - scale * x-30, height / 2 - scale * y+30];
+
 
             var transform = d3.zoomIdentity
                 .translate(translate[0], translate[1])
