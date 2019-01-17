@@ -228,9 +228,19 @@ div#controls{
   }
   .presets{
     height: 1em;
-    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
     margin-bottom: 8px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    @include until($tablet){
+      -webkit-overflow-scrolling: touch;
+      overflow-x: scroll;
+      white-space: nowrap;
+    }
     a{
+      display: inline-block;
       white-space: nowrap;
       color: #2FA3E4;
       text-decoration: none;
