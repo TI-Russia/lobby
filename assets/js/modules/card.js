@@ -12,6 +12,7 @@ function ShowCard(depInfo, depRating, depLobbys) {
         lobby=card.select("#lobby"),
         bio=card.select("#bio"),
         relations=card.select("#relations"),
+        conclusion=card.select("#conclusion"),
         submitted=card.select("#submitted")
 
     d3.selectAll("#card .is-hidden").classed("is-hidden",false)
@@ -51,6 +52,7 @@ function ShowCard(depInfo, depRating, depLobbys) {
     bio.html(info.bio)
     relations.html(info.relations)
     submitted.html(info.submitted)
+    conclusion.html(info.conclusion)
     card.attr("class","modal is-active")
 
     function GetFractionClass(fraction) {
