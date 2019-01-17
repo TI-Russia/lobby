@@ -825,10 +825,27 @@ function doChart() {
             .on('change',onchange)
 
         d3.selectAll(".buttons button").on("click", function () {
+
             var value=d3.select(this).attr("value")
             var allBtns=d3.select(this.parentNode).selectAll("button")
-            allBtns.classed("is-active", false)
-            d3.select(this).classed("is-active", true)
+            if (d3.select(this).classed("is-active")) {
+                if (d3.select(this.parentNode).attr("id") != "fraction")
+                    d3.select(this).classed("is-active", false)
+                else{
+                    if (d3.select(this.parentNode).selectAll("button.is-active").size()>1) {
+                        allBtns.classed("is-active", false)
+                        d3.select(this).classed("is-active", true)
+                    }
+                    else {
+                        allBtns.classed("is-active", true)
+                        d3.select(this).classed("is-active", true)
+                    }
+                }
+            }
+            else {
+                allBtns.classed("is-active", false)
+                d3.select(this).classed("is-active", true)
+            }
             onchange()
         })
 
@@ -1037,7 +1054,7 @@ function doChart() {
         }
 
         function onchange(init) {
-            if (!init) d3.select("#clear").classed("is-hidden",false)
+
             var i_search = d3.select('input#search').property('value')
             var s_lobby = d3.select('select#select_lobby').property('value')
             if (s_lobby!=-1 && s_lobby!="") ZoomeToLobby(s_lobby)
@@ -1092,8 +1109,11 @@ function doChart() {
                 (b_gender ? (x.gender==b_gender) : true)
                 )
 
+            if (result.size()!=circles.size()){
+                if (!init) d3.select("#clear").classed("is-hidden",false)
+            }
+            else d3.select("#clear").classed("is-hidden",true)
             hightlightOn(result)
-
         }
 
         var serchbox=d3.select("#search").on("keyup",onchange)
