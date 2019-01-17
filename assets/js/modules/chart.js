@@ -235,12 +235,12 @@ function doChart() {
 								curr.row = 28.5
                 break;
             default: // не выявлено 6
-                curr.col = 3.5
-								curr.row = 34
+								curr.col = 4.5
+								curr.row = 35
         }
         if (curr.cluster==11738) { //иностранное лобби
-						curr.col = 3.5
-						curr.row =35
+						curr.col = 1.5
+						curr.row =33
         }
         return element
     }
