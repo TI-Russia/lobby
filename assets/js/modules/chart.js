@@ -169,7 +169,7 @@ function doChart() {
         }*/
 
 
-        (IsItMobile()) ? GetCoordinatesForMobile(el) : GetCoordinatesForDesktop(el)
+        (IsItMobile() || window.orientation!=undefined) ? GetCoordinatesForMobile(el) : GetCoordinatesForDesktop(el)
 
 
     })
@@ -386,12 +386,13 @@ function doChart() {
 
     //vb_w=svg1.attr("width")
     //vb_h=svg1.attr("height")
-    if (IsItMobile()) {extentYMax=1900; extentXMin=0;}
+    if (IsItMobile()  || window.orientation!=undefined) {extentYMax=1900; extentXMin=0;}
 
     console.log("translateExtent ", extentXMin, extentYMin, extentXMax, extentYMax)
 
     zoom_handler.scaleExtent([1, 5])
         .translateExtent([[extentXMin,extentYMin],[extentXMax,extentYMax]])
+
 
         .on("zoom", function () {
             zoom.zoom_actions(g,k,svg1)})
@@ -399,7 +400,7 @@ function doChart() {
             k = d3.event.transform.k
             zoom.zoomEndFunction(labels,clearClusters,zoom_handler)
         })
-    if (!IsItMobile()) zoom_handler.extent([[extentXMin,extentYMin],[extentXMax,extentYMax]])
+    if (!IsItMobile() || window.orientation==undefined) zoom_handler.extent([[extentXMin,extentYMin],[extentXMax,extentYMax]])
 
 
     d3.select('#zoom-in').on('click', function() {
@@ -448,11 +449,14 @@ function doChart() {
         height = (IsItMobile() && !resize) ? client_height+100 : min_height;
         (client_height>=height && client_height>=min_height) ? height=client_height-40 : height;
 
+        if ( window.orientation==90) {
+            height=client_height}
+
         d3.select('#clusters svg#chart')
             .attr('height', height)
             .attr('width', width)
-
-        if   (!IsItMobile() || resize){
+console.log(window.orientation)
+        if   (!IsItMobile() && window.orientation==undefined){
             d3.select('#clusters svg#chart').attr('viewBox','-100 0 1200 600')
                 .attr('preserveAspectRatio', 'xMidYMid meet')
                 .attr("class","desktop")
@@ -460,9 +464,16 @@ function doChart() {
             maxY=600
         }
         else {
-            d3.select('#clusters svg#chart').attr('viewBox','-10 0 370 '+ height + ' ')
-                .attr('preserveAspectRatio', 'xMidYMid meet')
-                .attr("class","mobile")
+            if (window.orientation==0) {
+                d3.select('#clusters svg#chart').attr('viewBox', '-10 0 370 ' + height + ' ')
+                    .attr('preserveAspectRatio', 'xMidYMid meet')
+                    .attr("class", "mobile portrait")
+            }
+            else {
+                d3.select('#clusters svg#chart').attr('viewBox', '200 0 500 100 ')
+                    .attr('preserveAspectRatio', 'xMidYMid meet')
+                    .attr("class", "mobile landscape")
+            }
             maxX=350
             maxY=1600
         }
