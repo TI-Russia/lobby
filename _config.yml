@@ -4,8 +4,8 @@ title: Лоббизм в Госдуме
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Лоббизм в госдуме. Описание проекта
-baseurl: /lobby # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://dumabingo.ru" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 # Exclude from processing.
