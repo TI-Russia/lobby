@@ -1165,6 +1165,9 @@ console.log(window.orientation)
                 input.value=event.text.value
                 onchange()
             });
+            input.addEventListener("awesomplete-selectcomplete", function(event) {
+               onchange()
+            });
         }
 
         function PresetsHandler() {
