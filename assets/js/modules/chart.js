@@ -1221,7 +1221,7 @@ console.log(window.orientation)
         }
 
         function hightlightOn(spot) {
-            circles.transition().attr("class", d=>d.color).style("opacity",0.3)
+            circles.transition().attr("class", d=>d.color).style("opacity",0.2)
             labels.transition().style("opacity",0.0)
 
             var circles_clusters=spot.data().map(s=>s.cluster)
