@@ -256,6 +256,7 @@ function doChart() {
         .on("end", function (){
             if (first_end==0) label_force.alpha(1).restart()
             first_end=1
+            $('#clusters').removeClass('is-loading');
         });
 
     var label_force=d3.forceSimulation()

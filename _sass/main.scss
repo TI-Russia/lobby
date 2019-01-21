@@ -253,12 +253,21 @@ div#controls{
 }
 
 #clusters{
+  min-height: 100px;
+  transition: all 0.5s ease-out 0s;
   &.is-loading {
     position: relative;
     pointer-events: none;
     opacity: 0.5;
+    background: white;
+    mix-blend-mode: luminosity;
     &:after {
       @include loader;
+      animation: spinAround 1000ms infinite linear;
+      border: 2px solid $color-blue;
+      border-radius: $radius-rounded;
+      border-right-color: transparent;
+      border-top-color: transparent;
       position: absolute;
       top: calc(50% - 2.5em);
       left: calc(50% - 2.5em);

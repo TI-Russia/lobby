@@ -25,6 +25,12 @@ require.config({
 
 require(["d3","jquery","intro","chart","cookie"], function(d3,$,intro,chart,cookie) {
     window.d3 = d3;
+    $('#clusters').addClass('is-loading');
+    /*$(document).ready(function() {
+        setTimeout(function(){
+            $('#clusters').removeClass('is-loading');
+        }, 4000);
+    });*/
     intro
     chart
     /*Set Cookie for Intro*/
@@ -32,12 +38,12 @@ require(["d3","jquery","intro","chart","cookie"], function(d3,$,intro,chart,cook
     var date = new Date(new Date().getTime() + 3600*2 * 1000);//date+interval 2 рщгкы
     var cook = cookie.getCookie("dateOfOpen")
     if (cook==undefined) {
-        cookie.setCookie("c", "set_cookie_for_2_hours");
+        //set_cookie_for_2_hours
         cookie.setCookie("dateOfOpen", dateOfOpen.toUTCString(), {expires: date.toUTCString()})
         $('.cd-intro').show();
     }
     else {
-        cookie.setCookie("c", "cookie_already_was_here");
+       //cookie_already_was_here
         $('.cd-intro').hide();
         $('body').removeClass('intro-open')
     }
