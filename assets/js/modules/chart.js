@@ -356,8 +356,8 @@ function doChart() {
 
 
         client_width <= 812 ? width = min_width : width = client_width;
-        IsItMobile() ? width = client_width : width = width;
-        height = (IsItMobile() && !resize) ? client_height + 100 : min_height;
+        (IsItMobile() || window.orientation == 90) ? width = client_width : width = width;
+        height = (IsItMobile() ) ? client_height-32 : min_height;
         (client_height >= height && client_height >= min_height) ? height = client_height - 40 : height;
 
         if (window.orientation == 90) {
