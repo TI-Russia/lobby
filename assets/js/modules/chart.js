@@ -200,7 +200,7 @@ function doChart() {
                 .attr("startOffset", "25%")
                 .style("text-anchor", "middle") //place the text halfway on the arc
                 .text(function(){
-                    var t = level.alias
+                    var t = level.alias.toUpperCase()
                     t = t.charAt(0).toUpperCase() + t.slice(1)
                     return t
                 });
