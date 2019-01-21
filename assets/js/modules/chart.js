@@ -36,7 +36,7 @@ function doChart() {
             .attr("x", -85)
             .attr("y", 468)
 
-    if (IsItMobile())legend.attr("x",0).attr("y", 425)
+    //if (IsItMobile())legend.attr("x",0).attr("y", 425)
 
     SetupSVG()
 
@@ -128,13 +128,11 @@ function doChart() {
     var clearClusters=clusters.filter(function(el) { return el; })//remove null from array
     clearClusters.sort(function(a, b) { return b.count - a.count; })
     clearClusters.sort(function(a, b) { return a.clusterParent - b.clusterParent; })
-    //console.log("clearClusters",clearClusters)
-
 
 
     var nodes2 = nodes.concat(clearClusters);//merge nodes and clusters signs
 
-    rows = (client_width<450) ? 30 : 8
+    rows=8
 
     var columnsTotal=9
     var xScale = d3.scaleLinear()
@@ -146,32 +144,8 @@ function doChart() {
         .range([100, maxY]);
 
     clearClusters[0].col=0; clearClusters[0].row=0
-    clearClusters.forEach(function (el,i,arr) {
-        /*if (i>0) {
-            curr = el
-            prev = arr[i - 1]
-            if (prev.clusterParent == curr.clusterParent) {
-                delta = (i%2==0) ? 0.5 : -0.5
-                if (prev.col < columnsTotal-1) {//строка не заполнена?
-                    curr.col = prev.col + 1
-                    curr.row = prev.row+delta
-                }
-                else {//переход на новую строку
-                    curr.col = 0
-                    curr.row = prev.row + 1+delta
-                }
-            }
-            else {//новый кластер с новой строки
-                curr.row = prev.row + 4
-                curr.col = 0
-                //makeTitle(curr.clusterParent,curr.row-2,0)
-            }
-        }*/
-
-
-        (IsItMobile() || window.orientation!=undefined) ? GetCoordinatesForMobile(el) : GetCoordinatesForDesktop(el)
-
-
+    clearClusters.forEach(function (el) {
+        GetCoordinatesForDesktop(el)
     })
     makeEncloses()
 
@@ -211,40 +185,6 @@ function doChart() {
         return element
     }
 
-    function GetCoordinatesForMobile(element) {
-        var curr = element
-        switch (curr.clusterParent) {
-            case 11679://отраслевое 1
-                curr.col = 3.5
-								curr.row = 2.5
-                break;
-            case 11550://федеральное 2
-                curr.col = 3.5
-								curr.row = 10.5
-                break;
-            case 11593://региональное 3
-                curr.col = 3.5
-								curr.row = 16.5
-                break;
-            case 11727://общ-полит 4
-                curr.col = 3.5
-								curr.row = 22.5
-                break;
-            case 11739://фин-пром группы 5
-                curr.col = 3.5
-								curr.row = 28.5
-                break;
-            default: // не выявлено 6
-								curr.col = 4.5
-								curr.row = 35
-        }
-        if (curr.cluster==11738) { //иностранное лобби
-						curr.col = 1.5
-						curr.row =33
-        }
-        return element
-    }
-
     function makeEncloses() {
         svg.append("g").attr("class", "encloses")
         lobby_level_0.forEach(function (level) {
@@ -261,7 +201,6 @@ function doChart() {
                 .style("text-anchor", "middle") //place the text halfway on the arc
                 .text(function(){
                     var t = level.alias
-                    //t = t.replace("Иностранное лобби","Иностранное")
                     t = t.charAt(0).toUpperCase() + t.slice(1)
                     return t
                 });
@@ -286,9 +225,6 @@ function doChart() {
         })
     }
 
-    lastRow=clearClusters[clearClusters.length-1].row
-
-
     function makeTitle(id,row,col) {
         var group = lobby.find(x=>x.id==id)
         svg.append("text").attr("class","title").attr("y",yScale(row)).attr("x",xScale(col)).text(group.name)
@@ -307,14 +243,8 @@ function doChart() {
     var forceY = d3.forceY((d) => foci(d.cluster).y);
 
     var links
-
     var first_end=0
-/*
-    if (clientWidth<=450) {
-        nodes = nodes.filter(x => x.clusterParent == '7753')
-        clearClusters=clearClusters.filter(x => x.clusterParent == '7753')
-    }
-*/
+
     var force = d3.forceSimulation()
         .nodes(nodes.sort((a,b)=>a.cluster-b.cluster))
         .force('collide', collide)
@@ -340,7 +270,6 @@ function doChart() {
         .data(d => d)
         .enter().append('circle')
         .attr('r', d => d.r)
-        //.attr('fill', d=>d.color)
         .attr('class',d=>d.color)
         .attr("cx", d => d.dx)
         .attr("cy", d => d.dy)
@@ -359,7 +288,6 @@ function doChart() {
         .data(d => d)
         .enter().append("g")
         .attr('class', "lobby_label")
-        //.attr('fill', d => d3.rgb(d.color).darker())
         .attr("x", d => d.x)
         .attr("y", d => d.y)
         .attr("transform",d=>"translate("+d.x+" "+ d.y+")")
@@ -373,35 +301,27 @@ function doChart() {
         .translate(0,0)
         .scale(1);
 
-
     var zoom_handler = d3.zoom()
-
 
     var extentXMax=document.getElementById("chart").viewBox.baseVal.width,
         extentYMax=document.getElementById("chart").viewBox.baseVal.height,
         extentXMin=document.getElementById("chart").viewBox.baseVal.x,
-            extentYMin=document.getElementById("chart").viewBox.baseVal.y
+        extentYMin=document.getElementById("chart").viewBox.baseVal.y
 
-
-
-    //vb_w=svg1.attr("width")
-    //vb_h=svg1.attr("height")
-    if (IsItMobile()  || window.orientation!=undefined) {extentYMax=1900; extentXMin=0;}
+    var scaleExtentMax = (IsItMobile()) ? 10 : 5
 
     console.log("translateExtent ", extentXMin, extentYMin, extentXMax, extentYMax)
 
-    zoom_handler.scaleExtent([1, 5])
+    zoom_handler
+        .scaleExtent([1, scaleExtentMax])
         .translateExtent([[extentXMin,extentYMin],[extentXMax,extentYMax]])
-
-
+        .extent([[extentXMin,extentYMin],[extentXMax,extentYMax]])
         .on("zoom", function () {
             zoom.zoom_actions(g,k,svg1)})
         .on("end", function () {
             k = d3.event.transform.k
             zoom.zoomEndFunction(labels,clearClusters,zoom_handler)
         })
-    if (!IsItMobile() || window.orientation==undefined) zoom_handler.extent([[extentXMin,extentYMin],[extentXMax,extentYMax]])
-
 
     d3.select('#zoom-in').on('click', function() {
         d3.event.preventDefault();
@@ -418,65 +338,44 @@ function doChart() {
         zoom.zoom_reset(labels,svg1,zoom_handler,initialTransform);
     });
 
-
-    //zoom_handler(svg1)
-
-        svg1.call(zoom_handler)
-            .on("wheel.zoom", null)
-
-
+    svg1.call(zoom_handler)
+         .on("wheel.zoom", null)
 
     window.onresize=function (event) {
         SetupSVG(event);
-
     }
 
-
     function SetupSVG(resize) {
-        var headerHeight=document.getElementsByTagName('header')[0].clientHeight,
-            controlsHeight=document.getElementById('controls').clientHeight,
-            footerHeight=document.getElementsByClassName('footer')[0].clientHeight,
-            sumHeight=headerHeight+footerHeight+controlsHeight-30
+        var headerHeight = document.getElementsByTagName('header')[0].clientHeight,
+            controlsHeight = document.getElementById('controls').clientHeight,
+            footerHeight = document.getElementsByClassName('footer')[0].clientHeight,
+            sumHeight = headerHeight + footerHeight + controlsHeight - 30
 
         var min_width = 812,
-            min_height = 600;
-            client_width=document.documentElement.clientWidth,
-            client_height=document.documentElement.clientHeight-sumHeight
+            min_height = 600,
+            client_width = document.documentElement.clientWidth,
+            client_height = document.documentElement.clientHeight - sumHeight
 
 
-        client_width<=812 ? width=min_width : width=client_width;
-        IsItMobile() ? width=client_width : width=width;
-        height = (IsItMobile() && !resize) ? client_height+100 : min_height;
-        (client_height>=height && client_height>=min_height) ? height=client_height-40 : height;
+        client_width <= 812 ? width = min_width : width = client_width;
+        IsItMobile() ? width = client_width : width = width;
+        height = (IsItMobile() && !resize) ? client_height + 100 : min_height;
+        (client_height >= height && client_height >= min_height) ? height = client_height - 40 : height;
 
-        if ( window.orientation==90) {
-            height=client_height}
+        if (window.orientation == 90) {
+            height = client_height
+        }
 
         d3.select('#clusters svg#chart')
             .attr('height', height)
             .attr('width', width)
-console.log(window.orientation)
-        if   (!IsItMobile() && window.orientation==undefined){
-            d3.select('#clusters svg#chart').attr('viewBox','-100 0 1200 600')
-                .attr('preserveAspectRatio', 'xMidYMid meet')
-                .attr("class","desktop")
-            maxX=800
-            maxY=600
-        }
-        else {
-            if (window.orientation==0) {
-                d3.select('#clusters svg#chart').attr('viewBox', '-10 0 370 ' + height + ' ')
-                    .attr('preserveAspectRatio', 'xMidYMid meet')
-                    .attr("class", "mobile portrait")
-            }
-            else {
-                d3.select('#clusters svg#chart').attr('viewBox', '200 0 500 100 ')
-                    .attr('preserveAspectRatio', 'xMidYMid meet')
-                    .attr("class", "mobile landscape")
-            }
-            maxX=350
-            maxY=1600
-        }
+
+        d3.select('#clusters svg#chart').attr('viewBox', '-100 0 1200 600')
+            .attr('preserveAspectRatio', 'xMidYMid meet')
+            .attr("class", "desktop")
+        maxX = 800
+        maxY = 600
+
     }
 
     function GetDepData(id) {
