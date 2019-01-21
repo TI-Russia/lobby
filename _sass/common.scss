@@ -66,3 +66,28 @@
 
   }
 }
+
+.hero-head{
+  #nav-menu{
+    display: inline-flex;
+  }
+  #nav-toggle{
+    margin-bottom: -8px;
+  }
+  .is-visible-small{
+    display: none;
+  }
+  @include until($mobile-m){
+    .is-visible-small{
+      visibility: visible;
+      display: inline-flex;
+    }
+  }
+  @include from($mobile-m){
+    #nav-menu.is-visible-small.is-hidden{
+      visibility: visible;
+      display: inherit !important;
+    }
+  }
+
+}
