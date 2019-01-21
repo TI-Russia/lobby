@@ -215,8 +215,8 @@ function doChart() {
             var encloseCircle = d3.packEnclose(nd)
             if (encloseCircle){
                 var arc = d3.arc()
-                    .innerRadius(encloseCircle.r)
-                    .outerRadius(encloseCircle.r)
+                    .innerRadius(Math.max(20,encloseCircle.r))
+                    .outerRadius(Math.max(20,encloseCircle.r))
                     .startAngle(-180 * (3.14/180)) //converting from degs to radians
                     .endAngle(180 * (3.14/180))
                 e.transition().duration(100).attr("transform", "translate("+encloseCircle.x+","+encloseCircle.y+")")
@@ -256,7 +256,6 @@ function doChart() {
         .on("end", function (){
             if (first_end==0) label_force.alpha(1).restart()
             first_end=1
-            $('#clusters').removeClass('is-loading');
         });
 
     var label_force=d3.forceSimulation()
@@ -310,8 +309,6 @@ function doChart() {
         extentYMin=document.getElementById("chart").viewBox.baseVal.y
 
     var scaleExtentMax = (IsItMobile()) ? 10 : 5
-
-    console.log("translateExtent ", extentXMin, extentYMin, extentXMax, extentYMax)
 
     zoom_handler
         .scaleExtent([1, scaleExtentMax])
@@ -449,7 +446,7 @@ function doChart() {
     }
 
     circles.transition()
-        .duration(1000)
+        .duration(500)
         .attrTween("r", function (d) {
             var i = d3.interpolate(0, d.r);
             return function (t) {
@@ -488,6 +485,7 @@ function doChart() {
 
 
          //if (force.alpha()>=0.1) label_force.alpha(0.1).restart();
+        if (this.alpha()<0.01) $('#clusters').removeClass('is-loading');
     }
     function tick2() {
         labels
