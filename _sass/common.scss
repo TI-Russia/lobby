@@ -44,7 +44,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     .block {
-      width: 636px;
+			background: #FFFFFFEE;
+			border-radius: 2px;
+			padding: 32px;
+			width: 512px;
       margin: 0 auto;
       @include until($tablet){
         width: auto;
