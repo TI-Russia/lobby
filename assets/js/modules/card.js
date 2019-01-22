@@ -108,7 +108,8 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
 
             content+="<ul>"
             row.forEach(function (str,i,arr) {
-                content+="<li><span>"+str+"</span></li>"
+                str = str.charAt(0).toUpperCase() + str.slice(1)
+                content+="<li>"+str+"</li>"
             })
             content+="</ul>"
 

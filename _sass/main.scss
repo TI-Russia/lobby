@@ -282,7 +282,7 @@ div#card {
   }
 
   .matrix{
-    h3:first-letter, span:first-letter{
+    h3:first-letter{
       text-transform: capitalize;
     }
 
@@ -290,22 +290,17 @@ div#card {
       padding-top: 0.5em;
     }
 
-    span{
-      display: inline-block;
+    li{
+      display: inline;
       padding-left: 0.4em;
     }
 
-    li{
-      display: inline;
-      padding-right: 0.4em;
-    }
-
     li:before {
-      content: "\2192 ";
+      content: "\2192\2002";
     }
 
     li:first-of-type:before{
-      content: '\2014 ';
+      content: '\2014\2002';
     }
     li:last-of-type:after{
       content: '.';
