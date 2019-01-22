@@ -3,14 +3,20 @@
 html{overflow-y: auto;}
 body, button, select, input{
   font-family: "Helios-Cond-Regular", "Helvetica Neue";
-}
+  }
 body{
   background: $color-white;
   line-height: 1;
   overflow: hidden;
   min-width: 812px;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   @include until($desktop){
     min-width: auto;
+  }
+  .hero{
+    flex: 1;
   }
 }
 a{
@@ -153,7 +159,6 @@ div#controls{
 }
 
 #clusters{
-  min-height: 100px;
   transition: all 0.5s ease-out 0s;
   &.is-loading {
     position: relative;

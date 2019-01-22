@@ -348,7 +348,7 @@ function doChart() {
         var headerHeight = document.getElementsByTagName('header')[0].clientHeight,
             controlsHeight = document.getElementById('controls').clientHeight,
             footerHeight = document.getElementsByClassName('footer')[0].clientHeight,
-            sumHeight = headerHeight + footerHeight + controlsHeight - 30
+            sumHeight = headerHeight + footerHeight + controlsHeight
 
         var min_width = 812,
             min_height = 600,
@@ -358,8 +358,8 @@ function doChart() {
 
         client_width <= 812 ? width = min_width : width = client_width;
         (IsItMobile() || window.orientation == 90) ? width = client_width : width = width;
-        height = (IsItMobile() ) ? client_height-32 : min_height;
-        (client_height >= height && client_height >= min_height) ? height = client_height - 40 : height;
+        height = (IsItMobile() ) ? client_height : min_height;
+        (client_height >= height && client_height >= min_height) ? height = client_height : height;
 
         if (window.orientation == 90) {
             height = client_height
