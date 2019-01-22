@@ -52,7 +52,10 @@
       }
     }
     a{text-decoration: none;}
-    p{margin-bottom: 30px;}
+    p{ 
+			margin-bottom: 0.7em;
+			line-height: 1.4em;
+		}
 
     .action-wrapper{
       background: $color-blue;
@@ -61,6 +64,7 @@
       text-align: center;
       margin: 20px auto;
       position: relative;
+			border-radius: 2px;
     }
 
 
