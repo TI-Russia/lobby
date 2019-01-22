@@ -100,14 +100,14 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
                 //row[0]= "*"
             }
             else {
-                content+="<h3>"+row[0].toLowerCase().replace("лобби","")
+                content+="<h3>"+row[0].toLowerCase().replace(" лобби","")
                 if (row.length>1) content+=":"
                 content+="</h3>"
             }
             row=row.slice(1)
 
             content+="<ul>"
-            row.forEach(function (str) {
+            row.forEach(function (str,i,arr) {
                 content+="<li><span>"+str+"</span></li>"
             })
             content+="</ul>"
