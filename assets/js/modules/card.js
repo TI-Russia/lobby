@@ -38,8 +38,20 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
     var positionText = GetPosition (info)
     var lobbyText = depLobbys
 
+
+    /*image loader*/
+    var img = new Image();
+    img.onload = function() {
+        //console.log("image is ready")
+        photo.attr("alt",info.fullname).attr("src",info.photo)
+    };
+    img.onerror = function() {
+        //console.log("the image has failed")
+    };
+    img.src = info.photo;
+
+
     fullname.text(info.fullname)
-    photo.attr("alt",info.fullname).attr("src",info.photo)
     fraction.text(info.fraction).attr("class",fraction_class)
     position.text(positionText)
     law_number_vnes.text(rating.vnes)
