@@ -88,22 +88,22 @@ header {
     }
     .column{
       display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding-bottom:0.5rem;
-      padding-top:0.5rem;
-      @include until($tablet){
-        align-items: center;
-      }
+      align-items: center;
+      justify-content: flex-start;
+      padding-bottom:0;
+      padding-top:0;
       &.c3{
         justify-content: flex-end;
       }
     }
   }
   .c1 {
-    flex: 0 0 336px;
+    flex: 0 0 345px;
     margin-left: 60px;
     padding-left: 0;
+    img {
+      padding-right:7px; }
+
     h1 {
       a,a:hover{
         text-decoration: none;
@@ -138,12 +138,9 @@ header {
   }
   .c3{
     font-size: 16px;
-    line-height: 19px;
     padding-right: 33px;
-    align-items: center !important;
     @include until($tablet){
       padding-right: 16px;
-
     }
     a{
       padding-left: 16px;
@@ -152,7 +149,7 @@ header {
   .c4, .c5, .c6 {
     height: 48px;
     flex: 0 0 48px;
-    padding: 0 !important;
+    padding: 0;
   }
   a.c4 {
     background-color: #4C77A6;
