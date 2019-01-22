@@ -1,5 +1,5 @@
 requirejs(['jquery','cookie'], function( $,cookie ) {
-    //$('#clusters').addClass('is-loading');
+    $('#clusters').addClass('is-loading');
     /*Set Cookie for Intro*/
     var dateOfOpen = new Date(new Date().getTime());
     var date = new Date(new Date().getTime() + 3600*2 * 1000);//date+interval 2 рщгкы
