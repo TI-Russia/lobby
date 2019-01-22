@@ -9,7 +9,7 @@ Error: Undefined variable: "$color-white".
 33:   display: table;
 34:   background: $color-white;
 35:   overflow: hidden;
-36:   @include until($tablet){
+36:   @include until($tablet) {
 37:     top: 48px;
 38:   }
 39: 
@@ -67,4 +67,4 @@ C:/Ruby24-x64/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$color-white\".\A         on line 34 of common.scss\A \A 29:   left: 0;\A 30:   height: 100vh;\A 31:   z-index: 5;\A 32:   width: 100%;\A 33:   display: table;\A 34:   background: $color-white;\A 35:   overflow: hidden;\A 36:   @include until($tablet){\A 37:     top: 48px;\A 38:   }\A 39: "; }
+  content: "Error: Undefined variable: \"$color-white\".\A         on line 34 of common.scss\A \A 29:   left: 0;\A 30:   height: 100vh;\A 31:   z-index: 5;\A 32:   width: 100%;\A 33:   display: table;\A 34:   background: $color-white;\A 35:   overflow: hidden;\A 36:   @include until($tablet) {\A 37:     top: 48px;\A 38:   }\A 39: "; }

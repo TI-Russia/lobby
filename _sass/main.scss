@@ -20,11 +20,17 @@ body{
   }
 }
 a{
+  color: $color-blue;
   &:hover{
     opacity: 0.8;
-    color:inherit;
+    color:currentColor;
   }
 }
+strong a{color: $color-blue;
+  &:hover{
+    opacity: 0.8;
+    color:$color-blue;
+  }}
 
 
 .hero-body{
