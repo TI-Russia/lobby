@@ -1,5 +1,5 @@
-define(['jquery','d3'], function( $,d3 ) {
-function ShowCard(depInfo, depRating, depLobbys) {
+define(['jquery','d3', 'tree'], function( $,d3, tree_func ) {
+function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
 
     var card=d3.select("#card"),          //container
         photo=card.select("#photo img"),
@@ -47,13 +47,14 @@ function ShowCard(depInfo, depRating, depLobbys) {
     if (rating.podpis==0) HideBlockByClass("law_signed")
     if (rating.no==true) HideBlockByClass("laws_block")
     sred_day.text(Math.floor(String(rating.sred_day).replace(',','.')))
-    lobby.text(lobbyText)
     if (!lobbyText) HideBlockByClass("lobby_block")
     bio.html(info.bio)
     relations.html(info.relations)
     submitted.html(info.submitted)
     conclusion.html(info.conclusion)
     card.attr("class","modal is-active")
+    var matrix=GetLobbyMatrix()
+    lobby.html(matrix)
 
     function GetFractionClass(fraction) {
         var arr=[{fraction:'Единая Россия',classname:'er'},
@@ -84,6 +85,36 @@ function ShowCard(depInfo, depRating, depLobbys) {
 
         var position=chlen + izbran + kak+ ', '+ sozvan
         return position
+    }
+
+    function GetLobbyMatrix() {
+        var nodes = depInfo.groups;
+        var rows = [];
+        nodes.forEach(function (node) {
+            var parents=tree_func.findAncestors( node, lobby_list)
+            rows.push(parents.map(y=>lobby_list.find(x=>x.id==y).name))
+        })
+        var content="";
+        rows.forEach(function (row,i,arr) {
+            if (i>0 && row[0]==arr[i-1][0]) {
+                //row[0]= "*"
+            }
+            else {
+                content+="<h3>"+row[0].toLowerCase().replace("лобби","")
+                if (row.length>1) content+=":"
+                content+="</h3>"
+            }
+            row=row.slice(1)
+
+            content+="<ul>"
+            row.forEach(function (str) {
+                content+="<li><span>"+str+"</span></li>"
+            })
+            content+="</ul>"
+
+        })
+
+        return content
     }
 
     function HideBlockByClass(classname) {

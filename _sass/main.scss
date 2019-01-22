@@ -281,6 +281,34 @@ div#card {
     }
   }
 
+  .matrix{
+    h3:first-letter, span:first-letter{
+      text-transform: capitalize;
+    }
+
+    h3:not(:first-of-type){
+      padding-top: 0.5em;
+    }
+
+    span{
+      display: inline-block;
+      padding-left: 0.4em;
+    }
+
+    li{
+      display: inline;
+      padding-right: 0.4em;
+    }
+
+    li:before {
+      content: "\2192 ";
+    }
+
+    li:first-of-type:before{
+      content: '\2014 ';
+    }
+  }
+
 }
 
 .footer{

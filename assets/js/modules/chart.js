@@ -1,4 +1,5 @@
-requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowCard","ShowedClusters","zoom"], function( d3,$,floatingTooltip ,noUiSlider,awesomeplete,Data,ShowCard,ShowedClusters,zoom ) {
+requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowCard","ShowedClusters","zoom","tree"],
+    function( d3,$,floatingTooltip ,noUiSlider,awesomeplete,Data,ShowCard,ShowedClusters,zoom,tree_func ) {
 
     var data
     var lobby
@@ -562,7 +563,7 @@ function doChart() {
         var depInfo=GetDepData(d.id)
         var depRating=GetRating(depInfo.person)
         var depLobbys=GetLobbyText(depInfo.groups)
-        var t = new ShowCard(depInfo, depRating, depLobbys)
+        var t = new ShowCard(depInfo, depRating, depLobbys, lobby)
     }
 
 
@@ -690,44 +691,15 @@ function doChart() {
             if (lob.parent==null) lob.parent=1
         })
         lobby.push({id:1,name:"root",parent:"0"})
-        function list_to_tree(list) {
-            var map = {}, node, roots = [], i;
-            for (i = 0; i < list.length; i += 1) {
-                map[list[i].id] = i; // initialize the map
-                list[i].children = []; // initialize the children
-            }
-            for (i = 0; i < list.length; i += 1) {
-                node = list[i];
-                if (node.parent !== "0") {
-                    // if you have dangling branches check that map[node.parent] exists
-                    list[map[node.parent]].children.push(node);
-                } else {
-                    roots.push(node);
-                }
-            }
-            return roots;
-        }
-        var tree=list_to_tree(lobby.sort((a,b)=>a.order-b.order))
 
-        var bfs = function(tree, key, collection) {
-            if (!tree[key] || tree[key].length === 0) return;
-            for (var i=0; i < tree[key].length; i++) {
-                var child = tree[key][i]
-                collection[child.id] = child;
-                bfs(child, key, collection);
-            }
-            return;
-        }
+        var tree = tree_func.list_to_tree(lobby.sort((a,b)=>a.order-b.order))
 
         var flattenedCollection = {};
-        bfs(tree[0],"children", flattenedCollection)
+        tree_func.tree_to_collection(tree[0],"children", flattenedCollection)
 
         var list = Object.keys(flattenedCollection).map(function(key) {
             return flattenedCollection[key]
         });
-
-        data_clusters.sort((a,b)=>a.clusterName-b.clusterName)
-            .sort((a,b)=>a.clusterParent-b.clusterParent)
 
         var select = d3.select('#controls')
             .select('select#select_lobby')

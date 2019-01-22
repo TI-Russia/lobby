@@ -11,7 +11,8 @@ require.config({
         data: "modules/data",
         ShowedClusters: "tools/showed_clusters",
         zoom:"tools/zoom",
-        cookie:"tools/cookie"
+        cookie:"tools/cookie",
+        tree: "tools/tree"
     },
     shim: {
         awesomeplete:{
