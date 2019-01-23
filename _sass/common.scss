@@ -165,6 +165,28 @@ header {
     height: 48px;
     width: 48px;
   }
+  .header-menu{
+    display: none;
+    position: absolute;
+    top:47px;
+    right: 0px;
+    z-index: 6;
+    box-shadow: #DDDDDD;
+    background: $color-blue;
+    &.is-visible{
+      display: block;
+    }
+    li{
+      padding: 0.5em 1em;
+      &:hover{
+        opacity: 0.8;
+      }
+      a{
+        padding-left: 0;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 .hero-head{

@@ -12,7 +12,8 @@ require.config({
         ShowedClusters: "tools/showed_clusters",
         zoom:"tools/zoom",
         cookie:"tools/cookie",
-        tree: "tools/tree"
+        tree: "tools/tree",
+        burger: "tools/burger"
     },
     shim: {
         awesomeplete:{
@@ -24,25 +25,15 @@ require.config({
     }
 });
 
-require(["d3","jquery","intro","chart"], function(d3,$,intro,chart) {
-    window.d3 = d3;
-
+require(["burger","intro"], function(burger,intro) {
+    burger
     intro
-    chart
 
-    /*Mobile burger-button menu toggler*/
-    document.getElementById("nav-toggle").addEventListener ("click", toggleNav);
-    function toggleNav() {
-        var nav = document.getElementById("nav-menu");
-        var className = nav.getAttribute("class");
-        if(className == "is-visible-small is-hidden") {
-            nav.className = "is-visible-small";
-            document.getElementById("header-title").className="column c1 is-hidden"
-        } else {
-            document.getElementById("header-title").className="column c1"
-            nav.className = "is-visible-small is-hidden" ;
-        }
-    }
+    require(["d3","chart"], function(d3,chart) {
+        window.d3 = d3;
+        intro
+        chart
+    });
 
 });
 
