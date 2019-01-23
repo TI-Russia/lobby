@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$color-white".
-        on line 34 of common.scss
+        on line 20 of common.scss
 
-29:   left: 0;
-30:   height: 100vh;
-31:   z-index: 5;
-32:   width: 100%;
-33:   display: table;
-34:   background: $color-white;
-35:   overflow: hidden;
-36:   @include until($tablet) {
-37:     top: 48px;
-38:   }
-39: 
+15:   left: 0;
+16:   height: 100vh;
+17:   z-index: 5;
+18:   width: 100%;
+19:   display: table;
+20:   background: $color-white;
+21:   overflow: hidden;
+22:   @include until($tablet) {
+23:     top: 48px;
+24:   }
+25: 
 
 Backtrace:
-common.scss:34
+common.scss:20
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/script/tree/variable.rb:49:in `_perform'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/script/tree/node.rb:50:in `perform'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/perform.rb:398:in `visit_prop'
@@ -67,4 +67,4 @@ C:/Ruby24-x64/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$color-white\".\A         on line 34 of common.scss\A \A 29:   left: 0;\A 30:   height: 100vh;\A 31:   z-index: 5;\A 32:   width: 100%;\A 33:   display: table;\A 34:   background: $color-white;\A 35:   overflow: hidden;\A 36:   @include until($tablet) {\A 37:     top: 48px;\A 38:   }\A 39: "; }
+  content: "Error: Undefined variable: \"$color-white\".\A         on line 20 of common.scss\A \A 15:   left: 0;\A 16:   height: 100vh;\A 17:   z-index: 5;\A 18:   width: 100%;\A 19:   display: table;\A 20:   background: $color-white;\A 21:   overflow: hidden;\A 22:   @include until($tablet) {\A 23:     top: 48px;\A 24:   }\A 25: "; }

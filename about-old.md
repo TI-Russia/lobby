@@ -3,6 +3,12 @@ layout: page
 title: About
 permalink: /about/
 ---
+{% for section in site.about %}
+    <h1 id={{ section.ident }}">{{ section.title }}</h1>
+    <div>
+        {{ section.content }}
+    </div>
+{% endfor %}
 
 ## О проекте
 

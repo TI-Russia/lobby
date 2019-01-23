@@ -1,0 +1,15 @@
+---
+layout: page
+title: About
+permalink: /about/
+---
+<div class="about-section">
+{% capture my_include %}{% include about_intro.md %}{% endcapture %}
+{{ my_include | markdownify }}
+</div>
+{% for section in site.about %}
+    <h1 id="{{ section.ident }}">{{ section.title }}</h1>
+    <div class="about-section">
+        {{ section.content }}
+    </div>
+{% endfor %}

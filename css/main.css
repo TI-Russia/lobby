@@ -9,7 +9,7 @@ Error: Undefined variable: "$color-white".
 7: body{
 8:   background: $color-white;
 9:   line-height: 1;
-10:   overflow: hidden;
+10:   //overflow: hidden;
 11:   min-width: 812px;
 12:   display: flex;
 13:   min-height: 100vh;
@@ -67,4 +67,4 @@ C:/Ruby24-x64/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$color-white\".\A         on line 8 of main.scss\A \A 3: html{overflow-y: auto;}\A 4: body, button, select, input{\A 5:   font-family: \"Helios-Cond-Regular\", \"Helvetica Neue\";\A 6:   }\A 7: body{\A 8:   background: $color-white;\A 9:   line-height: 1;\A 10:   overflow: hidden;\A 11:   min-width: 812px;\A 12:   display: flex;\A 13:   min-height: 100vh;"; }
+  content: "Error: Undefined variable: \"$color-white\".\A         on line 8 of main.scss\A \A 3: html{overflow-y: auto;}\A 4: body, button, select, input{\A 5:   font-family: \"Helios-Cond-Regular\", \"Helvetica Neue\";\A 6:   }\A 7: body{\A 8:   background: $color-white;\A 9:   line-height: 1;\A 10:   //overflow: hidden;\A 11:   min-width: 812px;\A 12:   display: flex;\A 13:   min-height: 100vh;"; }
