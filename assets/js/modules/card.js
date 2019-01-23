@@ -7,7 +7,10 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
         fraction=card.select("#fraction_text"),
         position=card.select("#position"),
         law_number_vnes=card.select("#law_number_vnes"),
+        law_text_bring=card.select("#law_text_bring"),
         law_number_podpis=card.select("#law_number_podpis"),
+        law_text_passed=card.select("#law_text_passed"),
+        law_text_day=card.select("#law_text_day"),
         sred_day=card.select("#sred_day"),
         lobby=card.select("#lobby"),
         bio=card.select("#bio"),
@@ -55,7 +58,11 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
     fraction.text(info.fraction).attr("class",fraction_class)
     position.text(positionText)
     law_number_vnes.text(rating.vnes)
+    law_text_bring.html(Pluralization(+rating.vnes, "закон<br>внесён", "закона<br>внесено", "законов<br>внесено"))
     law_number_podpis.text(rating.podpis)
+    law_text_passed.text(Pluralization(+rating.podpis, "принят", "принято", "принято"))
+    law_text_day.text(Pluralization(Math.floor(String(rating.sred_day).replace(',','.')), "день", "дня", "дней"))
+    if (rating.podpis==1) HideBlockByClass("law_text_average")
     if (rating.podpis==0) HideBlockByClass("law_signed")
     if (rating.no==true) HideBlockByClass("laws_block")
     sred_day.text(Math.floor(String(rating.sred_day).replace(',','.')))
@@ -128,6 +135,22 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
         })
 
         return content
+    }
+    
+    function Pluralization(number, one, two, five) {
+            let n = Math.abs(number);
+            n %= 100;
+            if (n >= 5 && n <= 20) {
+                return five;
+            }
+            n %= 10;
+            if (n === 1) {
+                return one;
+            }
+            if (n >= 2 && n <= 4) {
+                return two;
+            }
+            return five;
     }
 
     function HideBlockByClass(classname) {
