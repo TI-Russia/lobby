@@ -195,6 +195,8 @@ header {
 .columns.about{
   font-size: 20px;
   padding: 16px 60px;
+  border-bottom: 1px solid #DDDDDD;
+  margin-bottom: 1px;
   @include until($desktop){
     padding: 16px 32px;
   }
@@ -208,11 +210,35 @@ header {
     top:16px;
     position: -webkit-sticky;
     position: sticky;
+    @include until($tablet) {
+      width: auto;
+    }
 
     .active{
       font-weight: bold;
     }
   }
+  #scrollToTop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: $color-blue;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px 15px;
+    font-size: 18px;
+    opacity: 0.6;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+
   .about-section:not(:last-of-type){
     padding-bottom: 100px;
   }
