@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-permalink: /about/
+permalink: /about-old/
 ---
 {% for section in site.about %}
     <h1 id={{ section.ident }}">{{ section.title }}</h1>

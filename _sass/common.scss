@@ -95,17 +95,19 @@ header {
     }
   }
   .c1 {
-    flex: 0 0 352px;
+    flex: 0 0 380px;
     margin-left: 60px;
     padding-left: 0;
     img {
-      margin-right:7px; }
+      margin-right:7px;
+    vertical-align: text-top}
+    a,a:hover{
+      text-decoration: none;
+      color:$color-white;
+      display: block;
+    }
 
     h1 {
-      a,a:hover{
-        text-decoration: none;
-        color:$color-white;
-      }
       line-height: 28px;
       font-size: 32px;
       text-transform: uppercase;
