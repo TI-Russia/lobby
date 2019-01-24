@@ -97,7 +97,7 @@ define(["d3"], function(d3) {
             return Math.abs(ageDate.getUTCFullYear() - 1970);
         }
         data = rawdata.flatMap((d) => {
-            groups = d.groups
+            let groups = d.groups
             groups.length==0 ? groups=[11851] : groups // кто без групп? -> в группу "Не выявлено"
             var rating=Math.floor(Math.random() * (10-4))+4
             rating=GetRating(d.person)

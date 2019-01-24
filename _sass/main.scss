@@ -330,7 +330,7 @@ div#card {
     padding-top: 0;
   }
   .columns{
-    overflow-x: scroll;
+    overflow-x: auto;
     white-space: nowrap;
     @include until($tablet){
       margin: 0;

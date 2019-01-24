@@ -63,14 +63,14 @@ function doChart() {
     var uniq=0
 
     var nodes = data.map(function (d) {
-        var clusterParentId, clusterParent2Id
+        var clusterParentId, clusterParent2Id, clusterParent2Name
         var group=lobby.find(x => x.id === d.group)
         if (group.level==0 ) clusterParentId=group.id
         if (group.level==1 ) clusterParentId=lobby.find(x=>x.id==group.parent).id
         if (group.level==2 ) {clusterParentId=lobby.find(x=>x.id==lobby.find(x=>x.id==group.parent).parent).id;clusterParent2Id=lobby.find(x=>x.id==group.parent).id;clusterParent2Name=lobby.find(x=>x.id==group.parent).name}
 
         var i = +d.group,
-            j = clusterParent2Id ? clusterParent2Id : +i
+            j = clusterParent2Id ? clusterParent2Id : +i,
             //r =Math.floor(Math.random() * (maxRadius-3))+3,
             r=d.rating,
             d = {
@@ -233,7 +233,7 @@ function doChart() {
 
 
     function foci(clusterId){
-        cluster=clearClusters.find(x=>x.cluster==clusterId)
+        let cluster=clearClusters.find(x=>x.cluster==clusterId)
         return {
             "x" : xScale(cluster.col),
             "y": yScale(cluster.row)
@@ -243,7 +243,7 @@ function doChart() {
     var forceX = d3.forceX((d) => foci(d.cluster).x);
     var forceY = d3.forceY((d) => foci(d.cluster).y);
 
-    var links
+    var links,link;
     var first_end=0
 
     var force = d3.forceSimulation()
@@ -358,8 +358,9 @@ function doChart() {
 
         client_width <= 812 ? width = min_width : width = client_width;
         (IsItMobile() || window.orientation == 90) ? width = client_width : width = width;
-        height = (IsItMobile() ) ? client_height : min_height;
-        (client_height >= height && client_height >= min_height) ? height = client_height : height;
+        //height = (IsItMobile() ) ? client_height : min_height;
+        //(client_height >= height && client_height >= min_height) ? height = client_height : height;
+        height = client_height-5
 
         if (window.orientation == 90) {
             height = client_height
@@ -679,13 +680,14 @@ function doChart() {
         //createSelect("select_election_method", "Способ избрания","election_method")
         //createSelect("select_fraction", "Фракция","fraction")
         createSelect("select_committees", "Комитет","committees")
+        var conv_slider, age_slider;
         CreateSliders()
         MakeAutoComplete()
         PresetsHandler()
 
 
 
-        data2=lobby.sort((a,b)=>a.tree_id-b.tree_id)
+        //data2=lobby.sort((a,b)=>a.tree_id-b.tree_id)
 
         lobby.forEach(lob=>{
             if (lob.parent==null) lob.parent=1
@@ -739,7 +741,7 @@ function doChart() {
             .classed("opt",true)
             .attr("value",d=>d.id)
             .text(d=>{
-                x=+d.level
+                let x=+d.level, y;
                 if (x==0) y="\xA0"
                 if (x==1) y="\xA0\xA0\xA0\xA0"
                 if (x==2) y="\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0"
@@ -749,7 +751,7 @@ function doChart() {
             })
             .each(PrependOption)
             .each(function(d) {
-                t=nodes.filter(x=>x.cluster==d.id ||
+                let t=nodes.filter(x=>x.cluster==d.id ||
                     x.clusterParent==d.id||
                     x.clusterParentMiddle==d.id||
                     x.clusterMin==d.id)
@@ -771,9 +773,9 @@ function doChart() {
         }
 
         function createSelect(selector, placeholder,key) {
-            jj2  = []//массив значений ключа
+            let jj2  = []//массив значений ключа
             data.forEach(function (dep) {
-                keys=dep[key] // ключ может быть массивом значений
+                let keys=dep[key] // ключ может быть массивом значений
                 Array.isArray(keys)
                     ?   keys.forEach(function (comitet) {//надо пройти по нему
                         jj2.push({key: comitet}); //получаем значения ключа в том числе и из массивов
@@ -893,7 +895,7 @@ function doChart() {
         function ZoomeToLobby(active){
 
             if (!active) return
-            active_enclose = d3.select("#enclose"+active);//find enclose
+            let active_enclose = d3.select("#enclose"+active);//find enclose
             if (!active_enclose.node()) {
                 var lob = nodes.find(x=>x.cluster==active || x.clusterMin==active)
                 var parent = lobby.find(x=>x.id == lob.clusterParent)
@@ -973,7 +975,7 @@ function doChart() {
 
             //if (i_search!="")
 
-            result=circles.filter(x=>
+            let result=circles.filter(x=>
                 ((i_search!="") ?
                     (x.name.toLowerCase().includes(i_search.toLowerCase()) ||
                         x.clusterName.toLowerCase().includes(i_search.toLowerCase())) : true)

@@ -1,5 +1,7 @@
 require.config({
     paths: {
+        es6: "npm-modules/requirejs-babel/es6",
+        babel: "npm-modules/requirejs-babel/babel-5.8.34.min",
         d3: "vendor/d3",
         jquery: 'vendor/jquery',
         floatingTooltip:'vendor/tooltip',

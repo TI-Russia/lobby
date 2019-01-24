@@ -1,0 +1,52 @@
+{
+  "_from": "requirejs-babel",
+  "_id": "requirejs-babel@0.0.9",
+  "_inBundle": false,
+  "_integrity": "sha1-jtNyjwHSMB/7x3Ce7UA+X0fDYnw=",
+  "_location": "/requirejs-babel",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "requirejs-babel",
+    "name": "requirejs-babel",
+    "escapedName": "requirejs-babel",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/requirejs-babel/-/requirejs-babel-0.0.9.tgz",
+  "_shasum": "8ed3728f01d2301ffbc7709eed403e5f47c3627c",
+  "_spec": "requirejs-babel",
+  "_where": "C:\\Users\\maino",
+  "author": {
+    "name": "Michael",
+    "email": "mikach27@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/mikach/requirejs-babel/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "An AMD loader plugin for Babel",
+  "devDependencies": {
+    "requirejs": "^2.1.16"
+  },
+  "homepage": "https://github.com/mikach/requirejs-babel#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "name": "requirejs-babel",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikach/requirejs-babel.git"
+  },
+  "scripts": {
+    "optimize": "r.js -o demo/build.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.9"
+}
