@@ -11,10 +11,13 @@ body{
   min-width: 812px;
   display: flex;
   min-height: 100vh;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   flex-direction: column;
   @include until($desktop){
     min-width: auto;
   }
+
   .hero{
     flex: 1;
   }
