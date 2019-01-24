@@ -331,6 +331,8 @@ div#card {
   font-size: 16px;
   @include until($tablet){
     padding-top: 0;
+
+    height: 65px;
   }
   .columns{
     overflow-x: auto;
