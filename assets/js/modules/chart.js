@@ -349,7 +349,7 @@ function doChart() {
         let vh = window.innerHeight * 0.01;
 // Then we set the value in the --vh custom property to the root of the document
         document.documentElement.style.setProperty('--vh', `${vh}px`);
-        
+
         var headerHeight = document.getElementsByTagName('header')[0].clientHeight,
             controlsHeight = document.getElementById('controls').clientHeight,
             footerHeight = document.getElementsByClassName('footer')[0].clientHeight,
