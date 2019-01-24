@@ -196,6 +196,7 @@ div#clusters>svg{
   border: 1px solid #ddd;
   border-left: none;
   border-right: none;
+  border-bottom: none;
 }
 
 div#presets{
@@ -324,14 +325,18 @@ div#card {
 }
 
 .footer{
+  border-top: 1px solid #DDDDDD;
   background: inherit;
   padding: 0;
   padding-bottom: 16px;
-  padding-top: 10px;
+  padding-top: 16px;
   font-size: 16px;
+
+  @include until($desktop){
+    height: 70px;
+  }
   @include until($tablet){
     padding-top: 0;
-
     height: 65px;
   }
   .columns{
@@ -375,7 +380,7 @@ div#card {
     }
     @include until($tablet){
       margin-left: 0px;
-      padding: 16px 16px 0 16px;
+      padding: 13px 16px 0 16px;
     }
 
     a{
