@@ -1,4 +1,4 @@
-define(['jquery','d3', 'tree'], function( $,d3, tree_func ) {
+define(['jquery','d3', 'tree', 'plural'], function( $,d3, tree_func, plural) {
 function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
 
     var card=d3.select("#card"),          //container
@@ -136,22 +136,7 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
 
         return content
     }
-    
-    function Pluralization(number, one, two, five) {
-            let n = Math.abs(number);
-            n %= 100;
-            if (n >= 5 && n <= 20) {
-                return five;
-            }
-            n %= 10;
-            if (n === 1) {
-                return one;
-            }
-            if (n >= 2 && n <= 4) {
-                return two;
-            }
-            return five;
-    }
+
 
     function HideBlockByClass(classname) {
         d3.selectAll("."+classname+"").classed("is-hidden",true)

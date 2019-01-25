@@ -1,5 +1,5 @@
-requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowCard","ShowedClusters","zoom","tree"],
-    function( d3,$,floatingTooltip ,noUiSlider,awesomeplete,Data,ShowCard,ShowedClusters,zoom,tree_func ) {
+requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowCard","ShowedClusters","zoom","tree", "plural"],
+    function( d3,$,floatingTooltip ,noUiSlider,awesomeplete,Data,ShowCard,ShowedClusters,zoom,tree_func,plural ) {
 
     var data
     var lobby
@@ -598,13 +598,18 @@ function doChart() {
             HightlightCirclesOn(d.id)
 
         var content =
-            '<span class="name">'+d.name+' </span><br/>'
+            '<span class="name">'+d.name+' </span><br/>';
+        content += '<span class="value">'+ d.fraction+', '+d.convocations+' '+ Pluralization(d.convocations, "созыв", "созыва", "созывов")+'</span><br/>';
         if (cloneclustersNames=="")
             content+=
             '<span class="value">'+groupname.name+'</span><br/>';
         if (cloneclustersNames!="")
                 content+=
             '<span class="value">'+cloneclustersNames.map(name=>name.name)+'</span><br/>';
+
+
+        //content += '<span class="value">Рейтинг: '+ d.r.toFixed(2)+'</span><br/>';
+
 
         tooltip.showTooltip(content, d3.event);
     }

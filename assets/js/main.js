@@ -15,7 +15,8 @@ require.config({
         zoom:"tools/zoom",
         cookie:"tools/cookie",
         tree: "tools/tree",
-        burger: "tools/burger"
+        burger: "tools/burger",
+        plural:"tools/pluralize"
     },
     shim: {
         awesomeplete:{
