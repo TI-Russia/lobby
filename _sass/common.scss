@@ -108,8 +108,9 @@ header {
 
     .h1 {
       display: flex;
-      border: 1px solid wheat;
       align-items: center;
+      justify-content: center;
+      text-align: center;
       font-size: 32px;
       text-transform: uppercase;
       font-family: "Helios-Cond-Bold", "Helvetica Neue", serif;
@@ -117,7 +118,7 @@ header {
       @include until($tablet){
         font-size: 20px;
       }
-      p{margin:0;    line-height: 35px;};
+      p{margin:0;};
     }
     @include until($desktop){
       margin-left: 32px;
