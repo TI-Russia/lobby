@@ -10,7 +10,7 @@ body{
   //overflow: hidden;
   min-width: 812px;
   display: flex;
-  //min-height: 100vh;
+  min-height: 100vh;
 
   flex-direction: column;
   @include until($desktop){
@@ -21,6 +21,7 @@ body{
     flex: 1;
   }
   &.chart{
+    min-height: auto;
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
   }
