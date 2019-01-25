@@ -10,6 +10,14 @@ define(["d3"], function(d3) {
         "assets/data/rating.json",
         "assets/data/alias.json"
     ];
+    if (/dumabingo/.test(window.location.href)){ /*use data from declarator api*/
+        files = [
+            "https://declarator.org/media/dumps/lobbist.json",
+            "https://declarator.org/media/dumps/lobby-group.json",
+            "assets/data/rating.json",
+            "assets/data/alias.json"
+        ];
+    }
     var promises = [];
     var rawDep, rawRating, rawAlias, aliases;
 
@@ -21,14 +29,7 @@ define(["d3"], function(d3) {
     var url_lobby="https://dev.declarator.org/api/lobby_group/"
     //promises.push(getAPI(allData,null,url_lobby));
 
-    if (/dumabingo/.test(window.location.href)){
-        files = [
-            "https://declarator.org/media/dumps/lobbist.json",
-            "https://declarator.org/media/dumps/lobby-group.json",
-            "assets/data/rating.json",
-            "assets/data/alias.json"
-        ];
-    }
+
 
     return Promise.all(promises).then(function (values) {
         //console.log("file1", values[0]) //dep
