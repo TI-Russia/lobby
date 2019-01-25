@@ -107,7 +107,9 @@ header {
       display: block;
     }
 
-    h1 {
+    .h1 {
+      display: flex;
+      align-items: center;
       height: 35px;
       line-height: 35px;
       vertical-align: middle;
@@ -118,6 +120,7 @@ header {
       @include until($tablet){
         font-size: 20px;
       }
+      p{margin:0;};
     }
     @include until($desktop){
       margin-left: 32px;
