@@ -112,7 +112,7 @@ header {
       justify-content: center;
       text-align: center;
       font-size: 32px;
-      text-transform: uppercase;
+      //text-transform: uppercase;
       font-family: "Helios-Cond-Bold", "Helvetica Neue", serif;
       letter-spacing: 0.02em;
       @include until($tablet){
