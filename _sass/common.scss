@@ -43,7 +43,7 @@
         overflow-y: auto;
       }
       @media screen and (max-width: 375px){
-        max-height: 60vh;
+        max-height: 80vh;
         overflow-y: auto;
       }
     }
@@ -106,7 +106,7 @@ header {
       color:$color-white;
       display: block;
     }
-    
+
     @include until($desktop){
       margin-left: 32px;
     }
