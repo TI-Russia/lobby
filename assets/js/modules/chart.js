@@ -593,7 +593,6 @@ function doChart() {
         if (Array.isArray(d.cloneClusters))
             cloneclustersNames = d.cloneClusters.map(x=>lobby.find(y=>y.id==x))
 
-
         if (!isModalOpen)
             HightlightCirclesOn(d.id)
 
