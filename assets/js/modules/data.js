@@ -48,7 +48,7 @@ define(["d3"], function(d3) {
             lobby_level_0: lobby_level_0,
             data: data,
             rawRating: rawRating,
-            rawDep:rawDep,
+            rawDep: rawDep,
             myGroups: myGroups,
             myArrGroups: myArrGroups,
         }
