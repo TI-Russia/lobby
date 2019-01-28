@@ -1,5 +1,4 @@
 define([], function() {
-// возвращает cookie с именем name, если есть, если нет, то undefined
 function getCookie(name) {
   var matches = document.cookie.match(new RegExp(
     "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
@@ -7,11 +6,8 @@ function getCookie(name) {
   return matches ? decodeURIComponent(matches[1]) : undefined;
 }
 
-// устанавливает cookie с именем name и значением value
-// options - объект с свойствами cookie (expires, path, domain, secure)
 function setCookie(name, value, options) {
   options = options || {};
-  console.log(options, options.expires)
 
   var expires = options.expires;
 
@@ -39,7 +35,6 @@ function setCookie(name, value, options) {
   document.cookie = updatedCookie;
 }
 
-// удаляет cookie с именем name
 function deleteCookie(name) {
   setCookie(name, "", {
     expires: -1
