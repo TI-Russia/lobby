@@ -41,7 +41,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
 
             SetupSVG()
 
-            var padding = 2, // separation between same-color nodes
+            var padding = 3, // separation between same-color nodes
                 clusterPadding = 15, // separation between different-color nodes
                 maxRadius = 10;
 
@@ -492,14 +492,11 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                         .attr("x2", d => d.target.x)
                         .attr("y2", d => d.target.y);}
 
-
                 //if (force.alpha()>=0.1) label_force.alpha(0.1).restart();
                 if (this.alpha()<0.01) $('#clusters').removeClass('is-loading');
             }
             function tick2() {
                 labels
-                //.attr('x', d => d.x)
-                //.attr('y', d => d.y)
                     .attr("transform",d=>"translate("+d.x+" "+ d.y+")");
             }
 
@@ -1117,6 +1114,8 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
 
                     spot.transition().style("opacity",1)
                     labels_spot.transition().style("opacity",1)
+
+
                 }
 
                 function hightlightOff() {
