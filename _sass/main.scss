@@ -160,6 +160,7 @@ div#controls{
       -webkit-overflow-scrolling: touch;
       overflow-x: scroll;
       white-space: nowrap;
+      scrollbar-width: none;
     }
     a{
       display: inline-block;
@@ -330,20 +331,17 @@ div#card {
   border-top: 1px solid #DDDDDD;
   background: inherit;
   padding: 0;
-  padding-bottom: 16px;
+  padding-bottom: 11px;
   padding-top: 16px;
   font-size: 16px;
 
-  @include until($desktop){
-    //height: 70px;
-  }
   @include until($tablet){
     padding-top: 0;
-    //height: 65px;
   }
   .columns{
     overflow-x: auto;
     white-space: nowrap;
+    scrollbar-width:none;
     @include until($tablet){
       margin: 0;
       }
@@ -387,6 +385,10 @@ div#card {
       padding-top: 0;
       font-size: 10px;
       padding-bottom: 5px;
+      p{
+        padding-right: 16px;
+        display: inline;
+      }
     }
   }
 
