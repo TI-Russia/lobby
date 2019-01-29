@@ -345,11 +345,8 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                     footerExtraHeight = document.getElementsByClassName('extra')[0].clientHeight,
                     sumHeight = headerHeight + footerHeight + controlsHeight - footerExtraHeight
 
-                // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
                 document.body.className += ' ' +'chart';
-                let vh = (window.innerHeight+footerExtraHeight+16) * 0.01;
-                // Then we set the value in the --vh custom property to the root of the document
-                //document.documentElement.style.setProperty('--vh', `${vh}px`);
+
 
                 var min_width = 812,
                     min_height = 600,
