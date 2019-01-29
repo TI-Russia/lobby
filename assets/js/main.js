@@ -30,10 +30,11 @@ require.config({
 
 require(["data", "chart","burger","intro","d3"], function(data,chart,burger,intro,d3) {
 
-    burger
-    intro
+
     window.d3 = d3;
     chart
+    burger
+    intro
 
     /*require(["d3","chart"], function(d3,chart) {
         window.d3 = d3;
