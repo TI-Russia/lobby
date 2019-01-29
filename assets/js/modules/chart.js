@@ -906,7 +906,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 }
 
                 function onchange(init) {
-                    $('.hero-body').removeClass('is-loading');
+                    $('.chart-place').removeClass('is-loading');
                     var i_search = d3.select('input#search').property('value')
                     var s_lobby = d3.select('select#select_lobby').property('value')
                     if (s_lobby!=-1 && s_lobby!="") ZoomeToLobby(s_lobby)
