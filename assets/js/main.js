@@ -34,7 +34,6 @@ require(["burger","intro"], function(burger,intro) {
 
     require(["d3","chart"], function(d3,chart) {
         window.d3 = d3;
-        intro
         chart
     });
 
