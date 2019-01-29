@@ -226,12 +226,6 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 })
             }
 
-            function makeTitle(id,row,col) {
-                var group = lobby.find(x=>x.id==id)
-                svg.append("text").attr("class","title").attr("y",yScale(row)).attr("x",xScale(col)).text(group.name)
-            }
-
-
             function foci(clusterId){
                 let cluster=clearClusters.find(x=>x.cluster==clusterId)
                 return {
@@ -253,11 +247,15 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 .force('x',forceX.strength(0.1))
                 .force('y',forceY.strength(0.1))
                 .alphaDecay(0.04)
-                .on("tick", tick)
                 .on("end", function (){
                     if (first_end==0) label_force.alpha(1).restart()
                     first_end=1
-                });
+                })
+                .stop();
+
+            for (var i = 0, n = Math.ceil(Math.log(force.alphaMin()) / Math.log(1 - force.alphaDecay())); i < n; ++i) {
+                force.tick();
+            }
 
             var label_force=d3.forceSimulation()
                 .nodes(clearClusters.filter(x=>x.count>10))
@@ -277,18 +275,14 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 .on('mouseover', showDetail)
                 .on('mouseout', hideDetail)
                 .on('click', ClickOnCircle)
-            /*.call(d3.drag()
-                .on("start", dragstarted)
-                .on("drag", dragged)
-                .on("end", dragended));*/
 
             const labels = svg.append('g')
-            //.datum(ShowedClusters(clearClusters))
                 .datum(clearClusters)
                 .selectAll('.g')
                 .data(d => d)
                 .enter().append("g")
                 .attr('class', "lobby_label")
+                .style("opacity",0)
                 .attr("x", d => d.x)
                 .attr("y", d => d.y)
                 .attr("transform",d=>"translate("+d.x+" "+ d.y+")")
@@ -436,49 +430,10 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 }
             }
 
+            RedrawChart();
+            MakeSelect(clearClusters)
 
-            function dragstarted(d) {
-                if (!d3.event.active) force.alphaTarget(0.03).restart();
-                d.fx = d.x;
-                d.fy = d.y;
-            }
-
-            function dragged(d) {
-                d.fx = d3.event.x;
-                d.fy = d3.event.y;
-            }
-
-            function dragended(d) {
-                if (!d3.event.active) force.alphaTarget(0);
-                d.fx = null;
-                d.fy = null;
-            }
-
-            circles.transition()
-                .duration(500)
-                .attrTween("r", function (d) {
-                    var i = d3.interpolate(0, d.r);
-                    return function (t) {
-                        return d.r = i(t);
-                    };
-                })
-                .on("end",function(d,i) {
-                    if (i === circles.size()-1) {
-                        MakeSelect(clearClusters)
-                    }
-                })
-            ;
-
-            labels.transition()
-                .duration(1000)
-                .attrTween("r", function (d) {
-                    var i = d3.interpolate(0, d.r);
-                    return function (t) {
-                        return d.r = i(t);
-                    };
-                });
-
-            function tick() {
+            function RedrawChart() {
                 encloses()
 
                 circles
@@ -492,8 +447,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                         .attr("x2", d => d.target.x)
                         .attr("y2", d => d.target.y);}
 
-                //if (force.alpha()>=0.1) label_force.alpha(0.1).restart();
-                if (this.alpha()<0.01) $('#clusters').removeClass('is-loading');
+                $('#clusters').removeClass('is-loading');
             }
             function tick2() {
                 labels
@@ -637,10 +591,12 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                     .attr("stroke-width", d => Math.sqrt(d.value));
 
                 force.force("link", d3.forceLink(links).id(d => d.uniq).strength(0))
-                if (force.alpha() <= 0.01){
+                //force.alpha(1).restart()
+                RedrawChart()
+                /*if (force.alpha() <= 0.01){
                     force.alpha(0).restart()
                     force.force("link", d3.forceLink(links).id(d => d.uniq).strength(0))
-                }
+                }*/
             }
 
             /*
@@ -1114,8 +1070,6 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
 
                     spot.transition().style("opacity",1)
                     labels_spot.transition().style("opacity",1)
-
-
                 }
 
                 function hightlightOff() {
