@@ -3,6 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
+<div class="hero-body">
 {% for section in site.about %}
     <div class="about-section" id="{{ section.ident }}">
         <h1 id="{{ section.ident }}">{{ section.title }}</h1>
@@ -10,3 +11,4 @@ permalink: /about/
     </div>
 {% endfor %}
 <button  id="scrollToTop" title="Наверх">&uarr;</button>
+</div>

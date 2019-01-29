@@ -1,5 +1,5 @@
 requirejs(['jquery','cookie'], function( $,cookie ) {
-    $('.chart-place').addClass('is-loading');
+    $('.hero-body').addClass('is-loading');
 
     /*Set Cookie for Intro*/
     var dateOfOpen = new Date(new Date().getTime());

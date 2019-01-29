@@ -359,6 +359,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
 
                 client_width <= 812 ? width = min_width : width = client_width;
                 (IsItMobile() || window.orientation == 90) ? width = client_width : width = width;
+
                 height = client_height-5
 
                 if (window.orientation == 90) {
@@ -906,7 +907,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 }
 
                 function onchange(init) {
-                    $('.chart-place').removeClass('is-loading');
+                    $('.hero-body').removeClass('is-loading');
                     var i_search = d3.select('input#search').property('value')
                     var s_lobby = d3.select('select#select_lobby').property('value')
                     if (s_lobby!=-1 && s_lobby!="") ZoomeToLobby(s_lobby)
