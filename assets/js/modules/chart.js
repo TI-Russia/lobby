@@ -446,8 +446,6 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                         .attr("y1", d => d.source.y)
                         .attr("x2", d => d.target.x)
                         .attr("y2", d => d.target.y);}
-
-                $('#clusters').removeClass('is-loading');
             }
             function tick2() {
                 labels
@@ -638,8 +636,6 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 return x1 + x2;
             }
 
-            //MakeSelect(clearClusters)
-
             function MakeSelect(data_clusters) {
                 //createSelect("select_election_method", "Способ избрания","election_method")
                 //createSelect("select_fraction", "Фракция","fraction")
@@ -726,7 +722,6 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                         }})
 
                 onchange("init")
-
 
                 function PrependOption(d){
                     if (d.level==0) {
@@ -1070,6 +1065,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
 
                     spot.transition().style("opacity",1)
                     labels_spot.transition().style("opacity",1)
+                    $('body').removeClass('is-loading');
                 }
 
                 function hightlightOff() {

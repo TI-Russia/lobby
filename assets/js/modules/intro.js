@@ -1,6 +1,5 @@
 requirejs(['jquery','cookie'], function( $,cookie ) {
-    $('#clusters').addClass('is-loading');
-    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+    $('body').addClass('is-loading');
 
     /*Set Cookie for Intro*/
     var dateOfOpen = new Date(new Date().getTime());
