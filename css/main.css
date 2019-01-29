@@ -1,54 +1,41 @@
 /*
-Error: Undefined variable: "$color-white".
-        on line 8 of main.scss
+Error: Invalid CSS after "    /height: 65px": expected "{", was ";"
+        on line 342 of main.scss
 
-3: html{overflow-y: auto;}
-4: body, button, select, input{
-5:   font-family: "Helios-Cond-Regular", "Helvetica Neue";
-6:   }
-7: body{
-8:   background: $color-white;
-9:   line-height: 1;
-10:   //overflow: hidden;
-11:   min-width: 812px;
-12:   display: flex;
-13:   min-height: 100vh;
+337:   @include until($desktop){
+338:     //height: 70px;
+339:   }
+340:   @include until($tablet){
+341:     padding-top: 0;
+342:     /height: 65px;
+343:   }
+344:   .columns{
+345:     overflow-x: auto;
+346:     white-space: nowrap;
+347:     @include until($tablet){
 
 Backtrace:
-main.scss:8
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/script/tree/variable.rb:49:in `_perform'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/script/tree/node.rb:50:in `perform'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/perform.rb:398:in `visit_prop'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/perform.rb:440:in `block (2 levels) in visit_rule'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/perform.rb:440:in `map'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/perform.rb:440:in `block in visit_rule'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/perform.rb:438:in `visit_rule'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/perform.rb:157:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/visitors/perform.rb:10:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+main.scss:342
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:1308:in `expected'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:1238:in `expected'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:1233:in `tok!'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:688:in `block'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:758:in `declaration_or_ruleset'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:708:in `block_child'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:700:in `block_contents'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:689:in `block'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:257:in `include_directive'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:234:in `special_directive'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:209:in `directive'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:708:in `block_child'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:700:in `block_contents'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:689:in `block'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:681:in `ruleset'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:707:in `block_child'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:700:in `block_contents'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:137:in `stylesheet'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/scss/parser.rb:41:in `parse'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/engine.rb:414:in `_to_tree'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.7.2/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
@@ -67,4 +54,4 @@ C:/Ruby24-x64/bin/scss:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$color-white\".\A         on line 8 of main.scss\A \A 3: html{overflow-y: auto;}\A 4: body, button, select, input{\A 5:   font-family: \"Helios-Cond-Regular\", \"Helvetica Neue\";\A 6:   }\A 7: body{\A 8:   background: $color-white;\A 9:   line-height: 1;\A 10:   //overflow: hidden;\A 11:   min-width: 812px;\A 12:   display: flex;\A 13:   min-height: 100vh;"; }
+  content: "Error: Invalid CSS after \"    /height: 65px\": expected \"{\", was \";\"\A         on line 342 of main.scss\A \A 337:   @include until($desktop){\A 338:     //height: 70px;\A 339:   }\A 340:   @include until($tablet){\A 341:     padding-top: 0;\A 342:     /height: 65px;\A 343:   }\A 344:   .columns{\A 345:     overflow-x: auto;\A 346:     white-space: nowrap;\A 347:     @include until($tablet){"; }

@@ -339,17 +339,17 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
             }
 
             function SetupSVG(resize) {
-                // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-                document.body.className += ' ' +'chart';
-                let vh = window.innerHeight * 0.01;
-                // Then we set the value in the --vh custom property to the root of the document
-                document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-
                 var headerHeight = document.getElementsByTagName('header')[0].clientHeight,
                     controlsHeight = document.getElementById('controls').clientHeight,
                     footerHeight = document.getElementsByClassName('footer')[0].clientHeight,
-                    sumHeight = headerHeight + footerHeight + controlsHeight
+                    footerExtraHeight = document.getElementsByClassName('extra')[0].clientHeight,
+                    sumHeight = headerHeight + footerHeight + controlsHeight - footerExtraHeight
+
+                // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+                document.body.className += ' ' +'chart';
+                let vh = (window.innerHeight+footerExtraHeight+16) * 0.01;
+                // Then we set the value in the --vh custom property to the root of the document
+                //document.documentElement.style.setProperty('--vh', `${vh}px`);
 
                 var min_width = 812,
                     min_height = 600,
@@ -359,12 +359,10 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
 
                 client_width <= 812 ? width = min_width : width = client_width;
                 (IsItMobile() || window.orientation == 90) ? width = client_width : width = width;
-                //height = (IsItMobile() ) ? client_height : min_height;
-                //(client_height >= height && client_height >= min_height) ? height = client_height : height;
                 height = client_height-5
 
                 if (window.orientation == 90) {
-                    height = client_height
+                    //height = client_height
                 }
 
                 d3.select('#clusters svg#chart')
@@ -376,7 +374,6 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                     .attr("class", "desktop")
                 maxX = 800
                 maxY = 600
-
             }
 
             function GetDepData(id) {
@@ -905,10 +902,11 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                     svg1.transition()
                         .duration(450)
                         .call(zoom_handler.transform, transform);
+
                 }
 
                 function onchange(init) {
-
+                    $('.hero-body').removeClass('is-loading');
                     var i_search = d3.select('input#search').property('value')
                     var s_lobby = d3.select('select#select_lobby').property('value')
                     if (s_lobby!=-1 && s_lobby!="") ZoomeToLobby(s_lobby)
@@ -1065,7 +1063,6 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
 
                     spot.transition().style("opacity",1)
                     labels_spot.transition().style("opacity",1)
-                    $('body').removeClass('is-loading');
                 }
 
                 function hightlightOff() {
