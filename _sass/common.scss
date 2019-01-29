@@ -20,30 +20,30 @@
   }
 
   .cd-intro-content {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: left;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
     .block {
       background: #FFFFFFEE;
       border-radius: 2px;
       padding: 32px;
       width: 512px;
-      margin: 0 auto;
-      margin-top:-48px;
+      margin-top: -48px;
       @include until($tablet) {
         width: auto;
         padding: 16px;
       }
     }
     .fixed-block{
-      @media screen and (max-height: 600px) {
-        max-height: 50vh;
+
+      @media screen and (max-width: 375px){
+        max-height: 65vh;
         overflow-y: auto;
       }
-      @media screen and (max-width: 375px){
-        max-height: 70vh;
+      @media screen and (max-height: 600px) {
+        max-height: 50vh;
         overflow-y: auto;
       }
     }
