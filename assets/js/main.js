@@ -28,19 +28,7 @@ require.config({
     }
 });
 
-require(["jquery","burger","data", "chart","intro","d3"], function($,burger,data,chart,intro,d3) {
-
-
+require(["jquery","burger","data","intro","d3"], function($,burger,data,intro,d3) {
     window.d3 = d3;
-
-    //setTimeout(function(){ burger; }, 50)
-    //setTimeout(function(){ intro; }, 100)
-
-
-    /*require(["d3","chart"], function(d3,chart) {
-        window.d3 = d3;
-        chart
-    });*/
-
 });
 

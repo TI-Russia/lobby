@@ -37,7 +37,6 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 .attr("x", -85)
                 .attr("y", 468)
 
-            //if (IsItMobile())legend.attr("x",0).attr("y", 425)
 
             SetupSVG()
 
@@ -82,7 +81,6 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                         //cluster: +i,
                         cluster: clusterParent2Id ? clusterParent2Id : +i,
                         clusterMin: +i,
-
                         //clusterName: group.name,
                         clusterName: clusterParent2Id ? clusterParent2Name : group.name,
                         clusterLevel:group.level,
