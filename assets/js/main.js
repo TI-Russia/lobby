@@ -32,9 +32,11 @@ require(["data", "chart","burger","intro","d3"], function(data,chart,burger,intr
 
 
     window.d3 = d3;
-    chart
+
     burger
-    intro
+    setTimeout(function(){ intro; }, 1000)
+
+    setTimeout(function(){ chart; }, 5000)
 
     /*require(["d3","chart"], function(d3,chart) {
         window.d3 = d3;
