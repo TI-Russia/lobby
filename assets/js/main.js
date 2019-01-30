@@ -28,15 +28,14 @@ require.config({
     }
 });
 
-require(["data", "chart","burger","intro","d3"], function(data,chart,burger,intro,d3) {
+require(["jquery","burger","data", "chart","intro","d3"], function($,burger,data,chart,intro,d3) {
 
 
     window.d3 = d3;
 
-    burger
-    setTimeout(function(){ intro; }, 1000)
+    //setTimeout(function(){ burger; }, 50)
+    //setTimeout(function(){ intro; }, 100)
 
-    setTimeout(function(){ chart; }, 5000)
 
     /*require(["d3","chart"], function(d3,chart) {
         window.d3 = d3;

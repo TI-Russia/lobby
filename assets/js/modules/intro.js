@@ -1,4 +1,4 @@
-requirejs(['jquery','cookie'], function( $,cookie ) {
+requirejs(['jquery','cookie','chart'], function( $,cookie,chart ) {
     $(document).ready(function() {
         var next = document.getElementById('next');
         next.addEventListener('click', function(e){
@@ -18,9 +18,6 @@ requirejs(['jquery','cookie'], function( $,cookie ) {
         if (cook == undefined) {
             $('body').addClass('intro-open')
             $('.cd-intro').show();
-
-
-
         }
         else {
             //cookie_already_was_here
