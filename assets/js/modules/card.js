@@ -86,7 +86,7 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
     }
 
     function GetPosition(info) {
-        var comitet=info.committees[0],
+        var comitet=info.committee,
             sposob=info.election_method,
             soziv=info.convocations.length,
             gender=info.gender
