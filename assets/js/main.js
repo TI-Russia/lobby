@@ -28,7 +28,15 @@ require.config({
     }
 });
 
-require(["jquery","burger","data","intro","d3"], function($,burger,data,intro,d3) {
+define('modernizr', [], Modernizr);
+require(["jquery","burger","data","intro","d3","modernizr"], function($,burger,data,intro,d3,Modernizr) {
     window.d3 = d3;
+    if (Modernizr.arrow) {
+        // supported arrow functions
+        //console.log("supported")
+    } else {
+        // not-supported, it is IE
+        //console.log("not-supported")
+    }
 });
 

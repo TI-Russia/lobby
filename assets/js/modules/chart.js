@@ -650,11 +650,8 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 var tree = tree_func.list_to_tree(lobby.sort((a,b)=>a.order-b.order))
 
                 var flattenedCollection = {};
-                tree_func.tree_to_collection(tree[0],"children", flattenedCollection)
-
-                var list = Object.keys(flattenedCollection).map(function(key) {
-                    return flattenedCollection[key]
-                });
+                var list=[]
+                tree_func.tree_to_collection(tree[0],"children", flattenedCollection,list)
 
                 var select = d3.select('#controls')
                     .select('select#select_lobby')

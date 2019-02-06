@@ -19,12 +19,13 @@ define([], function() {
         return roots;
     }
 
-    function tree_to_collection(tree, key, collection) {
+    function tree_to_collection(tree, key, collection,m_array) {
         if (!tree[key] || tree[key].length === 0) return;
         for (var i=0; i < tree[key].length; i++) {
             var child = tree[key][i]
             collection[child.id] = child;
-            tree_to_collection(child, key, collection);
+            m_array.push(child)
+            tree_to_collection(child, key, collection,m_array);
         }
         return;
     }
