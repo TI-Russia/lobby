@@ -1,7 +1,5 @@
 require.config({
     paths: {
-        es6: "npm-modules/requirejs-babel/es6",
-        babel: "npm-modules/requirejs-babel/babel-5.8.34.min",
         d3: "vendor/d3",
         jquery: 'vendor/jquery',
         floatingTooltip:'vendor/tooltip',
@@ -16,7 +14,14 @@ require.config({
         cookie:"tools/cookie",
         tree: "tools/tree",
         burger: "tools/burger",
-        plural:"tools/pluralize"
+        plural:"tools/pluralize",
+        es5_ShowCard:"es5/card",
+        es5_chart:"es5/chart",
+        es5_d3:"es5/d3-v4",
+        es5_ShowedClusters:"es5/showed_clusters",
+        es5_tree:"es5/tree",
+        es5_zoom:"es5/zoom",
+        warning:"es5/warning"
     },
     shim: {
         awesomeplete:{
@@ -29,14 +34,16 @@ require.config({
 });
 
 define('modernizr', [], Modernizr);
-require(["jquery","burger","data","intro","d3","modernizr"], function($,burger,data,intro,d3,Modernizr) {
-    window.d3 = d3;
-    if (Modernizr.arrow) {
-        // supported arrow functions
-        //console.log("supported")
-    } else {
-        // not-supported, it is IE
-        //console.log("not-supported")
-    }
-});
+if (Modernizr.arrow) {
+    // supported arrow functions
+    require(["jquery","burger","data","intro","d3"], function($,burger,data,intro,d3) {
+        window.d3 = d3;
+    });
+} else {
+    // not-supported, it is IE
+    require(["jquery","burger","intro","es5_d3", "warning"], function( $,burger,intro,d3, warning) {
+        window.d3 = d3;
+    });
+}
+
 

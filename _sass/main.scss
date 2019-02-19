@@ -17,7 +17,7 @@ body{
   }
 
   .hero{
-    flex: 1;
+    flex: 0 1 auto;
   }
   &.chart{
     min-height: auto;

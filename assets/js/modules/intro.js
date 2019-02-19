@@ -7,7 +7,14 @@ requirejs(['jquery','cookie'], function( $,cookie) {
                 cookie.setCookie("dateOfOpen", dateOfOpen.toUTCString(), {expires: date.toUTCString()});
                 $('.cd-intro').hide();
                 $('body').removeClass('intro-open');
+            if (Modernizr.arrow) {
+                // supported arrow functions
                 requirejs(['chart'], function( chart) {});
+            } else {
+                // not-supported, it is IE
+                requirejs(['es5_chart'], function( chart) {});
+            }
+                //requirejs(['chart'], function( chart) {});
             })
 
         $('.hero-body').addClass('is-loading');
@@ -24,7 +31,14 @@ requirejs(['jquery','cookie'], function( $,cookie) {
             //cookie_already_was_here
             $('.cd-intro').hide();
             $('body').removeClass('intro-open')
-            requirejs(['chart'], function( chart) {});
+            if (Modernizr.arrow) {
+                // supported arrow functions
+                requirejs(['chart'], function( chart) {});
+            } else {
+                // not-supported, it is IE
+                requirejs(['es5_chart'], function( chart) {});
+            }
+            //requirejs(['chart'], function( chart) {});
         }
     });
 });
