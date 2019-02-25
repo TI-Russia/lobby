@@ -64,6 +64,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
             var nodes = data.map(function (d) {
                 var clusterParentId, clusterParent2Id, clusterParent2Name
                 var group=lobby.find(x => x.id === d.group)
+                //debugger
                 if (group.level==0 ) clusterParentId=group.id
                 if (group.level==1 ) clusterParentId=lobby.find(x=>x.id==group.parent).id
                 if (group.level==2 ) {clusterParentId=lobby.find(x=>x.id==lobby.find(x=>x.id==group.parent).parent).id;clusterParent2Id=lobby.find(x=>x.id==group.parent).id;clusterParent2Name=lobby.find(x=>x.id==group.parent).name}
@@ -76,6 +77,8 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                         name: d.name,
                         fraction:d.fraction,
                         id: d.id,
+                        person: d.person,
+                        groups: d.groups,
                         gender:d.gender,
                         age:d.age,
                         //cluster: +i,
@@ -372,13 +375,6 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 maxY = 600
             }
 
-            function GetDepData(id) {
-                var deputatInfo = rawDep.find(x=>x.id==id)
-                return deputatInfo;
-            }
-
-
-
             function makeText(d) {
                 var alias=lobby.find(x=>d.clusterName==x.name).alias
                 d3.select(this).append("text")
@@ -510,10 +506,19 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 HightlightCirclesOff()
                 drawCloneLinks(d)
                 HightlightCirclesOn(d.id)
-                var depInfo=GetDepData(d.id)
-                var depRating=GetRating(depInfo.person)
-                var depLobbys=GetLobbyText(depInfo.groups)
-                var t = new ShowCard(depInfo, depRating, depLobbys, lobby)
+                $('#card').addClass('is-loading');
+                var depRating=GetRating(d.person)
+                var depLobbys=GetLobbyText(d.groups)
+                var cors="https://cors-anywhere.herokuapp.com/"
+                var url = "https://declarator.org/api/lobbist/"+d.id+"/"
+                if (/dumabingo/.test(window.location.href)==false){
+                    url=cors+url //use cors for local development
+                }
+                d3.json(url).then(function(depInfo){
+                    $('#card').removeClass('is-loading');
+                    var t = new ShowCard(depInfo, depRating, depLobbys, lobby)
+                });
+
             }
 
 

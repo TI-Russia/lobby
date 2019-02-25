@@ -5,14 +5,14 @@ define(["d3"], function(d3) {
     var myGroups = new Set();
     var myArrGroups = new Array()
     var files = [
-        "assets/data/deputates.json",
+        "assets/data/lobbist_small.json",
         "assets/data/lobby_group.json",
         "assets/data/rating.json",
         "assets/data/alias.json"
     ];
     if (/dumabingo/.test(window.location.href)){ /*use data from declarator api*/
         files = [
-            "https://declarator.org/media/dumps/lobbist.json",
+            "https://declarator.org/media/dumps/lobbist-small.json",
             "https://declarator.org/media/dumps/lobby-group.json",
             "assets/data/rating.json",
             "assets/data/alias.json"
@@ -33,8 +33,6 @@ define(["d3"], function(d3) {
 
     return Promise.all(promises).then(function (values) {
         //console.log("file1", values[0]) //dep
-        //console.log("files2", values[1])//lobby
-        //console.log("url", JSON.stringify(values[2]))//lobby from url
         rawDep = values[0]
         var rawLobby = values[1] //change to load from url
         rawRating = values[2] //
@@ -121,6 +119,8 @@ define(["d3"], function(d3) {
                     gender:d.gender,
                     age:calculateAge( new Date(d.birth_date)),
                     group: b,
+                    groups: groups,
+                    person: d.person,
                     rating: rating.log,
                     election_method:d.election_method,
                     committees:d.committees,

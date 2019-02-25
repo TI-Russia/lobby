@@ -321,6 +321,25 @@ div#card {
       content: '\2014\2002';
     }
   }
+  &.is-loading {
+    pointer-events: none;
+    color: $color-gray;
+
+    &:after {
+      @include loader;
+      animation: spinAround 1000ms infinite linear;
+      border: 2px solid $color-blue;
+      border-radius: $radius-rounded;
+      border-right-color: transparent;
+      border-top-color: transparent;
+      position: absolute;
+      top: calc(50% - 2.5em);
+      left: calc(50% - 2.5em);
+      width: 5em;
+      height: 5em;
+      border-width: 0.25em;
+    }
+  }
 
 }
 
