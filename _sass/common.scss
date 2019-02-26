@@ -213,18 +213,30 @@ header {
 }
 
 .columns.about{
+  //font-family: $font-legible;
   font-size: 20px;
-  padding: 16px 60px;
-  border-bottom: 1px solid #DDDDDD;
+  padding: 80px 16px 16px 0px;
   margin-bottom: 1px;
+  max-width: 1280px;
+  margin: 0 auto;
   @include until($desktop){
-    padding: 16px 32px;
+    padding: 40px 16px 32px 16px;
   }
   @include until($tablet) {
     flex-direction: column-reverse;
     display: flex;
-    padding: 16px 16px;
+    padding: 40px 8px 16px 8px;
   }
+  .aside{
+    @include from($desktop) {
+      padding-left: 235px;
+      padding-right: 24px;
+    }
+    @include until($tablet) {
+      padding: 8px;
+    }
+  }
+
   .about-menu{
     width: 235px;
     top:16px;
@@ -233,9 +245,8 @@ header {
     @include until($tablet) {
       width: auto;
     }
-
-    .active{
-      font-weight: bold;
+    @include  from($tablet){
+      margin-top: 2.5em;
     }
   }
   #scrollToTop {
@@ -249,8 +260,8 @@ header {
     background-color: $color-blue;
     color: white;
     cursor: pointer;
-    padding: 10px 15px;
-    border-radius: 10px;
+    padding: 9px 17px 11px 17px;
+    border-radius: 25px;
     font-size: 18px;
     opacity: 0.6;
     &:hover {
@@ -260,27 +271,36 @@ header {
 
 
   .about-section:not(:last-of-type){
-    padding-bottom: 100px;
+    padding-bottom: 4em;
   }
   h1{
     font-size: 32px;
     margin-bottom: 16px;
+    font-weight: bold;
   }
   h2,h3{
-    font-size: 26px;
-    margin-bottom: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 1.2em;
+    margin-bottom: 0.6em;
   }
   li{
     margin-bottom: 16px;
   }
-  p,h2{
-    margin-bottom: 16px;
+  p{
+    margin-bottom: 0.6em;
+    line-height: 1.2em;
   }
   ol{
     padding-left: 1em;
   }
   a, a:hover{
     color: $color-blue;
+    text-decoration: none;
+  }
+  .active a{
+    color: $color-black;
+
   }
 
 }

@@ -506,7 +506,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 HightlightCirclesOff()
                 drawCloneLinks(d)
                 HightlightCirclesOn(d.id)
-                $('#card').addClass('is-loading');
+                $('#clusters').addClass('is-loading');
                 var depRating=GetRating(d.person)
                 var depLobbys=GetLobbyText(d.groups)
                 var cors="https://cors-anywhere.herokuapp.com/"
@@ -515,7 +515,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                     url=cors+url //use cors for local development
                 }
                 d3.json(url).then(function(depInfo){
-                    $('#card').removeClass('is-loading');
+                    $('#clusters').removeClass('is-loading');
                     var t = new ShowCard(depInfo, depRating, depLobbys, lobby)
                 });
 
