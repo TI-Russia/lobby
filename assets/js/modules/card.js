@@ -22,6 +22,7 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
 
     var close_btn=card.select(".close_btn")
         .on("click",() =>{
+            photo.attr("src",'assets/images/blank.jpg')
             document.getElementById('card').scrollTop = 0; // scroll to top
             card.attr("class","modal")
         })

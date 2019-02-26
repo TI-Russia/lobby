@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abd74287-9318-4af2-8070-bec85aae945a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/_sass/common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/common.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/modules/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modules/card.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,19 +13,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_sass/bulma/sass/utilities/initial-variables.sass">
+        <entry file="file://$PROJECT_DIR$/_sass/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="48" column="1" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
+            <state relative-caret-position="161">
+              <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_sass/main.scss">
+        <entry file="file://$PROJECT_DIR$/assets/js/modules/card.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+            <state relative-caret-position="153">
+              <caret line="24" column="53" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -125,6 +124,7 @@
       <find>load</find>
       <find>is-lo</find>
       <find>nav-t</find>
+      <find>hero</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -144,7 +144,6 @@
         <option value="$PROJECT_DIR$/assets/data/lobbist_small.json" />
         <option value="$PROJECT_DIR$/assets/data/lobby_group.json" />
         <option value="$PROJECT_DIR$/assets/js/modules/data.js" />
-        <option value="$PROJECT_DIR$/assets/js/modules/card.js" />
         <option value="$PROJECT_DIR$/_sass/image.scss" />
         <option value="$PROJECT_DIR$/_sass/fonts.scss" />
         <option value="$PROJECT_DIR$/_sass/vars.scss" />
@@ -156,6 +155,7 @@
         <option value="$PROJECT_DIR$/assets/js/modules/chart.js" />
         <option value="$PROJECT_DIR$/_sass/common.scss" />
         <option value="$PROJECT_DIR$/_sass/main.scss" />
+        <option value="$PROJECT_DIR$/assets/js/modules/card.js" />
       </list>
     </option>
   </component>
@@ -292,12 +292,12 @@
       <workItem from="1550412079250" duration="635000" />
       <workItem from="1550514784821" duration="1261000" />
       <workItem from="1550559335980" duration="9509000" />
-      <workItem from="1551078118256" duration="22267000" />
+      <workItem from="1551078118256" duration="23665000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33672000" />
+    <option name="totallyTimeSpent" value="35070000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -435,13 +435,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
           <caret line="72" column="3" lean-forward="true" selection-start-line="72" selection-start-column="3" selection-end-line="72" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/modules/card.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -594,6 +587,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/modules/card.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="24" column="53" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
         </state>
       </provider>
     </entry>
