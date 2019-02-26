@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abd74287-9318-4af2-8070-bec85aae945a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_about/00.md" beforeDir="false" afterPath="$PROJECT_DIR$/_about/00.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_about/02.md" beforeDir="false" afterPath="$PROJECT_DIR$/_about/02.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_about/03.md" beforeDir="false" afterPath="$PROJECT_DIR$/_about/03.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/card.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/card.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_layouts/page.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_sass/common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/common.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_sass/fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/fonts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_sass/image.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/image.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_sass/vars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/vars.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/modules/chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modules/chart.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_sass/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="200" column="2" selection-start-line="200" selection-start-column="2" selection-end-line="200" selection-end-column="2" />
+            <state relative-caret-position="161">
+              <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -44,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_sass/common.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="262" column="31" selection-start-line="262" selection-start-column="31" selection-end-line="262" selection-end-column="31" />
+            <state relative-caret-position="161">
+              <caret line="194" column="6" selection-start-line="194" selection-start-column="6" selection-end-line="194" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -134,6 +124,7 @@
       <find>active</find>
       <find>load</find>
       <find>is-lo</find>
+      <find>nav-t</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -162,8 +153,8 @@
         <option value="$PROJECT_DIR$/_layouts/page.html" />
         <option value="$PROJECT_DIR$/_about/00.md" />
         <option value="$PROJECT_DIR$/_includes/card.html" />
-        <option value="$PROJECT_DIR$/_sass/common.scss" />
         <option value="$PROJECT_DIR$/assets/js/modules/chart.js" />
+        <option value="$PROJECT_DIR$/_sass/common.scss" />
         <option value="$PROJECT_DIR$/_sass/main.scss" />
       </list>
     </option>
@@ -301,12 +292,12 @@
       <workItem from="1550412079250" duration="635000" />
       <workItem from="1550514784821" duration="1261000" />
       <workItem from="1550559335980" duration="9509000" />
-      <workItem from="1551078118256" duration="20896000" />
+      <workItem from="1551078118256" duration="22267000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32301000" />
+    <option name="totallyTimeSpent" value="33672000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -585,13 +576,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_sass/common.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="262" column="31" selection-start-line="262" selection-start-column="31" selection-end-line="262" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/modules/chart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -599,10 +583,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_sass/common.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="194" column="6" selection-start-line="194" selection-start-column="6" selection-end-line="194" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_sass/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="200" column="2" selection-start-line="200" selection-start-column="2" selection-end-line="200" selection-end-column="2" />
+        <state relative-caret-position="161">
+          <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
         </state>
       </provider>
     </entry>
