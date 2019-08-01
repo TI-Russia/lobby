@@ -503,7 +503,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
             }
 
             function ClickOnCircle(d){
-                //HightlightCirclesOff()
+                HightlightCirclesOff()
                 drawCloneLinks(d)
                 HightlightCirclesOn(d.id)
                 $('#clusters').addClass('is-loading');
@@ -1125,7 +1125,10 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 var person = nodes.find(e=>e.person==hash.replace('#id',''))
                 if (person) {
                     console.log("person", person)
+
+
                     ClickOnCircle(person);
+                    circles.transition().attr("class", d=>d.color).style("opacity",1)
                 }
 
             }

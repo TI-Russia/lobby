@@ -2,14 +2,443 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abd74287-9318-4af2-8070-bec85aae945a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_data/lobbist-31-07-2019.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_layouts/card.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_plugins/data_page_generator.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/102.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/103.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/105.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/109.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/112.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/1130.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/1136.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/1147.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/1152.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/116.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/1161.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/11672.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/1173.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/1179.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/118.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/120.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/12122.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/1217.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/12196.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/12244.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/12394.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/125.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/12524.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/12543.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/12561.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/12626.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/12690.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/12783.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/12804.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/12806.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/12878.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/129.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/13.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/130.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/13043.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/13064.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/13066.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/13150.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/13177.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/13184.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/13185.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/132.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/13223.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/13305.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/13341.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/134.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/13437.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/13486.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/13519.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/13566.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/136.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/13666.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/13689.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/137.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/13872.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/13974.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/13994.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14046.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14067.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14085.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14126.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14162.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14173.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14248.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14406.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14416.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14418.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14421.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14444.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14448.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14565.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14568.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14585.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14623.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14649.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14650.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14658.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/147.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14719.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/148.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14828.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14872.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14917.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/14955.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/150.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/15050.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/15065.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/15146.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/15180.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/15290.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/15302.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/15323.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/15350.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/15424.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/15457.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/15534.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/15547.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/156.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/15610.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/15616.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/15655.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/15671.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/15744.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/15763.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/15779.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/158.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/1598.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/16001.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/16055.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/16199.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/162.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/164.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/169.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/171.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/17130.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/17251.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/17352.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/174.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/17511.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/17590.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/176.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/17672.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/18.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/180.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/1818.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/1855.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/1885.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/189.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/19.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/194.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/1947.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/196.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/198.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/19825.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/19861.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/19868.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/19880.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/201.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/206.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/21.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/210.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/21021.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/211.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/214.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/215.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/220.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/22037.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/22038.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/22043.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/22050.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/22051.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/22053.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/22065.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/222.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/223.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/22695.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/228.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/22871.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/229.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/22993.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/23.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/230.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/23042.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/231.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/23306.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/239.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/24012.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/241.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/24182.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/242.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/244.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/245.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/246.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/247.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/2478.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/25.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/251.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/256.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/257.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/259.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/262.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/263.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/264.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/267.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/269.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/271.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/273.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/276.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/279.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/280.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/282.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/285.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/2858.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/286.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/287.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/291.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/2958.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/30.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/304.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31753.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31756.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31757.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31758.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31759.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31760.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31761.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31762.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31763.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31764.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31765.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31766.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31767.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31770.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31771.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31772.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31773.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31774.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31775.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31777.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31779.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31780.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31786.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31789.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31794.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31797.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31800.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31802.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31847.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31848.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31850.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31855.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31856.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31874.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31877.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31879.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31893.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31894.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31895.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31896.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31901.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31907.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31908.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31909.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31910.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31911.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31920.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31921.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31922.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31923.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31924.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31925.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31926.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31931.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31932.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31943.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31948.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31949.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31951.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31952.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31953.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31954.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31955.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31956.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31958.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31959.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31960.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31962.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31963.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31964.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31965.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31968.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31969.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31970.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31979.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31980.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31981.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31982.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31983.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31984.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31985.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31986.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31987.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31988.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31989.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31990.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/31991.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/32009.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/32011.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/32013.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/32015.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/32016.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/32017.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/32018.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/32065.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/326.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/328.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/33.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/336.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/338.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/3380.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/340.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/341.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/342.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/347.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/357.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/360.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/361.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/362.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/363.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/364.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/367.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/375.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/377.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/378.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/381.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/387.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/388.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/40.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/402.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/412.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/417.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/418.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/42.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/420.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/4261.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/427.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/434.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/436.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/438.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/449.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/450.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/459.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/46.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/464.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/467.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/47.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/475.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/483.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/4837.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/484.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/489.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/49.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/490.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/504.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/509.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/511.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/513.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/519.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/520.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/521.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/525.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/540.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/541.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/545.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/5456.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/546.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/548.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/55.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/551.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/556.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/560.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/564.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/565.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/57.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/573.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/57379.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/57380.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/57381.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/57382.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/577.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/585.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/586.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/589.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/593.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/594.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/599.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/600.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/602.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/606.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/607.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/610.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/611.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/612.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/615.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/617.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/620.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/621.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/622.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/623.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/624.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/628.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/63.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/630.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/634.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/635.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/638.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/639.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/642.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/643.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/647.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/67.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/69.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/72.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/73.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/7310.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/80.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/829.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/839.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/85.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/86.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/87.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/89.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/8918.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/8929.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/8949.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/91.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/9118.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/9123.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/9124.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/9125.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/9127.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/9151.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/9191.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/9218.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/94.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/95.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/98.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/99.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/992.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_cards/995.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/card.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/card.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_sass/common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/common.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/modules/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modules/card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/modules/chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modules/chart.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +449,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_plugins/data_page_generator.rb">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_sass/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1636">
-              <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+            <state relative-caret-position="522">
+              <caret line="242" column="47" selection-start-line="242" selection-start-column="47" selection-end-line="242" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/modules/card.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="30" column="67" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_sass/common.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="139">
+              <caret line="269" column="7" selection-start-line="269" selection-start-column="7" selection-end-line="269" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -38,8 +485,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_site/cards/67.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/modules/chart.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="554">
+              <caret line="1130" column="85" selection-start-line="1130" selection-start-column="85" selection-end-line="1130" selection-end-column="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/css/styles.scss">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/common.css">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -64,27 +525,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="29" column="15" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_site/cards/8.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_data/lobbist-31-07-2019.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="9038" column="21" selection-start-line="9038" selection-start-column="21" selection-end-line="9038" selection-end-column="21" />
+            <state relative-caret-position="273">
+              <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -104,7 +546,6 @@
       <find>#positio</find>
       <find>positio</find>
       <find>about</find>
-      <find>card</find>
       <find>after</find>
       <find>laws_block</find>
       <find>active</find>
@@ -114,10 +555,12 @@
       <find>hero</find>
       <find>bund</find>
       <find>uniq</find>
-      <find>debu</find>
       <find>sc</find>
       <find>0.2</find>
       <find>site</find>
+      <find>debu</find>
+      <find>reset</find>
+      <find>card</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -144,16 +587,16 @@
         <option value="$PROJECT_DIR$/_about/03.md" />
         <option value="$PROJECT_DIR$/_layouts/page.html" />
         <option value="$PROJECT_DIR$/_about/00.md" />
-        <option value="$PROJECT_DIR$/_sass/main.scss" />
         <option value="$PROJECT_DIR$/_includes/card.html" />
         <option value="$PROJECT_DIR$/_sass/common.scss" />
         <option value="$PROJECT_DIR$/assets/js/modules/card.js" />
-        <option value="$PROJECT_DIR$/assets/js/modules/chart.js" />
         <option value="$PROJECT_DIR$/_plugins/page_generator.rb" />
         <option value="$PROJECT_DIR$/_data/lobbist-31-07-2019.json" />
         <option value="$PROJECT_DIR$/_data/mem.json" />
-        <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/_layouts/card.html" />
+        <option value="$PROJECT_DIR$/_config.yml" />
+        <option value="$PROJECT_DIR$/assets/js/modules/chart.js" />
+        <option value="$PROJECT_DIR$/_sass/main.scss" />
       </list>
     </option>
   </component>
@@ -179,33 +622,22 @@
             <path>
               <item name="lobby" type="b2602c69:ProjectViewProjectNode" />
               <item name="lobby" type="462c0819:PsiDirectoryNode" />
-              <item name="_data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lobby" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lobby" type="462c0819:PsiDirectoryNode" />
-              <item name="_includes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lobby" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lobby" type="462c0819:PsiDirectoryNode" />
               <item name="_layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lobby" type="b2602c69:ProjectViewProjectNode" />
               <item name="lobby" type="462c0819:PsiDirectoryNode" />
-              <item name="_plugins" type="462c0819:PsiDirectoryNode" />
+              <item name="_sass" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lobby" type="b2602c69:ProjectViewProjectNode" />
               <item name="lobby" type="462c0819:PsiDirectoryNode" />
-              <item name="_site" type="462c0819:PsiDirectoryNode" />
+              <item name="articles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lobby" type="b2602c69:ProjectViewProjectNode" />
               <item name="lobby" type="462c0819:PsiDirectoryNode" />
-              <item name="_site" type="462c0819:PsiDirectoryNode" />
-              <item name="cards" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -222,6 +654,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.customizations" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\OlMa\dev\lobby2\lobby" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\maino\OSPanel\domains\lobby\assets\js\es5" />
     </key>
@@ -252,12 +687,12 @@
       <workItem from="1550514784821" duration="1261000" />
       <workItem from="1550559335980" duration="9509000" />
       <workItem from="1551078118256" duration="23665000" />
-      <workItem from="1564403231559" duration="15946000" />
+      <workItem from="1564403231559" duration="18357000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51016000" />
+    <option name="totallyTimeSpent" value="53427000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -286,13 +721,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/data/lobbist_small.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/es5/chart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
@@ -396,13 +824,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_sass/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
@@ -452,16 +873,6 @@
     <entry file="file://$PROJECT_DIR$/afkjvjhasdflkjlahsdf.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/styles.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_sass/common.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
-          <caret line="306" column="3" selection-start-line="306" selection-start-column="3" selection-end-line="306" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/modules/intro.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="672">
@@ -487,20 +898,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
           <caret line="26" column="4" selection-start-line="25" selection-end-line="30" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/modules/card.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="153" column="62" selection-start-line="153" selection-start-column="62" selection-end-line="153" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/modules/chart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-496">
-          <caret line="1078" selection-start-line="1078" selection-end-line="1078" />
         </state>
       </provider>
     </entry>
@@ -560,20 +957,30 @@
     <entry file="file://$PROJECT_DIR$/_site/people/8.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/_config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="29" column="15" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_site/cards/8.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/cards/67.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/_includes/card.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="929">
           <caret line="47" column="60" selection-start-line="47" selection-start-column="60" selection-end-line="47" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/modules/card.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="30" column="67" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -584,8 +991,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_site/cards/67.html">
+    <entry file="file://$PROJECT_DIR$/assets/js/modules/chart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="1130" column="85" selection-start-line="1130" selection-start-column="85" selection-end-line="1130" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/styles.scss">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/common.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_sass/common.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="269" column="7" selection-start-line="269" selection-start-column="7" selection-end-line="269" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_sass/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="242" column="47" selection-start-line="242" selection-start-column="47" selection-end-line="242" selection-end-column="47" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

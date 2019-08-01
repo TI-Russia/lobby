@@ -11,6 +11,8 @@ collections:
   about:
     output: true
 
+include: ['_cards']
+
 page_gen:
   - data: 'lobbist-31-07-2019'
     template: 'card'
