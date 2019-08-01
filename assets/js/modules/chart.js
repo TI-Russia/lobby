@@ -503,7 +503,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
             }
 
             function ClickOnCircle(d){
-                HightlightCirclesOff()
+                //HightlightCirclesOff()
                 drawCloneLinks(d)
                 HightlightCirclesOn(d.id)
                 $('#clusters').addClass('is-loading');
@@ -585,7 +585,6 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                     .data(links)
                     .enter().append("line")
                     .attr("stroke-width", d => Math.sqrt(d.value));
-
                 force.force("link", d3.forceLink(links).id(d => d.uniq).strength(0))
                 //force.alpha(1).restart()
                 RedrawChart()
@@ -1116,6 +1115,19 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                     true :
                     false;
                 return isMobile
+            }
+
+            var hash = window.location.hash
+
+
+            if(hash) {
+                console.log("hash", hash)
+                var person = nodes.find(e=>e.person==hash.replace('#id',''))
+                if (person) {
+                    console.log("person", person)
+                    ClickOnCircle(person);
+                }
+
             }
         }
     });

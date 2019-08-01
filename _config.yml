@@ -11,6 +11,12 @@ collections:
   about:
     output: true
 
+page_gen:
+  - data: 'lobbist-31-07-2019'
+    template: 'card'
+    name: 'person'
+    dir: 'cards'
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

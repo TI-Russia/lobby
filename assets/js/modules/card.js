@@ -143,6 +143,21 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
         d3.selectAll("."+classname+"").classed("is-hidden",true)
     }
 
+    $('#card').scroll(function(){
+        var card =  document.getElementById("card")
+        if (card.scrollTop > 200 ) {
+            document.getElementById("scrollToTop").style.display = "block";
+        } else {
+            document.getElementById("scrollToTop").style.display = "none";
+        }
+    });
+    $(document).on('click', '#scrollToTop', function (event) {
+        event.preventDefault();
+        $('#card').animate({
+            scrollTop: 0
+        }, 500);
+    });
+
 }
 
 return ShowCard

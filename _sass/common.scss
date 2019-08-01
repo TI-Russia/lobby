@@ -249,25 +249,7 @@ header {
       margin-top: 2.5em;
     }
   }
-  #scrollToTop {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    background-color: $color-blue;
-    color: white;
-    cursor: pointer;
-    padding: 9px 17px 11px 17px;
-    border-radius: 25px;
-    font-size: 18px;
-    opacity: 0.6;
-    &:hover {
-      opacity: 0.8;
-    }
-  }
+
 
 
   .about-section:not(:last-of-type){
@@ -303,4 +285,24 @@ header {
 
   }
 
+}
+
+#scrollToTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: $color-blue;
+  color: white;
+  cursor: pointer;
+  padding: 9px 17px 11px 17px;
+  border-radius: 25px;
+  font-size: 18px;
+  opacity: 0.6;
+  &:hover {
+    opacity: 0.8;
+  }
 }
