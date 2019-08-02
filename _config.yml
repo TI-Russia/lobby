@@ -11,7 +11,7 @@ collections:
   about:
     output: true
 
-include: ['_cards']
+include: ['person']
 
 page_gen:
   - data: 'lobbist-31-07-2019'
