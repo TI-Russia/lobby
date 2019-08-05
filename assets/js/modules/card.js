@@ -20,7 +20,8 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
         fb_person=card.select("#fb_person"),
         tw_person=card.select("#tw_person"),
         vk_person=card.select("#vk_person"),
-        open_declaration=card.select("#open_declaration")
+        open_declaration=card.select("#open_declaration"),
+        send_form=card.select("#send_form")
 
     d3.selectAll("#card .is-hidden").classed("is-hidden",false)
 
@@ -80,6 +81,7 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
     tw_person.attr("href","https://twitter.com/intent/tweet?url=http%3A%2F%2Fdumabingo.ru/person/"+info.person+"&text="+info.fullname)
     vk_person.attr("href","http://vk.com/share.php?url=http%3A%2F%2Fdumabingo.ru/person/"+info.person)
     open_declaration.attr("href","https://declarator.org/person/"+info.person)
+    send_form.attr("href","https://docs.google.com/forms/d/e/1FAIpQLSd6WGVWRwdwf7Q7oE_3RIlHR8MMdo_LVOnC0nk9YINtfYvjPw/viewform?entry.742555963="+info.fullname)
     card.attr("class","modal is-active")
     var matrix=GetLobbyMatrix()
     lobby.html(matrix)

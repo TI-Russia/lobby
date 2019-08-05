@@ -265,7 +265,7 @@ div#card {
         transform: rotate(-180deg);
         text-decoration: none;
         &:hover{
-          color: inherit;
+          color: $color-blue;
           opacity: 0.8;
         }
       }
