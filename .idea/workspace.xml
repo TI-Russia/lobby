@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abd74287-9318-4af2-8070-bec85aae945a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/_includes/card.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/card.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/modules/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modules/card.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_sass/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="266" column="16" selection-start-line="266" selection-start-column="16" selection-end-line="266" selection-end-column="16" />
+            <state relative-caret-position="354">
+              <caret line="257" column="25" selection-start-line="257" selection-start-column="25" selection-end-line="257" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -56,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_sass/common.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5586">
-              <caret line="269" column="7" selection-start-line="269" selection-start-column="7" selection-end-line="269" selection-end-column="7" />
+            <state relative-caret-position="622">
+              <caret line="307" column="1" selection-start-line="307" selection-start-column="1" selection-end-line="307" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -126,6 +124,8 @@
       <find>card</find>
       <find>vk</find>
       <find>caption</find>
+      <find>50</find>
+      <find>68</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -151,7 +151,6 @@
         <option value="$PROJECT_DIR$/_about/03.md" />
         <option value="$PROJECT_DIR$/_layouts/page.html" />
         <option value="$PROJECT_DIR$/_about/00.md" />
-        <option value="$PROJECT_DIR$/_sass/common.scss" />
         <option value="$PROJECT_DIR$/_plugins/page_generator.rb" />
         <option value="$PROJECT_DIR$/_data/lobbist-31-07-2019.json" />
         <option value="$PROJECT_DIR$/_data/mem.json" />
@@ -162,6 +161,7 @@
         <option value="$PROJECT_DIR$/assets/js/modules/card.js" />
         <option value="$PROJECT_DIR$/_includes/card.html" />
         <option value="$PROJECT_DIR$/_sass/vars.scss" />
+        <option value="$PROJECT_DIR$/_sass/common.scss" />
         <option value="$PROJECT_DIR$/_sass/main.scss" />
       </list>
     </option>
@@ -248,12 +248,12 @@
       <workItem from="1550514784821" duration="1261000" />
       <workItem from="1550559335980" duration="9509000" />
       <workItem from="1551078118256" duration="23665000" />
-      <workItem from="1564403231559" duration="30802000" />
+      <workItem from="1564403231559" duration="32523000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65872000" />
+    <option name="totallyTimeSpent" value="67593000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -555,15 +555,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_sass/common.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5586">
-          <caret line="269" column="7" selection-start-line="269" selection-start-column="7" selection-end-line="269" selection-end-column="7" />
+        <state relative-caret-position="622">
+          <caret line="307" column="1" selection-start-line="307" selection-start-column="1" selection-end-line="307" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_sass/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="266" column="16" selection-start-line="266" selection-start-column="16" selection-end-line="266" selection-end-column="16" />
+        <state relative-caret-position="354">
+          <caret line="257" column="25" selection-start-line="257" selection-start-column="25" selection-end-line="257" selection-end-column="25" />
         </state>
       </provider>
     </entry>
