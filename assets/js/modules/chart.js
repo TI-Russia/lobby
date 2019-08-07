@@ -346,7 +346,8 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                     footerExtraHeight = document.getElementsByClassName('extra')[0].clientHeight,
                     sumHeight = headerHeight + footerHeight + controlsHeight - footerExtraHeight
 
-                document.body.className += ' ' +'chart';
+                document.body.className += ' ' +'chart'
+                document.body.className = 'chart'
 
 
                 var min_width = 812,
@@ -1118,15 +1119,9 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
             }
 
             var hash = window.location.hash
-
-
             if(hash) {
-                console.log("hash", hash)
                 var person = nodes.find(e=>e.person==hash.replace('#id',''))
                 if (person) {
-                    console.log("person", person)
-
-
                     ClickOnCircle(person);
                     circles.transition().attr("class", d=>d.color).style("opacity",1)
                 }
