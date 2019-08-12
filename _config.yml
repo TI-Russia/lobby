@@ -1,6 +1,6 @@
 # bundle exec jekyll serve --port 4001 --baseurl ''
 
-title: Лоббисты в Госдуме
+title: Лоббизм в Госдуме
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Интерактивная карта лоббистских возможностей депутатов Государственной Думы РФ&colon; лоббистские группы, законопроекты и персоналии
