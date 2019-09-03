@@ -687,7 +687,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                     onchange()
                 })
 
-                select.append('option').text("Лобби").attr("value",-1)
+                select.append('option').text("Группа интересов").attr("value",-1)
 
                 var options = select
                     .selectAll('option.opt')
