@@ -19,7 +19,7 @@ page_gen:
     name: 'person'
     dir: 'card'
 
-doclad_url:  'Lobbism_v_Gosdume.pdf'
+doclad_url:  'Лоббизм в Госдуме.pdf'
 rating_url: 'Рейтинг влияния депутатов Госдумы.pdf'
 
 # Exclude from processing.
