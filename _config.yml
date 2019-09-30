@@ -2,8 +2,7 @@
 
 title: Лоббизм в Госдуме
 email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Интерактивная карта лоббистских возможностей депутатов Государственной Думы РФ&colon; лоббистские группы, законопроекты и персоналии
+description: 'Интерактивная карта лоббистских возможностей депутатов Государственной Думы РФ: лоббистские группы, законопроекты и персоналии'
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://dumabingo.ru" # the base hostname & protocol for your site, e.g. http://example.com
 
