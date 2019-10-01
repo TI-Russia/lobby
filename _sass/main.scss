@@ -265,6 +265,7 @@ div#card {
         writing-mode:vertical-lr;
         transform: rotate(-180deg);
         text-decoration: none;
+        align-items: center;
         &:hover{
           color: $color-blue;
           opacity: 0.8;
