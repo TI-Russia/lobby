@@ -29,16 +29,21 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
         .on("click",() =>{
             photo.attr("src",'assets/images/blank.jpg')
             document.getElementById('card').scrollTop = 0; // scroll to top
+
             card.attr("class","modal")
+            window.history.pushState('backward', null, './');
         })
 
     /*back button should close modal*/
-    window.history.pushState('forward', null, './#id'+depInfo.person);
+
+    window.history.pushState({person:depInfo.person}, null, './#id'+depInfo.person);
+
     if (window.history && window.history.pushState) {
-        $(window).on('popstate', function () {
+        window.onpopstate = function(event) {
+            window.history.pushState('backward', null, './');
             card.attr("class","modal")
-        });
-    }
+        };
+    };
 
     //var id=e.id //iden
     var info=depInfo
