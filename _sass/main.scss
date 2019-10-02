@@ -259,7 +259,7 @@ div#card {
     }
     .know_more{
       flex: 1;
-      margin: 0 auto;
+      padding-left: 9px; /*ff bug, margin: 0 auto*/
       padding-top: 32px;
       a{
         writing-mode:vertical-lr;
