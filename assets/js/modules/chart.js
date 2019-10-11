@@ -289,6 +289,8 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 .attr("transform",d=>"translate("+d.x+" "+ d.y+")")
                 .each(makeText)
 
+            var isClicked=false;
+
             //add zoom capabilities
             var svg1=d3.select("#clusters > svg#chart")
             var g=d3.select("svg#chart > g").attr("class","all")
@@ -504,6 +506,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
             }
 
             function ClickOnCircle(d){
+                isClicked = true;
                 HightlightCirclesOff()
                 drawCloneLinks(d)
                 HightlightCirclesOn(d.id)
@@ -531,7 +534,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 var isModalOpen=d3.select("#card").classed("is-active")
                 hideLabel(d)
 
-                if (!isModalOpen)
+                //if (!isModalOpen)
                     drawCloneLinks(d)
 
                 //var groupname=lobby.find(x => x.id === d.cluster)
@@ -541,8 +544,10 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 if (Array.isArray(d.cloneClusters))
                     cloneclustersNames = d.cloneClusters.map(x=>lobby.find(y=>y.id==x))
 
-                if (!isModalOpen)
+                //if (!isModalOpen) {
+                    HightlightCirclesOff()
                     HightlightCirclesOn(d.id)
+                //}
 
                 var content =
                     '<span class="name">'+d.name+' </span><br/>';
@@ -601,20 +606,16 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
             function hideDetail(d) {
 
                 var isModalOpen=d3.select("#card").classed("is-active")
-
                 // reset outline
-                if (!isModalOpen) {
+                if (!isClicked) {
                     svg.select("g.links").remove()//remove clone links
                     HightlightCirclesOff()
                 }
                 //circles.transition().attr('stroke', 'none');
-
                 //d3.select(this).attr('stroke', d3.rgb(color(d.cluster / 10)).darker());
                 tooltip.hideTooltip();
                 showLabel()
             }
-
-
 
 
             /*
@@ -1125,7 +1126,13 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                     ClickOnCircle(person);
                     circles.transition().attr("class", d=>d.color).style("opacity",1)
                 }
-
             }
+
+            window.addEventListener('closeCard', closeCardListener);
+            function  closeCardListener(){
+                svg.select("g.links").remove()//remove clone links
+                HightlightCirclesOff()
+            }
+
         }
     });

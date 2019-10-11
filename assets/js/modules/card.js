@@ -32,6 +32,7 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
 
             card.attr("class","modal")
             window.history.pushState('backward', null, './');
+            window.dispatchEvent(new Event('closeCard'));
         })
 
     /*back button should close modal*/
@@ -41,9 +42,11 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
     if (window.history && window.history.pushState) {
         window.onpopstate = function(event) {
             window.history.pushState('backward', null, './');
+            window.dispatchEvent(new Event('closeCard'));
             card.attr("class","modal")
         };
     };
+
 
     //var id=e.id //iden
     var info=depInfo
