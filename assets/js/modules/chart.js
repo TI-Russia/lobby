@@ -289,7 +289,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 .attr("transform",d=>"translate("+d.x+" "+ d.y+")")
                 .each(makeText)
 
-            var isClicked=false;
+            var isClicked=false, activeCircle=false;
 
             //add zoom capabilities
             var svg1=d3.select("#clusters > svg#chart")
@@ -506,7 +506,8 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
             }
 
             function ClickOnCircle(d){
-                isClicked = true;
+                isClicked = true
+                activeCircle = d.id
                 HightlightCirclesOff()
                 drawCloneLinks(d)
                 HightlightCirclesOn(d.id)
@@ -531,6 +532,8 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
         * details of a bubble in the tooltip.
         */
             function showDetail(d) {
+                if (d.id!=activeCircle)
+                    isClicked=false
                 var isModalOpen=d3.select("#card").classed("is-active")
                 hideLabel(d)
 
@@ -1123,6 +1126,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
             if(hash) {
                 var person = nodes.find(e=>e.person==hash.replace('#id',''))
                 if (person) {
+                    isClicked=true
                     ClickOnCircle(person);
                     circles.transition().attr("class", d=>d.color).style("opacity",1)
                 }
@@ -1132,7 +1136,10 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
             function  closeCardListener(){
                 svg.select("g.links").remove()//remove clone links
                 HightlightCirclesOff()
+                isClicked=false
             }
+
+
 
         }
     });
