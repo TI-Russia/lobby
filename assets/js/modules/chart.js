@@ -511,6 +511,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 HightlightCirclesOff()
                 drawCloneLinks(d)
                 HightlightCirclesOn(d.id)
+                MarkActiveCirclesOn(d.id)
                 $('#clusters').addClass('is-loading');
                 var depRating=GetRating(d.person)
                 var depLobbys=GetLobbyText(d.groups)
@@ -573,8 +574,17 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 circles.filter(e=>e.id===id).transition().attr('stroke', '#000').attr('stroke-width', '2px');
             }
 
-            function HightlightCirclesOff(id) {
+            function HightlightCirclesOff() {
                 circles.transition().attr('stroke', 'none');
+            }
+
+            function MarkActiveCirclesOn(id) {
+                MarkActiveCirclesOff()
+                circles.filter(e=>e.id==id).classed("activeCircle",true);
+            }
+
+            function MarkActiveCirclesOff() {
+                circles.classed("activeCircle",false);
             }
 
             function drawCloneLinks(target) {
@@ -646,8 +656,6 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 CreateSliders()
                 MakeAutoComplete()
                 PresetsHandler()
-
-
 
                 //data2=lobby.sort((a,b)=>a.tree_id-b.tree_id)
 
@@ -880,15 +888,6 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                         bounds = [[bbox.x+x, bbox.y+y],
                             [bbox.x+x + bbox.width, bbox.y+y + bbox.height]];
 
-                    /*svg.append("rect")
-                        .attr("x",bbox.x+x)
-                        .attr("y",bbox.y+y)
-                        .attr("width",bbox.width)
-                        .attr("height",bbox.height)
-                        .attr("stroke","red")
-                        .attr("fill","none")
-                        .attr("class","test_rect")*/
-
                     var dx = bounds[1][0] - bounds[0][0],
                         dy = bounds[1][1] - bounds[0][1],
                         x = (bounds[0][0] + bounds[1][0]) / 2,
@@ -1052,7 +1051,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 }
 
                 function hightlightOn(spot) {
-                    circles.transition().attr("class", d=>d.color).style("opacity",0.2)
+                    circles.classed(d=>d.color,true).transition().style("opacity",0.2)
                     labels.transition().style("opacity",0.0)
 
                     var circles_clusters=spot.data().map(s=>s.cluster)
@@ -1078,7 +1077,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                     d3.selectAll("#controls button").classed("is-active",false)
                     d3.selectAll("#controls #fraction button").classed("is-active",true)
                     d3.selectAll("select").property("selectedIndex", 0)
-                    circles.transition().attr("class", d=>d.color).style("opacity",1)
+                    circles.classed(d=>d.color,true).transition().style("opacity",1)
                     var n = ShowedClusters(clearClusters,k).map(x=>x.cluster)
                     labels.style("opacity",0).filter(x=>n.includes(x.cluster)).transition().style("opacity",1)
 
@@ -1128,7 +1127,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 if (person) {
                     isClicked=true
                     ClickOnCircle(person);
-                    circles.transition().attr("class", d=>d.color).style("opacity",1)
+                    circles.classed(d=>d.color,true).transition().style("opacity",1)
                 }
             }
 
@@ -1136,10 +1135,9 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
             function  closeCardListener(){
                 svg.select("g.links").remove()//remove clone links
                 HightlightCirclesOff()
+                MarkActiveCirclesOff()
                 isClicked=false
             }
-
-
 
         }
     });

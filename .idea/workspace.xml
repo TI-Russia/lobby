@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abd74287-9318-4af2-8070-bec85aae945a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/modules/chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modules/chart.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,7 +70,9 @@
       <workItem from="1569837367407" duration="1570000" />
       <workItem from="1569917504287" duration="5954000" />
       <workItem from="1570010225469" duration="9956000" />
-      <workItem from="1570781734947" duration="9696000" />
+      <workItem from="1570781734947" duration="10292000" />
+      <workItem from="1571922170820" duration="2429000" />
+      <workItem from="1571930570819" duration="3657000" />
     </task>
     <servers />
   </component>
@@ -80,7 +84,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -566,6 +566,10 @@ div#card {
   opacity: 0.0;
 }
 circle:hover {cursor:pointer;}
+circle.activeCircle{
+  stroke: black;
+  stroke-width: 2;
+}
 .lobby_label{
   fill:#000;
   font-size: 14px;
