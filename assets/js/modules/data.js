@@ -3,13 +3,27 @@ define(["d3"], function(d3) {
     var lobby=[];
     var lobby_level_0=[];
     var myGroups = new Set();
-    var myArrGroups = new Array()
+    var myArrGroups = new Array();
+    var isSF;//soviet federacii
+    if (/cjdtn/.test(window.location.href)) {
+        isSF = true;
+    } else {
+        isSF = false;
+    };
     var files = [
         "assets/data/lobbist_small.json",
         "assets/data/lobby_group.json",
         "assets/data/rating.json",
         "assets/data/alias.json"
     ];
+    if (isSF) {
+        files = [
+            "assets/data/sf/lobbist_small.json",
+            "assets/data/sf/lobby_group.json",
+            "assets/data/sf/rating.json",
+            "assets/data/alias.json"
+        ];
+    }
     if (/dumabingo/.test(window.location.href)){ /*use data from declarator api*/
         files = [
             "https://declarator.org/media/dumps/lobbist-small.json",
@@ -17,6 +31,14 @@ define(["d3"], function(d3) {
             "assets/data/rating.json",
             "assets/data/alias.json"
         ];
+        if (isSF) {
+            files = [
+                "https://declarator.org/media/dumps/lobbist-small-sf.json",
+                "https://declarator.org/media/dumps/lobby-group.json",
+                "assets/data/rating.json",
+                "assets/data/alias.json"
+            ];
+        }
     }
     var promises = [];
     var rawDep, rawRating, rawAlias, aliases;
@@ -49,6 +71,7 @@ define(["d3"], function(d3) {
             rawDep: rawDep,
             myGroups: myGroups,
             myArrGroups: myArrGroups,
+            isSF:isSF
         }
     });
 
