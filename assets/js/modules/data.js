@@ -35,7 +35,7 @@ define(["d3"], function(d3) {
             files = [
                 "https://declarator.org/media/dumps/lobbist-small-sf.json",
                 "https://declarator.org/media/dumps/lobby-group.json",
-                "assets/data/rating.json",
+                "assets/data/sf/rating.json",
                 "assets/data/alias.json"
             ];
         }
