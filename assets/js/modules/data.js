@@ -21,7 +21,8 @@ define(["d3"], function(d3) {
             "assets/data/sf/lobbist_small.json",
             "assets/data/sf/lobby_group.json",
             "assets/data/sf/rating.json",
-            "assets/data/alias.json"
+            "assets/data/alias.json",
+            "assets/data/sf/sf.json"
         ];
     }
     if (/dumabingo/.test(window.location.href)){ /*use data from declarator api*/
@@ -36,12 +37,13 @@ define(["d3"], function(d3) {
                 "https://declarator.org/media/dumps/lobbist-small-sf.json",
                 "https://declarator.org/media/dumps/lobby-group.json",
                 "assets/data/sf/rating.json",
-                "assets/data/alias.json"
+                "assets/data/alias.json",
+                "assets/data/sf/sf.json"
             ];
         }
     }
     var promises = [];
-    var rawDep, rawRating, rawAlias, aliases;
+    var rawDep, rawRating, rawAlias, rawSF, aliases;
 
     files.forEach(function (url) {
         promises.push(d3.json(url))
@@ -58,7 +60,8 @@ define(["d3"], function(d3) {
         rawDep = values[0]
         var rawLobby = values[1] //change to load from url
         rawRating = values[2] //
-        rawAlias=values[3]
+        rawAlias = values[3]
+        if (isSF) rawSF = values[4] //
         dataDepMap(rawDep)
         getAliasMap(rawAlias)
         getLobbyMap(rawLobby,aliases)
@@ -71,7 +74,8 @@ define(["d3"], function(d3) {
             rawDep: rawDep,
             myGroups: myGroups,
             myArrGroups: myArrGroups,
-            isSF:isSF
+            isSF:isSF,
+            rawSF: rawSF
         }
     });
 
@@ -127,6 +131,12 @@ define(["d3"], function(d3) {
             var ageDate = new Date(ageDifMs); // miliseconds from epoch
             return Math.abs(ageDate.getUTCFullYear() - 1970);
         }
+
+        function getDataFromSF(id, column){
+            var p = rawSF.find(d => d.id == id);
+            return p && p[column]  ? p[column] : null;
+        }
+
         data = rawdata.flatMap((d) => {
             let groups = d.groups
             groups.length==0 ? groups=[11851] : groups // кто без групп? -> в группу "Не выявлено"
@@ -138,7 +148,7 @@ define(["d3"], function(d3) {
                 return {
                     id: d.id,
                     name: d.fullname,
-                    fraction:d.fraction,
+                    fraction:!isSF ? d.fraction : getDataFromSF(d.person, 'party'),
                     gender:d.gender,
                     age:calculateAge( new Date(d.birth_date)),
                     group: b,
@@ -146,7 +156,7 @@ define(["d3"], function(d3) {
                     person: d.person,
                     rating: rating.log,
                     election_method:d.election_method,
-                    committees:d.committees,
+                    committees:!isSF ? d.committees : [getDataFromSF(d.person, 'comitees')],
                     convocations:d.convocations.length!=0 ? d.convocations.length : 1
                 }
             })
