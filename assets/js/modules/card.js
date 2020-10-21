@@ -1,11 +1,12 @@
 define(['jquery','d3', 'tree', 'plural'], function( $,d3, tree_func, plural) {
-function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
-
+function ShowCard(depInfo, depRating, depLobbys, lobby_list, isSF) {
+    var url = isSF ? './cjdtn' : './';
     var card=d3.select("#card"),          //container
         photo=card.select("#photo img"),
         fullname=card.select("#fullname"),
         fraction=card.select("#fraction_text"),
         position=card.select("#position"),
+        temp_comission=card.select("#temp_comission"),
         law_number_vnes=card.select("#law_number_vnes"),
         law_text_bring=card.select("#law_text_bring"),
         law_number_podpis=card.select("#law_number_podpis"),
@@ -23,7 +24,7 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
         open_declaration=card.select("#open_declaration"),
         send_form=card.select("#send_form")
 
-    d3.selectAll("#card .is-hidden").classed("is-hidden",false)
+    d3.selectAll("#card .is-hidden").classed("is-hidden",false);
 
     var close_btn=card.select(".close_btn")
         .on("click",() =>{
@@ -31,17 +32,18 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
             document.getElementById('card').scrollTop = 0; // scroll to top
 
             card.attr("class","modal")
-            window.history.pushState('backward', null, './');
+            //TODO:make url;
+            window.history.pushState('backward', null, isSF ? './cjdtn' :'./');
             window.dispatchEvent(new Event('closeCard'));
         })
 
     /*back button should close modal*/
 
-    window.history.pushState({person:depInfo.person}, null, './#id'+depInfo.person);
+    window.history.pushState({person:depInfo.person}, null, (isSF ? './cjdtn#id' : './#id') + depInfo.person);
 
     if (window.history && window.history.pushState) {
         window.onpopstate = function(event) {
-            window.history.pushState('backward', null, './');
+            window.history.pushState('backward', null, isSF ? './cjdtn' :'./');
             window.dispatchEvent(new Event('closeCard'));
             card.attr("class","modal")
         };
@@ -49,11 +51,11 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
 
 
     //var id=e.id //iden
-    var info=depInfo
-    var rating=depRating
-    var fraction_class=GetFractionClass(info.fraction)
-    var positionText = GetPosition (info)
-    var lobbyText = depLobbys
+    var info=depInfo;
+    var rating=depRating;
+    var fraction_class = GetFractionClass(info.fraction);
+    var positionText = isSF ? GetPositionSF(info) : GetPosition(info);
+    var lobbyText = depLobbys;
 
 
     /*image loader*/
@@ -68,23 +70,24 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
     img.src = info.photo;
 
 
-    fullname.text(info.fullname)
-    fraction.text(info.fraction).attr("class",fraction_class)
-    position.text(positionText)
-    law_number_vnes.text(rating.vnes)
-    law_text_bring.html(Pluralization(+rating.vnes, "закон<br>внесён", "закона<br>внесено", "законов<br>внесено"))
-    law_number_podpis.text(rating.podpis)
-    law_text_passed.text(Pluralization(+rating.podpis, "принят", "принято", "принято"))
-    law_text_day.text(Pluralization(Math.floor(String(rating.sred_day).replace(',','.')), "день", "дня", "дней"))
-    if (rating.podpis==1) HideBlockByClass("law_text_average")
-    if (rating.podpis==0) HideBlockByClass("law_signed")
-    if (rating.no==true) HideBlockByClass("laws_block")
-    sred_day.text(Math.floor(String(rating.sred_day).replace(',','.')))
-    if (!lobbyText) HideBlockByClass("lobby_block")
-    bio.html(info.bio)
-    relations.html(info.relations)
-    submitted.html(info.submitted)
-    conclusion.html(info.conclusion)
+    fullname.text(info.fullname);
+    fraction.text(info.fraction).attr("class",fraction_class);
+    position.text(positionText);
+    isSF && temp_comission.text(getTempComissionText());
+    law_number_vnes.text(rating.vnes);
+    law_text_bring.html(Pluralization(+rating.vnes, "закон<br>внесён", "закона<br>внесено", "законов<br>внесено"));
+    law_number_podpis.text(rating.podpis);
+    law_text_passed.text(Pluralization(+rating.podpis, "принят", "принято", "принято"));
+    law_text_day.text(Pluralization(Math.floor(String(rating.sred_day).replace(',','.')), "день", "дня", "дней"));
+    if (rating.podpis==1) HideBlockByClass("law_text_average");
+    if (rating.podpis==0) HideBlockByClass("law_signed");
+    if (rating.no==true) HideBlockByClass("laws_block");
+    sred_day.text(Math.floor(String(rating.sred_day).replace(',','.')));
+    if (!lobbyText) HideBlockByClass("lobby_block");
+    bio.html(info.bio);
+    relations.html(info.relations);
+    submitted.html(info.submitted);
+    conclusion.html(info.conclusion);
     fb_person.attr("href","https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdumabingo.ru/person/"+info.person)
     tw_person.attr("href","https://twitter.com/intent/tweet?url=http%3A%2F%2Fdumabingo.ru/person/"+info.person+"&text="+info.fullname)
     vk_person.attr("href","http://vk.com/share.php?url=http%3A%2F%2Fdumabingo.ru/person/"+info.person)
@@ -123,6 +126,44 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list) {
 
         var position=chlen + izbran + kak+ ', '+ sozvan
         return position
+    }
+
+    function GetPositionSF(info) {
+        var comitet=info.committee,
+            sposob=info.election_method,
+            soziv=info.convocations.length,
+            gender=info.gender,
+            letVsf = info.total_years,
+            region = info.region,
+            chem = info.goverment_body
+
+        gender = !gender ? "м" : gender.toLowerCase();
+        comitet = !comitet ? "" : comitet;
+        chem = chem.replace("исполнительный ","исполнительным ");
+        chem = chem.replace("законодательный ","законодательным ");
+        chem = chem.replace("орган ","органом ");
+        chem +=', ';
+
+        var chlen = comitet.replace("Комитет ","Член комитета ");
+        if (comitet) chlen+= ", ";
+        var delegirovan = (gender=="ж" || gender=="f") ? "делегирована " : "делегирован ";
+        var vsovete = "в совете федерации с " + (new Date().getFullYear()-letVsf)+" года";
+        var predstavitel = ". Представитель " + region;
+
+        var position = chlen + delegirovan + chem + vsovete  + predstavitel;
+        return position;
+    }
+
+    function getTempComissionText(){
+        var nodes = depInfo.temp_commission;
+        var rows = [];
+        var content="";
+        nodes && nodes.forEach(function (node) {
+            node = node.charAt(0).toUpperCase() + str.slice(1)
+            content+="<li>"+node+"</li>"
+        });
+        if (nodes) content+="</ul>";
+        return content
     }
 
     function GetLobbyMatrix() {

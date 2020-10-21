@@ -7,17 +7,19 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
         var myGroups
         var myArrGroups
         var rawDep, rawRating;
+        var isSF;
 
 // tooltip for mouseover functionality
         var tooltip = floatingTooltip('gates_tooltip', 240);
         Data.then(Data=>{
-            data = Data.data
-            lobby = Data.lobby
-            lobby_level_0= Data.lobby_level_0
-            myGroups = Data.myGroups
-            myArrGroups = Data.myArrGroups
-            rawDep = Data.rawDep
-            rawRating = Data.rawRating
+            data = Data.data;
+            lobby = Data.lobby;
+            lobby_level_0= Data.lobby_level_0;
+            myGroups = Data.myGroups;
+            myArrGroups = Data.myArrGroups;
+            rawDep = Data.rawDep;
+            rawRating = Data.rawRating;
+            isSF = Data.isSF;
             doChart();
         })
 
@@ -522,7 +524,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 }
                 d3.json(url).then(function(depInfo){
                     $('#clusters').removeClass('is-loading');
-                    var t = new ShowCard(depInfo, depRating, depLobbys, lobby)
+                    var t = new ShowCard(depInfo, depRating, depLobbys, lobby, isSF)
                 });
 
             }
@@ -1121,7 +1123,8 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 return isMobile
             }
 
-            var hash = window.location.hash
+            var hash = window.location.hash;
+            debugger;
             if(hash) {
                 var person = nodes.find(e=>e.person==hash.replace('#id',''))
                 if (person) {
