@@ -148,7 +148,7 @@ define(["d3"], function(d3) {
                 return {
                     id: d.id,
                     name: d.fullname,
-                    fraction:!isSF ? d.fraction : getDataFromSF(d.person, 'party'),
+                    fraction:d.fraction ,
                     gender:d.gender,
                     age:calculateAge( new Date(d.birth_date)),
                     group: b,
@@ -157,7 +157,10 @@ define(["d3"], function(d3) {
                     rating: rating.log,
                     election_method:d.election_method,
                     committees:!isSF ? d.committees : [getDataFromSF(d.person, 'comitees')],
-                    convocations:d.convocations.length!=0 ? d.convocations.length : 1
+                    convocations:d.convocations.length!=0 ? d.convocations.length : 1,
+                    region: d.region,
+                    goverment_body: d.goverment_body,
+                    total_years: d.total_years
                 }
             })
         });

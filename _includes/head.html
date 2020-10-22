@@ -12,6 +12,9 @@
     <meta name="twitter:description" content="{{ site.description }}">
     <meta name="twitter:image" content="https://dumabingo.ru/assets/images/preview_img.png">
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/styles.css">
+    {% if page.sf %}
+        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/sf.css">
+    {% endif %}
     <link rel="icon" href="{{site.baseurl}}/favicon.png">
     <title>{{site.title}}</title>
 </head>

@@ -98,6 +98,9 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                         convocations:d.convocations,
                         uniq:uniq++,
                         r: d.rating,
+                        region: d.region,
+                        goverment_body: d.goverment_body,
+                        total_years: d.total_years,
                         x: /*Math.cos(i / m * 2 * Math.PI) * 300*/ + width / 2 + Math.random(),
                         y: /*Math.sin(i / m * 2 * Math.PI) * 300*/ + height / 2 + Math.random()
 
@@ -654,6 +657,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 //createSelect("select_election_method", "Способ избрания","election_method")
                 //createSelect("select_fraction", "Фракция","fraction")
                 createSelect("select_committees", "Комитет","committees")
+                createSelect("select_region", "Регион","region")
                 var conv_slider, age_slider;
                 CreateSliders()
                 MakeAutoComplete()
@@ -775,12 +779,12 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                     var age_slider_div = document.getElementById('age');
 
                     conv_slider=noUiSlider.create(conv_slider_div, {
-                        start: [1, 7],
+                        start: [isSF?0:1, isSF?19:7],
                         step:1,
                         connect: true,
                         range: {
-                            'min': 1,
-                            'max': 7
+                            'min': isSF?0:1,
+                            'max': isSF?19:7
                         },
                         format: {
                             from: function(value) {
@@ -910,9 +914,14 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
 
                 function onchange(init) {
                     $('.hero-body').removeClass('is-loading');
-                    var i_search = d3.select('input#search').property('value')
-                    var s_lobby = d3.select('select#select_lobby').property('value')
-                    if (s_lobby!=-1 && s_lobby!="") ZoomeToLobby(s_lobby)
+                    var i_search = d3.select('input#search').property('value');
+                    var s_lobby = d3.select('select#select_lobby').property('value');
+                    var s_region;
+                    if (isSF){
+                        s_region = d3.select('select#select_region').property('value');
+                    }
+
+                    if (s_lobby!=-1 && s_lobby!="") ZoomeToLobby(s_lobby);
                     //var s_method = d3.select('select#select_election_method').property('value')
                     /*var s_fraction = d3.select('select#select_fraction').property('value')*/
                     var s_comitet = d3.select('select#select_committees').property('value')
@@ -922,7 +931,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                     var r_age=age_slider.get()
 
 
-                    var b_fraction, b_method, b_gender
+                    var b_fraction, b_method, b_gender, b_power
 
                     if (d3.selectAll('#fraction .is-active').node()!=null && d3.selectAll('#fraction .is-active').size()==1)
                         b_fraction=d3.select('#fraction .is-active').property('value')
@@ -932,6 +941,12 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
 
                     if (d3.selectAll('#gender .is-active').node()!=null)
                         b_gender=d3.select('#gender .is-active').property('value')
+                    if (isSF)
+                    {
+                        if (d3.selectAll('#power .is-active').node()!=null)
+                            b_power=d3.select('#power .is-active').property('value')
+                    }
+
 
                     //if (i_search!="")
 
@@ -950,10 +965,14 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                         ((s_method!=-1) ? (x.election_method==s_method) : true)*/
                         /*&&
                             ((s_fraction!=-1) ? (x.fraction==s_fraction) :true)*/
+                        &&((isSF && s_region && s_region!=-1) ?
+                            (x.region == s_region) : true)
                         &&
                         ((s_comitet!=-1) ? x.committees.includes(s_comitet): true)
                         &&
-                        (+x.convocations>=+r_conv[0] && +x.convocations<=+r_conv[1])
+                        (!isSF ? (+x.convocations>=+r_conv[0] && +x.convocations<=+r_conv[1]) : true)
+                        &&
+                        (isSF ? (+x.total_years>=+r_conv[0] && +x.total_years<=+r_conv[1]) : true)
                         &&
                         (+x.age>=+r_age[0] && +x.age<=+r_age[1])
                         &&
@@ -962,6 +981,8 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                         (b_method ? (x.election_method==b_method) : true)
                         &&
                         (b_gender ? (x.gender==b_gender) : true)
+                        &&
+                        (b_power ? (x.goverment_body==b_power) : true)
                     )
 
                     if (result.size()!=circles.size()){
@@ -1124,7 +1145,6 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
             }
 
             var hash = window.location.hash;
-            debugger;
             if(hash) {
                 var person = nodes.find(e=>e.person==hash.replace('#id',''))
                 if (person) {

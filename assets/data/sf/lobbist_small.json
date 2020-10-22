@@ -920,8 +920,8 @@
     "total_years": 4.0,
     "last_appointment": "2016-07-10",
     "end_date": "сентябрь 2021",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 14811,
     "region": 106,
@@ -1075,8 +1075,8 @@
     "total_years": 4.0,
     "last_appointment": "2016-10-13",
     "end_date": "сентябрь 2021",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 2067,
     "region": 46,
@@ -1456,8 +1456,8 @@
     "total_years": 4.0,
     "last_appointment": "2016-06-10",
     "end_date": "сентябрь 2021",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 233,
     "region": 84,
@@ -1612,7 +1612,8 @@
     "person": 648,
     "region": 24,
     "groups": [
-      11697
+      11697,
+      11638
     ]
   },
   {
@@ -2331,7 +2332,7 @@
     "person": 1429,
     "region": 81,
     "groups": [
-      11663
+      11851
     ]
   },
   {
@@ -2401,8 +2402,8 @@
     "total_years": 7.0,
     "last_appointment": "2019-04-10",
     "end_date": "октябрь 2024",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 559,
     "region": 9,
@@ -2840,8 +2841,8 @@
     "total_years": 9.0,
     "last_appointment": "2016-06-10",
     "end_date": "сентябрь 2021",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 812,
     "region": 86,
@@ -3435,8 +3436,6 @@
     "person": 14771,
     "region": 101,
     "groups": [
-      11705,
-      11695,
       11717
     ]
   },

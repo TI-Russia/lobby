@@ -134,7 +134,7 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list, isSF) {
             soziv=info.convocations.length,
             gender=info.gender,
             letVsf = info.total_years,
-            region = info.region,
+            region = info.region.name,
             chem = info.goverment_body
 
         gender = !gender ? "м" : gender.toLowerCase();
