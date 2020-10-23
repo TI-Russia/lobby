@@ -6,6 +6,11 @@
       "I"
     ],
     "committees": [],
+    "region": {
+      "id": 12,
+      "name": "Республика Карелия",
+      "short_name": "Карелия"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -21,7 +26,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 57270,
-    "region": 12,
     "groups": [
       11561,
       11554
@@ -34,6 +38,11 @@
       "I"
     ],
     "committees": [],
+    "region": {
+      "id": 61,
+      "name": "Республика Марий Эл",
+      "short_name": "Марий Эл"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -49,7 +58,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 145,
-    "region": 61,
     "groups": [
       11563
     ]
@@ -59,6 +67,11 @@
     "fullname": "Тимченко Вячеслав Степанович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 51,
+      "name": "Кировская область",
+      "short_name": "Кировская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -74,7 +87,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 260,
-    "region": 51,
     "groups": [
       11856,
       11722,
@@ -86,6 +98,11 @@
     "fullname": "Федоров Николай Васильевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 91,
+      "name": "Чувашская республика - Чувашия",
+      "short_name": "Чувашия"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -101,7 +118,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 1238,
-    "region": 91,
     "groups": [
       11851
     ]
@@ -111,6 +127,11 @@
     "fullname": "Ахмадов Мохмад Исаевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 90,
+      "name": "Чеченская республика",
+      "short_name": "Чечня"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -126,7 +147,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 17942,
-    "region": 90,
     "groups": [
       11851
     ]
@@ -136,6 +156,11 @@
     "fullname": "Безденежных Сергей Вячеславович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 32,
+      "name": "Хабаровский край",
+      "short_name": "Хабаровский край"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -151,7 +176,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 15075,
-    "region": 32,
     "groups": [
       11851
     ]
@@ -161,6 +185,11 @@
     "fullname": "Широков Анатолий Иванович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 58,
+      "name": "Магаданская область",
+      "short_name": "Магаданская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -176,7 +205,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 9122,
-    "region": 58,
     "groups": [
       11623
     ]
@@ -186,6 +214,11 @@
     "fullname": "Важенин Юрий Иванович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 108,
+      "name": "Ханты-Мансийский автономный округ — Югра",
+      "short_name": "Ханты-Мансийский АО — Югра"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -201,7 +234,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 399,
-    "region": 108,
     "groups": [
       11672,
       11741
@@ -212,6 +244,11 @@
     "fullname": "Исаков Эдуард Владимирович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 108,
+      "name": "Ханты-Мансийский автономный округ — Югра",
+      "short_name": "Ханты-Мансийский АО — Югра"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -227,7 +264,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 15158,
-    "region": 108,
     "groups": [
       11710
     ]
@@ -237,6 +273,11 @@
     "fullname": "Варфоломеев Александр Георгиевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 5,
+      "name": "Республика Бурятия",
+      "short_name": "Бурятия"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -252,7 +293,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 1708,
-    "region": 5,
     "groups": [
       11640
     ]
@@ -262,6 +302,11 @@
     "fullname": "Воробьев Юрий Леонидович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 42,
+      "name": "Вологодская область",
+      "short_name": "Вологодская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -277,7 +322,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 1031,
-    "region": 42,
     "groups": [
       11551,
       11561,
@@ -289,6 +333,11 @@
     "fullname": "Шевченко Андрей Анатольевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 105,
+      "name": "Оренбургская область",
+      "short_name": "Оренбургская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -304,7 +353,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 15764,
-    "region": 105,
     "groups": [
       11722,
       11701
@@ -315,6 +363,11 @@
     "fullname": "Журавлев Николай Андреевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 53,
+      "name": "Костромская область",
+      "short_name": "Костромская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -330,7 +383,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 1044,
-    "region": 53,
     "groups": [
       11589,
       11717,
@@ -343,6 +395,11 @@
     "fullname": "Горячева Светлана Петровна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 74,
+      "name": "Приморский край",
+      "short_name": "Приморский край"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -358,7 +415,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 41,
-    "region": 74,
     "groups": [
       11556
     ]
@@ -368,6 +424,11 @@
     "fullname": "Васильев Валерий Николаевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 99,
+      "name": "Ивановская область",
+      "short_name": "Ивановская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -383,8 +444,8 @@
     "temp_commission": "",
     "hidden": false,
     "person": 1054,
-    "region": 99,
     "groups": [
+      11559,
       11758
     ]
   },
@@ -393,6 +454,11 @@
     "fullname": "Карасин Григорий Борисович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 94,
+      "name": "Сахалинская область",
+      "short_name": "Сахалинская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -408,7 +474,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 11516,
-    "region": 94,
     "groups": [
       11563
     ]
@@ -418,6 +483,11 @@
     "fullname": "Талабаева Людмила Заумовна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 74,
+      "name": "Приморский край",
+      "short_name": "Приморский край"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -433,7 +503,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 32050,
-    "region": 74,
     "groups": [
       11865,
       11697
@@ -444,6 +513,11 @@
     "fullname": "Брилка Сергей Фатеевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 45,
+      "name": "Иркутская область",
+      "short_name": "Иркутская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -459,7 +533,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 12772,
-    "region": 45,
     "groups": [
       11851
     ]
@@ -469,6 +542,11 @@
     "fullname": "Бабаков Александр Михайлович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 82,
+      "name": "Тамбовская область",
+      "short_name": "Тамбовская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -484,7 +562,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 473,
-    "region": 82,
     "groups": [
       11683
     ]
@@ -494,6 +571,11 @@
     "fullname": "Кожин Владимир Игоревич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 63,
+      "name": "Москва",
+      "short_name": "Москва"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -509,7 +591,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 1881,
-    "region": 63,
     "groups": [
       11551
     ]
@@ -519,6 +600,11 @@
     "fullname": "Ткач Олег Поликарпович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 46,
+      "name": "Калининградская область",
+      "short_name": "Калининградская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -534,7 +620,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 1171,
-    "region": 46,
     "groups": [
       11561
     ]
@@ -544,6 +629,11 @@
     "fullname": "Карелова Галина Николаевна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 43,
+      "name": "Воронежская область",
+      "short_name": "Воронежская область"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -555,15 +645,13 @@
     "total_years": 6.0,
     "last_appointment": "2018-09-15",
     "end_date": "сентябрь 2023",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 133,
-    "region": 43,
     "groups": [
       11710,
-      11701,
-      11717
+      11701
     ]
   },
   {
@@ -571,6 +659,11 @@
     "fullname": "Алтабаева Екатерина Борисовна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 110,
+      "name": "Севастополь*",
+      "short_name": "Севастополь*"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -586,7 +679,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 137592,
-    "region": 110,
     "groups": [
       11661
     ]
@@ -596,6 +688,7 @@
     "fullname": "Турчак Андрей Анатольевич",
     "convocations": [],
     "committees": [],
+    "region": null,
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -611,7 +704,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 447,
-    "region": null,
     "groups": [
       11589,
       11551,
@@ -627,6 +719,11 @@
     "fullname": "Ялалов Ирек Ишмухаметович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 4,
+      "name": "Республика Башкортостан",
+      "short_name": "Башкортостан"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -642,7 +739,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 23828,
-    "region": 4,
     "groups": [
       11851
     ]
@@ -652,6 +748,11 @@
     "fullname": "Мельниченко Олег Владимирович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 72,
+      "name": "Пензенская область",
+      "short_name": "Пензенская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -667,7 +768,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 57070,
-    "region": 72,
     "groups": [
       11722,
       11701,
@@ -679,6 +779,11 @@
     "fullname": "Архаров Юрий Викторович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 94,
+      "name": "Сахалинская область",
+      "short_name": "Сахалинская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -694,7 +799,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 57073,
-    "region": 94,
     "groups": [
       11710
     ]
@@ -704,6 +808,11 @@
     "fullname": "Цепкин Олег Владимирович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 89,
+      "name": "Челябинская область",
+      "short_name": "Челябинская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -719,7 +828,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 19903,
-    "region": 89,
     "groups": [
       11673,
       11809
@@ -730,6 +838,11 @@
     "fullname": "Галушина Римма Федоровна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 102,
+      "name": "Ненецкий автономный округ",
+      "short_name": "Ненецкий АО"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -745,7 +858,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 22333,
-    "region": 102,
     "groups": [
       11851
     ]
@@ -755,6 +867,11 @@
     "fullname": "Керимов Сулейман Абусаидович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 59,
+      "name": "Республика Дагестан",
+      "short_name": "Дагестан"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -770,7 +887,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 884,
-    "region": 59,
     "groups": [
       11851
     ]
@@ -780,6 +896,11 @@
     "fullname": "Кисляк Сергей Иванович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 62,
+      "name": "Республика Мордовия",
+      "short_name": "Мордовия"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -795,7 +916,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 57072,
-    "region": 62,
     "groups": [
       11851
     ]
@@ -805,6 +925,11 @@
     "fullname": "Башкин Александр Давыдович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 38,
+      "name": "Астраханская область",
+      "short_name": "Астраханская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -820,7 +945,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 12225,
-    "region": 38,
     "groups": [
       11560,
       11597
@@ -831,6 +955,11 @@
     "fullname": "Аренин Сергей Петрович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 79,
+      "name": "Саратовская область",
+      "short_name": "Саратовская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -846,7 +975,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 30513,
-    "region": 79,
     "groups": [
       11551,
       11561
@@ -857,6 +985,11 @@
     "fullname": "Гумерова Лилия Салаватовна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 4,
+      "name": "Республика Башкортостан",
+      "short_name": "Башкортостан"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -872,7 +1005,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 8941,
-    "region": 4,
     "groups": [
       11867,
       11639,
@@ -884,6 +1016,11 @@
     "fullname": "Климов Андрей Аркадьевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 29,
+      "name": "Пермский край",
+      "short_name": "Пермский край"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -899,7 +1036,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 139,
-    "region": 29,
     "groups": [
       11851
     ]
@@ -909,6 +1045,11 @@
     "fullname": "Кравченко Владимир Казимирович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 106,
+      "name": "Томская область",
+      "short_name": "Томская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -924,7 +1065,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 14811,
-    "region": 106,
     "groups": [
       11666,
       11809,
@@ -937,6 +1077,11 @@
     "fullname": "Казаноков Крым Олиевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 11,
+      "name": "Карачаево-Черкесская республика",
+      "short_name": "Карачаево-Черкессия"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -952,7 +1097,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 12983,
-    "region": 11,
     "groups": [
       11851
     ]
@@ -962,6 +1106,11 @@
     "fullname": "Хохлова Ольга Николаевна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 36,
+      "name": "Владимирская область",
+      "short_name": "Владимирская область"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -977,7 +1126,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 1476,
-    "region": 36,
     "groups": [
       11851
     ]
@@ -987,6 +1135,11 @@
     "fullname": "Чернецкий Аркадий Михайлович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 80,
+      "name": "Свердловская область",
+      "short_name": "Свердловская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1002,7 +1155,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 1186,
-    "region": 80,
     "groups": [
       11706,
       11660
@@ -1013,6 +1165,11 @@
     "fullname": "Королев Олег Петрович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 57,
+      "name": "Липецкая область",
+      "short_name": "Липецкая область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1028,7 +1185,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 426,
-    "region": 57,
     "groups": [
       11551
     ]
@@ -1038,6 +1194,11 @@
     "fullname": "Жамсуев Баир Баясхаланович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 44,
+      "name": "Забайкальский край",
+      "short_name": "Забайкальский край"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1053,7 +1214,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 4576,
-    "region": 44,
     "groups": [
       11551,
       11561
@@ -1064,6 +1224,11 @@
     "fullname": "Коротков Алексей Владимирович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 46,
+      "name": "Калининградская область",
+      "short_name": "Калининградская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1079,7 +1244,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 2067,
-    "region": 46,
     "groups": [
       11610,
       11758
@@ -1090,6 +1254,11 @@
     "fullname": "Афанасьева Елена Владимировна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 105,
+      "name": "Оренбургская область",
+      "short_name": "Оренбургская область"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -1105,7 +1274,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 37,
-    "region": 105,
     "groups": [
       11697
     ]
@@ -1115,6 +1283,11 @@
     "fullname": "Авдеева Елена Осиповна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 42,
+      "name": "Вологодская область",
+      "short_name": "Вологодская область"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -1130,7 +1303,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 16104,
-    "region": 42,
     "groups": [
       11851
     ]
@@ -1140,6 +1312,11 @@
     "fullname": "Акимов Александр Константинович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 92,
+      "name": "Республика Саха (Якутия)",
+      "short_name": "Саха (Якутия)"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1155,7 +1332,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 4480,
-    "region": 92,
     "groups": [
       11649
     ]
@@ -1165,6 +1341,11 @@
     "fullname": "Цеков Сергей Павлович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 109,
+      "name": "Республика Крым*",
+      "short_name": "Крым*"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1180,7 +1361,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 4929,
-    "region": 109,
     "groups": [
       11646
     ]
@@ -1190,6 +1370,11 @@
     "fullname": "Бекетов Владимир Андреевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 27,
+      "name": "Краснодарский край",
+      "short_name": "Краснодарский край"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1205,7 +1390,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 517,
-    "region": 27,
     "groups": [
       11696,
       11617
@@ -1216,6 +1400,11 @@
     "fullname": "Фабричный Сергей Юрьевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 67,
+      "name": "Новгородская область",
+      "short_name": "Новгородская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1231,7 +1420,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 629,
-    "region": 67,
     "groups": [
       11560,
       11628
@@ -1242,6 +1430,11 @@
     "fullname": "Барахоев Мухарбек Ойбертович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 8,
+      "name": "Республика Ингушетия",
+      "short_name": "Ингушетия"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1257,7 +1450,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 138182,
-    "region": 8,
     "groups": [
       11851
     ]
@@ -1267,6 +1459,11 @@
     "fullname": "Вайнберг Александр Владеленович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 66,
+      "name": "Нижегородская область",
+      "short_name": "Нижегородская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1282,7 +1479,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 693,
-    "region": 66,
     "groups": [
       11851
     ]
@@ -1292,6 +1488,11 @@
     "fullname": "Косихина Наталия Владимировна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 107,
+      "name": "Ярославская область",
+      "short_name": "Ярославская область"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -1307,7 +1508,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 132644,
-    "region": 107,
     "groups": [
       11678
     ]
@@ -1317,6 +1517,11 @@
     "fullname": "Литюшкин Владимир Васильевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 62,
+      "name": "Республика Мордовия",
+      "short_name": "Мордовия"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1332,7 +1537,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 965,
-    "region": 62,
     "groups": [
       11851
     ]
@@ -1342,6 +1546,11 @@
     "fullname": "Фадзаев Арсен Сулейманович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 17,
+      "name": "Республика Северная Осетия — Алания",
+      "short_name": "Северная Осетия — Алания"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1357,7 +1566,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 3256,
-    "region": 17,
     "groups": [
       11650
     ]
@@ -1367,6 +1575,11 @@
     "fullname": "Ульбашев Мухарбий Магомедович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 9,
+      "name": "Кабардино-Балкарская Республика",
+      "short_name": "Кабардино-Балкария"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1378,11 +1591,10 @@
     "total_years": 9.0,
     "last_appointment": "2019-09-23",
     "end_date": "сентябрь 2024",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 9121,
-    "region": 9,
     "groups": [
       11590,
       11717
@@ -1393,6 +1605,11 @@
     "fullname": "Мамедов Сергей Валерьевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 77,
+      "name": "Самарская область",
+      "short_name": "Самарская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1408,7 +1625,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 1047,
-    "region": 77,
     "groups": [
       11851
     ]
@@ -1418,6 +1634,11 @@
     "fullname": "Кусайко Татьяна Алексеевна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 65,
+      "name": "Мурманская область",
+      "short_name": "Мурманская область"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -1429,14 +1650,13 @@
     "total_years": 4.0,
     "last_appointment": "2016-06-10",
     "end_date": "сентябрь 2021",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 32064,
-    "region": 65,
     "groups": [
       11565,
-      11560,
+      11710,
       11625
     ]
   },
@@ -1445,6 +1665,11 @@
     "fullname": "Савельев Дмитрий Владимирович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 84,
+      "name": "Тульская область",
+      "short_name": "Тульская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1460,7 +1685,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 233,
-    "region": 84,
     "groups": [
       11683
     ]
@@ -1470,6 +1694,11 @@
     "fullname": "Селезнев Олег Викторович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 3,
+      "name": "Республика Адыгея",
+      "short_name": "Адыгея"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1485,7 +1714,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 57071,
-    "region": 3,
     "groups": [
       11551
     ]
@@ -1495,6 +1723,11 @@
     "fullname": "Абрамов Иван Николаевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 33,
+      "name": "Амурская область",
+      "short_name": "Амурская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1510,7 +1743,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 343,
-    "region": 33,
     "groups": [
       11595
     ]
@@ -1520,6 +1752,11 @@
     "fullname": "Леонов Сергей Дмитриевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 100,
+      "name": "Смоленская область",
+      "short_name": "Смоленская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1535,7 +1772,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 14547,
-    "region": 100,
     "groups": [
       11851
     ]
@@ -1545,6 +1781,11 @@
     "fullname": "Жуков Александр Аркадьевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 21,
+      "name": "Республика Хакасия",
+      "short_name": "Хакасия"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1560,7 +1801,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 132637,
-    "region": 21,
     "groups": [
       11851
     ]
@@ -1570,6 +1810,11 @@
     "fullname": "Наговицын Вячеслав Владимирович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 5,
+      "name": "Республика Бурятия",
+      "short_name": "Бурятия"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1585,7 +1830,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 552,
-    "region": 5,
     "groups": [
       11851
     ]
@@ -1595,6 +1839,11 @@
     "fullname": "Гигель Татьяна Анатольевна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 24,
+      "name": "Алтайский край",
+      "short_name": "Алтайский край"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -1610,7 +1859,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 648,
-    "region": 24,
     "groups": [
       11697,
       11638
@@ -1621,6 +1869,11 @@
     "fullname": "Русских Алексей Юрьевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 64,
+      "name": "Московская область",
+      "short_name": "Московская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1636,7 +1889,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 53,
-    "region": 64,
     "groups": [
       11701,
       11624
@@ -1647,6 +1899,11 @@
     "fullname": "Городецкий Владимир Филиппович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 68,
+      "name": "Новосибирская область",
+      "short_name": "Новосибирская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1662,7 +1919,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 7821,
-    "region": 68,
     "groups": [
       11851
     ]
@@ -1672,6 +1928,11 @@
     "fullname": "Мартынов Сергей Александрович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 61,
+      "name": "Республика Марий Эл",
+      "short_name": "Марий Эл"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1687,7 +1948,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 131521,
-    "region": 61,
     "groups": [
       11851
     ]
@@ -1697,6 +1957,11 @@
     "fullname": "Митин Сергей Герасимович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 67,
+      "name": "Новгородская область",
+      "short_name": "Новгородская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1712,7 +1977,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 430,
-    "region": 67,
     "groups": [
       11865,
       11697,
@@ -1726,6 +1990,11 @@
     "fullname": "Глебова Любовь Николаевна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 20,
+      "name": "Удмуртская республика",
+      "short_name": "Удмуртия"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -1741,7 +2010,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 4538,
-    "region": 20,
     "groups": [
       11809
     ]
@@ -1751,6 +2019,11 @@
     "fullname": "Нарусова Людмила Борисовна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 85,
+      "name": "Республика Тува (Тыва)",
+      "short_name": "Тува (Тыва)"
+    },
     "election_method": null,
     "gender": null,
     "site": "S",
@@ -1762,11 +2035,10 @@
     "total_years": 14.0,
     "last_appointment": "2016-09-23",
     "end_date": "сентябрь 2021",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 1199,
-    "region": 85,
     "groups": [
       11881
     ]
@@ -1776,6 +2048,11 @@
     "fullname": "Джабаров Владимир Михайлович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 93,
+      "name": "Еврейская автономная область",
+      "short_name": "Еврейская АО"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1791,7 +2068,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 1040,
-    "region": 93,
     "groups": [
       11551,
       11605
@@ -1802,6 +2078,11 @@
     "fullname": "Бондарев Виктор Николаевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 51,
+      "name": "Кировская область",
+      "short_name": "Кировская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1817,7 +2098,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 39040,
-    "region": 51,
     "groups": [
       11561,
       11790
@@ -1828,6 +2108,11 @@
     "fullname": "Лукин Сергей Николаевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 43,
+      "name": "Воронежская область",
+      "short_name": "Воронежская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1843,7 +2128,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 4816,
-    "region": 43,
     "groups": [
       11701,
       11603
@@ -1854,6 +2138,11 @@
     "fullname": "Иконников Василий Николаевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 70,
+      "name": "Орловская область",
+      "short_name": "Орловская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1869,7 +2158,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 505,
-    "region": 70,
     "groups": [
       11851
     ]
@@ -1879,6 +2167,11 @@
     "fullname": "Харлов Вадим Борисович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 88,
+      "name": "Ульяновская область",
+      "short_name": "Ульяновская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1894,7 +2187,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 333,
-    "region": 88,
     "groups": [
       11721,
       11670
@@ -1905,6 +2197,11 @@
     "fullname": "Павлова Маргарита Николаевна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 89,
+      "name": "Челябинская область",
+      "short_name": "Челябинская область"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -1920,7 +2217,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 487,
-    "region": 89,
     "groups": [
       11851
     ]
@@ -1930,6 +2226,11 @@
     "fullname": "Белоусов Сергей Владимирович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 24,
+      "name": "Алтайский край",
+      "short_name": "Алтайский край"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -1945,7 +2246,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 737,
-    "region": 24,
     "groups": [
       11696,
       11594
@@ -1956,6 +2256,11 @@
     "fullname": "Ковитиди Ольга Федоровна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 109,
+      "name": "Республика Крым*",
+      "short_name": "Крым*"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -1971,7 +2276,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 8943,
-    "region": 109,
     "groups": [
       11561,
       11875,
@@ -1983,6 +2287,11 @@
     "fullname": "Грешнякова Елена Геннадьевна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 32,
+      "name": "Хабаровский край",
+      "short_name": "Хабаровский край"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -1998,7 +2307,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 15078,
-    "region": 32,
     "groups": [
       11851
     ]
@@ -2008,6 +2316,11 @@
     "fullname": "Зубарев Игорь Дмитриевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 12,
+      "name": "Республика Карелия",
+      "short_name": "Карелия"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2023,7 +2336,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 13005,
-    "region": 12,
     "groups": [
       11697,
       11644
@@ -2034,6 +2346,11 @@
     "fullname": "Назаров Виктор Иванович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 53,
+      "name": "Костромская область",
+      "short_name": "Костромская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2049,7 +2366,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 1420,
-    "region": 53,
     "groups": [
       11851
     ]
@@ -2059,6 +2375,11 @@
     "fullname": "Семенов Валерий Владимирович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 28,
+      "name": "Красноярский край",
+      "short_name": "Красноярский край"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2074,7 +2395,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 9116,
-    "region": 28,
     "groups": [
       11618,
       11763
@@ -2085,6 +2405,11 @@
     "fullname": "Мамсуров Таймураз Дзамбекович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 17,
+      "name": "Республика Северная Осетия — Алания",
+      "short_name": "Северная Осетия — Алания"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2100,7 +2425,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 421,
-    "region": 17,
     "groups": [
       11561
     ]
@@ -2110,6 +2434,11 @@
     "fullname": "Тараканов Павел Владимирович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 86,
+      "name": "Тюменская область",
+      "short_name": "Тюменская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2125,7 +2454,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 3243,
-    "region": 86,
     "groups": [
       11851
     ]
@@ -2135,6 +2463,11 @@
     "fullname": "Усатюк Валерий Петрович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 21,
+      "name": "Республика Хакасия",
+      "short_name": "Хакасия"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2150,7 +2483,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 132646,
-    "region": 21,
     "groups": [
       11851
     ]
@@ -2160,6 +2492,11 @@
     "fullname": "Полетаев Владимир Владимирович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 24,
+      "name": "Алтайский край",
+      "short_name": "Алтайский край"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2171,11 +2508,10 @@
     "total_years": 6.0,
     "last_appointment": "2019-02-10",
     "end_date": "сентябрь 2024",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 9114,
-    "region": 24,
     "groups": [
       11589,
       11590,
@@ -2187,6 +2523,11 @@
     "fullname": "Иванов Сергей Павлович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 58,
+      "name": "Магаданская область",
+      "short_name": "Магаданская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2202,7 +2543,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 1042,
-    "region": 58,
     "groups": [
       11705,
       11695,
@@ -2214,6 +2554,11 @@
     "fullname": "Невзоров Борис Александрович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 48,
+      "name": "Камчатский край",
+      "short_name": "Камчатский край"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2229,7 +2574,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 1137,
-    "region": 48,
     "groups": [
       11697
     ]
@@ -2239,6 +2583,11 @@
     "fullname": "Карлин Александр Богданович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 24,
+      "name": "Алтайский край",
+      "short_name": "Алтайский край"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2254,7 +2603,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 478,
-    "region": 24,
     "groups": [
       11573,
       11551
@@ -2265,6 +2613,11 @@
     "fullname": "Пронюшкин Александр Юрьевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 36,
+      "name": "Владимирская область",
+      "short_name": "Владимирская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2280,7 +2633,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 132636,
-    "region": 36,
     "groups": [
       11851
     ]
@@ -2290,6 +2642,11 @@
     "fullname": "Синицын Алексей Владимирович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 50,
+      "name": "Кемеровская область",
+      "short_name": "Кемеровская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2305,7 +2662,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 13074,
-    "region": 50,
     "groups": [
       11614
     ]
@@ -2315,6 +2671,11 @@
     "fullname": "Гаевский Валерий Вениаминович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 81,
+      "name": "Ставропольский край",
+      "short_name": "Ставропольский край"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2330,7 +2691,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 1429,
-    "region": 81,
     "groups": [
       11851
     ]
@@ -2340,6 +2700,11 @@
     "fullname": "Круглый Владимир Игоревич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 70,
+      "name": "Орловская область",
+      "short_name": "Орловская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2355,7 +2720,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 8944,
-    "region": 70,
     "groups": [
       11710
     ]
@@ -2365,6 +2729,11 @@
     "fullname": "Пушков Алексей Константинович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 29,
+      "name": "Пермский край",
+      "short_name": "Пермский край"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2380,7 +2749,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 598,
-    "region": 29,
     "groups": [
       11563,
       11700
@@ -2391,6 +2759,11 @@
     "fullname": "Каноков Арсен Баширович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 9,
+      "name": "Кабардино-Балкарская Республика",
+      "short_name": "Кабардино-Балкария"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2406,9 +2779,7 @@
     "temp_commission": "",
     "hidden": false,
     "person": 559,
-    "region": 9,
     "groups": [
-      11726,
       11701
     ]
   },
@@ -2417,6 +2788,11 @@
     "fullname": "Зленко Елена Геннадьевна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 104,
+      "name": "Ямало-Ненецкий автономный округ",
+      "short_name": "Ямало-Ненецкий АО"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -2432,7 +2808,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 15332,
-    "region": 104,
     "groups": [
       11736,
       11677
@@ -2443,6 +2818,11 @@
     "fullname": "Михайлов Сергей Петрович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 44,
+      "name": "Забайкальский край",
+      "short_name": "Забайкальский край"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2458,7 +2838,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 12695,
-    "region": 44,
     "groups": [
       11606
     ]
@@ -2468,6 +2847,11 @@
     "fullname": "Лукин Владимир Петрович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 101,
+      "name": "Тверская область",
+      "short_name": "Тверская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2483,7 +2867,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 19328,
-    "region": 101,
     "groups": [
       11563,
       11879
@@ -2494,6 +2877,11 @@
     "fullname": "Отке Анна Ивановна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 95,
+      "name": "Чукотский автономный округ",
+      "short_name": "Чукотский АО"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -2509,7 +2897,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 4874,
-    "region": 95,
     "groups": [
       11705,
       11676
@@ -2520,6 +2907,11 @@
     "fullname": "Рыжков Николай Иванович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 96,
+      "name": "Белгородская область",
+      "short_name": "Белгородская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2535,7 +2927,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 1150,
-    "region": 96,
     "groups": [
       11851
     ]
@@ -2545,6 +2936,11 @@
     "fullname": "Мухаметшин Фарит Мубаракшевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 77,
+      "name": "Самарская область",
+      "short_name": "Самарская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2560,7 +2956,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 5461,
-    "region": 77,
     "groups": [
       11730
     ]
@@ -2570,6 +2965,11 @@
     "fullname": "Панченко Игорь Владимирович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 84,
+      "name": "Тульская область",
+      "short_name": "Тульская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2585,7 +2985,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 2937,
-    "region": 84,
     "groups": [
       11683,
       11667,
@@ -2597,6 +2996,11 @@
     "fullname": "Михайлов Александр Николаевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 55,
+      "name": "Курская область",
+      "short_name": "Курская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2612,7 +3016,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 1411,
-    "region": 55,
     "groups": [
       11561
     ]
@@ -2622,6 +3025,11 @@
     "fullname": "Орденов Геннадий Иванович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 38,
+      "name": "Астраханская область",
+      "short_name": "Астраханская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2637,7 +3045,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 12264,
-    "region": 38,
     "groups": [
       11705,
       11683,
@@ -2650,6 +3057,11 @@
     "fullname": "Клишас Андрей Александрович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 28,
+      "name": "Красноярский край",
+      "short_name": "Красноярский край"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2665,7 +3077,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 892,
-    "region": 28,
     "groups": [
       11573,
       11551,
@@ -2679,6 +3090,11 @@
     "fullname": "Геремеев Сулейман Садулаевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 90,
+      "name": "Чеченская республика",
+      "short_name": "Чечня"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2694,7 +3110,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 700,
-    "region": 90,
     "groups": [
       11851
     ]
@@ -2704,6 +3119,11 @@
     "fullname": "Бибикова Елена Васильевна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 75,
+      "name": "Псковская область",
+      "short_name": "Псковская область"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -2719,7 +3139,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 8932,
-    "region": 75,
     "groups": [
       11851
     ]
@@ -2729,6 +3148,11 @@
     "fullname": "Даллакян Арамаис Джаганович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 95,
+      "name": "Чукотский автономный округ",
+      "short_name": "Чукотский АО"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2744,7 +3168,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 15327,
-    "region": 95,
     "groups": [
       11676
     ]
@@ -2754,6 +3177,11 @@
     "fullname": "Николаев Вадим Иванович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 91,
+      "name": "Чувашская республика - Чувашия",
+      "short_name": "Чувашия"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2769,7 +3197,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 15300,
-    "region": 91,
     "groups": [
       11675
     ]
@@ -2779,6 +3206,11 @@
     "fullname": "Борисов Егор Афанасьевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 92,
+      "name": "Республика Саха (Якутия)",
+      "short_name": "Саха (Якутия)"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2794,7 +3226,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 407,
-    "region": 92,
     "groups": [
       11696,
       11649
@@ -2805,6 +3236,11 @@
     "fullname": "Орлов Алексей Маратович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 47,
+      "name": "Республика Калмыкия",
+      "short_name": "Калмыкия"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2820,7 +3256,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 561,
-    "region": 47,
     "groups": [
       11851
     ]
@@ -2830,6 +3265,11 @@
     "fullname": "Пономарев Михаил Николаевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 86,
+      "name": "Тюменская область",
+      "short_name": "Тюменская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2845,12 +3285,10 @@
     "temp_commission": "",
     "hidden": false,
     "person": 812,
-    "region": 86,
     "groups": [
       11706,
       11701,
-      11699,
-      11758
+      11699
     ]
   },
   {
@@ -2858,6 +3296,11 @@
     "fullname": "Федоров Юрий Викторович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 20,
+      "name": "Удмуртская республика",
+      "short_name": "Удмуртия"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2873,7 +3316,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 14998,
-    "region": 20,
     "groups": [
       11703,
       11809,
@@ -2886,6 +3328,11 @@
     "fullname": "Василенко Дмитрий Юрьевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 56,
+      "name": "Ленинградская область",
+      "short_name": "Ленинградская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2901,7 +3348,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 31999,
-    "region": 56,
     "groups": [
       11851
     ]
@@ -2911,6 +3357,11 @@
     "fullname": "Абрамов Виктор Семенович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 64,
+      "name": "Московская область",
+      "short_name": "Московская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2926,7 +3377,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 114,
-    "region": 64,
     "groups": [
       11851
     ]
@@ -2936,6 +3386,11 @@
     "fullname": "Хамчиев Белан Багаудинович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 8,
+      "name": "Республика Ингушетия",
+      "short_name": "Ингушетия"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2951,9 +3406,8 @@
     "temp_commission": "",
     "hidden": false,
     "person": 284,
-    "region": 8,
     "groups": [
-      11871
+      11696
     ]
   },
   {
@@ -2961,6 +3415,11 @@
     "fullname": "Пономарев Валерий Андреевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 48,
+      "name": "Камчатский край",
+      "short_name": "Камчатский край"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -2976,7 +3435,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 1007,
-    "region": 48,
     "groups": [
       11699,
       11612
@@ -2987,6 +3445,7 @@
     "fullname": "Артамонов Анатолий Дмитриевич",
     "convocations": [],
     "committees": [],
+    "region": null,
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3002,7 +3461,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 579,
-    "region": null,
     "groups": [
       11611,
       11809
@@ -3013,6 +3471,11 @@
     "fullname": "Кузьмин Дмитрий Геннадьевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 50,
+      "name": "Кемеровская область",
+      "short_name": "Кемеровская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3028,7 +3491,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 132643,
-    "region": 50,
     "groups": [
       11761
     ]
@@ -3038,6 +3500,11 @@
     "fullname": "Морозов Игорь Николаевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 103,
+      "name": "Рязанская область",
+      "short_name": "Рязанская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3053,7 +3520,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 4844,
-    "region": 103,
     "groups": [
       11551
     ]
@@ -3063,6 +3529,11 @@
     "fullname": "Новожилов Виктор Феодосьевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 37,
+      "name": "Архангельская область",
+      "short_name": "Архангельская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3078,7 +3549,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 12192,
-    "region": 37,
     "groups": [
       11695,
       11809
@@ -3089,6 +3559,11 @@
     "fullname": "Перминова Елена Алексеевна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 98,
+      "name": "Курганская область",
+      "short_name": "Курганская область"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -3104,7 +3579,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 9113,
-    "region": 98,
     "groups": [
       11851
     ]
@@ -3114,6 +3588,11 @@
     "fullname": "Рукавишникова Ирина Валерьевна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 76,
+      "name": "Ростовская область",
+      "short_name": "Ростовская область"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -3125,11 +3604,10 @@
     "total_years": 2.0,
     "last_appointment": "2018-09-15",
     "end_date": "сентябрь 2023",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 14153,
-    "region": 76,
     "groups": [
       11558,
       11710,
@@ -3141,6 +3619,11 @@
     "fullname": "Кондратенко Алексей Николаевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 27,
+      "name": "Краснодарский край",
+      "short_name": "Краснодарский край"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3156,7 +3639,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 13215,
-    "region": 27,
     "groups": [
       11696,
       11617
@@ -3167,6 +3649,11 @@
     "fullname": "Салпагаров Ахмат Анзорович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 11,
+      "name": "Карачаево-Черкесская республика",
+      "short_name": "Карачаево-Черкессия"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3182,7 +3669,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 19901,
-    "region": 11,
     "groups": [
       11701,
       11699
@@ -3193,6 +3679,11 @@
     "fullname": "Коряков Александр Иванович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 33,
+      "name": "Амурская область",
+      "short_name": "Амурская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3208,7 +3699,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 32062,
-    "region": 33,
     "groups": [
       11851
     ]
@@ -3218,6 +3708,11 @@
     "fullname": "Кресс Виктор Мельхиорович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 106,
+      "name": "Томская область",
+      "short_name": "Томская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3229,11 +3724,10 @@
     "total_years": 15.0,
     "last_appointment": "2017-09-19",
     "end_date": "сентябрь 2022",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 477,
-    "region": 106,
     "groups": [
       11666
     ]
@@ -3243,6 +3737,11 @@
     "fullname": "Кавджарадзе Максим Геннадьевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 57,
+      "name": "Липецкая область",
+      "short_name": "Липецкая область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3254,11 +3753,10 @@
     "total_years": 19.0,
     "last_appointment": "2016-09-22",
     "end_date": "сентябрь 2021",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 1035,
-    "region": 57,
     "groups": [
       11551,
       11790
@@ -3269,6 +3767,11 @@
     "fullname": "Святенко Инна Юрьевна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 63,
+      "name": "Москва",
+      "short_name": "Москва"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -3284,7 +3787,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 2589,
-    "region": 63,
     "groups": [
       11851
     ]
@@ -3294,6 +3796,11 @@
     "fullname": "Долгов Константин Константинович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 65,
+      "name": "Мурманская область",
+      "short_name": "Мурманская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3309,7 +3816,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 150304,
-    "region": 65,
     "groups": [
       11625
     ]
@@ -3319,6 +3825,11 @@
     "fullname": "Семисотов Николай Петрович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 41,
+      "name": "Волгоградская область",
+      "short_name": "Волгоградская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3334,7 +3845,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 12538,
-    "region": 41,
     "groups": [
       11851
     ]
@@ -3344,6 +3854,11 @@
     "fullname": "Солодун Галина Николаевна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 35,
+      "name": "Брянская область",
+      "short_name": "Брянская область"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -3359,7 +3874,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 146480,
-    "region": 35,
     "groups": [
       11851
     ]
@@ -3369,6 +3883,11 @@
     "fullname": "Горняков Сергей Васильевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 41,
+      "name": "Волгоградская область",
+      "short_name": "Волгоградская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3384,7 +3903,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 12518,
-    "region": 41,
     "groups": [
       11851
     ]
@@ -3394,6 +3912,11 @@
     "fullname": "Емельянов Геннадий Егорович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 18,
+      "name": "Республика Татарстан",
+      "short_name": "Татарстан"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3409,7 +3932,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 150305,
-    "region": 18,
     "groups": [
       11651
     ]
@@ -3419,6 +3941,11 @@
     "fullname": "Епишин Андрей Николаевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 101,
+      "name": "Тверская область",
+      "short_name": "Тверская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3434,7 +3961,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 14771,
-    "region": 101,
     "groups": [
       11717
     ]
@@ -3444,6 +3970,11 @@
     "fullname": "Умаханов Ильяс Магомед-Саламович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 59,
+      "name": "Республика Дагестан",
+      "short_name": "Дагестан"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3459,7 +3990,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 1177,
-    "region": 59,
     "groups": [
       11641
     ]
@@ -3469,6 +3999,11 @@
     "fullname": "Кутепов Андрей Викторович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 1,
+      "name": "Санкт-Петербург",
+      "short_name": "Санкт-Петербург"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3484,7 +4019,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 32063,
-    "region": 1,
     "groups": [
       11560,
       11657,
@@ -3496,6 +4030,11 @@
     "fullname": "Лебедев Владимир Альбертович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 66,
+      "name": "Нижегородская область",
+      "short_name": "Нижегородская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3511,7 +4050,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 883,
-    "region": 66,
     "groups": [
       11697,
       11696,
@@ -3523,6 +4061,11 @@
     "fullname": "Майоров Алексей Петрович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 47,
+      "name": "Республика Калмыкия",
+      "short_name": "Калмыкия"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3538,7 +4081,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 717,
-    "region": 47,
     "groups": [
       11699,
       11866,
@@ -3552,6 +4094,11 @@
     "fullname": "Матвиенко Валентина Ивановна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 1,
+      "name": "Санкт-Петербург",
+      "short_name": "Санкт-Петербург"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -3567,7 +4114,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 684,
-    "region": 1,
     "groups": []
   },
   {
@@ -3575,6 +4121,11 @@
     "fullname": "Мизулина Елена Борисовна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 53,
+      "name": "Костромская область",
+      "short_name": "Костромская область"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -3590,7 +4141,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 79,
-    "region": 53,
     "groups": [
       11558,
       11724
@@ -3601,6 +4151,11 @@
     "fullname": "Оюн Дина Ивановна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 85,
+      "name": "Республика Тува (Тыва)",
+      "short_name": "Тува (Тыва)"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -3616,7 +4171,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 15970,
-    "region": 85,
     "groups": [
       11851
     ]
@@ -3626,6 +4180,11 @@
     "fullname": "Россель Эдуард Эргартович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 80,
+      "name": "Свердловская область",
+      "short_name": "Свердловская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3641,7 +4200,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 1059,
-    "region": 80,
     "groups": [
       11851
     ]
@@ -3651,6 +4209,11 @@
     "fullname": "Рябухин Сергей Николаевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 88,
+      "name": "Ульяновская область",
+      "short_name": "Ульяновская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3666,7 +4229,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 4793,
-    "region": 88,
     "groups": [
       11705,
       11693,
@@ -3679,6 +4241,11 @@
     "fullname": "Рязанский Валерий Владимирович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 55,
+      "name": "Курская область",
+      "short_name": "Курская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3694,7 +4261,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 1151,
-    "region": 55,
     "groups": [
       11710,
       11712,
@@ -3706,6 +4272,11 @@
     "fullname": "Смирнов Виктор Владимирович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 99,
+      "name": "Ивановская область",
+      "short_name": "Ивановская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3721,7 +4292,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 12728,
-    "region": 99,
     "groups": [
       11713
     ]
@@ -3731,6 +4301,11 @@
     "fullname": "Хапсироков Мурат Крым-Гериевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 3,
+      "name": "Республика Адыгея",
+      "short_name": "Адыгея"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3746,7 +4321,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 1189,
-    "region": 3,
     "groups": [
       11851
     ]
@@ -3756,6 +4330,11 @@
     "fullname": "Березкин Сергей Владимирович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 107,
+      "name": "Ярославская область",
+      "short_name": "Ярославская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3771,7 +4350,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 167114,
-    "region": 107,
     "groups": [
       11851
     ]
@@ -3781,6 +4359,11 @@
     "fullname": "Петина Ирина Александровна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 103,
+      "name": "Рязанская область",
+      "short_name": "Рязанская область"
+    },
     "election_method": null,
     "gender": "F",
     "site": "S",
@@ -3796,7 +4379,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 167115,
-    "region": 103,
     "groups": [
       11851
     ]
@@ -3806,6 +4388,11 @@
     "fullname": "Алексеев Олег Александрович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 79,
+      "name": "Саратовская область",
+      "short_name": "Саратовская область"
+    },
     "election_method": null,
     "gender": "M",
     "site": "S",
@@ -3821,7 +4408,6 @@
     "temp_commission": "",
     "hidden": false,
     "person": 14264,
-    "region": 79,
     "groups": [
       11851
     ]
@@ -3831,6 +4417,11 @@
     "fullname": "Валяев Юрий Константинович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 93,
+      "name": "Еврейская автономная область",
+      "short_name": "Еврейская АО"
+    },
     "election_method": null,
     "gender": null,
     "site": "S",
@@ -3846,7 +4437,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 30573,
-    "region": 93,
     "groups": []
   },
   {
@@ -3854,6 +4444,11 @@
     "fullname": "Гусев Денис Владимирович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 102,
+      "name": "Ненецкий автономный округ",
+      "short_name": "Ненецкий АО"
+    },
     "election_method": null,
     "gender": null,
     "site": "S",
@@ -3869,7 +4464,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 172661,
-    "region": 102,
     "groups": []
   },
   {
@@ -3877,6 +4471,11 @@
     "fullname": "Калашник Сергей Викторович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 53,
+      "name": "Костромская область",
+      "short_name": "Костромская область"
+    },
     "election_method": null,
     "gender": null,
     "site": "S",
@@ -3892,7 +4491,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 13167,
-    "region": 53,
     "groups": []
   },
   {
@@ -3900,6 +4498,11 @@
     "fullname": "Куликовских Нина Германовна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 100,
+      "name": "Смоленская область",
+      "short_name": "Смоленская область"
+    },
     "election_method": null,
     "gender": null,
     "site": "S",
@@ -3915,7 +4518,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 14545,
-    "region": 100,
     "groups": []
   },
   {
@@ -3923,6 +4525,11 @@
     "fullname": "Львова-Белова Мария Алексеевна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 72,
+      "name": "Пензенская область",
+      "short_name": "Пензенская область"
+    },
     "election_method": null,
     "gender": null,
     "site": "S",
@@ -3938,7 +4545,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 172662,
-    "region": 72,
     "groups": []
   },
   {
@@ -3946,6 +4552,11 @@
     "fullname": "Муратов Сергей Николаевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 98,
+      "name": "Курганская область",
+      "short_name": "Курганская область"
+    },
     "election_method": null,
     "gender": null,
     "site": "S",
@@ -3961,7 +4572,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 23132,
-    "region": 98,
     "groups": []
   },
   {
@@ -3969,6 +4579,11 @@
     "fullname": "Перминов Сергей Николаевич",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 56,
+      "name": "Ленинградская область",
+      "short_name": "Ленинградская область"
+    },
     "election_method": null,
     "gender": null,
     "site": "S",
@@ -3984,7 +4599,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 17249,
-    "region": 56,
     "groups": []
   },
   {
@@ -3992,6 +4606,11 @@
     "fullname": "Савин Александр Александрович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 97,
+      "name": "Калужская область",
+      "short_name": "Калужская область"
+    },
     "election_method": null,
     "gender": null,
     "site": "S",
@@ -4007,7 +4626,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 172663,
-    "region": 97,
     "groups": []
   },
   {
@@ -4015,6 +4633,11 @@
     "fullname": "Савченко Евгений Степанович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 96,
+      "name": "Белгородская область",
+      "short_name": "Белгородская область"
+    },
     "election_method": null,
     "gender": null,
     "site": "S",
@@ -4030,7 +4653,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 166,
-    "region": 96,
     "groups": []
   },
   {
@@ -4038,6 +4660,11 @@
     "fullname": "Сафин Ленар Ринатович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 18,
+      "name": "Республика Татарстан",
+      "short_name": "Татарстан"
+    },
     "election_method": null,
     "gender": null,
     "site": "S",
@@ -4053,7 +4680,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 17727,
-    "region": 18,
     "groups": []
   },
   {
@@ -4061,6 +4687,11 @@
     "fullname": "Шумилова Елена Борисовна",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 13,
+      "name": "Республика Коми",
+      "short_name": "Коми"
+    },
     "election_method": null,
     "gender": null,
     "site": "S",
@@ -4076,7 +4707,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 172664,
-    "region": 13,
     "groups": []
   },
   {
@@ -4084,6 +4714,11 @@
     "fullname": "Яцкин Андрей Владимирович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 76,
+      "name": "Ростовская область",
+      "short_name": "Ростовская область"
+    },
     "election_method": null,
     "gender": null,
     "site": "S",
@@ -4099,7 +4734,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 2738,
-    "region": 76,
     "groups": []
   },
   {
@@ -4107,6 +4741,11 @@
     "fullname": "Афанасов Михаил Александрович",
     "convocations": [],
     "committees": [],
+    "region": {
+      "id": 81,
+      "name": "Ставропольский край",
+      "short_name": "Ставропольский край"
+    },
     "election_method": null,
     "gender": null,
     "site": "S",
@@ -4122,7 +4761,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 1045,
-    "region": 81,
     "groups": []
   },
   {
@@ -4135,6 +4773,11 @@
     "committees": [
       "Комитет ГД по информационной политике, информационным технологиям и связи"
     ],
+    "region": {
+      "id": 35,
+      "name": "Брянская область",
+      "short_name": "Брянская область"
+    },
     "election_method": "партийный список",
     "gender": "M",
     "site": "S",
@@ -4150,7 +4793,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 364,
-    "region": 35,
     "groups": [
       11573
     ]
@@ -4165,6 +4807,11 @@
     "committees": [
       "Комитет ГД по природным ресурсам, собственности и земельным отношениям"
     ],
+    "region": {
+      "id": 13,
+      "name": "Республика Коми",
+      "short_name": "Коми"
+    },
     "election_method": "партийный список",
     "gender": "F",
     "site": "S",
@@ -4180,7 +4827,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 328,
-    "region": 13,
     "groups": [
       11693,
       11596
@@ -4199,6 +4845,11 @@
     "committees": [
       "Комитет ГД по энергетике"
     ],
+    "region": {
+      "id": 68,
+      "name": "Новосибирская область",
+      "short_name": "Новосибирская область"
+    },
     "election_method": "одномандатный округ",
     "gender": "M",
     "site": "S",
@@ -4214,7 +4865,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 132,
-    "region": 68,
     "groups": [
       11711
     ]
@@ -4229,6 +4879,11 @@
     "committees": [
       "Комитет ГД по делам национальностей"
     ],
+    "region": {
+      "id": 104,
+      "name": "Ямало-Ненецкий автономный округ",
+      "short_name": "Ямало-Ненецкий АО"
+    },
     "election_method": "одномандатный округ",
     "gender": "M",
     "site": "S",
@@ -4244,7 +4899,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 623,
-    "region": 104,
     "groups": [
       11697,
       11677
@@ -4259,6 +4913,11 @@
     "committees": [
       "Комитет ГД по природным ресурсам, собственности и земельным отношениям"
     ],
+    "region": {
+      "id": 45,
+      "name": "Иркутская область",
+      "short_name": "Иркутская область"
+    },
     "election_method": "одномандатный округ",
     "gender": "M",
     "site": "S",
@@ -4274,7 +4933,6 @@
     "temp_commission": null,
     "hidden": false,
     "person": 12804,
-    "region": 45,
     "groups": [
       11703,
       11818

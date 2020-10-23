@@ -158,7 +158,7 @@ define(["d3"], function(d3) {
                     election_method:d.election_method,
                     committees:!isSF ? d.committees : [getDataFromSF(d.person, 'comitees')],
                     convocations:d.convocations.length!=0 ? d.convocations.length : 1,
-                    region: d.region,
+                    region: d.region ?  d.region.name : null,
                     goverment_body: d.goverment_body,
                     total_years: d.total_years
                 }
