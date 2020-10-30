@@ -7,7 +7,11 @@
             <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdumabingo.ru%2F&text={{site.description}}"  target="_blank" class="tw"><span class="icon"><i class="fab fa-twitter"></i></span></a>
         </div>
         <div class="column copy">
+            {% if page.sf %}
+            Источники: сайт&nbsp;<a href="http://council.gov.ru">Совета Федерации</a>,<wbr> собственное исследование
+            {% else %}
             Источники: сайт&nbsp;<a href="http://duma.gov.ru">Госдумы</a>,<wbr> собственное исследование
+            {% endif %}
         </div>
         <div class="column copy is-pulled-right is-narrow-desktop">
             Проект выполнен <a href="http://datastorytellers.net/">DataStorytellers</a><wbr> совместно с <a href="https://kmpny.github.io/">Компанией</a>
