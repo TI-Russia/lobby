@@ -401,15 +401,27 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 switch (curr.clusterParent) {
                     case 11739://фин-пром группы
                         curr.col = 0.2
-                        curr.row =1.7
+                        curr.row = 1.7
+                        if (isSF){
+                            curr.col = 8.9
+                            curr.row = 1.4
+                        }
                         break;
                     case 11679://отраслевое
                         curr.col = 4.6
                         curr.row = 2.2
+                        if (isSF){
+                            curr.col = 0.2
+                            curr.row = 1.7
+                        }
                         break;
                     case 11593://региональное
                         curr.col = 8.9
                         curr.row = 1.4
+                        if (isSF){
+                            curr.col = 4.6
+                            curr.row = 2.2
+                        }
                         break;
 
                     case 11550://федеральное
@@ -441,6 +453,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                         .attr("id", "enclose" + level.id)
 
                     svg.select("g.encloses").append("text")
+                        .attr("id", "encloseText" + level.id)
                         .attr("dy", -clusterPadding/2)
                         .append("textPath") //append a textPath to the text element
                         .attr("xlink:href", "#enclose" + level.id) //place the ID of the path here
@@ -462,8 +475,8 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                     var encloseCircle = d3.packEnclose(nd)
                     if (encloseCircle){
                         var arc = d3.arc()
-                            .innerRadius(Math.max(20,encloseCircle.r))
-                            .outerRadius(Math.max(20,encloseCircle.r))
+                            .innerRadius(Math.max(50,encloseCircle.r))
+                            .outerRadius(Math.max(50,encloseCircle.r))
                             .startAngle(-180 * (3.14/180)) //converting from degs to radians
                             .endAngle(180 * (3.14/180))
                         e.transition().duration(100).attr("transform", "translate("+encloseCircle.x+","+encloseCircle.y+")")

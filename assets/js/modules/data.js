@@ -99,7 +99,7 @@ define(["d3"], function(d3) {
         if (!rating) {rating=new Object();rating.no=true; rating.vnes=-1; rating.podpis=-1; rating.sred_day=-1}
 
         var domain = [1,max]
-        var range = [4,10]
+        var range = isSF ? [8, 14] : [4,10]
         var logScale =  d3.scaleLog().domain(domain).range(range)
 
         var rating_initial=1
