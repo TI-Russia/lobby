@@ -778,7 +778,11 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
 
                 var content =
                     '<span class="name">'+d.name+' </span><br/>';
-                content += '<span class="value">'+ d.fraction+', '+d.convocations+' '+ Pluralization(d.convocations, "созыв", "созыва", "созывов")+'</span><br/>';
+                if (isSF){
+                    content += '<span class="value">'+ d.fraction+', '+d.total_years+' '+ Pluralization(d.total_years, "год в СФ", "года в СФ", "лет в СФ")+'</span><br/>';
+                }else {
+                    content += '<span class="value">'+ d.fraction+', '+d.convocations+' '+ Pluralization(d.convocations, "созыв", "созыва", "созывов")+'</span><br/>';
+                }
                 if (cloneclustersNames=="")
                     content+=
                         '<span class="value">'+groupname.name+'</span><br/>';
