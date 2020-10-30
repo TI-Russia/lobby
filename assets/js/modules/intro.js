@@ -1,4 +1,8 @@
 requirejs(['jquery','cookie'], function( $,cookie) {
+    if (/cjdtn/.test(window.location.href)) {
+        requirejs(['chart'], function (chart) {});
+        return;
+    }
     $(document).ready(function() {
         var next = document.getElementById('next');
         next.addEventListener('click', function(e){

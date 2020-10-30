@@ -8,9 +8,12 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
         var myArrGroups
         var rawDep, rawRating;
         var isSF;
+        var nodes, clusters;
 
 // tooltip for mouseover functionality
         var tooltip = floatingTooltip('gates_tooltip', 240);
+        var width, height, maxX, maxY, rows, client_width, client_height // width and heights of chart_grid
+        var svg;
         Data.then(Data=>{
             data = Data.data;
             lobby = Data.lobby;
@@ -20,33 +23,206 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
             rawDep = Data.rawDep;
             rawRating = Data.rawRating;
             isSF = Data.isSF;
+            composeNodes();
+            if (isSF) doTelling();
             doChart();
-        })
+        });
+
+        function doTelling(){
+            const width = 500;
+            const el = d3.select('#scrollytelling').node().getBoundingClientRect();
+            const height = width / (el.width/el.height);
+
+            const svg_relling = d3.select('#root').append('svg');
+            svg_relling.attr("viewBox", [0, 0, width, height]);
+            const g_telling = svg_relling.append("g");
+
+            const radius = 6;
+            const theta = Math.PI * (3 - Math.sqrt(5));
+            const step = radius * 2;
+            const nd = nodes.slice().sort((a,b) => a.dupelganger - b.dupelganger).sort((a,b) => a.id - b.id);
+            console.log(nd.filter(d => d.cluster == 11551).sort(d3.descending));
+            const count = nd.length;
+
+            const groups = d3.nest().key(d=>d.cluster).rollup(v => {
+                return{
+                    count: v.length,
+                    name:v[0] && v[0].clusterName
+                }
+            }).entries(nd);
+            const gp = groups.slice().sort((a,b) => b.value.count-a.value.count).slice(1,10);
+            gp.forEach((d,i) => d.order = i);
+            console.log(gp);
 
 
-        function doChart() {
-            var width, height, maxX, maxY, rows, client_width, client_height // width and heights of chart_grid
+            /*const deps = Array.from({length: count}, (_, i) => {
+                return {
+                    id: i,
+                    big_group: Math.round(getRandom(0,1)),
+                    small_group: Math.round(getRandom(0,8))
+                };
+            });*/
 
-            const svg = d3.select('#clusters')
+
+            const getSpiral= (i, startX, startY) => {
+                let j = 0;
+                const x = startX;
+                const y = startY;
+                return function(node){
+                    if (node && node.dupelganger===1) {
+                        j -= 0.5
+                    };
+                    const r = step * Math.sqrt(j += 0.5), a = theta * j;
+                    return [
+                        x + r * Math.cos(a),
+                        y + r * Math.sin(a)
+                    ];
+                }
+            }
+
+            function getRandom(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            const getXY= () => getRandom(0,500);
+            const get2X= () => Math.random() > 0.5 ? 50 : 100;
+
+            const data = generateData(count,3);
+
+
+            function generateData(n, m){
+                const data = [];
+                const func = {};
+                const func2 = {};
+                for (let i=0; i< n; i++){
+
+                    const item = {};
+
+                    for (let j=0; j<m; j++){
+                        if (j==0){
+                            const startX = width/2;
+                            const startY = height/2;
+                            if (!func.a) func.a=getSpiral(i, startX, startY);
+                            item[j]=func.a(nd[i]);
+                        }
+                        else if (j==1){
+                            const group = nd[i].clusterParent == 11851 ? 1 : 0;
+                            const startX = group*width/2+width/2/2;
+                            const startY = height/2;
+                            if (!func[group]) func[group]=getSpiral(i, startX, startY);
+                            item[j]=func[group](nd[i]);
+                        }
+                        else if (j==2){
+                            const group1 = nd[i].cluster;
+                            const group2 = gp.find(d => d.key == group1);
+                            const group =  group2 ? group2.order : -100;
+
+                            const startX = (group -group % 3)/3 *width/3+width/3/2;
+                            const startY = group % 3 * height/3 + height/3/2;
+                            //console.log(startY, group % 3);
+                            if (!func2[group]) func2[group]=getSpiral( i, startX, startY);
+                            item[j]=func2[group]();
+                        }
+                        else{
+                            item[j]=[getXY(),getXY()] ;
+                        }
+
+                    }
+                    data.push({id: nd[i].id,coords:item, color:nd[i].color, cluster: nd[i].cluster});
+                }
+                return data;
+            }
+
+            function getState(i){
+                return data.map(d => d[i])
+            }
+
+            function createCircles(){
+                const circles = g_telling.selectAll("circle").data(data);
+                circles.enter().append("circle").attr("r", radius)
+                .attr("cx", (d) => d.coords[0][0])
+                .attr("cy", (d) => d.coords[0][1])
+                .attr("class", (d) => d.color);
+            }
+
+            function showCircles(state){
+                d3.selectAll(".section:not(#p"+state+")").style('opacity','0.1');
+                d3.selectAll("#p"+(state+1)).style('opacity',1);
+                const circles = g_telling.selectAll("circle").data(data);
+                circles.exit().remove();
+                circles.enter().append("circle");
+                circles.transition()
+                    .attr("cx", (d) => d.coords[state][0])
+                    .attr("cy", (d) => d.coords[state][1])
+                    .attr("r", radius)
+                    .attr('fill', '')
+                    .attr("class", (d) => d.color);
+            }
+
+            function colorKlishas(s){
+                const compare = function (node) {
+                    if(s==4) {
+                        return node.id == 10763 || node.id == 10724;
+                    }
+                    if (s==3) {
+                        return node.cluster == 11551 || node.cluster == 11562 || node.cluster == 11758;
+                    }
+                }
+
+                const n = s + 1;
+
+                d3.selectAll(".section:not(#p"+n+")").style('opacity','0.1');
+                d3.selectAll("#p"+n+" ").style("opacity",1);
+                g_telling.selectAll("circle").attr('class','is-color-gray');
+                g_telling.selectAll("circle").filter(d => compare(d)).attr('fill','red').attr('class','');
+            }
+
+            function readSections(){
+                const parts = document.getElementsByClassName('section');
+                const partsTops = Array.prototype.map.call(parts, (d,i) => {
+                    if (d.nodeName === 'DIV') return {'i':i, 'd': d.offsetTop}
+                });
+                console.log('partsTops', partsTops);
+                return partsTops;
+            }
+
+                createCircles();
+                showCircles(0);
+                const tops = readSections().reverse();
+                const div = document.getElementById('scrollytelling');
+                div.addEventListener('scroll', function() {
+                    const witchOne = tops.find(d =>( d.d-div.getBoundingClientRect().height/2)  < div.scrollTop  );
+                    if (witchOne){
+                        const story = witchOne.i;
+                        if (witchOne && story != undefined){
+                            switch (story){
+                                case 0:
+                                case 1:
+                                case 2:
+                                    showCircles(story);
+                                    break;
+                                case 3:
+                                case 4:
+                                    colorKlishas(story);
+                                    break;
+                                case 5:
+                                    colorKlishas(story);
+                                    setTimeout(()=>{div.style.display='none'},4000);
+                            }
+                        }
+                    }
+
+                });
+
+        }
+
+
+        function composeNodes(){
+            svg = d3.select('#clusters')
                 .append('svg')
                 .attr('id','chart')
                 .append('g')
-
-            const legend = svg.append("image")
-                .attr("xlink:href","assets/images/legend.svg")
-                .attr("width", 202)
-                .attr("height", 41)
-                .attr("x", -85)
-                .attr("y", 468)
-
-
-            SetupSVG()
-
-            var padding = 3, // separation between same-color nodes
-                clusterPadding = 15, // separation between different-color nodes
-                maxRadius = 10;
-
-
+            SetupSVG();
             var n = data.length, // total number of nodes
                 m = myArrGroups.length// number of distinct clusters
 
@@ -60,10 +236,10 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 .domain(d3.range(m));
 
             // The largest node for each cluster
-            var clusters = new Array(m);
+            clusters = new Array(m);
             var uniq=0
 
-            var nodes = data.map(function (d) {
+            nodes = data.map(function (d) {
                 var clusterParentId, clusterParent2Id, clusterParent2Name
                 var group=lobby.find(x => x.id === d.group)
                 //debugger
@@ -129,8 +305,72 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                         clone.cloneClusters=clones.map(x=>x.clusterMin)
                     })
                 }
+                var cl = nodes.filter(x=>(x.id==node.id));
+                cl.length>1 && cl.forEach((d, i) => {
+                    d.dupelganger = i>0 ? 1 : 0;
+                });
+                node.hasClones = cl.length>1 ? 1 : 0;
             })
             nodes=nodes.filter(x=>x.clone!="yes")
+
+
+        }
+
+        function SetupSVG(resize) {
+            var headerHeight = document.getElementsByTagName('header')[0].clientHeight,
+                controlsHeight = document.getElementById('controls').clientHeight,
+                footerHeight = document.getElementsByClassName('footer')[0].clientHeight,
+                footerExtraHeight = document.getElementsByClassName('extra')[0].clientHeight,
+                sumHeight = headerHeight + footerHeight + controlsHeight - footerExtraHeight
+
+            document.body.className += ' ' +'chart'
+            document.body.className = 'chart'
+
+
+            var min_width = 812,
+                min_height = 600,
+                client_width = document.documentElement.clientWidth,
+                client_height = document.documentElement.clientHeight - sumHeight
+
+
+            client_width <= 812 ? width = min_width : width = client_width;
+            (IsItMobile() || window.orientation == 90) ? width = client_width : width = width;
+
+            height = client_height-5
+
+            if (window.orientation == 90) {
+                //height = client_height
+            }
+
+            d3.select('#clusters svg#chart')
+                .attr('height', height)
+                .attr('width', width)
+
+            d3.select('#clusters svg#chart').attr('viewBox', '-100 0 1200 600')
+                .attr('preserveAspectRatio', 'xMidYMid meet')
+                .attr("class", "desktop")
+            maxX = 800
+            maxY = 600
+        }
+
+        function IsItMobile() {
+            var isMobile = (document.documentElement.clientWidth<=450) ?
+                true :
+                false;
+            return isMobile
+        }
+
+        function doChart() {
+            const legend = svg.append("image")
+                .attr("xlink:href","assets/images/legend.svg")
+                .attr("width", 202)
+                .attr("height", 41)
+                .attr("x", -85)
+                .attr("y", 468)
+
+            var padding = 3, // separation between same-color nodes
+                clusterPadding = 15, // separation between different-color nodes
+                maxRadius = 10;
 
             var clearClusters=clusters.filter(function(el) { return el; })//remove null from array
             clearClusters.sort(function(a, b) { return b.count - a.count; })
@@ -346,42 +586,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 SetupSVG(event);
             }
 
-            function SetupSVG(resize) {
-                var headerHeight = document.getElementsByTagName('header')[0].clientHeight,
-                    controlsHeight = document.getElementById('controls').clientHeight,
-                    footerHeight = document.getElementsByClassName('footer')[0].clientHeight,
-                    footerExtraHeight = document.getElementsByClassName('extra')[0].clientHeight,
-                    sumHeight = headerHeight + footerHeight + controlsHeight - footerExtraHeight
 
-                document.body.className += ' ' +'chart'
-                document.body.className = 'chart'
-
-
-                var min_width = 812,
-                    min_height = 600,
-                    client_width = document.documentElement.clientWidth,
-                    client_height = document.documentElement.clientHeight - sumHeight
-
-
-                client_width <= 812 ? width = min_width : width = client_width;
-                (IsItMobile() || window.orientation == 90) ? width = client_width : width = width;
-
-                height = client_height-5
-
-                if (window.orientation == 90) {
-                    //height = client_height
-                }
-
-                d3.select('#clusters svg#chart')
-                    .attr('height', height)
-                    .attr('width', width)
-
-                d3.select('#clusters svg#chart').attr('viewBox', '-100 0 1200 600')
-                    .attr('preserveAspectRatio', 'xMidYMid meet')
-                    .attr("class", "desktop")
-                maxX = 800
-                maxY = 600
-            }
 
             function makeText(d) {
                 var alias=lobby.find(x=>d.clusterName==x.name).alias
@@ -768,7 +973,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                         .append('option')
                         .attr("value",d=>d)
                         .text((d)=>{
-                            var text = key=="committees" ? d.replace("Комитет ГД п","П") : d
+                            var text = key=="committees" ? (d && d.replace("Комитет ГД п","П")) : d
 
                             return text}
                         )
@@ -1137,12 +1342,6 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 return text
             }
 
-            function IsItMobile() {
-                var isMobile = (document.documentElement.clientWidth<=450) ?
-                    true :
-                    false;
-                return isMobile
-            }
 
             var hash = window.location.hash;
             if(hash) {

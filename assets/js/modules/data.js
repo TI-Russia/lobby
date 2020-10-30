@@ -21,8 +21,7 @@ define(["d3"], function(d3) {
             "assets/data/sf/lobbist_small.json",
             "assets/data/sf/lobby_group.json",
             "assets/data/sf/rating.json",
-            "assets/data/alias.json",
-            "assets/data/sf/sf.json"
+            "assets/data/alias.json"
         ];
     }
     if (/dumabingo/.test(window.location.href)){ /*use data from declarator api*/
@@ -37,8 +36,7 @@ define(["d3"], function(d3) {
                 "https://declarator.org/media/dumps/lobbist-small-sf.json",
                 "https://declarator.org/media/dumps/lobby-group.json",
                 "assets/data/sf/rating.json",
-                "assets/data/alias.json",
-                "assets/data/sf/sf.json"
+                "assets/data/alias.json"
             ];
         }
     }
@@ -61,7 +59,6 @@ define(["d3"], function(d3) {
         var rawLobby = values[1] //change to load from url
         rawRating = values[2] //
         rawAlias = values[3]
-        if (isSF) rawSF = values[4] //
         dataDepMap(rawDep)
         getAliasMap(rawAlias)
         getLobbyMap(rawLobby,aliases)
@@ -74,8 +71,7 @@ define(["d3"], function(d3) {
             rawDep: rawDep,
             myGroups: myGroups,
             myArrGroups: myArrGroups,
-            isSF:isSF,
-            rawSF: rawSF
+            isSF:isSF
         }
     });
 
@@ -156,7 +152,7 @@ define(["d3"], function(d3) {
                     person: d.person,
                     rating: rating.log,
                     election_method:d.election_method,
-                    committees:!isSF ? d.committees : [getDataFromSF(d.person, 'comitees')],
+                    committees:!isSF ? d.committees : [d.committee],
                     convocations:d.convocations.length!=0 ? d.convocations.length : 1,
                     region: d.region ?  d.region.name : null,
                     goverment_body: d.goverment_body,

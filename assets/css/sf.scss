@@ -18,3 +18,40 @@ div#controls .column .convocations {
     width: 90px;
   }
 }
+
+#scrollytelling{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  padding-right: 17px;
+  box-sizing: content-box;
+  z-index: 15;
+  top: 48px;
+  background: white;
+}
+
+#container{
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+  width: 50%;
+}
+
+#root{
+  position: fixed;
+  width: 60%;
+  top: 20%;
+  left: 20%;
+}
+
+.section{
+  height:40vh;
+  margin-bottom: 200px;
+  color:black;
+  div{
+    background: white;
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+}
