@@ -1241,7 +1241,8 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                             comittee = link.getAttribute("data-comittee"),
                             gender = link.getAttribute("data-gender"),
                             fio = link.getAttribute("data-fio"),
-                            fraction = link.getAttribute("data-fraction")
+                            fraction = link.getAttribute("data-fraction"),
+                            power = link.getAttribute("data-power")
 
                         link.addEventListener('click', function (e) {
                             e.preventDefault()
@@ -1271,6 +1272,9 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
 
                             if (lobby)
                                 d3.select('select#select_lobby').property('value',+lobby)
+
+                            if (power)
+                                d3.select('#power button[value="'+power+'"]').classed("is-active",true)
 
                             onchange()
                         });
