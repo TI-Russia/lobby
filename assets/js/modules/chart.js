@@ -159,6 +159,14 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                     .attr("class", (d) => d.color);
             }
 
+            function drawGroupLabels(){
+                const labels = g_telling.selectAll("text").data(gp);
+                labels.enter().append("circle").attr("r", radius)
+                    .attr("cx", (d) => d.coords[0][0])
+                    .attr("cy", (d) => d.coords[0][1])
+                    .attr("class", (d) => d.color);
+            }
+
             function colorKlishas(s){
                 const compare = function (node) {
                     if(s==4) {
@@ -979,7 +987,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                     var nest=d3.nest()
                         .key(d=>d.key)
                         .entries(jj2)
-                    var opts=nest.flatMap(x=>x.key)
+                    var opts=nest.flatMap(x=>x.key).sort(d3.ascending);
                     var select = d3.select('#controls')
                         .select('select#'+selector)
                         .on('change',onchange)
