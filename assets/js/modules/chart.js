@@ -151,7 +151,10 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 const circles = g_telling.selectAll("circle").data(data);
                 circles.exit().attr('fill','red').remove();
                 circles.enter().append("circle");
-                circles.transition()
+                const t = d3.transition()
+                    .duration(100)
+                    .ease(d3.easeLinear);
+                circles.transition(t)
                     .attr("cx", (d) => d.coords[state][0])
                     .attr("cy", (d) => d.coords[state][1])
                     .attr("r", radius)
