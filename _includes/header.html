@@ -22,6 +22,12 @@
                 <li> <a target="_blank" href="{{site.baseurl}}/{{site.doclad_url}}">Доклад</a></li>
                 <li> <a target="_blank" href="https://transparency.org.ru/donate/">Поддержать</a></li>
                 <li> <a target="_blank" href="https://forms.gle/d6ia3KgkooeubQsj7">Обратная связь</a></li>
+                {% if page.sf %}
+                <li> <a href= "{{site.url}}">Лоббизм в  госдуме </a></li>
+                {% else %}
+                <!--<li> <a href= "{{site.baseurl}}/{{site.sf}}" >Лоббизм в СовФеде</a></li>-->
+                {% endif %}
+
             </ul>
 
 
