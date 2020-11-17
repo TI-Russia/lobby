@@ -509,29 +509,6 @@ div#card {
       }
     }
   }
-  .extra{
-    padding: 16px 60px;
-    overflow-x: visible;
-    white-space: normal;
-    @include until($desktop){
-      padding: 16px 32px;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-    @include until($tablet){
-      padding: 16px 16px 0 16px;
-    }
-    .column{
-      padding-left: 0;
-      padding-top: 0;
-      font-size: 10px;
-      padding-bottom: 5px;
-      p{
-        padding-right: 16px;
-        display: inline;
-      }
-    }
-  }
 
   .social{
     display: flex;
@@ -557,6 +534,30 @@ div#card {
       &.vk{background-color: #4C77A6;}
       &.fb{background-color: #435695;}
       &.tw{background-color: #1FB8EA;}
+    }
+  }
+}
+
+.extra.columns{
+  padding: 16px 60px;
+  overflow-x: visible;
+  white-space: normal;
+  @include until($desktop){
+    padding: 16px 32px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  @include until($tablet){
+    padding: 16px 16px 0 16px;
+  }
+  .column{
+    padding-left: 0;
+    padding-top: 0;
+    font-size: 10px;
+    padding-bottom: 5px;
+    p{
+      padding-right: 16px;
+      display: inline;
     }
   }
 }

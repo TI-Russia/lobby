@@ -20,7 +20,7 @@ div#controls .column .convocations {
 }
 
 #scrollytelling{
-  height: 100%;
+  height: calc(100% - 48px);
   width: 100%;
   position: fixed;
   overflow-y: scroll;

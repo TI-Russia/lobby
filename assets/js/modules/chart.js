@@ -331,7 +331,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
             var headerHeight = document.getElementsByTagName('header')[0].clientHeight,
                 controlsHeight = document.getElementById('controls').clientHeight,
                 footerHeight = document.getElementsByClassName('footer')[0].clientHeight,
-                footerExtraHeight = document.getElementsByClassName('extra')[0].clientHeight,
+                footerExtraHeight = !isSF ? document.getElementsByClassName('extra')[0].clientHeight : 0,
                 sumHeight = headerHeight + footerHeight + controlsHeight - footerExtraHeight
 
             document.body.className += ' ' +'chart'
