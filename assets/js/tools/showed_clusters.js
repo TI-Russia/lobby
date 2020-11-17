@@ -1,5 +1,5 @@
 define([], function(){
-return function ShowedClusters(clusters,k) {
+return function ShowedClusters(clusters,k, isSF) {
         //first five largest clusters in each group
         var groups = [11550, 11593, 11679, 11727, 11739, null]
         var showedClustersNumbers = []
@@ -13,6 +13,9 @@ return function ShowedClusters(clusters,k) {
         if (scale > 3.7) slice = 30
 
         groups.forEach(group => {
+            if (group===11727 && isSF && scale <= 1.6) {
+                    slice = 1;
+            }
             showedClustersNumbers = showedClustersNumbers.concat(clusters
                 .filter(x => x.clusterParent == group)
                 .sort((a, b) => b.count - a.count)

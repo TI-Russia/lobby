@@ -1,8 +1,8 @@
 define(['ShowedClusters','d3'], function(ShowedClusters,d3 ) {
-    function zoomEndFunction(labels,clearClusters,zoom_handler) {
+    function zoomEndFunction(labels,clearClusters,zoom_handler, isSF) {
         k=d3.event.transform.k
 
-        var temp2=ShowedClusters(clearClusters,k).map(x=>x.cluster)
+        var temp2=ShowedClusters(clearClusters,k, isSF).map(x=>x.cluster)
         var labels_spot=labels.filter(x=>temp2.includes(x.cluster))
         //labels_spot.transition().style("opacity",1)
         if (k>1){

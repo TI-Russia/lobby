@@ -115,7 +115,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                         else if (j==2){
                             const group1 = nd[i].cluster;
                             const group2 = gp.find(d => d.key == group1);
-                            const group =  group2 ? group2.order : -100;
+                            const group =  group2 ? group2.order : 100;
 
                             const startX = (group -group % 3)/3 *width/3+width/3/2;
                             const startY = group % 3 * height/3 + height/3/2;
@@ -149,7 +149,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 d3.selectAll(".section:not(#p"+state+")").style('opacity','0.1');
                 d3.selectAll("#p"+(state+1)).style('opacity',1);
                 const circles = g_telling.selectAll("circle").data(data);
-                circles.exit().remove();
+                circles.exit().attr('fill','red').remove();
                 circles.enter().append("circle");
                 circles.transition()
                     .attr("cx", (d) => d.coords[state][0])
@@ -582,7 +582,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                     zoom.zoom_actions(g,k,svg1)})
                 .on("end", function () {
                     k = d3.event.transform.k
-                    zoom.zoomEndFunction(labels,clearClusters,zoom_handler)
+                    zoom.zoomEndFunction(labels,clearClusters,zoom_handler,isSF)
                 })
 
             d3.select('#zoom-in').on('click', function() {
@@ -1314,7 +1314,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                     var circles_clusters=spot.data().map(s=>s.cluster)
 
                     var temp=clearClusters.filter(x=>circles_clusters.includes(x.cluster))
-                    var temp2=ShowedClusters(temp,k).map(s=>s.cluster)
+                    var temp2=ShowedClusters(temp,k, isSF).map(s=>s.cluster)
 
                     var labels_spot=labels.filter(x=>circles_clusters.includes(x.cluster))
                     labels_spot=labels.filter(x=>temp2.includes(x.cluster))
@@ -1335,7 +1335,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                     d3.selectAll("#controls #fraction button").classed("is-active",true)
                     d3.selectAll("select").property("selectedIndex", 0)
                     circles.classed(d=>d.color,true).transition().style("opacity",1)
-                    var n = ShowedClusters(clearClusters,k).map(x=>x.cluster)
+                    var n = ShowedClusters(clearClusters,k, isSF).map(x=>x.cluster)
                     labels.style("opacity",0).filter(x=>n.includes(x.cluster)).transition().style("opacity",1)
 
                     zoom.zoom_reset(labels,svg1,zoom_handler,initialTransform);
