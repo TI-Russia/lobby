@@ -218,7 +218,10 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                                     break;
                                 case 5:
                                     colorKlishas(story);
-                                    setTimeout(()=>{div.style.display='none'},4000);
+                                    setTimeout(()=>{
+                                        div.style.opacity = 0;
+                                        setTimeout(()=>{div.style.display='none'},400);
+                                    },4000);
                             }
                         }
                     }

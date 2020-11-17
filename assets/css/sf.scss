@@ -29,6 +29,7 @@ div#controls .column .convocations {
   z-index: 15;
   top: 48px;
   background: white;
+  transition: opacity 400ms ease;
 }
 
 #container{
