@@ -173,6 +173,8 @@ define(['d3'], function (d3) {
         11758:	'ГК Ростех',
         11809:	'ГК Росатом',
         11783:	'АО ОСК',
+        1: '',
+        11851: ''
     }
 
     const coords=[];
@@ -239,7 +241,7 @@ define(['d3'], function (d3) {
             }
             //console.log('в группе ', group , depsInGroup);
             const gr = groupsNames[group];
-            const groupName = group + ' ' + (gr ? gr : '')
+            const groupName = gr ? gr : ''
             labelsInSlide.push({
                 x: labelCoords[state][group].x,
                 y: labelCoords[state][group].y - height/rowsBySlide[state]/2,
@@ -274,7 +276,7 @@ define(['d3'], function (d3) {
                     id: d.id,
                     name: d.name,
                     unq: d.uniq,
-
+                    group: group
                 })
             }
             /*depsInGroup.forEach((d,i) => {

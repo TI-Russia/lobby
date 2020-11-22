@@ -51,9 +51,19 @@ div#controls .column .convocations {
   margin-bottom: 200px;
   color:black;
   div{
-    background: white;
+    background: rgba(255,255,255,.9);
     padding: 1rem;
     font-size: 1.5rem;
+    border: 1px solid black;
+  }
+  &.lastWithText{
+    height: 20vh;
+  }
+  &.exit{
+    height: 10vh;
+    div{
+      border: 0px;
+    }
   }
 }
 
@@ -79,3 +89,8 @@ div#controls .column .convocations {
 .tellingBluredCircle{
   fill: #9F9DFF;
 }
+
+.tellingCircleGray{
+  fill: #656565;
+  color: #656565;
+ }

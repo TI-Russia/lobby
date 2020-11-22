@@ -37,6 +37,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
             const svg_relling = d3.select('#root').append('svg');
             svg_relling.attr("viewBox", [0, 0, width, height+20]);
             const g_telling = svg_relling.append("g");
+            let partsTops =[];
 
             const radius = 6;
             const theta = Math.PI * (3 - Math.sqrt(5));
@@ -63,6 +64,16 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
             function showCircles(state){
                 isStoryShowing = 1;
                 const highlightClass = (node) => {
+
+                    if (state === 1){//не выявлено
+                        return node.group === 1 ? 'tellingCircle' : 'tellingCircleGray'
+                    }
+                    if (state === 2){//регионы
+                        return node.group === 11593 ? 'tellingCircle' : 'tellingBluredCircle'
+                    }
+                    if (state === 3){//силовики и крупный бизнес
+                        return (node.group === 11551 || node.group === 11739) ? 'tellingCircle' : 'tellingBluredCircle'
+                    }
                     if (state !==  4){
                         return 'tellingCircle'
                     }
@@ -72,6 +83,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                     if (node.id === 10724){
                         return 'tellingCircleAlt'
                     }
+
                     return 'tellingBluredCircle'
                 }
                 const data = storyTelling.updater(state);
@@ -127,7 +139,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
 
             function readSections(){
                 const parts = document.getElementsByClassName('section');
-                const partsTops = Array.prototype.map.call(parts, (d,i) => {
+                partsTops = Array.prototype.map.call(parts, (d,i) => {
                     if (d.nodeName === 'DIV') return {'i':i, 'd': d.offsetTop}
                 });
                 console.log('partsTops', partsTops);
@@ -163,17 +175,18 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                                 case 5:
                                     d3.selectAll(".section:not(#p"+story+")").style('opacity','0.1');
                                     d3.selectAll("#p"+(story+1)).style('opacity',1);
-                                     setTimeout(()=>{
+                                    break;
+                                case 6:
+                                    isStoryShowing && setTimeout(()=>{
                                         const check = tops.find(d =>( d.d-div.getBoundingClientRect().height/2)  < div.scrollTop  );
                                         //if (check.i < 5) return;
                                         div.style.opacity = 0;
                                         isStoryShowing = 0;
 
                                         setTimeout(()=>{
-                                            div.scrollTo({top: 0});
                                             div.style.display = 'none';
                                             },200);
-                                    },4000);
+                                    },300);
                             }
                         }
                     }
@@ -186,8 +199,9 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                 {
 
                     div.style.display = '';
-                    div.scrollTo({top: 0});
-                    //div.style.opacity = 1;
+                    div.scrollTo({top: partsTops[1].d});
+                    div.style.opacity = 1;
+                    isStoryShowing = 1;
 
                 }
             });
