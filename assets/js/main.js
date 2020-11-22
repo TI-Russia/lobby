@@ -13,6 +13,7 @@ require.config({
         zoom:"tools/zoom",
         cookie:"tools/cookie",
         tree: "tools/tree",
+        storyTelling: "tools/storyTelling",
         burger: "tools/burger",
         plural:"tools/pluralize",
         es5_ShowCard:"es5/card",

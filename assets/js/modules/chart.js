@@ -1,5 +1,5 @@
-requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowCard","ShowedClusters","zoom","tree", "plural"],
-    function( d3,$,floatingTooltip ,noUiSlider,awesomeplete,Data,ShowCard,ShowedClusters,zoom,tree_func,plural ) {
+requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","storyTelling","ShowCard","ShowedClusters","zoom","tree", "plural"],
+    function( d3,$,floatingTooltip ,noUiSlider,awesomeplete,Data,storyTelling,ShowCard,ShowedClusters,zoom,tree_func,plural ) {
 
         var data
         var lobby
@@ -8,7 +8,8 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
         var myArrGroups
         var rawDep, rawRating;
         var isSF;
-        var nodes, clusters;
+        var nodes, clusters, nodesWithClones;
+        var isStoryShowing = 1;
 
 // tooltip for mouseover functionality
         var tooltip = floatingTooltip('gates_tooltip', 240);
@@ -29,18 +30,18 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
         });
 
         function doTelling(){
-            const width = 500;
+            const width = 600;
             const el = d3.select('#scrollytelling').node().getBoundingClientRect();
             const height = width / (el.width/el.height);
 
             const svg_relling = d3.select('#root').append('svg');
-            svg_relling.attr("viewBox", [0, 0, width, height]);
+            svg_relling.attr("viewBox", [0, 0, width, height+20]);
             const g_telling = svg_relling.append("g");
 
             const radius = 6;
             const theta = Math.PI * (3 - Math.sqrt(5));
             const step = radius * 2;
-            const nd = nodes.slice().sort((a,b) => a.dupelganger - b.dupelganger).sort((a,b) => a.id - b.id);
+            const nd = nodesWithClones.slice().sort((a,b) => a.dupelganger - b.dupelganger).sort((a,b) => a.id - b.id);
             console.log(nd.filter(d => d.cluster == 11551).sort(d3.descending));
             const count = nd.length;
 
@@ -52,140 +53,76 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
             }).entries(nd);
             const gp = groups.slice().sort((a,b) => b.value.count-a.value.count).slice(1,10);
             gp.forEach((d,i) => d.order = i);
-            console.log(gp);
 
-
-            /*const deps = Array.from({length: count}, (_, i) => {
-                return {
-                    id: i,
-                    big_group: Math.round(getRandom(0,1)),
-                    small_group: Math.round(getRandom(0,8))
-                };
-            });*/
-
-
-            const getSpiral= (i, startX, startY) => {
-                let j = 0;
-                const x = startX;
-                const y = startY;
-                return function(node){
-                    if (node && node.dupelganger===1) {
-                        j -= 0.5
-                    };
-                    const r = step * Math.sqrt(j += 0.5), a = theta * j;
-                    return [
-                        x + r * Math.cos(a),
-                        y + r * Math.sin(a)
-                    ];
-                }
-            }
-
-            function getRandom(min, max) {
-                return Math.random() * (max - min) + min;
-            }
-
-            const getXY= () => getRandom(0,500);
-            const get2X= () => Math.random() > 0.5 ? 50 : 100;
-
-            const data = generateData(count,3);
-
-
-            function generateData(n, m){
-                const data = [];
-                const func = {};
-                const func2 = {};
-                for (let i=0; i< n; i++){
-
-                    const item = {};
-
-                    for (let j=0; j<m; j++){
-                        if (j==0){
-                            const startX = width/2;
-                            const startY = height/2;
-                            if (!func.a) func.a=getSpiral(i, startX, startY);
-                            item[j]=func.a(nd[i]);
-                        }
-                        else if (j==1){
-                            const group = nd[i].clusterParent == 11851 ? 1 : 0;
-                            const startX = group*width/2+width/2/2;
-                            const startY = height/2;
-                            if (!func[group]) func[group]=getSpiral(i, startX, startY);
-                            item[j]=func[group](nd[i]);
-                        }
-                        else if (j==2){
-                            const group1 = nd[i].cluster;
-                            const group2 = gp.find(d => d.key == group1);
-                            const group =  group2 ? group2.order : 100;
-
-                            const startX = (group -group % 3)/3 *width/3+width/3/2;
-                            const startY = group % 3 * height/3 + height/3/2;
-                            //console.log(startY, group % 3);
-                            if (!func2[group]) func2[group]=getSpiral( i, startX, startY);
-                            item[j]=func2[group]();
-                        }
-                        else{
-                            item[j]=[getXY(),getXY()] ;
-                        }
-
-                    }
-                    data.push({id: nd[i].id,coords:item, color:nd[i].color, cluster: nd[i].cluster});
-                }
-                return data;
-            }
 
             function getState(i){
                 return data.map(d => d[i])
             }
 
-            function createCircles(){
-                const circles = g_telling.selectAll("circle").data(data);
-                circles.enter().append("circle").attr("r", radius)
-                .attr("cx", (d) => d.coords[0][0])
-                .attr("cy", (d) => d.coords[0][1])
-                .attr("class", (d) => d.color);
-            }
 
             function showCircles(state){
+                isStoryShowing = 1;
+                const highlightClass = (node) => {
+                    if (state !==  4){
+                        return 'tellingCircle'
+                    }
+                    if (node.id === 10763){
+                        return 'tellingCircle'
+                    }
+                    if (node.id === 10724){
+                        return 'tellingCircleAlt'
+                    }
+                    return 'tellingBluredCircle'
+                }
+                const data = storyTelling.updater(state);
+                const dd = data.deps;
+                const ll = data.labels;
+                //console.log(dd, ll);
                 d3.selectAll(".section:not(#p"+state+")").style('opacity','0.1');
                 d3.selectAll("#p"+(state+1)).style('opacity',1);
-                const circles = g_telling.selectAll("circle").data(data);
-                circles.exit().attr('fill','red').remove();
-                circles.enter().append("circle");
+
                 const t = d3.transition()
-                    .duration(100)
+                    .duration(300)
                     .ease(d3.easeLinear);
-                circles.transition(t)
-                    .attr("cx", (d) => d.coords[state][0])
-                    .attr("cy", (d) => d.coords[state][1])
-                    .attr("r", radius)
-                    .attr('fill', '')
-                    .attr("class", (d) => d.color);
-            }
 
-            function drawGroupLabels(){
-                const labels = g_telling.selectAll("text").data(gp);
-                labels.enter().append("circle").attr("r", radius)
-                    .attr("cx", (d) => d.coords[0][0])
-                    .attr("cy", (d) => d.coords[0][1])
-                    .attr("class", (d) => d.color);
-            }
+                let points = g_telling.selectAll('circle')
+                    .data( dd, d=> d.unq )
+                points.enter()
+                    .append('circle')
+                    .attr('cx', d => d.x)
+                    .attr('cy', d => d.y)
+                    .attr('class', d => highlightClass(d))
+                    .attr('r', 3)
+                    .attr('name', d => d.name + ' ' + d.unq)
 
-            function colorKlishas(s){
-                const compare = function (node) {
-                    if(s==4) {
-                        return node.id == 10763 || node.id == 10724;
-                    }
-                    if (s==3) {
-                        return node.cluster == 11551 || node.cluster == 11562 || node.cluster == 11758;
-                    }
-                }
+                points.exit().transition(t).attr('r',0)
+                points.exit().transition().delay(1000)
+                    .remove()
 
-                const n = s + 1;
+                points.transition(t)
+                    .attr('r', 3)
+                    .attr('class', d => highlightClass(d))
+                    .attr('name', d => d.name + ' ' + d.unq)
+                    .attr('cx', d => d.x)
+                    .attr('cy', d => d.y);
 
-                d3.selectAll(".section:not(#p"+n+")").style('opacity','0.1');
-                d3.selectAll("#p"+n+" ").style("opacity",1);
-                g_telling.selectAll("circle").attr('class','is-color-gray');
-                g_telling.selectAll("circle").filter(d => compare(d)).attr('fill','red').attr('class','');
+                let labels = g_telling.selectAll('text')
+                    .data( ll, d=> d.text )
+
+                labels.enter()
+                    .append('text')
+                    .text(d => d.text)
+                    .attr('x', d => d.x)
+                    .attr('y', d => d.y)
+                    .attr('class', 'tellingLabel')
+                    .attr('fill',  'black')
+
+                labels.exit()
+                    .remove()
+
+                labels.transition(t)
+                    .attr('x', d => d.x)
+                    .attr('y', d => d.y);
             }
 
             function readSections(){
@@ -197,7 +134,10 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 return partsTops;
             }
 
-                createCircles();
+                //createCircles();
+                storyTelling.setDeps(nd);
+                storyTelling.setGroups(lobby);
+                storyTelling.setHalf(1);
                 showCircles(0);
                 const tops = readSections().reverse();
                 const div = document.getElementById('scrollytelling');
@@ -208,25 +148,50 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                         if (witchOne && story != undefined){
                             switch (story){
                                 case 0:
+                                    isStoryShowing = 1;
+                                    storyTelling.setHalf(1);
                                 case 1:
                                 case 2:
+                                case 3:
+                                    storyTelling.setHalf(0);
                                     showCircles(story);
                                     break;
-                                case 3:
                                 case 4:
-                                    colorKlishas(story);
+                                    storyTelling.setHalf(0);
+                                    showCircles(story);
                                     break;
                                 case 5:
-                                    colorKlishas(story);
-                                    setTimeout(()=>{
+                                    d3.selectAll(".section:not(#p"+story+")").style('opacity','0.1');
+                                    d3.selectAll("#p"+(story+1)).style('opacity',1);
+                                     setTimeout(()=>{
+                                        const check = tops.find(d =>( d.d-div.getBoundingClientRect().height/2)  < div.scrollTop  );
+                                        //if (check.i < 5) return;
                                         div.style.opacity = 0;
-                                        setTimeout(()=>{div.style.display='none'},400);
+                                        isStoryShowing = 0;
+
+                                        setTimeout(()=>{
+                                            div.scrollTo({top: 0});
+                                            div.style.display = 'none';
+                                            },200);
                                     },4000);
                             }
                         }
                     }
 
                 });
+
+            isSF && window.addEventListener('wheel', function(event)
+            {
+                if (event.deltaY < 0 && isStoryShowing === 0)
+                {
+
+                    div.style.display = '';
+                    div.scrollTo({top: 0});
+                    //div.style.opacity = 1;
+
+                }
+            });
+
 
         }
 
@@ -325,6 +290,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","ShowC
                 });
                 node.hasClones = cl.length>1 ? 1 : 0;
             })
+            nodesWithClones = nodes;
             nodes=nodes.filter(x=>x.clone!="yes")
 
 

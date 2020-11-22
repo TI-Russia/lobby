@@ -29,7 +29,8 @@
     "person": 57270,
     "groups": [
       11561,
-      11554
+      11554,
+      11552
     ]
   },
   {
@@ -208,8 +209,8 @@
     "total_years": 6.0,
     "last_appointment": "2014-10-10",
     "end_date": "сентябрь 2023",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 9122,
     "groups": [
@@ -361,8 +362,8 @@
     "total_years": 4.0,
     "last_appointment": "2016-09-27",
     "end_date": "сентябрь 2021",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 15764,
     "groups": [
@@ -570,7 +571,7 @@
     "election_method": null,
     "gender": "M",
     "site": "S",
-    "fraction": "За правду",
+    "fraction": null,
     "committee": "Комитет по международным делам",
     "birth_date": "1963-02-08",
     "goverment_body": "исполнительный орган власти",
@@ -578,8 +579,8 @@
     "total_years": 4.0,
     "last_appointment": "2020-09-21",
     "end_date": "сентябрь 2025",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 473,
     "groups": [
@@ -608,12 +609,12 @@
     "total_years": 2.0,
     "last_appointment": "2018-09-19",
     "end_date": "сентябрь 2023",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 1881,
     "groups": [
-      11551
+      11561
     ]
   },
   {
@@ -762,8 +763,8 @@
     "total_years": 2.0,
     "last_appointment": "2018-09-28",
     "end_date": "сентябрь 2023",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 23828,
     "groups": [
@@ -945,8 +946,8 @@
     "total_years": 3.0,
     "last_appointment": "2017-09-20",
     "end_date": "сентябрь 2022",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 57072,
     "groups": [
@@ -975,8 +976,8 @@
     "total_years": 4.0,
     "last_appointment": "2016-09-27",
     "end_date": "сентябрь 2024",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 12225,
     "groups": [
@@ -1221,8 +1222,8 @@
     "total_years": 11.0,
     "last_appointment": "2018-11-16",
     "end_date": "сентябрь 2024",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 426,
     "groups": [
@@ -1287,6 +1288,7 @@
     "hidden": false,
     "person": 2067,
     "groups": [
+      11882,
       11610,
       11758
     ]
@@ -1464,8 +1466,8 @@
     "total_years": 4.0,
     "last_appointment": "2016-09-28",
     "end_date": "сентябрь 2021",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 629,
     "groups": [
@@ -1767,8 +1769,8 @@
     "total_years": 3.0,
     "last_appointment": "2017-10-09",
     "end_date": "сентябрь 2022",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 57071,
     "groups": [
@@ -1862,7 +1864,7 @@
     "hidden": false,
     "person": 132637,
     "groups": [
-      11851
+      11653
     ]
   },
   {
@@ -1901,10 +1903,10 @@
     "convocations": [],
     "committees": [],
     "region": {
-      "id": 24,
-      "name": "Алтайский край",
-      "short_name": "Алтайский край",
-      "genitive": "Алтайского края"
+      "id": 6,
+      "name": "Республика Алтай",
+      "short_name": "Алтай",
+      "genitive": "республики Алтай"
     },
     "election_method": null,
     "gender": "F",
@@ -2072,8 +2074,8 @@
     "total_years": 3.0,
     "last_appointment": "2017-09-18",
     "end_date": "сентябрь 2022",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 4538,
     "groups": [
@@ -2347,13 +2349,12 @@
     "total_years": 6.0,
     "last_appointment": "2014-04-15",
     "end_date": "сентябрь 2024",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 8943,
     "groups": [
       11561,
-      11875,
       11646
     ]
   },
@@ -2575,10 +2576,10 @@
     "convocations": [],
     "committees": [],
     "region": {
-      "id": 24,
-      "name": "Алтайский край",
-      "short_name": "Алтайский край",
-      "genitive": "Алтайского края"
+      "id": 6,
+      "name": "Республика Алтай",
+      "short_name": "Алтай",
+      "genitive": "республики Алтай"
     },
     "election_method": null,
     "gender": "M",
@@ -2653,8 +2654,8 @@
     "total_years": 9.0,
     "last_appointment": "2020-09-21",
     "end_date": "сентябрь 2025",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 1137,
     "groups": [
@@ -3110,8 +3111,8 @@
     "total_years": 2.0,
     "last_appointment": "2018-11-27",
     "end_date": "сентябрь 2024",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 1411,
     "groups": [
@@ -3788,8 +3789,8 @@
     "total_years": 5.0,
     "last_appointment": "2019-09-25",
     "end_date": "сентябрь 2024",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 19901,
     "groups": [
@@ -4182,8 +4183,8 @@
     "total_years": 6.0,
     "last_appointment": "2018-09-27",
     "end_date": "сентябрь 2023",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 883,
     "groups": [
@@ -4367,8 +4368,8 @@
     "total_years": 7.0,
     "last_appointment": "2018-09-20",
     "end_date": "сентябрь 2023",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 4793,
     "groups": [
@@ -4400,8 +4401,8 @@
     "total_years": 9.0,
     "last_appointment": "2016-11-10",
     "end_date": "сентябрь 2021",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 1151,
     "groups": [
@@ -4492,8 +4493,8 @@
     "total_years": 0.1,
     "last_appointment": "2020-06-18",
     "end_date": "сентябрь 2022",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 167114,
     "groups": [
@@ -4572,7 +4573,7 @@
       "genitive": "Еврейской автономной области"
     },
     "election_method": null,
-    "gender": null,
+    "gender": "M",
     "site": "S",
     "fraction": "беспартийный",
     "committee": "Комитет по обороне и безопасности",
@@ -4582,8 +4583,8 @@
     "total_years": 0.1,
     "last_appointment": "2020-09-22",
     "end_date": "сентябрь 2025",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 30573,
     "groups": []
@@ -4600,7 +4601,7 @@
       "genitive": "Ненецкого автономного округа"
     },
     "election_method": null,
-    "gender": null,
+    "gender": "M",
     "site": "S",
     "fraction": "Единая Россия",
     "committee": "Комитет по федеративному устройству, региональной политике, местному самоуправлению и делам Севера",
@@ -4610,8 +4611,8 @@
     "total_years": 0.1,
     "last_appointment": "2020-09-14",
     "end_date": "сентябрь 2025",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 172661,
     "groups": []
@@ -4628,7 +4629,7 @@
       "genitive": "Костромской области"
     },
     "election_method": null,
-    "gender": null,
+    "gender": "M",
     "site": "S",
     "fraction": "Единая Россия",
     "committee": "Комитет по экономической политике",
@@ -4638,8 +4639,8 @@
     "total_years": 0.1,
     "last_appointment": "2020-05-10",
     "end_date": "сентябрь 2025",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 13167,
     "groups": []
@@ -4656,18 +4657,18 @@
       "genitive": "Смоленской области"
     },
     "election_method": null,
-    "gender": null,
+    "gender": "F",
     "site": "S",
     "fraction": "Единая Россия",
-    "committee": "Комитет по социальной политике",
+    "committee": "Комитет по Регламенту и организации парламентской деятельности",
     "birth_date": "1961-02-05",
     "goverment_body": "исполнительный орган власти",
     "terms_number": 1,
     "total_years": 0.1,
     "last_appointment": "2020-09-18",
     "end_date": "сентябрь 2025",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 14545,
     "groups": []
@@ -4684,7 +4685,7 @@
       "genitive": "Пензенской области"
     },
     "election_method": null,
-    "gender": null,
+    "gender": "F",
     "site": "S",
     "fraction": "Единая Россия",
     "committee": "Комитет по социальной политике",
@@ -4694,8 +4695,8 @@
     "total_years": 0.1,
     "last_appointment": "2020-09-21",
     "end_date": "сентябрь 2025",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 172662,
     "groups": []
@@ -4778,11 +4779,13 @@
     "total_years": 0.1,
     "last_appointment": "2020-09-24",
     "end_date": "сентябрь 2025",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 172663,
-    "groups": []
+    "groups": [
+      11851
+    ]
   },
   {
     "id": 10784,
@@ -4806,8 +4809,8 @@
     "total_years": 0.1,
     "last_appointment": "2020-09-22",
     "end_date": "сентябрь 2025",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 166,
     "groups": []
@@ -4834,11 +4837,13 @@
     "total_years": 0.1,
     "last_appointment": "2020-09-18",
     "end_date": "сентябрь 2025",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 17727,
-    "groups": []
+    "groups": [
+      11851
+    ]
   },
   {
     "id": 10786,
@@ -4862,11 +4867,13 @@
     "total_years": 0.1,
     "last_appointment": "2020-09-24",
     "end_date": "сентябрь 2025",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 172664,
-    "groups": []
+    "groups": [
+      11851
+    ]
   },
   {
     "id": 10787,
@@ -4908,18 +4915,18 @@
       "genitive": "Ставропольского края"
     },
     "election_method": null,
-    "gender": null,
+    "gender": "M",
     "site": "S",
-    "fraction": " Единая Россия",
-    "committee": null,
+    "fraction": null,
+    "committee": "",
     "birth_date": "1953-06-15",
     "goverment_body": "исполнительный орган власти",
     "terms_number": null,
     "total_years": null,
     "last_appointment": null,
     "end_date": null,
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 1045,
     "groups": []
@@ -4927,20 +4934,15 @@
   {
     "id": 10789,
     "fullname": "Деньгин Вадим Евгеньевич",
-    "convocations": [
-      "VI",
-      "VII"
-    ],
-    "committees": [
-      "Комитет ГД по информационной политике, информационным технологиям и связи"
-    ],
+    "convocations": [],
+    "committees": [],
     "region": {
       "id": 35,
       "name": "Брянская область",
       "short_name": "Брянская область",
       "genitive": "Брянской области"
     },
-    "election_method": "партийный список",
+    "election_method": null,
     "gender": "M",
     "site": "S",
     "fraction": "ЛДПР",
@@ -4951,8 +4953,8 @@
     "total_years": 0.1,
     "last_appointment": "2020-09-23",
     "end_date": "сентябрь 2025",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 364,
     "groups": [
@@ -4962,20 +4964,15 @@
   {
     "id": 10790,
     "fullname": "Епифанова Ольга Николаевна",
-    "convocations": [
-      "VI",
-      "VII"
-    ],
-    "committees": [
-      "Комитет ГД по природным ресурсам, собственности и земельным отношениям"
-    ],
+    "convocations": [],
+    "committees": [],
     "region": {
       "id": 13,
       "name": "Республика Коми",
       "short_name": "Коми",
       "genitive": "республики Коми"
     },
-    "election_method": "партийный список",
+    "election_method": null,
     "gender": "F",
     "site": "S",
     "fraction": "Справедливая Россия",
@@ -4986,8 +4983,8 @@
     "total_years": 0.1,
     "last_appointment": "2020-09-23",
     "end_date": "сентябрь 2025",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 328,
     "groups": [
@@ -4998,35 +4995,27 @@
   {
     "id": 10791,
     "fullname": "Карелин Александр Александрович",
-    "convocations": [
-      "III",
-      "IV",
-      "V",
-      "VI",
-      "VII"
-    ],
-    "committees": [
-      "Комитет ГД по энергетике"
-    ],
+    "convocations": [],
+    "committees": [],
     "region": {
       "id": 68,
       "name": "Новосибирская область",
       "short_name": "Новосибирская область",
       "genitive": "Новосибирской области"
     },
-    "election_method": "одномандатный округ",
+    "election_method": null,
     "gender": "M",
     "site": "S",
     "fraction": "Единая Россия",
-    "committee": null,
+    "committee": "Комитет по международным делам",
     "birth_date": "1967-09-19",
-    "goverment_body": "исполнительный орган власти",
+    "goverment_body": "законодательный орган власти",
     "terms_number": 1,
     "total_years": 0.1,
     "last_appointment": "2020-09-25",
     "end_date": "сентябрь 2025",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 132,
     "groups": [
@@ -5036,20 +5025,15 @@
   {
     "id": 10792,
     "fullname": "Ледков Григорий Петрович",
-    "convocations": [
-      "VI",
-      "VII"
-    ],
-    "committees": [
-      "Комитет ГД по делам национальностей"
-    ],
+    "convocations": [],
+    "committees": [],
     "region": {
       "id": 104,
       "name": "Ямало-Ненецкий автономный округ",
       "short_name": "Ямало-Ненецкий АО",
       "genitive": "Ямало-Ненецкого автономного округа"
     },
-    "election_method": "одномандатный округ",
+    "election_method": null,
     "gender": "M",
     "site": "S",
     "fraction": "Единая Россия",
@@ -5060,8 +5044,8 @@
     "total_years": 0.1,
     "last_appointment": "2020-09-25",
     "end_date": "сентябрь 2025",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 623,
     "groups": [
@@ -5084,7 +5068,7 @@
       "short_name": "Иркутская область",
       "genitive": "Иркутской области"
     },
-    "election_method": "одномандатный округ",
+    "election_method": null,
     "gender": "M",
     "site": "S",
     "fraction": "Единая Россия",
@@ -5095,13 +5079,100 @@
     "total_years": 0.1,
     "last_appointment": "2020-09-18",
     "end_date": "сентябрь 2025",
-    "commission": null,
-    "temp_commission": null,
+    "commission": "",
+    "temp_commission": "",
     "hidden": false,
     "person": 12804,
     "groups": [
       11703,
       11818
+    ]
+  },
+  {
+    "id": 10794,
+    "fullname": "Коростелева Светлана Валентиновна",
+    "convocations": [],
+    "committees": [],
+    "region": {
+      "id": 82,
+      "name": "Тамбовская область",
+      "short_name": "Тамбовская область",
+      "genitive": "Тамбовской области"
+    },
+    "election_method": null,
+    "gender": "F",
+    "site": "S",
+    "fraction": "Единая Россия",
+    "committee": "Комитет по науке, образованию и культуре",
+    "birth_date": "1971-02-10",
+    "goverment_body": "законодательный орган власти",
+    "terms_number": 1,
+    "total_years": 0.1,
+    "last_appointment": "2020-10-14",
+    "end_date": "сентябрь 2025",
+    "commission": "",
+    "temp_commission": "",
+    "hidden": false,
+    "person": 14638,
+    "groups": []
+  },
+  {
+    "id": 10795,
+    "fullname": "Колбин Сергей Николаевич",
+    "convocations": [],
+    "committees": [],
+    "region": {
+      "id": 110,
+      "name": "Севастополь*",
+      "short_name": "Севастополь*",
+      "genitive": "города Севастополя"
+    },
+    "election_method": null,
+    "gender": "M",
+    "site": "S",
+    "fraction": "Единая Россия",
+    "committee": "Комитет по обороне и безопасности",
+    "birth_date": "1969-10-29",
+    "goverment_body": "законодательный орган власти",
+    "terms_number": 1,
+    "total_years": 0.1,
+    "last_appointment": "2020-10-29",
+    "end_date": "сентябрь 2024",
+    "commission": "",
+    "temp_commission": "",
+    "hidden": false,
+    "person": 67158,
+    "groups": []
+  },
+  {
+    "id": 10797,
+    "fullname": "Некрасов Александр Николаевич",
+    "convocations": [],
+    "committees": [],
+    "region": {
+      "id": 37,
+      "name": "Архангельская область",
+      "short_name": "Архангельская область",
+      "genitive": "Архангельской области"
+    },
+    "election_method": null,
+    "gender": "M",
+    "site": "S",
+    "fraction": "КПРФ",
+    "committee": "Комитет по федеративному устройству, региональной политике, местному самоуправлению и делам Севера",
+    "birth_date": "1963-06-20",
+    "goverment_body": "исполнительный орган власти",
+    "terms_number": 1,
+    "total_years": 0.1,
+    "last_appointment": "2020-10-09",
+    "end_date": "сентябрь 2025",
+    "commission": "",
+    "temp_commission": "",
+    "hidden": false,
+    "person": 513,
+    "groups": [
+      11701,
+      11840
     ]
   }
 ]
