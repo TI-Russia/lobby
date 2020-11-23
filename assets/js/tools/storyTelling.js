@@ -1,5 +1,5 @@
 define(['d3'], function (d3) {
-
+    if ( d3.select('#scrollytelling').node() === null) return ;
     const s = 500;
     const donutRadius = 30;
     let half = 0;
