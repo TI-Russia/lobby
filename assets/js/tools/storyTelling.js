@@ -1,7 +1,7 @@
 define(['d3'], function (d3) {
     if ( d3.select('#scrollytelling').node() === null) return ;
     const s = 500;
-    const donutRadius = 30;
+    let donutRadius = 0;
     let half = 0;
     let deps = [];
     let groups = [];
@@ -225,6 +225,9 @@ define(['d3'], function (d3) {
     function setHalf (b){
         half = b;
     }
+    function setDonutRadius (b){
+        donutRadius = b;
+    }
 
     const updater = (state) => {
         console.log('slide ', state)
@@ -304,5 +307,6 @@ define(['d3'], function (d3) {
         setDeps: setDeps,
         setGroups: setGroups,
         setHalf: setHalf,
+        setDonutRadius: setDonutRadius,
     };
 })
