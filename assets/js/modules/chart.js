@@ -10,11 +10,14 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
         var isSF;
         var nodes, clusters, nodesWithClones;
         var isStoryShowing = 1;
+        let el;
 
 // tooltip for mouseover functionality
         var tooltip = floatingTooltip('gates_tooltip', 240);
         var width, height, maxX, maxY, rows, client_width, client_height // width and heights of chart_grid
         var svg;
+        const hash = window.location.hash ? window.location.hash.substring(1) : null;
+
         Data.then(Data=>{
             data = Data.data;
             lobby = Data.lobby;
@@ -25,15 +28,28 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
             rawRating = Data.rawRating;
             isSF = Data.isSF;
             composeNodes();
-            if (isSF) doTelling();
+            if (isSF) {
+                el = d3.select('#scrollytelling').node().getBoundingClientRect();
+
+                doTelling()
+
+            };
             doChart();
         });
 
+        function hideTelling(){
+            const div = document.getElementById('scrollytelling');
+            div.style.opacity = 0;
+            isStoryShowing = 0;
+
+            setTimeout(()=>{
+                div.style.display = 'none';
+            },200);
+        }
+
         function doTelling(){
             const width = 600;
-            const el = d3.select('#scrollytelling').node().getBoundingClientRect();
             const height = width / (el.width/el.height);
-
             const svg_relling = d3.select('#root').append('svg');
             svg_relling.attr("viewBox", [0, 0, width, height+20]);
             const g_telling = svg_relling.append("g");
@@ -148,7 +164,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
 
                 //createCircles();
                 storyTelling.setDeps(nd);
-                showCircles(0);
+                showCircles(hash ? 4 : 0);
                 const tops = readSections().reverse();
                 const div = document.getElementById('scrollytelling');
                 div.addEventListener('scroll', function() {
@@ -174,16 +190,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                                     d3.selectAll("#p"+(story+1)).style('opacity',1);
                                     break;
                                 case 6:
-                                    isStoryShowing && setTimeout(()=>{
-                                        const check = tops.find(d =>( d.d-div.getBoundingClientRect().height/2)  < div.scrollTop  );
-                                        //if (check.i < 5) return;
-                                        div.style.opacity = 0;
-                                        isStoryShowing = 0;
-
-                                        setTimeout(()=>{
-                                            div.style.display = 'none';
-                                            },200);
-                                    },300);
+                                    isStoryShowing && setTimeout(hideTelling,300);
                             }
                         }
                     }
@@ -203,7 +210,9 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                 }
             });
 
-
+            if (hash) {
+               hideTelling()
+            };
         }
 
 

@@ -88,9 +88,10 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list, isSF) {
     relations.html(info.relations);
     submitted.html(info.submitted);
     conclusion.html(info.conclusion);
-    fb_person.attr("href","https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdumabingo.ru/person/"+info.person)
-    tw_person.attr("href","https://twitter.com/intent/tweet?url=http%3A%2F%2Fdumabingo.ru/person/"+info.person+"&text="+info.fullname)
-    vk_person.attr("href","http://vk.com/share.php?url=http%3A%2F%2Fdumabingo.ru/person/"+info.person)
+    const dirUrl = isSF ? 'person_sf/' : 'person/';
+    fb_person.attr("href","https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdumabingo.ru/" + dirUrl + info.person)
+    tw_person.attr("href","https://twitter.com/intent/tweet?url=http%3A%2F%2Fdumabingo.ru/" + dirUrl + info.person+"&text="+info.fullname)
+    vk_person.attr("href","http://vk.com/share.php?url=http%3A%2F%2Fdumabingo.ru/" + dirUrl + info.person)
     open_declaration.attr("href","https://declarator.org/person/"+info.person)
     send_form.attr("href","https://docs.google.com/forms/d/e/1FAIpQLSd6WGVWRwdwf7Q7oE_3RIlHR8MMdo_LVOnC0nk9YINtfYvjPw/viewform?entry.742555963="+info.fullname)
     card.attr("class","modal is-active")
