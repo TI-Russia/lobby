@@ -148,9 +148,6 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
 
                 //createCircles();
                 storyTelling.setDeps(nd);
-                storyTelling.setGroups(lobby);
-                storyTelling.setDonutRadius(50);
-                storyTelling.setHalf(1);
                 showCircles(0);
                 const tops = readSections().reverse();
                 const div = document.getElementById('scrollytelling');
@@ -162,12 +159,9 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                             switch (story){
                                 case 0:
                                     isStoryShowing = 1;
-                                    storyTelling.setHalf(1);
-                                    storyTelling.setDonutRadius(50);
                                 case 1:
                                 case 2:
                                 case 3:
-                                    storyTelling.setHalf(0);
                                     storyTelling.setDonutRadius(0);
                                     showCircles(story);
                                     break;

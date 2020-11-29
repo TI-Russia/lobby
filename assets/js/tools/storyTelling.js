@@ -1,8 +1,8 @@
 define(['d3'], function (d3) {
     if ( d3.select('#scrollytelling').node() === null) return ;
     const s = 500;
-    let donutRadius = 0;
-    let half = 0;
+    let half = 1;
+    let donutRadius = 46.5;
     let deps = [];
     let groups = [];
 
@@ -56,13 +56,13 @@ define(['d3'], function (d3) {
         return {x: x2, y: y2}
     }
 
-    const distance = (point) => {
+    function distance (point) {
         let x = point.x, y = point.y;
         let distance;
         x += y / 2;
         y *= Math.sqrt(3) / 2;
         distance = (x * x + y * y) + Math.atan2(point.x, point.y) * .001;
-        if (half) {
+        if (this.half) {
             distance -= donutRadius ** 2;
             distance = Math.abs(distance);
             if (y > .5) distance = Infinity;
@@ -81,8 +81,8 @@ define(['d3'], function (d3) {
         return neighbors;
     }
 
-    const pushNeighbour = (stack, n) => {
-        n.dist = distance(n);
+    function pushNeighbour(stack, n)  {
+        n.dist = distance.call(this,n);
         let i;
         for (i = 0; i < stack.length; i++) {
             if (n.dist < stack[i].dist) {
@@ -94,12 +94,14 @@ define(['d3'], function (d3) {
             stack.push(n);
     }
 
-    function X(dist, center) {
+    function X(dist, center, h) {
+        this.half = h;
+        half = h;
         this.dist = dist;
         this.center = center;
         this.data = [];
         this.stack = [{x: 0, y: 0, dist: 0}];
-        if (half) {
+        if (this.half) {
             this.stack[0].x = -donutRadius - 1;
         }
 
@@ -122,7 +124,7 @@ define(['d3'], function (d3) {
                     return !match;
                 })
                 neighbours.forEach(n => {
-                    pushNeighbour(this.stack, n);
+                    pushNeighbour.call(this, this.stack, n);
                 })
                 current.transformed = this.transform(current);
                 this.data.push(current);
@@ -208,7 +210,7 @@ define(['d3'], function (d3) {
 
             const center = (i===0) ? center2 : center1;
             coords[i] = coords[i] ? coords[i] : [];
-            coords[i][group] = new X(1.5,center);
+            coords[i][group] = new X(1.5,center, i === 0 ? 1 : 0);
             labelCoords[i] = labelCoords[i] ? labelCoords[i] : [];
             labelCoords[i][group]= center;
         })
