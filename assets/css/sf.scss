@@ -1,15 +1,37 @@
 ---
 ---
+@import "vars";
+@import "bulma/bulma.sass";
+.footer, .hero-body{
+  padding: 0;
+}
 header{
   background: #FF7A00;
-  a.c4 {
-    background-color: #DB7A21;
+  .c1{
+    @include until($tablet){
+      width:200px;
+    }
+    flex-basis: 660px;
+    @include until($tablet){
+      flex-basis: 330px;
+    }
   }
-  a.c5 {
-    background-color: #D2872F;
+  .c1 img{
+    @include until($tablet){
+      width:140px;
+    }
   }
-  a.c6 {
-    background-color: #A65B1F;
+  a.c4, a.c5, a.c6 {
+    background-color: $color-orange;
+  }
+  .c1 img.bordered{
+    background: #D56600;
+  }
+  .c1 .link{
+    border: 2px solid #B05500;
+  }
+  .header-menu{
+    background: $color-orange;
   }
 }
 div#controls .column .convocations {
@@ -27,7 +49,7 @@ div#controls .column .convocations {
   padding-right: 17px;
   box-sizing: content-box;
   z-index: 15;
-  top: 48px;
+  top: 87px;
   background: white;
   transition: opacity 400ms ease;
 }
@@ -36,7 +58,10 @@ div#controls .column .convocations {
   margin: 0 auto;
   z-index: 2;
   position: relative;
-  width: 50%;
+  width: 70%;
+  @include until($desktop){
+    width: 100%;
+  }
 }
 
 #root{
@@ -44,6 +69,11 @@ div#controls .column .convocations {
   width: 60%;
   top: 20%;
   left: 20%;
+
+  @include until($desktop){
+    width: 100%;
+    left: 0;
+  }
 }
 
 .section{
@@ -55,6 +85,9 @@ div#controls .column .convocations {
     padding: 1.5rem;
     font-size: 1.5rem;
     border: 1px solid #FF7A00;
+    @include until($desktop){
+      font-size: 1rem;
+    }
   }
   &.lastWithText{
     height: 20vh;
