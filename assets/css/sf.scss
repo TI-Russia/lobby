@@ -1,10 +1,20 @@
 ---
 ---
+$baseurl: "{{ site.baseurl }}";
 @import "vars";
 @import "bulma/bulma.sass";
-.footer, .hero-body{
-  padding: 0;
-}
+@import "image";
+@import "fonts";
+
+@import "common";
+
+@import "main";
+
+@import "nouislider";
+@import "tooltip";
+@import "awesomplete";
+@import "zoomer";
+
 header{
   background: #FF7A00;
   .c1{
@@ -42,7 +52,7 @@ div#controls .column .convocations {
 }
 
 #scrollytelling{
-  height: calc(100% - 48px);
+  height: calc(100% - 87px);
   width: 100%;
   position: fixed;
   overflow-y: scroll;
@@ -52,6 +62,10 @@ div#controls .column .convocations {
   top: 87px;
   background: white;
   transition: opacity 400ms ease;
+  @include until($tablet){
+    top: 48px;
+    height: calc(100% - 48px);
+  }
 }
 
 #container{
@@ -94,6 +108,9 @@ div#controls .column .convocations {
   }
   &.exit{
     height: 10vh;
+    @include until($desktop){
+      height: 20vh;
+    }
     div{
       border: 0px;
     }

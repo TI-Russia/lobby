@@ -168,7 +168,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                 const tops = readSections().reverse();
                 const div = document.getElementById('scrollytelling');
                 div.addEventListener('scroll', function() {
-                    const witchOne = tops.find(d =>( d.d-div.getBoundingClientRect().height/2)  < div.scrollTop  );
+                    const witchOne = tops.find(d =>( d.d-(div.getBoundingClientRect().height - 50)/2)  < div.scrollTop  );
                     if (witchOne){
                         const story = witchOne.i;
                         if (witchOne && story != undefined){
