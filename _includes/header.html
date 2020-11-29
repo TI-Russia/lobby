@@ -2,7 +2,7 @@
     <div class="columns is-mobile">
 
         <div class="column c1"  id="header-title">
-            <a href="{{site.baseurl}}/">
+            <a href="{% if page.sf %}{{site.baseurl}}/{{site.sf}}{% else %}{{site.baseurl}}{% endif %}">
                 <img class="" src="{{site.baseurl}}/assets/images/lobbism.svg" alt="Transparancy" width="205" height="46">
                 {% if page.sf %}
                 <img class="bordered" src="{{site.baseurl}}/assets/images/vsovfede.svg" alt="Transparancy" width="330" height="46">
@@ -10,7 +10,12 @@
                 <img class="bordered" src="{{site.baseurl}}/assets/images/vgosdume.svg" alt="Transparancy" width="170" height="46">
                 {% endif %}
             </a>
-            <a class="link is-hidden-mobile">в думе</a>
+            {% if page.sf %}
+            <a class="link is-hidden-mobile" href="{{site.url}}">в думе</a>
+            {% else %}
+            <!--<a class="link is-hidden-mobile" href="{{site.baseurl}}/{{site.sf}}">в СФ</a>-->
+            {% endif %}
+
         </div>
         <div class="column c2 is-hidden-mobile is-hidden-tablet-only">
             <h2>Какие {% if page.sf %} сенаторы {% else %} депутаты {% endif %}служат <br> не только народу</h2>
