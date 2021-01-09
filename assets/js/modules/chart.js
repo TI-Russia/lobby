@@ -28,10 +28,11 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
             rawRating = Data.rawRating;
             isSF = Data.isSF;
             composeNodes();
-            if (isSF) {
-                el = d3.select('#scrollytelling').node().getBoundingClientRect();
-
-                doTelling()
+            if (isSF && !hash) {
+                const storytellyng = document.getElementById('scrollytelling');
+                storytellyng.style.display = 'block';
+                el = storytellyng.getBoundingClientRect();
+                doTelling();
 
             };
             doChart();
@@ -106,7 +107,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                 const dd = data.deps;
                 const ll = data.labels;
                 //console.log(dd, ll);
-                d3.selectAll(".section:not(#p"+state+")").style('opacity','0.1');
+                d3.selectAll(".section:not(#p"+state+1+")").style('opacity','0');
                 d3.selectAll("#p"+(state+1)).style('opacity',1);
 
                 const t = d3.transition()
@@ -156,7 +157,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
             function readSections(){
                 const parts = document.getElementsByClassName('section');
                 partsTops = Array.prototype.map.call(parts, (d,i) => {
-                    if (d.nodeName === 'DIV') return {'i':i, 'd': d.offsetTop}
+                    if (d.nodeName === 'DIV') return {'i':i, 'offsetTop': d.offsetTop, 'offsetHeight': d.offsetHeight}
                 });
                 console.log('partsTops', partsTops);
                 return partsTops;
@@ -168,7 +169,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                 const tops = readSections().reverse();
                 const div = document.getElementById('scrollytelling');
                 div.addEventListener('scroll', function() {
-                    const witchOne = tops.find(d =>( d.d-(div.getBoundingClientRect().height - 50)/2)  < div.scrollTop  );
+                    const witchOne = tops.find(d =>( d.offsetTop-(div.getBoundingClientRect().height) + 100)  < div.scrollTop  );
                     if (witchOne){
                         const story = witchOne.i;
                         if (witchOne && story != undefined){
@@ -186,7 +187,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                                     showCircles(story);
                                     break;
                                 case 5:
-                                    d3.selectAll(".section:not(#p"+story+")").style('opacity','0.1');
+                                    d3.selectAll(".section:not(#p"+story+1+")").style('opacity','0');
                                     d3.selectAll("#p"+(story+1)).style('opacity',1);
                                     break;
                                 case 6:
@@ -196,19 +197,6 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                     }
 
                 });
-
-            isSF && window.addEventListener('wheel', function(event)
-            {
-                if (event.deltaY < 0 && isStoryShowing === 0)
-                {
-
-                    div.style.display = '';
-                    div.scrollTo({top: partsTops[1].d});
-                    div.style.opacity = 1;
-                    isStoryShowing = 1;
-
-                }
-            });
 
             if (hash) {
                hideTelling()
@@ -362,7 +350,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
 
         function doChart() {
             const legend = svg.append("image")
-                .attr("xlink:href","assets/images/legend.svg")
+                .attr("xlink:href",isSF ? "assets/images/legend_sf.svg" : "assets/images/legend.svg")
                 .attr("width", 202)
                 .attr("height", 41)
                 .attr("x", -85)

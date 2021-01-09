@@ -182,7 +182,12 @@ define(['d3'], function (d3) {
     const coords=[];
     const labelCoords = [];
     const width = 600;
+
+    const storytellyng = document.getElementById('scrollytelling');
+    storytellyng.style.display = 'block';
     const el = d3.select('#scrollytelling').node().getBoundingClientRect();
+    storytellyng.style.display = 'none';
+
     const height = width / (el.width/el.height);
     const rowsBySlide = {
         0:1,

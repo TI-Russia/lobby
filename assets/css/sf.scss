@@ -52,6 +52,7 @@ div#controls .column .convocations {
 }
 
 #scrollytelling{
+  display: none;
   height: calc(100% - 87px);
   width: 100%;
   position: fixed;
@@ -92,7 +93,7 @@ div#controls .column .convocations {
 
 .section{
   height:40vh;
-  margin-bottom: 200px;
+  margin-bottom: 30vh;
   color:black;
   div{
     background: rgba(255,255,255,.9);
@@ -102,6 +103,9 @@ div#controls .column .convocations {
     @include until($desktop){
       font-size: 1rem;
     }
+  }
+  &.first{
+    padding-top: 50vh;
   }
   &.lastWithText{
     height: 20vh;
