@@ -7,7 +7,7 @@
 
 .cd-intro {
   position: fixed;
-  top: 87px;
+  top: 48px;
   left: 0;
   height: 100vh;
   z-index: 5;
@@ -83,9 +83,9 @@ header {
   }
   .columns{
     margin: 0 !important;
-    height: 87px;
-    @include until($tablet){
-      height: 48px;
+    height: 48px;
+    @include until($header-not-so-wide){
+      height: 40px;
     }
     .column{
       display: flex;
@@ -99,9 +99,11 @@ header {
     }
   }
   .c1 {
-    flex: 0 0 550px;
+    flex-basis: auto;
+    flex-grow: 0;
     margin-left: 60px;
     padding-left: 0;
+
     img {
       margin-top: 0px;
       }
@@ -109,50 +111,78 @@ header {
     img.bordered{
       box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 4px 0px 0px 4px;
-      margin-left: 15px;
-      padding: 0 10px;
+      margin-left: 8px;
       background: #0086d5;
+      padding: 0 8px;
+      @include until($header-not-so-wide){
+        box-shadow: none !important;
+        padding: 0;
+        background-color: $color-blue;
+      }
     }
-    .link{
-      border: 2px solid #0086d5;
+    .text_link{
+      border: 1px solid #0086d5;
       box-sizing: border-box;
       border-radius: 0px 4px 4px 0px;
-      width: 95px;
       align-items: center;
       justify-content: center;
+      font-size: 20px;
+      padding: 0 7px 3px;
+      @include until($header-not-so-wide){
+        display: none !important;
+      }
     }
     a,a:hover{
       text-decoration: none;
       color:$color-white;
       display: flex;
-      height: 46px;
+      height: 32px;
+      @include until($header-not-so-wide){
+        transform: scale(0.8);
+        transform-origin: 0;
+      }
     }
 
     @include until($desktop){
       margin-left: 32px;
-      flex-basis: 500px;
     }
     @include until($tablet){
-      flex: 0 0 160px;
       margin-left: 16px;
     }
 
   }
   .c2 {
-    flex: 0 0 169px;
-    font-size: 14px;
+    flex-basis: auto;
+    flex-grow: 0;
+    font-size: 16px;
     line-height: 0.99rem;
-    padding-left: 6px;
+    padding-left: 8px;
+    @include until($header-wide){
+      display: none !important;
+    }
     h2{
       line-height: 15px;
     }
   }
   .c3{
-    font-size: 16px;
-    padding-right: 33px;
+    flex-grow: 1;
+    font-size: 20px;
+    line-height: 0.99rem;
+    padding-right: 18px;
     @include until($tablet){
       padding-right: 16px;
     }
+    .header-menu, #nav-toggle{
+      @include from($header-not-so-wide){
+        display: none;
+      }
+    }
+    #nav-menu{
+      @include until($header-not-so-wide){
+        display: none;
+      }
+    }
+
     a{
       padding-left: 16px;
     }
@@ -160,6 +190,9 @@ header {
   .c4, .c5, .c6 {
     flex: 0 0 48px;
     padding: 0;
+    @include until($header-not-so-wide){
+      display: none !important;
+    }
   }
   a.c4 {
     background-color: #4C77A6;
@@ -181,7 +214,7 @@ header {
   .header-menu{
     display: none;
     position: absolute;
-    top:48px;
+    top:40px;
     right: 0px;
     z-index: 20;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);

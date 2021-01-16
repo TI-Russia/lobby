@@ -7,11 +7,11 @@ requirejs(["jquery"], function($) {
             var nav_toggle = document.getElementById("nav-toggle");
             var menu = document.getElementById("header_menu");
 
-            if (nav_toggle.className == "is-visible-small") {
-                nav_toggle.className = "is-active is-visible-small"
+            if (nav_toggle.className == "") {
+                nav_toggle.className = "is-active is-visible"
                 menu.className = "header-menu  is-visible"
             } else {
-                nav_toggle.className = "is-visible-small"
+                nav_toggle.className = ""
                 menu.className = "header-menu"
             }
         }

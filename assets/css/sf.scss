@@ -18,17 +18,11 @@ $baseurl: "{{ site.baseurl }}";
 header{
   background: #FF7A00;
   .c1{
-    @include until($tablet){
-      width:200px;
-    }
-    flex-basis: 660px;
-    @include until($tablet){
-      flex-basis: 330px;
-    }
+
   }
   .c1 img{
     @include until($tablet){
-      width:140px;
+
     }
   }
   a.c4, a.c5, a.c6 {
@@ -36,9 +30,12 @@ header{
   }
   .c1 img.bordered{
     background: #D56600;
+    @include until($header-not-so-wide){
+      background-color: $color-orange;
+    }
   }
-  .c1 .link{
-    border: 2px solid #B05500;
+  .c1 .text_link{
+    border: 1px solid #B05500;
   }
   .header-menu{
     background: $color-orange;
@@ -53,19 +50,19 @@ div#controls .column .convocations {
 
 #scrollytelling{
   display: none;
-  height: calc(100% - 87px);
+  height: calc(100% - 48px);
   width: 100%;
   position: fixed;
   overflow-y: scroll;
   padding-right: 17px;
   box-sizing: content-box;
   z-index: 15;
-  top: 87px;
+  top: 48px;
   background: white;
   transition: opacity 400ms ease;
   @include until($tablet){
-    top: 48px;
-    height: calc(100% - 48px);
+    top: 40px;
+    height: calc(100% - 40px);
   }
 }
 

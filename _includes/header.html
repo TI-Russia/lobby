@@ -3,31 +3,31 @@
 
         <div class="column c1"  id="header-title">
             <a href="{% if page.sf %}{{site.url}}/{{site.sf}}{% else %}{{site.url}}{% endif %}">
-                <img class="" src="{{site.baseurl}}/assets/images/lobbism.svg" alt="Transparancy" width="205" height="46">
+                <img class="" src="{{site.baseurl}}/assets/images/logo/lobbism_logo.svg" alt="Transparancy" >
                 {% if page.sf %}
-                <img class="bordered" src="{{site.baseurl}}/assets/images/vsovfede.svg" alt="Transparancy" width="330" height="46">
+                <img class="bordered" src="{{site.baseurl}}/assets/images/logo/vsovfede.svg" alt="Transparancy" >
                 {% else %}
-                <img class="bordered" src="{{site.baseurl}}/assets/images/vgosdume.svg" alt="Transparancy" width="170" height="46">
+                <img class="bordered" src="{{site.baseurl}}/assets/images/logo/vgosdume.svg" alt="Transparancy" >
                 {% endif %}
             </a>
             {% if page.sf %}
-            <a class="link is-hidden-mobile" href="{{site.url}}">в думе</a>
+            <a class="text_link" href="{{site.url}}">в думе</a>
             {% else %}
-            <!--<a class="link is-hidden-mobile" href="{{site.baseurl}}/{{site.sf}}">в СФ</a>-->
+            <!--<a class="text_link" href="{{site.baseurl}}/{{site.sf}}">в СФ</a>-->
             {% endif %}
 
         </div>
-        <div class="column c2 is-hidden-mobile is-hidden-tablet-only">
+        <div class="column c2">
             <h2>Какие {% if page.sf %} сенаторы {% else %} депутаты {% endif %}служат <br> не только народу</h2>
         </div>
         <div class="column is-pulled-right c3 ">
-            <div id="nav-menu" class="is-visible-small is-hidden">
+            <div id="nav-menu" class="">
                 <a href="{{site.baseurl}}/about">О&nbsp;проекте</a>
                 <a target="_blank" href="{{site.baseurl}}/{{site.doclad_url}}">Доклад</a>
                 <a target="_blank" href="https://transparency.org.ru/donate/">Поддержать</a>
                 <a target="_blank" href="{% if page.sf%}https://forms.gle/D8y9DkcJAujkxW269/{%else%}https://forms.gle/d6ia3KgkooeubQsj7{%endif%}">Обратная связь</a>
             </div>
-            <a id="nav-toggle" class="is-visible-small"><span class="icon"><i class="fas fa-bars"></i></span> </a>
+            <a id="nav-toggle" class=""><span class="icon"><i class="fas fa-bars"></i></span> </a>
             <ul class="header-menu" id="header_menu">
                 <li> <a href="{{site.baseurl}}/about">О&nbsp;проекте</a></li>
                 <li> <a target="_blank" href="{{site.baseurl}}/{{site.doclad_url}}">Доклад</a></li>
@@ -43,11 +43,11 @@
 
 
         </div>
-        <div class="column is-pulled-right c4 is-hidden-touch"><a  href="http://vk.com/share.php?url=https%3A%2F%2Fdumabingo.ru%2F" target="_blank" class="c4 vk_share_button"><span class="icon is-large"><i class="fab fa-vk"></i></span></a>
+        <div class="column is-pulled-right c4"><a  href="http://vk.com/share.php?url=https%3A%2F%2Fdumabingo.ru%2F" target="_blank" class="c4 vk_share_button"><span class="icon is-large"><i class="fab fa-vk"></i></span></a>
         </div>
-        <div class="column is-pulled-right c5 is-hidden-touch"><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdumabingo.ru%2F&text={{site.description}}" target="_blank" class="c5"  ><span class="icon is-large"><i class="fab fa-twitter"></i></span></a>
+        <div class="column is-pulled-right c5"><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdumabingo.ru%2F&text={{site.description}}" target="_blank" class="c5"  ><span class="icon is-large"><i class="fab fa-twitter"></i></span></a>
         </div>
-        <div class="column is-pulled-right c6 is-hidden-touch"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdumabingo.ru%2F" target="_blank" class="c6"><span class="icon is-large"><i class="fab fa-facebook-square"></i></span></a>
+        <div class="column is-pulled-right c6"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdumabingo.ru%2F" target="_blank" class="c6"><span class="icon is-large"><i class="fab fa-facebook"></i></span></a>
         </div>
     </div>
 </header>
