@@ -159,7 +159,6 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                 partsTops = Array.prototype.map.call(parts, (d,i) => {
                     if (d.nodeName === 'DIV') return {'i':i, 'offsetTop': d.offsetTop, 'offsetHeight': d.offsetHeight}
                 });
-                console.log('partsTops', partsTops);
                 return partsTops;
             }
 
@@ -191,7 +190,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                                     d3.selectAll("#p"+(story+1)).style('opacity',1);
                                     break;
                                 case 6:
-                                    isStoryShowing && setTimeout(hideTelling,300);
+                                    //isStoryShowing && setTimeout(hideTelling,300);
                             }
                         }
                     }
@@ -199,8 +198,17 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                 });
 
             if (hash) {
-               hideTelling()
+               hideTelling();
             };
+
+            const close_cross = document.getElementById('close_cross');
+            const go_btn = document.getElementById('go_to_lobby_map');
+            close_cross.addEventListener('click', event => {
+                hideTelling();
+            });
+            go_btn.addEventListener('click', event => {
+                hideTelling();
+            });
         }
 
 

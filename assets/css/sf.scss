@@ -64,6 +64,30 @@ div#controls .column .convocations {
     top: 40px;
     height: calc(100% - 40px);
   }
+  #close_cross{
+    background: url("../images/cross.svg");
+    height: 50px;
+    width: 50px;
+    right: 20px;
+    top: 18px;
+    position: absolute;
+    cursor: pointer;
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+
+  #go_to_lobby_map{
+    margin: 20vh auto 0;
+    display: block;
+    padding: 11px 32px 12px;
+    background-color: $color-orange;
+    color: white;
+    font-size: 20px;
+    border-radius: 0;
+    line-height: 25px;
+    height: 25px;
+  }
 }
 
 #container{
@@ -97,6 +121,7 @@ div#controls .column .convocations {
     padding: 1.5rem;
     font-size: 1.5rem;
     border: 1px solid #FF7A00;
+    border-radius: 8px;
     @include until($desktop){
       font-size: 1rem;
     }
