@@ -6,18 +6,18 @@
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="{{ site.title }}" />
     <meta property="og:description"   content="{{ site.description }}" />
-    <meta property="og:image"         content="https://dumabingo.ru/assets/images/preview_img.png" />
+    <meta property="og:image"         content="https://dumabingo.ru/assets/images/{% if page.sf%}preview_img_sf.png{%else%}preview_img.png{%endif%}" />
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ site.title }}">
     <meta name="twitter:description" content="{{ site.description }}">
-    <meta name="twitter:image" content="https://dumabingo.ru/assets/images/preview_img.png">
+    <meta name="twitter:image" content="https://dumabingo.ru/assets/images/{% if page.sf%}preview_img_sf.png{%else%}preview_img.png{%endif%}">
 
     {% if page.sf %}
         <link rel="stylesheet" href="{{site.baseurl}}/assets/css/sf.css">
     {% else %}
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/styles.css">
     {% endif %}
-    <link rel="icon" href="{{site.baseurl}}/favicon.png">
+    <link rel="icon" href="{{site.baseurl}}/{% if page.sf%}favicon_sf.png{%else%}favicon.png{%endif%}">
     <title>{{site.title}}</title>
 </head>
 
