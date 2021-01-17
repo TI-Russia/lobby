@@ -22,15 +22,15 @@
         </div>
         <div class="column is-pulled-right c3 ">
             <div id="nav-menu" class="">
-                <a href="{{site.baseurl}}/about">О&nbsp;проекте</a>
-                <a target="_blank" href="{{site.baseurl}}/{{site.doclad_url}}">Доклад</a>
+                <a href="{% if page.sf%}{{site.baseurl}}/sf/about{%else%}{{site.baseurl}}/about{%endif%}">О&nbsp;проекте</a>
+                <a target="_blank" href="{{site.baseurl}}/{% if page.sf%}{{site.doclad_sf_url}}{%else%}{{site.doclad_url}}{%endif%}">Доклад</a>
                 <a target="_blank" href="https://transparency.org.ru/donate/">Поддержать</a>
                 <a target="_blank" href="{% if page.sf%}https://forms.gle/D8y9DkcJAujkxW269/{%else%}https://forms.gle/d6ia3KgkooeubQsj7{%endif%}">Обратная связь</a>
             </div>
             <a id="nav-toggle" class=""><span class="icon"><i class="fas fa-bars"></i></span> </a>
             <ul class="header-menu" id="header_menu">
-                <li> <a href="{{site.baseurl}}/about">О&nbsp;проекте</a></li>
-                <li> <a target="_blank" href="{{site.baseurl}}/{{site.doclad_url}}">Доклад</a></li>
+                <li> <a href="{% if page.sf%}{{site.baseurl}}/sf/about{%else%}{{site.baseurl}}/about{%endif%}">О&nbsp;проекте</a></li>
+                <li> <a target="_blank" href="{{site.baseurl}}/{% if page.sf%}{{site.doclad_sf_url}}{%else%}{{site.doclad_url}}{%endif%}">Доклад</a></li>
                 <li> <a target="_blank" href="https://transparency.org.ru/donate/">Поддержать</a></li>
                 <li> <a target="_blank" href="https://forms.gle/d6ia3KgkooeubQsj7">Обратная связь</a></li>
                 {% if page.sf %}

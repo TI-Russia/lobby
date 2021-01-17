@@ -145,3 +145,16 @@ div#controls .column .convocations {
   fill: #999;
   color: #999;
  }
+
+.columns.about{
+  a, a:hover{
+    color: $color-orange;
+  }
+  .outer_link{
+    background: rgba(255, 180, 68, 0.1);
+  }
+}
+
+#scrollToTop {
+  background-color: $color-orange;
+}
