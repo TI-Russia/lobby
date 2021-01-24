@@ -80,6 +80,7 @@ header {
   color: $color-white;
   a{
     color: $color-white;
+		text-decoration: none;
   }
   .columns{
     margin: 0 !important;
@@ -101,7 +102,7 @@ header {
   .c1 {
     flex-basis: auto;
     flex-grow: 0;
-    margin-left: 60px;
+    margin-left: 16px;
     padding-left: 0;
 
     img {
@@ -144,7 +145,7 @@ header {
     }
 
     @include until($desktop){
-      margin-left: 32px;
+      margin-left: 16px;
     }
     @include until($tablet){
       margin-left: 16px;
@@ -168,8 +169,9 @@ header {
     flex-grow: 1;
     font-size: 20px;
     line-height: 0.99rem;
-    padding-right: 18px;
-    @include until($tablet){
+		padding: 0;
+    padding-right: 8px;
+    @include until($header-not-so-wide){
       padding-right: 16px;
     }
     .header-menu, #nav-toggle{
