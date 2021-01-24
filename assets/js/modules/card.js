@@ -73,7 +73,7 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list, isSF) {
 
     fullname.text(info.fullname);
     fraction.text(info.fraction).attr("class",fraction_class);
-    position.text(positionText);
+    position.html(positionText);
     isSF && temp_comission.text(getTempComissionText());
     law_number_vnes.text(rating.vnes);
     law_text_bring.html(Pluralization(+rating.vnes, "закон<br>внесён", "закона<br>внесено", "законов<br>внесено"));
