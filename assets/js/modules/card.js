@@ -138,7 +138,8 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list, isSF) {
             gender=info.gender,
             letVsf = info.total_years,
             region = info.region.genitive,
-            chem = info.goverment_body
+            chem = info.goverment_body,
+            position = info.position;
 
         gender = !gender ? "м" : gender.toLowerCase();
         comitet = !comitet ? "" : comitet;
@@ -147,14 +148,14 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list, isSF) {
         chem = chem.replace("орган ","органом ");
         chem +=', ';
 
-        var chlen = comitet.replace("Комитет ","Член комитета ");
+        var chlen = position + comitet.replace("Комитет "," ");
         if (comitet) chlen+= ", ";
         var delegirovan = (gender=="ж" || gender=="f") ? "делегирована " : "делегирован ";
         var vsovete = "в Совете Федерации с " + (new Date().getFullYear()-letVsf)+" года";
         var predstavitel = ". Представитель " + region;
 
-        var position = chlen + delegirovan + chem + vsovete  + predstavitel;
-        return position;
+        var summary = chlen + delegirovan + chem + vsovete  + predstavitel;
+        return summary;
     }
 
     function getTempComissionText(){
