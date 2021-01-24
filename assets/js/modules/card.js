@@ -51,7 +51,7 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list, isSF) {
 
 
     //var id=e.id //iden
-    var info=depInfo;
+    const info=depInfo;
     var rating=depRating;
     var fraction_class = GetFractionClass(info.fraction);
     var positionText = isSF ? GetPositionSF(info) : GetPosition(info);
@@ -65,6 +65,7 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list, isSF) {
         photo.attr("alt",info.fullname).attr("src",info.photo)
     };
     img.onerror = function() {
+        photo.attr("src",'assets/images/blank.jpg')
         //console.log("the image has failed")
     };
     img.src = info.photo;

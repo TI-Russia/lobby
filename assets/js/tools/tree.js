@@ -31,12 +31,13 @@ define([], function() {
     }
 
 
-    function findAncestors (nodeId,lookup) {
+    function findAncestors(nodeId, lookup) {
         var ancestors = [nodeId]
-        var parentId = lookup.find(x=>x.id==nodeId).parent
-        while(parentId != 1 ) {
+        var group = lookup.find(x => x.id === nodeId)
+        var parentId = group && group.parent
+        while (parentId !== 1 && parentId != undefined) {
             ancestors.unshift(parentId)
-            parentId = lookup.find(x=>x.id==parentId).parent
+            parentId = lookup.find(x => x.id == parentId).parent
         }
         return ancestors;
     }
