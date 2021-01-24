@@ -60,7 +60,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
             const theta = Math.PI * (3 - Math.sqrt(5));
             const step = radius * 2;
             const nd = nodesWithClones.slice().sort((a,b) => a.dupelganger - b.dupelganger).sort((a,b) => a.id - b.id);
-            console.log(nd.filter(d => d.cluster == 11551).sort(d3.descending));
+            //console.log(nd.filter(d => d.cluster == 11551).sort(d3.descending));
             const count = nd.length;
 
             const groups = d3.nest().key(d=>d.cluster).rollup(v => {

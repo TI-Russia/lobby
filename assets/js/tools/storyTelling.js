@@ -237,11 +237,12 @@ define(['d3'], function (d3) {
     }
 
     const updater = (state) => {
-        console.log('slide ', state)
+        //console.log('slide ', state)
         const allDepsInSlide = [];
         const labelsInSlide = [];
         slides[state].forEach(group => {
-            let depsInGroup = deps.filter(d => d.clusterMin === group || d.clusterParentMiddle === group || d.clusterParent === group)
+            let depsInGroup = deps.filter(d => d.clusterMin === group || d.clusterParentMiddle === group || d.clusterParent === group);
+
             if (state === 0){
                 depsInGroup = deps;
             }
@@ -252,11 +253,14 @@ define(['d3'], function (d3) {
             //console.log('в группе ', group , depsInGroup);
             const gr = groupsNames[group];
             const groupName = gr ? gr : ''
-            labelsInSlide.push({
-                x: labelCoords[state][group].x,
-                y: labelCoords[state][group].y - height/rowsBySlide[state]/2,
-                text: groupName
-            });
+            if (depsInGroup.length !== 0){
+                labelsInSlide.push({
+                    x: labelCoords[state][group].x,
+                    y: labelCoords[state][group].y - height/rowsBySlide[state]/2,
+                    text: groupName
+                });
+            }
+
             for (let i=0,j=-1; i<depsInGroup.length; i++){
                 const d = depsInGroup[i];
 
