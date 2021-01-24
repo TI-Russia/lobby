@@ -1,6 +1,6 @@
 <div class="footer">
 
-    <div class="columns is-vcentered is-mobile">
+    <div class="columns is-vcentered is-mobile is-multiline">
         <div class="column social is-narrow is-hidden-desktop">
             <a href="http://vk.com/share.php?url=https%3A%2F%2Fdumabingo.ru%2F" target="_blank" class="vk vk_share_button"><span class="icon"><i class="fab fa-vk"></i></span></a>
             <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdumabingo.ru%2F"  target="_blank" class="fb"><span class="icon"><i class="fab fa-facebook-square"></i></span></a>
@@ -28,6 +28,12 @@
         </div>
         <div class="column is-full">
             <a target="_blank" href="https://transparency.org.ru/politika-konfidencialnosti/">Политика конфиденциальности</a>
+        </div>
+    </div>
+    {% else %}
+    <div class="extra agent columns is-multiline">
+        <div class="column is-full ">
+            <p>Материалы на этом сайте произведены и (или) распространены АНО «Центр «ТИ-Р», принудительно внесенной в реестр некоммерческих организаций, выполняющих функции «иностранного агента». <a target="_blank" href="https://transparency.org.ru/politika-konfidencialnosti/">Политика конфиденциальности</a></p>
         </div>
     </div>
     {% endif %}

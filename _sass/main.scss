@@ -493,13 +493,13 @@ div#card {
     color: $color-white;
   }
 
-  .copy{
-    padding: 16px 60px;
+  .copy, .agent{
+    padding: 16px 60px 10px;
     @include until($desktop){
-      padding: 16px 32px;
+      padding: 16px 32px 10px;
     }
     @include until($tablet){
-      padding: 16px 16px 0 16px;
+      padding: 16px 16px 10px 16px;
       flex: 0 0 190px;
     }
     &.is-pulled-right{
