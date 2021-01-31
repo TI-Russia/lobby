@@ -998,12 +998,12 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                     var age_slider_div = document.getElementById('age');
 
                     conv_slider=noUiSlider.create(conv_slider_div, {
-                        start: [isSF?0:1, isSF?19:7],
+                        start: [isSF?0:1, GetMaxConvocation()],
                         step:1,
                         connect: true,
                         range: {
                             'min': isSF?0:1,
-                            'max': isSF?19:7
+                            'max': GetMaxConvocation()
                         },
                         format: {
                             from: function(value) {
@@ -1060,6 +1060,10 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                         onchange();
                     });
 
+                }
+
+                function GetMaxConvocation() {
+                    return isSF ? Math.max(...data.map(x=>+x.total_years)) : Math.max(...data.map(x=>+x.convocations));
                 }
 
                 function GetMinAge() {
