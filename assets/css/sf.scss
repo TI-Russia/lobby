@@ -89,6 +89,47 @@ div#controls .column .convocations {
     line-height: 25px;
     height: 25px;
   }
+
+  .arrow{
+    position: absolute;
+    border: none;
+    top: 28px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    >span{
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-bottom: 2px solid $color-orange;
+      border-right: 2px solid $color-orange;
+      transform: rotate(45deg);
+      margin: -10px;
+      animation: animate 2s infinite;
+
+      &:nth-child(2){
+        animation-delay: -0.2s;
+      }
+      &:nth-child(3){
+        animation-delay: -0.4s;
+      }
+    }
+
+    @keyframes animate {
+      0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px,-20px);
+      }
+      50%{
+        opacity: 1;
+      }
+      100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(20px,20px);
+      }
+    }
+  }
+
 }
 
 #container{
