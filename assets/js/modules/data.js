@@ -154,7 +154,7 @@ define(["d3"], function(d3) {
                     person: d.person,
                     rating: rating.log,
                     election_method:d.election_method,
-                    committees:!isSF ? d.committees : [d.committee],
+                    committees: !isSF ? d.committees : getSFCommittee(d.committee),
                     convocations:d.convocations.length!=0 ? d.convocations.length : 1,
                     region: d.region ?  d.region.name : null,
                     goverment_body: d.goverment_body,
@@ -167,6 +167,16 @@ define(["d3"], function(d3) {
             myArrGroups.push({id: i++, val: value});
             /*set to array*/
         });
+    }
+
+    function getSFCommittee(committee){
+        if (committee === '0'
+            || committee === null
+            || committee === undefined
+            || committee === ''){
+            return ['Вне комитетов'];
+        }
+        return [committee];
     }
 
     function checkSFFraction(fraction){

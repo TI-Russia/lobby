@@ -141,15 +141,22 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list, isSF) {
             chem = info.goverment_body,
             position = info.position;
 
+        if (comitet === '0'
+            || comitet === null
+            || comitet === undefined
+            || comitet === ''){
+            comitet = " "
+        }
+
         gender = !gender ? "м" : gender.toLowerCase();
-        comitet = !comitet ? "" : comitet;
+        //comitet = !comitet ? " " : comitet;
         chem = chem.replace("исполнительный ","исполнительным ");
         chem = chem.replace("законодательный ","законодательным ");
         chem = chem.replace("орган ","органом ");
         chem +=', ';
 
         var chlen = position + comitet.replace("Комитет "," ");
-        if (comitet) chlen+= ", ";
+        if (comitet !== " ") chlen+= ", ";
         var delegirovan = (gender=="ж" || gender=="f") ? "делегирована " : "делегирован ";
         var vsovete = "в Совете Федерации с " + (new Date().getFullYear()-letVsf)+" года";
         var predstavitel = ". Представитель " + region;
