@@ -1297,7 +1297,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                 }
 
                 function hightlightOn(spot) {
-                    circles.classed(d=>d.color,true).transition().style("opacity",0.2)
+                    circles.classed(d=>d.color,true).style("opacity",0.2)
                     labels.transition().style("opacity",0.0)
 
                     var circles_clusters=spot.data().map(s=>s.cluster)
