@@ -141,10 +141,12 @@ define(["d3"], function(d3) {
             return groups.map((b) => {
                 myGroups.add(b)
                 /*the set provide unique values of lobby groups*/
+                var fraction = isSF ? checkSFFraction(d.fraction) : d.fraction;
                 return {
                     id: d.id,
                     name: d.fullname,
-                    fraction:d.fraction ,
+                    fraction: d.fraction,
+                    fraction_sf: fraction,
                     gender:d.gender,
                     age:calculateAge( new Date(d.birth_date)),
                     group: b,
@@ -165,6 +167,17 @@ define(["d3"], function(d3) {
             myArrGroups.push({id: i++, val: value});
             /*set to array*/
         });
+    }
+
+    function checkSFFraction(fraction){
+        var outOfFractionNames = ['беспартийный', 'беспартийная', 'вне партии'];
+        if (fraction === null) {
+            return 'Вне партии';
+        }
+        if (outOfFractionNames.includes(fraction.toLowerCase())){
+            return 'Вне партии';
+        }
+        return fraction;
     }
 
     function getLobbyMap(rawdata,aliases) {

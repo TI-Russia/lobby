@@ -69,9 +69,10 @@ div#controls .column .convocations {
     height: 50px;
     width: 50px;
     right: 36px;
-    top: 18px;
-    position: absolute;
+    top: 68px;
+    position: fixed;
     cursor: pointer;
+    z-index: 25;
     &:hover{
       opacity: 0.8;
     }

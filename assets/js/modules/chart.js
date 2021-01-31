@@ -249,6 +249,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                     d = {
                         name: d.name,
                         fraction:d.fraction,
+                        fraction_sf: d.fraction_sf,
                         id: d.id,
                         person: d.person,
                         groups: d.groups,
@@ -1194,7 +1195,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                         &&
                         (+x.age>=+r_age[0] && +x.age<=+r_age[1])
                         &&
-                        (b_fraction ? (x.fraction==b_fraction) : true)
+                        (b_fraction ? (b_fraction == x.fraction || b_fraction == x.fraction_sf) : true)
                         &&
                         (b_method ? (x.election_method==b_method) : true)
                         &&
