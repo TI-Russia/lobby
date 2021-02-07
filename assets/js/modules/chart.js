@@ -94,10 +94,10 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                     if (state !==  4){
                         return 'tellingCircle'
                     }
-                    if (node.id === 10763){
+                    if (node.id === 10528){//васильев
                         return 'tellingCircleAlt'
                     }
-                    if (node.id === 10724){
+                    if (node.id === 10724){//клишас
                         return 'tellingCircle'
                     }
 
@@ -795,11 +795,11 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
             }
 
             function HightlightCirclesOn(id) {
-                circles.filter(e=>e.id===id).transition().attr('stroke', '#000').attr('stroke-width', '2px');
+                circles.filter(e=>e.id===id).attr('stroke', '#000').attr('stroke-width', '2px');
             }
 
             function HightlightCirclesOff() {
-                circles.transition().attr('stroke', 'none');
+                circles.attr('stroke', 'none');
             }
 
             function MarkActiveCirclesOn(id) {
@@ -1301,19 +1301,31 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                 }
 
                 function hightlightOn(spot) {
-                    circles.classed(d=>d.color,true).style("opacity",0.2)
-                    labels.transition().style("opacity",0.0)
+                    var count = circles.size() ;
+                    var i = count;
 
-                    var circles_clusters=spot.data().map(s=>s.cluster)
+                    var transition_fadeout = d3.transition()
+                        .duration(10)
+                        .ease(d3.easeLinear);
 
-                    var temp=clearClusters.filter(x=>circles_clusters.includes(x.cluster))
-                    var temp2=ShowedClusters(temp,k, isSF).map(s=>s.cluster)
+                    circles.classed(d => d.color, true).transition().style("opacity", 0.2)
+                        .on("end", () => {
+                            i--;
+                            if (i === 0 && --count > 0) {
+                                spot.transition(transition_fadeout).style("opacity", 1)
+                                labels.transition().style("opacity", 0.0)
 
-                    var labels_spot=labels.filter(x=>circles_clusters.includes(x.cluster))
-                    labels_spot=labels.filter(x=>temp2.includes(x.cluster))
+                                var circles_clusters = spot.data().map(s => s.cluster)
 
-                    spot.transition().style("opacity",1)
-                    labels_spot.transition().style("opacity",1)
+                                var temp = clearClusters.filter(x => circles_clusters.includes(x.cluster))
+                                var temp2 = ShowedClusters(temp, k, isSF).map(s => s.cluster)
+
+                                var labels_spot = labels.filter(x => circles_clusters.includes(x.cluster))
+                                labels_spot = labels.filter(x => temp2.includes(x.cluster))
+
+                                labels_spot.transition().style("opacity", 1)
+                            }
+                        });
                 }
 
                 function hightlightOff() {
