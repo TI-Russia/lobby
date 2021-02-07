@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="abd74287-9318-4af2-8070-bec85aae945a" name="Default Changelist" comment="">
+    <list default="true" id="ed56eb55-9399-4df5-9be4-7ef624cd3abf" name="Default Changelist" comment="fix position in committee">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/modules/chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modules/chart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,16 +14,26 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1S3A6lkBM2zvPsAs7WT1ThBjQF6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.customizations" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OlMa\dev\lobby\lobby" />
       <recent name="E:\OlMa\dev\lobby2\lobby" />
       <recent name="E:\OlMa\dev\lobby2\lobby\person" />
       <recent name="C:\Users\maino\OSPanel\domains\lobby\assets\js\es5" />
@@ -34,24 +42,13 @@
       <recent name="E:\OlMa\dev\lobby2\lobby" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="abd74287-9318-4af2-8070-bec85aae945a" name="Default Changelist" comment="" />
+      <changelist id="ed56eb55-9399-4df5-9be4-7ef624cd3abf" name="Default Changelist" comment="fix position in committee" />
       <created>1550412077850</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -73,23 +70,141 @@
       <workItem from="1570781734947" duration="10292000" />
       <workItem from="1571922170820" duration="2429000" />
       <workItem from="1571930570819" duration="3657000" />
+      <workItem from="1612100953923" duration="15669000" />
+      <workItem from="1612718150147" duration="5632000" />
     </task>
+    <task id="LOCAL-00001" summary="fix position in committee">
+      <created>1611486426634</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1611486426634</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix position html">
+      <created>1611486714715</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1611486714715</updated>
+    </task>
+    <task id="LOCAL-00003" summary="changes in footer">
+      <created>1611493812832</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1611493812832</updated>
+    </task>
+    <task id="LOCAL-00004" summary="hide empty groups in storytelling">
+      <created>1611494381669</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1611494381669</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix out of fraction filter">
+      <created>1612107128114</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1612107128115</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix footer">
+      <created>1612107384244</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1612107384244</updated>
+    </task>
+    <task id="LOCAL-00007" summary="change rating">
+      <created>1612107775254</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1612107775254</updated>
+    </task>
+    <task id="LOCAL-00008" summary="hide region filter on mobile">
+      <created>1612109043640</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1612109043640</updated>
+    </task>
+    <task id="LOCAL-00009" summary="arrow to scroll down">
+      <created>1612112700810</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1612112700810</updated>
+    </task>
+    <task id="LOCAL-00010" summary="disable transition">
+      <created>1612114172409</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1612114172409</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix convocations count">
+      <created>1612117288931</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1612117288931</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fix footer height">
+      <created>1612120554201</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1612120554201</updated>
+    </task>
+    <task id="LOCAL-00013" summary="change committee">
+      <created>1612123193652</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1612123193652</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fix transition, change person">
+      <created>1612727844530</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1612727844530</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="local data update; fix missing img issue" />
+    <MESSAGE value="fix position in committee" />
+    <MESSAGE value="fix position html" />
+    <MESSAGE value="changes in footer" />
+    <MESSAGE value="hide empty groups in storytelling" />
+    <MESSAGE value="fix out of fraction filter" />
+    <MESSAGE value="fix footer" />
+    <MESSAGE value="change rating" />
+    <MESSAGE value="hide region filter on mobile" />
+    <MESSAGE value="arrow to scroll down" />
+    <MESSAGE value="disable transition" />
+    <MESSAGE value="fix convocations count" />
+    <MESSAGE value="fix footer height" />
+    <MESSAGE value="change committee" />
+    <MESSAGE value="fix transition, change person" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix transition, change person" />
   </component>
 </project>
