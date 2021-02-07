@@ -145,7 +145,7 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list, isSF) {
             || comitet === null
             || comitet === undefined
             || comitet === ''){
-            comitet = " "
+            comitet = ""
         }
 
         gender = !gender ? "м" : gender.toLowerCase();
