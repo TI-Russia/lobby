@@ -477,14 +477,14 @@ div#card {
   font-size: 16px;
 
   @include until($tablet){
-    padding-top: 0;
+    //padding-top: 0;
   }
   .columns{
     overflow-x: auto;
     white-space: nowrap;
     scrollbar-width:none;
     @include until($tablet){
-      margin: 0;
+      //margin: 0;
       }
   }
 
@@ -494,12 +494,12 @@ div#card {
   }
 
   .copy, .agent{
-    padding: 16px 60px 10px;
+    padding: 13px 60px 13px;
     @include until($desktop){
-      padding: 16px 32px 10px;
+      padding: 13px 32px 13px;
     }
     @include until($tablet){
-      padding: 16px 16px 10px 16px;
+      padding: 13px 16px 13px 16px;
       flex: 0 0 190px;
     }
     &.is-pulled-right{
@@ -515,13 +515,15 @@ div#card {
     align-items: self-start;
     margin-right: -8px;
     padding-right: 0;
+    //padding-left: 0; // z
     font-size: 24px;
     @include until($desktop){
       margin-left: 32px;
     }
     @include until($tablet){
-      margin-left: 0px;
-      padding: 13px 16px 0 16px;
+      //margin-left: 0px;
+      margin-left: .75rem;
+      padding: 13px 16px 13px 16px;
     }
 
     a{
@@ -538,17 +540,17 @@ div#card {
   }
 }
 
-.extra.columns{
+.extra.columns, .extra-intro.columns{
   padding: 16px 60px;
   overflow-x: visible;
   white-space: normal;
   @include until($desktop){
-    padding: 16px 32px;
+    padding: 0 32px 16px;
     overflow-x: auto;
     white-space: nowrap;
   }
   @include until($tablet){
-    padding: 16px 16px 0 16px;
+    //padding: 0px 16px 0 16px;
   }
   .column{
     padding-left: 0;

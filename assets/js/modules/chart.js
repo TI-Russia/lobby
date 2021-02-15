@@ -43,6 +43,8 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
             div.style.opacity = 0;
             isStoryShowing = 0;
 
+            document.documentElement.style.overflowY='auto';
+
             setTimeout(()=>{
                 div.style.display = 'none';
             },200);
@@ -107,8 +109,8 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                 const dd = data.deps;
                 const ll = data.labels;
                 //console.log(dd, ll);
-                d3.selectAll(".section:not(#p"+state+1+")").style('opacity','0');
-                d3.selectAll("#p"+(state+1)).style('opacity',1);
+                //d3.selectAll(".section:not(#p"+state+1+")").style('opacity','0');
+                //d3.selectAll("#p"+(state+1)).style('opacity',1);
 
                 const t = d3.transition()
                     .duration(300)
@@ -186,8 +188,8 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                                     showCircles(story);
                                     break;
                                 case 5:
-                                    d3.selectAll(".section:not(#p"+story+1+")").style('opacity','0');
-                                    d3.selectAll("#p"+(story+1)).style('opacity',1);
+                                    //d3.selectAll(".section:not(#p"+story+1+")").style('opacity','0');
+                                    //d3.selectAll("#p"+(story+1)).style('opacity',1);
                                     break;
                                 case 6:
                                     //isStoryShowing && setTimeout(hideTelling,300);
@@ -317,12 +319,15 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
             var headerHeight = document.getElementsByTagName('header')[0].clientHeight,
                 controlsHeight = document.getElementById('controls').clientHeight,
                 footerHeight = document.getElementsByClassName('footer')[0].clientHeight,
-                footerExtraHeight = !isSF ? document.getElementsByClassName('extra')[0].clientHeight : 0,
+                //footerExtraHeight = !isSF ? document.getElementsByClassName('extra')[0].clientHeight : 0,
+                footerExtraHeight = document.getElementsByClassName('extra')[0].clientHeight - 4,
+
                 sumHeight = headerHeight + footerHeight + controlsHeight - footerExtraHeight
 
             document.body.className += ' ' +'chart'
             document.body.className = 'chart'
 
+            //console.log(document.getElementsByClassName('extra'))
 
             var min_width = 812,
                 min_height = 600,

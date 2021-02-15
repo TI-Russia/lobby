@@ -15,6 +15,10 @@ $baseurl: "{{ site.baseurl }}";
 @import "awesomplete";
 @import "zoomer";
 
+html {
+  overflow-y: hidden;
+}
+
 header{
   background: #FF7A00;
   .c1{
@@ -229,7 +233,7 @@ div#controls .column .convocations {
 
 .columns.agent{
   color: silver;
-  padding-top: 0px;
+  //padding-top: 0px;
   padding-bottom: 10px;
   font-size: 12px;
   a, a:hover{
