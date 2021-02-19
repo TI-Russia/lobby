@@ -3,11 +3,12 @@
 
         <div class="column c1"  id="header-title">
             <a href="{% if page.sf %}{{site.url}}/{{site.sf}}{% else %}{{site.url}}{% endif %}">
-                <img class="" src="{{site.baseurl}}/assets/images/logo/lobbism_logo.svg" alt="Transparancy" >
+                <img class="logo" src="{{site.baseurl}}/assets/images/logo/lobbism_logo.svg" alt="Лоббизм" >
+                <img class="no-logo" src="{{site.baseurl}}/assets/images/logo/lobbism_no_logo.svg" alt="Лоббизм" >
                 {% if page.sf %}
-                <img class="bordered" src="{{site.baseurl}}/assets/images/logo/vsovfede.svg" alt="Transparancy" >
+                <img class="bordered" src="{{site.baseurl}}/assets/images/logo/vsovfede.svg" alt="в совете федерации" >
                 {% else %}
-                <img class="bordered" src="{{site.baseurl}}/assets/images/logo/vgosdume.svg" alt="Transparancy" >
+                <img class="bordered" src="{{site.baseurl}}/assets/images/logo/vgosdume.svg" alt="в думе" >
                 {% endif %}
             </a>
             {% if page.sf %}
