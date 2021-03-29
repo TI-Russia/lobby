@@ -31,7 +31,7 @@ page_gen:
 doclad_url:  'Лоббизм в Госдуме.pdf'
 doclad_sf_url:  'Лоббизм в Совете Федерации.pdf'
 rating_url: 'Рейтинг влияния депутатов Госдумы.pdf'
-rating_sf_url: 'Рейтинг_влияния_членов_Совета_Федерации.pdf'
+rating_sf_url: 'Рейтинг_влияния_членов_Совета_Федерации.pdf'
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
