@@ -4,7 +4,7 @@ title: Лоббизм в Госдуме
 email: your-email@example.com
 description: 'Интерактивная карта лоббистских возможностей депутатов Государственной Думы РФ: лоббистские группы, законопроекты и персоналии'
 baseurl: "" # the subpath of your site, e.g. /blog
-sf: "cjdtn"
+sf: "sf"
 title_sf: Лоббизм в Совете Федерации
 url: "https://dumabingo.ru" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -23,7 +23,7 @@ include: ['person']
 #    dir: 'card'
 
 page_gen:
-  - data: 'lobbist-sf-29-11-2020'
+  - data: 'lobbist-sf-05-04-2021'
     template: 'card_sf'
     name: 'person'
     dir: 'card_sf'
@@ -31,7 +31,7 @@ page_gen:
 doclad_url:  'Лоббизм в Госдуме.pdf'
 doclad_sf_url:  'Лоббизм в Совете Федерации.pdf'
 rating_url: 'Рейтинг влияния депутатов Госдумы.pdf'
-rating_sf_url: 'Рейтинг_влияния_членов_Совета_Федерации.pdf'
+rating_sf_url: 'Рейтинг_влияния_членов_Совета_Федерации.pdf'
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

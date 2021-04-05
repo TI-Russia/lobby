@@ -5,7 +5,7 @@ define(["d3"], function(d3) {
     var myGroups = new Set();
     var myArrGroups = new Array();
     var isSF;//soviet federacii
-    if (/cjdtn/.test(window.location.href)) {
+    if (/sf/.test(window.location.href)) {
         isSF = true;
     } else {
         isSF = false;
@@ -18,10 +18,10 @@ define(["d3"], function(d3) {
     ];
     if (isSF) {
         files = [
-            "assets/data/sf/lobbist_small.json",
-            "assets/data/sf/lobby_group.json",
-            "assets/data/sf/rating.json",
-            "assets/data/alias.json"
+            "/assets/data/sf/lobbist_small.json",
+            "/assets/data/sf/lobby_group.json",
+            "/assets/data/sf/rating.json",
+            "/assets/data/alias.json"
         ];
     }
     if (/dumabingo/.test(window.location.href)){ /*use data from declarator api*/
@@ -35,8 +35,8 @@ define(["d3"], function(d3) {
             files = [
                 "https://declarator.org/media/dumps/lobbist-small-sf.json",
                 "https://declarator.org/media/dumps/lobby-group.json",
-                "assets/data/sf/rating.json",
-                "assets/data/alias.json"
+                "/assets/data/sf/rating.json",
+                "/assets/data/alias.json"
             ];
         }
     }

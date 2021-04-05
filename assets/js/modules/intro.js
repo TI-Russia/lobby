@@ -1,5 +1,5 @@
 requirejs(['jquery','cookie'], function( $,cookie) {
-    if (/cjdtn/.test(window.location.href)) {
+    if (/sf/.test(window.location.href)) {
         $('.hero-body').addClass('is-loading');
         requirejs(['chart'], function (chart) {});
         return;

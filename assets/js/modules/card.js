@@ -1,6 +1,6 @@
 define(['jquery','d3', 'tree', 'plural'], function( $,d3, tree_func, plural) {
 function ShowCard(depInfo, depRating, depLobbys, lobby_list, isSF) {
-    var url = isSF ? './cjdtn' : './';
+    var url = isSF ? './sf' : './';
     var card=d3.select("#card"),          //container
         photo=card.select("#photo img"),
         fullname=card.select("#fullname"),
@@ -33,17 +33,17 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list, isSF) {
 
             card.attr("class","modal")
             //TODO:make url;
-            window.history.pushState('backward', null, isSF ? './cjdtn' :'./');
+            window.history.pushState('backward', null, isSF ? './sf' :'./');
             window.dispatchEvent(new Event('closeCard'));
         })
 
     /*back button should close modal*/
 
-    window.history.pushState({person:depInfo.person}, null, (isSF ? './cjdtn#id' : './#id') + depInfo.person);
+    window.history.pushState({person:depInfo.person}, null, (isSF ? './sf#id' : './#id') + depInfo.person);
 
     if (window.history && window.history.pushState) {
         window.onpopstate = function(event) {
-            window.history.pushState('backward', null, isSF ? './cjdtn' :'./');
+            window.history.pushState('backward', null, isSF ? './sf' :'./');
             window.dispatchEvent(new Event('closeCard'));
             card.attr("class","modal")
         };

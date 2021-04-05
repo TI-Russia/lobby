@@ -364,7 +364,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
 
         function doChart() {
             const legend = svg.append("image")
-                .attr("xlink:href",isSF ? "assets/images/legend_sf.svg" : "assets/images/legend.svg")
+                .attr("xlink:href",isSF ? "/assets/images/legend_sf.svg" : "assets/images/legend.svg")
                 .attr("width", 202)
                 .attr("height", 41)
                 .attr("x", -85)
