@@ -1,9 +1,188 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed56eb55-9399-4df5-9be4-7ef624cd3abf" name="Default Changelist" comment="fix position in committee">
+    <list default="true" id="ed56eb55-9399-4df5-9be4-7ef624cd3abf" name="Default Changelist" comment="replace cjdtn -&gt; sf">
+      <change afterPath="$PROJECT_DIR$/_data/lobbist-sf-05-04-2021.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_includes/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_sf.html" beforeDir="false" afterPath="$PROJECT_DIR$/about_sf.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/modules/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modules/card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/modules/chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modules/chart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/modules/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modules/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/modules/intro.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/modules/intro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cjdtn.html" beforeDir="false" afterPath="$PROJECT_DIR$/sf.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1007.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1007.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1031.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1031.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1035.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1035.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1040.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1040.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1042.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1042.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1044.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1044.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1045.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1045.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1047.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1047.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1054.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1054.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1059.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1059.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1137.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1137.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/114.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/114.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1150.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1150.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1151.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1151.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/11516.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/11516.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1171.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1171.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1177.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1177.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1186.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1186.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1189.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1189.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1199.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1199.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/12192.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/12192.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/12225.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/12225.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/12264.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/12264.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1238.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1238.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/12518.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/12518.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/12538.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/12538.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/12695.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/12695.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/12728.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/12728.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/12772.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/12772.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/12804.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/12804.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/12983.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/12983.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/13005.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/13005.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/13074.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/13074.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/131521.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/131521.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/13167.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/13167.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/132.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/132.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/13215.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/13215.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/132636.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/132636.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/132637.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/132637.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/132643.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/132643.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/132644.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/132644.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/132646.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/132646.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/133.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/133.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/137592.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/137592.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/138182.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/138182.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/139.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/139.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1411.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/14153.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/14153.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1420.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1420.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/14264.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/14264.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1429.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1429.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/145.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/145.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/14545.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/14545.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/14547.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/14547.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/14638.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/14638.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/146480.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/146480.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1476.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1476.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/14771.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/14771.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/14811.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/14811.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/14998.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/14998.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/150304.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/150304.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/150305.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/150305.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/15075.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/15075.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/15078.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/15078.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/15158.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/15158.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/15300.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/15300.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/15327.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/15327.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/15332.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/15332.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/15764.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/15764.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/15970.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/15970.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/16104.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/16104.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/166.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/166.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/167114.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/167114.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/167115.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/167115.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1708.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1708.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/17249.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/17249.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/172661.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/172661.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/172662.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/172662.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/172663.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/172663.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/172664.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/172664.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/17727.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/17727.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/17942.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/17942.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/1881.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/1881.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/19328.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/19328.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/19901.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/19901.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/19903.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/19903.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/2067.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/2067.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/22333.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/22333.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/23132.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/23132.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/233.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/233.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/23828.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/23828.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/2589.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/2589.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/260.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/260.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/2738.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/2738.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/284.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/284.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/2937.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/2937.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/30513.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/30513.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/30573.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/30573.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/31999.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/31999.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/32050.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/32050.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/32062.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/32062.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/32063.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/32063.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/32064.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/32064.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/3243.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/3243.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/3256.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/3256.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/328.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/328.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/333.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/333.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/343.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/343.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/364.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/364.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/37.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/37.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/39040.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/39040.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/399.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/399.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/407.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/407.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/41.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/41.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/421.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/421.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/426.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/426.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/430.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/430.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/447.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/447.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/4480.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/4480.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/4538.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/4538.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/4576.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/4576.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/473.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/473.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/477.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/477.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/478.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/478.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/4793.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/4793.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/4816.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/4816.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/4844.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/4844.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/487.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/487.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/4874.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/4874.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/4929.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/4929.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/505.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/505.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/513.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/513.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/517.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/517.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/53.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/53.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/5461.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/5461.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/552.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/552.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/559.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/559.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/561.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/561.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/57070.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/57071.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/57071.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/57072.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/57072.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/57073.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/57073.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/57270.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/57270.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/579.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/579.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/598.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/598.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/623.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/623.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/629.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/629.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/648.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/648.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/67158.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/67158.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/684.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/684.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/693.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/693.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/700.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/700.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/717.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/717.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/737.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/737.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/7821.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/7821.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/79.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/79.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/812.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/812.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/883.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/883.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/884.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/884.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/892.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/892.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/8932.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/8932.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/8941.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/8941.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/8943.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/8943.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/8944.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/8944.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/9113.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/9113.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/9114.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/9114.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/9116.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/9116.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/9121.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/9121.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/9122.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/9122.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person_sf/965.html" beforeDir="false" afterPath="$PROJECT_DIR$/person_sf/965.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Рейтинг_влияния_членов_Совета_Федерации.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Рейтинг_влияния_членов_Совета_Федерации.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +218,8 @@
       <recent name="C:\Users\maino\OSPanel\domains\lobby\assets\js\es5" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OlMa\dev\lobby\lobby" />
+      <recent name="C:\OlMa\dev\lobby\lobby\sf" />
       <recent name="E:\OlMa\dev\lobby2\lobby" />
     </key>
   </component>
@@ -71,7 +252,9 @@
       <workItem from="1571922170820" duration="2429000" />
       <workItem from="1571930570819" duration="3657000" />
       <workItem from="1612100953923" duration="15669000" />
-      <workItem from="1612718150147" duration="5632000" />
+      <workItem from="1612718150147" duration="8483000" />
+      <workItem from="1613402425455" duration="3364000" />
+      <workItem from="1617601272005" duration="6460000" />
     </task>
     <task id="LOCAL-00001" summary="fix position in committee">
       <created>1611486426634</created>
@@ -171,7 +354,49 @@
       <option name="project" value="LOCAL" />
       <updated>1612727844530</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="workspace">
+      <created>1612728203182</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1612728203182</updated>
+    </task>
+    <task id="LOCAL-00016" summary="telling text fixed&#10;&#10;# Conflicts:&#10;#&#9;_includes/telling.html">
+      <created>1612728379763</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1612728379763</updated>
+    </task>
+    <task id="LOCAL-00017" summary="change arrow position, add comma">
+      <created>1612729115793</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1612729115793</updated>
+    </task>
+    <task id="LOCAL-00018" summary="change footer duma">
+      <created>1612729896916</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1612729896916</updated>
+    </task>
+    <task id="LOCAL-00019" summary="change footer sf">
+      <created>1612730404342</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1612730404342</updated>
+    </task>
+    <task id="LOCAL-00020" summary="change footer us">
+      <created>1612730706227</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1612730706227</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +430,14 @@
     <MESSAGE value="fix footer height" />
     <MESSAGE value="change committee" />
     <MESSAGE value="fix transition, change person" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix transition, change person" />
+    <MESSAGE value="workspace" />
+    <MESSAGE value="telling text fixed&#10;&#10;# Conflicts:&#10;#&#9;_includes/telling.html" />
+    <MESSAGE value="change arrow position, add comma" />
+    <MESSAGE value="change footer" />
+    <MESSAGE value="change footer duma" />
+    <MESSAGE value="change footer sf" />
+    <MESSAGE value="change footer us" />
+    <MESSAGE value="replace cjdtn -&gt; sf" />
+    <option name="LAST_COMMIT_MESSAGE" value="replace cjdtn -&gt; sf" />
   </component>
 </project>
