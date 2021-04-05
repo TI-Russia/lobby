@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/styles.css">
     {% endif %}
     <link rel="icon" href="{{site.baseurl}}/{% if page.sf%}favicon_sf.png{%else%}favicon.png{%endif%}">
-    <title>{{site.title}}</title>
+    <title>{% if page.sf%}{{ site.title_sf }}{%else%}{{ site.title }}{%endif%}</title>
 </head>
 
 

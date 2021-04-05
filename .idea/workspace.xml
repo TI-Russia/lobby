@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed56eb55-9399-4df5-9be4-7ef624cd3abf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/head.html" afterDir="false" />
-    </list>
+    <list default="true" id="ed56eb55-9399-4df5-9be4-7ef624cd3abf" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +72,7 @@
       <workItem from="1612100953923" duration="15669000" />
       <workItem from="1612718150147" duration="8483000" />
       <workItem from="1613402425455" duration="3364000" />
-      <workItem from="1617601272005" duration="8480000" />
+      <workItem from="1617601272005" duration="8796000" />
     </task>
     <task id="LOCAL-00001" summary="fix position in committee">
       <created>1611486426634</created>
@@ -238,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617610118050</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="update social media descriptions and title">
+      <created>1617611143329</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1617611143329</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +263,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="fix position in committee" />
     <MESSAGE value="fix position html" />
     <MESSAGE value="changes in footer" />
     <MESSAGE value="hide empty groups in storytelling" />
@@ -284,6 +287,7 @@
     <MESSAGE value="rename cjdtn to sf" />
     <MESSAGE value="update social media cards" />
     <MESSAGE value="update social media links" />
-    <option name="LAST_COMMIT_MESSAGE" value="update social media links" />
+    <MESSAGE value="update social media descriptions and title" />
+    <option name="LAST_COMMIT_MESSAGE" value="update social media descriptions and title" />
   </component>
 </project>
