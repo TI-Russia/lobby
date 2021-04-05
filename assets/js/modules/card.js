@@ -158,7 +158,7 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list, isSF) {
         var chlen = position + comitet.replace("Комитет "," ");
         if (comitet !== " ") chlen+= ", ";
         var delegirovan = (gender=="ж" || gender=="f") ? "делегирована " : "делегирован ";
-        var vsovete = "в Совете Федерации с " + (new Date().getFullYear()-letVsf)+" года";
+        var vsovete = "в Совете Федерации с " + info.start_year +" года";
         var predstavitel = ". Представитель " + region;
 
         var summary = chlen + delegirovan + chem + vsovete  + predstavitel;
