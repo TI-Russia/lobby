@@ -4,12 +4,12 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta property="og:url"           content="{{ site.url }}{% if page.sf%}/{{site.sf}}{%endif%}" />
     <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="{{ site.title }}" />
-    <meta property="og:description"   content="{{ site.description }}" />
+    <meta property="og:title"         content="{% if page.sf%}{{ site.title_sf }}{%else%}{{ site.title }}{%endif%}" />
+    <meta property="og:description"   content="{% if page.sf%}{{ site.description_sf }}{%else%}{{ site.description }}{%endif%}" />
     <meta property="og:image"         content="https://dumabingo.ru/assets/images/{% if page.sf%}preview_img_sf.png{%else%}preview_img.png{%endif%}" />
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ site.title }}">
-    <meta name="twitter:description" content="{{ site.description }}">
+    <meta name="twitter:title" content="{% if page.sf%}{{ site.title_sf }}{%else%}{{ site.title }}{%endif%}">
+    <meta name="twitter:description" content="{% if page.sf%}{{ site.description_sf }}{%else%}{{ site.description }}{%endif%}">
     <meta name="twitter:image" content="https://dumabingo.ru/assets/images/{% if page.sf%}preview_img_sf.png{%else%}preview_img.png{%endif%}">
 
     {% if page.sf %}
