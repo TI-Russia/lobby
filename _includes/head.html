@@ -2,23 +2,61 @@
     <meta charset="utf-8" xmlns="http://www.w3.org/1999/xhtml" >
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta property="og:url"           content="{{ site.url }}{% if page.sf%}/{{site.sf}}{%endif%}" />
-    <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="{% if page.sf%}{{ site.title_sf }}{%else%}{{ site.title }}{%endif%}" />
-    <meta property="og:description"   content="{% if page.sf%}{{ site.description_sf }}{%else%}{{ site.description }}{%endif%}" />
-    <meta property="og:image"         content="https://dumabingo.ru/assets/images/{% if page.sf%}preview_img_sf.png{%else%}preview_img.png{%endif%}" />
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{% if page.sf%}{{ site.title_sf }}{%else%}{{ site.title }}{%endif%}">
-    <meta name="twitter:description" content="{% if page.sf%}{{ site.description_sf }}{%else%}{{ site.description }}{%endif%}">
-    <meta name="twitter:image" content="https://dumabingo.ru/assets/images/{% if page.sf%}preview_img_sf.png{%else%}preview_img.png{%endif%}">
-
-    {% if page.sf %}
-        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/sf.css">
-    {% else %}
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/styles.css">
+    {% if page.type == 'sf' %}
+        <meta property="og:url" content="{{ site.url }}/{{site.url_sf}}" />
+        <meta property="og:title" content="{{ site.title_sf }}" />
+        <meta property="og:description"   content="{{ site.description_sf }}" />
+        <meta name="twitter:title" content="{{ site.title_sf }}">
+        <meta name="twitter:description" content="{{ site.description_sf }}">
+        <meta property="og:image" content="https://dumabingo.ru/assets/images/preview_img_sf.png" />
+        <meta name="twitter:image" content="https://dumabingo.ru/assets/images/preview_img_sf.png" />
+    {% elsif page.type == 'duma-7' %}
+        <meta property="og:url" content="{{ site.url }}/{{site.url_duma-7}}" />
+        <meta property="og:title" content="{{ site.title }}" />
+        <meta property="og:description"   content="{{ site.description }}" />
+        <meta name="twitter:title" content="{{ site.title }}">
+        <meta name="twitter:description" content="{{ site.description }}">
+        <meta property="og:image" content="https://dumabingo.ru/assets/images/preview_img.png" />
+        <meta name="twitter:image" content="https://dumabingo.ru/assets/images/preview_img.png" />
+    {% elsif page.type == 'duma-8' %}
+        <meta property="og:url" content="{{ site.url }}/{{site.url_duma-8}}" />
+        <meta property="og:title" content="{{ site.title }}" />
+        <meta property="og:description"   content="{{ site.description }}" />
+        <meta name="twitter:title" content="{{ site.title }}" />
+        <meta name="twitter:description" content="{{ site.description }}" />
+        <meta property="og:image" content="https://dumabingo.ru/assets/images/preview_img_duma-8.png" />
+        <meta name="twitter:image" content="https://dumabingo.ru/assets/images/preview_img_duma-8.png" />
     {% endif %}
-    <link rel="icon" href="{{site.baseurl}}/{% if page.sf%}favicon_sf.png{%else%}favicon.png{%endif%}">
-    <title>{% if page.sf%}{{ site.title_sf }}{%else%}{{ site.title }}{%endif%}</title>
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    {% if page.type == 'sf' %}
+        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/sf.css">
+    {% elsif page.type == 'duma-7' %}
+        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/duma-7.css">
+    {% elsif page.type == 'duma-8' %}
+        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/duma-8.css">
+    {% endif %}
+
+    <link rel="apple-touch-icon" sizes="57x57" href="{{site.baseurl}}/assets/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{site.baseurl}}/assets/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{site.baseurl}}/assets/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{site.baseurl}}/assets/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{site.baseurl}}/assets/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{site.baseurl}}/assets/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{site.baseurl}}/assets/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{site.baseurl}}/assets/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{site.baseurl}}/assets/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{site.baseurl}}/assets/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{site.baseurl}}/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{site.baseurl}}/assets/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{site.baseurl}}/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="{{site.baseurl}}/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{site.baseurl}}/assets/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>{% if page.type == 'sf'%}{{ site.title_sf }}{%else%}{{ site.title }}{%endif%}</title>
 </head>
 
 
