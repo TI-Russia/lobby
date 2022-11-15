@@ -18,7 +18,6 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list, isSF) {
         relations=card.select("#relations"),
         conclusion=card.select("#conclusion"),
         submitted=card.select("#submitted"),
-        fb_person=card.select("#fb_person"),
         tw_person=card.select("#tw_person"),
         vk_person=card.select("#vk_person"),
         open_declaration=card.select("#open_declaration"),
@@ -91,7 +90,6 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list, isSF) {
     conclusion.html(info.conclusion);
     const dirUrl = isSF ? 'person_sf/' : 'person/';
     const feedbackForm = isSF ? 'https://docs.google.com/forms/d/e/1FAIpQLScWdkT2GB6btR3duE5fWRzbTeg8HeLji8MR7ZW2-0oMiG7-Wg/' : 'https://docs.google.com/forms/d/e/1FAIpQLSd6WGVWRwdwf7Q7oE_3RIlHR8MMdo_LVOnC0nk9YINtfYvjPw/'
-    fb_person.attr("href","https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdumabingo.ru/" + dirUrl + info.person)
     tw_person.attr("href","https://twitter.com/intent/tweet?url=http%3A%2F%2Fdumabingo.ru/" + dirUrl + info.person+"&text="+info.fullname)
     vk_person.attr("href","http://vk.com/share.php?url=http%3A%2F%2Fdumabingo.ru/" + dirUrl + info.person)
     open_declaration.attr("href","https://declarator.org/person/"+info.person)
