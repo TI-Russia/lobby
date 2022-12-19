@@ -8,8 +8,8 @@ title_sf: Лоббизм в Совете Федерации
 description_sf: 'Интерактивная карта лоббистских возможностей членов Совета Федерации: лоббистские группы, законопроекты и персоналии'
 url: "https://dumabingo.ru" # the base hostname & protocol for your site, e.g. http://example.com
 url_sf: "sf"
-url_duma-7: 'duma-7'
-url_duma-8: ''
+url_duma_7: 'duma-7'
+url_duma_8: ''
 
 collections:
   about:

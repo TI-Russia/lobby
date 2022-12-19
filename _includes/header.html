@@ -6,11 +6,11 @@
                 <img class="no-logo" src="{{site.baseurl}}/assets/images/logo/lobbism_no_logo.svg" alt="Лоббизм" >
             </a>
             <div class="selector-control" tabindex="1" onfocusout="event.target.contains(event.relatedTarget) && event.target.focus()">
-                <div class="selector-list" onmousedown="setTimeout(() => document.activeElement.blur(), 100)">
-                    <a class="item-duma-8 {% if page.type == 'duma-8' %}selected{% endif %}" href="{{site.url}}/{{site.url_duma-8}}" alt="в думе 8 созыва">
+                <div class="selector-list" onclick="setTimeout(() => document.activeElement.blur(), 100)">
+                    <a class="item-duma-8 {% if page.type == 'duma-8' %}selected{% endif %}" href="{{site.url}}/{{site.url_duma_8}}" alt="в думе 8 созыва">
                         <img src="{{site.baseurl}}/assets/images/logo/vgosdume-8.svg" alt="в думе 8 созыва" >
                     </a>
-                    <a class="item-duma-7 {% if page.type == 'duma-7' %}selected{% endif %}" href="{{site.url}}/{{site.url_duma-7}}" alt="в думе 7 созыва">
+                    <a class="item-duma-7 {% if page.type == 'duma-7' %}selected{% endif %}" href="{{site.url}}/{{site.url_duma_7}}" alt="в думе 7 созыва">
                         <img src="{{site.baseurl}}/assets/images/logo/vgosdume-7.svg" alt="в думе 7 созыва" >
                     </a>
                     <a class="item-sf {% if page.type == 'sf' %}selected{% endif %}" href="{{site.url}}/{{site.url_sf}}" alt="в совете федерации">
