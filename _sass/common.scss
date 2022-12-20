@@ -275,7 +275,7 @@ header {
       .selector-list {
         display: flex;
         flex-direction: column;
-        flex: 0 0 fit-content;
+        flex: 0 0 auto;
         border-radius: 4px;
         overflow: hidden;
         pointer-events: none;
@@ -336,7 +336,7 @@ header {
         }
 
         img {
-          height: fit-content;
+          height: auto;
         }
       }
 

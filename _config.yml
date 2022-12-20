@@ -31,10 +31,25 @@ page_gen:
     name: 'person'
     dir: 'card_sf'
 
-doclad_url:  'Лоббизм в Госдуме.pdf'
-doclad_sf_url:  'Лоббизм в Совете Федерации.pdf'
-rating_url: 'Рейтинг влияния депутатов Госдумы.pdf'
-rating_sf_url: 'Рейтинг_влияния_членов_Совета_Федерации.pdf'
+menu_about_url:
+  duma-7: 'about'
+  duma-8: 'about'
+  sf: 'sf-about'
+
+menu_doclad_url:
+  duma-7: 'Лоббизм в Госдуме.pdf'
+  duma-8: 'Лоббизм в Госдуме.pdf'
+  sf: 'Лоббизм в Совете Федерации.pdf'
+
+menu_rating_url:
+  duma-7: 'Рейтинг влияния депутатов Госдумы.pdf'
+  duma-8: 'Рейтинг влияния депутатов Госдумы.pdf'
+  sf: 'Рейтинг_влияния_членов_Совета_Федерации.pdf'
+
+menu_feedback_url:
+  duma-7: 'https://forms.gle/d6ia3KgkooeubQsj7'
+  duma-8: 'https://forms.gle/d6ia3KgkooeubQsj7'
+  sf: 'https://forms.gle/D8y9DkcJAujkxW269'
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
