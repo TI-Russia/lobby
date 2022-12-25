@@ -253,7 +253,7 @@ header {
       border-radius: 4px;
       outline: none;
 
-      &:focus {
+      &:focus, &:focus-visible {
         overflow: visible;
 
         .selector-list {

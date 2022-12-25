@@ -2,39 +2,17 @@
     <meta charset="utf-8" xmlns="http://www.w3.org/1999/xhtml" >
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    {% if page.type == 'sf' %}
-        <meta property="og:url" content="{{ site.url }}/{{site.url_sf}}" />
-        <meta property="og:title" content="{{ site.title_sf }}" />
-        <meta property="og:description"   content="{{ site.description_sf }}" />
-        <meta name="twitter:title" content="{{ site.title_sf }}">
-        <meta name="twitter:description" content="{{ site.description_sf }}">
-        <meta property="og:image" content="https://dumabingo.ru/assets/images/preview_img_sf.png" />
-        <meta name="twitter:image" content="https://dumabingo.ru/assets/images/preview_img_sf.png" />
-    {% elsif page.type == 'duma-7' %}
-        <meta property="og:url" content="{{ site.url }}/{{site.url_duma_7}}" />
-        <meta property="og:title" content="{{ site.title }}" />
-        <meta property="og:description" content="{{ site.description }}" />
-        <meta name="twitter:title" content="{{ site.title }}" />
-        <meta name="twitter:description" content="{{ site.description }}" />
-        <meta property="og:image" content="https://dumabingo.ru/assets/images/preview_img.png" />
-        <meta name="twitter:image" content="https://dumabingo.ru/assets/images/preview_img.png" />
-    {% elsif page.type == 'duma-8' %}
-        <meta property="og:url" content="{{ site.url }}/{{site.url_duma_8}}" />
-        <meta property="og:title" content="{{ site.title }}" />
-        <meta property="og:description" content="{{ site.description }}" />
-        <meta name="twitter:title" content="{{ site.title }}" />
-        <meta name="twitter:description" content="{{ site.description }}" />
-        <meta property="og:image" content="https://dumabingo.ru/assets/images/preview_img_duma-8.png" />
-        <meta name="twitter:image" content="https://dumabingo.ru/assets/images/preview_img_duma-8.png" />
-    {% endif %}
+
+    {% include meta.html %}
+
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
 
     {% if page.type == 'sf' %}
         <link rel="stylesheet" href="{{site.baseurl}}/assets/css/sf.css">
-    {% elsif page.type == 'duma-7' %}
+    {% elsif page.type == 'duma_7' %}
         <link rel="stylesheet" href="{{site.baseurl}}/assets/css/duma-7.css">
-    {% elsif page.type == 'duma-8' %}
+    {% elsif page.type == 'duma_8' %}
         <link rel="stylesheet" href="{{site.baseurl}}/assets/css/duma-8.css">
     {% endif %}
 
@@ -56,7 +34,7 @@
     <meta name="msapplication-TileImage" content="{{site.baseurl}}/assets/images/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <title>{% if page.type == 'sf'%}{{ site.title_sf }}{%else%}{{ site.title }}{%endif%}</title>
+    <title>{{ site.meta.title[page.type] }}</title>
 </head>
 
 
