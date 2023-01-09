@@ -1,7 +1,10 @@
 ---
 ---
-$baseurl: "{{ site.baseurl }}";
 @import "vars";
+
+$baseurl: "{{ site.baseurl }}";
+$key-color: $color-dark-blue;
+
 @import "bulma/bulma.sass";
 @import "image";
 @import "fonts";
@@ -14,4 +17,3 @@ $baseurl: "{{ site.baseurl }}";
 @import "tooltip";
 @import "awesomplete";
 @import "zoomer";
-

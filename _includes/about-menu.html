@@ -3,6 +3,6 @@
     <li id='menu_{{ section.ident }}'><a href='#{{ section.ident }}'>{{ section.title_short }}</a></li>
 {% endfor %}
     <br>
-    <li><a target="_blank" href="{{site.baseurl}}/{% if page.sf%}{{site.rating_sf_url}}{%else%}{{site.rating_url}}{%endif%}" class="outer_link">Рейтинг</a> </li>
-    <li><a target="_blank" href="{{site.baseurl}}/{% if page.sf%}{{site.doclad_sf_url}}{%else%}{{site.doclad_url}}{%endif%}" class="outer_link">Скачать доклад</a> </li>
+    <li><a target="_blank" href="{{ site.baseurl }}{{ site.menu_rating_url[page.type] }}" class="outer_link">Рейтинг</a> </li>
+    <li><a target="_blank" href="{{ site.baseurl }}{{ site.menu_doclad_url[page.type] }}" class="outer_link">Скачать доклад</a> </li>
 </ul>
