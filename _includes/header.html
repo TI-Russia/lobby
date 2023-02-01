@@ -5,8 +5,17 @@
                 <img class="logo" src="{{site.baseurl}}/assets/images/logo/lobbism_logo.svg" alt="Лоббизм" >
                 <img class="no-logo" src="{{site.baseurl}}/assets/images/logo/lobbism_no_logo.svg" alt="Лоббизм" >
             </a>
-            <div class="selector-control" tabindex="1" onfocusout="setTimeout(() => event.target.contains(event.relatedTarget) && event.target.focus({ focusVisible: true }), 1)">
-                <div class="selector-list" onclick="setTimeout(() => document.activeElement.blur(), 100)">
+            <div class="selector-control" tabindex="1" onclick="event.target.classList.toggle('focused')" 
+                onfocusout="
+                    if (event.relatedTarget && event.relatedTarget.closest('.selector-control')) {
+                        return;
+                    }
+                    event.target.classList.remove('focused');
+                "
+            >
+                <div class="selector-list" 
+                    onclick="event.target.closest('.selector-control').classList.toggle('focused')"
+                >
                     <a class="item-duma-8 {% if page.type == 'duma_8' %}selected{% endif %}" href="{{site.url}}/{{site.page_urls.duma_8}}" alt="в думе 8 созыва">
                         <img src="{{site.baseurl}}/assets/images/logo/vgosdume-8.svg" alt="в думе 8 созыва" >
                     </a>

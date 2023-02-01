@@ -253,11 +253,15 @@ header {
       border-radius: 4px;
       outline: none;
 
-      &:focus, &:focus-visible {
+      &.focused {
         overflow: visible;
 
         .selector-list {
           pointer-events: all;
+        }
+
+        &::after {
+          transform: rotate(180deg);
         }
       }
 
