@@ -1,6 +1,7 @@
 define(['jquery','d3', 'tree', 'plural'], function( $,d3, tree_func, plural) {
 function ShowCard(depInfo, depRating, depLobbys, lobby_list, isSF) {
     var url = isSF ? './sf' : './';
+    document.getElementById("card").scrollTop = 0;
     var card=d3.select("#card"),          //container
         photo=card.select("#photo img"),
         fullname=card.select("#fullname"),
