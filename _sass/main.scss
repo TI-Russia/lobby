@@ -5,6 +5,9 @@ body, button, select, input{
   font-family: "Helios-Cond-Regular", "Helvetica Neue";
   }
 body{
+  position: relative;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
   background: $color-white;
   line-height: 1;
   min-width: 812px;
