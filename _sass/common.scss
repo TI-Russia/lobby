@@ -182,9 +182,15 @@ header {
     z-index: 20;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     background: $color-blue;
-    &.is-visible{
-      display: block;
+    
+    &.is-visible {
+      display: none;
+
+      @include until($header-not-so-wide) {
+        display: block;
+      }
     }
+
     li{
       &:hover{
         opacity: 0.8;
