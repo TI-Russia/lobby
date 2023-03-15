@@ -742,7 +742,7 @@ requirejs(['d3','jquery',"floatingTooltip","slider","awesomeplete","data","story
                 var depLobbys=GetLobbyText(d.groups)
                 var cors="https://cors-anywhere.herokuapp.com/"
                 var url = "https://declarator.org/api/lobbist/"+d.id+"/"
-                if (/dumabingo/.test(window.location.href)==false){
+                if (/dumabingo.ru/.test(window.location.href)==false){
                     url=cors+url //use cors for local development
                 }
                 d3.json(url).then(function(depInfo){

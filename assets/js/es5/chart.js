@@ -153,12 +153,12 @@ requirejs(
         var myGroups = new Set();
         var myArrGroups = new Array()
         var files = [
-            "assets/data/deputates.json",
-            "assets/data/lobby_group.json",
+            "https://cors-anywhere.herokuapp.com/https://declarator.org/media/dumps/lobbist.json",
+            "https://cors-anywhere.herokuapp.com/https://declarator.org/media/dumps/lobby-group.json",
             "assets/data/rating.json",
             "assets/data/alias.json"
         ];
-        if (/dumabingo/.test(window.location.href)){ /*use data from declarator api*/
+        if (/dumabingo.ru/.test(window.location.href)){ /*use data from declarator api*/
             files = [
                 "https://declarator.org/media/dumps/lobbist.json",
                 "https://declarator.org/media/dumps/lobby-group.json",
