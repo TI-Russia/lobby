@@ -11,14 +11,14 @@ define(["d3"], function(d3) {
         isSF = false;
     };
     var files = [
-        "assets/data/lobbist_small.json",
-        "assets/data/lobby_group.json",
+        "https://cors-anywhere.herokuapp.com/https://declarator.org/media/dumps/lobbist-small.json",
+        "https://cors-anywhere.herokuapp.com/https://declarator.org/media/dumps/lobby-group.json",
         "assets/data/rating.json",
         "assets/data/alias.json"
     ];
     if (isSF) {
         files = [
-            "https://cors-anywhere.herokuapp.com/https://declarator.org/media/dumps/lobbist-small.json",
+            "https://cors-anywhere.herokuapp.com/https://declarator.org/media/dumps/lobbist-small-sf.json",
             "https://cors-anywhere.herokuapp.com/https://declarator.org/media/dumps/lobby-group.json",
             "/assets/data/sf/rating.json",
             "/assets/data/alias.json"
