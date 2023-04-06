@@ -29,8 +29,8 @@ page_gen:
     name: 'person'
     dir: 'card_sf'
 
-rating_url: 'Рейтинг влияния депутатов Госдумы.pdf'
-rating_sf_url: 'Рейтинг_влияния_членов_Совета_Федерации.pdf'
+rating_url: 'Рейтинг_влияния_депутатов_Госдумы_UPD.pdf'
+rating_sf_url: 'Рейтинг_влияния_членов_Совета_Федерации_290321_UPD.pdf'
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
