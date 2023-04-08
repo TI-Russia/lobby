@@ -261,19 +261,6 @@ header {
       display: inherit !important;
     }
   }
-	#header-title{
-		img.no-logo{
-			display: none;
-		}
-		@include until($mobile) { 
-			img.no-logo{
-				display: inline-block;
-			}
-			img.logo{
-				display: none;
-			}
-		}
-	}
 }
 
 .columns.about{

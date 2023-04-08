@@ -89,11 +89,11 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list, isSF) {
     submitted.html(info.submitted);
     conclusion.html(info.conclusion);
     const dirUrl = isSF ? 'person_sf/' : 'person/';
-    const feedbackForm = isSF ? 'https://docs.google.com/forms/d/e/1FAIpQLScWdkT2GB6btR3duE5fWRzbTeg8HeLji8MR7ZW2-0oMiG7-Wg/' : 'https://docs.google.com/forms/d/e/1FAIpQLSd6WGVWRwdwf7Q7oE_3RIlHR8MMdo_LVOnC0nk9YINtfYvjPw/'
+    const feedbackForm = 'https://docs.google.com/forms/d/e/1FAIpQLSc6ojDZmxa9NaiTAC272cqlZ08XJzUM3jBA6OUv0I1PpTjpYA/'
     tw_person.attr("href","https://twitter.com/intent/tweet?url=http%3A%2F%2Fdumabingo.ru/" + dirUrl + info.person+"&text="+info.fullname)
     vk_person.attr("href","http://vk.com/share.php?url=http%3A%2F%2Fdumabingo.ru/" + dirUrl + info.person)
     open_declaration.attr("href","https://declarator.org/person/"+info.person)
-    send_form.attr("href",feedbackForm + "viewform?entry.742555963="+info.fullname)
+    send_form.attr("href", feedbackForm + "viewform?entry.742555963="+info.fullname)
     card.attr("class","modal is-active")
     var matrix=GetLobbyMatrix()
     lobby.html(matrix)
