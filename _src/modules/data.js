@@ -43,8 +43,11 @@ var url_lobby="https://dev.declarator.org/api/lobby_group/"
 
 
 export default Promise.all(promises).then(function (values) {
-    //console.log("file1", values[0]) //dep
-    rawDep = values[0]
+    if (isSF) {
+        rawDep = values[0];
+    } else {
+        rawDep = values[0].filter((dep) => dep.convocations && dep.convocations.length > 0);
+    }
     var rawLobby = values[1] //change to load from url
     rawRating = values[2] //
     rawAlias = values[3]

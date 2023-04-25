@@ -12,6 +12,7 @@ import zoom from '../tools/zoom';
 import tree_func from '../tools/tree';
 import { getLayoutVars } from './layout_vars';
 import Pluralization from '../tools/pluralize';
+import { FRACTION, getFractionColor } from '../lib/fractions';
 
 export default function initChart () {
     var data
@@ -238,6 +239,12 @@ export default function initChart () {
 
         var color = d3.scaleOrdinal()
             .domain(['Единая Россия','ЛДПР','КПРФ','Справедливая Россия'])
+            .domain([
+                FRACTION.er,
+                FRACTION.ldpr,
+                FRACTION.kprf,
+                FRACTION.spr
+            ])
             //.range(['#50A2FE','#F2B600','#DA4141','#FF7A00'])
             .range(['is-color-er','is-color-yellow','is-color-red','is-color-orange'])
             .unknown('is-color-gray')
@@ -279,7 +286,7 @@ export default function initChart () {
                     clusterLevel:group.level,
                     clusterParent: clusterParentId,
                     clusterParentMiddle: clusterParent2Id ? clusterParent2Id : null,
-                    color:color(d.fraction),
+                    color: getFractionColor(d),
                     //color:colorTest((clusterParent2Id ? clusterParent2Id : +i)/10),
                     election_method:d.election_method,
                     committees:d.committees,

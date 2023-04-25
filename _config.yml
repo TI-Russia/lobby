@@ -3,7 +3,7 @@
 title: Лоббизм в Госдуме
 email: your-email@example.com
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://dumabingo.ru" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://dumabingo.surge.sh" # the base hostname & protocol for your site, e.g. http://example.com
 url_sf: "sf"
 url_duma-7: 'duma-7'
 url_duma-8: ''
@@ -44,11 +44,6 @@ menu_about_url:
   duma_7: 'about'
   duma_8: 'about'
   sf: 'sf-about'
-
-menu_doclad_url:
-  duma_7: 'Лоббизм в Госдуме.pdf'
-  duma_8: 'Лоббизм в Госдуме.pdf'
-  sf: 'Лоббизм в Совете Федерации.pdf'
 
 menu_rating_url:
   duma_7: 'Рейтинг_влияния_депутатов_Госдумы_UPD.pdf'
