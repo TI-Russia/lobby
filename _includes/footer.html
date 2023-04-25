@@ -3,32 +3,36 @@
     <div class="columns is-vcentered is-mobile">
         <div class="column social is-narrow is-hidden-desktop">
             <a href="http://vk.com/share.php?url=https%3A%2F%2Fdumabingo.ru%2F" target="_blank" class="vk vk_share_button"><span class="icon"><i class="fab fa-vk"></i></span></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdumabingo.ru%2F"  target="_blank" class="fb"><span class="icon"><i class="fab fa-facebook-square"></i></span></a>
-            <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdumabingo.ru%2F&text={{site.description}}"  target="_blank" class="tw"><span class="icon"><i class="fab fa-twitter"></i></span></a>
+            <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdumabingo.ru%2F&text={{site.meta.description[page.type]}}"  target="_blank" class="tw"><span class="icon"><i class="fab fa-twitter"></i></span></a>
         </div>
         <div class="column copy">
-            {% if page.sf %}
+            {% if page.type == 'sf' %}
             Источники: сайт&nbsp;<a href="http://council.gov.ru">Совета Федерации</a>,<wbr> собственное исследование
             {% else %}
             Источники: сайт&nbsp;<a href="http://duma.gov.ru">Госдумы</a>,<wbr> собственное исследование
             {% endif %}
         </div>
         <div class="column copy is-pulled-right is-narrow-desktop">
-            Проект выполнен <a href="https://kompany.site">Компанией</a><wbr> при поддержке <a href="https://www.facebook.com/bogachev11">Александра Богачева</a>
+            Проект выполнен <a href="https://kompany.site">Компанией</a><wbr> при поддержке <a href="http://abogachev.tilda.ws">Александра Богачева</a>
         </div>
     </div>
 
-    <div class="extra agent columns is-multiline">
-        <div class="column is-full ">
-            <p>Материалы на этом сайте произведены и распространены АНО «Центр «ТИ-Р», принудительно внесенной в реестр некоммерческих организаций, выполняющих функции «иностранного агента».</p>
+    <div class="extra footer__bottom">
+        <div class="agent columns is-multiline">
+            <div class="column is-full ">
+                <p>Материалы на этом сайте произведены и распространены АНО «Центр «ТИ-Р», принудительно внесенной в реестр некоммерческих организаций, выполняющих функции «иностранного агента».</p>
+            </div>
+            <div class="column is-full ">
+                <p>Согласно российскому законодательству, Крым и Севастополь являются субъектами Российской Федерации. Генеральная Ассамблея ООН в Резолюции от 27 марта 2014 г. «подтверждает суверенитет и территориальную целостность Украины в её международно признанных границах» и «подчеркивает, что референдум, проведенный в Автономной Республике Крым и городе Севастополе 16 марта 2014 года, не имея законной силы, не может быть основой для любого изменения статуса Автономной Республики Крым или города Севастополя». Вопрос о международном статусе полуострова Крым не затрагивается в данном проекте.</p><br>
+            </div>
+            <div class="column is-full ">
+                <p>На этом сайте используются материалы СМИ, внесенных Минюстом России в реестр иностранных СМИ, выполняющих функции «иностранного агента»</p>
+            </div>
+            <div class="column is-full">
+                <a target="_blank" href="https://transparency.org.ru/politika-konfidencialnosti/">Политика конфиденциальности</a>
+            </div>
         </div>
-        <div class="column is-full ">
-            <p>Согласно российскому законодательству, Крым и Севастополь являются субъектами Российской Федерации. Генеральная Ассамблея ООН в Резолюции от 27 марта 2014 г. «подтверждает суверенитет и территориальную целостность Украины в её международно признанных границах» и «подчеркивает, что референдум, проведенный в Автономной Республике Крым и городе Севастополе 16 марта 2014 года, не имея законной силы, не может быть основой для любого изменения статуса Автономной Республики Крым или города Севастополя». Вопрос о международном статусе полуострова Крым не затрагивается в данном проекте.</p><br>
-            <p>На этом сайте используются материалы СМИ, внесенных Минюстом России в реестр иностранных СМИ, выполняющих функции «иностранного агента»</p>
-        </div>
-        <div class="column is-full">
-            <a target="_blank" href="https://transparency.org.ru/politika-konfidencialnosti/">Политика конфиденциальности</a>
-        </div>
+        <img class="transparency-logo" src="/assets/images/logo_transparency.png" alt="Transparency International">
     </div>
 
 </div>
