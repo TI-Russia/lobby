@@ -4,6 +4,14 @@ title: Лоббизм в Госдуме
 email: your-email@example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://dumabingo.ru" # the base hostname & protocol for your site, e.g. http://example.com
+url_sf: "sf"
+url_duma-7: 'duma-7'
+url_duma-8: ''
+
+page_urls:
+  sf: 'sf'
+  duma_7: 'duma-7'
+  duma_8: ''
 
 page_urls:
   sf: 'sf'
@@ -11,6 +19,8 @@ page_urls:
   duma_8: ''
 
 collections:
+  support:
+    output: true
   about:
     output: true
   about_sf:
@@ -65,13 +75,17 @@ meta:
     sf: 'assets/images/preview_img_sf.png'
 
 # Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# The following items will not be processed.
+exclude: 
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - forks
+  - gulpfile.js
+  - package.json
+  - package-lock.json
+  - README.md

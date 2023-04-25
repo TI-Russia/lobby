@@ -1,7 +1,6 @@
-$header-wide:1235px;
-$header-not-so-wide:1062px;
-$header-mobile:360px;
-$header-se:320px;
+$min-width: 360px;
+$header-wide:1320px;
+$header-not-so-wide:1135px;
 
 
 $mobile:376px;
@@ -26,6 +25,9 @@ $color-orange:#FF7A00;
 $color-orange-muted:#D56600;
 $color-yellow:#F2B600;
 $color-gray:#747474;
+$color-gray-light:#DBDBDB;
 $color-black:#000000;
+$color-black-text: #363636;
+$color-mint: #38C4BD;
 
 $font-legible: 'Open Sans', sans-serif;

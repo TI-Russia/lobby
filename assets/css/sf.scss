@@ -23,7 +23,6 @@ html {
 }
 
 header{
-
   a.c4, a.c5, a.c6 {
     background-color: $color-orange;
   }
@@ -205,16 +204,9 @@ div#controls .column .convocations {
  }
 
 .columns.about{
-  a, a:hover{
-    color: $color-orange;
-  }
   .outer_link{
     background: rgba(255, 180, 68, 0.1);
   }
-}
-
-#scrollToTop {
-  background-color: $color-orange;
 }
 
 .columns.agent{

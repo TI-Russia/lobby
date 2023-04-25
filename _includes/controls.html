@@ -1,83 +1,96 @@
-<div id="controls" class="columns is-multiline is-vcentered is-mobile">
-    <div class="column is-narrow  is-hidden-mobile">
-        <div class="field is-grouped">
-            <div class="buttons  has-addons control" id="fraction">
-                <button class="button is-small is-active is-color-blue" value="Единая Россия">ЕР</button>
-                <button class="button is-small is-active is-color-red" value="КПРФ">КПРФ</button>
-                <button class="button is-small is-active is-color-orange" value="Справедливая Россия">СР</button>
-                <button class="button is-small is-active is-color-yellow" value="ЛДПР">ЛДПР</button>
-                <button class="button is-small is-active is-color-gray" value="Вне фракций">Вне фракции</button>
+<div id="controls">
+    <div class="controls-container columns is-multiline is-vcentered is-mobile">
+        <div class="column is-narrow  is-hidden-mobile">
+            <div class="field is-grouped">
+                <div class="buttons has-addons control" id="fraction">
+                    <button class="button is-small is-active is-color-blue" value="Единая Россия" data-tooltip="Партия «Единая Россия»">ЕР</button>
+                    <button class="button is-small is-active is-color-red" value="КПРФ" data-tooltip="Коммунистическая партия Российской Федерации">КПРФ</button>
+                    <button class="button is-small is-active is-color-orange" value="Справедливая Россия" data-tooltip="Партия «Справедливая Россия — Патриоты — За правду»">СРЗП</button>
+                    <button class="button is-small is-active is-color-yellow" value="ЛДПР" data-tooltip="Либерально-демократическая партия России">ЛДПР</button>
+                    {% if page.type == 'duma-8'%}
+                        <button class="button is-small is-active is-color-mint" value="Новые люди" data-tooltip="Партия «Новые люди»">НОВЫЕ ЛЮДИ</button>
+                    {%endif%}
+                    <button class="button is-small is-active is-color-gray-dark" value="Вне фракций">Вне фракции</button>
+                    <button class="button is-small is-active is-color-gray-light" value="Бывшие">Бывшие</button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="column is-narrow  is-hidden-mobile">
-        <div class="field is-grouped is-hidden-mobile">
-            <div class="buttons  has-addons control" id="method">
-                <button value="партийный список" class="button is-small is-color-white" id="spis">Списочники</button>
-                <button value="одномандатный округ" class="button is-small is-color-white" id="odnmnd">Одномандатники
+        <div class="column is-narrow  is-hidden-mobile">
+            <div class="field is-grouped is-hidden-mobile">
+                <div class="buttons  has-addons control" id="method">
+                    <button value="партийный список" class="button is-small is-color-white" id="spis">Списочники</button>
+                    <button value="одномандатный округ" class="button is-small is-color-white" id="odnmnd">Одномандатники
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="column is-narrow is-hidden-mobile">
+            <div class="field is-grouped is-hidden-mobile">
+                <div class="select is-small control">
+                    <select id="select_committees"></select>
+                </div>
+            </div>
+        </div>
+        <div class="column is-narrow is-hidden-mobile">
+            <div class="field is-grouped is-hidden-mobile">
+                <div class="select is-small control">
+                    <select id="select_position_gd"></select>
+                </div>
+            </div>
+        </div>
+        <div class="column is-narrow is-hidden-mobile">
+            <div class="field is-grouped is-hidden-mobile">
+                <div class="buttons  has-addons control" id="gender">
+                    <button class="button is-small is-color-white" value="M">М</button>
+                    <button class="button is-small is-color-white" value="F">Ж</button>
+                </div>
+            </div>
+        </div>
+        <div class="column is-narrow sliders is-hidden-mobile">
+            <div class="field is-grouped is-hidden-mobile">
+                <div class="control age">
+                    <div class="slider_label">
+                        <span id="age-slider-snap-value-lower"></span> -
+                        <span id="age-slider-snap-value-upper"></span>
+                        лет
+                    </div>
+                    <div id="age"></div>
+
+                </div>
+                <div class="control convocations">
+                    <div class="slider_label">
+                        <span id="slider-snap-value-lower"></span>
+                        -
+                        <span id="slider-snap-value-upper"></span> созывов
+                    </div>
+                    <div id="convocations"></div>
+                </div>
+            </div>
+        </div>
+        <div class="column is-narrow-tablet">
+            <div class="field is-grouped">
+                <div class="control has-icons-right is-expanded">
+                    <input class="input is-small" type="text" id="search" name="q" placeholder="Хинштейн">
+                    <span class="icon is-small is-right search_icon">
+                        <i class="fas fa-search"></i>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="column is-narrow last-on-mobile">
+            <div class="field is-grouped">
+                <div class="select select_lobby is-small">
+                    <select id="select_lobby"></select>
+                </div>
+                <button class="button is-small is-color-white is-hidden" id="clear">
+                    <span class="icon">
+                        <i class="fas fa-times"></i>
+                    </span>
+                    <span class="is-hidden-mobile">Сбросить</span>
+
                 </button>
             </div>
-        </div>
-    </div>
-    <div class="column is-narrow is-hidden-mobile">
-        <div class="field is-grouped is-hidden-mobile">
-            <div class="select is-small control">
-                <select id="select_committees"></select>
-            </div>
-        </div>
-    </div>
-    <div class="column is-narrow is-hidden-mobile">
-        <div class="field is-grouped is-hidden-mobile">
-            <div class="buttons  has-addons control" id="gender">
-                <button class="button is-small is-color-white" value="M">М</button>
-                <button class="button is-small is-color-white" value="F">Ж</button>
-            </div>
-        </div>
-    </div>
-    <div class="column is-narrow sliders is-hidden-mobile">
-        <div class="field is-grouped is-hidden-mobile">
-            <div class="control age">
-                <div class="slider_label">
-                    <span id="age-slider-snap-value-lower"></span> -
-                    <span id="age-slider-snap-value-upper"></span>
-                    лет
-                </div>
-                <div id="age"></div>
-
-            </div>
-            <div class="control convocations">
-                <div class="slider_label">
-                    <span id="slider-snap-value-lower"></span>
-                    -
-                    <span id="slider-snap-value-upper"></span> созывов
-                </div>
-                <div id="convocations"></div>
-            </div>
-        </div>
-    </div>
-    <div class="column is-narrow-tablet">
-        <div class="field is-grouped">
-            <div class="control has-icons-right is-expanded">
-                <input class="input is-small" type="text" id="search" name="q" placeholder="Жириновский">
-                <span class="icon is-small is-right search_icon">
-                    <i class="fas fa-search"></i>
-                </span>
-            </div>
-
-        </div>
-    </div>
-    <div class="column is-narrow last-on-mobile">
-        <div class="field is-grouped">
-            <div class="select select_lobby is-small">
-                <select id="select_lobby"></select>
-            </div>
-            <button class="button is-small is-color-white is-hidden" id="clear">
-                <span class="icon">
-                    <i class="fas fa-times"></i>
-                </span>
-                <span class="is-hidden-mobile">Сбросить</span>
-
-            </button>
         </div>
     </div>
     <div class="presets" id="presets-first">

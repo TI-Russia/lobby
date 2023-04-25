@@ -5,8 +5,8 @@
                 <img class="logo" src="{{site.baseurl}}/assets/images/logo/lobbism_logo.svg" alt="Лоббизм" >
                 <img class="no-logo" src="{{site.baseurl}}/assets/images/logo/lobbism_no_logo.svg" alt="Лоббизм" >
             </a>
-            <div class="selector-control" tabindex="1" onfocusout="setTimeout(() => event.target.contains(event.relatedTarget) && event.target.focus({ focusVisible: true }), 1)">
-                <div class="selector-list" onclick="setTimeout(() => document.activeElement.blur(), 100)">
+            <div id="header-selector" class="selector-control">
+                <div class="selector-list">
                     <a class="item-duma-8 {% if page.type == 'duma_8' %}selected{% endif %}" href="{{site.url}}/{{site.page_urls.duma_8}}" alt="в думе 8 созыва">
                         <img src="{{site.baseurl}}/assets/images/logo/vgosdume-8.svg" alt="в думе 8 созыва" >
                     </a>
@@ -44,7 +44,7 @@
         </div>
         <div class="column is-pulled-right c4"><a  href="http://vk.com/share.php?url=https%3A%2F%2Fdumabingo.ru%2F{% if page.type == 'sf'%}sf{%endif%}" target="_blank" class="c4 vk_share_button"><span class="icon is-large"><i class="fab fa-vk"></i></span></a>
         </div>
-        <div class="column is-pulled-right c5"><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdumabingo.ru%2F{% if page.type == 'sf'%}sf{%endif%}&text={{site.meta.description[page.type]}}" target="_blank" class="c5"  ><span class="icon is-large"><i class="fab fa-twitter"></i></span></a>
+        <div class="column is-pulled-right c5"><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdumabingo.ru%2F{% if page.type == 'sf'%}sf{%endif%}&text={{site.meta.description[page.type]}}" target="_blank" class="c5"><span class="icon is-large"><i class="fab fa-twitter"></i></span></a>
         </div>
     </div>
 </header>
