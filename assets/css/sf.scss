@@ -1,7 +1,10 @@
 ---
 ---
-$baseurl: "{{ site.baseurl }}";
 @import "vars";
+
+$baseurl: "{{ site.baseurl }}";
+$key-color: $color-orange;
+
 @import "bulma/bulma.sass";
 @import "image";
 @import "fonts";
@@ -20,26 +23,9 @@ html {
 }
 
 header{
-  background: #FF7A00;
-  .c1{
 
-  }
-  .c1 img{
-    @include until($tablet){
-
-    }
-  }
   a.c4, a.c5, a.c6 {
     background-color: $color-orange;
-  }
-  .c1 img.bordered{
-    background: #D56600;
-    @include until($header-not-so-wide){
-      background-color: $color-orange;
-    }
-  }
-  .c1 .text_link{
-    border: 1px solid #B05500;
   }
   .header-menu{
     background: $color-orange;
@@ -167,7 +153,7 @@ div#controls .column .convocations {
     background: rgba(255,255,255,.9);
     padding: 1.5rem;
     font-size: 1.5rem;
-    border: 1px solid #FF7A00;
+    border: 1px solid $color-orange;
     border-radius: 8px;
     @include until($desktop){
       font-size: 1rem;

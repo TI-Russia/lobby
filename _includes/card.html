@@ -1,13 +1,10 @@
 <div id="card" class="modal">
     <div class="share_icons">
-        <div class="know_more" ><a href="" id="send_form" target="_blank">Знаете о {% if page.sf%}сенаторе {%else%}депутате {%endif%}больше? Напишите нам!</a></div>
-
+        <div class="know_more" ><a href="" id="send_form" target="_blank">Знаете о {% if page.type == 'sf'%}сенаторе {%else%}депутате {%endif%}больше? Напишите нам!</a></div>
         <div class="social">
-            <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdumabingo.ru%2F&text={{site.description}}"  target="_blank" class="tw" id="tw_person"><span class="icon"><i class="fab fa-twitter"></i></span></a>
+            <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdumabingo.ru%2F&text={{site.meta.description[page.type]}}"  target="_blank" class="tw" id="tw_person"><span class="icon"><i class="fab fa-twitter"></i></span></a>
             <a href="http://vk.com/share.php?url=https%3A%2F%2Fdumabingo.ru%2F" target="_blank" class="vk vk_share_button" id="vk_person"><span class="icon"><i class="fab fa-vk"></i></span></a>
         </div>
-
-
     </div>
     <div>
     <div class="icon is-large close_btn">
