@@ -161,18 +161,6 @@ header {
   #header-title{
     gap: 10.5px;
 
-    img.no-logo{
-			display: none;
-		}
-		@include until($mobile) { 
-			img.no-logo{
-				display: inline-block;
-			}
-			img.logo{
-				display: none;
-			}
-		}
-
     a {
       display: flex;
     }

@@ -332,11 +332,9 @@ export default function initChart () {
     function SetupSVG(resize) {
         var headerHeight = document.getElementsByTagName('header')[0].clientHeight,
             controlsHeight = document.getElementById('controls').clientHeight,
-            footerHeight = document.getElementsByClassName('footer')[0].clientHeight,
-            //footerExtraHeight = !isSF ? document.getElementsByClassName('extra')[0].clientHeight : 0,
-            footerExtraHeight = document.getElementsByClassName('extra')[0].clientHeight,
+            footerHeight = document.getElementsByClassName('footer')[0].clientHeight;
 
-            sumHeight = headerHeight + footerHeight + controlsHeight - footerExtraHeight
+        const sumHeight = headerHeight + footerHeight + controlsHeight;
 
         document.body.className += ' ' +'chart'
         document.body.className = 'chart'
