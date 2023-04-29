@@ -1,5 +1,6 @@
 import * as d3 from 'd3';
 import {getLayoutVars} from './layout_vars';
+import { getFraction } from '../lib/fractions';
 
 var cors="https://cors-anywhere.herokuapp.com/"
 var data=[];
@@ -120,11 +121,6 @@ function dataDepMap(rawdata) {
         return Math.abs(ageDate.getUTCFullYear() - 1970);
     }
 
-    function getDataFromSF(id, column){
-        var p = rawSF.find(d => d.id == id);
-        return p && p[column]  ? p[column] : null;
-    }
-
     data = rawdata.flatMap((d) => {
         let groups = d.groups
         groups.length==0 ? groups=[11851] : groups // кто без групп? -> в группу "Не выявлено"
@@ -132,13 +128,10 @@ function dataDepMap(rawdata) {
         rating=GetRating(d.person)
         return groups.map((b) => {
             myGroups.add(b)
-            /*the set provide unique values of lobby groups*/
-            var fraction = isSF ? checkSFFraction(d.fraction) : d.fraction;
             return {
                 id: d.id,
                 name: d.fullname,
-                fraction: d.fraction,
-                fraction_sf: fraction,
+                fraction: getFraction(d).slug,
                 gender:d.gender,
                 age:calculateAge( new Date(d.birth_date)),
                 group: b,
@@ -169,17 +162,6 @@ function getSFCommittee(committee){
         return ['Вне комитетов'];
     }
     return [committee];
-}
-
-function checkSFFraction(fraction){
-    var outOfFractionNames = ['беспартийный', 'беспартийная', 'вне партии'];
-    if (fraction === null) {
-        return 'Вне партии';
-    }
-    if (outOfFractionNames.includes(fraction.toLowerCase())){
-        return 'Вне партии';
-    }
-    return fraction;
 }
 
 function getLobbyMap(rawdata,aliases) {

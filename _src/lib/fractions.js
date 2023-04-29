@@ -41,22 +41,22 @@ export const FRACTION = {
         alias: ['Вне фракции', 'беспартийный', 'беспартийная'],
         color: 'is-color-gray',
         id: 0, 
-        slug: null,
+        slug: 'vne',
     }
 };
 
-export const getFractionColor = (lobbist) => {
+export const getFraction = (lobbist) => {
     if (lobbist.fraction) {
         const sfFraction = find(FRACTION, (f) => f.alias.some((el) => el === lobbist.fraction));
 
         if (sfFraction) {
-            return sfFraction.color;
+            return sfFraction;
         }
 
         const fraction = find(FRACTION, (f) => f.id === lobbist.fraction);
 
         if (fraction) {
-            return fraction.color;
+            return fraction;
         }
     }
 
@@ -64,9 +64,9 @@ export const getFractionColor = (lobbist) => {
         const fraction = find(FRACTION, (f) => f.alias.some((el) => el === lobbist.fraction_old));
 
         if (fraction) {
-            return fraction.color;
+            return fraction;
         }
     }
 
-    return FRACTION.vne.color;
-};
+    return FRACTION.vne;
+}

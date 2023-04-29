@@ -19,10 +19,9 @@
                             {% if lastUpdate %}
                                 <div class="last-update">Обновлено: {{ lastUpdate }}</div>
                             {% endif %}
-                            {% unless info.verified %}
+                            {% if info.verified %}
                                 <div class="is-editing">На доработке</div>
-                            {% endunless %}
-                            <div class="is-editing">На доработке</div>
+                            {% endif %}
                         </div>
                     
                         <div class="columns head">

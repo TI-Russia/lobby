@@ -272,7 +272,6 @@ export default function initChart () {
                     person: d.person,
                     name: d.name,
                     fraction:d.fraction,
-                    fraction_sf: d.fraction_sf,
                     id: d.id,
                     person: d.person,
                     groups: d.groups,
@@ -286,7 +285,7 @@ export default function initChart () {
                     clusterLevel:group.level,
                     clusterParent: clusterParentId,
                     clusterParentMiddle: clusterParent2Id ? clusterParent2Id : null,
-                    color: getFractionColor(d),
+                    color: FRACTION[d.fraction]?.color,
                     //color:colorTest((clusterParent2Id ? clusterParent2Id : +i)/10),
                     election_method:d.election_method,
                     committees:d.committees,
@@ -1220,6 +1219,7 @@ export default function initChart () {
                     &&
                     (+x.age>=+r_age[0] && +x.age<=+r_age[1])
                     &&
+
                     (b_fraction ? (b_fraction == x.fraction || b_fraction == x.fraction_sf) : true)
                     &&
                     (b_method ? (x.election_method==b_method) : true)
