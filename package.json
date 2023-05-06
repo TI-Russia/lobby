@@ -8,7 +8,7 @@
     "watch:js": "npm-run-all build:js:deps watch:js:app",
     "watch:js:app": "gulp watch:app",
     "build": "npm-run-all build:js:deps build:js:app build:jekyll",
-    "build:jekyll": "bundle exec jekyll build --baseurl ''",
+    "build:jekyll": "bundle exec jekyll build --baseurl 'https://dumabingo.surge.sh'",
     "build:js:deps": "gulp build:deps",
     "build:js:app": "gulp build:app"
   },

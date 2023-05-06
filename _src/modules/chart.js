@@ -273,7 +273,7 @@ export default function initChart () {
                     name: d.name,
                     fraction:d.fraction,
                     id: d.id,
-                    person: d.person,
+                    lobbist: d.lobbist,
                     groups: d.groups,
                     gender:d.gender,
                     age:d.age,
@@ -752,8 +752,8 @@ export default function initChart () {
             var depRating=GetRating(d.person)
             var depLobbys=GetLobbyText(d.groups)
             var corsPrefix=getLayoutVars().isProd ? '' : 'https://cors-anywhere.herokuapp.com/'; //use cors for local development
-            // var dipInfoUrl = corsPrefix + "https://declarator.org/api/lobbist/"+d.id+"/"
-            const dipInfoUrl = corsPrefix + 'https://declarator.org/api/lobbist/10001';
+            var dipInfoUrl = corsPrefix + "https://declarator.org/api/lobbist/"+d.lobbist+"/"
+            // const dipInfoUrl = corsPrefix + 'https://declarator.org/api/lobbist/10001';
             var declarationsUrl = corsPrefix + 'https://declarator.org/api/v1/search/sections/?person=' + d.person;
             
             Promise.all([

@@ -137,6 +137,7 @@ function dataDepMap(rawdata) {
                 group: b,
                 groups: groups,
                 person: d.person,
+                lobbist: d.lobbist,
                 rating: rating.log,
                 election_method:d.election_method,
                 committees: !isSF ? d.committees : getSFCommittee(d.committee),

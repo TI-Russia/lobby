@@ -19,7 +19,7 @@
                             {% if lastUpdate %}
                                 <div class="last-update">Обновлено: {{ lastUpdate }}</div>
                             {% endif %}
-                            {% if info.verified %}
+                            {% if editing %}
                                 <div class="is-editing">На доработке</div>
                             {% endif %}
                         </div>
@@ -34,7 +34,9 @@
                             </div>
                             <div class="column caption"><span id="fraction_text" class="{{ fractionClass }}">{{ info.fraction }}</span><br>
                                 <h1 id="fullname">{{ info.fullname }}</h1>
-                                <a class="prev-position link-button link-button_bordered" target="_blank" href="">Найти в предыдущем созыве</a>
+                                {% if isInPrevGD %}
+                                    <a class="prev-position link-button link-button_bordered" target="_blank" href="">Найти в предыдущем созыве</a>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="declaration-highlights">
