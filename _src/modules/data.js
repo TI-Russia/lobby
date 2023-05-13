@@ -2,14 +2,13 @@ import * as d3 from 'd3';
 import {getLayoutVars} from './layout_vars';
 import { getFraction } from '../lib/fractions';
 
-var cors="https://cors-anywhere.herokuapp.com/"
 var data=[];
 var lobby=[];
 var lobby_level_0=[];
 var myGroups = new Set();
 var myArrGroups = new Array();
 var isSF = getLayoutVars().type === 'sf';
-const corsPrefix = getLayoutVars().isProd ? '' : cors;
+const corsPrefix = ''; //getLayoutVars().isProd ? '' : cors;
 var prefix = corsPrefix + 'https://declarator.org/media/dumps/';
 var files = {
     "duma_7": [
@@ -67,24 +66,6 @@ export default Promise.all(promises).then(function (values) {
         isSF
     }
 });
-
-function getAPI(allData, startFrom,url) {
-    return fetch(startFrom ? cors+startFrom : cors+url, {
-        headers: {
-            'Content-Type': 'application/json',
-            'X-Requested-With':'XMLHttpRequest'
-        },
-    }).then(response => response.json())
-        .then(data => {
-            //console.log("data.next",data.results)
-            allData=allData.concat(data.results);
-            const nextPage = data.next;
-            if (!nextPage)
-                return allData;
-            else
-                return getAPI(allData, nextPage,url);
-        });
-}
 
 function GetRating(id) {
     var rating = rawRating.find(x=>x.id_declarator==id)

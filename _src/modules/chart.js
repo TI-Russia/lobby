@@ -751,10 +751,9 @@ export default function initChart () {
             $('#clusters').addClass('is-loading');
             var depRating=GetRating(d.person)
             var depLobbys=GetLobbyText(d.groups)
-            var corsPrefix=getLayoutVars().isProd ? '' : 'https://cors-anywhere.herokuapp.com/'; //use cors for local development
-            var dipInfoUrl = corsPrefix + "https://declarator.org/api/lobbist/"+d.lobbist+"/"
-            // const dipInfoUrl = corsPrefix + 'https://declarator.org/api/lobbist/10001';
-            var declarationsUrl = corsPrefix + 'https://declarator.org/api/v1/search/sections/?person=' + d.person;
+            var dipInfoUrl = "https://declarator.org/api/lobbist/"+d.lobbist+"/"
+            // const dipInfoUrl = 'https://declarator.org/api/lobbist/10001';
+            var declarationsUrl = 'https://declarator.org/api/v1/search/sections/?person=' + d.person;
             
             Promise.all([
                 d3.json(dipInfoUrl),
