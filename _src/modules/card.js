@@ -110,6 +110,7 @@ function hideLawDetails() {
 
 function renderCard() {
     const {depInfo, depRating, depLobbys, lobby_list, declarations} = currentCardData;
+    const {square, income} = calclulateRealEstateSquare(declarations.results);
 
     cardNode.html(engine.renderSync(template, {
         selectedLaw: currentLawSelected,
@@ -118,6 +119,8 @@ function renderCard() {
         lobbys: depLobbys,
         lastUpdate: null,
         editing: false,
+        income,
+        square,
         fractionClass: getFractionClass(depInfo.fraction),
         positionHtml: isSF ? getPositionSF(depInfo) : getPosition(depInfo),
         tempComissionHtml: isSF ? getTempComissionText(depInfo.temp_commission) : '',
@@ -245,6 +248,44 @@ function getLobbyMatrix(nodes, lobby_list) {
     }
 
     return '<div class="card__lobby-matrix">' + content + '</div>';
+}
+
+function calclulateRealEstateSquare(declarations = []) {
+    const declarationsByYear = declarations
+        // Антикоррупционная декларация
+        .filter((declaration) => declaration.main?.document_type?.id === 1)
+        // Могут быть пересеения (2 и более декларации за один год, одного или разных типов).  
+        // Если несколько а/к декларациий за один год - берем декларацию с большим ID.
+        .reduce((acc, declaration) => {
+            const year = declaration.main.year;
+            acc[year] = declaration;
+            return acc;
+        }, {});
+
+    const { square, income } = Object.values(declarationsByYear)
+        .reduce((acc, declaration) => {
+            const square = declaration.real_estates.reduce((acc, realEstate) => {
+                return acc + realEstate.square;
+            }, 0);
+
+            const income = declaration.incomes.reduce((acc, income) => {
+                return acc + income.size;
+            }, 0);
+
+            return {
+                square: acc.square + square,
+                income: acc.income + income,
+            };
+        }, {
+            square: 0,
+            income: 0,
+        });
+
+    return {
+        square: Math.round(square),
+        income: Math.round(income),
+    }
+
 }
 
 export default ShowCard;
