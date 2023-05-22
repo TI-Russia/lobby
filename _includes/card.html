@@ -1,6 +1,6 @@
 <div id="card" class="modal">
     {% raw %}
-        <script id="card_template" type="text/template">
+    <script id="card_template" type="text/template">
             <div class="share_icons">
                 <div class="know_more" ><a href="{{ sendForm }}" id="send_form" target="_blank">Знаете о {% if page.type == 'sf'%}сенаторе {%else%}депутате {%endif%}больше? Напишите нам!</a></div>
 
@@ -51,7 +51,9 @@
                         </div>
                         <div class="dep-links">
                             <a id="open_declaration" class="link-button" target="_blank" href="{{ openDeclaration }}">Посмотреть декларацию</a>
-                            <a class="link-button" target="_blank" href="">Открыть досье на Rupep</a>
+                            {% if openRupep %}
+                                <a class="link-button" target="_blank" href="{{ openRupep }}">Открыть досье на Rupep</a>
+                            {% endif %}
                         </div>
                         <div id="position">{{ positionHtml | raw }}</div>
                         <div id="region"></div>
@@ -87,53 +89,59 @@
         
                         <button  id="scrollToTop" title="Наверх">&uarr;</button>
                     </div>
-                    <div class="accordion" data-id="0">
-                        <div class="accordion__title">Законы draft</div>
-                        <div class="accordion__content accordion__content_wide">
-                            <div class="card__law" data-id="123">
-                                <div class="card__law-header">
-                                    <a href="" class="card__law-header-title card__law-details-button">№ 374380-7</a>
-                                    <span class="card__law-header-status">На рассмотрении</span>
-                                </div>
-                                <div class="card__law-content">
-                                    О вынесении административного штрафа за остановку и парковку на клумбах в трактовке ПДД
-                                </div>
-                                <a class="link-button link-button_bordered card__law-details-button" target="_blank" href="">Подробнее о законопроекте</a>
-                            </div>
-                            <div class="card__law" data-id="456">
-                                <div class="card__law-header">
-                                    <a href="" class="card__law-header-title card__law-details-button">№ 963119-6</a>
-                                    <span class="card__law-header-status">Принят</span>
-                                </div>
-                                <div class="card__law-content">
-                                    О передаче регионам полномочий по содержанию, развитию и организации эксплуатации посадочных площадок гражданской авиации
-                                </div>
-                                <a class="link-button link-button_bordered card__law-details-button" target="_blank" href="">Подробнее о законопроекте</a>
+                    {% if laws %}
+                        <div class="accordion" data-id="0">
+                            <div class="accordion__title">Законы</div>
+                            <div class="accordion__content accordion__content_wide">
+                                {% for law in laws %}
+                                    <div class="card__law" data-id="{{ law.id }}">
+                                        <div class="card__law-header">
+                                            <a href="" class="card__law-header-title card__law-details-button">№ {{law.number}}</a>
+                                            {% if false %}
+                                                <span class="card__law-header-status">На рассмотрении</span>
+                                            {% endif %}
+                                        </div>
+                                        <div class="card__law-content">
+                                            {{ law.name }}
+                                        </div>
+                                        {% if false %}
+                                            <a class="link-button link-button_bordered card__law-details-button" target="_blank" href="">Подробнее о законопроекте</a>
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
                             </div>
                         </div>
-                    </div>
+                    {% endif %}
                     {% if lobbys %}
                         <div class="accordion" data-id="1">
                             <div class="accordion__title">Группы интересов</div>
                             <div class="accordion__content">{{ lobbyHtml | raw }}</div>
                         </div>
                     {% endif %}
+                    {% if info.bio %}
                     <div class="accordion" data-id="2">
                         <div class="accordion__title">Биография</div>
                         <div class="accordion__content">{{ info.bio | raw }}</div>
                     </div>
+                    {% endif %}
+                    {% if info.submitted %}
                     <div class="accordion" data-id="3">
                         <div class="accordion__title">Внесённые законопроекты</div>
                         <div class="accordion__content">{{ info.submitted | raw }}</div>
                     </div>
+                    {% endif %}
+                    {% if info.relations %}
                     <div class="accordion" data-id="4">
                         <div class="accordion__title">Аффиляция и связи</div>
                         <div class="accordion__content">{{ info.relations | raw }}</div>
                     </div>
+                    {% endif %}
+                    {% if info.conclusion %}
                     <div class="accordion" data-id="5">
                         <div class="accordion__title">Выводы</div>
                         <div class="accordion__content">{{ info.conclusion | raw }}</div>
                     </div>
+                    {% endif %}
                 </div>
             {% endunless %}
             {% if selectedLaw %}

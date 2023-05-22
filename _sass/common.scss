@@ -17,6 +17,15 @@ header {
       text-decoration: none;
     }
   }
+
+  .logo {
+    margin: -4px 20px 0 4px;
+
+    @include until($header-not-so-wide){
+      display: none;
+    }
+  }
+
   .columns{
     margin: 0 !important;
     height: 48px;
