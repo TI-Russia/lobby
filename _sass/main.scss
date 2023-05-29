@@ -21,6 +21,7 @@ body{
 
   .hero{
     flex: 1;
+    min-height: calc(100vh - 70px);
   }
   &.chart{
     min-height: auto;
@@ -783,7 +784,6 @@ div#card {
 
   .columns{
     margin-bottom: 0;
-    white-space: nowrap;
     scrollbar-width:none;
     @include until($tablet){
       //margin: 0;
@@ -797,6 +797,12 @@ div#card {
 
   .copy {
     line-height: 18px;
+  }
+
+  .contact-email {
+    @include until($tablet){
+      display: none;
+    }
   }
 
   .copy, .agent{
@@ -842,6 +848,21 @@ div#card {
       &.fb{background-color: #435695;}
       &.tw{background-color: #00B7F4;}
     }
+  }
+}
+
+.footer .extra {
+  padding-bottom: 32px;
+  padding-top: 24px;
+  max-width: 75vw;
+
+  @include until($desktop){
+    padding-left: 44px;
+  }
+
+  @include until($tablet){
+    max-width: unset;
+    padding-left: 28px;
   }
 }
 

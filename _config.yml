@@ -5,17 +5,12 @@ email: your-email@example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://dumabingo.surge.sh" # the base hostname & protocol for your site, e.g. http://example.com
 url_sf: "sf"
-url_duma-7: 'duma-7'
+url_duma-7: 'sozyv7'
 url_duma-8: ''
 
 page_urls:
   sf: 'sf'
-  duma_7: 'duma-7'
-  duma_8: ''
-
-page_urls:
-  sf: 'sf'
-  duma_7: 'duma-7'
+  duma_7: 'sozyv7'
   duma_8: ''
 
 collections:

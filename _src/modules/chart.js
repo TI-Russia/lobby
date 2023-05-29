@@ -27,6 +27,7 @@ export default function initChart () {
     let clusters; 
     let nodesWithClones;
     let el;
+    let isStoryShowing;
 
     // tooltip for mouseover functionality
     const tooltip = floatingTooltip('gates_tooltip', 240);
