@@ -881,7 +881,42 @@ export default function initChart () {
 
             select.append('option').text("Группа интересов").attr("value", -1);
 
+            select
+                .selectAll('option.opt')
+                .data(list).enter()
+                .append('option')
+                .classed("opt",true)
+                .attr("value",d=>d.id)
+                .text(d=>{
+                    let x=+d.level, y;
+                    if (x==0) y="\xA0"
+                    if (x==1) y="\xA0\xA0\xA0\xA0"
+                    if (x==2) y="\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0"
+
+                    if (x==0) return y+ d.name.toUpperCase()
+                    return y+ d.name
+                })
+                .each(PrependOption)
+                .each(function(d) {
+                    let t=nodes.filter(x=>x.cluster==d.id ||
+                        x.clusterParent==d.id||
+                        x.clusterParentMiddle==d.id||
+                        x.clusterMin==d.id)
+                    if (t.length==0) {
+
+                        d3.select(this).property("disabled", true)
+                        d3.select(this).remove()
+                    }})
+
             onchange("init")
+
+            function PrependOption(d){
+                if (d.level==0) {
+                    const ti = document.createElement('option');
+                    ti.disabled = true;
+                    if (this.nextSibling && this.parentNode) this.parentNode.insertBefore(ti, this);
+                }
+            }
 
             function createSelect(selector, placeholder,key) {
                 const jj2 = []; //массив значений ключа
@@ -895,10 +930,26 @@ export default function initChart () {
                         : jj2.push({key: dep[key]})//если не массив - просто берём значение
                 });
 
+                const nest=d3.nest()
+                    .key(d=>d.key)
+                    .entries(jj2);
+
+                const opts=nest.flatMap(x=>x.key).sort(d3.ascending);
+
                 const select = d3.select('#controls')
                     .select('select#' + selector)
                     .on('change', onchange);
                 select.append('option').text(placeholder).attr("value", -1);
+                select
+                    .selectAll('option.opt')
+                    .data(opts).enter()
+                    .append('option')
+                    .attr("value",d=>d)
+                    .text((d)=>{
+                        const text = key=="committees" ? (d && d.replace("Комитет ГД п","П")) : d
+
+                        return text
+                    })
             }
 
             function CreateSliders() {
