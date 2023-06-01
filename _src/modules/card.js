@@ -11,9 +11,7 @@ const engine = new Liquid();
 const isDefaultLayout = getLayoutVars().layout === 'default';
 const isSF = getLayoutVars().type === 'sf';
 const dirUrl = isSF ? 'person_sf/' : 'person/';
-const feedbackForm = isSF
-    ? 'https://docs.google.com/forms/d/e/1FAIpQLScWdkT2GB6btR3duE5fWRzbTeg8HeLji8MR7ZW2-0oMiG7-Wg/' 
-    : 'https://docs.google.com/forms/d/e/1FAIpQLSd6WGVWRwdwf7Q7oE_3RIlHR8MMdo_LVOnC0nk9YINtfYvjPw/';
+const feedbackForm = 'https://docs.google.com/forms/d/1Qaw8qWfw2PPZPtpF1PV4EyNGekXesM2qRLzwurgjHbA/viewform?edit_requested=true';
 
 let currentCardData = null;
 let currentLawSelected = null;
@@ -93,6 +91,7 @@ function ShowCard(depInfo, depRating, depLobbys, lobby_list, declarations) {
 
     currentCardData = {depInfo, depRating, depLobbys, lobby_list, declarations};
     currentScrollTop = 0;
+    currentExpandedAccordions.clear();
 
     cardNode.show();
     renderCard();
@@ -148,9 +147,7 @@ function renderCard() {
         });
     }
 
-    if (currentScrollTop) {
-        cardNode.scrollTop(currentScrollTop);
-    }
+    cardNode.scrollTop(currentScrollTop);
 }
 
 function getFractionClass(fraction) {
@@ -233,20 +230,22 @@ function getLobbyMatrix(nodes, lobby_list) {
 
             row = row.slice(1);
 
-            content += '<ul>';
-            const str = row[0]?.charAt(0)?.toUpperCase() + row[0]?.slice(1);
-            content += `<li>${str}</li>`;
-
-            row = row.slice(1);
-
-            content += '<div class="content"><ul>';
-
-            row.forEach(function (str) {
-                str = str.charAt(0).toUpperCase() + str.slice(1);
+            if (row.length) {
+                content += '<ul>';
+                const str = row[0]?.charAt(0)?.toUpperCase() + row[0]?.slice(1);
                 content += `<li>${str}</li>`;
-            })
 
-            content += '</ul></div></ul>';
+                row = row.slice(1);
+
+                content += '<div class="content"><ul>';
+
+                row.forEach(function (str) {
+                    str = str.charAt(0).toUpperCase() + str.slice(1);
+                    content += `<li>${str}</li>`;
+                })
+
+                content += '</ul></div></ul>';
+            }
         })
     }
 
