@@ -14,7 +14,7 @@ page_urls:
   duma_8: ''
 
 collections:
-  support:
+  contribute:
     output: true
   about:
     output: true
@@ -49,7 +49,12 @@ menu_feedback_url:
   duma_7: 'https://forms.gle/d6ia3KgkooeubQsj7'
   duma_8: 'https://forms.gle/d6ia3KgkooeubQsj7'
   sf: 'https://forms.gle/D8y9DkcJAujkxW269'
-  
+
+menu_contribute_url:
+  duma_7: 'contribute'
+  duma_8: 'contribute'
+  sf: 'contribute'
+
 meta:
   title:
     duma_7: 'Лоббизм в Госдуме'

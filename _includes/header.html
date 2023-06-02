@@ -32,13 +32,13 @@
         <div class="column is-pulled-right c3 ">
             <div id="nav-menu" class="">
                 <a href="{{ site.baseurl }}/{{ site.menu_about_url[page.type] }}">О&nbsp;проекте</a>
-                <a target="_blank" href="https://transparency.org.ru/donate/">Помочь проекту</a>
+                <a href="{{ site.baseurl }}/{{ site.menu_contribute_url[page.type] }}">Помочь проекту</a>
                 <a target="_blank" href="{{ site.menu_feedback_url[page.type] }}">Обратная связь</a>
             </div>
             <a id="nav-toggle" class=""><span class="icon"><i class="fas fa-bars"></i></span> </a>
             <ul class="header-menu" id="header_menu">
                 <li> <a href="{{ site.baseurl }}{{ site.menu_about_url[page.type] }}">О&nbsp;проекте</a></li>
-                <li> <a target="_blank" href="https://transparency.org.ru/donate/">Помочь проекту</a></li>
+                <li> <a href="{{ site.baseurl }}/{{ site.menu_contribute_url[page.type] }}">Помочь проекту</a></li>
                 <li> <a target="_blank" href="{{ site.menu_feedback_url[page.type] }}">Обратная связь</a></li>
                 <li>
                     <a href= "{{site.baseurl}}/{{site.page_urls[page.type]}}">

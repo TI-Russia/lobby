@@ -864,6 +864,10 @@ div#card {
     max-width: unset;
     padding-left: 28px;
   }
+
+  p:not(:last-child) {
+    margin-bottom: 14px;
+  }
 }
 
 .extra .columns, .extra-intro.columns{
