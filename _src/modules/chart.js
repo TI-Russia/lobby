@@ -724,15 +724,24 @@ export default function initChart () {
             $('#clusters').addClass('is-loading');
             const depRating=getRating(d.person, rawRating, isSF);
             const depLobbys=GetLobbyText(d.groups);
-            const dipInfoUrl = `https://declarator.org/api/lobbist/${d.lobbist}/`;
-            const declarationsUrl = `https://declarator.org/api/v1/search/sections/?person=${d.person}`;
+            const dipInfoURL = `https://declarator.org/api/lobbist/${d.lobbist}/`;
+            const declarationsURL = `https://declarator.org/api/v1/search/sections/?person=${d.person}`;
+            const successRateURL = `https://declarator.org/api/persons/${d.person}/success_rate`;
             
             Promise.all([
-                d3.json(dipInfoUrl),
-                d3.json(declarationsUrl),
-            ]).then(function([depInfo, declarations]) {
+                d3.json(dipInfoURL),
+                d3.json(declarationsURL),
+                d3.json(successRateURL),
+            ]).then(function([depInfo, declarations, depSuccessRate]) {
                 $('#clusters').removeClass('is-loading');
-                new ShowCard(depInfo, depRating, depLobbys, lobby, declarations);
+                new ShowCard({
+                    depInfo, 
+                    depRating, 
+                    depLobbys, 
+                    depSuccessRate,
+                    lobby, 
+                    declarations,
+                });
             });
         }
 

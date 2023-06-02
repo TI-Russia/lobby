@@ -59,28 +59,19 @@
                         <div id="region"></div>
                         <div id="temp_comission">{{ tempComissionHtml | raw }}</div>
                         
-                        {% if rating.no != true %}
+                        {% if lawStatProposed %}
                             <div class="columns is-vcentered laws_block is-multiline is-mobile" id="laws">
                                 <div class="column is-full-mobile is-narrow-tablet">
                                     <div class="columns is-vcentered bring">
-                                        <div class="column is-narrow-tablet is-full-mobile law_count" id="law_number_vnes">{{ rating.vnes }}</div>
+                                        <div class="column is-narrow-tablet is-full-mobile law_count" id="law_number_vnes">{{ lawStatProposed }}</div>
                                         <div class="column is-full-mobile is-narrow-tablet law_text" id="law_text_bring">{{ lawTextBringHtml | raw }}</div>
                                     </div>
                                 </div>
                                 <div class="column is-full-mobile is-half-tablet">
                                     <div class="columns is-vcentered bring">
-                                        {% if rating.podpis > 0 %}
-                                            <div class="column is-narrow-tablet is-full-mobile law_count" id="law_number_podpis">{{ rating.podpis }}</div>
-                                            <div class="column is-full-mobile is-narrow-tablet law_text">
-                                                <span id="law_text_passed">{{ lawTextPassed }},</span>
-                                                {% if rating.podpis != 1 %}
-                                                    <span>средний срок — </span><br/>
-                                                {%else%}
-                                                    <br/><span>за</span>
-                                                {% endif %}
-                                                <span id="sred_day">{{ sredDay }}</span>
-                                                <span id="law_text_day">{{ lawTextDay }}</span>
-                                            </div>
+                                        {% if lawStatAccepted > 0 %}
+                                            <div class="column is-narrow-tablet is-full-mobile law_count" id="law_number_podpis">{{ lawStatAccepted }}</div>
+                                            <div class="column is-full-mobile is-narrow-tablet law_text">{{ lawTextPassed }}</div>
                                         {% endif %}
                                     </div>
                                 </div>

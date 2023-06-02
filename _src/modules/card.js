@@ -1,15 +1,18 @@
 import $ from 'jquery';
 import { Liquid } from 'liquidjs';
 import tree_func from '../tools/tree';
-import { formatNumber } from '../lib/common';
+import { formatNumber, pageTypeToConvocation } from '../lib/common';
 import Pluralization from '../tools/pluralize';
 import { getLayoutVars } from './layout_vars';
 import accordion from './accordion';
 
 const engine = new Liquid();
 
+
 const isDefaultLayout = getLayoutVars().layout === 'default';
 const isSF = getLayoutVars().type === 'sf';
+const convocation = pageTypeToConvocation(getLayoutVars().type);
+
 const dirUrl = isSF ? 'person_sf/' : 'person/';
 const feedbackForm = 'https://docs.google.com/forms/d/1Qaw8qWfw2PPZPtpF1PV4EyNGekXesM2qRLzwurgjHbA/viewform?edit_requested=true';
 
@@ -84,12 +87,12 @@ function HideCard() {
     }
 }
 
-function ShowCard(depInfo, depRating, depLobbys, lobby_list, declarations) {
+function ShowCard({depInfo, depRating, depLobbys, depSuccessRate, lobby, declarations}) {
     if (window.history && window.history.pushState) {
         window.history.pushState({person: depInfo.person}, null, (isSF ? './sf#id' : './#id') + depInfo.person);
     };
 
-    currentCardData = {depInfo, depRating, depLobbys, lobby_list, declarations};
+    currentCardData = {depInfo, depRating, depLobbys, depSuccessRate, lobby_list: lobby, declarations};
     currentScrollTop = 0;
     currentExpandedAccordions.clear();
 
@@ -109,8 +112,9 @@ function hideLawDetails() {
 }
 
 function renderCard() {
-    const {depInfo, depRating, depLobbys, lobby_list, declarations} = currentCardData;
+    const {depInfo, depRating, depLobbys, depSuccessRate, lobby_list, declarations} = currentCardData;
     const {square, income} = calclulateDeclarationHilights(declarations.results);
+    const { lawStatProposed, lawStatAccepted } = calculateLawStat(depSuccessRate.success_rate);
 
     cardNode.html(engine.renderSync(template, {
         selectedLaw: currentLawSelected,
@@ -124,10 +128,6 @@ function renderCard() {
         fractionClass: getFractionClass(depInfo.fraction),
         positionHtml: isSF ? getPositionSF(depInfo) : getPosition(depInfo),
         tempComissionHtml: isSF ? getTempComissionText(depInfo.temp_commission) : '',
-        lawTextBringHtml: Pluralization(+depRating.vnes, "закон<br>выдвинут", "закона<br>выдвинуто", "законов<br>выдвинуто"),
-        lawTextPassed: Pluralization(+depRating.podpis, "принят", "принято", "принято"),
-        lawTextDay: Pluralization(Math.floor(String(depRating.sred_day).replace(',','.')), "день", "дня", "дней"),
-        sredDay: Math.floor(String(depRating.sred_day).replace(',','.')),
         lobbyHtml: getLobbyMatrix(depInfo.groups, lobby_list),
         twPerson: `https://twitter.com/intent/tweet?url=http%3A%2F%2Fdumabingo.ru/${dirUrl}${depInfo.person}&text=${depInfo.fullname}`,
         vkPerson: `http://vk.com/share.php?url=http%3A%2F%2Fdumabingo.ru/${dirUrl}${depInfo.person}`,
@@ -135,6 +135,12 @@ function renderCard() {
         openRupep: depInfo.rupe ? `https://rupep.ru/person/${depInfo.rupep}` : null,
         sendForm: feedbackForm + `viewform?entry.742555963=${depInfo.fullname}`,
         laws:  depInfo.law_draft_apis?.length ? depInfo.law_draft_apis : null,
+        lawStatProposed,
+        lawStatAccepted,
+        lawTextBringHtml: Pluralization(lawStatProposed, "закон<br>выдвинут", "закона<br>выдвинуто", "законов<br>выдвинуто"),
+        lawTextPassed: Pluralization(lawStatAccepted, "принят", "принято", "принято"),
+        lawTextDay: Pluralization(Math.floor(String(depRating.sred_day).replace(',','.')), "день", "дня", "дней"),
+        sredDay: Math.floor(String(depRating.sred_day).replace(',','.')),
     }));
 
     if (!currentLawSelected) {
@@ -250,6 +256,15 @@ function getLobbyMatrix(nodes, lobby_list) {
     }
 
     return `<div class="card__lobby-matrix">${content}</div>`;
+}
+
+function calculateLawStat(depSuccessRate) {
+    const { rate, filtered_number } = depSuccessRate[`convocation_${convocation}`] || {};
+
+    return {
+        lawStatProposed: filtered_number || 0,
+        lawStatAccepted: Math.round(filtered_number * rate / 100) || 0,
+    }
 }
 
 function calclulateDeclarationHilights(declarations = []) {
