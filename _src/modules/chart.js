@@ -309,8 +309,9 @@ export default function initChart () {
         const headerHeight = document.getElementsByTagName('header')[0].clientHeight;
         const controlsHeight = document.getElementById('controls').clientHeight;
         const footerHeight = document.getElementsByClassName('footer')[0].clientHeight;
+        const footerExtraHeight = document.getElementsByClassName("extra")[0].clientHeight;
 
-        const sumHeight = headerHeight + footerHeight + controlsHeight;
+        const sumHeight = headerHeight + footerHeight + controlsHeight - footerExtraHeight;
 
         document.body.className += ' ' + 'chart';
         document.body.className = 'chart';

@@ -853,7 +853,7 @@ div#card {
 
 .footer .extra {
   padding-bottom: 32px;
-  padding-top: 24px;
+  margin-top: 0px;
   max-width: 75vw;
 
   @include until($desktop){

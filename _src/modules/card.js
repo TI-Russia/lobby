@@ -253,35 +253,35 @@ function getLobbyMatrix(nodes, lobby_list) {
 }
 
 function calclulateDeclarationHilights(declarations = []) {
-    const declarationsByYear = declarations
+    const latestDeclaration = declarations
         // Антикоррупционная декларация
         .filter((declaration) => declaration.main?.document_type?.id === 1)
         // Могут быть пересеения (2 и более декларации за один год, одного или разных типов).  
         // Если несколько а/к декларациий за один год - берем декларацию с большим ID.
         .reduce((acc, declaration) => {
-            const year = declaration.main.year;
-            acc[year] = declaration;
+            if (!acc) {
+                return declaration;
+            }
+            if (declaration.main.year > acc.main.year) {
+                return declaration;
+            }
             return acc;
-        }, {});
+        }, null);
 
-    const { square, income } = Object.values(declarationsByYear)
-        .reduce((acc, declaration) => {
-            const square = declaration.real_estates.reduce((acc, realEstate) => {
-                return acc + realEstate.square;
-            }, 0);
+    if (!latestDeclaration) {
+        return {
+            square: null,
+            income: null,
+        }
+    };
 
-            const income = declaration.incomes.reduce((acc, income) => {
-                return acc + income.size;
-            }, 0);
+    const square = latestDeclaration.real_estates.reduce((acc, realEstate) => {
+        return acc + realEstate.square;
+    }, 0);
 
-            return {
-                square: acc.square + square,
-                income: acc.income + income,
-            };
-        }, {
-            square: 0,
-            income: 0,
-        });
+    const income = latestDeclaration.incomes.reduce((acc, income) => {
+        return acc + income.size;
+    }, 0);
 
     return {
         square: formatNumber(Math.round(square)),
