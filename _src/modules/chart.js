@@ -11,18 +11,11 @@ import ShowedClusters from '../tools/showed_clusters';
 import zoom from '../tools/zoom';
 import tree_func from '../tools/tree';
 import Pluralization from '../tools/pluralize';
-import { FRACTION } from '../lib/fractions';
+import { FRACTIONS } from '../constants/fractions';
+import { POSITIONS } from '../constants/positions';
 import { getRating } from '../lib/rating';
 
-export default function initChart () {
-    let data;
-    let lobby;
-    let lobby_level_0;
-    let myGroups;
-    let myArrGroups;
-    let rawDep;
-    let rawRating;
-    let isSF;
+export default async function initChart () {
     let nodes;
     let clusters; 
     let nodesWithClones;
@@ -35,26 +28,17 @@ export default function initChart () {
     let svg;
     const hash = window.location.hash ? window.location.hash.substring(1) : null;
 
-    Data.then(Data => {
-        data = Data.data;
-        lobby = Data.lobby;
-        lobby_level_0 = Data.lobby_level_0;
-        myGroups = Data.myGroups;
-        myArrGroups = Data.myArrGroups;
-        rawDep = Data.rawDep;
-        rawRating = Data.rawRating;
-        isSF = Data.isSF;
+    const { data, lobby, lobby_level_0, myArrGroups, rawDep, rawRating, isSF } = await Data;
 
-        composeNodes();
+    composeNodes();
 
-        if (isSF && !hash) {
-            const storytellyng = document.getElementById('scrollytelling');
-            storytellyng.style.display = 'block';
-            el = storytellyng.getBoundingClientRect();
-            doTelling();
-        };
-        doChart();
-    });
+    if (isSF && !hash) {
+        const storytellyng = document.getElementById('scrollytelling');
+        storytellyng.style.display = 'block';
+        el = storytellyng.getBoundingClientRect();
+        doTelling();
+    };
+    doChart();
 
     function hideTelling() {
         const div = document.getElementById('scrollytelling');
@@ -231,9 +215,13 @@ export default function initChart () {
         clusters = new Array(m);
         let uniq = 0;
 
-        nodes = data.map(function (d) {
+        nodes = data.reduce(function (acc, d) {
             let clusterParentId, clusterParent2Id, clusterParent2Name;
             const group = lobby.find(x => x.id === d.group);
+
+            if (!group) {
+                return acc;
+            }
 
             if (group.level == 0) clusterParentId = group.id;
             if (group.level == 1) clusterParentId = lobby.find(x => x.id == group.parent).id;
@@ -247,29 +235,16 @@ export default function initChart () {
             const j = clusterParent2Id ? clusterParent2Id : +i;
             const r = d.rating;
             d = {
-                person: d.person,
-                name: d.name,
-                fraction: d.fraction,
-                id: d.id,
-                lobbist: d.lobbist,
-                groups: d.groups,
-                gender: d.gender,
-                age: d.age,
+                ...d,
                 cluster: clusterParent2Id ? clusterParent2Id : +i,
                 clusterMin: +i,
                 clusterName: clusterParent2Id ? clusterParent2Name : group.name,
                 clusterLevel: group.level,
                 clusterParent: clusterParentId,
                 clusterParentMiddle: clusterParent2Id ? clusterParent2Id : null,
-                color: FRACTION[d.fraction]?.color,
-                election_method: d.election_method,
-                committees: d.committees,
-                convocations: d.convocations,
+                color: FRACTIONS[d.fraction]?.color,
                 uniq: uniq++,
                 r: d.rating,
-                region: d.region,
-                goverment_body: d.goverment_body,
-                total_years: d.total_years,
                 x: /*Math.cos(i / m * 2 * Math.PI) * 300*/ + width / 2 + Math.random(),
                 y: /*Math.sin(i / m * 2 * Math.PI) * 300*/ + height / 2 + Math.random(),
             };
@@ -279,8 +254,9 @@ export default function initChart () {
                 clusters[j] = d;
             };
             clusters[j].count = count; //write count of nodes of current cluster
-            return d;
-        });
+
+            return acc.concat(d);
+        }, []);
         nodes.sort(function(a, b) { return b.count - a.count; })
         nodes.sort(function(a, b) { return a.clusterParent - b.clusterParent; })
 
@@ -741,6 +717,7 @@ export default function initChart () {
                     depSuccessRate,
                     lobby, 
                     declarations,
+                    depLobbistSmallData: d,
                 });
             });
         }
@@ -772,9 +749,9 @@ export default function initChart () {
             let content = `<span class="name">${d.name} </span><br/>`;
 
             if (isSF){
-                content += `<span class="value">${FRACTION[d.fraction].name}, ${d.total_years} ${Pluralization(d.total_years, "год в СФ", "года в СФ", "лет в СФ")}</span><br/>`;
+                content += `<span class="value">${FRACTIONS[d.fraction].name}, ${d.total_years} ${Pluralization(d.total_years, "год в СФ", "года в СФ", "лет в СФ")}</span><br/>`;
             } else {
-                content += `<span class="value">${FRACTION[d.fraction].name}, ${d.convocations} ${Pluralization(d.convocations, "созыв", "созыва", "созывов")}</span><br/>`;
+                content += `<span class="value">${FRACTIONS[d.fraction].name}, ${d.convocations} ${Pluralization(d.convocations, "созыв", "созыва", "созывов")}</span><br/>`;
             }
 
             if (cloneclustersNames == "") {
@@ -841,7 +818,7 @@ export default function initChart () {
 
         function MakeSelect() {
             createSelect("select_committees", "Комитет", "committees");
-            createSelect("select_position_gd", "Должность в ГД", "positions");
+            createSelect("select_position_gd", "Должность в ГД", "positions", POSITIONS);
             createSelect("select_region", "Регион", "region");
             let conv_slider, age_slider;
             CreateSliders();
@@ -928,17 +905,21 @@ export default function initChart () {
                 }
             }
 
-            function createSelect(selector, placeholder,key) {
-                const jj2 = []; //массив значений ключа
-                data.forEach(function (dep) {
-                    let keys = dep[key]; // ключ может быть массивом значений
-                    
-                    Array.isArray(keys)
-                        ? keys.forEach(function (comitet) {//надо пройти по нему
-                            jj2.push({key: comitet}); //получаем значения ключа в том числе и из массивов
-                        })
-                        : jj2.push({key: dep[key]})//если не массив - просто берём значение
-                });
+            function createSelect(selector, placeholder, key, map) {
+                //массив значений ключа
+                const jj2 = data.reduce((acc, dep) => {
+                    const val = dep[key];
+                    // ключ может быть массивом значений
+                    const keys = Array.isArray(val) ? val : [val];
+
+                    keys.forEach((item) => {//надо пройти по нему
+                        acc.push({
+                            key: map ? map[item] : item
+                        }); //получаем значения ключа в том числе и из массивов
+                    })
+
+                    return acc;
+                }, []);
 
                 const nest=d3.nest()
                     .key(d=>d.key)

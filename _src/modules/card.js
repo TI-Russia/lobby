@@ -8,7 +8,6 @@ import accordion from './accordion';
 
 const engine = new Liquid();
 
-
 const isDefaultLayout = getLayoutVars().layout === 'default';
 const isSF = getLayoutVars().type === 'sf';
 const convocation = pageTypeToConvocation(getLayoutVars().type);
@@ -87,12 +86,12 @@ function HideCard() {
     }
 }
 
-function ShowCard({depInfo, depRating, depLobbys, depSuccessRate, lobby, declarations}) {
+function ShowCard({depInfo, depRating, depLobbys, depSuccessRate, lobby, declarations, depLobbistSmallData}) {
     if (window.history && window.history.pushState) {
         window.history.pushState({person: depInfo.person}, null, (isSF ? './sf#id' : './#id') + depInfo.person);
     };
 
-    currentCardData = {depInfo, depRating, depLobbys, depSuccessRate, lobby_list: lobby, declarations};
+    currentCardData = {depInfo, depRating, depLobbys, depSuccessRate, lobby_list: lobby, declarations, depLobbistSmallData};
     currentScrollTop = 0;
     currentExpandedAccordions.clear();
 
@@ -103,6 +102,9 @@ function ShowCard({depInfo, depRating, depLobbys, depSuccessRate, lobby, declara
 function showLawDetails(lawId) {
     currentLawSelected = lawId;
     currentScrollTop = cardNode.scrollTop();
+
+    fetchLawDetails(lawId)
+
     renderCard();
 }
 
@@ -112,7 +114,7 @@ function hideLawDetails() {
 }
 
 function renderCard() {
-    const {depInfo, depRating, depLobbys, depSuccessRate, lobby_list, declarations} = currentCardData;
+    const {depInfo, depRating, depLobbys, depSuccessRate, lobby_list, declarations, depLobbistSmallData} = currentCardData;
     const {square, income} = calclulateDeclarationHilights(declarations.results);
     const { lawStatProposed, lawStatAccepted } = calculateLawStat(depSuccessRate.success_rate);
 
@@ -132,9 +134,9 @@ function renderCard() {
         twPerson: `https://twitter.com/intent/tweet?url=http%3A%2F%2Fdumabingo.ru/${dirUrl}${depInfo.person}&text=${depInfo.fullname}`,
         vkPerson: `http://vk.com/share.php?url=http%3A%2F%2Fdumabingo.ru/${dirUrl}${depInfo.person}`,
         openDeclaration: depInfo.person ? `https://declarator.org/person/${depInfo.person}` : null,
-        openRupep: depInfo.rupe ? `https://rupep.ru/person/${depInfo.rupep}` : null,
+        openRupep: depLobbistSmallData.rupep ? `https://rupep.ru/person/${depLobbistSmallData.rupep}` : null,
         sendForm: feedbackForm + `viewform?entry.742555963=${depInfo.fullname}`,
-        laws:  depInfo.law_draft_apis?.length ? depInfo.law_draft_apis : null,
+        laws:  depLobbistSmallData.law_draft_apis?.length ? depLobbistSmallData.law_draft_apis : null,
         lawStatProposed,
         lawStatAccepted,
         lawTextBringHtml: Pluralization(lawStatProposed, "закон<br>выдвинут", "закона<br>выдвинуто", "законов<br>выдвинуто"),
@@ -302,6 +304,19 @@ function calclulateDeclarationHilights(declarations = []) {
         square: formatNumber(Math.round(square)),
         income: formatNumber(Math.round(income)),
     }
+}
+
+async function fetchLawDetails(lawId) {
+    let response;
+
+    try {
+        response = await fetch(`https://declarator.org/api/law_draft_api/${lawId}/`).then((r) => r.json());
+    } catch (e) {
+        console.error(e);
+        response = null;
+    }
+
+    return response;
 }
 
 export default ShowCard;

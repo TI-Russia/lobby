@@ -57,7 +57,6 @@ export default Promise.all(promises).then(function (values) {
         data,
         rawRating,
         rawDep,
-        myGroups,
         myArrGroups,
         isSF
     };
@@ -80,15 +79,12 @@ function dataDepMap(rawdata) {
             myGroups.add(b);
 
             return {
-                id: d.id,
+                ...d,
                 name: d.fullname,
                 fraction: getFraction(d).slug,
-                gender: d.gender,
-                age:calculateAge(new Date(d.birth_date)),
+                age: calculateAge(new Date(d.birth_date)),
                 group: b,
                 groups: groups,
-                person: d.person,
-                lobbist: d.lobbist,
                 rating: rating.log,
                 election_method: d.election_method,
                 committees: !isSF ? d.committees : getSFCommittee(d.committee),
