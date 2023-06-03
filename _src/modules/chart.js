@@ -2,6 +2,7 @@ import $ from 'jquery';
 import * as d3 from 'd3';
 import noUiSlider from 'nouislider';
 import Awesomplete from 'awesomplete';
+import findKey from 'lodash/findKey';
 
 import floatingTooltip from '../vendor/tooltip';
 import Data from './data';
@@ -1086,6 +1087,10 @@ export default async function initChart () {
                 $('.hero-body').removeClass('is-loading');
                 const i_search = d3.select('input#search').property('value');
                 const s_lobby = d3.select('select#select_lobby').property('value');
+
+                const s_position_gd_raw = d3.select('select#select_position_gd').property('value');
+                const s_position_gd = s_position_gd_raw && Number(findKey(POSITIONS, (val) => val === s_position_gd_raw));
+
                 let s_region;
 
                 if (isSF){
@@ -1137,6 +1142,8 @@ export default async function initChart () {
                         (x.region == s_region) : true)
                     &&
                     ((s_comitet != -1) ? x.committees.includes(s_comitet) : true)
+                    &&
+                    (s_position_gd ? x.positions.includes(s_position_gd) : true)
                     &&
                     (!isSF ? (+x.convocations >= +r_conv[0] && +x.convocations <= +r_conv[1]) : true)
                     &&
