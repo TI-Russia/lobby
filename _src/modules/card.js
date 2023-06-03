@@ -21,6 +21,7 @@ let currentCardData = null;
 let currentLawSelected = null;
 let currentLawSelectedData = null;
 let isLawDetailsLoading = false;
+let lawAuthorsIsShowMore = false;
 let currentExpandedAccordions = new Set();
 let currentScrollTop = 0;
 let template;
@@ -83,6 +84,13 @@ if (isDefaultLayout) {
             window.history.pushState('backward', null, isSF ? '/sf' :'/');
         }
     });
+
+    cardNode.on('click', '.card__law-info-meta-item-more', (e) => {
+        e.preventDefault();
+        lawAuthorsIsShowMore = true;
+        renderCard();
+    });
+
     $(window).on('popstate', HideCard); // back button should close modal
 }
 
@@ -94,6 +102,7 @@ function HideCard() {
     currentLawSelected = null;
     currentLawSelectedData = null;
     isLawDetailsLoading = false;
+    lawAuthorsIsShowMore = false;
     currentScrollTop = 0;
     currentExpandedAccordions.clear();
 }
@@ -134,6 +143,7 @@ async function showLawDetails(lawId) {
 
 function hideLawDetails() {
     currentLawSelected = null;
+    lawAuthorsIsShowMore = false;
     renderCard();
 }
 
@@ -146,7 +156,7 @@ function renderCard() {
         currentLawSelected,
         currentLawSelectedData,
         isLawDetailsLoading,
-        
+        lawAuthorsIsShowMore,
         info: depInfo,
         rating: depRating,
         lobbys: depLobbys,
@@ -361,9 +371,13 @@ async function fetchLawDetails(lawId) {
         }
     });
 
+    const law_authors_enriched_cut = law_authors_enriched?.slice(0, 3);
+
     return {
         ...response,
         law_authors_enriched,
+        law_authors_enriched_cut,
+        law_authors_enriched_more_size: Math.max(0, law_authors_enriched?.length - law_authors_enriched_cut?.length),
     };
 }
 
