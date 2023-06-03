@@ -5,6 +5,7 @@ import { formatNumber, pageTypeToConvocation, personFullnameToFIO } from '../lib
 import Pluralization from '../tools/pluralize';
 import { getLayoutVars } from './layout_vars';
 import accordion from './accordion';
+import { formatDate } from '../lib/date';
 import Data from './data';
 
 const engine = new Liquid();
@@ -149,8 +150,8 @@ function renderCard() {
         info: depInfo,
         rating: depRating,
         lobbys: depLobbys,
-        lastUpdate: null,
-        editing: false,
+        lastUpdate: formatDate(depLobbistSmallData.modified_when),
+        editing: depLobbistSmallData.draft,
         income,
         square,
         fractionClass: getFractionClass(depInfo.fraction),
