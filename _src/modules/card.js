@@ -329,9 +329,11 @@ function calclulateDeclarationHilights(declarations = []) {
         }
     };
 
-    const square = latestDeclaration.real_estates.reduce((acc, realEstate) => {
-        return acc + realEstate.square;
-    }, 0);
+    const square = latestDeclaration.real_estates
+        .filter((r) => r.own_type.id === 20) // только индивидуальная
+        .reduce((acc, realEstate) => {
+            return acc + realEstate.square;
+        }, 0);
 
     const income = latestDeclaration.incomes.reduce((acc, income) => {
         return acc + income.size;
