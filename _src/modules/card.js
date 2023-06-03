@@ -15,7 +15,7 @@ const isSF = getLayoutVars().type === 'sf';
 const convocation = pageTypeToConvocation(getLayoutVars().type);
 
 const dirUrl = isSF ? 'person_sf/' : 'person/';
-const feedbackForm = 'https://docs.google.com/forms/d/1Qaw8qWfw2PPZPtpF1PV4EyNGekXesM2qRLzwurgjHbA/viewform?edit_requested=true';
+const feedbackForm = getLayoutVars().feedbackUrl;
 
 let currentCardData = null;
 let currentLawSelected = null;
@@ -172,7 +172,7 @@ function renderCard() {
         vkPerson: `http://vk.com/share.php?url=http%3A%2F%2Fdumabingo.ru/${dirUrl}${depInfo.person}`,
         openDeclaration: depInfo.person ? `https://declarator.org/person/${depInfo.person}` : null,
         openRupep: depLobbistSmallData.rupep ? `https://rupep.ru/person/${depLobbistSmallData.rupep}` : null,
-        sendForm: feedbackForm + `viewform?entry.742555963=${depInfo.fullname}`,
+        sendForm: feedbackForm,
         laws:  depLobbistSmallData.law_draft_apis?.length ? depLobbistSmallData.law_draft_apis : null,
         lawStatProposed,
         lawStatAccepted,

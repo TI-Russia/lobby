@@ -12,6 +12,7 @@ page_urls:
   sf: 'sf'
   duma_7: 'sozyv7'
   duma_8: ''
+  contribute: 'contribute'
 
 collections:
   contribute:
@@ -45,15 +46,12 @@ menu_rating_url:
   duma_8: 'Рейтинг_влияния_депутатов_Госдумы_UPD.pdf'
   sf: 'Рейтинг_влияния_членов_Совета_Федерации_290321_UPD.pdf'
 
-menu_feedback_url:
-  duma_7: 'https://forms.gle/d6ia3KgkooeubQsj7'
-  duma_8: 'https://forms.gle/d6ia3KgkooeubQsj7'
-  sf: 'https://forms.gle/D8y9DkcJAujkxW269'
+feedback_url:
+  duma_7: 'https://docs.google.com/forms/d/e/1FAIpQLSc6ojDZmxa9NaiTAC272cqlZ08XJzUM3jBA6OUv0I1PpTjpYA/viewform'
+  duma_8: 'https://docs.google.com/forms/d/1Qaw8qWfw2PPZPtpF1PV4EyNGekXesM2qRLzwurgjHbA/viewform'
+  sf: 'https://docs.google.com/forms/d/e/1FAIpQLSc6ojDZmxa9NaiTAC272cqlZ08XJzUM3jBA6OUv0I1PpTjpYA/viewform'
 
-menu_contribute_url:
-  duma_7: 'contribute'
-  duma_8: 'contribute'
-  sf: 'contribute'
+contribute_url: https://docs.google.com/forms/d/e/1FAIpQLScDw9U7Z5WoDZ-y0m6lcocI36pPJIy96Ff-xRuCf14P87JBPw/viewform
 
 meta:
   title:

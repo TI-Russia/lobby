@@ -32,19 +32,14 @@
         <div class="column is-pulled-right c3 ">
             <div id="nav-menu" class="">
                 <a href="{{ site.baseurl }}/{{ site.menu_about_url[page.type] }}">О&nbsp;проекте</a>
-                <a href="{{ site.baseurl }}/{{ site.menu_contribute_url[page.type] }}">Помочь проекту</a>
-                <a target="_blank" href="{{ site.menu_feedback_url[page.type] }}">Обратная связь</a>
+                <a href="{{ site.baseurl }}/{{ site.page_urls.contribute }}">Помочь проекту</a>
+                <a target="_blank" href="{{ site.feedback_url[page.type] }}">Обратная связь</a>
             </div>
             <a id="nav-toggle" class=""><span class="icon"><i class="fas fa-bars"></i></span> </a>
             <ul class="header-menu" id="header_menu">
                 <li> <a href="{{ site.baseurl }}{{ site.menu_about_url[page.type] }}">О&nbsp;проекте</a></li>
-                <li> <a href="{{ site.baseurl }}/{{ site.menu_contribute_url[page.type] }}">Помочь проекту</a></li>
-                <li> <a target="_blank" href="{{ site.menu_feedback_url[page.type] }}">Обратная связь</a></li>
-                <li>
-                    <a href= "{{site.baseurl}}/{{site.page_urls[page.type]}}">
-                        {% if page.type == 'sf' %}Лоббизм в СовФеде{% else %}Лоббизм в Госдуме{% endif %}
-                    </a>
-                </li>
+                <li> <a href="{{ site.baseurl }}/{{ site.page_urls.contribute }}">Помочь проекту</a></li>
+                <li> <a target="_blank" href="{{ site.feedback_url[page.type] }}">Обратная связь</a></li>
             </ul>
         </div>
         <div class="column is-pulled-right c4"><a  href="http://vk.com/share.php?url=https%3A%2F%2Fdumabingo.ru%2F{% if page.type == 'sf'%}sf{%endif%}" target="_blank" class="c4 vk_share_button"><span class="icon is-large"><i class="fab fa-vk"></i></span></a>
