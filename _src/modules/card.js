@@ -174,6 +174,7 @@ function renderCard() {
         openRupep: depLobbistSmallData.rupep ? `https://rupep.ru/person/${depLobbistSmallData.rupep}` : null,
         sendForm: feedbackForm,
         laws:  depLobbistSmallData.law_draft_apis?.length ? depLobbistSmallData.law_draft_apis : null,
+        lawStat: !isSF,
         lawStatProposed,
         lawStatAccepted,
         lawTextBringHtml: Pluralization(lawStatProposed, "закон<br>выдвинут", "закона<br>выдвинуто", "законов<br>выдвинуто"),
@@ -225,7 +226,7 @@ function getPositionSF(info) {
     const comitet = info.committee;
     const gender = info.gender?.toLowerCase() || "м";
     const region = info.region.genitive;
-    const chem = info.goverment_body;
+    let chem = info.goverment_body;
     const position = info.position;
 
     if (comitet === '0'
