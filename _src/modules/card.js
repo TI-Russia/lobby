@@ -350,7 +350,7 @@ async function fetchLawDetails(lawId) {
         if (person) {
             return {
                 name: personFullnameToFIO(person.fullname),
-                link: isSF ? `/sf#${person.person}` : `/#${person.person}`,
+                link: isSF ? `/sf/person/${person.person}` : `/person/${person.person}`,
             };
         } else {
             return {
