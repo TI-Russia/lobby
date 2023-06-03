@@ -373,16 +373,43 @@ div#card {
     padding-bottom: 16px;
   }
 
+  .card__law-info {
+    padding-bottom: 16px;
+    height: 100%;
+  }
+
+  .card__law-info-loading {
+    height: 100%;
+
+    &.is-loading {
+      position: relative;
+      pointer-events: none;
+      opacity: 0.5;
+      mix-blend-mode: luminosity;
+      pointer-events: none;
+      &:after {
+        @include loader;
+        animation: spinAround 1000ms infinite linear;
+        border: 2px solid $color-blue;
+        border-radius: $radius-rounded;
+        border-right-color: transparent;
+        border-top-color: transparent;
+        position: absolute;
+        top: calc(50% - 2.5em);
+        left: calc(50% - 2.5em);
+        width: 5em;
+        height: 5em;
+        border-width: 0.25em;
+      }
+    }
+  }
+
   .card__law-info-header {
     padding: 16px 27px 24px;
   }
 
   .card__law-info-topbar {
     margin-bottom: 26px;
-  }
-  
-  .card__law-info {
-    padding-bottom: 16px;
   }
 
   .card__law-info-meta {

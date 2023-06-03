@@ -12,7 +12,7 @@
 
             <div id="close_btn" class="icon is-large close_btn"></div>
 
-            {% unless selectedLaw %}
+            {% unless currentLawSelected %}
                 <div class="card__main-info">
                     <div class="card__header">
                         <div class="status">
@@ -81,13 +81,13 @@
                         <button  id="scrollToTop" title="Наверх">&uarr;</button>
                     </div>
                     {% if laws %}
-                        <div class="accordion" data-id="0">
+                        <div class="accordion" data-accordion-id="0">
                             <div class="accordion__title">Мониторинг законопроектов</div>
                             <div class="accordion__content accordion__content_wide">
                                 {% for law in laws %}
-                                    <div class="card__law" data-id="{{ law.id }}">
+                                    <div class="card__law" data-law-id="{{ law.id }}">
                                         <div class="card__law-header">
-                                            <a href="{{law.link}}" target="__blank" class="card__law-header-title">№ {{law.number}}</a>
+                                            <a href="" target="_blank" class="card__law-header-title card__law-details-button">№ {{law.number}}</a>
                                             {% if false %}
                                                 <span class="card__law-header-status">На рассмотрении</span>
                                             {% endif %}
@@ -102,88 +102,111 @@
                         </div>
                     {% endif %}
                     {% if lobbys %}
-                        <div class="accordion" data-id="1">
+                        <div class="accordion" data-accordion-id="1">
                             <div class="accordion__title">Группы интересов</div>
                             <div class="accordion__content">{{ lobbyHtml | raw }}</div>
                         </div>
                     {% endif %}
                     {% if info.bio %}
-                    <div class="accordion" data-id="2">
+                    <div class="accordion" data-accordion-id="2">
                         <div class="accordion__title">Биография</div>
                         <div class="accordion__content">{{ info.bio | raw }}</div>
                     </div>
                     {% endif %}
                     {% if info.submitted %}
-                    <div class="accordion" data-id="3">
+                    <div class="accordion" data-accordion-id="3">
                         <div class="accordion__title">Законотворчество</div>
                         <div class="accordion__content">{{ info.submitted | raw }}</div>
                     </div>
                     {% endif %}
                     {% if info.relations %}
-                    <div class="accordion" data-id="4">
+                    <div class="accordion" data-accordion-id="4">
                         <div class="accordion__title">Аффиляция и связи</div>
                         <div class="accordion__content">{{ info.relations | raw }}</div>
                     </div>
                     {% endif %}
                     {% if info.conclusion %}
-                    <div class="accordion" data-id="5">
+                    <div class="accordion" data-accordion-id="5">
                         <div class="accordion__title">Выводы</div>
                         <div class="accordion__content">{{ info.conclusion | raw }}</div>
                     </div>
                     {% endif %}
                 </div>
             {% endunless %}
-            {% if selectedLaw %}
+
+            {% if currentLawSelected %}
                 <div class="card__law-info">
-                    <div class="card__law-info-header">
-                        <div class="card__law-info-topbar">
-                            <a class="link-button link-button_bordered card__law-back-button" target="_blank" href="">← Вернуться</a>
-                        </div>
-                        <div class="card__law-info-meta">
-                            <div class="card__law-info-meta-item">
-                                <span class="card__law-info-meta-item-title">Статус:</span>
-                                <span class="card__law-info-meta-item-value">На рассмотрении</span>
+                    {% if isLawDetailsLoading %}
+                        <div class="card__law-info-loading is-loading"></div>
+                    {% elsif currentLawSelectedData %}
+                        <div class="card__law-info-header">
+                            <div class="card__law-info-topbar">
+                                <a class="link-button link-button_bordered card__law-back-button" target="_blank" href="">← Вернуться</a>
                             </div>
-                            <div class="card__law-info-meta-item">
-                                <span class="card__law-info-meta-item-title">Источник:</span>
-                                <span class="card__law-info-meta-item-value">
-                                    <a href="/">СОЗД</a>
-                                </span>
+                            <div class="card__law-info-meta">
+                                {% if false %}
+                                    <div class="card__law-info-meta-item">
+                                        <span class="card__law-info-meta-item-title">Статус:</span>
+                                        <span class="card__law-info-meta-item-value">На рассмотрении</span>
+                                    </div>
+                                {% endif %}
+                                {% if currentLawSelectedData.link %}
+                                    <div class="card__law-info-meta-item">
+                                        <span class="card__law-info-meta-item-title">Источник:</span>
+                                        <span class="card__law-info-meta-item-value">
+                                            <a target="__blank" href="{{ currentLawSelectedData.link }}">СОЗД</a>
+                                        </span>
+                                    </div>
+                                {% endif %}
+                                {% if false %}
+                                    <div class="card__law-info-meta-item">
+                                        <span class="card__law-info-meta-item-title">Теги:</span>
+                                        <span class="card__law-info-meta-item-value">Бешеный принтер, На наши налоги</span>
+                                    </div>
+                                {% endif %}
                             </div>
-                            <div class="card__law-info-meta-item">
-                                <span class="card__law-info-meta-item-title">Теги:</span>
-                                <span class="card__law-info-meta-item-value">Бешеный принтер, На наши налоги</span>
+                            <div class="card__law-info-title">Законопроект № {{ currentLawSelectedData.number }}</div>
+                            <div class="card__law-info-description">
+                                {{ currentLawSelectedData.name }}
+                            </div>
+                            {% if false %}
+                                <div class="card__law-info-caption">
+                                    caption
+                                </div>
+                            {% endif %}
+                            <div class="card__law-info-meta">
+                                {% if currentLawSelectedData.law_authors_enriched %}
+                                    <div class="card__law-info-meta-item">
+                                        <span class="card__law-info-meta-item-title">Авторы:</span>
+                                        <span class="card__law-info-meta-item-value">
+                                            {% for author in currentLawSelectedData.law_authors_enriched %}
+                                                <a href="{{ author.link }}">{{ author.name }}</a>
+                                                {%- if forloop.last == false -%},{%- endif %}
+                                            {% endfor -%}
+                                        </span>
+                                    </div>
+                                {% endif %}
+                                {% if false %}
+                                    <div class="card__law-info-meta-item">
+                                        <span class="card__law-info-meta-item-title">Дата внесения:</span>
+                                        <span class="card__law-info-meta-item-value card__law-info-meta-item-value_plain">22 сентября 2022</span>
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
-                        <div class="card__law-info-title">Законопроект № 414175-6</div>
-                        <div class="card__law-info-description">
-                            О внесении изменений в главу 26 части второй Налогового кодекса Российской Федерации и статью 3 Федерального закона «О внесении изменений в главы 25 и 26 части второй Налогового кодекса Российской Федерации и статью 3.1 Закона Российской Федерации «О таможенном тарифе»
-                        </div>
-                        <div class="card__law-info-caption">
-                            (Об уточнении условий применения коэффициента, характеризующего степень сложности добычи нефти, при расчете ставки налога на добычу полезных ископаемых)
-                        </div>
-                        <div class="card__law-info-meta">
-                            <div class="card__law-info-meta-item">
-                                <span class="card__law-info-meta-item-title">Авторы:</span>
-                                <span class="card__law-info-meta-item-value">
-                                    <a href="/">Симановский Л. Я.</a>,
-                                    <a href="/">Крупенинников В. А.</a>
-                                </span>
+                        {% if currentLawSelectedData.core %}
+                            <div class="accordion">
+                                <div class="accordion__title">Суть законопроекта</div>
+                                <div class="accordion__content">{{ currentLawSelectedData.core }}</div>
                             </div>
-                            <div class="card__law-info-meta-item">
-                                <span class="card__law-info-meta-item-title">Дата внесения:</span>
-                                <span class="card__law-info-meta-item-value card__law-info-meta-item-value_plain">22 сентября 2022</span>
+                        {% endif %}
+                        {% if currentLawSelectedData.possible_interested_persons %}
+                            <div class="accordion">
+                                <div class="accordion__title">Возможные интересанты</div>
+                                <div class="accordion__content">{{currentLawSelectedData.possible_interested_persons}}</div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="accordion" data-id="5">
-                        <div class="accordion__title">Суть законопроекта</div>
-                        <div class="accordion__content">Законопроект расширил возможности применения коэффициента и способствовал снижению налоговых отчислений для недропользователей. Законопроект был выгоден нефтедобывающим компаниям, к которым относится и компания “Новатэк”, совладельцем которой является Симановский. Поэтому относим депутата к группе интересов топливной промышленности.</div>
-                    </div>
-                    <div class="accordion" data-id="5">
-                        <div class="accordion__title">Возможные интересанты</div>
-                        <div class="accordion__content">Законопроект расширил возможности применения коэффициента и способствовал снижению налоговых отчислений для недропользователей. Законопроект был выгоден нефтедобывающим компаниям, к которым относится и компания “Новатэк”, совладельцем которой является Симановский. Поэтому относим депутата к группе интересов топливной промышленности.</div>
-                    </div>
+                        {% endif %}
+                    {% endif %}
                 </div>
             {% endif %}
         </script>

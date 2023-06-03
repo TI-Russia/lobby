@@ -13,6 +13,12 @@ export function formatNumber(num) {
         .join('');
 }
 
+export function personFullnameToFIO(fullname) {
+    const [lastname, firstname, patronymic] = fullname.split(' ');
+
+    return `${lastname} ${firstname[0]}. ${patronymic[0]}.`;
+}
+
 export function pageTypeToConvocation(pageType) {
     switch (pageType) {
         case 'duma_7':
@@ -22,6 +28,6 @@ export function pageTypeToConvocation(pageType) {
         case 'sf':
             return 8;
     }
-    
+
     return null;
 }

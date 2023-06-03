@@ -1,10 +1,11 @@
 import $ from 'jquery';
 import { Liquid } from 'liquidjs';
 import tree_func from '../tools/tree';
-import { formatNumber, pageTypeToConvocation } from '../lib/common';
+import { formatNumber, pageTypeToConvocation, personFullnameToFIO } from '../lib/common';
 import Pluralization from '../tools/pluralize';
 import { getLayoutVars } from './layout_vars';
 import accordion from './accordion';
+import Data from './data';
 
 const engine = new Liquid();
 
@@ -17,6 +18,8 @@ const feedbackForm = 'https://docs.google.com/forms/d/1Qaw8qWfw2PPZPtpF1PV4EyNGe
 
 let currentCardData = null;
 let currentLawSelected = null;
+let currentLawSelectedData = null;
+let isLawDetailsLoading = false;
 let currentExpandedAccordions = new Set();
 let currentScrollTop = 0;
 let template;
@@ -46,7 +49,11 @@ if (isDefaultLayout) {
     });
 
     cardNode.on(accordion.EVENT_TOGGLE, '.card__main-info .accordion', function(event, isOpen) {
-        const id = $(this).attr('data-id');
+        const id = $(this).attr('data-accordion-id');
+
+        if (!id) {
+            return;
+        }
 
         if (isOpen) {
             currentExpandedAccordions.add(id);
@@ -57,7 +64,7 @@ if (isDefaultLayout) {
 
     cardNode.on('click', '.card__law-details-button', function (event) {
         event.preventDefault();
-        const lawId = $(this).closest('.card__law').attr('data-id');
+        const lawId = $(this).closest('.card__law').attr('data-law-id');
         showLawDetails(lawId);
     });
 
@@ -66,7 +73,15 @@ if (isDefaultLayout) {
         hideLawDetails();
     });
 
-    cardNode.on('click', '#close_btn', HideCard);
+    cardNode.on('click', '#close_btn', () => {
+        HideCard();
+
+        window.dispatchEvent(new Event('closeCard'));
+
+        if (window.history && window.history.pushState) {
+            window.history.pushState('backward', null, isSF ? '/sf' :'/');
+        }
+    });
     $(window).on('popstate', HideCard); // back button should close modal
 }
 
@@ -76,34 +91,42 @@ function HideCard() {
 
     currentCardData = null;
     currentLawSelected = null;
+    currentLawSelectedData = null;
+    isLawDetailsLoading = false;
     currentScrollTop = 0;
     currentExpandedAccordions.clear();
-
-    window.dispatchEvent(new Event('closeCard'));
-
-    if (window.history && window.history.pushState) {
-        window.history.pushState('backward', null, isSF ? './sf' :'./');
-    }
 }
 
 function ShowCard({depInfo, depRating, depLobbys, depSuccessRate, lobby, declarations, depLobbistSmallData}) {
+    if (currentCardData) {
+        HideCard();
+    }
+
     if (window.history && window.history.pushState) {
         window.history.pushState({person: depInfo.person}, null, (isSF ? './sf#id' : './#id') + depInfo.person);
     };
 
     currentCardData = {depInfo, depRating, depLobbys, depSuccessRate, lobby_list: lobby, declarations, depLobbistSmallData};
-    currentScrollTop = 0;
-    currentExpandedAccordions.clear();
 
     cardNode.show();
     renderCard();
 }
 
-function showLawDetails(lawId) {
+async function showLawDetails(lawId) {
     currentLawSelected = lawId;
     currentScrollTop = cardNode.scrollTop();
+    isLawDetailsLoading = true;
 
-    fetchLawDetails(lawId)
+    renderCard();
+
+    const lawDetails = await fetchLawDetails(lawId);
+
+    if (lawId !== currentLawSelected) {
+        return;
+    }
+
+    currentLawSelectedData = lawDetails;
+    isLawDetailsLoading = false;
 
     renderCard();
 }
@@ -119,7 +142,10 @@ function renderCard() {
     const { lawStatProposed, lawStatAccepted } = calculateLawStat(depSuccessRate.success_rate);
 
     cardNode.html(engine.renderSync(template, {
-        selectedLaw: currentLawSelected,
+        currentLawSelected,
+        currentLawSelectedData,
+        isLawDetailsLoading,
+        
         info: depInfo,
         rating: depRating,
         lobbys: depLobbys,
@@ -147,7 +173,7 @@ function renderCard() {
 
     if (!currentLawSelected) {
         cardNode.find('.accordion').each(function() {
-            const id = $(this).attr('data-id');
+            const id = $(this).attr('data-accordion-id');
 
             if (currentExpandedAccordions.has(id)) {
                 accordion.toggle(this, true, 0);
@@ -316,7 +342,28 @@ async function fetchLawDetails(lawId) {
         response = null;
     }
 
-    return response;
+    const { rawDep: lobbistSmallListRaw } = await Data;
+
+    const law_authors_enriched = response?.law_authors?.map((authorPersonId) => {
+        const person = lobbistSmallListRaw.find((lobbist) => lobbist.person === authorPersonId);
+
+        if (person) {
+            return {
+                name: personFullnameToFIO(person.fullname),
+                link: isSF ? `/sf#${person.person}` : `/#${person.person}`,
+            };
+        } else {
+            return {
+                name: authorPersonId,
+                link: "",
+            }
+        }
+    });
+
+    return {
+        ...response,
+        law_authors_enriched,
+    };
 }
 
 export default ShowCard;
