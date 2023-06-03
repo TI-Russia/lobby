@@ -1088,13 +1088,15 @@ export default async function initChart () {
                 const i_search = d3.select('input#search').property('value');
                 const s_lobby = d3.select('select#select_lobby').property('value');
 
-                const s_position_gd_raw = d3.select('select#select_position_gd').property('value');
-                const s_position_gd = s_position_gd_raw && Number(findKey(POSITIONS, (val) => val === s_position_gd_raw));
-
+                let s_position_gd_raw;
+                let s_position_gd;
                 let s_region;
 
                 if (isSF){
                     s_region = d3.select('select#select_region').property('value');
+                } else {
+                    s_position_gd_raw = d3.select('select#select_position_gd').property('value');
+                    s_position_gd = s_position_gd_raw && Number(findKey(POSITIONS, (val) => val === s_position_gd_raw));
                 }
 
                 if (s_lobby != -1 && s_lobby != "") {
