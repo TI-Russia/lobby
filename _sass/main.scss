@@ -435,6 +435,11 @@ div#card {
 
   .card__law-info-meta-item-value {
     color: $key-color;
+    display: inline-block;
+
+    &:first-letter {
+      text-transform: capitalize;
+    }
 
     &_plain {
       color: $color-black-text;

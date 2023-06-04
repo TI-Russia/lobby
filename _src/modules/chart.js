@@ -950,7 +950,7 @@ export default async function initChart () {
                 const age_slider_div = document.getElementById('age');
 
                 conv_slider = noUiSlider.create(conv_slider_div, {
-                    start: [isSF?0:1, GetMaxConvocation()],
+                    start: [isSF? 0: 1, GetMaxConvocation()],
                     step: 1,
                     connect: true,
                     range: {
@@ -1013,7 +1013,9 @@ export default async function initChart () {
             }
 
             function GetMaxConvocation() {
-                return isSF ? Math.max(...data.map(x => + x.total_years)) : Math.max(...data.map(x => +x.convocations));
+                return isSF
+                    ? Math.max(...data.map(x => + x.total_years))
+                    : data.reduce((acc, dep) => Math.max(acc, ...dep.convocations), 0);
             }
 
             function GetMinAge() {
@@ -1148,7 +1150,7 @@ export default async function initChart () {
                     &&
                     (s_position_gd ? x.positions.includes(s_position_gd) : true)
                     &&
-                    (!isSF ? (+x.convocations >= +r_conv[0] && +x.convocations <= +r_conv[1]) : true)
+                    (!isSF ? (+x.convocations.length >= +r_conv[0] && +x.convocations.length <= +r_conv[1]) : true)
                     &&
                     (isSF ? (+x.total_years >= +r_conv[0] && +x.total_years <= +r_conv[1]) : true)
                     &&

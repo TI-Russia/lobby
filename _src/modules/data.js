@@ -2,6 +2,7 @@ import * as d3 from 'd3';
 import { getLayoutVars } from './layout_vars';
 import { getFraction } from '../lib/fractions';
 import { getRating } from '../lib/rating';
+import { prepareConvocations } from '../lib/convocations';
 
 let data = [];
 let lobby = [];
@@ -9,47 +10,54 @@ let lobby_level_0 = [];
 const myGroups = new Set();
 const myArrGroups = [];
 const isSF = getLayoutVars().type === 'sf';
-const prefix = 'https://declarator.org/media/dumps/';
 const files = {
     "duma_7": [
-        prefix + 'lobbist-small-d7.json',
-        prefix + 'lobby-group.json',
+        'https://declarator.org/media/dumps/lobbist-small-d7.json',
+        'https://declarator.org/media/dumps/lobby-group.json',
         "/assets/data/rating.json",
         "/assets/data/alias.json",
+        "https://declarator.org/api/convocations/7/person_convocations",
     ],
     "duma_8": [
-        prefix + 'lobbist-small-d8.json',
-        prefix + 'lobby-group.json',
+        'https://declarator.org/media/dumps/lobbist-small-d8.json',
+        'https://declarator.org/media/dumps/lobby-group.json',
         "/assets/data/rating.json",
         "/assets/data/alias.json",
+        "https://declarator.org/api/convocations/8/person_convocations",
     ],
     "sf": [
-        prefix + 'lobbist-small-sf.json',
-        prefix + 'lobby-group.json',
+        'https://declarator.org/media/dumps/lobbist-small-sf.json',
+        'https://declarator.org/media/dumps/lobby-group.json',
         "/assets/data/rating-sf.json",
-        "/assets/data/alias.json"
+        "/assets/data/alias.json",
     ],
 }[getLayoutVars().type];
 
 const promises = [];
-let rawDep, rawRating, rawAlias, aliases;
 
 files.forEach(function (url) {
     promises.push(d3.json(url))
 });
 
 export default Promise.all(promises).then(function (values) {
-    if (isSF) {
-        rawDep = values[0];
-    } else {
-        rawDep = values[0].filter((dep) => dep.convocations && dep.convocations.length > 0);
+    const [rawDepOriginal, rawLobby, rawRating, rawAlias, rawConvocations] = values;
+
+    if (!isSF) {
+        const convocationsMap = rawConvocations.persons.reduce((acc, convocation) => {
+            acc[convocation.person_id] = convocation.convocations;
+            return acc;
+        }, {});
+
+        rawDepOriginal.forEach((dep) => {
+            dep.convocations = prepareConvocations(convocationsMap[dep.person]) || [];
+        });
     }
-    const rawLobby = values[1] //change to load from url
-    rawRating = values[2]
-    rawAlias = values[3]
-    dataDepMap(rawDep)
-    getAliasMap(rawAlias)
-    getLobbyMap(rawLobby, aliases)
+    
+    const rawDep = isSF ? rawDepOriginal : rawDepOriginal.filter((dep) => dep.convocations && dep.convocations.length > 0);
+
+    dataDepMap(rawDep, rawRating);
+    const aliases = getAliasMap(rawAlias);
+    getLobbyMap(rawLobby, aliases);
 
     return {
         lobby,
@@ -62,7 +70,7 @@ export default Promise.all(promises).then(function (values) {
     };
 });
 
-function dataDepMap(rawdata) {
+function dataDepMap(rawdata, rawRating) {
     function calculateAge(birthday) { // birthday is a date
         const ageDifMs = Date.now() - birthday.getTime();
         const ageDate = new Date(ageDifMs); // miliseconds from epoch
@@ -73,7 +81,7 @@ function dataDepMap(rawdata) {
     data = rawdata.flatMap((d) => {
         let groups = d.groups;
         groups.length == 0 ? groups = [11851] : groups // кто без групп? -> в группу "Не выявлено"
-        const rating=getRating(d.person, rawRating, isSF);
+        const rating = getRating(d.person, rawRating, isSF);
 
         return groups.map((b) => {
             myGroups.add(b);
@@ -88,7 +96,6 @@ function dataDepMap(rawdata) {
                 rating: rating.log,
                 election_method: d.election_method,
                 committees: !isSF ? d.committees : getSFCommittee(d.committee),
-                convocations: d.convocations.length!=0 ? d.convocations.length : 1,
                 region: d.region ? d.region.name : null,
                 goverment_body: d.goverment_body,
                 total_years: d.total_years,
@@ -134,7 +141,7 @@ function getLobbyMap(rawdata, aliases) {
 }
 
 function getAliasMap(rawdata) {
-    aliases = rawdata.map(x => {
+    return rawdata.map(x => {
         if (x.alias == "") x.alias = "null";
 
         return {

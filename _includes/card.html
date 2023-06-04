@@ -158,10 +158,13 @@
                                         </span>
                                     </div>
                                 {% endif %}
-                                {% if false %}
+                                {% if currentLawSelectedData.keywords %}
                                     <div class="card__law-info-meta-item">
                                         <span class="card__law-info-meta-item-title">Теги:</span>
-                                        <span class="card__law-info-meta-item-value">Бешеный принтер, На наши налоги</span>
+                                        {% for keyword in currentLawSelectedData.keywords %}
+                                            <span class="card__law-info-meta-item-value">{{ keyword }}</span>
+                                            {%- if forloop.last == false -%},{%- endif %}
+                                        {% endfor -%}
                                     </div>
                                 {% endif %}
                             </div>
