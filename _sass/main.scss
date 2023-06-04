@@ -2,8 +2,8 @@
 
 html{overflow-y: auto;}
 body, button, select, input{
-  font-family: "Helios-Cond-Regular", "Helvetica Neue";
-  }
+  font-family: "Helios-Cond", "Helvetica Neue";
+}
 body{
   background: $color-white;
   line-height: 1;
@@ -610,7 +610,7 @@ div#card {
     margin: 12px 0;
 
     .highlight-value {
-      font-family: 'Helios-Cond-Bold';
+      font-family: 'Helios-Cond';
       font-weight: 700;
       font-size: 32px;
       line-height: 36px;
@@ -708,7 +708,7 @@ div#card {
   }
 
   .law_count{
-    font-family: 'Helios-Cond-Bold';
+    font-family: 'Helios-Cond';
     font-size: 56px;
     line-height: 57px;
     text-align: center;
@@ -1110,7 +1110,7 @@ circle.activeCircle{
   }
 
   &__modal-title {
-    font-family: 'Helios-Cond-Regular';
+    font-family: 'Helios-Cond';
     margin-bottom: 0;
   } 
 }
@@ -1154,7 +1154,7 @@ circle.activeCircle{
 
   &__item-value {
     white-space: nowrap;
-    font-family: 'Helios-Cond-Bold';
+    font-family: 'Helios-Cond';
     font-weight: 700;
     font-size: 32px;
     line-height: 36px;    

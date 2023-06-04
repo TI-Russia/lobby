@@ -285,8 +285,9 @@ header {
 }
 
 .columns.md-page {
-  //font-family: $font-legible;
-  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 24px;
   margin-bottom: 1px;
   max-width: 1280px;
   margin: 0 auto;
@@ -296,29 +297,37 @@ header {
     display: flex;
   }
 
-  .md-page-section:not(:last-of-type){
-    padding-bottom: 4em;
+  .md-page-section {
+    max-width: 746px;
+
+    &:not(:last-of-type){
+      padding-bottom: 4em;
+    }
   }
+
+  h1, h2, h3 {
+    font-family: "Helios-Cond", "Helvetica Neue";
+  }
+
   h1{
     font-weight: 700;
-    font-size: 32px;
+    font-size: 34px;
     line-height: 120%;
-    margin-bottom: 16px;
+    margin-bottom: 30px;
   }
   h2,h3{
     font-weight: 700;
     font-size: 26px;
     line-height: 120%;
     margin-top: 1.6em;
-    margin-bottom: 0.6em;
+    margin-bottom: 20px;
   }
   li{
     margin-bottom: 16px;
     padding-left: 10px;
   }
   p{
-    margin-bottom: 0.6em;
-    line-height: 1.2em;
+    margin-bottom: 20px;
   }
   ol{
     padding-left: 1em;
@@ -333,7 +342,7 @@ header {
 }
 
 .columns.about{
-  padding: 80px 16px 16px 0px;
+  padding: 48px 16px 16px 0px;
 
   @include until($desktop){
     padding: 40px 16px 32px 16px;
