@@ -309,11 +309,11 @@ function getLobbyMatrix(nodes, lobby_list) {
 }
 
 function calculateLawStat(depSuccessRate) {
-    const { rate, filtered_number } = depSuccessRate[`convocation_${convocation}`] || {};
+    const { filtered_number, approved_number } = depSuccessRate[`convocation_${convocation}`] || {};
 
     return {
         lawStatProposed: filtered_number || 0,
-        lawStatAccepted: Math.round(filtered_number * rate / 100) || 0,
+        lawStatAccepted: approved_number || 0,
     }
 }
 
