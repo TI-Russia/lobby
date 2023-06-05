@@ -1064,10 +1064,12 @@ export default async function initChart () {
                 }
                 width = getViewBox("svg#chart").width;
 
+                const [transX, transY] = getTranslation(active.attr("transform"));
+
                 const bbox = active.node().getBBox();
                 const bounds = [
-                    [bbox.x+x, bbox.y+y],
-                    [bbox.x+x + bbox.width, bbox.y+y + bbox.height],
+                    [bbox.x + transX, bbox.y + transY],
+                    [bbox.x + transX + bbox.width, bbox.y + transY + bbox.height],
                 ];
 
                 const dx = bounds[1][0] - bounds[0][0];
@@ -1084,7 +1086,6 @@ export default async function initChart () {
                 svg1.transition()
                     .duration(450)
                     .call(zoom_handler.transform, transform);
-
             }
 
             function onchange(init) {

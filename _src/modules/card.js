@@ -115,7 +115,8 @@ function ShowCard({depInfo, depInfoLegacy, depRating, depLobbys, depSuccessRate,
     }
 
     if (window.history && window.history.pushState) {
-        window.history.pushState({person: depInfo.person}, null, (isSF ? './sf#id' : './#id') + depInfo.person);
+        const personId = isSF ? depInfoLegacy.person : depInfo.person;
+        window.history.pushState({person: personId}, null, (isSF ? './sf#id' : './#id') + personId);
     };
 
     currentCardData = {depInfo, depInfoLegacy, depRating, depLobbys, depSuccessRate, lobby_list: lobby, declarations, depLobbistSmallData};
@@ -233,10 +234,10 @@ function getPosition(info) {
 }
 
 function getPositionSF(info) {
-    const comitet = info.committee;
+    let comitet = info.committee;
     const gender = info.gender?.toLowerCase() || "м";
-    const region = info.region.genitive;
-    let chem = info.goverment_body;
+    const region = info.region?.genitive;
+    let chem = info.goverment_body || "";
     const position = info.position;
 
     if (comitet === '0'
@@ -255,7 +256,7 @@ function getPositionSF(info) {
     if (comitet !== " ") chlen += ", ";
     const delegirovan = (gender == "ж" || gender == "f") ? "делегирована " : "делегирован ";
     const vsovete = "в Совете Федерации с " + info.start_year + " года";
-    const predstavitel = ". Представитель " + region;
+    const predstavitel = region ? ". Представитель " + region : "";
 
     return chlen + delegirovan + chem + vsovete + predstavitel;
 }
