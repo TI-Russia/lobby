@@ -1,12 +1,14 @@
 import * as d3 from 'd3';
 
 export function getRating(id, rawRating, isSF) {
-    const proposedField = isSF ? 'vnes' : 'filtered_number';
-    const acceptedField = isSF  ? 'podpis' : 'approved_number';
+    const isOldFormat = true;
 
-    const foundRatingData = findPersonRating(id, rawRating, isSF);
+    const proposedField = isOldFormat ? 'vnes' : 'filtered_number';
+    const acceptedField = isOldFormat  ? 'podpis' : 'approved_number';
 
-    const ratingList = isSF ? rawRating : Object.values(rawRating.success_rates);
+    const foundRatingData = findPersonRating(id, rawRating, isOldFormat);
+
+    const ratingList = isOldFormat ? rawRating : Object.values(rawRating.success_rates);
     const max = d3.max(ratingList.map(x => calculateBaseRating(x[proposedField], x[acceptedField])));
 
     const ratingInitial = (foundRatingData && foundRatingData[proposedField] >= 5)

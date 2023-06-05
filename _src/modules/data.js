@@ -15,14 +15,14 @@ const files = {
     "duma_7": [
         'https://declarator.org/media/dumps/lobbist-small-d7.json',
         'https://declarator.org/api/lobby_group/',
-        "https://declarator.org/api/convocations/7/success_rate",
+        "/assets/data/rating.json",
         "/assets/data/alias.json",
         "https://declarator.org/api/convocations/7/person_convocations",
     ],
     "duma_8": [
         'https://declarator.org/media/dumps/lobbist-small-d8.json',
         'https://declarator.org/api/lobby_group/',
-        "https://declarator.org/api/convocations/8/success_rate",
+        "/assets/data/rating.json",
         "/assets/data/alias.json",
         "https://declarator.org/api/convocations/8/person_convocations",
     ],
