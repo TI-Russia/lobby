@@ -6,6 +6,7 @@ import Pluralization from '../tools/pluralize';
 import { getLayoutVars } from './layout_vars';
 import accordion from './accordion';
 import { formatDate } from '../lib/date';
+import { getFraction } from '../lib/fractions';
 import Data from './data';
 import { FRACTIONS } from '../constants/fractions';
 
@@ -156,11 +157,11 @@ function renderCard() {
     console.log(depLobbistSmallData, depInfo);
 
     cardNode.html(engine.renderSync(template, {
-        photo: isSF ? depInfoLegacy.photo : `https://declarator.org/media/lobbist/${depInfo.photo}`,
-        bio: isSF ? depInfoLegacy.bio : depInfo.bio,
-        submitted: isSF ? depInfoLegacy.submitted : depInfo.submitted,
-        relations: isSF ? depInfoLegacy.relations : depInfo.relations,
-        conclusion: isSF ? depInfoLegacy.conclusion : depInfo.conclusion,
+        photo: isSF ? depInfoLegacy.photo : `https://declarator.org/media/${depInfo.photo}`,
+        bio: (isSF ? depInfoLegacy.bio : depInfo.bio) || null,
+        submitted: (isSF ? depInfoLegacy.submitted : depInfo.submitted) || null,
+        relations: (isSF ? depInfoLegacy.relations : depInfo.relations) || null,
+        conclusion: (isSF ? depInfoLegacy.conclusion : depInfo.conclusion ) || null,
         currentLawSelected,
         currentLawSelectedData,
         isLawDetailsLoading,

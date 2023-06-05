@@ -7,6 +7,7 @@ import { prepareConvocations } from '../lib/convocations';
 let data = [];
 let lobby = [];
 let lobby_level_0 = [];
+
 const myGroups = new Set();
 const myArrGroups = [];
 const isSF = getLayoutVars().type === 'sf';
