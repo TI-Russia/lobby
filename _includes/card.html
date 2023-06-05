@@ -34,8 +34,8 @@
                             </div>
                             <div class="column caption"><span id="fraction_text" class="{{ fractionClass }}">{{ fraction }}</span><br>
                                 <h1 id="fullname">{{ fullname }}</h1>
-                                {% if isInPrevGD %}
-                                    <a class="prev-position link-button link-button_bordered" target="_blank" href="">Найти в предыдущем созыве</a>
+                                {% if prevConvocationUrl %}
+                                    <a class="prev-position link-button link-button_bordered" target="_blank" href="{{ prevConvocationUrl }}">Найти в предыдущем созыве</a>
                                 {% endif %}
                             </div>
                         </div>

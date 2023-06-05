@@ -153,6 +153,7 @@ function renderCard() {
     const { depInfo, depInfoLegacy, depRating, depLobbys, depSuccessRate, lobby_list, declarations, depLobbistSmallData} = currentCardData;
     const { square, income} = calclulateDeclarationHilights(declarations.results);
     const { lawStatProposed, lawStatAccepted } = calculateLawStat(depSuccessRate.success_rate);
+    const prevConvocationUrl = calculatePrevConvocationUrl(depLobbistSmallData);
 
     cardNode.html(engine.renderSync(template, {
         photo: isSF ? depInfoLegacy.photo : `https://declarator.org/media/${depInfo.photo}`,
@@ -189,6 +190,7 @@ function renderCard() {
         lawTextPassed: Pluralization(lawStatAccepted, "принят", "принято", "принято"),
         lawTextDay: Pluralization(Math.floor(String(depRating.sred_day).replace(',','.')), "день", "дня", "дней"),
         sredDay: Math.floor(String(depRating.sred_day).replace(',','.')),
+        prevConvocationUrl,
     }));
 
     if (!currentLawSelected) {
@@ -390,6 +392,16 @@ async function fetchLawDetails(lawId) {
         law_authors_enriched_cut,
         law_authors_enriched_more_size: Math.max(0, law_authors_enriched?.length - law_authors_enriched_cut?.length),
     };
+}
+
+function calculatePrevConvocationUrl(depInfo) {
+    if (isSF) return null;
+
+    if (depInfo.convocations.includes(convocation - 1)) {
+        return `/sozyv${convocation - 1}#id${depInfo.person}`;
+    }
+    
+    return null;
 }
 
 export default ShowCard;
