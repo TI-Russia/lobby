@@ -154,8 +154,6 @@ function renderCard() {
     const { square, income} = calclulateDeclarationHilights(declarations.results);
     const { lawStatProposed, lawStatAccepted } = calculateLawStat(depSuccessRate.success_rate);
 
-    console.log(depLobbistSmallData, depInfo);
-
     cardNode.html(engine.renderSync(template, {
         photo: isSF ? depInfoLegacy.photo : `https://declarator.org/media/${depInfo.photo}`,
         bio: (isSF ? depInfoLegacy.bio : depInfo.bio) || null,

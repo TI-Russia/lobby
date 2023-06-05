@@ -14,21 +14,21 @@ const isSF = getLayoutVars().type === 'sf';
 const files = {
     "duma_7": [
         'https://declarator.org/media/dumps/lobbist-small-d7.json',
-        'https://declarator.org/media/dumps/lobby-group.json',
+        'https://declarator.org/api/lobby_group/',
         "/assets/data/rating.json",
         "/assets/data/alias.json",
         "https://declarator.org/api/convocations/7/person_convocations",
     ],
     "duma_8": [
         'https://declarator.org/media/dumps/lobbist-small-d8.json',
-        'https://declarator.org/media/dumps/lobby-group.json',
+        'https://declarator.org/api/lobby_group/',
         "/assets/data/rating.json",
         "/assets/data/alias.json",
         "https://declarator.org/api/convocations/8/person_convocations",
     ],
     "sf": [
         'https://declarator.org/media/dumps/lobbist-small-sf.json',
-        'https://declarator.org/media/dumps/lobby-group.json',
+        'https://declarator.org/api/lobby_group/',
         "/assets/data/rating-sf.json",
         "/assets/data/alias.json",
     ],
