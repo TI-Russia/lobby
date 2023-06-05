@@ -18,7 +18,7 @@ export function getRating(id, rawRating, isSF) {
 
     return {
         log: logScale(ratingInitial),
-        sred_day: (isSF && predefinedRating) ? predefinedRating.sred_day : -1,
+        sred_day: (isSF && foundRatingData) ? foundRatingData.sred_day : -1,
     };
 }
 
