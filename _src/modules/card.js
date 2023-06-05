@@ -166,7 +166,6 @@ function renderCard() {
         currentLawSelectedData,
         isLawDetailsLoading,
         lawAuthorsIsShowMore,
-        rating: depRating,
         lobbys: depLobbys,
         lobbyHtml: getLobbyMatrix(depLobbistSmallData.groups, lobby_list),
         lastUpdate: formatDate(depLobbistSmallData.modified_when),
@@ -398,8 +397,10 @@ async function fetchLawDetails(lawId) {
 function calculatePrevConvocationUrl(depInfo) {
     if (isSF) return null;
 
-    if (depInfo.convocations.includes(convocation - 1)) {
-        return `/sozyv${convocation - 1}#id${depInfo.person}`;
+    const prevConvocation = convocation - 1;
+
+    if (prevConvocation >= 7 && depInfo.convocations.includes(prevConvocation)) {
+        return `/sozyv${prevConvocation}#id${depInfo.person}`;
     }
     
     return null;
