@@ -754,7 +754,7 @@ export default async function initChart () {
             if (isSF){
                 content += `<span class="value">${FRACTIONS[d.fraction].name}, ${d.total_years} ${Pluralization(d.total_years, "год в СФ", "года в СФ", "лет в СФ")}</span><br/>`;
             } else {
-                content += `<span class="value">${FRACTIONS[d.fraction].name}, ${d.convocations} ${Pluralization(d.convocations, "созыв", "созыва", "созывов")}</span><br/>`;
+                content += `<span class="value">${FRACTIONS[d.fraction].name}, ${d.convocations.length} ${Pluralization(d.convocations.length, "созыв", "созыва", "созывов")}</span><br/>`;
             }
 
             if (cloneclustersNames == "") {
