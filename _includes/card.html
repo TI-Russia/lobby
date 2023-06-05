@@ -28,12 +28,12 @@
                             <div class="column is-4" id="photo">
                                 <div class="image-cropper">
                                     <div class="color-black">
-                                        <img width="128" height="128" src="{{ info.photo }}" alt="person">
+                                        <img width="128" height="128" src="{{ photo }}" alt="person">
                                     </div>
                                 </div>
                             </div>
-                            <div class="column caption"><span id="fraction_text" class="{{ fractionClass }}">{{ info.fraction }}</span><br>
-                                <h1 id="fullname">{{ info.fullname }}</h1>
+                            <div class="column caption"><span id="fraction_text" class="{{ fractionClass }}">{{ fraction }}</span><br>
+                                <h1 id="fullname">{{ fullname }}</h1>
                                 {% if isInPrevGD %}
                                     <a class="prev-position link-button link-button_bordered" target="_blank" href="">Найти в предыдущем созыве</a>
                                 {% endif %}
@@ -107,28 +107,28 @@
                             <div class="accordion__content">{{ lobbyHtml | raw }}</div>
                         </div>
                     {% endif %}
-                    {% if info.bio %}
+                    {% if bio %}
                     <div class="accordion" data-accordion-id="2">
                         <div class="accordion__title">Биография</div>
-                        <div class="accordion__content">{{ info.bio | raw }}</div>
+                        <div class="accordion__content">{{ bio | raw }}</div>
                     </div>
                     {% endif %}
-                    {% if info.submitted %}
+                    {% if submitted %}
                     <div class="accordion" data-accordion-id="3">
                         <div class="accordion__title">Законотворчество</div>
-                        <div class="accordion__content">{{ info.submitted | raw }}</div>
+                        <div class="accordion__content">{{ submitted | raw }}</div>
                     </div>
                     {% endif %}
-                    {% if info.relations %}
+                    {% if relations %}
                     <div class="accordion" data-accordion-id="4">
                         <div class="accordion__title">Аффиляция и связи</div>
-                        <div class="accordion__content">{{ info.relations | raw }}</div>
+                        <div class="accordion__content">{{ relations | raw }}</div>
                     </div>
                     {% endif %}
-                    {% if info.conclusion %}
+                    {% if conclusion %}
                     <div class="accordion" data-accordion-id="5">
                         <div class="accordion__title">Выводы</div>
-                        <div class="accordion__content">{{ info.conclusion | raw }}</div>
+                        <div class="accordion__content">{{ conclusion | raw }}</div>
                     </div>
                     {% endif %}
                 </div>

@@ -699,10 +699,11 @@ export default async function initChart () {
             HightlightCirclesOn(d.id);
             MarkActiveCirclesOn(d.id);
             $('#clusters').addClass('is-loading');
-            const lobbistId = isSF ? d.id : d.lobbist;
             const depRating=getRating(d.person, rawRating, isSF);
             const depLobbys=GetLobbyText(d.groups);
-            const dipInfoURL = `https://declarator.org/api/lobbist/${lobbistId}/`;
+            const dipInfoURL = isSF
+                ? `https://declarator.org/api/lobbist/${d.id}/`
+                : `https://declarator.org/api/lobbist_detail/${d.id}/`;
             const declarationsURL = `https://declarator.org/api/v1/search/sections/?person=${d.person}`;
             const successRateURL = `https://declarator.org/api/persons/${d.person}/success_rate`;
             
@@ -713,7 +714,7 @@ export default async function initChart () {
             ]).then(function([depInfo, declarations, depSuccessRate]) {
                 $('#clusters').removeClass('is-loading');
                 new ShowCard({
-                    depInfo, 
+                    ...(isSF ? { depInfoLegacy: depInfo } : { depInfo }),
                     depRating, 
                     depLobbys, 
                     depSuccessRate,

@@ -7,6 +7,7 @@ import { getLayoutVars } from './layout_vars';
 import accordion from './accordion';
 import { formatDate } from '../lib/date';
 import Data from './data';
+import { FRACTIONS } from '../constants/fractions';
 
 const engine = new Liquid();
 
@@ -107,7 +108,7 @@ function HideCard() {
     currentExpandedAccordions.clear();
 }
 
-function ShowCard({depInfo, depRating, depLobbys, depSuccessRate, lobby, declarations, depLobbistSmallData}) {
+function ShowCard({depInfo, depInfoLegacy, depRating, depLobbys, depSuccessRate, lobby, declarations, depLobbistSmallData}) {
     if (currentCardData) {
         HideCard();
     }
@@ -116,7 +117,7 @@ function ShowCard({depInfo, depRating, depLobbys, depSuccessRate, lobby, declara
         window.history.pushState({person: depInfo.person}, null, (isSF ? './sf#id' : './#id') + depInfo.person);
     };
 
-    currentCardData = {depInfo, depRating, depLobbys, depSuccessRate, lobby_list: lobby, declarations, depLobbistSmallData};
+    currentCardData = {depInfo, depInfoLegacy, depRating, depLobbys, depSuccessRate, lobby_list: lobby, declarations, depLobbistSmallData};
 
     cardNode.show();
     renderCard();
@@ -148,29 +149,37 @@ function hideLawDetails() {
 }
 
 function renderCard() {
-    const {depInfo, depRating, depLobbys, depSuccessRate, lobby_list, declarations, depLobbistSmallData} = currentCardData;
-    const {square, income} = calclulateDeclarationHilights(declarations.results);
+    const { depInfo, depInfoLegacy, depRating, depLobbys, depSuccessRate, lobby_list, declarations, depLobbistSmallData} = currentCardData;
+    const { square, income} = calclulateDeclarationHilights(declarations.results);
     const { lawStatProposed, lawStatAccepted } = calculateLawStat(depSuccessRate.success_rate);
 
+    console.log(depLobbistSmallData, depInfo);
+
     cardNode.html(engine.renderSync(template, {
+        photo: isSF ? depInfoLegacy.photo : `https://declarator.org/media/lobbist/${depInfo.photo}`,
+        bio: isSF ? depInfoLegacy.bio : depInfo.bio,
+        submitted: isSF ? depInfoLegacy.submitted : depInfo.submitted,
+        relations: isSF ? depInfoLegacy.relations : depInfo.relations,
+        conclusion: isSF ? depInfoLegacy.conclusion : depInfo.conclusion,
         currentLawSelected,
         currentLawSelectedData,
         isLawDetailsLoading,
         lawAuthorsIsShowMore,
-        info: depInfo,
         rating: depRating,
         lobbys: depLobbys,
         lastUpdate: formatDate(depLobbistSmallData.modified_when),
         editing: depLobbistSmallData.draft,
         income,
         square,
-        fractionClass: getFractionClass(depInfo.fraction),
-        positionHtml: isSF ? getPositionSF(depInfo) : getPosition(depInfo),
-        tempComissionHtml: isSF ? getTempComissionText(depInfo.temp_commission) : '',
-        lobbyHtml: getLobbyMatrix(depInfo.groups, lobby_list),
-        twPerson: `https://twitter.com/intent/tweet?url=http%3A%2F%2Fdumabingo.ru/${dirUrl}${depInfo.person}&text=${depInfo.fullname}`,
-        vkPerson: `http://vk.com/share.php?url=http%3A%2F%2Fdumabingo.ru/${dirUrl}${depInfo.person}`,
-        openDeclaration: depInfo.person ? `https://declarator.org/person/${depInfo.person}` : null,
+        fullname: depLobbistSmallData.fullname,
+        fraction: isSF ? depInfoLegacy.fraction : FRACTIONS[getFraction(depLobbistSmallData.fraction)]?.name,
+        fractionClass: isSF ? getFractionClass(depInfoLegacy.fraction) : depLobbistSmallData.fraction,
+        positionHtml: isSF ? getPositionSF(depInfoLegacy) : getPosition(depLobbistSmallData),
+        tempComissionHtml: isSF ? getTempComissionText(depInfoLegacy.temp_commission) : '',
+        lobbyHtml: getLobbyMatrix(depLobbistSmallData.groups, lobby_list),
+        twPerson: `https://twitter.com/intent/tweet?url=http%3A%2F%2Fdumabingo.ru/${dirUrl}${depLobbistSmallData.person}&text=${depLobbistSmallData.fullname}`,
+        vkPerson: `http://vk.com/share.php?url=http%3A%2F%2Fdumabingo.ru/${dirUrl}${depLobbistSmallData.person}`,
+        openDeclaration: depLobbistSmallData.person ? `https://declarator.org/person/${depLobbistSmallData.person}` : null,
         openRupep: depLobbistSmallData.rupep ? `https://rupep.ru/person/${depLobbistSmallData.rupep}` : null,
         sendForm: feedbackForm,
         laws:  depLobbistSmallData.law_draft_apis?.length ? depLobbistSmallData.law_draft_apis : null,
