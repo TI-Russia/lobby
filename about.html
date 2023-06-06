@@ -1,11 +1,12 @@
 ---
-layout: page
+layout: page-about
 title: About
 permalink: /about/
+type: duma_8
 ---
 <div class="hero-body">
 {% for section in site.about %}
-    <div class="about-section" id="{{ section.ident }}">
+    <div class="md-page-section" id="{{ section.ident }}">
         <h1 id="{{ section.ident }}">{{ section.title }}</h1>
         {{ section.content }}
     </div>

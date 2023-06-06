@@ -1,11 +1,21 @@
 # Локальный Запуск
 `bundle exec jekyll serve --port 4001 --baseurl ''`
 
+# Локальная разработка Frontend
+
+1. Установить Node.js
+2. Выполнить `npm i` для установки зависимостей
+3. Выполнить `npm run build` для сборки актуальной версии бандла
+4. Выполнить `npm run watch` для запуска отслеживания изменений в js коде и пересборки бандла
+
 # Шэринг конкретной карточки
 ## Для обновления страниц депутатов необходимо:
 1. скачать локально копию сайта 
 2. настроить среду локальной разработки (npm, jekyll, bundler)
-3. положить актуальный json файл с записями о депутатах (`https://declarator.org/media/dumps/lobbist-small.json`) в директорию `_data`
+3. положить актуальные json файлы с записями о депутатах:
+  - (`https://declarator.org/media/dumps/lobbist-small-d7.json`)
+  - (`https://declarator.org/media/dumps/lobbist-small-d8.json`)
+  в директорию `_data`
 4. написать имя актуального json файла в _config.yml в секции page_gen
 5. сбилдить сайт -- запустить `jekyll build`
 6. скопировать сгенерированные карточки из директории `_site/card` в директорию `person`

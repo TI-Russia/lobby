@@ -1,66 +1,193 @@
 <div id="card" class="modal">
-    <div class="share_icons">
-        <div class="know_more" ><a href="" id="send_form" target="_blank">Знаете о {% if page.sf%}сенаторе {%else%}депутате {%endif%}больше? Напишите нам!</a></div>
+    {% raw %}
+        <script id="card_template" type="text/template">
+            <div class="share_icons">
+                <div class="know_more" ><a href="{{ sendForm }}" id="send_form" target="_blank">Знаете о {% if page.type == 'sf'%}сенаторе {%else%}депутате {%endif%}больше? Напишите нам!</a></div>
 
-        <div class="social">
-            <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdumabingo.ru%2F&text={{site.description}}"  target="_blank" class="tw" id="tw_person"><span class="icon"><i class="fab fa-twitter"></i></span></a>
-            <a href="http://vk.com/share.php?url=https%3A%2F%2Fdumabingo.ru%2F" target="_blank" class="vk vk_share_button" id="vk_person"><span class="icon"><i class="fab fa-vk"></i></span></a>
-        </div>
-
-
-    </div>
-    <div>
-    <div class="icon is-large close_btn">
-        <i class="fas fa-times fa-lg"></i>
-    </div>
-    <div class="columns head">
-        <div class="column is-4" id="photo">
-            <div class="image-cropper">
-                <div class="color-black">
-                    <img width="128" height="128" src="" alt="person">
+                <div class="social">
+                    <a href="{{ twPerson }}"  target="_blank" class="tw" id="tw_person"><span class="icon"><i class="fab fa-twitter"></i></span></a>
+                    <a href="{{ vkPerson }}" target="_blank" class="vk vk_share_button" id="vk_person"><span class="icon"><i class="fab fa-vk"></i></span></a>
                 </div>
             </div>
-        </div>
-        <div class="column caption"><span id="fraction_text"></span><br>
-            <h1 id="fullname"></h1>
-            <a id="open_declaration" target="_blank" href="">Посмотреть декларацию</a>
-        </div>
-    </div>
-    <div id="position"></div>
-    <div id="region"></div>
-    <div id="temp_comission"></div>
 
-    <div class="columns is-vcentered laws_block is-multiline is-mobile" id="laws">
-        <div class="column is-full-mobile is-narrow-tablet">
-            <div class="columns is-vcentered bring">
-                <div class="column is-narrow-tablet is-full-mobile law_count" id="law_number_vnes"></div>
-                <div class="column is-full-mobile is-narrow-tablet law_text" id="law_text_bring"></div>
-            </div>
-        </div>
-        <div class="column is-full-mobile is-half-tablet">
-            <div class="columns is-vcentered bring">
-                <div class="column is-narrow-tablet is-full-mobile law_count law_signed" id="law_number_podpis"></div>
-                <div class="column  is-full-mobile is-narrow-tablet law_text law_signed">
-                    из них <span id="law_text_passed"></span> <br>
-                    <span class="law_text_average">в среднем </span>за
-                    <span id="sred_day"></span>
-                    <span id="law_text_day"> дней</span>
+            <div id="close_btn" class="icon is-large close_btn"></div>
+
+            {% unless selectedLaw %}
+                <div class="card__main-info">
+                    <div class="card__header">
+                        <div class="status">
+                            {% if lastUpdate %}
+                                <div class="last-update">Обновлено: {{ lastUpdate }}</div>
+                            {% endif %}
+                            {% unless info.verified %}
+                                <div class="is-editing">На доработке</div>
+                            {% endunless %}
+                            <div class="is-editing">На доработке</div>
+                        </div>
+                    
+                        <div class="columns head">
+                            <div class="column is-4" id="photo">
+                                <div class="image-cropper">
+                                    <div class="color-black">
+                                        <img width="128" height="128" src="{{ info.photo }}" alt="person">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column caption"><span id="fraction_text" class="{{ fractionClass }}">{{ info.fraction }}</span><br>
+                                <h1 id="fullname">{{ info.fullname }}</h1>
+                                <a class="prev-position link-button link-button_bordered" target="_blank" href="">Найти в предыдущем созыве</a>
+                            </div>
+                        </div>
+                        <div class="declaration-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-value">30 508 057 <span class="rub">₽</span></div>
+                                <div class="highlight-text">суммарный доход</div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-value">1 586 <span class="rub">м²</span></div>
+                                <div class="highlight-text">недвижимость</div>
+                            </div>
+                        </div>
+                        <div class="dep-links">
+                            <a id="open_declaration" class="link-button" target="_blank" href="{{ openDeclaration }}">Посмотреть декларацию</a>
+                            <a class="link-button" target="_blank" href="">Открыть досье на Rupep</a>
+                        </div>
+                        <div id="position">{{ positionHtml | raw }}</div>
+                        <div id="region"></div>
+                        <div id="temp_comission">{{ tempComissionHtml | raw }}</div>
+                        
+                        {% if rating.no != true %}
+                            <div class="columns is-vcentered laws_block is-multiline is-mobile" id="laws">
+                                <div class="column is-full-mobile is-narrow-tablet">
+                                    <div class="columns is-vcentered bring">
+                                        <div class="column is-narrow-tablet is-full-mobile law_count" id="law_number_vnes">{{ rating.vnes }}</div>
+                                        <div class="column is-full-mobile is-narrow-tablet law_text" id="law_text_bring">{{ lawTextBringHtml | raw }}</div>
+                                    </div>
+                                </div>
+                                <div class="column is-full-mobile is-half-tablet">
+                                    <div class="columns is-vcentered bring">
+                                        {% if rating.podpis > 0 %}
+                                            <div class="column is-narrow-tablet is-full-mobile law_count" id="law_number_podpis">{{ rating.podpis }}</div>
+                                            <div class="column is-full-mobile is-narrow-tablet law_text">
+                                                <span id="law_text_passed">{{ lawTextPassed }},</span>
+                                                {% if rating.podpis != 1 %}
+                                                    <span>средний срок — </span><br/>
+                                                {%else%}
+                                                    <br/><span>за</span>
+                                                {% endif %}
+                                                <span id="sred_day">{{ sredDay }}</span>
+                                                <span id="law_text_day">{{ lawTextDay }}</span>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+        
+                        <button  id="scrollToTop" title="Наверх">&uarr;</button>
+                    </div>
+                    <div class="accordion" data-id="0">
+                        <div class="accordion__title">Законы draft</div>
+                        <div class="accordion__content accordion__content_wide">
+                            <div class="card__law" data-id="123">
+                                <div class="card__law-header">
+                                    <a href="" class="card__law-header-title card__law-details-button">№ 374380-7</a>
+                                    <span class="card__law-header-status">На рассмотрении</span>
+                                </div>
+                                <div class="card__law-content">
+                                    О вынесении административного штрафа за остановку и парковку на клумбах в трактовке ПДД
+                                </div>
+                                <a class="link-button link-button_bordered card__law-details-button" target="_blank" href="">Подробнее о законопроекте</a>
+                            </div>
+                            <div class="card__law" data-id="456">
+                                <div class="card__law-header">
+                                    <a href="" class="card__law-header-title card__law-details-button">№ 963119-6</a>
+                                    <span class="card__law-header-status">Принят</span>
+                                </div>
+                                <div class="card__law-content">
+                                    О передаче регионам полномочий по содержанию, развитию и организации эксплуатации посадочных площадок гражданской авиации
+                                </div>
+                                <a class="link-button link-button_bordered card__law-details-button" target="_blank" href="">Подробнее о законопроекте</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% if lobbys %}
+                        <div class="accordion" data-id="1">
+                            <div class="accordion__title">Группы интересов</div>
+                            <div class="accordion__content">{{ lobbyHtml | raw }}</div>
+                        </div>
+                    {% endif %}
+                    <div class="accordion" data-id="2">
+                        <div class="accordion__title">Биография</div>
+                        <div class="accordion__content">{{ info.bio | raw }}</div>
+                    </div>
+                    <div class="accordion" data-id="3">
+                        <div class="accordion__title">Внесённые законопроекты</div>
+                        <div class="accordion__content">{{ info.submitted | raw }}</div>
+                    </div>
+                    <div class="accordion" data-id="4">
+                        <div class="accordion__title">Аффиляция и связи</div>
+                        <div class="accordion__content">{{ info.relations | raw }}</div>
+                    </div>
+                    <div class="accordion" data-id="5">
+                        <div class="accordion__title">Выводы</div>
+                        <div class="accordion__content">{{ info.conclusion | raw }}</div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="lobby_block">
-        <h2>Группы интересов</h2>
-        <div id="lobby" class="matrix"></div>
-    </div>
-    <h2>Биография</h2>
-    <div id="bio"></div>
-    <h2>Внесённые законопроекты</h2>
-    <div id="submitted"></div>
-    <h2>Аффиляция и связи</h2>
-    <div id="relations"></div>
-    <h2>Выводы</h2>
-    <div id="conclusion"></div>
-    <button  id="scrollToTop" title="Наверх">&uarr;</button>
-    </div>
+            {% endunless %}
+            {% if selectedLaw %}
+                <div class="card__law-info">
+                    <div class="card__law-info-header">
+                        <div class="card__law-info-topbar">
+                            <a class="link-button link-button_bordered card__law-back-button" target="_blank" href="">← Вернуться</a>
+                        </div>
+                        <div class="card__law-info-meta">
+                            <div class="card__law-info-meta-item">
+                                <span class="card__law-info-meta-item-title">Статус:</span>
+                                <span class="card__law-info-meta-item-value">На рассмотрении</span>
+                            </div>
+                            <div class="card__law-info-meta-item">
+                                <span class="card__law-info-meta-item-title">Источник:</span>
+                                <span class="card__law-info-meta-item-value">
+                                    <a href="/">СОЗД</a>
+                                </span>
+                            </div>
+                            <div class="card__law-info-meta-item">
+                                <span class="card__law-info-meta-item-title">Теги:</span>
+                                <span class="card__law-info-meta-item-value">Бешеный принтер, На наши налоги</span>
+                            </div>
+                        </div>
+                        <div class="card__law-info-title">Законопроект № 414175-6</div>
+                        <div class="card__law-info-description">
+                            О внесении изменений в главу 26 части второй Налогового кодекса Российской Федерации и статью 3 Федерального закона «О внесении изменений в главы 25 и 26 части второй Налогового кодекса Российской Федерации и статью 3.1 Закона Российской Федерации «О таможенном тарифе»
+                        </div>
+                        <div class="card__law-info-caption">
+                            (Об уточнении условий применения коэффициента, характеризующего степень сложности добычи нефти, при расчете ставки налога на добычу полезных ископаемых)
+                        </div>
+                        <div class="card__law-info-meta">
+                            <div class="card__law-info-meta-item">
+                                <span class="card__law-info-meta-item-title">Авторы:</span>
+                                <span class="card__law-info-meta-item-value">
+                                    <a href="/">Симановский Л. Я.</a>,
+                                    <a href="/">Крупенинников В. А.</a>
+                                </span>
+                            </div>
+                            <div class="card__law-info-meta-item">
+                                <span class="card__law-info-meta-item-title">Дата внесения:</span>
+                                <span class="card__law-info-meta-item-value card__law-info-meta-item-value_plain">22 сентября 2022</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion" data-id="5">
+                        <div class="accordion__title">Суть законопроекта</div>
+                        <div class="accordion__content">Законопроект расширил возможности применения коэффициента и способствовал снижению налоговых отчислений для недропользователей. Законопроект был выгоден нефтедобывающим компаниям, к которым относится и компания “Новатэк”, совладельцем которой является Симановский. Поэтому относим депутата к группе интересов топливной промышленности.</div>
+                    </div>
+                    <div class="accordion" data-id="5">
+                        <div class="accordion__title">Возможные интересанты</div>
+                        <div class="accordion__content">Законопроект расширил возможности применения коэффициента и способствовал снижению налоговых отчислений для недропользователей. Законопроект был выгоден нефтедобывающим компаниям, к которым относится и компания “Новатэк”, совладельцем которой является Симановский. Поэтому относим депутата к группе интересов топливной промышленности.</div>
+                    </div>
+                </div>
+            {% endif %}
+        </script>
+    {% endraw %}
 </div>

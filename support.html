@@ -1,0 +1,17 @@
+---
+layout: page-support
+title: Support the project
+permalink: /support/
+type: duma-8
+---
+<div class="hero-body">
+    <div class="content">
+        {% for section in site.support %}
+            <div class="md-page-section" id="{{ section.ident }}">
+                <h1 id="{{ section.ident }}">{{ section.title }}</h1>
+                {{ section.content }}
+            </div>
+        {% endfor %}
+    </div>
+    <button  id="scrollToTop" title="Наверх">&uarr;</button>
+</div>

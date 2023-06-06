@@ -6,7 +6,6 @@
 <body>
 {% include yandex.html %}
 {% include google.html %}
-<!--{% include scripts-common.html %}-->
 <div class="hero">
     {% include header.html %}
 
@@ -20,5 +19,6 @@
     window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us3.list-manage.com","uuid":"404074cc83c30621d97f77cd6","lid":"1aefc044cc","uniqueMethods":true}) }),
         150000)
 </script>
+{% include scripts-require.html %}
 </body>
 </html>
