@@ -1,0 +1,55 @@
+{
+  "name": "dumabingo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "watch": "npm-run-all --parallel watch:js:app watch:jekyll",
+    "watch:jekyll": "bundle exec jekyll serve --port 4001 --baseurl ''",
+    "watch:js": "npm-run-all build:js:deps watch:js:app",
+    "watch:js:app": "gulp watch:app",
+    "build": "npm-run-all build:js:deps build:js:app build:jekyll",
+    "build:jekyll": "bundle exec jekyll build --baseurl 'https://dumabingo.surge.sh'",
+    "build:js:deps": "gulp build:deps",
+    "build:js:app": "gulp build:app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TI-Russia/lobby.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/TI-Russia/lobby/issues"
+  },
+  "homepage": "https://github.com/TI-Russia/lobby#readme",
+  "browserslist": "> 0.25%, not dead",
+  "engines": {
+    "node": ">=18"
+  },
+  "engineStrict": true,
+  "dependencies": {
+    "awesomplete": "^1.1.5",
+    "d3": "^5.7.0",
+    "jquery": "^3.6.1",
+    "liquidjs": "^9.42.1",
+    "lodash": "^4.17.21",
+    "nouislider": "^15.6.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-hash": "^4.2.2",
+    "gulp-inject": "^5.0.5",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "npm-run-all": "^4.1.5",
+    "run-sequence": "^2.2.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0",
+    "watchify": "^4.0.0"
+  }
+}

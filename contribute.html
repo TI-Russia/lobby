@@ -1,0 +1,17 @@
+---
+layout: page-contribute
+title: Support the project
+permalink: /contribute/
+type: duma_8
+---
+<div class="hero-body">
+    <div class="content">
+        {% for section in site.contribute %}
+            <div class="md-page-section" id="{{ section.ident }}">
+                <h1 id="{{ section.ident }}">{{ section.title }}</h1>
+                {{ section.content }}
+            </div>
+        {% endfor %}
+    </div>
+    <button id="scrollToTop" title="Наверх">&uarr;</button>
+</div>
