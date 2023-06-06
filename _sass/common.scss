@@ -544,6 +544,12 @@ header {
     height: 140px;
     border-radius: 50%;
     margin-right: 24px;
+
+    @include until($tablet){
+      width: 100px;
+      height: 100px;
+      align-self: flex-start;
+    }
   }
 
   &__author-info {
@@ -614,6 +620,16 @@ header {
       background-color: rgba($key-color, 0.9);
     }
   }
+
+  @include until($tablet){
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+
+    &__action {
+      flex-basis: auto;
+    }
+  }
 }
 
 .interests-schema {
@@ -635,6 +651,10 @@ header {
 
   &__content {
     display: flex;
+
+    @include until($tablet){
+      flex-direction: column;
+    }
   }
 
   &__column {
@@ -648,14 +668,23 @@ header {
     &:nth-child(1) {
       background-color: rgba($color-dark-blue, 0.05);
       flex-basis: 243px;
+      @include until($tablet){
+        flex-basis: auto;
+      }
     }
     &:nth-child(2) {
       background-color: rgba($color-dark-blue, 0.1);
       flex-basis: 288px;
+      @include until($tablet){
+        flex-basis: auto;
+      }
     }
     &:nth-child(3) {
       background-color: rgba($color-dark-blue, 0.15);
       flex-basis: 215px;
+      @include until($tablet){
+        flex-basis: auto;
+      }
     }
   }
 
