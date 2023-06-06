@@ -73,7 +73,7 @@
         <div class="column is-narrow-tablet">
             <div class="field is-grouped">
                 <div class="control has-icons-right is-expanded">
-                    <input class="input is-small" type="text" id="search" name="q" placeholder="Хинштейн">
+                    <input class="input is-small" type="text" id="search" name="q" placeholder="{% if page.type == 'duma_7'%}Володин{% else %}Хинштейн{%endif%}">
                     <span class="icon is-small is-right search_icon">
                         <i class="fas fa-search"></i>
                     </span>
