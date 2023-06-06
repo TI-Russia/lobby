@@ -173,7 +173,7 @@ function renderCard() {
         income,
         square,
         fullname: depLobbistSmallData.fullname,
-        fraction: isSF ? depInfoLegacy.fraction : FRACTIONS[getFraction(depLobbistSmallData.fraction)]?.name,
+        fraction: isSF ? depInfoLegacy.fraction : FRACTIONS[depLobbistSmallData.fraction]?.name,
         fractionClass: isSF ? getFractionClass(depInfoLegacy.fraction) : depLobbistSmallData.fraction,
         positionHtml: isSF ? getPositionSF(depInfoLegacy) : getPosition(depLobbistSmallData),
         tempComissionHtml: isSF ? getTempComissionText(depInfoLegacy.temp_commission) : '',

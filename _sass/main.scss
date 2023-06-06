@@ -706,6 +706,7 @@ div#card {
     &.kprf{color: $color-red;}
     &.ldpr{color: $color-yellow;}
     &.sr{color: $color-orange;}
+    &.srzp{color: $color-orange;}
     &.nl{color: $color-mint;}
     @include until($tablet){
       line-height: normal;

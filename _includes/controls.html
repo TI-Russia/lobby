@@ -5,7 +5,11 @@
                 <div class="buttons has-addons control" id="fraction">
                     <button class="button is-small is-active is-color-blue" value="er" data-tooltip="Партия «Единая Россия»">ЕР</button>
                     <button class="button is-small is-active is-color-red" value="kprf" data-tooltip="Коммунистическая партия Российской Федерации">КПРФ</button>
-                    <button class="button is-small is-active is-color-orange" value="sr" data-tooltip="Партия «Справедливая Россия — Патриоты — За правду»">СРЗП</button>
+                    {% if page.type == 'duma_7'%}
+                        <button class="button is-small is-active is-color-orange" value="sr" data-tooltip="Партия «Справедливая Россия»">СР</button>
+                    {% else %}
+                        <button class="button is-small is-active is-color-orange" value="srzp" data-tooltip="Партия «Справедливая Россия — Патриоты — За правду»">СРЗП</button>
+                    {%endif%}
                     <button class="button is-small is-active is-color-yellow" value="ldpr" data-tooltip="Либерально-демократическая партия России">ЛДПР</button>
                     {% if page.type == 'duma_8'%}
                         <button class="button is-small is-active is-color-mint" value="nl" data-tooltip="Партия «Новые люди»">НОВЫЕ ЛЮДИ</button>

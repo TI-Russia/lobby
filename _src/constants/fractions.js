@@ -24,8 +24,15 @@ export const FRACTIONS = {
         name: 'Справедливая Россия',
         alias: ['Справедливая Россия'],
         color: 'is-color-orange',
-        id: [6, 7, 8],
+        id: [7],
         slug: 'sr',
+    },
+    srzp: {
+        name: 'СРЗП',
+        alias: [],
+        color: 'is-color-orange',
+        id: [8],
+        slug: 'srzp',
     },
     ldpr: {
         name: 'ЛДПР',
