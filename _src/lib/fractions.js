@@ -9,7 +9,7 @@ export const getFraction = (lobbist) => {
             return sfFraction;
         }
 
-        const fraction = find(FRACTIONS, (f) => f.id === lobbist.fraction);
+        const fraction = find(FRACTIONS, (f) => f.id.includes(lobbist.fraction));
 
         if (fraction) {
             return fraction;
