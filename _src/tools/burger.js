@@ -10,7 +10,7 @@ $(document).ready(function() {
 
         if (nav_toggle.className == "") {
             nav_toggle.className = "is-active is-visible";
-            menu.className = "header-menu  is-visible";
+            menu.className = "header-menu is-visible";
         } else {
             nav_toggle.className = "";
             menu.className = "header-menu";

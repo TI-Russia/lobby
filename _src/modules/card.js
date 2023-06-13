@@ -224,10 +224,10 @@ function getPosition(info) {
 
     let chlen = comitet.replace("Комитет ГД ", "Член комитета ");
     if (comitet) chlen += ", ";
-    const izbran = (gender == "ж" || gender == "f") ? "избрана" : "избран";
-    const kak = (sposob == "одномандатный округ") ? " по одномандатному округу" : " по списку";
-    const raz = (soziv == 2 || soziv == 3 || soziv == 4 ) ? " раза" : " раз";
-    const sozvan = (soziv == 1) ? izbran + " впервые" : izbran + ' ' + soziv + raz;
+    const izbran = (gender === "ж" || gender === "f") ? "избрана" : "избран";
+    const kak = (sposob === "одномандатный округ") ? " по одномандатному округу" : " по списку";
+    const raz = (soziv === 2 || soziv === 3 || soziv === 4 ) ? " раза" : " раз";
+    const sozvan = (soziv === 1) ? izbran + " впервые" : izbran + ' ' + soziv + raz;
 
     return chlen + izbran + kak + ', ' + sozvan;
 }
@@ -321,7 +321,7 @@ function calclulateDeclarationHilights(declarations = []) {
     const latestDeclaration = declarations
         // Антикоррупционная декларация
         .filter((declaration) => declaration.main?.document_type?.id === 1)
-        // Могут быть пересеения (2 и более декларации за один год, одного или разных типов).  
+        // Могут быть пересечения (2 и более декларации за один год, одного или разных типов).  
         // Если несколько а/к декларациий за один год - берем декларацию с большим ID.
         .reduce((acc, declaration) => {
             if (!acc) {
@@ -363,12 +363,11 @@ async function fetchLawDetails(lawId) {
         response = await fetch(`https://declarator.org/api/law_draft_api/${lawId}/`).then((r) => r.json());
     } catch (e) {
         console.error(e);
-        response = null;
     }
 
     const { rawDep: lobbistSmallListRaw } = await Data;
 
-    const law_authors_enriched = response?.law_authors?.map((authorPersonId) => {
+    const law_authors_enriched = (response?.law_authors || []).map((authorPersonId) => {
         const person = lobbistSmallListRaw.find((lobbist) => lobbist.person === authorPersonId);
 
         if (person) {
@@ -376,11 +375,11 @@ async function fetchLawDetails(lawId) {
                 name: personFullnameToFIO(person.fullname),
                 link: isSF ? `/sf/person/${person.person}` : `/person/${person.person}`,
             };
-        } else {
-            return {
-                name: authorPersonId,
-                link: "",
-            }
+        } 
+
+        return {
+            name: authorPersonId,
+            link: "",
         }
     });
 
@@ -390,7 +389,7 @@ async function fetchLawDetails(lawId) {
         ...response,
         law_authors_enriched,
         law_authors_enriched_cut,
-        law_authors_enriched_more_size: Math.max(0, law_authors_enriched?.length - law_authors_enriched_cut?.length),
+        law_authors_enriched_more_size: Math.max(0, law_authors_enriched.length - law_authors_enriched_cut.length),
     };
 }
 
