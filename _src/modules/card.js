@@ -180,7 +180,7 @@ function renderCard() {
         twPerson: `https://twitter.com/intent/tweet?url=http%3A%2F%2Fdumabingo.ru/${dirUrl}${depLobbistSmallData.person}&text=${depLobbistSmallData.fullname}`,
         vkPerson: `http://vk.com/share.php?url=http%3A%2F%2Fdumabingo.ru/${dirUrl}${depLobbistSmallData.person}`,
         openDeclaration: depLobbistSmallData.person ? `https://declarator.org/person/${depLobbistSmallData.person}` : null,
-        openRupep: depLobbistSmallData.rupep ? `https://rupep.ru/person/${depLobbistSmallData.rupep}` : null,
+        openRupep: depLobbistSmallData.rupep ? `https://rupep.org/person/${depLobbistSmallData.rupep}` : null,
         sendForm: feedbackForm,
         laws:  depLobbistSmallData.law_draft_apis?.length ? depLobbistSmallData.law_draft_apis : null,
         lawStat: !isSF,
