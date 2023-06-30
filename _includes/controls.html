@@ -3,15 +3,18 @@
         <div class="column is-narrow  is-hidden-mobile">
             <div class="field is-grouped">
                 <div class="buttons has-addons control" id="fraction">
-                    <button class="button is-small is-active is-color-blue" value="Единая Россия" data-tooltip="Партия «Единая Россия»">ЕР</button>
-                    <button class="button is-small is-active is-color-red" value="КПРФ" data-tooltip="Коммунистическая партия Российской Федерации">КПРФ</button>
-                    <button class="button is-small is-active is-color-orange" value="Справедливая Россия" data-tooltip="Партия «Справедливая Россия — Патриоты — За правду»">СРЗП</button>
-                    <button class="button is-small is-active is-color-yellow" value="ЛДПР" data-tooltip="Либерально-демократическая партия России">ЛДПР</button>
-                    {% if page.type == 'duma-8'%}
-                        <button class="button is-small is-active is-color-mint" value="Новые люди" data-tooltip="Партия «Новые люди»">НОВЫЕ ЛЮДИ</button>
+                    <button class="button is-small is-active is-color-blue" value="er" data-tooltip="Партия «Единая Россия»">ЕР</button>
+                    <button class="button is-small is-active is-color-red" value="kprf" data-tooltip="Коммунистическая партия Российской Федерации">КПРФ</button>
+                    {% if page.type == 'duma_7'%}
+                        <button class="button is-small is-active is-color-orange" value="sr" data-tooltip="Партия «Справедливая Россия»">СР</button>
+                    {% else %}
+                        <button class="button is-small is-active is-color-orange" value="srzp" data-tooltip="Партия «Справедливая Россия — Патриоты — За правду»">СРЗП</button>
                     {%endif%}
-                    <button class="button is-small is-active is-color-gray-dark" value="Вне фракций">Вне фракции</button>
-                    <button class="button is-small is-active is-color-gray-light" value="Бывшие">Бывшие</button>
+                    <button class="button is-small is-active is-color-yellow" value="ldpr" data-tooltip="Либерально-демократическая партия России">ЛДПР</button>
+                    {% if page.type == 'duma_8'%}
+                        <button class="button is-small is-active is-color-mint" value="nl" data-tooltip="Партия «Новые люди»">НОВЫЕ ЛЮДИ</button>
+                    {%endif%}
+                    <button class="button is-small is-active is-color-gray-dark" value="vne">Вне фракции</button>
                 </div>
             </div>
         </div>
@@ -70,7 +73,7 @@
         <div class="column is-narrow-tablet">
             <div class="field is-grouped">
                 <div class="control has-icons-right is-expanded">
-                    <input class="input is-small" type="text" id="search" name="q" placeholder="Хинштейн">
+                    <input class="input is-small" type="text" id="search" name="q" placeholder="{% if page.type == 'duma_7'%}Володин{% else %}Хинштейн{%endif%}">
                     <span class="icon is-small is-right search_icon">
                         <i class="fas fa-search"></i>
                     </span>

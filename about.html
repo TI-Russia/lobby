@@ -5,11 +5,17 @@ permalink: /about/
 type: duma_8
 ---
 <div class="hero-body">
-{% for section in site.about %}
-    <div class="md-page-section" id="{{ section.ident }}">
-        <h1 id="{{ section.ident }}">{{ section.title }}</h1>
-        {{ section.content }}
+    <div class="content">
+        {% for section in site.about %}
+            <div class="md-page-section" id="{{ section.ident }}">
+                {%- if forloop.first == true -%}
+                    <h1 id="{{ section.ident }}">{{ section.title }}</h1>
+                {%- else -%}
+                    <h2 id="{{ section.ident }}">{{ section.title }}</h2>
+                {%- endif %}
+                {{ section.content }}
+            </div>
+        {% endfor %}
     </div>
-{% endfor %}
-<button  id="scrollToTop" title="Наверх">&uarr;</button>
+    <button id="scrollToTop" title="Наверх">&uarr;</button>
 </div>

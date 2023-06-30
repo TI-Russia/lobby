@@ -2,8 +2,8 @@
 
 html{overflow-y: auto;}
 body, button, select, input{
-  font-family: "Helios-Cond-Regular", "Helvetica Neue";
-  }
+  font-family: "Helios-Cond", "Helvetica Neue";
+}
 body{
   background: $color-white;
   line-height: 1;
@@ -21,6 +21,7 @@ body{
 
   .hero{
     flex: 1;
+    min-height: calc(100vh - 70px);
   }
   &.chart{
     min-height: auto;
@@ -372,16 +373,43 @@ div#card {
     padding-bottom: 16px;
   }
 
+  .card__law-info {
+    padding-bottom: 16px;
+    height: 100%;
+  }
+
+  .card__law-info-loading {
+    height: 100%;
+
+    &.is-loading {
+      position: relative;
+      pointer-events: none;
+      opacity: 0.5;
+      mix-blend-mode: luminosity;
+      pointer-events: none;
+      &:after {
+        @include loader;
+        animation: spinAround 1000ms infinite linear;
+        border: 2px solid $color-blue;
+        border-radius: $radius-rounded;
+        border-right-color: transparent;
+        border-top-color: transparent;
+        position: absolute;
+        top: calc(50% - 2.5em);
+        left: calc(50% - 2.5em);
+        width: 5em;
+        height: 5em;
+        border-width: 0.25em;
+      }
+    }
+  }
+
   .card__law-info-header {
     padding: 16px 27px 24px;
   }
 
   .card__law-info-topbar {
     margin-bottom: 26px;
-  }
-  
-  .card__law-info {
-    padding-bottom: 16px;
   }
 
   .card__law-info-meta {
@@ -407,6 +435,11 @@ div#card {
 
   .card__law-info-meta-item-value {
     color: $key-color;
+    display: inline-block;
+
+    &:first-letter {
+      text-transform: capitalize;
+    }
 
     &_plain {
       color: $color-black-text;
@@ -573,6 +606,8 @@ div#card {
 
     @include until($tablet){
       justify-content: center;
+      flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -582,7 +617,7 @@ div#card {
     margin: 12px 0;
 
     .highlight-value {
-      font-family: 'Helios-Cond-Bold';
+      font-family: 'Helios-Cond';
       font-weight: 700;
       font-size: 32px;
       line-height: 36px;
@@ -673,6 +708,7 @@ div#card {
     &.kprf{color: $color-red;}
     &.ldpr{color: $color-yellow;}
     &.sr{color: $color-orange;}
+    &.srzp{color: $color-orange;}
     &.nl{color: $color-mint;}
     @include until($tablet){
       line-height: normal;
@@ -680,7 +716,7 @@ div#card {
   }
 
   .law_count{
-    font-family: 'Helios-Cond-Bold';
+    font-family: 'Helios-Cond';
     font-size: 56px;
     line-height: 57px;
     text-align: center;
@@ -783,7 +819,6 @@ div#card {
 
   .columns{
     margin-bottom: 0;
-    white-space: nowrap;
     scrollbar-width:none;
     @include until($tablet){
       //margin: 0;
@@ -797,6 +832,12 @@ div#card {
 
   .copy {
     line-height: 18px;
+  }
+
+  .contact-email {
+    @include until($tablet){
+      display: none;
+    }
   }
 
   .copy, .agent{
@@ -842,6 +883,25 @@ div#card {
       &.fb{background-color: #435695;}
       &.tw{background-color: #00B7F4;}
     }
+  }
+}
+
+.footer .extra {
+  padding-bottom: 32px;
+  margin-top: 0px;
+  max-width: 75vw;
+
+  @include until($desktop){
+    padding-left: 44px;
+  }
+
+  @include until($tablet){
+    max-width: unset;
+    padding-left: 28px;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 14px;
   }
 }
 
@@ -1058,7 +1118,7 @@ circle.activeCircle{
   }
 
   &__modal-title {
-    font-family: 'Helios-Cond-Regular';
+    font-family: 'Helios-Cond';
     margin-bottom: 0;
   } 
 }
@@ -1102,7 +1162,7 @@ circle.activeCircle{
 
   &__item-value {
     white-space: nowrap;
-    font-family: 'Helios-Cond-Bold';
+    font-family: 'Helios-Cond';
     font-weight: 700;
     font-size: 32px;
     line-height: 36px;    
@@ -1123,6 +1183,7 @@ circle.activeCircle{
 
 .support-voluteer-button {
   margin-top: 24px;
+  margin-bottom: 56px;
 }
 
 #chart {

@@ -17,6 +17,15 @@ header {
       text-decoration: none;
     }
   }
+
+  .logo {
+    margin: -4px 20px 0 4px;
+
+    @include until($header-not-so-wide){
+      display: none;
+    }
+  }
+
   .columns{
     margin: 0 !important;
     height: 48px;
@@ -161,18 +170,6 @@ header {
   #header-title{
     gap: 10.5px;
 
-    img.no-logo{
-			display: none;
-		}
-		@include until($mobile) { 
-			img.no-logo{
-				display: inline-block;
-			}
-			img.logo{
-				display: none;
-			}
-		}
-
     a {
       display: flex;
     }
@@ -288,8 +285,9 @@ header {
 }
 
 .columns.md-page {
-  //font-family: $font-legible;
-  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 24px;
   margin-bottom: 1px;
   max-width: 1280px;
   margin: 0 auto;
@@ -299,29 +297,37 @@ header {
     display: flex;
   }
 
-  .md-page-section:not(:last-of-type){
-    padding-bottom: 4em;
+  .md-page-section {
+    max-width: 746px;
+
+    &:not(:last-of-type){ 
+      padding-bottom: 42px;
+    }
   }
+
+  h1, h2, h3 {
+    font-family: "Helios-Cond", "Helvetica Neue";
+  }
+
   h1{
     font-weight: 700;
-    font-size: 32px;
+    font-size: 34px;
     line-height: 120%;
-    margin-bottom: 16px;
+    margin-bottom: 30px;
   }
   h2,h3{
     font-weight: 700;
-    font-size: 26px;
+    font-size: 28px;
     line-height: 120%;
-    margin-top: 1.6em;
-    margin-bottom: 0.6em;
+    margin-top: 0;
+    margin-bottom: 27px;
   }
   li{
     margin-bottom: 16px;
     padding-left: 10px;
   }
   p{
-    margin-bottom: 0.6em;
-    line-height: 1.2em;
+    margin-bottom: 20px;
   }
   ol{
     padding-left: 1em;
@@ -336,7 +342,7 @@ header {
 }
 
 .columns.about{
-  padding: 80px 16px 16px 0px;
+  padding: 48px 16px 16px 0px;
 
   @include until($desktop){
     padding: 40px 16px 32px 16px;
@@ -347,10 +353,6 @@ header {
   }
 
   .aside{
-    @include from($desktop) {
-      padding-left: 235px;
-      padding-right: 24px;
-    }
     @include until($tablet) {
       padding: 8px;
     }
@@ -507,4 +509,218 @@ header {
   &__icon_info {
     background-image: url(/assets/images/info.svg);
   }
+}
+
+.quote {
+  margin-top: 34px;
+  margin-bottom: 56px;
+
+  position: relative;
+  padding-left: 32px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background-color: $color-dark-blue;
+  }
+
+  p {
+    color: $color-dark-blue;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  &__author-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin-right: 24px;
+
+    @include until($tablet){
+      width: 100px;
+      height: 100px;
+      align-self: flex-start;
+    }
+  }
+
+  &__author-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__author-name {
+    color: $color-dark-blue;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 24px;
+  }
+
+  &__author-position {
+    font-size: 16px;
+    line-height: 120%;
+    color: $color-gray;
+    margin-bottom: 16px;
+  }
+
+  &__author-caption {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: $color-gray;
+  }
+}
+
+.support-banner {
+  margin-top: 32px;
+  margin-bottom: 56px;
+  background-color: $color-opacity-blue;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  border-radius: 4px;
+
+  &__content {
+    flex: 1;
+    color: $color-dark-blue;
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  &__action {
+    flex-basis: 250px;
+  }
+
+  &__action-button {
+    width: 100%;
+    height: 44px;
+    color: $color-white;
+    background-color: $key-color;
+    border-radius: 4px;
+    border: none;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+
+    &:hover {
+      background-color: rgba($key-color, 0.9);
+    }
+  }
+
+  @include until($tablet){
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+
+    &__action {
+      flex-basis: auto;
+    }
+  }
+}
+
+.interests-schema {
+  margin: 32px 0;
+  border-radius: 4px;
+  overflow: hidden;
+
+  &__head {
+    min-height: 32px;
+    align-items: center;
+    display: flex;
+    padding: 5px 8px;
+    background-color: $color-dark-blue;
+    color: $color-white;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  &__content {
+    display: flex;
+
+    @include until($tablet){
+      flex-direction: column;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 24px 41px;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    &:nth-child(1) {
+      background-color: rgba($color-dark-blue, 0.05);
+      flex-basis: 243px;
+      @include until($tablet){
+        flex-basis: auto;
+      }
+    }
+    &:nth-child(2) {
+      background-color: rgba($color-dark-blue, 0.1);
+      flex-basis: 288px;
+      @include until($tablet){
+        flex-basis: auto;
+      }
+    }
+    &:nth-child(3) {
+      background-color: rgba($color-dark-blue, 0.15);
+      flex-basis: 215px;
+      @include until($tablet){
+        flex-basis: auto;
+      }
+    }
+  }
+
+  &__column-badge {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 16px;
+    border-radius: 50%;
+    background-color: $color-dark-blue;
+    color: $color-white;
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__column-content {
+    color: $color-dark-blue;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+  }
+}
+
+.support-light-banner {
+  margin-top: 32px;
+  margin-bottom: 56px;
+  background-color: $color-opacity-blue;
+  color: $color-dark-blue;
+  padding: 32px;
+  align-items: center;
+  gap: 27px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 24px;
 }

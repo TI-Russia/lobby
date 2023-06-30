@@ -3,23 +3,20 @@
 title: Лоббизм в Госдуме
 email: your-email@example.com
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://dumabingo.ru" # the base hostname & protocol for your site, e.g. http://example.com
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 url_sf: "sf"
-url_duma-7: 'duma-7'
+url_duma-7: 'sozyv7'
 url_duma-8: ''
 
 page_urls:
   sf: 'sf'
-  duma_7: 'duma-7'
+  duma_7: 'sozyv7'
   duma_8: ''
-
-page_urls:
-  sf: 'sf'
-  duma_7: 'duma-7'
-  duma_8: ''
+  contribute: 'contribute'
+  about: 'about'
 
 collections:
-  support:
+  contribute:
     output: true
   about:
     output: true
@@ -45,21 +42,20 @@ menu_about_url:
   duma_8: 'about'
   sf: 'sf-about'
 
-menu_doclad_url:
-  duma_7: 'Лоббизм в Госдуме.pdf'
-  duma_8: 'Лоббизм в Госдуме.pdf'
-  sf: 'Лоббизм в Совете Федерации.pdf'
-
 menu_rating_url:
   duma_7: 'Рейтинг_влияния_депутатов_Госдумы_UPD.pdf'
   duma_8: 'Рейтинг_влияния_депутатов_Госдумы_UPD.pdf'
   sf: 'Рейтинг_влияния_членов_Совета_Федерации_290321_UPD.pdf'
 
-menu_feedback_url:
-  duma_7: 'https://forms.gle/d6ia3KgkooeubQsj7'
-  duma_8: 'https://forms.gle/d6ia3KgkooeubQsj7'
-  sf: 'https://forms.gle/D8y9DkcJAujkxW269'
-  
+feedback_url:
+  duma_7: 'https://docs.google.com/forms/d/e/1FAIpQLSc6ojDZmxa9NaiTAC272cqlZ08XJzUM3jBA6OUv0I1PpTjpYA/viewform'
+  duma_8: 'https://docs.google.com/forms/d/1Qaw8qWfw2PPZPtpF1PV4EyNGekXesM2qRLzwurgjHbA/viewform'
+  sf: 'https://docs.google.com/forms/d/e/1FAIpQLSc6ojDZmxa9NaiTAC272cqlZ08XJzUM3jBA6OUv0I1PpTjpYA/viewform'
+
+contribute_url: https://docs.google.com/forms/d/e/1FAIpQLScDw9U7Z5WoDZ-y0m6lcocI36pPJIy96Ff-xRuCf14P87JBPw/viewform
+
+research_url: https://research.dumabingo.ru
+
 meta:
   title:
     duma_7: 'Лоббизм в Госдуме'
@@ -70,9 +66,9 @@ meta:
     duma_8: 'Интерактивная карта лоббистских возможностей депутатов Государственной Думы РФ: лоббистские группы, законопроекты и персоналии'
     sf: 'Интерактивная карта лоббистских возможностей членов Совета Федерации: лоббистские группы, законопроекты и персоналии'
   preview:
-    duma_7: 'assets/images/preview_img.png'
-    duma_8: 'assets/images/preview_img_duma-8.png'
-    sf: 'assets/images/preview_img_sf.png'
+    duma_7: 'assets/images/preview_img.jpg'
+    duma_8: 'assets/images/preview_img_duma-8.jpg'
+    sf: 'assets/images/preview_img_sf.jpg'
 
 # Exclude from processing.
 # The following items will not be processed.

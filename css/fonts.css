@@ -1,16 +1,17 @@
-/* Helios-Cond-Bold */
-@font-face {
-  font-family: 'Helios-Cond-Bold';
-  src: url("/fonts/Helios-Cond-Bold/Helios-Cond-Bold.eot");
-  src: url("/fonts/Helios-Cond-Bold/Helios-Cond-Bold.woff") format("woff"), url("fonts/Helios-Cond-Bold/Helios-Cond-Bold.ttf") format("truetype"), url("fonts/Helios-Cond-Bold/Helios-Cond-Bold.svg") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+
 /* Helios-Cond-Regular */
 @font-face {
-  font-family: 'Helios-Cond-Regular';
+  font-family: 'Helios-Cond';
   src: url("fonts/Helios-Cond-Regular/helios-cond-webfont.eot");
   src: url("fonts/Helios-Cond-Regular/helios-cond-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/Helios-Cond-Regular/helios-cond-webfont.woff2") format("woff2"), url("fonts/Helios-Cond-Regular/helios-cond-webfont.woff") format("font-woff"), url("fonts/Helios-Cond-Regular/helios-cond-webfont.ttf") format("truetype"), url("fonts/Helios-Cond-Regular/helios-cond-webfont.svg#helioscondregular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+}
+
+/* Helios-Cond-Bold */
+@font-face {
+  font-family: 'Helios-Cond';
+  src: url("/fonts/Helios-Cond-Bold/Helios-Cond-Bold.eot");
+  src: url("/fonts/Helios-Cond-Bold/Helios-Cond-Bold.woff") format("woff"), url("fonts/Helios-Cond-Bold/Helios-Cond-Bold.ttf") format("truetype"), url("fonts/Helios-Cond-Bold/Helios-Cond-Bold.svg") format("svg");
+  font-weight: bold;
+}
 
 /*# sourceMappingURL=fonts.css.map */

@@ -1,6 +1,5 @@
 import $ from 'jquery';
 
-
 import initChart from './chart';
 import { getLayoutVars } from './layout_vars';
 
