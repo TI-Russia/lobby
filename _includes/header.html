@@ -1,57 +1,131 @@
-<header class="hero-head ">
-    <div class="columns is-mobile">
-        <div class="column c1" id="header-title">
-            <a href="{{site.url}}/{{site.page_urls[page.type]}}">
-                {% if page.type == 'sf' %}
-                    <img class="logo" src="{{site.baseurl}}/assets/images/logo/logo-sf.svg" alt="Лоббизм" >
-                {% elsif page.type == 'duma_7' %}
-                    <img class="logo" src="{{site.baseurl}}/assets/images/logo/logo-7.svg" alt="Лоббизм" >
-                {% elsif page.type == 'duma_8' %}
-                    <img class="logo" src="{{site.baseurl}}/assets/images/logo/logo-8.svg" alt="Лоббизм" >
-                {% endif %}
+<header class="hero-head">
+  <div class="columns is-mobile">
+    <div class="column c1" id="header-title">
+      <a href="{{site.url}}/{{site.page_urls[page.type]}}">
+        {% if page.type == 'sf' %}
+        <img
+          class="logo"
+          src="{{site.baseurl}}/assets/images/logo/logo-sf.svg"
+          alt="Лоббизм"
+        />
+        {% elsif page.type == 'duma_7' %}
+        <img
+          class="logo"
+          src="{{site.baseurl}}/assets/images/logo/logo-7.svg"
+          alt="Лоббизм"
+        />
+        {% elsif page.type == 'duma_8' %}
+        <img
+          class="logo"
+          src="{{site.baseurl}}/assets/images/logo/logo-8.svg"
+          alt="Лоббизм"
+        />
+        {% endif %}
 
-                <img class="no-logo" src="{{site.baseurl}}/assets/images/logo/lobbism_no_logo.svg" alt="Лоббизм" >
-            </a>
-            <div id="header-selector" class="selector-control">
-                <div class="selector-list">
-                    <a class="item-duma-8 {% if page.type == 'duma_8' %}selected{% endif %}" href="{{site.baseurl}}/{{site.page_urls.duma_8}}" alt="в думе 8 созыва">
-                        <img src="{{site.baseurl}}/assets/images/logo/vgosdume-8.svg" alt="в думе 8 созыва" >
-                    </a>
-                    <a class="item-duma-7 {% if page.type == 'duma_7' %}selected{% endif %}" href="{{site.baseurl}}/{{site.page_urls.duma_7}}" alt="в думе 7 созыва">
-                        <img src="{{site.baseurl}}/assets/images/logo/vgosdume-7.svg" alt="в думе 7 созыва" >
-                    </a>
-                    <a class="item-sf {% if page.type == 'sf' %}selected{% endif %}" href="{{site.baseurl}}/{{site.page_urls.sf}}" alt="в совете федерации">
-                        <img src="{{site.baseurl}}/assets/images/logo/vsovfede.svg" alt="в совете федерации" >
-                    </a>
-                </div>
-            </div>
+        <img
+          class="no-logo"
+          src="{{site.baseurl}}/assets/images/logo/lobbism_no_logo.svg"
+          alt="Лоббизм"
+        />
+      </a>
+      <div id="header-selector" class="selector-control">
+        <div class="selector-list">
+          <a
+            class="item-duma-8 {% if page.type == 'duma_8' %}selected{% endif %}"
+            href="{{site.baseurl}}/{{site.page_urls.duma_8}}"
+            alt="в думе 8 созыва"
+          >
+            <img
+              src="{{site.baseurl}}/assets/images/logo/vgosdume-8.svg"
+              alt="в думе 8 созыва"
+            />
+          </a>
+          <a
+            class="item-duma-7 {% if page.type == 'duma_7' %}selected{% endif %}"
+            href="{{site.baseurl}}/{{site.page_urls.duma_7}}"
+            alt="в думе 7 созыва"
+          >
+            <img
+              src="{{site.baseurl}}/assets/images/logo/vgosdume-7.svg"
+              alt="в думе 7 созыва"
+            />
+          </a>
+          <a
+            class="item-sf {% if page.type == 'sf' %}selected{% endif %}"
+            href="{{site.baseurl}}/{{site.page_urls.sf}}"
+            alt="в совете федерации"
+          >
+            <img
+              src="{{site.baseurl}}/assets/images/logo/vsovfede.svg"
+              alt="в совете федерации"
+            />
+          </a>
         </div>
-        <div class="column c2">
-            <h2>Какие {% if page.type == 'sf' %} сенаторы {% else %} депутаты {% endif %}служат <br> не только народу</h2>
-        </div>
-        <div class="column is-pulled-right c3 ">
-            <div id="nav-menu" class="">
-                <a href="{{ site.baseurl }}/{{ site.menu_about_url[page.type] }}">О&nbsp;проекте</a>
-                {% if page.type == 'duma_8' %}
-                    <a href="{{ site.research_url }}">Исследование</a>
-                {% endif %}
-                <a href="{{ site.baseurl }}/{{ site.page_urls.contribute }}">Помочь проекту</a>
-                <a target="_blank" href="{{ site.feedback_url[page.type] }}">Обратная связь</a>
-            </div>
-            <a id="nav-toggle" class=""><span class="icon"><i class="fas fa-bars"></i></span> </a>
-            <ul class="header-menu" id="header_menu">
-                <li> <a href="{{ site.baseurl }}/{{ site.menu_about_url[page.type] }}">О&nbsp;проекте</a></li>
-                {% if page.type == 'duma_8' %}
-                    <li> <a href="{{ site.research_url }}">Исследование</a></li>
-                {% endif %}
-                <li> <a href="{{ site.baseurl }}/{{ site.page_urls.contribute }}">Помочь проекту</a></li>
-                <li> <a target="_blank" href="{{ site.feedback_url[page.type] }}">Обратная связь</a></li>
-            </ul>
-        </div>
-        <div class="column is-pulled-right c4"><a  href="http://vk.com/share.php?url=https%3A%2F%2Fdumabingo.ru%2F{% if page.type == 'sf'%}sf{%endif%}" target="_blank" class="c4 vk_share_button"><span class="icon is-large"><i class="fab fa-vk"></i></span></a>
-        </div>
-        <div class="column is-pulled-right c5"><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdumabingo.ru%2F{% if page.type == 'sf'%}sf{%endif%}&text={{site.meta.description[page.type]}}" target="_blank" class="c5"><span class="icon is-large"><i class="fab fa-twitter"></i></span></a>
-        </div>
+      </div>
     </div>
+    <div class="column c2">
+      <h2>
+        Какие {% if page.type == 'sf' %} сенаторы {% else %} депутаты {% endif
+        %}служат <br />
+        не только народу
+      </h2>
+    </div>
+    <div class="column is-pulled-right c3">
+      <div id="nav-menu" class="">
+        <a href="{{ site.baseurl }}/{{ site.menu_about_url[page.type] }}"
+          >О&nbsp;проекте</a
+        >
+        {% if page.type == 'duma_8' %}
+        <a href="{{ site.research_url }}" target="_blank">Исследование</a>
+        {% endif %}
+        <a href="{{ site.baseurl }}/{{ site.page_urls.contribute }}"
+          >Помочь проекту</a
+        >
+        <a target="_blank" href="{{ site.feedback_url[page.type] }}"
+          >Обратная связь</a
+        >
+      </div>
+      <a id="nav-toggle" class=""
+        ><span class="icon"><i class="fas fa-bars"></i></span>
+      </a>
+      <ul class="header-menu" id="header_menu">
+        <li>
+          <a href="{{ site.baseurl }}/{{ site.menu_about_url[page.type] }}"
+            >О&nbsp;проекте</a
+          >
+        </li>
+        {% if page.type == 'duma_8' %}
+        <li>
+          <a href="{{ site.research_url }}" target="_blank">Исследование</a>
+        </li>
+        {% endif %}
+        <li>
+          <a href="{{ site.baseurl }}/{{ site.page_urls.contribute }}"
+            >Помочь проекту</a
+          >
+        </li>
+        <li>
+          <a target="_blank" href="{{ site.feedback_url[page.type] }}"
+            >Обратная связь</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="column is-pulled-right c4">
+      <a
+        href="http://vk.com/share.php?url=https%3A%2F%2Fdumabingo.ru%2F{% if page.type == 'sf'%}sf{%endif%}"
+        target="_blank"
+        class="c4 vk_share_button"
+        ><span class="icon is-large"><i class="fab fa-vk"></i></span
+      ></a>
+    </div>
+    <div class="column is-pulled-right c5">
+      <a
+        href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdumabingo.ru%2F{% if page.type == 'sf'%}sf{%endif%}&text={{site.meta.description[page.type]}}"
+        target="_blank"
+        class="c5"
+        ><span class="icon is-large"><i class="fab fa-twitter"></i></span
+      ></a>
+    </div>
+  </div>
 </header>
-
