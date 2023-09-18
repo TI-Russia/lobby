@@ -96,8 +96,8 @@ header {
     }
   }
   .c4,
-  .c5,
-  .c6 {
+  .c5 {
+    background-color: #f4f4f4;
     flex: 0 0 48px;
     padding: 0;
     @include until($header-not-so-wide) {
@@ -109,9 +109,6 @@ header {
   }
   a.c5 {
     background-color: #00b7f4;
-  }
-  a.c6 {
-    background-color: #435695;
   }
   .icon {
     color: $color-white;
