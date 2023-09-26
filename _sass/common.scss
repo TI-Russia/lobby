@@ -314,18 +314,34 @@ header {
     font-family: "Helios-Cond", "Helvetica Neue";
   }
 
+  /* Пространство для заголовков при нажатии на хэштег */
+  h1:before,
+  h2:before,
+  h3:before {
+    display: block;
+    content: " ";
+    margin-top: -30px;
+    height: 30px;
+    visibility: hidden;
+  }
+
   h1 {
     font-weight: 700;
     font-size: 34px;
     line-height: 120%;
     margin-bottom: 30px;
   }
-  h2,
-  h3 {
+  h2 {
     font-weight: 700;
     font-size: 28px;
     line-height: 120%;
-    margin-top: 0;
+    margin-bottom: 27px;
+  }
+  h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    margin-top: 54px;
     margin-bottom: 27px;
   }
   li {
