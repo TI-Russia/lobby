@@ -547,6 +547,7 @@ export default async function initChart() {
       .attr("class", (d) => d.color)
       .attr("cx", (d) => d.x)
       .attr("cy", (d) => d.y)
+      .attr("data-person", (d) => d.person)
       .on("mouseover", showDetail)
       .on("mouseout", hideDetail)
       .on("click", ClickOnCircle);
