@@ -13,6 +13,7 @@ import { formatDate } from "../lib/date";
 import { getFraction } from "../lib/fractions";
 import Data from "./data";
 import { FRACTIONS } from "../constants/fractions";
+import { addTargetBlank } from "./utils";
 
 const engine = new Liquid();
 
@@ -231,11 +232,16 @@ function renderCard() {
       photo: isSF
         ? depInfoLegacy.photo
         : `https://declarator.org/media/${depInfo.photo}`,
-      bio: (isSF ? depInfoLegacy.bio : depInfo.bio) || null,
-      submitted: (isSF ? depInfoLegacy.submitted : depInfo.submitted) || null,
-      relations: (isSF ? depInfoLegacy.relations : depInfo.relations) || null,
+      bio: addTargetBlank(isSF ? depInfoLegacy.bio : depInfo.bio) || null,
+      submitted:
+        addTargetBlank(isSF ? depInfoLegacy.submitted : depInfo.submitted) ||
+        null,
+      relations:
+        addTargetBlank(isSF ? depInfoLegacy.relations : depInfo.relations) ||
+        null,
       conclusion:
-        (isSF ? depInfoLegacy.conclusion : depInfo.conclusion) || null,
+        addTargetBlank(isSF ? depInfoLegacy.conclusion : depInfo.conclusion) ||
+        null,
       currentLawSelected,
       currentLawSelectedData,
       isLawDetailsLoading,
@@ -323,7 +329,7 @@ function getFractionClass(fraction) {
 }
 
 function getPosition(info) {
-  const comitet = info.committee || "";
+  const comitet = addTargetBlank(info.committee) || "";
   const sposob = info.election_method;
   const soziv = info.convocations.length || 1;
   const gender = info.gender ? info.gender.toLowerCase() : "м";
