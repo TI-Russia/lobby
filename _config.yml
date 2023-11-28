@@ -25,13 +25,11 @@ collections:
 
 include: ["person"]
 
-#page_gen:
-#  - data: 'lobbist-27-09-2019'
-#    template: 'card'
-#    name: 'person'
-#    dir: 'card'
-
 page_gen:
+  - data: "lobbist-27-09-2019"
+    template: "card"
+    name: "person"
+    dir: "card"
   - data: "lobbist-sf-05-04-2021"
     template: "card_sf"
     name: "person"
