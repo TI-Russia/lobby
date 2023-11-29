@@ -186,11 +186,12 @@
                                         {% for author in currentLawSelectedData.law_authors_enriched_cut %}
                                             <a
                                             {% if author.isSf %}
-                                                href="/sf#{{ author.id }}"
+                                                href="/person_sf/{{ author.id }}"
                                             {% else %}
-                                                href="#{{ author.id }}"
+                                                href="/person/{{ author.id }}"
                                             {% endif %}
                                             class="card__law-info-meta-item"
+                                            target="_blank"
                                             data-author-id="{{ author.id }}"
                                             >{{ author.name }}</a>
                                         {% endfor -%}
@@ -198,12 +199,13 @@
                                     {% else %}
                                         {% for author in currentLawSelectedData.law_authors_enriched %}
                                             <a
-                                             {% if author.isSf %}
-                                                href="/sf#{{ author.id }}"
-                                            {% else %}
-                                                href="#{{ author.id }}"
-                                            {% endif %}
+                                            {% if author.isSf %}
+                                            href="/person_sf/#{{ author.id }}"
+                                        {% else %}
+                                            href="/person/{{ author.id }}"
+                                        {% endif %}
                                             class="card__law-info-meta-item"
+                                            target="_blank"
                                             data-author-id="{{ author.id }}"
 
                                             >{{ author.name }}</a>

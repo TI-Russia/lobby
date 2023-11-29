@@ -89,30 +89,6 @@ if (isDefaultLayout) {
     hideLawDetails();
   });
 
-  cardNode.on("click", ".card__law-info-meta-item", function (event) {
-    event.preventDefault();
-    const authorId = $(this).attr("data-author-id");
-    const person = currentLawSelectedData.law_authors_enriched.find(
-      (lobbist) => lobbist.id === Number(authorId)
-    );
-
-    if (!person) {
-      return;
-    }
-
-    // find a circle with paerson that matches person.id and click it
-    const circle = $(`circle[data-person="${person.id}"]`);
-
-    if (circle.length > 0) {
-      circle[0].dispatchEvent(new Event("click"));
-      window.history.pushState(
-        { person: person.id },
-        null,
-        (person.isSF ? "./sf#id" : "./#id") + person.id
-      );
-    }
-  });
-
   cardNode.on("click", "#close_btn", () => {
     HideCard();
 
