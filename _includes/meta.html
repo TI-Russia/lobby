@@ -1,13 +1,13 @@
-{% assign type = page.type | default: 'duma_8' %}
-{% capture url %}{{site.url}}/{{site.page_urls[type] }}{% endcapture %}
-{% assign title = site.meta.title[type] %}
-{% assign description = site.meta.description[type] %}
+{% assign type = page.type | default: 'duma_8' %} {% capture url
+%}{{site.url}}/{{site.page_urls[type] }}{% endcapture %} {% assign title =
+site.meta.title[type] %} {% assign description = site.meta.description[type] %}
 {% capture img %}{{site.url}}/{{site.meta.preview[type] }}{% endcapture %}
 
-<meta property="og:url" content="{{ url }}"/>
-<meta property="og:title" content="{{ title }}"/>
-<meta property="og:description" content="{{ description }}"/>
-<meta name="twitter:title" content="{{ title }}">
-<meta name="twitter:description" content="{{ description }}">
-<meta property="og:image" content="{{ img }}"/>
-<meta name="twitter:image" content="{{ img }}"/>
+<meta property="og:url" content="{{ url }}" />
+<meta property="og:title" content="{{ title }}" />
+<meta property="og:description" content="{{ description }}" />
+<meta name="description" content="{{ description }}" />
+<meta name="twitter:title" content="{{ title }}" />
+<meta name="twitter:description" content="{{ description }}" />
+<meta property="og:image" content="{{ img }}" />
+<meta name="twitter:image" content="{{ img }}" />

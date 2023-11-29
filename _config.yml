@@ -3,54 +3,55 @@
 title: Лоббизм в Госдуме
 email: your-email@example.com
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: https://dumabingo.org
 url_sf: "sf"
-url_duma-7: 'sozyv7'
-url_duma-8: ''
+url_duma-7: "sozyv7"
+url_duma-8: ""
+
+plugins:
+  - jekyll-sitemap
 
 page_urls:
-  sf: 'sf'
-  duma_7: 'sozyv7'
-  duma_8: ''
-  contribute: 'contribute'
-  about: 'about'
+  sf: "sf"
+  duma_7: "sozyv7"
+  duma_8: ""
+  contribute: "contribute"
+  about: "about"
 
 collections:
   contribute:
-    output: true
+    output: false
   about:
-    output: true
+    output: false
   about_sf:
-    output: true
+    output: false
 
-include: ['person']
-
-#page_gen:
-#  - data: 'lobbist-27-09-2019'
-#    template: 'card'
-#    name: 'person'
-#    dir: 'card'
+include: ["robots.txt"]
 
 page_gen:
-  - data: 'lobbist-sf-05-04-2021'
-    template: 'card_sf'
-    name: 'person'
-    dir: 'card_sf'
+  - data: "lobbist-27-09-2019"
+    template: "card"
+    name: "person"
+    dir: "person"
+  - data: "lobbist-sf-05-04-2021"
+    template: "card_sf"
+    name: "person"
+    dir: "person_sf"
 
 menu_about_url:
-  duma_7: 'about'
-  duma_8: 'about'
-  sf: 'sf-about'
+  duma_7: "about"
+  duma_8: "about"
+  sf: "sf-about"
 
 menu_rating_url:
-  duma_7: 'Рейтинг_влияния_депутатов_Госдумы_UPD.pdf'
-  duma_8: 'Рейтинг_влияния_депутатов_Госдумы_UPD.pdf'
-  sf: 'Рейтинг_влияния_членов_Совета_Федерации_290321_UPD.pdf'
+  duma_7: "Рейтинг_влияния_депутатов_Госдумы_UPD.pdf"
+  duma_8: "Рейтинг_влияния_депутатов_Госдумы_UPD.pdf"
+  sf: "Рейтинг_влияния_членов_Совета_Федерации_290321_UPD.pdf"
 
 feedback_url:
-  duma_7: 'https://docs.google.com/forms/d/e/1FAIpQLSc6ojDZmxa9NaiTAC272cqlZ08XJzUM3jBA6OUv0I1PpTjpYA/viewform'
-  duma_8: 'https://docs.google.com/forms/d/1Qaw8qWfw2PPZPtpF1PV4EyNGekXesM2qRLzwurgjHbA/viewform'
-  sf: 'https://docs.google.com/forms/d/e/1FAIpQLSc6ojDZmxa9NaiTAC272cqlZ08XJzUM3jBA6OUv0I1PpTjpYA/viewform'
+  duma_7: "https://docs.google.com/forms/d/e/1FAIpQLSc6ojDZmxa9NaiTAC272cqlZ08XJzUM3jBA6OUv0I1PpTjpYA/viewform"
+  duma_8: "https://docs.google.com/forms/d/1Qaw8qWfw2PPZPtpF1PV4EyNGekXesM2qRLzwurgjHbA/viewform"
+  sf: "https://docs.google.com/forms/d/e/1FAIpQLSc6ojDZmxa9NaiTAC272cqlZ08XJzUM3jBA6OUv0I1PpTjpYA/viewform"
 
 contribute_url: https://docs.google.com/forms/d/e/1FAIpQLScDw9U7Z5WoDZ-y0m6lcocI36pPJIy96Ff-xRuCf14P87JBPw/viewform
 
@@ -58,21 +59,27 @@ research_url: https://research.dumabingo.ru
 
 meta:
   title:
-    duma_7: 'Лоббизм в Госдуме'
-    duma_8: 'Лоббизм в Госдуме'
-    sf: 'Лоббизм в Совете Федерации'
+    duma_7: "Лоббизм в Госдуме 7 созыва"
+    duma_8: "Лоббизм в Госдуме 8 созыва"
+    sf: "Лоббизм в Совете Федерации"
+    about: "О проекте"
+    contribute: "Участвуйте в проекте"
   description:
-    duma_7: 'Интерактивная карта лоббистских возможностей депутатов Государственной Думы РФ: лоббистские группы, законопроекты и персоналии'
-    duma_8: 'Интерактивная карта лоббистских возможностей депутатов Государственной Думы РФ: лоббистские группы, законопроекты и персоналии'
-    sf: 'Интерактивная карта лоббистских возможностей членов Совета Федерации: лоббистские группы, законопроекты и персоналии'
+    duma_7: "Интерактивная карта лоббистских возможностей депутатов Государственной Думы РФ 7 созыва: лоббистские группы, законопроекты и персоналии"
+    duma_8: "Интерактивная карта лоббистских возможностей депутатов Государственной Думы РФ 8 созыва: лоббистские группы, законопроекты и персоналии"
+    sf: "Интерактивная карта лоббистских возможностей членов Совета Федерации: лоббистские группы, законопроекты и персоналии"
+    about: "О команде экспертов по лоббизму в Госдуме"
+    contribute: "Присоединитесь к команде экспертов по лоббизму в Госдуме"
   preview:
-    duma_7: 'assets/images/preview_img.jpg'
-    duma_8: 'assets/images/preview_img_duma-8.jpg'
-    sf: 'assets/images/preview_img_sf.jpg'
+    duma_7: "assets/images/preview_img.jpg"
+    duma_8: "assets/images/preview_img_duma-8.jpg"
+    sf: "assets/images/preview_img_sf.jpg"
+    about: "assets/images/preview_img.jpg"
+    contribute: "assets/images/preview_img.jpg"
 
 # Exclude from processing.
 # The following items will not be processed.
-exclude: 
+exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
