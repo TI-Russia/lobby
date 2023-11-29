@@ -535,11 +535,9 @@ header {
 }
 
 .quote {
-  margin-top: 34px;
-  margin-bottom: 56px;
-
   position: relative;
   padding-left: 32px;
+  margin-top: 34px;
 
   &::before {
     content: "";
@@ -555,6 +553,20 @@ header {
     color: $color-dark-blue;
   }
 
+  &__grid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    @include until($header-wide) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+    }
+  }
+
   &__author {
     display: flex;
     align-items: center;
@@ -567,6 +579,7 @@ header {
     height: 140px;
     border-radius: 50%;
     margin-right: 24px;
+    object-fit: cover;
 
     @include until($tablet) {
       width: 100px;
@@ -596,7 +609,7 @@ header {
 
   &__author-caption {
     font-weight: 400;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 20px;
     color: $color-gray;
   }
