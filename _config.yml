@@ -92,5 +92,3 @@ exclude:
   - package.json
   - package-lock.json
   - README.md
-  - person
-  - person_sf
