@@ -4,12 +4,16 @@ title: About
 permalink: /sf-about
 type: sf
 ---
+
 <div class="hero-body">
-    {% for section in site.about_sf %}
-        <div class="md-page-section" id="{{ section.ident }}">
-            <h1 id="{{ section.ident }}">{{ section.title }}</h1>
-            {{ section.content }}
-        </div>
-    {% endfor %}
-    <button  id="scrollToTop" title="Наверх">&uarr;</button>
+  {% for section in site.about_sf %}
+  <div class="md-page-section" id="{{ section.ident }}">
+    {%- if forloop.first == true -%}
+    <h1 id="{{ section.ident }}">{{ section.title }}</h1>
+    {%- else -%}
+    <h2 id="{{ section.ident }}">{{ section.title }}</h2>
+    {%- endif %} {{ section.content }}
+  </div>
+  {% endfor %}
+  <button id="scrollToTop" title="Наверх">&uarr;</button>
 </div>
