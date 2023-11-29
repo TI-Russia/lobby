@@ -89,29 +89,29 @@ if (isDefaultLayout) {
     hideLawDetails();
   });
 
-  cardNode.on("click", ".card__law-info-meta-item", function (event) {
-    event.preventDefault();
-    const authorId = $(this).attr("data-author-id");
-    const person = currentLawSelectedData.law_authors_enriched.find(
-      (lobbist) => lobbist.id === Number(authorId)
-    );
+  // cardNode.on("click", ".card__law-info-meta-item", function (event) {
+  //   event.preventDefault();
+  //   const authorId = $(this).attr("data-author-id");
+  //   const person = currentLawSelectedData.law_authors_enriched.find(
+  //     (lobbist) => lobbist.id === Number(authorId)
+  //   );
 
-    if (!person) {
-      return;
-    }
+  //   if (!person) {
+  //     return;
+  //   }
 
-    // find a circle with paerson that matches person.id and click it
-    const circle = $(`circle[data-person="${person.id}"]`);
+  //   // find a circle with paerson that matches person.id and click it
+  //   const circle = $(`circle[data-person="${person.id}"]`);
 
-    if (circle.length > 0) {
-      circle[0].dispatchEvent(new Event("click"));
-      window.history.pushState(
-        { person: person.id },
-        null,
-        (person.isSF ? "./sf#id" : "./#id") + person.id
-      );
-    }
-  });
+  //   if (circle.length > 0) {
+  //     circle[0].dispatchEvent(new Event("click"));
+  //     window.history.pushState(
+  //       { person: person.id },
+  //       null,
+  //       (person.isSF ? "./sf#id" : "./#id") + person.id
+  //     );
+  //   }
+  // });
 
   cardNode.on("click", "#close_btn", () => {
     HideCard();
@@ -257,7 +257,7 @@ function renderCard() {
         ? depInfoLegacy.fraction
         : FRACTIONS[depLobbistSmallData.fraction]?.name,
       fractionClass: isSF
-        ? getFractionClass(depInfoLegacy.fraction)
+        ? depInfoLegacy.fraction
         : depLobbistSmallData.fraction,
       positionHtml: isSF
         ? getPositionSF(depInfoLegacy)
@@ -329,10 +329,19 @@ function getFractionClass(fraction) {
 }
 
 function getPosition(info) {
-  const comitet = addTargetBlank(info.committee) || "";
+  let comitet = info.committee;
   const sposob = info.election_method;
   const soziv = info.convocations.length || 1;
   const gender = info.gender ? info.gender.toLowerCase() : "м";
+
+  if (
+    comitet === "0" ||
+    comitet === null ||
+    comitet === undefined ||
+    comitet === ""
+  ) {
+    comitet = "";
+  }
 
   let chlen = comitet.replace("Комитет ГД ", "Член комитета ");
   if (comitet) chlen += ", ";
