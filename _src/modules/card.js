@@ -172,25 +172,6 @@ function ShowCard({
   renderCard();
 }
 
-async function showLawDetails(lawId) {
-  currentLawSelected = lawId;
-  currentScrollTop = cardNode.scrollTop();
-  isLawDetailsLoading = true;
-
-  renderCard();
-
-  const lawDetails = await fetchLawDetails(lawId);
-
-  if (lawId !== currentLawSelected) {
-    return;
-  }
-
-  currentLawSelectedData = lawDetails;
-  isLawDetailsLoading = false;
-
-  renderCard();
-}
-
 function hideLawDetails() {
   currentLawSelected = null;
   lawAuthorsIsShowMore = false;
