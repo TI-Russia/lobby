@@ -78,12 +78,6 @@ if (isDefaultLayout) {
     }
   );
 
-  cardNode.on("click", ".card__law-details-button", function (event) {
-    event.preventDefault();
-    const lawId = $(this).closest(".card__law").attr("data-law-id");
-    showLawDetails(lawId);
-  });
-
   cardNode.on("click", ".card__law-back-button", function (event) {
     event.preventDefault();
     hideLawDetails();
@@ -99,10 +93,35 @@ if (isDefaultLayout) {
     }
   });
 
+  cardNode.on("click", ".card__law-info-meta-item", function (event) {
+    event.preventDefault();
+    const authorId = $(this).attr("data-author-id");
+    const person = currentLawSelectedData.law_authors_enriched.find(
+      (lobbist) => lobbist.id === Number(authorId)
+    );
+
+    if (!person) {
+      return;
+    }
+
+    // find a circle with paerson that matches person.id and click it
+    const circle = $(`circle[data-person="${person.id}"]`);
+
+    if (circle.length > 0) {
+      HideCard();
+      circle[0].dispatchEvent(new Event("click"));
+      window.history.pushState(
+        { person: person.id },
+        null,
+        (person.isSF ? "./sf#id" : "./#id") + person.id
+      );
+    }
+  });
+
   cardNode.on("click", ".card__law-info-meta-item-more", (e) => {
     e.preventDefault();
     lawAuthorsIsShowMore = true;
-    renderCard();
+    renderLawDetails();
   });
 
   $(window).on("popstate", HideCard); // back button should close modal
@@ -131,17 +150,11 @@ function ShowCard({
   declarations,
   depLobbistSmallData,
 }) {
-  if (currentCardData) {
-    HideCard();
-  }
+  HideCard();
 
   if (window.history && window.history.pushState) {
     const personId = isSF ? depInfoLegacy.person : depInfo.person;
-    window.history.pushState(
-      { person: personId },
-      null,
-      (isSF ? "./sf#id" : "./#id") + personId
-    );
+    window.history.pushState({ person: personId }, null, "#id" + personId);
   }
 
   currentCardData = {
@@ -182,6 +195,57 @@ function hideLawDetails() {
   currentLawSelected = null;
   lawAuthorsIsShowMore = false;
   renderCard();
+}
+
+export async function renderLawDetails(lawId) {
+  if (!lawId && currentLawSelected) {
+    renderLawDetailsCard({
+      currentLawSelected,
+      currentLawSelectedData,
+      isLawDetailsLoading,
+      lawAuthorsIsShowMore,
+    });
+  } else {
+    currentLawSelected = lawId;
+    currentScrollTop = cardNode.scrollTop();
+    isLawDetailsLoading = true;
+
+    const lawDetails = await fetchLawDetails(lawId);
+
+    if ("detail" in lawDetails && lawDetails.detail === "Не найдено.") {
+    } else {
+      cardNode.show();
+      isLawDetailsLoading = false;
+      currentLawSelectedData = lawDetails;
+
+      renderLawDetailsCard({
+        currentLawSelected,
+        currentLawSelectedData,
+        isLawDetailsLoading,
+        lawAuthorsIsShowMore,
+      });
+    }
+  }
+}
+
+function renderLawDetailsCard(data) {
+  cardNode.html(
+    engine.renderSync(template, {
+      ...data,
+    })
+  );
+
+  if (!currentLawSelected) {
+    cardNode.find(".accordion").each(function () {
+      const id = $(this).attr("data-accordion-id");
+
+      if (currentExpandedAccordions.has(id)) {
+        accordion.toggle(this, true, 0);
+      }
+    });
+  }
+
+  cardNode.scrollTop(currentScrollTop);
 }
 
 function renderCard() {

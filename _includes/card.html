@@ -87,7 +87,7 @@
                         {% for law in laws %}
                             <div class="card__law" data-law-id="{{ law.id }}">
                                 <div class="card__law-header">
-                                    <a href="" target="_blank" class="card__law-header-title card__law-details-button">№ {{law.number}}</a>
+                                    <a href="#law{{ law.id }}" target="_blank" class="card__law-header-title card__law-details-button">№ {{law.number}}</a>
                                     {% if false %}
                                         <span class="card__law-header-status">На рассмотрении</span>
                                     {% endif %}
@@ -95,7 +95,8 @@
                                 <div class="card__law-content">
                                     {{ law.name }}
                                 </div>
-                                <a class="link-button link-button_bordered card__law-details-button" target="_blank" href="">Подробнее о законопроекте</a>
+                                <a class="link-button link-button_bordered card__law-details-button" target="_blank" href="#law{{ law.id }}"
+                                >Подробнее о законопроекте</a>
                             </div>
                         {% endfor %}
                     </div>
@@ -140,9 +141,6 @@
                 <div class="card__law-info-loading is-loading"></div>
             {% elsif currentLawSelectedData %}
                 <div class="card__law-info-header">
-                    <div class="card__law-info-topbar">
-                        <a class="link-button card__law-back-button" target="_blank" href="">← Вернуться</a>
-                    </div>
                     <div class="card__law-info-meta">
                         {% if false %}
                             <div class="card__law-info-meta-item">
@@ -185,13 +183,8 @@
                                     {% if currentLawSelectedData.law_authors_enriched_more_size > 0 and lawAuthorsIsShowMore == false%}
                                         {% for author in currentLawSelectedData.law_authors_enriched_cut %}
                                             <a
-                                            {% if author.isSf %}
-                                                href="/person_sf/{{ author.id }}"
-                                            {% else %}
-                                                href="/person/{{ author.id }}"
-                                            {% endif %}
+                                            href="{{ author.link }}"
                                             class="card__law-info-meta-item"
-                                            target="_blank"
                                             data-author-id="{{ author.id }}"
                                             >{{ author.name }}</a>
                                         {% endfor -%}
@@ -199,15 +192,9 @@
                                     {% else %}
                                         {% for author in currentLawSelectedData.law_authors_enriched %}
                                             <a
-                                            {% if author.isSf %}
-                                            href="/person_sf/#{{ author.id }}"
-                                        {% else %}
-                                            href="/person/{{ author.id }}"
-                                        {% endif %}
+                                            href="{{ author.link }}"
                                             class="card__law-info-meta-item"
-                                            target="_blank"
                                             data-author-id="{{ author.id }}"
-
                                             >{{ author.name }}</a>
                                             {%- if forloop.last == false -%},{%- endif %}
                                         {% endfor -%}

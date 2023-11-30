@@ -7,7 +7,7 @@ import findKey from "lodash/findKey";
 import floatingTooltip from "../vendor/tooltip";
 import Data from "./data";
 import storyTelling from "../tools/storyTelling";
-import ShowCard from "./card";
+import ShowCard, { renderLawDetails } from "./card";
 import ShowedClusters from "../tools/showed_clusters";
 import zoom from "../tools/zoom";
 import tree_func from "../tools/tree";
@@ -1478,8 +1478,8 @@ export default async function initChart() {
     }
 
     const hash = window.location.hash;
-
-    if (hash) {
+    const isId = hash.includes("id");
+    if (isId && hash) {
       const person = nodes.find((e) => e.person == hash.replace("#id", ""));
 
       if (person) {
@@ -1499,6 +1499,13 @@ export default async function initChart() {
       HightlightCirclesOff();
       MarkActiveCirclesOff();
       isClicked = false;
+    }
+
+    const isLaw = hash.includes("law");
+
+    if (hash && isLaw) {
+      const lawId = hash.replace("#law", "");
+      renderLawDetails(lawId);
     }
   }
 }
