@@ -786,9 +786,3 @@ header {
     }
   }
 }
-
-/* Специфичный стиль для логотипа, чтобы исключить эффект при наведении */
-header a:has(img.logo):hover {
-  opacity: 1;
-  color: inherit;
-}
