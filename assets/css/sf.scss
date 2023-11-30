@@ -1,5 +1,6 @@
 ---
 ---
+
 @import "vars";
 
 $baseurl: "{{ site.baseurl }}";
@@ -22,24 +23,25 @@ html {
   overflow-y: hidden;
 }
 
-header{
+header {
   background: $color-orange;
 
-  a.c4, a.c5, a.c6 {
+  a.c4,
+  a.c5 {
     background-color: $color-orange;
   }
-  .header-menu{
+  .header-menu {
     background: $color-orange;
   }
 }
 div#controls .column .convocations {
-  width:120px;
+  width: 120px;
   .slider_label {
     width: 90px;
   }
 }
 
-#scrollytelling{
+#scrollytelling {
   display: none;
   height: calc(100% - 48px);
   width: 100%;
@@ -51,11 +53,11 @@ div#controls .column .convocations {
   top: 48px;
   background: white;
   transition: opacity 400ms ease;
-  @include until($tablet){
+  @include until($tablet) {
     top: 40px;
     height: calc(100% - 40px);
   }
-  #close_cross{
+  #close_cross {
     background: url("../images/cross.svg");
     height: 50px;
     width: 50px;
@@ -64,12 +66,12 @@ div#controls .column .convocations {
     position: fixed;
     cursor: pointer;
     z-index: 25;
-    &:hover{
+    &:hover {
       opacity: 0.8;
     }
   }
 
-  #go_to_lobby_map{
+  #go_to_lobby_map {
     margin: 20vh auto 0;
     display: block;
     padding: 11px 32px 12px;
@@ -81,15 +83,15 @@ div#controls .column .convocations {
     height: 25px;
   }
 
-  .arrow{
+  .arrow {
     position: absolute;
     border: none;
     top: 85vh;
     left: 50%;
-    transform: translate(-50%,-50%);
-    background-color: rgba(1,1,1,0);
+    transform: translate(-50%, -50%);
+    background-color: rgba(1, 1, 1, 0);
 
-    >span{
+    > span {
       display: block;
       width: 20px;
       height: 20px;
@@ -99,114 +101,113 @@ div#controls .column .convocations {
       margin: -10px;
       animation: animate 2s infinite;
 
-      &:nth-child(2){
+      &:nth-child(2) {
         animation-delay: -0.2s;
       }
-      &:nth-child(3){
+      &:nth-child(3) {
         animation-delay: -0.4s;
       }
     }
 
     @keyframes animate {
-      0%{
+      0% {
         opacity: 0;
-        transform: rotate(45deg) translate(-20px,-20px);
+        transform: rotate(45deg) translate(-20px, -20px);
       }
-      50%{
+      50% {
         opacity: 1;
       }
-      100%{
+      100% {
         opacity: 0;
-        transform: rotate(45deg) translate(20px,20px);
+        transform: rotate(45deg) translate(20px, 20px);
       }
     }
   }
-
 }
 
-#container{
+#container {
   margin: 0 auto;
   z-index: 2;
   position: relative;
   width: 70%;
-  @include until($desktop){
+  @include until($desktop) {
     width: 100%;
   }
 }
 
-#root{
+#root {
   position: fixed;
   width: 60%;
   top: 20%;
   left: 20%;
 
-  @include until($desktop){
+  @include until($desktop) {
     width: 100%;
     left: 0;
   }
 }
 
-.section{
-  height:40vh;
+.section {
+  height: 40vh;
   margin-bottom: 30vh;
-  color:black;
-  div{
-    background: rgba(255,255,255,.9);
+  color: black;
+  div {
+    background: rgba(255, 255, 255, 0.9);
     padding: 1.5rem;
     font-size: 1.5rem;
     border: 1px solid $color-orange;
     border-radius: 8px;
-    @include until($desktop){
+    @include until($desktop) {
       font-size: 1rem;
     }
   }
-  &.first{
+  &.first {
     padding-top: 70vh;
   }
-  &.lastWithText{
+  &.lastWithText {
     height: 20vh;
   }
-  &.exit{
+  &.exit {
     height: 10vh;
-    @include until($desktop){
+    @include until($desktop) {
       height: 20vh;
     }
-    div{
+    div {
       border: 0px;
     }
   }
 }
 
-#encloseText11727{
+#encloseText11727 {
   font-size: 12px;
 }
 
-.tellingLabel{
+.tellingLabel {
   text-anchor: middle;
   font-size: 8px;
 }
 
-.tellingCircleAlt{
-  fill:#f781c0;
+.tellingCircleAlt {
+  fill: #f781c0;
   color: #f781c0;
 }
 
-.tellingCircle{
-  fill: #2FA3E4;
-  color: #2FA3E4;
+.tellingCircle {
+  fill: #2fa3e4;
+  color: #2fa3e4;
 }
 
-.tellingBluredCircle{
+.tellingBluredCircle {
   fill: #999;
 }
 
-.tellingCircleGray{
+.tellingCircleGray {
   fill: #999;
   color: #999;
- }
+}
 
-.columns.about{
-  .outer_link{
+.columns.about {
+  .outer_link {
     background: rgba(255, 180, 68, 0.1);
   }
 }

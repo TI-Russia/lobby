@@ -96,8 +96,8 @@ header {
     }
   }
   .c4,
-  .c5,
-  .c6 {
+  .c5 {
+    background-color: #f4f4f4;
     flex: 0 0 48px;
     padding: 0;
     @include until($header-not-so-wide) {
@@ -109,9 +109,6 @@ header {
   }
   a.c5 {
     background-color: #00b7f4;
-  }
-  a.c6 {
-    background-color: #435695;
   }
   .icon {
     color: $color-white;
@@ -317,6 +314,17 @@ header {
     font-family: "Helios-Cond", "Helvetica Neue";
   }
 
+  /* Пространство для заголовков при нажатии на хэштег */
+  h1:before,
+  h2:before,
+  h3:before {
+    display: block;
+    content: " ";
+    margin-top: -30px;
+    height: 30px;
+    visibility: hidden;
+  }
+
   h1 {
     font-weight: 700;
     font-size: 34px;
@@ -327,15 +335,14 @@ header {
     font-weight: 700;
     font-size: 28px;
     line-height: 120%;
-    margin-top: 0;
     margin-bottom: 27px;
   }
   h3 {
     font-weight: 700;
-    font-size: 22px;
+    font-size: 24px;
     line-height: 120%;
-    margin-top: 0;
-    margin-bottom: 24px;
+    margin-top: 54px;
+    margin-bottom: 27px;
   }
   li {
     margin-bottom: 16px;
@@ -528,11 +535,9 @@ header {
 }
 
 .quote {
-  margin-top: 34px;
-  margin-bottom: 56px;
-
   position: relative;
   padding-left: 32px;
+  margin-top: 34px;
 
   &::before {
     content: "";
@@ -548,6 +553,20 @@ header {
     color: $color-dark-blue;
   }
 
+  &__grid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    @include until($header-wide) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+    }
+  }
+
   &__author {
     display: flex;
     align-items: center;
@@ -560,6 +579,7 @@ header {
     height: 140px;
     border-radius: 50%;
     margin-right: 24px;
+    object-fit: cover;
 
     @include until($tablet) {
       width: 100px;
@@ -589,7 +609,7 @@ header {
 
   &__author-caption {
     font-weight: 400;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 20px;
     color: $color-gray;
   }
@@ -662,7 +682,7 @@ header {
     color: $color-white;
     font-style: normal;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   &__content {
@@ -739,4 +759,30 @@ header {
   font-weight: 400;
   font-size: 17px;
   line-height: 24px;
+
+  // make a as button
+  a {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    text-align: center;
+    padding: 0 24px;
+    height: 44px;
+    color: $color-white !important;
+    background-color: $key-color;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+
+    &:hover {
+      background-color: rgba($key-color, 0.9);
+    }
+  }
 }

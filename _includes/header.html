@@ -76,7 +76,7 @@
           >О&nbsp;проекте</a
         >
         {% if page.type == 'duma_8' %}
-        <a href="{{ site.research_url }}">Исследование</a>
+        <a href="{{ site.research_url }}" target="_blank">Исследование</a>
         {% endif %}
         <a href="{{ site.baseurl }}/{{ site.page_urls.contribute }}"
           >Помочь проекту</a
@@ -95,7 +95,9 @@
           >
         </li>
         {% if page.type == 'duma_8' %}
-        <li><a href="{{ site.research_url }}">Исследование</a></li>
+        <li>
+          <a href="{{ site.research_url }}" target="_blank">Исследование</a>
+        </li>
         {% endif %}
         <li>
           <a href="{{ site.baseurl }}/{{ site.page_urls.contribute }}"
@@ -111,7 +113,7 @@
     </div>
     <div class="column is-pulled-right c4">
       <a
-        href="http://vk.com/share.php?url=https%3A%2F%2Fdumabingo.org%2F{% if page.type == 'sf'%}sf{%endif%}"
+        href="http://vk.com/share.php?url=https%3A%2F%2Fdumabingo.ru%2F{% if page.type == 'sf'%}sf{%endif%}"
         target="_blank"
         class="c4 vk_share_button"
         ><span class="icon is-large"><i class="fab fa-vk"></i></span
@@ -119,7 +121,7 @@
     </div>
     <div class="column is-pulled-right c5">
       <a
-        href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdumabingo.org%2F{% if page.type == 'sf'%}sf{%endif%}&text={{site.meta.description[page.type]}}"
+        href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdumabingo.ru%2F{% if page.type == 'sf'%}sf{%endif%}&text={{site.meta.description[page.type]}}"
         target="_blank"
         class="c5"
         ><span class="icon is-large"><i class="fab fa-twitter"></i></span

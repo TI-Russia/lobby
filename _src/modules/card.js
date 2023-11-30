@@ -13,6 +13,7 @@ import { formatDate } from "../lib/date";
 import { getFraction } from "../lib/fractions";
 import Data from "./data";
 import { FRACTIONS } from "../constants/fractions";
+import { addTargetBlank } from "./utils";
 
 const engine = new Liquid();
 
@@ -77,12 +78,6 @@ if (isDefaultLayout) {
     }
   );
 
-  cardNode.on("click", ".card__law-details-button", function (event) {
-    event.preventDefault();
-    const lawId = $(this).closest(".card__law").attr("data-law-id");
-    showLawDetails(lawId);
-  });
-
   cardNode.on("click", ".card__law-back-button", function (event) {
     event.preventDefault();
     hideLawDetails();
@@ -98,10 +93,35 @@ if (isDefaultLayout) {
     }
   });
 
+  cardNode.on("click", ".card__law-info-meta-item", function (event) {
+    event.preventDefault();
+    const authorId = $(this).attr("data-author-id");
+    const person = currentLawSelectedData.law_authors_enriched.find(
+      (lobbist) => lobbist.id === Number(authorId)
+    );
+
+    if (!person) {
+      return;
+    }
+
+    // find a circle with paerson that matches person.id and click it
+    const circle = $(`circle[data-person="${person.id}"]`);
+
+    if (circle.length > 0) {
+      HideCard();
+      circle[0].dispatchEvent(new Event("click"));
+      window.history.pushState(
+        { person: person.id },
+        null,
+        (person.isSF ? "./sf#id" : "./#id") + person.id
+      );
+    }
+  });
+
   cardNode.on("click", ".card__law-info-meta-item-more", (e) => {
     e.preventDefault();
     lawAuthorsIsShowMore = true;
-    renderCard();
+    renderLawDetails();
   });
 
   $(window).on("popstate", HideCard); // back button should close modal
@@ -130,17 +150,11 @@ function ShowCard({
   declarations,
   depLobbistSmallData,
 }) {
-  if (currentCardData) {
-    HideCard();
-  }
+  HideCard();
 
   if (window.history && window.history.pushState) {
     const personId = isSF ? depInfoLegacy.person : depInfo.person;
-    window.history.pushState(
-      { person: personId },
-      null,
-      (isSF ? "./sf#id" : "./#id") + personId
-    );
+    window.history.pushState({ person: personId }, null, "#id" + personId);
   }
 
   currentCardData = {
@@ -183,6 +197,57 @@ function hideLawDetails() {
   renderCard();
 }
 
+export async function renderLawDetails(lawId) {
+  if (!lawId && currentLawSelected) {
+    renderLawDetailsCard({
+      currentLawSelected,
+      currentLawSelectedData,
+      isLawDetailsLoading,
+      lawAuthorsIsShowMore,
+    });
+  } else {
+    currentLawSelected = lawId;
+    currentScrollTop = cardNode.scrollTop();
+    isLawDetailsLoading = true;
+
+    const lawDetails = await fetchLawDetails(lawId);
+
+    if ("detail" in lawDetails && lawDetails.detail === "Не найдено.") {
+    } else {
+      cardNode.show();
+      isLawDetailsLoading = false;
+      currentLawSelectedData = lawDetails;
+
+      renderLawDetailsCard({
+        currentLawSelected,
+        currentLawSelectedData,
+        isLawDetailsLoading,
+        lawAuthorsIsShowMore,
+      });
+    }
+  }
+}
+
+function renderLawDetailsCard(data) {
+  cardNode.html(
+    engine.renderSync(template, {
+      ...data,
+    })
+  );
+
+  if (!currentLawSelected) {
+    cardNode.find(".accordion").each(function () {
+      const id = $(this).attr("data-accordion-id");
+
+      if (currentExpandedAccordions.has(id)) {
+        accordion.toggle(this, true, 0);
+      }
+    });
+  }
+
+  cardNode.scrollTop(currentScrollTop);
+}
+
 function renderCard() {
   const {
     depInfo,
@@ -207,11 +272,16 @@ function renderCard() {
       photo: isSF
         ? depInfoLegacy.photo
         : `https://declarator.org/media/${depInfo.photo}`,
-      bio: (isSF ? depInfoLegacy.bio : depInfo.bio) || null,
-      submitted: (isSF ? depInfoLegacy.submitted : depInfo.submitted) || null,
-      relations: (isSF ? depInfoLegacy.relations : depInfo.relations) || null,
+      bio: addTargetBlank(isSF ? depInfoLegacy.bio : depInfo.bio) || null,
+      submitted:
+        addTargetBlank(isSF ? depInfoLegacy.submitted : depInfo.submitted) ||
+        null,
+      relations:
+        addTargetBlank(isSF ? depInfoLegacy.relations : depInfo.relations) ||
+        null,
       conclusion:
-        (isSF ? depInfoLegacy.conclusion : depInfo.conclusion) || null,
+        addTargetBlank(isSF ? depInfoLegacy.conclusion : depInfo.conclusion) ||
+        null,
       currentLawSelected,
       currentLawSelectedData,
       isLawDetailsLoading,
@@ -227,7 +297,7 @@ function renderCard() {
         ? depInfoLegacy.fraction
         : FRACTIONS[depLobbistSmallData.fraction]?.name,
       fractionClass: isSF
-        ? getFractionClass(depInfoLegacy.fraction)
+        ? depInfoLegacy.fraction
         : depLobbistSmallData.fraction,
       positionHtml: isSF
         ? getPositionSF(depInfoLegacy)
@@ -235,8 +305,8 @@ function renderCard() {
       tempComissionHtml: isSF
         ? getTempComissionText(depInfoLegacy.temp_commission)
         : "",
-      twPerson: `https://twitter.com/intent/tweet?url=http%3A%2F%2Fdumabingo.org/${dirUrl}${depLobbistSmallData.person}&text=${depLobbistSmallData.fullname}`,
-      vkPerson: `http://vk.com/share.php?url=http%3A%2F%2Fdumabingo.org/${dirUrl}${depLobbistSmallData.person}`,
+      twPerson: `https://twitter.com/intent/tweet?url=http%3A%2F%2Fdumabingo.ru/${dirUrl}${depLobbistSmallData.person}&text=${depLobbistSmallData.fullname}`,
+      vkPerson: `http://vk.com/share.php?url=http%3A%2F%2Fdumabingo.ru/${dirUrl}${depLobbistSmallData.person}`,
       openDeclaration: depLobbistSmallData.person
         ? `https://declarator.org/person/${depLobbistSmallData.person}`
         : null,
@@ -299,10 +369,19 @@ function getFractionClass(fraction) {
 }
 
 function getPosition(info) {
-  const comitet = info.committee || "";
+  let comitet = info.committee;
   const sposob = info.election_method;
   const soziv = info.convocations.length || 1;
   const gender = info.gender ? info.gender.toLowerCase() : "м";
+
+  if (
+    comitet === "0" ||
+    comitet === null ||
+    comitet === undefined ||
+    comitet === ""
+  ) {
+    comitet = "";
+  }
 
   let chlen = comitet.replace("Комитет ГД ", "Член комитета ");
   if (comitet) chlen += ", ";
@@ -467,15 +546,15 @@ async function fetchLawDetails(lawId) {
       if (person) {
         return {
           name: personFullnameToFIO(person.fullname),
-          link: isSF
-            ? `/sf/person/${person.person}`
-            : `/person/${person.person}`,
+          id: person.person,
+          isSf: isSF,
         };
       }
 
       return {
         name: authorPersonId,
-        link: "",
+        id: authorPersonId,
+        isSf: isSF,
       };
     }
   );

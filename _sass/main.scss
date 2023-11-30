@@ -1,10 +1,15 @@
 @charset "utf-8";
 
-html{overflow-y: auto;}
-body, button, select, input{
+html {
+  overflow-y: auto;
+}
+body,
+button,
+select,
+input {
   font-family: "Helios-Cond", "Helvetica Neue";
 }
-body{
+body {
   background: $color-white;
   line-height: 1;
   min-width: 812px;
@@ -14,29 +19,30 @@ body{
   flex-direction: column;
 
   -webkit-tap-highlight-color: transparent;
-  
-  @include until($desktop){
+
+  @include until($desktop) {
     min-width: $min-width;
   }
 
-  .hero{
+  .hero {
     flex: 1;
     min-height: calc(100vh - 70px);
   }
-  &.chart{
+  &.chart {
     min-height: auto;
   }
 }
 
-a, strong a {
+a,
+strong a {
   color: $key-color;
-  &:hover{
+  &:hover {
     opacity: 0.8;
     color: $key-color;
   }
 }
 
-.hero-body{
+.hero-body {
   padding: 0;
 }
 
@@ -44,10 +50,10 @@ a:not(.button) {
   text-decoration: underline;
 }
 
-@mixin is-($color){
+@mixin is-($color) {
   color: $color;
-  fill:$color;
-  &.is-active{
+  fill: $color;
+  &.is-active {
     background: $color;
     border-color: $color;
     color: $color-white;
@@ -55,107 +61,111 @@ a:not(.button) {
 }
 .is-color-white {
   @include is-($color-black);
-  &.is-active{
+  &.is-active {
     background: $color-blue;
-    border-color: $color-blue ;
+    border-color: $color-blue;
   }
 }
 .is-color-red {
-  @include is-($color-red)
+  @include is-($color-red);
 }
 .is-color-blue {
-  @include is-($color-blue)
+  @include is-($color-blue);
 }
 .is-color-er {
-  @include is-($color-er)
+  @include is-($color-er);
 }
 .is-color-orange {
-  @include is-($color-orange)
+  @include is-($color-orange);
 }
 .is-color-yellow {
-  @include is-($color-yellow)
+  @include is-($color-yellow);
 }
 .is-color-mint {
-  @include is-($color-mint)
+  @include is-($color-mint);
 }
 .is-color-gray-dark {
-  @include is-(#606060)
+  @include is-(#606060);
 }
 .is-color-gray-light {
-  @include is-(#DFE1E5);
+  @include is-(#dfe1e5);
 
-  color: $color-black-text!important;
+  color: $color-black-text !important;
 }
 .is-color-gray {
-  @include is-($color-gray)
+  @include is-($color-gray);
 }
 .is-color-key-color {
-  @include is-($key-color)
+  @include is-($key-color);
 }
 
-div#controls{
+div#controls {
   .controls-container {
     padding: 16px 24px 0 24px;
     margin: 0;
     flex: 1 1 auto;
     display: flex;
-    @include until($tablet){
+    @include until($tablet) {
       padding: 9px 16px 0 16px;
     }
   }
 
-  select {width: 130px;}
-  .column{
+  select {
+    width: 130px;
+  }
+  .column {
     padding: 0;
     padding-right: 16px;
 
-    button, .awesomplete {
+    button,
+    .awesomplete {
       margin-bottom: 16px;
-      @include until($tablet){
+      @include until($tablet) {
         margin-bottom: 10px;
       }
-    };
+    }
 
-    &.last-on-mobile{
-      padding-right: 0;}
+    &.last-on-mobile {
+      padding-right: 0;
+    }
 
-    .select{
+    .select {
       margin-bottom: 8px;
     }
-    .select.select_lobby{
+    .select.select_lobby {
       margin-bottom: 16px;
-      @include until($tablet){
+      @include until($tablet) {
         margin-bottom: 10px;
       }
     }
 
-    #clear{
+    #clear {
       border: none;
       color: $color-red;
-      &:focus{
+      &:focus {
         box-shadow: none;
       }
     }
 
-    #search{
+    #search {
       border-right: none;
       border-left: none;
       border-top: none;
       box-shadow: none;
     }
 
-    .search_icon{
+    .search_icon {
       height: 1.8rem;
     }
-    .convocations, .age{
+    .convocations,
+    .age {
       width: 89px;
       height: 24px;
       margin-bottom: 12px;
       margin-right: 0px;
     }
-
   }
-  .presets{
+  .presets {
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     overflow-x: scroll;
@@ -166,7 +176,8 @@ div#controls{
     display: flex;
     align-items: stretch;
 
-    &::before, &::after {
+    &::before,
+    &::after {
       content: "";
       position: sticky;
       top: 0;
@@ -180,16 +191,20 @@ div#controls{
       background: linear-gradient(to left, rgba($color-white, 0), $color-white);
       margin-right: -6px;
 
-      @include until($tablet){
+      @include until($tablet) {
         margin-right: -14px;
       }
     }
     &::after {
       right: 0;
       margin-left: -6px;
-      background: linear-gradient(to right, rgba($color-white, 0), $color-white);
+      background: linear-gradient(
+        to right,
+        rgba($color-white, 0),
+        $color-white
+      );
 
-      @include until($tablet){
+      @include until($tablet) {
         margin-left: -14px;
       }
     }
@@ -197,7 +212,7 @@ div#controls{
     &::-webkit-scrollbar {
       display: none;
     }
-    a{
+    a {
       display: inline-block;
       white-space: nowrap;
       color: $key-color;
@@ -207,7 +222,7 @@ div#controls{
   }
 }
 
-.hero-body{
+.hero-body {
   position: relative;
   transition: all 0.5s ease-out 0s;
   &.is-loading {
@@ -255,21 +270,21 @@ div#clusters.is-loading {
   }
 }
 
-div#clusters>svg{
+div#clusters > svg {
   border: 1px solid #ddd;
   border-left: none;
   border-right: none;
   border-bottom: none;
 }
 
-div#presets{
+div#presets {
   padding: 10px;
 }
 
 .card__law {
   padding: 16px 27px;
 
-  &~& {
+  & ~ & {
     border-top: 1px solid $color-gray-light;
   }
 
@@ -312,7 +327,7 @@ div#presets{
     color: $color-black-text;
 
     &:before {
-      content: '';
+      content: "";
       display: inline-flex;
       width: 12px;
       height: 12px;
@@ -342,7 +357,7 @@ div#presets{
     }
   }
 
-  &~& {
+  & ~ & {
     border-top: none;
   }
 }
@@ -355,14 +370,14 @@ div#card {
   left: auto;
   width: 488px;
   height: 100%;
-  background:#F4F4F4;
+  background: #f4f4f4;
   padding-left: 40px;
   overflow-x: hidden;
   overflow-y: auto;
-  color:black;
+  color: black;
   box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.25);
   z-index: 200;
-  @include until($tablet){
+  @include until($tablet) {
     background: $color-white;
   }
 
@@ -486,34 +501,34 @@ div#card {
     }
   }
 
-  .share_icons{
+  .share_icons {
     position: fixed;
     margin-left: -40px;
     height: 100%;
-    border-right:1px solid rgba(0,0,0,0.2);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-    @include until($tablet){
+    @include until($tablet) {
       margin-left: -40px;
     }
-    .know_more{
+    .know_more {
       flex: 1;
       padding-left: 9px; /*ff bug, margin: 0 auto*/
       padding-top: 32px;
       a {
-        writing-mode:vertical-lr;
+        writing-mode: vertical-lr;
         transform: rotate(-180deg);
         text-decoration: none;
         align-items: center;
       }
     }
-    .social{
+    .social {
       flex: 0;
       display: flex;
       flex-direction: column;
       padding: 0;
       font-size: 22px;
-      a{
+      a {
         background: #0f81cc;
         width: 39px;
         height: 39px;
@@ -521,9 +536,15 @@ div#card {
         justify-content: center;
         display: flex;
         color: white;
-        &.vk{background-color: #4C77A6;}
-        &.fb{background-color: #435695;}
-        &.tw{background-color: #00B7F4;}
+        &.vk {
+          background-color: #4c77a6;
+        }
+        &.fb {
+          background-color: #435695;
+        }
+        &.tw {
+          background-color: #00b7f4;
+        }
       }
     }
   }
@@ -565,12 +586,12 @@ div#card {
     padding: 0 32px 32px 32px;
   }
 
-  .columns.head{
+  .columns.head {
     align-items: center;
-    @include until($tablet){
+    @include until($tablet) {
       display: flex;
       flex-direction: column;
-      .caption{
+      .caption {
         text-align: center;
       }
     }
@@ -590,7 +611,7 @@ div#card {
     padding: 0 9px;
     white-space: nowrap;
     overflow: hidden;
-    &:hover{
+    &:hover {
       color: $key-color;
       opacity: 0.8;
     }
@@ -604,7 +625,7 @@ div#card {
     display: flex;
     gap: 8px;
 
-    @include until($tablet){
+    @include until($tablet) {
       justify-content: center;
       flex-direction: column;
       align-items: center;
@@ -617,7 +638,7 @@ div#card {
     margin: 12px 0;
 
     .highlight-value {
-      font-family: 'Helios-Cond';
+      font-family: "Helios-Cond";
       font-weight: 700;
       font-size: 32px;
       line-height: 36px;
@@ -634,31 +655,31 @@ div#card {
       color: $color-gray;
     }
 
-    @include until($tablet){
+    @include until($tablet) {
       justify-content: center;
     }
   }
 
-  #position{
+  #position {
     margin-top: 1em;
     margin-bottom: 1em;
-    @include until($tablet){
+    @include until($tablet) {
       text-align: center;
     }
   }
 
-  .bring{
+  .bring {
     line-height: 1.2em;
-    @include until($tablet){
+    @include until($tablet) {
       text-align: center;
       margin-bottom: 1em !important;
-      .column{
+      .column {
         padding-top: 0;
       }
     }
   }
 
-  @include until($tablet){
+  @include until($tablet) {
     width: 100%;
     min-width: $min-width;
     padding-left: 40px;
@@ -670,7 +691,7 @@ div#card {
     font-size: $font-size-h1;
     line-height: 28px;
     font-weight: bold;
-    @include until($tablet){
+    @include until($tablet) {
       font-size: 24px;
     }
   }
@@ -679,22 +700,22 @@ div#card {
     margin-top: $offset-l;
     font-weight: bold;
     line-height: 1.75rem;
-    @include until($tablet){
+    @include until($tablet) {
       margin-top: $offset-m;
     }
   }
 
-  .laws_block{
+  .laws_block {
     //margin-bottom: -0.5em;
 
-    &>.column{
+    & > .column {
       padding-top: 0;
       padding-bottom: 0;
       line-height: normal;
       flex-grow: 1;
     }
-    .law_count{
-      @include from($tablet){
+    .law_count {
+      @include from($tablet) {
         padding-right: 0;
         padding-bottom: 0;
         padding-top: 0;
@@ -702,54 +723,66 @@ div#card {
     }
   }
 
-  span#fraction_text{
+  span#fraction_text {
     color: $color-gray;
-    &.er{color: $color-blue;}
-    &.kprf{color: $color-red;}
-    &.ldpr{color: $color-yellow;}
-    &.sr{color: $color-orange;}
-    &.srzp{color: $color-orange;}
-    &.nl{color: $color-mint;}
-    @include until($tablet){
+    &.er {
+      color: $color-blue;
+    }
+    &.kprf {
+      color: $color-red;
+    }
+    &.ldpr {
+      color: $color-yellow;
+    }
+    &.sr {
+      color: $color-orange;
+    }
+    &.srzp {
+      color: $color-orange;
+    }
+    &.nl {
+      color: $color-mint;
+    }
+    @include until($tablet) {
       line-height: normal;
     }
   }
 
-  .law_count{
-    font-family: 'Helios-Cond';
+  .law_count {
+    font-family: "Helios-Cond";
     font-size: 56px;
     line-height: 57px;
     text-align: center;
     font-weight: bold;
-    @include until($tablet){
+    @include until($tablet) {
       font-size: 48px;
     }
   }
 
-  .law_text{
+  .law_text {
     padding-top: 0;
     font-size: 14px;
     color: $color-gray;
   }
 
-  .columns{
+  .columns {
     margin-top: 0;
     margin-bottom: 0;
   }
 
-  .column{
-    @include until($tablet){
+  .column {
+    @include until($tablet) {
       padding-bottom: 0;
     }
   }
 
-  .image-cropper{
+  .image-cropper {
     position: relative;
   }
 
-  .close_btn{
+  .close_btn {
     position: fixed;
-    top:15px;
+    top: 15px;
     right: 15px;
     cursor: pointer;
     width: 32px;
@@ -757,21 +790,21 @@ div#card {
     background-image: url(/assets/images/close.svg);
     background-position: center;
     background-repeat: no-repeat;
-    &:hover{
+    &:hover {
       opacity: 0.8;
     }
   }
 
-  .matrix{
-    h3:first-letter{
+  .matrix {
+    h3:first-letter {
       text-transform: capitalize;
     }
 
-    h3:not(:first-of-type){
+    h3:not(:first-of-type) {
       padding-top: 0.5em;
     }
 
-    li{
+    li {
       display: inline;
       padding-left: 0.4em;
     }
@@ -780,14 +813,14 @@ div#card {
       content: "\2192\2002";
     }
 
-    li:first-of-type:before{
-      content: '\2014\2002';
+    li:first-of-type:before {
+      content: "\2014\2002";
     }
   }
 }
 
-.footer{
-  border-top: 1px solid #DDDDDD;
+.footer {
+  border-top: 1px solid #dddddd;
   background: inherit;
   padding: 0;
   padding-bottom: 1px;
@@ -795,7 +828,7 @@ div#card {
   font-size: 16px;
   overflow: hidden;
 
-  @include until($tablet){
+  @include until($tablet) {
     //padding-top: 0;
   }
 
@@ -803,7 +836,7 @@ div#card {
     display: flex;
     justify-content: space-between;
 
-    @include until($tablet){
+    @include until($tablet) {
       flex-direction: column;
       align-items: center;
     }
@@ -817,15 +850,15 @@ div#card {
     }
   }
 
-  .columns{
+  .columns {
     margin-bottom: 0;
-    scrollbar-width:none;
-    @include until($tablet){
+    scrollbar-width: none;
+    @include until($tablet) {
       //margin: 0;
-      }
+    }
   }
 
-  .icon{
+  .icon {
     opacity: 1;
     color: $color-white;
   }
@@ -835,53 +868,60 @@ div#card {
   }
 
   .contact-email {
-    @include until($tablet){
+    @include until($tablet) {
       display: none;
     }
   }
 
-  .copy, .agent{
+  .copy,
+  .agent {
     padding: 13px 60px 13px;
-    @include until($desktop){
+    @include until($desktop) {
       padding: 13px 32px 13px;
     }
-    @include until($tablet){
+    @include until($tablet) {
       padding: 13px 16px 13px 16px;
     }
-    &.is-pulled-right{
-      @include until($tablet){
+    &.is-pulled-right {
+      @include until($tablet) {
         //padding-bottom: 16px;
         float: none !important;
       }
     }
   }
 
-  .social{
+  .social {
     display: flex;
     align-items: self-start;
     margin-right: -8px;
     padding-right: 0;
     //padding-left: 0; // z
     font-size: 24px;
-    @include until($desktop){
+    @include until($desktop) {
       margin-left: 32px;
     }
-    @include until($tablet){
+    @include until($tablet) {
       //margin-left: 0px;
-      margin-left: .75rem;
+      margin-left: 0.75rem;
       padding: 13px 16px 13px 16px;
     }
 
-    a{
+    a {
       background: #0f81cc;
       width: 39px;
       height: 39px;
       align-items: center;
       justify-content: center;
       display: flex;
-      &.vk{background-color: #4C77A6;}
-      &.fb{background-color: #435695;}
-      &.tw{background-color: #00B7F4;}
+      &.vk {
+        background-color: #4c77a6;
+      }
+      &.fb {
+        background-color: #435695;
+      }
+      &.tw {
+        background-color: #00b7f4;
+      }
     }
   }
 }
@@ -891,11 +931,11 @@ div#card {
   margin-top: 0px;
   max-width: 75vw;
 
-  @include until($desktop){
+  @include until($desktop) {
     padding-left: 44px;
   }
 
-  @include until($tablet){
+  @include until($tablet) {
     max-width: unset;
     padding-left: 28px;
   }
@@ -905,24 +945,25 @@ div#card {
   }
 }
 
-.extra .columns, .extra-intro.columns{
+.extra .columns,
+.extra-intro.columns {
   padding: 0;
   margin: 16px 49px;
   overflow-x: visible;
   white-space: normal;
-  @include until($desktop){
+  @include until($desktop) {
     margin: 12px 32px 16px;
   }
-  @include until($tablet){
+  @include until($tablet) {
     margin: 12px 16px 16px;
   }
-  .column{
+  .column {
     padding-left: 0;
     padding-top: 0;
     font-size: 10px;
     padding-bottom: 5px;
     max-width: 1030px;
-    p{
+    p {
       padding-right: 16px;
       display: inline;
     }
@@ -931,15 +972,17 @@ div#card {
 
 .backForLabel {
   fill: #fff;
-  opacity: 0.0;
+  opacity: 0;
 }
-circle:hover {cursor:pointer;}
-circle.activeCircle{
+circle:hover {
+  cursor: pointer;
+}
+circle.activeCircle {
   stroke: black;
   stroke-width: 2;
 }
-.lobby_label{
-  fill:#000;
+.lobby_label {
+  fill: #000;
   font-size: 14px;
   paint-order: stroke;
   pointer-events: none;
@@ -947,29 +990,29 @@ circle.activeCircle{
   stroke-linejoin: round;
   stroke-opacity: 0.7;
   stroke-width: 3px;
-  stroke: #FFFFFF;
+  stroke: #ffffff;
   text-anchor: middle;
-  &.mini{
+  &.mini {
     stroke-width: 1.6px;
   }
-  transition: 0.0s opacity 0.05s;
-  & > *{
+  transition: 0s opacity 0.05s;
+  & > * {
     pointer-events: none;
   }
   &.hovered {
-    opacity: 0.0 !important;
+    opacity: 0 !important;
     //transition: 0.1s opacity 0s;
   }
-  &.mini{
-  font-size: 12px;
+  &.mini {
+    font-size: 12px;
   }
-  &.midi{
+  &.midi {
     font-size: 10px;
   }
-  &.maxi{
+  &.maxi {
     font-size: 8px;
   }
-  &.super{
+  &.super {
     font-size: 6px;
   }
 }
@@ -984,21 +1027,22 @@ circle.activeCircle{
   .noUi-base .noUi-handle {
     background-color: $key-color;
 
-    &.noUi-active, &:hover {
+    &.noUi-active,
+    &:hover {
       background-color: rgba($key-color, 0.8);
     }
   }
-  
+
   .noUi-base .noUi-connect {
     background-color: rgba($key-color, 0.8);
   }
 }
 
-.capitalizeFirsLetter:first-letter{
+.capitalizeFirsLetter:first-letter {
   text-transform: capitalize;
 }
 
-.mc-layout__bannerContent>iframe {
+.mc-layout__bannerContent > iframe {
   height: 108px !important;
 }
 
@@ -1025,13 +1069,13 @@ circle.activeCircle{
   position: absolute;
   bottom: 41px;
   left: 48px;
-  color: #4A4A4A;
+  color: #4a4a4a;
   line-height: 20px;
   display: flex;
   flex-direction: column;
   gap: 19px;
 
-  @include until($tablet){
+  @include until($tablet) {
     left: 16px;
     bottom: 20px;
   }
@@ -1048,7 +1092,7 @@ circle.activeCircle{
 
   &__info-item {
     &::before {
-      content: '';
+      content: "";
       display: inline-block;
       width: 10px;
       height: 10px;
@@ -1057,7 +1101,7 @@ circle.activeCircle{
       background-color: $key-color;
       vertical-align: middle;
     }
-    
+
     &_small::before {
       width: 7px;
       height: 7px;
@@ -1081,8 +1125,8 @@ circle.activeCircle{
     left: calc(100% + 20px);
     bottom: 0;
     z-index: 100;
-    
-    @include until($tablet){
+
+    @include until($tablet) {
       position: fixed;
       max-height: calc(100% - 59px);
       left: 10px;
@@ -1118,9 +1162,9 @@ circle.activeCircle{
   }
 
   &__modal-title {
-    font-family: 'Helios-Cond';
+    font-family: "Helios-Cond";
     margin-bottom: 0;
-  } 
+  }
 }
 
 .transparency-logo {
@@ -1130,11 +1174,11 @@ circle.activeCircle{
   margin-top: 16px;
   object-position: top;
 
-  @include until($desktop){
+  @include until($desktop) {
     margin-top: 12px;
   }
 
-  @include until($tablet){
+  @include until($tablet) {
     margin: 0 0 16px 0;
   }
 }
@@ -1157,15 +1201,15 @@ circle.activeCircle{
     font-size: 14px;
     line-height: 17px;
     color: $color-gray;
-    font-family: 'Arial', sans-serif;
+    font-family: "Arial", sans-serif;
   }
 
   &__item-value {
     white-space: nowrap;
-    font-family: 'Helios-Cond';
+    font-family: "Helios-Cond";
     font-weight: 700;
     font-size: 32px;
-    line-height: 36px;    
+    line-height: 36px;
     color: $color-black-text;
     letter-spacing: -0.04em;
   }
