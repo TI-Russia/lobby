@@ -93,7 +93,7 @@ if (isDefaultLayout) {
     }
   });
 
-  cardNode.on("click", ".card__law-info-meta-item", function (event) {
+  cardNode.on("click", ".card__law-info-meta-item-author", function (event) {
     event.preventDefault();
     const authorId = $(this).attr("data-author-id");
     const person = currentLawSelectedData.law_authors_enriched.find(
@@ -198,7 +198,12 @@ export async function renderLawDetails(lawId) {
       cardNode.show();
       isLawDetailsLoading = false;
       currentLawSelectedData = lawDetails;
-
+      console.log({
+        currentLawSelected,
+        currentLawSelectedData,
+        isLawDetailsLoading,
+        lawAuthorsIsShowMore,
+      });
       renderLawDetailsCard({
         currentLawSelected,
         currentLawSelectedData,

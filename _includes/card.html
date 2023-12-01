@@ -1,14 +1,19 @@
 <div id="card" class="modal">
   {% raw %}
   <script id="card_template" type="text/template">
+    {% unless currentLawSelected %}
     <div class="share_icons">
+
         <div class="know_more" ><a href="{{ sendForm }}" id="send_form" target="_blank">Знаете о {% if page.type == 'sf'%}сенаторе {%else%}депутате {%endif%}больше? Напишите нам!</a></div>
 
         <div class="social">
             <a href="{{ twPerson }}"  target="_blank" class="tw" id="tw_person"><span class="icon"><i class="fab fa-twitter"></i></span></a>
             <a href="{{ vkPerson }}" target="_blank" class="vk vk_share_button" id="vk_person"><span class="icon"><i class="fab fa-vk"></i></span></a>
         </div>
+
     </div>
+    {% endunless %}
+
 
     <div id="close_btn" class="icon is-large close_btn"></div>
 
@@ -184,7 +189,7 @@
                                         {% for author in currentLawSelectedData.law_authors_enriched_cut %}
                                             <a
                                             href="{{ author.link }}"
-                                            class="card__law-info-meta-item"
+                                            class="card__law-info-meta-item-author"
                                             data-author-id="{{ author.id }}"
                                             >{{ author.name }}</a>
                                         {% endfor -%}
@@ -193,7 +198,7 @@
                                         {% for author in currentLawSelectedData.law_authors_enriched %}
                                             <a
                                             href="{{ author.link }}"
-                                            class="card__law-info-meta-item"
+                                            class="card__law-info-meta-item-author"
                                             data-author-id="{{ author.id }}"
                                             >{{ author.name }}</a>
                                             {%- if forloop.last == false -%},{%- endif %}
