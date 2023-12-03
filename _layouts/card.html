@@ -27,11 +27,11 @@
       property="twitter:image"
       content="https://dumabingo.org/assets/images/preview_img.png"
     />
-    <title>{{site.meta.title[page.type]}}: {{page.fullname}}</title>
+    <title>{{site.title}}: {{page.fullname}}</title>
+    <meta
+      http-equiv="refresh"
+      content="0; url=https://dumabingo.org/#id{{page.person}}"
+    />
   </head>
-  <body>
-    <script>
-      location = "https://dumabingo.org/#id{{page.person}}";
-    </script>
-  </body>
+  <body></body>
 </html>

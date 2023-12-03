@@ -1,6 +1,6 @@
 # bundle exec jekyll serve --port 4001 --baseurl ''
 
-title: Лоббизм в Госдуме
+title: ДумаБинго
 email: your-email@example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://dumabingo.org
