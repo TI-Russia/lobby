@@ -12,12 +12,20 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
 
+logo_redirect:
+  duma_7: "sozyv7"
+  duma_8: ""
+  sf: "sf"
+  about_sf: "sf"
+  contribute: ""
+
 page_urls:
   sf: "sf"
   duma_7: "sozyv7"
   duma_8: ""
   contribute: "contribute"
-  about: "about"
+  about: ""
+  about_sf: "sf"
 
 collections:
   contribute:
@@ -43,16 +51,19 @@ menu_about_url:
   duma_7: "about"
   duma_8: "about"
   sf: "sf-about"
+  about_sf: "sf-about"
 
 menu_rating_url:
   duma_7: "Рейтинг_влияния_депутатов_Госдумы_UPD.pdf"
   duma_8: "Рейтинг_влияния_депутатов_Госдумы_UPD.pdf"
   sf: "Рейтинг_влияния_членов_Совета_Федерации_290321_UPD.pdf"
+  about_sf: "Рейтинг_влияния_членов_Совета_Федерации_290321_UPD.pdf"
 
 feedback_url:
   duma_7: "https://docs.google.com/forms/d/e/1FAIpQLSc6ojDZmxa9NaiTAC272cqlZ08XJzUM3jBA6OUv0I1PpTjpYA/viewform"
   duma_8: "https://docs.google.com/forms/d/1Qaw8qWfw2PPZPtpF1PV4EyNGekXesM2qRLzwurgjHbA/viewform"
   sf: "https://docs.google.com/forms/d/e/1FAIpQLSc6ojDZmxa9NaiTAC272cqlZ08XJzUM3jBA6OUv0I1PpTjpYA/viewform"
+  about_sf: "https://docs.google.com/forms/d/e/1FAIpQLSc6ojDZmxa9NaiTAC272cqlZ08XJzUM3jBA6OUv0I1PpTjpYA/viewform"
 
 contribute_url: https://docs.google.com/forms/d/e/1FAIpQLScDw9U7Z5WoDZ-y0m6lcocI36pPJIy96Ff-xRuCf14P87JBPw/viewform
 
@@ -65,18 +76,21 @@ meta:
     sf: "Лоббизм в Совете Федерации"
     about: "О проекте"
     contribute: "Участвуйте в проекте"
+    about_sf: "О лоббизме в Совете Федерации"
   description:
     duma_7: "Интерактивная карта лоббистских возможностей депутатов Государственной Думы РФ 7 созыва: лоббистские группы, законопроекты и персоналии"
     duma_8: "Интерактивная карта лоббистских возможностей депутатов Государственной Думы РФ 8 созыва: лоббистские группы, законопроекты и персоналии"
     sf: "Интерактивная карта лоббистских возможностей членов Совета Федерации: лоббистские группы, законопроекты и персоналии"
     about: "О команде экспертов по лоббизму в Госдуме"
     contribute: "Присоединитесь к команде экспертов по лоббизму в Госдуме"
+    about_sf: "О сенаторах и лоббизме в Совете Федерации"
   preview:
     duma_7: "assets/images/preview_img.jpg"
     duma_8: "assets/images/preview_img_duma-8.jpg"
     sf: "assets/images/preview_img_sf.jpg"
     about: "assets/images/preview_img.jpg"
     contribute: "assets/images/preview_img.jpg"
+    about_sf: "assets/images/preview_img_sf.jpg"
 
 # Exclude from processing.
 # The following items will not be processed.
