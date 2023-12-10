@@ -1,5 +1,11 @@
 <ul>
-{% for section in site.about %}
-    <li id='menu_{{ section.ident }}'><a href='#{{ section.ident }}'>{{ section.title_short }}</a></li>
-{% endfor %}
+  {% if page.type == 'about'%} {% for section in site.about %}
+  <li id="menu_{{ section.ident }}">
+    <a href="#{{ section.ident }}">{{ section.title_short }}</a>
+  </li>
+  {% endfor %} {% else %} {% for section in site.about_sf %}
+  <li id="menu_{{ section.ident }}">
+    <a href="#{{ section.ident }}">{{ section.title_short }}</a>
+  </li>
+  {% endfor %} {% endif %}
 </ul>

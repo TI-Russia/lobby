@@ -55,6 +55,7 @@ export default async function initChart() {
   }
 
   function doTelling() {
+    document.documentElement.style.overflowY = "hidden";
     const width = 600;
     const height = width / (el.width / el.height);
     const svg_relling = d3.select("#root").append("svg");

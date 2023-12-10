@@ -19,10 +19,6 @@ $key-color: $color-blue;
 @import "awesomplete";
 @import "zoomer";
 
-html {
-  overflow-y: hidden;
-}
-
 header {
   background: $color-orange;
 
