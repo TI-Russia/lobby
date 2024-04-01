@@ -1,5 +1,3 @@
 const getLayoutVars = () => window.LAYOUT_VARS;
 
-export {
-    getLayoutVars,
-};
+export { getLayoutVars };
