@@ -92,7 +92,7 @@
                         {% for law in laws %}
                             <div class="card__law" data-law-id="{{ law.id }}">
                                 <div class="card__law-header">
-                                    <a href="#law{{ law.id }}" target="_blank" class="card__law-header-title card__law-details-button">№ {{law.number}}</a>
+                                    <a href="/#law{{ law.id }}" target="_blank" class="card__law-header-title card__law-details-button">№ {{law.number}}</a>
                                     {% if false %}
                                         <span class="card__law-header-status">На рассмотрении</span>
                                     {% endif %}
@@ -100,7 +100,7 @@
                                 <div class="card__law-content">
                                     {{ law.name }}
                                 </div>
-                                <a class="link-button link-button_bordered card__law-details-button" target="_blank" href="#law{{ law.id }}"
+                                <a class="link-button link-button_bordered card__law-details-button" target="_blank" href="/#law{{ law.id }}"
                                 >Подробнее о законопроекте</a>
                             </div>
                         {% endfor %}
