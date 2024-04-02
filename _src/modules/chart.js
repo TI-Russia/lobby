@@ -15,6 +15,7 @@ import Pluralization from "../tools/pluralize";
 import { FRACTIONS } from "../constants/fractions";
 import { POSITIONS } from "../constants/positions";
 import { getRating } from "../lib/rating";
+import { getLobbyText } from "./getLobbyText";
 
 export default async function initChart() {
   let nodes;
@@ -772,7 +773,7 @@ export default async function initChart() {
       MarkActiveCirclesOn(d.id);
       $("#clusters").addClass("is-loading");
       const depRating = getRating(d.person, rawRating, isSF);
-      const depLobbys = GetLobbyText(d.groups);
+      const depLobbys = getLobbyText(d.groups, lobby);
       const dipInfoURL = isSF
         ? `https://declarator.org/api/lobbist/${d.id}/`
         : `https://declarator.org/api/lobbist_detail/${d.id}/`;
@@ -785,6 +786,7 @@ export default async function initChart() {
         d3.json(successRateURL),
       ]).then(function ([depInfo, declarations, depSuccessRate]) {
         $("#clusters").removeClass("is-loading");
+
         new ShowCard({
           ...(isSF ? { depInfoLegacy: depInfo } : { depInfo }),
           depRating,
@@ -1462,20 +1464,6 @@ export default async function initChart() {
 
         zoom.zoom_reset(labels, svg1, zoom_handler, initialTransform);
       }
-    }
-
-    function GetLobbyText(lobbys) {
-      let text = "";
-
-      lobbys.forEach(function (l, i) {
-        if (i > 0) {
-          text += ", ";
-        }
-
-        text += lobby.find((x) => x.id == l).name;
-      });
-
-      return text;
     }
 
     const hash = window.location.hash;
