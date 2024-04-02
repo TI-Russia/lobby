@@ -381,11 +381,49 @@ div#card {
     background: $color-white;
   }
 
+  &.location {
+    width: 100%;
+
+    .card__main-info {
+      margin: 0 auto;
+      max-width: 788px;
+    }
+  }
+
   .card__main-info {
     display: flex;
     flex-direction: column;
     min-height: 100%;
     padding-bottom: 16px;
+  }
+
+  .card-info-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    &.is-loading {
+      position: relative;
+      pointer-events: none;
+      opacity: 0.5;
+      mix-blend-mode: luminosity;
+      pointer-events: none;
+      &:after {
+        @include loader;
+        animation: spinAround 1000ms infinite linear;
+        border: 2px solid $color-blue;
+        border-radius: $radius-rounded;
+        border-right-color: transparent;
+        border-top-color: transparent;
+        position: absolute;
+        top: calc(50% - 2.5em);
+        left: calc(50% - 2.5em);
+        width: 5em;
+        height: 5em;
+        border-width: 0.25em;
+      }
+    }
   }
 
   .card__law-info {

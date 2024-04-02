@@ -19,6 +19,10 @@
 
     {% unless currentLawSelected %}
         <div class="card__main-info">
+            {% if isLoading %}
+                <div class="card-info-loading is-loading"></div>
+            {% endif %}
+            {% if fullname %}
             <div class="card__header">
                 <div class="status">
                     {% if lastUpdate %}
@@ -85,6 +89,7 @@
 
                 <button  id="scrollToTop" title="Наверх">&uarr;</button>
             </div>
+            {% endif %}
             {% if laws %}
                 <div class="accordion" data-accordion-id="0">
                     <div class="accordion__title">Мониторинг законопроектов</div>
