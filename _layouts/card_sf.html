@@ -1,6 +1,11 @@
+---
+type: sf
+---
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {% include head.html %}
     <meta charset="UTF-8" />
     <meta
       property="og:url"
@@ -27,9 +32,6 @@
     <title>{{site.meta.title.sf}}: {{page.fullname}}</title>
   </head>
   <body>
-    <script>
-      location =
-        "https://dumabingo.org/{{site.page_urls.sf}}#id{{page.person}}";
-    </script>
+    {% include card.html %} {% include scripts-require.html %}
   </body>
 </html>

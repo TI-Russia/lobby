@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {% include head.html %}
     <meta charset="UTF-8" />
     <meta
       property="og:url"
@@ -28,10 +29,8 @@
       content="https://dumabingo.org/assets/images/preview_img.png"
     />
     <title>{{site.title}}: {{page.fullname}}</title>
-    <meta
-      http-equiv="refresh"
-      content="0; url=https://dumabingo.org/#id{{page.person}}"
-    />
   </head>
-  <body></body>
+  <body>
+    {% include card.html %} {% include scripts-require.html %}
+  </body>
 </html>

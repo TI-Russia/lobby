@@ -10,7 +10,6 @@ import Pluralization from "../tools/pluralize";
 import { getLayoutVars } from "./layout_vars";
 import accordion from "./accordion";
 import { formatDate } from "../lib/date";
-import { getFraction } from "../lib/fractions";
 import Data from "./data";
 import { FRACTIONS } from "../constants/fractions";
 import { addTargetBlank } from "./utils";
@@ -19,12 +18,13 @@ const engine = new Liquid();
 
 const isDefaultLayout = getLayoutVars().layout === "default";
 const isSF = getLayoutVars().type === "sf";
-const convocation = pageTypeToConvocation(getLayoutVars().type);
+let convocation = pageTypeToConvocation(getLayoutVars().type);
 
 const dirUrl = isSF ? "person_sf/" : "person/";
 const feedbackForm = getLayoutVars().feedbackUrl;
 
 let currentCardData = null;
+let isLoading = false;
 let currentLawSelected = null;
 let currentLawSelectedData = null;
 let isLawDetailsLoading = false;
@@ -35,7 +35,9 @@ let template;
 
 let cardNode;
 
-if (isDefaultLayout) {
+const originalTemplateHtml = $("#card_template").html();
+
+export function setDefaulTemplate() {
   cardNode = $("#card");
   const templateHtml = cardNode.find("#card_template").html();
   template = engine.parse(templateHtml);
@@ -127,6 +129,42 @@ if (isDefaultLayout) {
   $(window).on("popstate", HideCard); // back button should close modal
 }
 
+if (isDefaultLayout) {
+  setDefaulTemplate();
+}
+
+export function getPageType() {
+  const hasHash = window.location.hash.length > 0;
+
+  if (hasHash) {
+    return "hash";
+  } else {
+    return "location";
+  }
+}
+
+export function setCardEvents(cardNode = $("#card")) {
+  const type = getPageType();
+
+  cardNode.on("click", "#close_btn", () => {
+    if (type === "hash") {
+      HideCard();
+
+      window.dispatchEvent(new Event("closeCard"));
+
+      if (window.history && window.history.pushState) {
+        window.history.pushState("backward", null, isSF ? "/sf" : "/");
+      }
+    } else {
+      window.location = isSF ? "/sf" : "/";
+    }
+  });
+
+  if (type === "location") {
+    cardNode.addClass("location");
+  }
+}
+
 function HideCard() {
   cardNode.hide();
   cardNode.html("");
@@ -157,6 +195,8 @@ function ShowCard({
     window.history.pushState({ person: personId }, null, "#id" + personId);
   }
 
+  setCardEvents();
+
   currentCardData = {
     depInfo,
     depInfoLegacy,
@@ -169,13 +209,17 @@ function ShowCard({
   };
 
   cardNode.show();
-  renderCard();
+  renderCard(currentCardData);
 }
 
 function hideLawDetails() {
   currentLawSelected = null;
   lawAuthorsIsShowMore = false;
-  renderCard();
+  renderCard(currentCardData);
+}
+
+export function setCardLoading(loading) {
+  isLoading = loading;
 }
 
 export async function renderLawDetails(lawId) {
@@ -198,12 +242,7 @@ export async function renderLawDetails(lawId) {
       cardNode.show();
       isLawDetailsLoading = false;
       currentLawSelectedData = lawDetails;
-      console.log({
-        currentLawSelected,
-        currentLawSelectedData,
-        isLawDetailsLoading,
-        lawAuthorsIsShowMore,
-      });
+
       renderLawDetailsCard({
         currentLawSelected,
         currentLawSelectedData,
@@ -214,7 +253,7 @@ export async function renderLawDetails(lawId) {
   }
 }
 
-function renderLawDetailsCard(data) {
+export function renderLawDetailsCard(data) {
   cardNode.html(
     engine.renderSync(template, {
       ...data,
@@ -234,7 +273,26 @@ function renderLawDetailsCard(data) {
   cardNode.scrollTop(currentScrollTop);
 }
 
-function renderCard() {
+export function renderLoadingCard(cardNode = $("#card")) {
+  template = engine.parse(originalTemplateHtml);
+  cardNode.html(
+    engine.renderSync(template, {
+      isLoading,
+    })
+  );
+}
+
+export function showCard(cardNode = $("#card")) {
+  setCardEvents(cardNode);
+  cardNode.show();
+}
+
+export function hideCard(cardNode = $("#card")) {
+  cardNode.hide();
+}
+
+export function renderCard(data, cardNode = $("#card")) {
+  convocation = pageTypeToConvocation(getLayoutVars().type);
   const {
     depInfo,
     depInfoLegacy,
@@ -244,7 +302,7 @@ function renderCard() {
     lobby_list,
     declarations,
     depLobbistSmallData,
-  } = currentCardData;
+  } = data;
   const { square, income } = calclulateDeclarationHilights(
     declarations.results
   );
@@ -252,6 +310,7 @@ function renderCard() {
     depSuccessRate.success_rate
   );
   const prevConvocationUrl = calculatePrevConvocationUrl(depLobbistSmallData);
+  template = engine.parse(originalTemplateHtml);
 
   cardNode.html(
     engine.renderSync(template, {
