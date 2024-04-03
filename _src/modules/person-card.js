@@ -1,6 +1,6 @@
 import * as d3 from "d3";
 import { getRating } from "../lib/rating";
-import { getDataByType, getTypeByLocation } from "./data";
+import { getDataByType, getTypeByLocation, test } from "./data";
 import { getLobbyText } from "./getLobbyText";
 import {
   renderCard,
@@ -25,7 +25,6 @@ async function fetchPersonById(personId, sozyv = getTypeByLocation()) {
       : `https://declarator.org/api/lobbist_detail/${foundPersonInfo.id}/`;
     const declarationsURL = `https://declarator.org/api/v1/search/sections/?person=${foundPersonInfo.person}`;
     const successRateURL = `https://declarator.org/api/persons/${foundPersonInfo.person}/success_rate`;
-
     const [depInfo, declarations, depSuccessRate] = await Promise.all([
       d3.json(dipInfoURL),
       d3.json(declarationsURL),
