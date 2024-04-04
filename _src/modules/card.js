@@ -350,8 +350,8 @@ export function renderCard(data, cardNode = $("#card")) {
       tempComissionHtml: isSF
         ? getTempComissionText(depInfoLegacy.temp_commission)
         : "",
-      twPerson: `https://twitter.com/intent/tweet?url=http%3A%2F%2Fdumabingo.ru/${dirUrl}${depLobbistSmallData.person}&text=${depLobbistSmallData.fullname}`,
-      vkPerson: `http://vk.com/share.php?url=http%3A%2F%2Fdumabingo.ru/${dirUrl}${depLobbistSmallData.person}`,
+      twPerson: `https://twitter.com/intent/tweet?url=http%3A%2F%2Fdumabingo.org/${dirUrl}${depLobbistSmallData.person}&text=${depLobbistSmallData.fullname}`,
+      vkPerson: `http://vk.com/share.php?url=http%3A%2F%2Fdumabingo.org/${dirUrl}${depLobbistSmallData.person}`,
       openDeclaration: depLobbistSmallData.person
         ? `https://declarator.org/person/${depLobbistSmallData.person}`
         : null,
