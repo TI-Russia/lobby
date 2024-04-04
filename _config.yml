@@ -38,7 +38,7 @@ collections:
 include: ["robots.txt"]
 
 page_gen:
-  - data: "lobbist-27-09-2019"
+  - data: "lobbist-04-04-2024"
     template: "card"
     name: "person"
     dir: "person"
