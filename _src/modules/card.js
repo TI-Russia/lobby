@@ -13,6 +13,7 @@ import { formatDate } from "../lib/date";
 import Data from "./data";
 import { FRACTIONS } from "../constants/fractions";
 import { addTargetBlank } from "./utils";
+import toastr from "toastr";
 
 const engine = new Liquid();
 
@@ -350,6 +351,7 @@ export function renderCard(data, cardNode = $("#card")) {
       tempComissionHtml: isSF
         ? getTempComissionText(depInfoLegacy.temp_commission)
         : "",
+      shareUrl: `http://dumabingo.org/${dirUrl}${depLobbistSmallData.person}`,
       twPerson: `https://twitter.com/intent/tweet?url=http%3A%2F%2Fdumabingo.org/${dirUrl}${depLobbistSmallData.person}&text=${depLobbistSmallData.fullname}`,
       vkPerson: `http://vk.com/share.php?url=http%3A%2F%2Fdumabingo.org/${dirUrl}${depLobbistSmallData.person}`,
       openDeclaration: depLobbistSmallData.person
@@ -628,5 +630,20 @@ function calculatePrevConvocationUrl(depInfo) {
 
   return null;
 }
+
+function copyCardLink(shareUrl) {
+  const input = document.createElement("input");
+  input.value = shareUrl;
+  document.body.appendChild(input);
+  input.select();
+  document.execCommand("copy");
+  document.body.removeChild(input);
+
+  toastr.success("Ссылка скопирована в буфер обмена", undefined, {
+    positionClass: "toast-bottom-center",
+  });
+}
+
+window.copyCardLink = copyCardLink;
 
 export default ShowCard;
