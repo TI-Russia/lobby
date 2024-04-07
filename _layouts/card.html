@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% include head.html %}
     <meta charset="UTF-8" />
     <meta
       property="og:url"
@@ -27,6 +26,12 @@
     <meta
       property="twitter:image"
       content="https://dumabingo.org/assets/images/preview_img.png"
+    />
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/duma-8.css" />
+    <!-- Подключение CSS для Toastr -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
     />
     <title>{{site.title}}: {{page.fullname}}</title>
   </head>
