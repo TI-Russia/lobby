@@ -16,30 +16,43 @@
       content="https://dumabingo.org/assets/images/preview_img.jpg"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{site.title}}: {{page.fullname}}" />
-    <meta property="og:description" content="Депутат Государственной Думы" />
-    <meta name="description" content="Депутат Государственной Думы" />
+    <meta
+      property="og:title"
+      content="{{page.fullname}} - кого лоббирует в Госдуме"
+    />
+    <meta
+      property="og:description"
+      content="Семейные связи и бизнес интересы, резонансные законы и полная биография каждого депутата на сайте проекта о лоббизме «ДумаБинго»."
+    />
+    <meta
+      name="description"
+      content="Семейные связи и бизнес интересы, резонансные законы и полная биография каждого депутата на сайте проекта о лоббизме «ДумаБинго»."
+    />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       property="twitter:description"
-      content="Депутат Государственной Думы"
+      content="Семейные связи и бизнес интересы, резонансные законы и полная биография каждого депутата на сайте проекта о лоббизме «ДумаБинго»."
     />
     <meta
       property="twitter:title"
-      content="{{site.title}}: {{page.fullname}}"
+      content="{{page.fullname}} - кого лоббирует в Госдуме"
     />
     <meta
       property="twitter:image"
       content="https://dumabingo.org/assets/images/preview_img.png"
     />
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/duma-8.css" />
+    <link
+      rel="canonical"
+      href="https://dumabingo.org/person/{{page.person}}/"
+    />
     <!-- Подключение CSS для Toastr -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
     />
     {% include theme.html %}
-    <title>{{site.title}}: {{page.fullname}}</title>
+    <title>{{page.fullname}} - кого лоббирует в Госдуме</title>
   </head>
   <body>
     <script
