@@ -216,7 +216,7 @@
                                  <div class="column is-full-mobile is-narrow-tablet law_text" id="law_text_bring">{{ lawTextBringHtml | raw }}</div>
                              </div>
                          </div>
-                         <div class="column is-full-mobile is-half-tablet">
+                         <div class="column is-full-mobile is-narrow-tablet">
                              <div class="columns is-vcentered bring">
                                  {% if lawStatAccepted > 0 %}
                                      <div class="column is-narrow-tablet is-full-mobile law_count" id="law_number_podpis">{{ lawStatAccepted }}</div>
@@ -224,6 +224,16 @@
                                  {% endif %}
                              </div>
                          </div>
+                         <div class="column is-full-mobile is-narrow-tablet"
+                         id="law_number_lobbyist"
+                         >
+                            <div class="columns is-vcentered bring">
+                                <div class="column is-narrow-tablet is-full-mobile law_count" >{{ lawStatLobbyist }}</div>
+                                <div class="column is-full-mobile is-narrow-tablet law_text"
+
+                                >{{ lawTextLobbyist | raw }}</div>
+                            </div>
+                        </div>
                      </div>
                  {% endif %}
 
@@ -392,7 +402,7 @@
 <script src="/assets/js/vendor-102ce7a6.js"></script>
 <!--endinject-->
 <!--inject:main:js-->
-<script src="/assets/js/main-0cb2c31f.js"></script>
+<script src="/assets/js/main-8986e993.js"></script>
 <!--endinject-->
 
   </body>
