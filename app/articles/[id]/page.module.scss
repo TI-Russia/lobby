@@ -1,0 +1,126 @@
+.page {
+  display: flex;
+  padding: 0px 16px;
+  flex-direction: column;
+  align-items: center;
+
+  @include iftablet {
+    padding: 0px;
+  }
+}
+
+.article {
+  display: flex;
+  padding: 40px 0px;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  align-self: stretch;
+
+  @include iftablet {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  @include ifdesktop {
+    padding: 72px 0px;
+    gap: 56px;
+    max-width: 906px;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      align-self: stretch;
+
+      .upper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        align-self: stretch;
+
+        .categories {
+          color: var(--DB-Black-Text, #363636);
+          font-feature-settings: "clig" off, "liga" off;
+
+          /* Text/18px/Bold */
+          font-family: Arial;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 30px; /* 166.667% */
+        }
+
+        .title {
+          color: var(--DB-Black-Text, #363636);
+          font-feature-settings: "clig" off, "liga" off;
+
+          /* Heading/05 */
+          font-family: HeliosCond;
+          font-size: 34px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 40px; /* 117.647% */
+
+          @include ifdesktop {
+            color: var(--DB-Black-Text, #363636);
+            font-feature-settings: "clig" off, "liga" off;
+
+            /* Heading/03 */
+            font-family: HeliosCond;
+            font-size: 54px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 63px; /* 116.667% */
+          }
+        }
+      }
+
+      .date {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        .text {
+          color: var(--DB-Dark-Grey, #747474);
+          font-feature-settings: "clig" off, "liga" off;
+
+          /* Text/14px/Regular */
+          font-family: Arial;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 22px; /* 157.143% */
+
+          @include ifdesktop {
+            color: var(--DB-Dark-Grey, #747474);
+            font-feature-settings: "clig" off, "liga" off;
+
+            /* Text/16px/Regular */
+            font-family: Arial;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 26px; /* 162.5% */
+          }
+        }
+      }
+
+      .image {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+      }
+    }
+  }
+}
