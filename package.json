@@ -11,7 +11,8 @@
     "build:jekyll": "bundle exec jekyll build --baseurl ''",
     "build:js:deps": "gulp build:deps",
     "build:js:app": "gulp build:app",
-    "dev": "next dev"
+    "dev": "next dev",
+    "build:next": "next build"
   },
   "repository": {
     "type": "git",

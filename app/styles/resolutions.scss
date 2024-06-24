@@ -1,0 +1,11 @@
+@mixin iftablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin ifdesktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
