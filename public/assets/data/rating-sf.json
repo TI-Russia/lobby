@@ -1,0 +1,1523 @@
+[
+  {
+    "id_declarator": 1171,
+    "fio": "Ткач Олег Поликарпович",
+    "vnes": 17,
+    "podpis": 14,
+    "procent": "82.35%",
+    "summ_day": 2483,
+    "sred_day": 177.3571429
+  },
+  {
+    "id_declarator": 1047,
+    "fio": "Мамедов Сергей Валерьевич",
+    "vnes": 4,
+    "podpis": 3,
+    "procent": "75.00%",
+    "summ_day": 131,
+    "sred_day": 43.66666667
+  },
+  {
+    "id_declarator": 8944,
+    "fio": "Круглый Владимир Игоревич",
+    "vnes": 4,
+    "podpis": 3,
+    "procent": "75.00%",
+    "summ_day": 638,
+    "sred_day": 212.6666667
+  },
+  {
+    "id_declarator": 684,
+    "fio": "Матвиенко Валентина Ивановна",
+    "vnes": 18,
+    "podpis": 13,
+    "procent": "72.22%",
+    "summ_day": 2422,
+    "sred_day": 186.3076923
+  },
+  {
+    "id_declarator": 1044,
+    "fio": "Журавлев Николай Андреевич",
+    "vnes": 69,
+    "podpis": 47,
+    "procent": "68.12%",
+    "summ_day": 11524,
+    "sred_day": 245.1914894
+  },
+  {
+    "id_declarator": 4538,
+    "fio": "Глебова Любовь Николаевна",
+    "vnes": 3,
+    "podpis": 2,
+    "procent": "66.67%",
+    "summ_day": 432,
+    "sred_day": 216
+  },
+  {
+    "id_declarator": 552,
+    "fio": "Наговицын Вячеслав Владимирович",
+    "vnes": 3,
+    "podpis": 2,
+    "procent": "66.67%",
+    "summ_day": 596,
+    "sred_day": 298
+  },
+  {
+    "id_declarator": 517,
+    "fio": "Бекетов Владимир Андреевич",
+    "vnes": 3,
+    "podpis": 2,
+    "procent": "66.67%",
+    "summ_day": 852,
+    "sred_day": 426
+  },
+  {
+    "id_declarator": 9121,
+    "fio": "Ульбашев Мухарбий Магомедович",
+    "vnes": 19,
+    "podpis": 12,
+    "procent": "63.16%",
+    "summ_day": 1306,
+    "sred_day": 108.8333333
+  },
+  {
+    "id_declarator": 1177,
+    "fio": "Умаханов Ильяс Магомед-Саламович",
+    "vnes": 8,
+    "podpis": 5,
+    "procent": "62.50%",
+    "summ_day": 1704,
+    "sred_day": 340.8
+  },
+  {
+    "id_declarator": 19903,
+    "fio": "Цепкин Олег Владимирович",
+    "vnes": 5,
+    "podpis": 3,
+    "procent": "60.00%",
+    "summ_day": 608,
+    "sred_day": 202.6666667
+  },
+  {
+    "id_declarator": 8941,
+    "fio": "Гумерова Лилия Салаватовна",
+    "vnes": 7,
+    "podpis": 4,
+    "procent": "57.14%",
+    "summ_day": 901,
+    "sred_day": 225.25
+  },
+  {
+    "id_declarator": 30513,
+    "fio": "Аренин Сергей Петрович",
+    "vnes": 7,
+    "podpis": 4,
+    "procent": "57.14%",
+    "summ_day": 1110,
+    "sred_day": 277.5
+  },
+  {
+    "id_declarator": 4793,
+    "fio": "Рябухин Сергей Николаевич",
+    "vnes": 23,
+    "podpis": 13,
+    "procent": "56.52%",
+    "summ_day": 1759,
+    "sred_day": 135.3076923
+  },
+  {
+    "id_declarator": 892,
+    "fio": "Клишас Андрей Александрович",
+    "vnes": 48,
+    "podpis": 27,
+    "procent": "56.25%",
+    "summ_day": 6248,
+    "sred_day": 231.4074074
+  },
+  {
+    "id_declarator": 57273,
+    "fio": "Куликов Валерий Владимирович",
+    "vnes": 11,
+    "podpis": 6,
+    "procent": "54.55%",
+    "summ_day": 1544,
+    "sred_day": 257.3333333
+  },
+  {
+    "id_declarator": 1238,
+    "fio": "Федоров Николай Васильевич",
+    "vnes": 4,
+    "podpis": 2,
+    "procent": "50.00%",
+    "summ_day": 66,
+    "sred_day": 33
+  },
+  {
+    "id_declarator": 598,
+    "fio": "Пушков Алексей Константинович",
+    "vnes": 2,
+    "podpis": 1,
+    "procent": "50.00%",
+    "summ_day": 80,
+    "sred_day": 80
+  },
+  {
+    "id_declarator": 12728,
+    "fio": "Смирнов Виктор Владимирович",
+    "vnes": 2,
+    "podpis": 1,
+    "procent": "50.00%",
+    "summ_day": 91,
+    "sred_day": 91
+  },
+  {
+    "id_declarator": 41,
+    "fio": "Горячева Светлана Петровна",
+    "vnes": 2,
+    "podpis": 1,
+    "procent": "50.00%",
+    "summ_day": 93,
+    "sred_day": 93
+  },
+  {
+    "id_declarator": 4874,
+    "fio": "Отке Анна Ивановна",
+    "vnes": 6,
+    "podpis": 3,
+    "procent": "50.00%",
+    "summ_day": 618,
+    "sred_day": 206
+  },
+  {
+    "id_declarator": 1031,
+    "fio": "Воробьев Юрий Леонидович",
+    "vnes": 4,
+    "podpis": 2,
+    "procent": "50.00%",
+    "summ_day": 507,
+    "sred_day": 253.5
+  },
+  {
+    "id_declarator": 57270,
+    "fio": "Ракитин Александр Васильевич",
+    "vnes": 10,
+    "podpis": 5,
+    "procent": "50.00%",
+    "summ_day": 1309,
+    "sred_day": 261.8
+  },
+  {
+    "id_declarator": 13168,
+    "fio": "Козлов Михаил Васильевич",
+    "vnes": 10,
+    "podpis": 5,
+    "procent": "50.00%",
+    "summ_day": 1434,
+    "sred_day": 286.8
+  },
+  {
+    "id_declarator": 629,
+    "fio": "Фабричный Сергей Юрьевич",
+    "vnes": 6,
+    "podpis": 3,
+    "procent": "50.00%",
+    "summ_day": 1023,
+    "sred_day": 341
+  },
+  {
+    "id_declarator": 421,
+    "fio": "Мамсуров Таймураз Дзамбекович",
+    "vnes": 6,
+    "podpis": 3,
+    "procent": "50.00%",
+    "summ_day": 1042,
+    "sred_day": 347.3333333
+  },
+  {
+    "id_declarator": 380,
+    "fio": "Мархаев Вячеслав Михайлович",
+    "vnes": 6,
+    "podpis": 3,
+    "procent": "50.00%",
+    "summ_day": 1042,
+    "sred_day": 347.3333333
+  },
+  {
+    "id_declarator": 693,
+    "fio": "Вайнберг Александр Владиленович",
+    "vnes": 2,
+    "podpis": 1,
+    "procent": "50.00%",
+    "summ_day": 354,
+    "sred_day": 354
+  },
+  {
+    "id_declarator": 13149,
+    "fio": "Марков Валерий Петрович",
+    "vnes": 2,
+    "podpis": 1,
+    "procent": "50.00%",
+    "summ_day": 354,
+    "sred_day": 354
+  },
+  {
+    "id_declarator": 1189,
+    "fio": "Хапсироков Мурат Крым-Гериевич",
+    "vnes": 2,
+    "podpis": 1,
+    "procent": "50.00%",
+    "summ_day": 549,
+    "sred_day": 549
+  },
+  {
+    "id_declarator": 1151,
+    "fio": "Рязанский Валерий Владимирович",
+    "vnes": 27,
+    "podpis": 13,
+    "procent": "48.15%",
+    "summ_day": 3045,
+    "sred_day": 234.2307692
+  },
+  {
+    "id_declarator": 1708,
+    "fio": "Варфоломеев Александр Георгиевич",
+    "vnes": 17,
+    "podpis": 8,
+    "procent": "47.06%",
+    "summ_day": 1751,
+    "sred_day": 218.875
+  },
+  {
+    "id_declarator": 140,
+    "fio": "Клинцевич Франц Адамович",
+    "vnes": 17,
+    "podpis": 8,
+    "procent": "47.06%",
+    "summ_day": 2948,
+    "sred_day": 368.5
+  },
+  {
+    "id_declarator": 32050,
+    "fio": "Талабаева Людмила Заумовна",
+    "vnes": 15,
+    "podpis": 7,
+    "procent": "46.67%",
+    "summ_day": 343,
+    "sred_day": 49
+  },
+  {
+    "id_declarator": 4576,
+    "fio": "Жамсуев Баяр Баясхаланович",
+    "vnes": 9,
+    "podpis": 4,
+    "procent": "44.44%",
+    "summ_day": 1081,
+    "sred_day": 270.25
+  },
+  {
+    "id_declarator": 39040,
+    "fio": "Бондарев Виктор Николаевич",
+    "vnes": 9,
+    "podpis": 4,
+    "procent": "44.44%",
+    "summ_day": 1303,
+    "sred_day": 325.75
+  },
+  {
+    "id_declarator": 145,
+    "fio": "Косачев Константин Иосифович",
+    "vnes": 7,
+    "podpis": 3,
+    "procent": "42.86%",
+    "summ_day": 220,
+    "sred_day": 73.33333333
+  },
+  {
+    "id_declarator": 4927,
+    "fio": "Фомин Игорь Вадимович",
+    "vnes": 7,
+    "podpis": 3,
+    "procent": "42.86%",
+    "summ_day": 994,
+    "sred_day": 331.3333333
+  },
+  {
+    "id_declarator": 20041,
+    "fio": "Кондратьев Алексей Владимирович",
+    "vnes": 12,
+    "podpis": 5,
+    "procent": "41.67%",
+    "summ_day": 1170,
+    "sred_day": 234
+  },
+  {
+    "id_declarator": 447,
+    "fio": "Турчак Андрей Анатольевич",
+    "vnes": 21,
+    "podpis": 8,
+    "procent": "38.10%",
+    "summ_day": 900,
+    "sred_day": 112.5
+  },
+  {
+    "id_declarator": 19901,
+    "fio": "Салпагаров Ахмат Анзорович",
+    "vnes": 8,
+    "podpis": 3,
+    "procent": "37.50%",
+    "summ_day": 498,
+    "sred_day": 166
+  },
+  {
+    "id_declarator": 812,
+    "fio": "Пономарев Михаил Николаевич",
+    "vnes": 8,
+    "podpis": 3,
+    "procent": "37.50%",
+    "summ_day": 1108,
+    "sred_day": 369.3333333
+  },
+  {
+    "id_declarator": 15158,
+    "fio": "Исаков Эдуард Владимирович",
+    "vnes": 16,
+    "podpis": 6,
+    "procent": "37.50%",
+    "summ_day": 3239,
+    "sred_day": 539.8333333
+  },
+  {
+    "id_declarator": 32063,
+    "fio": "Кутепов Андрей Викторович",
+    "vnes": 35,
+    "podpis": 13,
+    "procent": "37.14%",
+    "summ_day": 3944,
+    "sred_day": 303.3846154
+  },
+  {
+    "id_declarator": 57070,
+    "fio": "Мельниченко Олег Владимирович",
+    "vnes": 19,
+    "podpis": 7,
+    "procent": "36.84%",
+    "summ_day": 1349,
+    "sred_day": 192.7142857
+  },
+  {
+    "id_declarator": 8932,
+    "fio": "Бибикова Елена Васильевна",
+    "vnes": 11,
+    "podpis": 4,
+    "procent": "36.36%",
+    "summ_day": 957,
+    "sred_day": 239.25
+  },
+  {
+    "id_declarator": 23070,
+    "fio": "Шатохин Дмитрий Александрович",
+    "vnes": 11,
+    "podpis": 4,
+    "procent": "36.36%",
+    "summ_day": 1177,
+    "sred_day": 294.25
+  },
+  {
+    "id_declarator": 4929,
+    "fio": "Цеков Сергей Павлович",
+    "vnes": 17,
+    "podpis": 6,
+    "procent": "35.29%",
+    "summ_day": 940,
+    "sred_day": 156.6666667
+  },
+  {
+    "id_declarator": 8943,
+    "fio": "Ковитиди Ольга Федоровна",
+    "vnes": 23,
+    "podpis": 8,
+    "procent": "34.78%",
+    "summ_day": 1569,
+    "sred_day": 196.125
+  },
+  {
+    "id_declarator": 11516,
+    "fio": "Карасин Григорий Борисович",
+    "vnes": 3,
+    "podpis": 1,
+    "procent": "33.33%",
+    "summ_day": 39,
+    "sred_day": 39
+  },
+  {
+    "id_declarator": 133,
+    "fio": "Карелова Галина Николаевна",
+    "vnes": 21,
+    "podpis": 7,
+    "procent": "33.33%",
+    "summ_day": 740,
+    "sred_day": 105.7142857
+  },
+  {
+    "id_declarator": 4844,
+    "fio": "Морозов Игорь Николаевич",
+    "vnes": 3,
+    "podpis": 1,
+    "procent": "33.33%",
+    "summ_day": 354,
+    "sred_day": 354
+  },
+  {
+    "id_declarator": 1881,
+    "fio": "Кожин Владимир Игоревич",
+    "vnes": 3,
+    "podpis": 1,
+    "procent": "33.33%",
+    "summ_day": 414,
+    "sred_day": 414
+  },
+  {
+    "id_declarator": 9116,
+    "fio": "Семенов Валерий Владимирович",
+    "vnes": 3,
+    "podpis": 1,
+    "procent": "33.33%",
+    "summ_day": 491,
+    "sred_day": 491
+  },
+  {
+    "id_declarator": 13215,
+    "fio": "Кондратенко Алексей Николаевич",
+    "vnes": 16,
+    "podpis": 5,
+    "procent": "31.25%",
+    "summ_day": 2644,
+    "sred_day": 528.8
+  },
+  {
+    "id_declarator": 14811,
+    "fio": "Кравченко Владимир Казимирович",
+    "vnes": 10,
+    "podpis": 3,
+    "procent": "30.00%",
+    "summ_day": 1071,
+    "sred_day": 357
+  },
+  {
+    "id_declarator": 9122,
+    "fio": "Широков Анатолий Иванович",
+    "vnes": 7,
+    "podpis": 2,
+    "procent": "28.57%",
+    "summ_day": 180,
+    "sred_day": 90
+  },
+  {
+    "id_declarator": 9114,
+    "fio": "Полетаев Владимир Владимирович",
+    "vnes": 11,
+    "podpis": 3,
+    "procent": "27.27%",
+    "summ_day": 1604,
+    "sred_day": 534.6666667
+  },
+  {
+    "id_declarator": 260,
+    "fio": "Тимченко Вячеслав Степанович",
+    "vnes": 26,
+    "podpis": 7,
+    "procent": "26.92%",
+    "summ_day": 1443,
+    "sred_day": 206.1428571
+  },
+  {
+    "id_declarator": 32064,
+    "fio": "Кусайко Татьяна Алексеевна",
+    "vnes": 15,
+    "podpis": 4,
+    "procent": "26.67%",
+    "summ_day": 426,
+    "sred_day": 106.5
+  },
+  {
+    "id_declarator": 717,
+    "fio": "Майоров Алексей Петрович",
+    "vnes": 34,
+    "podpis": 9,
+    "procent": "26.47%",
+    "summ_day": 1317,
+    "sred_day": 146.3333333
+  },
+  {
+    "id_declarator": 15764,
+    "fio": "Шевченко Андрей Анатольевич",
+    "vnes": 8,
+    "podpis": 2,
+    "procent": "25.00%",
+    "summ_day": 554,
+    "sred_day": 277
+  },
+  {
+    "id_declarator": 132643,
+    "fio": "Кузьмин Дмитрий Гкеннадьевич",
+    "vnes": 4,
+    "podpis": 1,
+    "procent": "25.00%",
+    "summ_day": 306,
+    "sred_day": 306
+  },
+  {
+    "id_declarator": 31999,
+    "fio": "Василенко Дмитрий Юрьевич",
+    "vnes": 4,
+    "podpis": 1,
+    "procent": "25.00%",
+    "summ_day": 354,
+    "sred_day": 354
+  },
+  {
+    "id_declarator": 477,
+    "fio": "Кресс Виктор Мельхиорович",
+    "vnes": 4,
+    "podpis": 1,
+    "procent": "25.00%",
+    "summ_day": 354,
+    "sred_day": 354
+  },
+  {
+    "id_declarator": 15327,
+    "fio": "Даллакян Арамаис Джаганович",
+    "vnes": 4,
+    "podpis": 1,
+    "procent": "25.00%",
+    "summ_day": 543,
+    "sred_day": 543
+  },
+  {
+    "id_declarator": 2067,
+    "fio": "Коротков Алексей Владимирович",
+    "vnes": 4,
+    "podpis": 1,
+    "procent": "25.00%",
+    "summ_day": 627,
+    "sred_day": 627
+  },
+  {
+    "id_declarator": 12225,
+    "fio": "Башкин Александр Давыдович",
+    "vnes": 22,
+    "podpis": 5,
+    "procent": "22.73%",
+    "summ_day": 1631,
+    "sred_day": 326.2
+  },
+  {
+    "id_declarator": 37,
+    "fio": "Афанасьева Елена Владимировна",
+    "vnes": 19,
+    "podpis": 4,
+    "procent": "21.05%",
+    "summ_day": 1697,
+    "sred_day": 424.25
+  },
+  {
+    "id_declarator": 917,
+    "fio": "Лисовский Сергей Федорович",
+    "vnes": 10,
+    "podpis": 2,
+    "procent": "20.00%",
+    "summ_day": 502,
+    "sred_day": 251
+  },
+  {
+    "id_declarator": 14771,
+    "fio": "Епишин Андрей Николаевич",
+    "vnes": 6,
+    "podpis": 1,
+    "procent": "16.67%",
+    "summ_day": 220,
+    "sred_day": 220
+  },
+  {
+    "id_declarator": 53,
+    "fio": "Русских Алексей Юрьевич",
+    "vnes": 6,
+    "podpis": 1,
+    "procent": "16.67%",
+    "summ_day": 273,
+    "sred_day": 273
+  },
+  {
+    "id_declarator": 13005,
+    "fio": "Зубарев Игорь Дмитриевич",
+    "vnes": 6,
+    "podpis": 1,
+    "procent": "16.67%",
+    "summ_day": 624,
+    "sred_day": 624
+  },
+  {
+    "id_declarator": 1042,
+    "fio": "Иванов Сергей Павлович",
+    "vnes": 7,
+    "podpis": 1,
+    "procent": "14.29%",
+    "summ_day": 220,
+    "sred_day": 220
+  },
+  {
+    "id_declarator": 9113,
+    "fio": "Перминова Елена Алексеевна",
+    "vnes": 7,
+    "podpis": 1,
+    "procent": "14.29%",
+    "summ_day": 220,
+    "sred_day": 220
+  },
+  {
+    "id_declarator": 1054,
+    "fio": "Васильев Валерий Николаевич",
+    "vnes": 8,
+    "podpis": 1,
+    "procent": "12.50%",
+    "summ_day": 627,
+    "sred_day": 627
+  },
+  {
+    "id_declarator": 12264,
+    "fio": "Орденов Геннадий Иванович",
+    "vnes": 10,
+    "podpis": 1,
+    "procent": "10.00%",
+    "summ_day": 549,
+    "sred_day": 549
+  },
+  {
+    "id_declarator": 399,
+    "fio": "Важенин Юрий Иванович",
+    "vnes": 11,
+    "podpis": 1,
+    "procent": "9.09%",
+    "summ_day": 280,
+    "sred_day": 280
+  },
+  {
+    "id_declarator": 883,
+    "fio": "Лебедев Владимир Альбертович",
+    "vnes": 13,
+    "podpis": 1,
+    "procent": "7.69%",
+    "summ_day": 186,
+    "sred_day": 186
+  },
+  {
+    "id_declarator": 13944,
+    "fio": "Дмитриенко Алексей Геннадьевич",
+    "vnes": 16,
+    "podpis": 1,
+    "procent": "6.25%",
+    "summ_day": 627,
+    "sred_day": 627
+  },
+  {
+    "id_declarator": 114,
+    "fio": "Абрамов Виктор Семенович",
+    "vnes": 2,
+    "podpis": 2,
+    "procent": "100.00%",
+    "summ_day": 344,
+    "sred_day": 172
+  },
+  {
+    "id_declarator": 13074,
+    "fio": "Синицын Алексей Владимирович",
+    "vnes": 1,
+    "podpis": 1,
+    "procent": "100.00%",
+    "summ_day": 306,
+    "sred_day": 306
+  },
+  {
+    "id_declarator": 343,
+    "fio": "Абрамов Иван Николаевич",
+    "vnes": 7,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 16104,
+    "fio": "Авдеева Елена Осиповна",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 4480,
+    "fio": "Акимов Александр Константинович",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 734,
+    "fio": "Александров Алексей Иванович",
+    "vnes": 4,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 167177,
+    "fio": "Алексеев Олег Александрович",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 137592,
+    "fio": "Алтабаева Екатерина Борисовна",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 579,
+    "fio": "Артамонов Анатолий Дмитриевич",
+    "vnes": 2,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 57073,
+    "fio": "Архаров Юрий Викторович",
+    "vnes": 2,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 473,
+    "fio": "Бабаков Александр Михайлович",
+    "vnes": 1,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 138182,
+    "fio": "Барахоев Мухарбек Ойбертович",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 15075,
+    "fio": "Безденежных Сергей Вячеславович",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 737,
+    "fio": "Белоусов Сергей Владимирович",
+    "vnes": 3,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 167114,
+    "fio": "Березкин Сергей Владимирович",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 407,
+    "fio": "Борисов Егор Афанасьевич",
+    "vnes": 2,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 12772,
+    "fio": "Брилка Сергей Фатеевич",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 1429,
+    "fio": "Гаевский Валерий Вениаминович",
+    "vnes": 2,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 22333,
+    "fio": "Галушина Римма Федоровна",
+    "vnes": 4,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 700,
+    "fio": "Геремеев Сулейман Садулаевич",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 648,
+    "fio": "Гигель Татьяна Анатольевна",
+    "vnes": 6,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 12518,
+    "fio": "Горняков Сергей Васильевич",
+    "vnes": 1,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 7821,
+    "fio": "Городецкий Владимир Филиппович",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 15078,
+    "fio": "Грешнякова Елена Геннадьевна",
+    "vnes": 1,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 1040,
+    "fio": "Джабаров Владимир Михайлович",
+    "vnes": 2,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 150304,
+    "fio": "Долгов Константин Константинович",
+    "vnes": 8,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 150305,
+    "fio": "Емельянов Геннадий Егорович",
+    "vnes": 2,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 4575,
+    "fio": "Ермаков Александр Михайлович",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 132637,
+    "fio": "Жуков Александр Аркадьевич",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 15332,
+    "fio": "Зленко Елена Геннадьевна",
+    "vnes": 4,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 505,
+    "fio": "Иконников Василий Николаевич",
+    "vnes": 2,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 1035,
+    "fio": "Кавджарадзе Максим Геннадьевич",
+    "vnes": 4,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 339,
+    "fio": "Калашников Сергей Вячеславович",
+    "vnes": 13,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 559,
+    "fio": "Каноков Арсен Баширович",
+    "vnes": 1,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 478,
+    "fio": "Карлин Александр Богданович",
+    "vnes": 3,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 884,
+    "fio": "Керимов Сулейман Абусаидович",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 57072,
+    "fio": "Кисляк Сергей Иванович",
+    "vnes": 1,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 139,
+    "fio": "Климов Андрей Аркадьевич",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 32062,
+    "fio": "Коряков Александр Иванович",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 132644,
+    "fio": "Косихина Наталия Владимировна",
+    "vnes": 1,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 8945,
+    "fio": "Кулабухов Иван Николаевич",
+    "vnes": 2,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 14138,
+    "fio": "Лакунин Владимир Юрьевич",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 13747,
+    "fio": "Лаптев Владимир Васильевич",
+    "vnes": 5,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 14547,
+    "fio": "Леонов Сергей Дмитриевич",
+    "vnes": 16,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 965,
+    "fio": "Литюшкин Владимир Васильевич",
+    "vnes": 1,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 19328,
+    "fio": "Лукин Владимир Петрович",
+    "vnes": 6,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 4816,
+    "fio": "Лукин Сергей Николаевич",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 131521,
+    "fio": "Мартынов Сергей Александрович",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 8935,
+    "fio": "Меликов Сергей Алимович",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 79,
+    "fio": "Мизулина Елена Борисовна",
+    "vnes": 6,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 430,
+    "fio": "Митин Сергей Герасимович",
+    "vnes": 9,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 1411,
+    "fio": "Михайлов Александр Николаевич",
+    "vnes": 1,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 12695,
+    "fio": "Михайлов Сергей Петрович",
+    "vnes": 1,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 205,
+    "fio": "Морозов Олег Викторович",
+    "vnes": 2,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 5461,
+    "fio": "Мухаметшин Фарит Мубаракшевич",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 1420,
+    "fio": "Назаров Виктор Иванович",
+    "vnes": 1,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 1199,
+    "fio": "Нарусова Людмила Борисовна",
+    "vnes": 3,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 1137,
+    "fio": "Невзоров Борис Александрович",
+    "vnes": 3,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 15300,
+    "fio": "Николаев Вадим Иванович",
+    "vnes": 2,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 12192,
+    "fio": "Новожилов Виктор Федосьевич",
+    "vnes": 5,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 15970,
+    "fio": "Оюн Дина Ивановна",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 20043,
+    "fio": "Павленко Виктор Николаевич",
+    "vnes": 2,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 487,
+    "fio": "Павлова Маргарита Николаевна",
+    "vnes": 3,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 2937,
+    "fio": "Панченко Игорь Владимирович",
+    "vnes": 3,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 1007,
+    "fio": "Пономарев Валерий Андреевич",
+    "vnes": 1,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 132636,
+    "fio": "Пронюшкин Александр Юрьевич",
+    "vnes": 5,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 1059,
+    "fio": "Россель Эдуард Эргартович",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 14153,
+    "fio": "Рукавишникова Ирина Валерьевна",
+    "vnes": 4,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 1150,
+    "fio": "Рыжков Николай Иванович",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 233,
+    "fio": "Савельев Дмитрий Владимирович",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 2589,
+    "fio": "Святенко Инна Юрьевна",
+    "vnes": 8,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 57071,
+    "fio": "Селезнев Олег Викторович",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 12538,
+    "fio": "Семисотов Николай Петрович",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 146480,
+    "fio": "Солодун Галина Николаевна",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 24186,
+    "fio": "Старостина Ольга Валентиновна",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 3243,
+    "fio": "Тараканов Павел Владимирович",
+    "vnes": 2,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 132646,
+    "fio": "Усатюк Валерий Петрович",
+    "vnes": 2,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 3256,
+    "fio": "Фадзаев Арсен Сулейманович",
+    "vnes": 1,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 14998,
+    "fio": "Федоров Юрий Викторович",
+    "vnes": 9,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 284,
+    "fio": "Хамчиев Белан Багудинович",
+    "vnes": 1,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 333,
+    "fio": "Харлов Вадим Борисович",
+    "vnes": 4,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 1476,
+    "fio": "Хохлова Ольга Николаевна",
+    "vnes": 1,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 1186,
+    "fio": "Чернецкий Аркадий Михайлович",
+    "vnes": 1,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 23828,
+    "fio": "Ялалов Ирек Ишмухаметович",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 17942,
+    "fio": "Ахмадов Мохмад Исаевич",
+    "vnes": 4,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 12983,
+    "fio": "Казаноков Крым Олиевич",
+    "vnes": 1,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 426,
+    "fio": "Королев Олег Петрович",
+    "vnes": 2,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 561,
+    "fio": "Орлов Алексей Маратович",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  },
+  {
+    "id_declarator": 167115,
+    "fio": "Петина Ирина Александровна",
+    "vnes": 0,
+    "podpis": 0,
+    "procent": "0.00%",
+    "summ_day": 0,
+    "sred_day": 0
+  }
+]

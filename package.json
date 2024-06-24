@@ -10,7 +10,8 @@
     "build": "npm-run-all build:js:deps build:js:app build:jekyll",
     "build:jekyll": "bundle exec jekyll build --baseurl ''",
     "build:js:deps": "gulp build:deps",
-    "build:js:app": "gulp build:app"
+    "build:js:app": "gulp build:app",
+    "dev": "next dev"
   },
   "repository": {
     "type": "git",
@@ -28,11 +29,17 @@
   "engineStrict": true,
   "dependencies": {
     "awesomplete": "^1.1.5",
+    "clsx": "^2.1.0",
     "d3": "^5.7.0",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.6.1",
     "liquidjs": "^10.0.0",
     "lodash": "^4.17.21",
-    "nouislider": "^15.6.1"
+    "next": "^14.1.4",
+    "nouislider": "^15.6.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.72.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",

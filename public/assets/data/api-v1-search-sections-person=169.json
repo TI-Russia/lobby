@@ -1,0 +1,3105 @@
+{
+  "count": 15,
+  "next": "https://declarator.org/api/v1/search/sections/?page=2&person=169",
+  "previous": null,
+  "results": [
+    {
+      "bonds": [],
+      "incomes": [
+        {
+          "comment": "",
+          "relative": null,
+          "size": 2015092.89
+        },
+        {
+          "comment": "",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "size": 12001.16
+        },
+        {
+          "comment": "",
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "size": 10831.92
+        }
+      ],
+      "main": {
+        "document_type": {
+          "id": 1,
+          "name": "Антикоррупционная декларация"
+        },
+        "office": {
+          "id": 14,
+          "name": "Государственная Дума",
+          "region": null,
+          "type": {
+            "id": 24,
+            "name": "Федеральный, со структурой"
+          },
+          "url": "http://www.duma.gov.ru/"
+        },
+        "party": {
+          "id": 1,
+          "name": "Единая Россия"
+        },
+        "person": {
+          "family_name": "Вяткин",
+          "gender": "M",
+          "given_name": "Дмитрий",
+          "id": 169,
+          "name": "Вяткин Дмитрий Федорович",
+          "patronymic_name": "Федорович",
+          "wikipedia_id": "Q28497318"
+        },
+        "year": 2010
+      },
+      "position_en": "Member of the State Duma Committee",
+      "position_ru": "Член комитетa Государственной Думы",
+      "real_estates": [
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 21,
+            "name": "Долевая собственность"
+          },
+          "region": {
+            "id": 89,
+            "name": "Челябинская область"
+          },
+          "relative": null,
+          "share": 0.5,
+          "square": 72.0,
+          "type": {
+            "id": 1,
+            "name": "Земельный участок"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": {
+            "id": 89,
+            "name": "Челябинская область"
+          },
+          "relative": null,
+          "share": 1.0,
+          "square": 40.1,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": {
+            "id": 89,
+            "name": "Челябинская область"
+          },
+          "relative": null,
+          "share": 1.0,
+          "square": 63.9,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": {
+            "id": 89,
+            "name": "Челябинская область"
+          },
+          "relative": null,
+          "share": 1.0,
+          "square": 150.7,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": null,
+          "share": 1.0,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": {
+            "id": 89,
+            "name": "Челябинская область"
+          },
+          "relative": null,
+          "share": 1.0,
+          "square": 18.0,
+          "type": {
+            "id": 2,
+            "name": "Гараж"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "Нежилое здание",
+          "own_type": {
+            "id": 21,
+            "name": "Долевая собственность"
+          },
+          "region": {
+            "id": 89,
+            "name": "Челябинская область"
+          },
+          "relative": null,
+          "share": 0.5,
+          "square": 35.7,
+          "type": {
+            "id": 6,
+            "name": "Иное"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 988.0,
+          "type": {
+            "id": 1,
+            "name": "Земельный участок"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 150.7,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "Объект незавершенного строительства",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 121.4,
+          "type": {
+            "id": 6,
+            "name": "Иное"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 150.7,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 150.7,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 150.7,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        }
+      ],
+      "savings": [],
+      "spendings": [],
+      "stocks": [],
+      "vehicles": [
+        {
+          "brand": {
+            "id": 1685,
+            "name": "Touareg"
+          },
+          "brand_parent": {
+            "id": 124,
+            "name": "Volkswagen"
+          },
+          "comment": "",
+          "manufacture_year": 2005,
+          "name": "",
+          "relative": null,
+          "type": {
+            "id": 1,
+            "name": "Автомобиль легковой"
+          }
+        },
+        {
+          "brand": null,
+          "comment": "",
+          "manufacture_year": 2007,
+          "name": "Моторная лодка \"Краб\"",
+          "relative": null,
+          "type": {
+            "id": 6,
+            "name": "Водный транспорт"
+          }
+        },
+        {
+          "brand": {
+            "id": 1610,
+            "name": "Rav 4"
+          },
+          "brand_parent": {
+            "id": 121,
+            "name": "Toyota"
+          },
+          "comment": "",
+          "manufacture_year": null,
+          "name": "",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "type": {
+            "id": 1,
+            "name": "Автомобиль легковой"
+          }
+        }
+      ]
+    },
+    {
+      "bonds": [],
+      "incomes": [
+        {
+          "comment": "",
+          "relative": null,
+          "size": 1969245.67
+        },
+        {
+          "comment": "",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "size": 7692112.0
+        },
+        {
+          "comment": "",
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "size": 9600.0
+        }
+      ],
+      "main": {
+        "document_type": {
+          "id": 1,
+          "name": "Антикоррупционная декларация"
+        },
+        "office": {
+          "id": 14,
+          "name": "Государственная Дума",
+          "region": null,
+          "type": {
+            "id": 24,
+            "name": "Федеральный, со структурой"
+          },
+          "url": "http://www.duma.gov.ru/"
+        },
+        "party": {
+          "id": 1,
+          "name": "Единая Россия"
+        },
+        "person": {
+          "family_name": "Вяткин",
+          "gender": "M",
+          "given_name": "Дмитрий",
+          "id": 169,
+          "name": "Вяткин Дмитрий Федорович",
+          "patronymic_name": "Федорович",
+          "wikipedia_id": "Q28497318"
+        },
+        "year": 2011
+      },
+      "position_en": "Deputy Chairman of the State Duma Committee",
+      "position_ru": "заместитель председателя комитета Государственной Думы",
+      "real_estates": [
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 21,
+            "name": "Долевая собственность"
+          },
+          "region": {
+            "id": 89,
+            "name": "Челябинская область"
+          },
+          "relative": null,
+          "share": 0.5,
+          "square": 72.0,
+          "type": {
+            "id": 1,
+            "name": "Земельный участок"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": {
+            "id": 89,
+            "name": "Челябинская область"
+          },
+          "relative": null,
+          "share": 1.0,
+          "square": 40.1,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": {
+            "id": 89,
+            "name": "Челябинская область"
+          },
+          "relative": null,
+          "share": 1.0,
+          "square": 63.9,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": {
+            "id": 89,
+            "name": "Челябинская область"
+          },
+          "relative": null,
+          "share": 1.0,
+          "square": 150.7,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": null,
+          "share": 0.0,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": {
+            "id": 89,
+            "name": "Челябинская область"
+          },
+          "relative": null,
+          "share": 1.0,
+          "square": 18.0,
+          "type": {
+            "id": 2,
+            "name": "Гараж"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "Нежилое здание",
+          "own_type": {
+            "id": 21,
+            "name": "Долевая собственность"
+          },
+          "region": {
+            "id": 89,
+            "name": "Челябинская область"
+          },
+          "relative": null,
+          "share": 0.5,
+          "square": 35.7,
+          "type": {
+            "id": 6,
+            "name": "Иное"
+          }
+        },
+        {
+          "comment": "такая же, как у супруга",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 150.7,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "такая же, как у супруга",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "такая же, как у родителей",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 150.7,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "такая же, как у родителей",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 150.7,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "такая же, как у родителей",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 150.7,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "такая же, как у родителей",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "такая же, как у родителей",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "такая же, как у родителей",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        }
+      ],
+      "savings": [],
+      "spendings": [],
+      "stocks": [],
+      "vehicles": [
+        {
+          "brand": {
+            "id": 1685,
+            "name": "Touareg"
+          },
+          "brand_parent": {
+            "id": 124,
+            "name": "Volkswagen"
+          },
+          "comment": "",
+          "manufacture_year": 2005,
+          "name": "",
+          "relative": null,
+          "type": {
+            "id": 1,
+            "name": "Автомобиль легковой"
+          }
+        },
+        {
+          "brand": null,
+          "comment": "",
+          "manufacture_year": 2007,
+          "name": "самоходные суда внутреннего плавания \"Краб\" (моторная лодка)",
+          "relative": null,
+          "type": {
+            "id": 6,
+            "name": "Водный транспорт"
+          }
+        },
+        {
+          "brand": {
+            "id": 1610,
+            "name": "Rav 4"
+          },
+          "brand_parent": {
+            "id": 121,
+            "name": "Toyota"
+          },
+          "comment": "",
+          "manufacture_year": null,
+          "name": "",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "type": {
+            "id": 1,
+            "name": "Автомобиль легковой"
+          }
+        }
+      ]
+    },
+    {
+      "bonds": [],
+      "incomes": [
+        {
+          "comment": "",
+          "relative": null,
+          "size": 32666805.43
+        }
+      ],
+      "main": {
+        "document_type": {
+          "id": 1,
+          "name": "Антикоррупционная декларация"
+        },
+        "office": {
+          "id": 14,
+          "name": "Государственная Дума",
+          "region": null,
+          "type": {
+            "id": 24,
+            "name": "Федеральный, со структурой"
+          },
+          "url": "http://www.duma.gov.ru/"
+        },
+        "party": {
+          "id": 1,
+          "name": "Единая Россия"
+        },
+        "person": {
+          "family_name": "Вяткин",
+          "gender": "M",
+          "given_name": "Дмитрий",
+          "id": 169,
+          "name": "Вяткин Дмитрий Федорович",
+          "patronymic_name": "Федорович",
+          "wikipedia_id": "Q28497318"
+        },
+        "year": 2012
+      },
+      "position_en": "Deputy Chairman of the state Duma Committee on constitutional legislation and state building Committee Member of the state Duma on control over reliability of data on incomes, about property and obligations of property character represented by deputies",
+      "position_ru": "Заместитель председателя комитета ГД по конституционному законодательству и государственному строительству Член комиссии ГД по контролю за достоверностью сведений о доходах, об имуществе и обязательствах имущественного характера, представляемых депутатами",
+      "real_estates": [
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "Земельный участок под индивидуальное жилищное строительство",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 731.0,
+          "type": {
+            "id": 1,
+            "name": "Земельный участок"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        }
+      ],
+      "savings": [],
+      "spendings": [],
+      "stocks": [],
+      "vehicles": [
+        {
+          "brand": null,
+          "comment": "",
+          "manufacture_year": null,
+          "name": "моторная лодка \"Краб\"",
+          "relative": null,
+          "type": {
+            "id": 6,
+            "name": "Водный транспорт"
+          }
+        },
+        {
+          "brand": null,
+          "comment": "",
+          "manufacture_year": null,
+          "name": "FORD FOCUS",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "type": {
+            "id": 1,
+            "name": "Автомобиль легковой"
+          }
+        },
+        {
+          "brand": null,
+          "comment": "",
+          "manufacture_year": null,
+          "name": "TOYOTA RAV-4",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "type": {
+            "id": 1,
+            "name": "Автомобиль легковой"
+          }
+        }
+      ]
+    },
+    {
+      "bonds": [],
+      "incomes": [
+        {
+          "comment": "",
+          "relative": null,
+          "size": 3475706.73
+        },
+        {
+          "comment": "",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "size": 41766.51
+        }
+      ],
+      "main": {
+        "document_type": {
+          "id": 1,
+          "name": "Антикоррупционная декларация"
+        },
+        "office": {
+          "id": 14,
+          "name": "Государственная Дума",
+          "region": null,
+          "type": {
+            "id": 24,
+            "name": "Федеральный, со структурой"
+          },
+          "url": "http://www.duma.gov.ru/"
+        },
+        "party": {
+          "id": 1,
+          "name": "Единая Россия"
+        },
+        "person": {
+          "family_name": "Вяткин",
+          "gender": "M",
+          "given_name": "Дмитрий",
+          "id": 169,
+          "name": "Вяткин Дмитрий Федорович",
+          "patronymic_name": "Федорович",
+          "wikipedia_id": "Q28497318"
+        },
+        "year": 2009
+      },
+      "position_en": "Member of the State Duma Committee",
+      "position_ru": "Член комитета Государственной Думы ",
+      "real_estates": [
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 21,
+            "name": "Долевая собственность"
+          },
+          "region": null,
+          "relative": null,
+          "share": 0.5,
+          "square": 72.0,
+          "type": {
+            "id": 1,
+            "name": "Земельный участок"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 40.1,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 63.9,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 150.7,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 18.0,
+          "type": {
+            "id": 2,
+            "name": "Гараж"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "Нежилое здание ",
+          "own_type": {
+            "id": 21,
+            "name": "Долевая собственность"
+          },
+          "region": null,
+          "relative": null,
+          "share": 0.5,
+          "square": 35.7,
+          "type": {
+            "id": 6,
+            "name": "Иное"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 150.7,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 150.7,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 150.7,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 150.7,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        }
+      ],
+      "savings": [],
+      "spendings": [],
+      "stocks": [],
+      "vehicles": [
+        {
+          "brand": {
+            "id": 1685,
+            "name": "Touareg"
+          },
+          "brand_parent": {
+            "id": 124,
+            "name": "Volkswagen"
+          },
+          "comment": "",
+          "manufacture_year": null,
+          "name": "",
+          "relative": null,
+          "type": {
+            "id": 1,
+            "name": "Автомобиль легковой"
+          }
+        },
+        {
+          "brand": null,
+          "comment": "",
+          "manufacture_year": null,
+          "name": "Моторная лодка \"Краб\"",
+          "relative": null,
+          "type": {
+            "id": 6,
+            "name": "Водный транспорт"
+          }
+        },
+        {
+          "brand": {
+            "id": 1610,
+            "name": "Rav 4"
+          },
+          "brand_parent": {
+            "id": 121,
+            "name": "Toyota"
+          },
+          "comment": "",
+          "manufacture_year": null,
+          "name": "",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "type": {
+            "id": 1,
+            "name": "Автомобиль легковой"
+          }
+        }
+      ]
+    },
+    {
+      "bonds": [],
+      "incomes": [
+        {
+          "comment": "",
+          "relative": null,
+          "size": 2481528.45
+        },
+        {
+          "comment": "",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "size": 234380.0
+        }
+      ],
+      "main": {
+        "document_type": {
+          "id": 1,
+          "name": "Антикоррупционная декларация"
+        },
+        "office": {
+          "id": 14,
+          "name": "Государственная Дума",
+          "region": null,
+          "type": {
+            "id": 24,
+            "name": "Федеральный, со структурой"
+          },
+          "url": "http://www.duma.gov.ru/"
+        },
+        "party": {
+          "id": 1,
+          "name": "Единая Россия"
+        },
+        "person": {
+          "family_name": "Вяткин",
+          "gender": "M",
+          "given_name": "Дмитрий",
+          "id": 169,
+          "name": "Вяткин Дмитрий Федорович",
+          "patronymic_name": "Федорович",
+          "wikipedia_id": "Q28497318"
+        },
+        "year": 2013
+      },
+      "position_en": "Deputy Chairman of the State Duma Committee",
+      "position_ru": "Заместитель председателя комитета Государственной Думы",
+      "real_estates": [
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "Земельный участок под индивидуальное жилищное строительство",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 731.0,
+          "type": {
+            "id": 1,
+            "name": "Земельный участок"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        }
+      ],
+      "savings": [],
+      "spendings": [],
+      "stocks": [],
+      "vehicles": [
+        {
+          "brand": null,
+          "comment": "",
+          "manufacture_year": null,
+          "name": "моторная лодка \"Краб\"",
+          "relative": null,
+          "type": {
+            "id": 6,
+            "name": "Водный транспорт"
+          }
+        },
+        {
+          "brand": {
+            "id": 639,
+            "name": "Focus"
+          },
+          "brand_parent": {
+            "id": 40,
+            "name": "Ford"
+          },
+          "comment": "",
+          "manufacture_year": null,
+          "name": "",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "type": {
+            "id": 1,
+            "name": "Автомобиль легковой"
+          }
+        },
+        {
+          "brand": {
+            "id": 1610,
+            "name": "Rav 4"
+          },
+          "brand_parent": {
+            "id": 121,
+            "name": "Toyota"
+          },
+          "comment": "",
+          "manufacture_year": null,
+          "name": "",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "type": {
+            "id": 1,
+            "name": "Автомобиль легковой"
+          }
+        }
+      ]
+    },
+    {
+      "bonds": [],
+      "incomes": [
+        {
+          "comment": "",
+          "relative": null,
+          "size": 4121945.28
+        },
+        {
+          "comment": "",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "size": 106260.0
+        }
+      ],
+      "main": {
+        "document_type": {
+          "id": 1,
+          "name": "Антикоррупционная декларация"
+        },
+        "office": {
+          "id": 14,
+          "name": "Государственная Дума",
+          "region": null,
+          "type": {
+            "id": 24,
+            "name": "Федеральный, со структурой"
+          },
+          "url": "http://www.duma.gov.ru/"
+        },
+        "party": {
+          "id": 1,
+          "name": "Единая Россия"
+        },
+        "person": {
+          "family_name": "Вяткин",
+          "gender": "M",
+          "given_name": "Дмитрий",
+          "id": 169,
+          "name": "Вяткин Дмитрий Федорович",
+          "patronymic_name": "Федорович",
+          "wikipedia_id": "Q28497318"
+        },
+        "year": 2014
+      },
+      "position_en": "Deputy Chairman of the State Duma Committee",
+      "position_ru": "Заместитель председателя комитета Государственной Думы",
+      "real_estates": [
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "Земельный участок под индивидуальное жилищное строительство",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 731.0,
+          "type": {
+            "id": 1,
+            "name": "Земельный участок"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        }
+      ],
+      "savings": [],
+      "spendings": [],
+      "stocks": [],
+      "vehicles": [
+        {
+          "brand": {
+            "id": 639,
+            "name": "Focus"
+          },
+          "brand_parent": {
+            "id": 40,
+            "name": "Ford"
+          },
+          "comment": "",
+          "manufacture_year": null,
+          "name": "",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "type": {
+            "id": 1,
+            "name": "Автомобиль легковой"
+          }
+        },
+        {
+          "brand": {
+            "id": 1610,
+            "name": "Rav 4"
+          },
+          "brand_parent": {
+            "id": 121,
+            "name": "Toyota"
+          },
+          "comment": "",
+          "manufacture_year": null,
+          "name": "",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "type": {
+            "id": 1,
+            "name": "Автомобиль легковой"
+          }
+        }
+      ]
+    },
+    {
+      "bonds": [],
+      "incomes": [
+        {
+          "comment": "",
+          "relative": null,
+          "size": 5209820.45
+        },
+        {
+          "comment": "",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "size": 106993.33
+        }
+      ],
+      "main": {
+        "document_type": {
+          "id": 1,
+          "name": "Антикоррупционная декларация"
+        },
+        "office": {
+          "id": 14,
+          "name": "Государственная Дума",
+          "region": null,
+          "type": {
+            "id": 24,
+            "name": "Федеральный, со структурой"
+          },
+          "url": "http://www.duma.gov.ru/"
+        },
+        "party": {
+          "id": 1,
+          "name": "Единая Россия"
+        },
+        "person": {
+          "family_name": "Вяткин",
+          "gender": "M",
+          "given_name": "Дмитрий",
+          "id": 169,
+          "name": "Вяткин Дмитрий Федорович",
+          "patronymic_name": "Федорович",
+          "wikipedia_id": "Q28497318"
+        },
+        "year": 2015
+      },
+      "position_en": "Deputy Chairman of the State Duma Committee",
+      "position_ru": "Заместитель председателя комитета Государственной Думы",
+      "real_estates": [
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "Земельный участок под индивидуальное жилищное строительство",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 731.0,
+          "type": {
+            "id": 1,
+            "name": "Земельный участок"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        }
+      ],
+      "savings": [],
+      "spendings": [],
+      "stocks": [],
+      "vehicles": [
+        {
+          "brand": {
+            "id": 639,
+            "name": "Focus"
+          },
+          "brand_parent": {
+            "id": 40,
+            "name": "Ford"
+          },
+          "comment": "",
+          "manufacture_year": null,
+          "name": "",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "type": {
+            "id": 1,
+            "name": "Автомобиль легковой"
+          }
+        },
+        {
+          "brand": {
+            "id": 1610,
+            "name": "Rav 4"
+          },
+          "brand_parent": {
+            "id": 121,
+            "name": "Toyota"
+          },
+          "comment": "",
+          "manufacture_year": null,
+          "name": "",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "type": {
+            "id": 1,
+            "name": "Автомобиль легковой"
+          }
+        }
+      ]
+    },
+    {
+      "bonds": [],
+      "incomes": [
+        {
+          "comment": "",
+          "relative": null,
+          "size": 5119214.36
+        },
+        {
+          "comment": "",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "size": 106260.0
+        }
+      ],
+      "main": {
+        "document_type": {
+          "id": 1,
+          "name": "Антикоррупционная декларация"
+        },
+        "office": {
+          "id": 14,
+          "name": "Государственная Дума",
+          "region": null,
+          "type": {
+            "id": 24,
+            "name": "Федеральный, со структурой"
+          },
+          "url": "http://www.duma.gov.ru/"
+        },
+        "party": {
+          "id": 1,
+          "name": "Единая Россия"
+        },
+        "person": {
+          "family_name": "Вяткин",
+          "gender": "M",
+          "given_name": "Дмитрий",
+          "id": 169,
+          "name": "Вяткин Дмитрий Федорович",
+          "patronymic_name": "Федорович",
+          "wikipedia_id": "Q28497318"
+        },
+        "year": 2016
+      },
+      "position_en": "First Deputy Chairman of the State Duma Committee",
+      "position_ru": "Первый заместитель председателя комитета Государственной Думы",
+      "real_estates": [
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "Земельный участок под индивидуальное жилищное строительство",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 731.0,
+          "type": {
+            "id": 1,
+            "name": "Земельный участок"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 5,
+            "name": "Безвозмездное пользование"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 12,
+            "name": "Служебное жилье"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        }
+      ],
+      "savings": [],
+      "spendings": [],
+      "stocks": [],
+      "vehicles": [
+        {
+          "brand": {
+            "id": 1610,
+            "name": "Rav 4"
+          },
+          "brand_parent": {
+            "id": 121,
+            "name": "Toyota"
+          },
+          "comment": "",
+          "manufacture_year": null,
+          "name": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "type": {
+            "id": 1,
+            "name": "Автомобиль легковой"
+          }
+        },
+        {
+          "brand": {
+            "id": 639,
+            "name": "Focus"
+          },
+          "brand_parent": {
+            "id": 40,
+            "name": "Ford"
+          },
+          "comment": "",
+          "manufacture_year": null,
+          "name": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "type": {
+            "id": 1,
+            "name": "Автомобиль легковой"
+          }
+        }
+      ]
+    },
+    {
+      "bonds": [],
+      "incomes": [
+        {
+          "comment": "",
+          "relative": null,
+          "size": 4906514.74
+        },
+        {
+          "comment": "",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "size": 1331716.52
+        }
+      ],
+      "main": {
+        "document_type": {
+          "id": 1,
+          "name": "Антикоррупционная декларация"
+        },
+        "office": {
+          "id": 14,
+          "name": "Государственная Дума",
+          "region": null,
+          "type": {
+            "id": 24,
+            "name": "Федеральный, со структурой"
+          },
+          "url": "http://www.duma.gov.ru/"
+        },
+        "party": {
+          "id": 1,
+          "name": "Единая Россия"
+        },
+        "person": {
+          "family_name": "Вяткин",
+          "gender": "M",
+          "given_name": "Дмитрий",
+          "id": 169,
+          "name": "Вяткин Дмитрий Федорович",
+          "patronymic_name": "Федорович",
+          "wikipedia_id": "Q28497318"
+        },
+        "year": 2017
+      },
+      "position_en": "First Deputy Chairman of the state Duma Committee",
+      "position_ru": "Первый заместитель председателя комитета ГД",
+      "real_estates": [
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 731.0,
+          "type": {
+            "id": 1,
+            "name": "Земельный участок"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 4,
+            "name": "Наём (аренда)"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 9,
+            "name": "В пользовании"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 9,
+            "name": "В пользовании"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 9,
+            "name": "В пользовании"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 9,
+            "name": "В пользовании"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 9,
+            "name": "В пользовании"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 9,
+            "name": "В пользовании"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        }
+      ],
+      "savings": [],
+      "spendings": [],
+      "stocks": [],
+      "vehicles": [
+        {
+          "brand": {
+            "id": 1023,
+            "name": "GL-Class"
+          },
+          "brand_parent": {
+            "id": 79,
+            "name": "Mercedes-Benz"
+          },
+          "comment": "",
+          "manufacture_year": null,
+          "name": "GLC 250 4",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "type": {
+            "id": 1,
+            "name": "Автомобиль легковой"
+          }
+        }
+      ]
+    },
+    {
+      "bonds": [],
+      "incomes": [
+        {
+          "comment": "",
+          "relative": null,
+          "size": 5179767.72
+        },
+        {
+          "comment": "",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "size": 147210.88
+        }
+      ],
+      "main": {
+        "document_type": {
+          "id": 1,
+          "name": "Антикоррупционная декларация"
+        },
+        "office": {
+          "id": 14,
+          "name": "Государственная Дума",
+          "region": null,
+          "type": {
+            "id": 24,
+            "name": "Федеральный, со структурой"
+          },
+          "url": "http://www.duma.gov.ru/"
+        },
+        "party": {
+          "id": 1,
+          "name": "Единая Россия"
+        },
+        "person": {
+          "family_name": "Вяткин",
+          "gender": "M",
+          "given_name": "Дмитрий",
+          "id": 169,
+          "name": "Вяткин Дмитрий Федорович",
+          "patronymic_name": "Федорович",
+          "wikipedia_id": "Q28497318"
+        },
+        "year": 2018
+      },
+      "position_en": "First Deputy Chairman of the state Duma Committee",
+      "position_ru": "Первый заместитель председателя комитета ГД",
+      "real_estates": [
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 731.0,
+          "type": {
+            "id": 1,
+            "name": "Земельный участок"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 20,
+            "name": "Индивидуальная"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 4,
+            "name": "Наём (аренда)"
+          },
+          "region": null,
+          "relative": null,
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 9,
+            "name": "В пользовании"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 9,
+            "name": "В пользовании"
+          },
+          "region": null,
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 9,
+            "name": "В пользовании"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 9,
+            "name": "В пользовании"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 318.9,
+          "type": {
+            "id": 3,
+            "name": "Жилой дом"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 9,
+            "name": "В пользовании"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        },
+        {
+          "comment": "",
+          "country": "Россия",
+          "name": "",
+          "own_type": {
+            "id": 9,
+            "name": "В пользовании"
+          },
+          "region": null,
+          "relative": {
+            "id": 6,
+            "name": "Ребенок"
+          },
+          "share": null,
+          "square": 157.0,
+          "type": {
+            "id": 4,
+            "name": "Квартира"
+          }
+        }
+      ],
+      "savings": [],
+      "spendings": [],
+      "stocks": [],
+      "vehicles": [
+        {
+          "brand": {
+            "id": 1023,
+            "name": "GL-Class"
+          },
+          "brand_parent": {
+            "id": 79,
+            "name": "Mercedes-Benz"
+          },
+          "comment": "",
+          "manufacture_year": null,
+          "name": "GLC 250 4",
+          "relative": {
+            "id": 2,
+            "name": "Супруг(а)"
+          },
+          "type": {
+            "id": 1,
+            "name": "Автомобиль легковой"
+          }
+        }
+      ]
+    }
+  ]
+}
