@@ -6719,13 +6719,13 @@ label.panel-block {
 
 /* Helios-Cond-Bold */
 @font-face {
-  font-family: "Helios-Cond", "HeliosCond";
+  font-family: 'Helios-Cond';
   src: url("/assets/fonts/Helios-Cond-Bold/Helios-Cond-Bold.eot");
   src: url("/assets/fonts/Helios-Cond-Bold/Helios-Cond-Bold.woff") format("woff"), url("/assets/fonts/Helios-Cond-Bold/Helios-Cond-Bold.ttf") format("truetype"), url("/assets/fonts/Helios-Cond-Bold/Helios-Cond-Bold.svg") format("svg");
   font-weight: bold; }
 /* Helios-Cond-Regular */
 @font-face {
-  font-family: "Helios-Cond", "HeliosCond";
+  font-family: 'Helios-Cond';
   src: url("/assets/fonts/Helios-Cond-Regular/helios-cond-webfont.eot");
   src: url("/assets/fonts/Helios-Cond-Regular/helios-cond-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/Helios-Cond-Regular/helios-cond-webfont.woff2") format("woff2"), url("/assets/fonts/Helios-Cond-Regular/helios-cond-webfont.woff") format("font-woff"), url("/assets/fonts/Helios-Cond-Regular/helios-cond-webfont.ttf") format("truetype"), url("/assets/fonts/Helios-Cond-Regular/helios-cond-webfont.svg#helioscondregular") format("svg"); }
 .intro-open {
@@ -7343,6 +7343,9 @@ strong a {
 
 .hero-body {
   padding: 0; }
+
+a:not(.button) {
+  text-decoration: underline; }
 
 .is-color-white {
   color: #000000;
@@ -8916,3 +8919,151 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 
 .zoomer-touch .zoomer-control-zoom-in, .zoomer-touch .zoomer-control-zoom-out {
   font-size: 22px; }
+
+header {
+  background: #FF7A00; }
+  header a.c4,
+  header a.c5 {
+    background-color: #FF7A00; }
+  header .header-menu {
+    background: #FF7A00; }
+
+div#controls .column .convocations {
+  width: 120px; }
+  div#controls .column .convocations .slider_label {
+    width: 90px; }
+
+#scrollytelling {
+  display: none;
+  height: calc(100% - 48px);
+  width: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  padding-right: 17px;
+  box-sizing: content-box;
+  z-index: 15;
+  top: 48px;
+  background: white;
+  transition: opacity 400ms ease; }
+  @media screen and (max-width: 767px) {
+    #scrollytelling {
+      top: 40px;
+      height: calc(100% - 40px); } }
+  #scrollytelling #close_cross {
+    background: url("../images/cross.svg");
+    height: 50px;
+    width: 50px;
+    right: 36px;
+    top: 68px;
+    position: fixed;
+    cursor: pointer;
+    z-index: 25; }
+    #scrollytelling #close_cross:hover {
+      opacity: 0.8; }
+  #scrollytelling #go_to_lobby_map {
+    margin: 20vh auto 0;
+    display: block;
+    padding: 11px 32px 12px;
+    background-color: #FF7A00;
+    color: white;
+    font-size: 20px;
+    border-radius: 0;
+    line-height: 25px;
+    height: 25px; }
+  #scrollytelling .arrow {
+    position: absolute;
+    border: none;
+    top: 85vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(1, 1, 1, 0); }
+    #scrollytelling .arrow > span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-bottom: 2px solid #FF7A00;
+      border-right: 2px solid #FF7A00;
+      transform: rotate(45deg);
+      margin: -10px;
+      animation: animate 2s infinite; }
+      #scrollytelling .arrow > span:nth-child(2) {
+        animation-delay: -0.2s; }
+      #scrollytelling .arrow > span:nth-child(3) {
+        animation-delay: -0.4s; }
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px); }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px); } }
+#container {
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+  width: 70%; }
+  @media screen and (max-width: 1087px) {
+    #container {
+      width: 100%; } }
+
+#root {
+  position: fixed;
+  width: 60%;
+  top: 20%;
+  left: 20%; }
+  @media screen and (max-width: 1087px) {
+    #root {
+      width: 100%;
+      left: 0; } }
+
+.section {
+  height: 40vh;
+  margin-bottom: 30vh;
+  color: black; }
+  .section div {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    border: 1px solid #FF7A00;
+    border-radius: 8px; }
+    @media screen and (max-width: 1087px) {
+      .section div {
+        font-size: 1rem; } }
+  .section.first {
+    padding-top: 70vh; }
+  .section.lastWithText {
+    height: 20vh; }
+  .section.exit {
+    height: 10vh; }
+    @media screen and (max-width: 1087px) {
+      .section.exit {
+        height: 20vh; } }
+    .section.exit div {
+      border: 0px; }
+
+#encloseText11727 {
+  font-size: 12px; }
+
+.tellingLabel {
+  text-anchor: middle;
+  font-size: 8px; }
+
+.tellingCircleAlt {
+  fill: #f781c0;
+  color: #f781c0; }
+
+.tellingCircle {
+  fill: #2fa3e4;
+  color: #2fa3e4; }
+
+.tellingBluredCircle {
+  fill: #999; }
+
+.tellingCircleGray {
+  fill: #999;
+  color: #999; }
+
+.columns.about .outer_link {
+  background: rgba(255, 180, 68, 0.1); }
