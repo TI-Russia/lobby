@@ -20,6 +20,7 @@ const config = {
   },
   pageUrls: {
     contribute: "contribute",
+    stories: "articles",
   },
   feedbackUrl: {
     sf: "https://feedback-sf-url.com",

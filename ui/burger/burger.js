@@ -39,6 +39,9 @@ const Burger = ({ pageType, config }) => {
             Исследование
           </a>
         )}
+        <Link href={`${config.baseUrl}/${config.pageUrls.stories}`}>
+          Истории
+        </Link>
         <Link href={`${config.baseUrl}/${config.pageUrls.contribute}`}>
           Помочь проекту
         </Link>
@@ -79,6 +82,11 @@ const Burger = ({ pageType, config }) => {
             </a>
           </li>
         )}
+        <li>
+          <Link href={`${config.baseUrl}/${config.pageUrls.stories}`}>
+            Истории
+          </Link>
+        </li>
         <li>
           <Link href={`${config.baseUrl}/${config.pageUrls.contribute}`}>
             Помочь проекту
