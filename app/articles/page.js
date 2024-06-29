@@ -1,7 +1,7 @@
 import { use } from "react";
 import Link from "next/link";
 import styles from "./page.module.scss";
-import { Article } from "../../ui/article";
+import { Article } from "../../ui/article/article";
 import { fetchArticles } from "../../api/fetch-articles";
 
 async function getArticles(targetPage) {

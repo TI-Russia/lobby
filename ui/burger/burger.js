@@ -1,10 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Burger = ({ pageType, config }) => {
   const [isOpen, setIsOpen] = useState(false);
   const isDuma8 = pageType === "duma_8";
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleResize = () => {
@@ -19,6 +21,11 @@ const Burger = ({ pageType, config }) => {
       window.removeEventListener("resize", handleResize);
     };
   }, [isOpen]);
+
+  // Закрываем меню при изменении пути
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   const toggleNav = () => {
     setIsOpen(!isOpen);

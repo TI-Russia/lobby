@@ -3,7 +3,7 @@ import processQuotes from "../../../utils/processQuotes";
 import styles from "./page.module.scss";
 import clsx from "clsx";
 import { truncate } from "../../../utils/truncate";
-import { Article } from "../../../ui/article";
+import { Article } from "../../../ui/article/article";
 import { fetchArticles } from "../../../api/fetch-articles";
 
 export async function getArcticle(id) {
