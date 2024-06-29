@@ -20,6 +20,11 @@ async function getArticles(targetPage) {
   return { articles: allArticles, hasMore };
 }
 
+export const metadata = {
+  title: "Блог",
+  description: "Последние статьи и ресурсы, подготовленные нашим сообществом",
+};
+
 export default function Page({ searchParams }) {
   const currentPage = parseInt(searchParams.page || "1", 10);
   const { articles, hasMore } = use(getArticles(currentPage));

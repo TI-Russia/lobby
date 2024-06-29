@@ -14,6 +14,23 @@ export async function getArcticle(id) {
 
 const MAX_TRUNCATE = 52;
 
+export async function generateMetadata({ params }) {
+  // read route params
+  const id = params.id;
+
+  // fetch data
+  const product = await getArcticle(id);
+
+  return {
+    title: product.title,
+    openGraph: {
+      title: product.title,
+      description: product.content,
+      images: [{ url: product.image }],
+    },
+  };
+}
+
 export default async function ArticlePage({ params }) {
   const article = await getArcticle(params.id);
   const data = await fetchArticles(1);
