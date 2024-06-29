@@ -1,38 +1,61 @@
-import "../_sass/common.scss";
+import Link from "next/link";
 import HeaderSelector from "./header-selector";
+import "../_sass/common.scss";
 
-export function Header({ site, page }) {
+// Конфигурационный объект для URL и других настроек
+const config = {
+  baseUrl: process.env.NEXT_PUBLIC_BASE_URL || "",
+  logoRedirect: {
+    sf: "sf",
+    about_sf: "sf",
+    duma_7: "duma_7",
+    duma_8: "duma_8",
+  },
+  menuAboutUrl: {
+    sf: "about-sf",
+    about_sf: "about-sf",
+    duma_7: "about",
+    duma_8: "about",
+  },
+  pageUrls: {
+    contribute: "contribute",
+  },
+  feedbackUrl: {
+    sf: "https://feedback-sf-url.com",
+    about_sf: "https://feedback-sf-url.com",
+    duma_7: "https://feedback-duma-url.com",
+    duma_8: "https://feedback-duma-url.com",
+  },
+  researchUrl: "https://research-url.com",
+};
+
+export function Header({ pageType }) {
   const logoSrc = `/assets/images/logo/logo-${
-    page.type === "sf" || page.type === "about_sf"
+    pageType === "sf" || pageType === "about_sf"
       ? "sf"
-      : page.type === "duma_7"
+      : pageType === "duma_7"
       ? "7"
       : "8"
   }.svg`;
   const logoAlt = "Лоббизм";
   const noLogoSrc = `/assets/images/logo/lobbism_no_logo.svg`;
 
-  const isDuma8 = page.type === "duma_8";
-  const isDuma7 = page.type === "duma_7";
-  const isSF = page.type === "sf" || page.type === "about_sf";
+  const isDuma8 = pageType === "duma_8";
+  const isDuma7 = pageType === "duma_7";
+  const isSF = pageType === "sf" || pageType === "about_sf";
 
   return (
     <header className="hero-head">
       <div className="columns is-mobile">
         <div className="column c1" id="header-title">
-          <a href="{{site.url}}/{{site.logo_redirect[page.type]}}">
-            {isSF ? (
-              <img className="logo" src={logoSrc} alt={logoAlt} />
-            ) : isDuma7 ? (
-              <img className="logo" src={logoSrc} alt={logoAlt} />
-            ) : isDuma8 ? (
+          <Link href={`${config.baseUrl}/${config.logoRedirect[pageType]}`}>
+            {isSF || isDuma7 || isDuma8 ? (
               <img className="logo" src={logoSrc} alt={logoAlt} />
             ) : (
               <img className="no-logo" src={noLogoSrc} alt={logoAlt} />
             )}
-            <img className="no-logo" src={noLogoSrc} alt="Лоббизм" />
-          </a>
-          <HeaderSelector selectedPage={page.type} />
+          </Link>
+          <HeaderSelector selectedPage={pageType} />
         </div>
         <div className="column c2">
           <h2>
@@ -53,18 +76,26 @@ export function Header({ site, page }) {
         </div>
         <div className="column is-pulled-right c3">
           <div id="nav-menu" className="">
-            <a href="{{ site.baseurl }}/{{ site.menu_about_url[page.type] }}">
+            <Link href={`${config.baseUrl}/${config.menuAboutUrl[pageType]}`}>
               О&nbsp;проекте
-            </a>
+            </Link>
             {isDuma8 && (
-              <a href={site.research_url} target="_blank">
+              <a
+                href={config.researchUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Исследование
               </a>
             )}
-            <a href="{{ site.baseurl }}/{{ site.page_urls.contribute }}">
+            <Link href={`${config.baseUrl}/${config.pageUrls.contribute}`}>
               Помочь проекту
-            </a>
-            <a target="_blank" href="{{ site.feedback_url[page.type] }}">
+            </Link>
+            <a
+              href={config.feedbackUrl[pageType]}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Обратная связь
             </a>
           </div>
@@ -75,24 +106,32 @@ export function Header({ site, page }) {
           </a>
           <ul className="header-menu" id="header_menu">
             <li>
-              <a href="{{ site.baseurl }}/{{ site.menu_about_url[page.type] }}">
+              <Link href={`${config.baseUrl}/${config.menuAboutUrl[pageType]}`}>
                 О&nbsp;проекте
-              </a>
+              </Link>
             </li>
             {isDuma8 && (
               <li>
-                <a href={site.research_url} target="_blank">
+                <a
+                  href={config.researchUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Исследование
                 </a>
               </li>
             )}
             <li>
-              <a href="{{ site.baseurl }}/{{ site.page_urls.contribute }}">
+              <Link href={`${config.baseUrl}/${config.pageUrls.contribute}`}>
                 Помочь проекту
-              </a>
+              </Link>
             </li>
             <li>
-              <a target="_blank" href="{{ site.feedback_url[page.type] }}">
+              <a
+                href={config.feedbackUrl[pageType]}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Обратная связь
               </a>
             </li>
@@ -100,8 +139,11 @@ export function Header({ site, page }) {
         </div>
         <div className="column is-pulled-right c4">
           <a
-            href="http://vk.com/share.php?url=https%3A%2F%2Fdumabingo.ru%2F{% if page.type == 'sf'%}sf{%endif%}"
+            href={`http://vk.com/share.php?url=https%3A%2F%2Fdumabingo.ru%2F${
+              isSF ? "sf" : ""
+            }`}
             target="_blank"
+            rel="noopener noreferrer"
             className="c4 vk_share_button"
           >
             <span className="icon is-large">
@@ -111,8 +153,11 @@ export function Header({ site, page }) {
         </div>
         <div className="column is-pulled-right c5">
           <a
-            href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdumabingo.ru%2F{% if page.type == 'sf'%}sf{%endif%}&text={{site.meta.description[page.type]}}"
+            href={`https://twitter.com/intent/tweet?url=https%3A%2F%2Fdumabingo.ru%2F${
+              isSF ? "sf" : ""
+            }&text=${encodeURIComponent("Описание для твита")}`}
             target="_blank"
+            rel="noopener noreferrer"
             className="c5"
           >
             <span className="icon is-large">
