@@ -1,20 +1,77 @@
+"use client";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import styles from "./page.module.scss";
+import { useRouter, useSearchParams } from "next/navigation";
 
-const pageCount = 3;
+const pageSize = 3;
 
-export async function getArcticles(id) {
-  const response = await fetch(`https://declarator.org/api/v1/news`);
-  const data = await response.json();
-  return data;
+async function fetchArticles(page) {
+  try {
+    const response = await fetch(
+      `https://declarator.org/api/v1/news/?page=${page}`
+    );
+    if (!response.ok) {
+      throw new Error("Ошибка загрузки данных");
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Ошибка при загрузке статей:", error);
+    return { results: [], next: null };
+  }
 }
 
-export default async function Page({ params }) {
-  const data = await getArcticles(params.id);
-  const loading = false;
+export default function Page() {
+  const [articles, setArticles] = useState([]);
+  const [hasMore, setHasMore] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const currentPage = parseInt(searchParams.get("page") || "1", 10);
 
-  const isEmpty = data?.results.length === 0;
-  const hasMore = data && data?.next !== null;
+  const loadArticles = useCallback(async (targetPage) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const allArticles = [];
+      for (let page = 1; page <= targetPage; page++) {
+        const data = await fetchArticles(page);
+        allArticles.push(...data.results);
+        if (!data.next) {
+          setHasMore(false);
+          break;
+        }
+      }
+      setArticles((prevArticles) => {
+        const newArticles = [...prevArticles];
+        allArticles.forEach((article) => {
+          if (!newArticles.some((a) => a.id === article.id)) {
+            newArticles.push(article);
+          }
+        });
+        return newArticles;
+      });
+    } catch (err) {
+      setError("Не удалось загрузить статьи. Пожалуйста, попробуйте позже.");
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    loadArticles(currentPage);
+  }, [currentPage, loadArticles]);
+
+  const loadMoreArticles = () => {
+    const nextPage = currentPage + 1;
+    router.push(`/articles?page=${nextPage}`, {
+      scroll: false,
+    });
+  };
+
+  const isEmpty = articles.length === 0;
 
   return (
     <div className={styles.page}>
@@ -25,17 +82,12 @@ export default async function Page({ params }) {
         </h4>
       </div>
       <div className={styles.content}>
-        {loading && (
-          <div className={styles.loading}>
-            <p>Загрузка...</p>
-          </div>
-        )}
-        {isEmpty && (
+        {isEmpty && !loading && !error && (
           <div className={styles.empty}>
             <p>Статей нет</p>
           </div>
         )}
-        {data?.results.map((item) => (
+        {articles.map((item) => (
           <div key={item.id} className={styles.item}>
             <img src={item.image} alt={item.title} className={styles.image} />
             <div className={styles.body}>
@@ -48,11 +100,21 @@ export default async function Page({ params }) {
             </div>
           </div>
         ))}
+        {loading && (
+          <div className={styles.loading}>
+            <p>Загрузка...</p>
+          </div>
+        )}
+        {error && (
+          <div className={styles.error}>
+            <p>{error}</p>
+          </div>
+        )}
       </div>
-      {hasMore && (
-        <Link href={`/articles?page=${pageCount}`} className={styles.hasMore}>
+      {hasMore && !loading && !error && (
+        <button onClick={loadMoreArticles} className={styles.loadMore}>
           Показать еще
-        </Link>
+        </button>
       )}
     </div>
   );
