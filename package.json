@@ -2,6 +2,9 @@
   "name": "dumabingo",
   "private": true,
   "version": "1.0.0",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "watch": "npm-run-all --parallel watch:js:app watch:jekyll",
     "watch:jekyll": "bundle exec jekyll serve --port 4001 --baseurl '' --host 0.0.0.0",
@@ -27,9 +30,6 @@
   },
   "homepage": "https://github.com/TI-Russia/lobby#readme",
   "browserslist": "> 0.25%, not dead",
-  "engines": {
-    "node": ">=18"
-  },
   "engineStrict": true,
   "dependencies": {
     "awesomplete": "^1.1.5",
