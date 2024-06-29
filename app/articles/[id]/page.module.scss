@@ -31,6 +31,16 @@
 
   .content {
     .body {
+      color: var(--DB-Black-Text, #363636);
+      font-feature-settings: "clig" off, "liga" off;
+
+      /* Text/16px/Regular */
+      font-family: Arial;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px;
+
       img {
         width: 100%;
         aspect-ratio: 16 / 9;
@@ -50,18 +60,6 @@
         line-height: 34px; /* 121.429% */
       }
 
-      p {
-        color: var(--DB-Black-Text, #363636);
-        font-feature-settings: "clig" off, "liga" off;
-
-        /* Text/16px/Regular */
-        font-family: Arial;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 26px;
-      }
-
       * + * {
         margin-top: 24px;
       }
@@ -76,6 +74,8 @@
         align-items: center;
         gap: 10px;
         align-self: stretch;
+
+        text-align: center;
       }
 
       * + blockquote {

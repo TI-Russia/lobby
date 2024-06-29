@@ -1,3 +1,4 @@
+import processQuotes from "../../../utils/processQuotes";
 import { mockArticle } from "./article.mock";
 import styles from "./page.module.scss";
 
@@ -56,7 +57,7 @@ export default async function ArticlePage({ params }) {
         <div className={styles.content}>
           <div
             className={styles.body}
-            dangerouslySetInnerHTML={{ __html: article.content }}
+            dangerouslySetInnerHTML={{ __html: processQuotes(article.content) }}
           ></div>
         </div>
       </div>
