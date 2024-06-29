@@ -198,6 +198,11 @@
       gap: 336px;
     }
 
+    &.nextOnly {
+      gap: 0px;
+      justify-content: flex-end;
+    }
+
     .link {
       display: flex;
       flex-direction: column;
@@ -222,6 +227,7 @@
         display: flex;
         align-items: center;
         gap: 16px;
+        width: 100%;
 
         .title {
           color: var(--DB-Black-Text, #363636);

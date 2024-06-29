@@ -2,13 +2,15 @@ import Link from "next/link";
 import processQuotes from "../../../utils/processQuotes";
 import styles from "./page.module.scss";
 import clsx from "clsx";
+import { truncate } from "../../../utils/truncate";
 
 export async function getArcticle(id) {
   const response = await fetch(`https://declarator.org/api/v1/news/${id}`);
   const data = await response.json();
-  console.log(data);
   return data;
 }
+
+const MAX_TRUNCATE = 52;
 
 export default async function ArticlePage({ params }) {
   const article = await getArcticle(params.id);
@@ -64,7 +66,9 @@ export default async function ArticlePage({ params }) {
       </div>
       <div className={styles.after}>
         <div className={styles.divider} />
-        <div className={styles.links}>
+        <div
+          className={clsx(styles.links, !article.previous && styles.nextOnly)}
+        >
           {article.previous && (
             <Link
               className={styles.link}
@@ -77,7 +81,9 @@ export default async function ArticlePage({ params }) {
                   alt={article.previous.title}
                   className={styles.image}
                 />
-                <p className={styles.title}>{article.previous.title}</p>
+                <p className={styles.title}>
+                  {truncate(article.previous.title, MAX_TRUNCATE)}
+                </p>
               </div>
             </Link>
           )}
@@ -93,7 +99,9 @@ export default async function ArticlePage({ params }) {
                   alt={article.next.title}
                   className={styles.image}
                 />
-                <p className={styles.title}>{article.next.title}</p>
+                <p className={styles.title}>
+                  {truncate(article.next.title, MAX_TRUNCATE)}
+                </p>
               </div>
             </Link>
           )}
