@@ -1,6 +1,7 @@
 import Link from "next/link";
 import HeaderSelector from "./header-selector";
 import "../_sass/common.scss";
+import Burger from "../ui/burger/burger";
 
 // Конфигурационный объект для URL и других настроек
 const config = {
@@ -83,67 +84,7 @@ export function Header({ pageType }) {
           </h2>
         </div>
         <div className="column is-pulled-right c3">
-          <div id="nav-menu" className="">
-            <Link href={`${config.baseUrl}/${config.menuAboutUrl[pageType]}`}>
-              О&nbsp;проекте
-            </Link>
-            {isDuma8 && (
-              <a
-                href={config.researchUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Исследование
-              </a>
-            )}
-            <Link href={`${config.baseUrl}/${config.pageUrls.contribute}`}>
-              Помочь проекту
-            </Link>
-            <a
-              href={config.feedbackUrl[pageType]}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Обратная связь
-            </a>
-          </div>
-          <a id="nav-toggle" className="">
-            <span className="icon">
-              <i className="fas fa-bars"></i>
-            </span>
-          </a>
-          <ul className="header-menu" id="header_menu">
-            <li>
-              <Link href={`${config.baseUrl}/${config.menuAboutUrl[pageType]}`}>
-                О&nbsp;проекте
-              </Link>
-            </li>
-            {isDuma8 && (
-              <li>
-                <a
-                  href={config.researchUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Исследование
-                </a>
-              </li>
-            )}
-            <li>
-              <Link href={`${config.baseUrl}/${config.pageUrls.contribute}`}>
-                Помочь проекту
-              </Link>
-            </li>
-            <li>
-              <a
-                href={config.feedbackUrl[pageType]}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Обратная связь
-              </a>
-            </li>
-          </ul>
+          <Burger pageType={pageType} config={config} />
         </div>
         <div className="column is-pulled-right c4">
           <a
