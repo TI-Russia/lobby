@@ -47,7 +47,9 @@ export default async function ArticlePage({ params }) {
                     fill="#747474"
                   />
                 </svg>
-                <span className={styles.text}>{article.pubdate}</span>
+                <span className={styles.text}>
+                  {article.pubdate.replace(/-/g, ".")}
+                </span>
               </div>
             )}
             <img
