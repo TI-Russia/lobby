@@ -1,6 +1,5 @@
 import Link from "next/link";
 import HeaderSelector from "./header-selector";
-import "../_sass/common.scss";
 import Burger from "../ui/burger/burger";
 
 // Конфигурационный объект для URL и других настроек
@@ -10,7 +9,7 @@ const config = {
     sf: "sf",
     about_sf: "sf",
     duma_7: "duma_7",
-    duma_8: "duma_8",
+    duma_8: "",
   },
   menuAboutUrl: {
     sf: "about-sf",
@@ -43,6 +42,12 @@ const config = {
 export function Header({ pageType }) {
   const isSF = pageType === "sf" || pageType === "about_sf";
   const isDuma8 = pageType === "duma_8";
+
+  if (isDuma8) {
+    require("../_sass/duma-8.scss");
+  } else if (!isSF) {
+    require("../_sass/duma-7.scss");
+  }
 
   return (
     <header className="hero-head">

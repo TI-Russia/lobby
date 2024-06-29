@@ -1,5 +1,3 @@
-import Script from "next/script";
-
 const Footer = ({ pageType }) => {
   const isStateDuma = pageType !== "sf";
 

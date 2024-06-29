@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "watch": "npm-run-all --parallel watch:js:app watch:jekyll",
-    "watch:jekyll": "bundle exec jekyll serve --port 4001 --baseurl ''",
+    "watch:jekyll": "bundle exec jekyll serve --port 4001 --baseurl '' --host 0.0.0.0",
     "watch:js": "npm-run-all build:js:deps watch:js:app",
     "watch:js:app": "gulp watch:app",
     "build": "npm-run-all build:js:deps build:js:app build:jekyll",
@@ -12,7 +12,10 @@
     "build:js:deps": "gulp build:deps",
     "build:js:app": "gulp build:app",
     "dev": "next dev",
-    "build:next": "next build"
+    "build:next": "next build",
+    "build:combined": "node combined-build.js",
+    "serve:combined": "node serve-combined.js",
+    "dev:combined": "node dev-mode.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +37,7 @@
     "d3": "^5.7.0",
     "dompurify": "^3.1.5",
     "font-awesome": "^4.7.0",
+    "fs-extra": "^11.2.0",
     "isomorphic-dompurify": "^2.12.0",
     "jquery": "^3.6.1",
     "liquidjs": "^10.0.0",
@@ -57,6 +61,7 @@
     "gulp-inject": "^5.0.5",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
+    "http-server": "^14.1.1",
     "npm-run-all": "^4.1.5",
     "run-sequence": "^2.2.1",
     "vinyl-buffer": "^1.0.1",

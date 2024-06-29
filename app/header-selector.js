@@ -36,13 +36,13 @@ const HeaderSelector = (props) => {
         {[
           {
             type: "duma_8",
-            href: "/duma_8",
+            href: "/",
             alt: "в думе 8 созыва",
             src: "/assets/images/logo/vgosdume-8.svg",
           },
           {
             type: "duma_7",
-            href: "/duma_7",
+            href: "/sozyv7",
             alt: "в думе 7 созыва",
             src: "/assets/images/logo/vgosdume-7.svg",
           },
