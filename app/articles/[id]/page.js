@@ -1,9 +1,12 @@
+import Link from "next/link";
 import processQuotes from "../../../utils/processQuotes";
 import styles from "./page.module.scss";
+import clsx from "clsx";
 
 export async function getArcticle(id) {
   const response = await fetch(`https://declarator.org/api/v1/news/${id}`);
   const data = await response.json();
+  console.log(data);
   return data;
 }
 
@@ -58,6 +61,44 @@ export default async function ArticlePage({ params }) {
             dangerouslySetInnerHTML={{ __html: processQuotes(article.content) }}
           ></div>
         </div>
+      </div>
+      <div className={styles.after}>
+        <div className={styles.divider} />
+        <div className={styles.links}>
+          {article.previous && (
+            <Link
+              className={styles.link}
+              href={`/articles/${article.previous.id}`}
+            >
+              <p className={styles.text}>Предыдущая</p>
+              <div className={styles.preview}>
+                <img
+                  src={"https://declarator.org" + article.previous.image}
+                  alt={article.previous.title}
+                  className={styles.image}
+                />
+                <p className={styles.title}>{article.previous.title}</p>
+              </div>
+            </Link>
+          )}
+          {article.next && (
+            <Link
+              className={clsx(styles.link, styles.next)}
+              href={`/articles/${article.next.id}`}
+            >
+              <p className={styles.text}>Следующая</p>
+              <div className={styles.preview}>
+                <img
+                  src={"https://declarator.org" + article.next.image}
+                  alt={article.next.title}
+                  className={styles.image}
+                />
+                <p className={styles.title}>{article.next.title}</p>
+              </div>
+            </Link>
+          )}
+        </div>
+        <div className={styles.divider} />
       </div>
     </div>
   );

@@ -1,17 +1,9 @@
 .page {
-  display: flex;
-  padding: 0px 16px;
-  flex-direction: column;
-  align-items: center;
-
-  @include iftablet {
-    padding: 0px;
-  }
 }
 
 .article {
   display: flex;
-  padding: 40px 0px;
+  padding: 40px 16px;
   flex-direction: column;
   align-items: center;
   gap: 24px;
@@ -180,4 +172,130 @@
       }
     }
   }
+}
+
+.after {
+  // background-color: red;
+  height: 500px;
+  width: 100%;
+  max-width: 1108px;
+  margin: 0 auto;
+
+  display: flex;
+  padding: 0px 16px;
+  margin-bottom: 64px;
+  flex-direction: column;
+  align-items: center;
+
+  .links {
+    display: flex;
+    gap: 23px;
+    align-self: stretch;
+    margin-top: 32px;
+    margin-bottom: 32px;
+
+    @include ifdesktop {
+      gap: 336px;
+    }
+
+    .link {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      width: 100%;
+
+      @include ifdesktop {
+        gap: 16px;
+        width: 386px;
+      }
+
+      &.next {
+        text-align: right;
+
+        .preview {
+          flex-direction: row-reverse;
+        }
+      }
+
+      .preview {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        .title {
+          color: var(--DB-Black-Text, #363636);
+          font-feature-settings: "clig" off, "liga" off;
+
+          /* Text/14px/Bold */
+          font-family: Arial;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 22px; /* 157.143% */
+
+          @include ifdesktop {
+            color: var(--DB-Black-Text, #363636);
+            font-feature-settings: "clig" off, "liga" off;
+
+            /* Text/18px/Bold */
+            font-family: Arial;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 30px; /* 166.667% */
+          }
+        }
+
+        .image {
+          display: flex;
+          width: 115px;
+          height: 66px;
+          justify-content: center;
+          align-items: center;
+          flex-shrink: 0;
+
+          display: none;
+
+          @include ifdesktop {
+            display: block;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+          }
+        }
+      }
+
+      .text {
+        width: 100%;
+
+        color: var(--DB-Black-Text, #363636);
+        font-feature-settings: "clig" off, "liga" off;
+
+        /* Button/XSmall */
+        font-family: Arial;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px; /* 171.429% */
+
+        @include ifdesktop {
+          color: var(--DB-Black-Text, #363636);
+          font-feature-settings: "clig" off, "liga" off;
+
+          /* Button/Medium */
+          font-family: Arial;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 32px; /* 177.778% */
+        }
+      }
+    }
+  }
+}
+
+.divider {
+  height: 1px;
+  background: var(--Blue-Black-300, #d0d5dd);
+  width: 100%;
 }
