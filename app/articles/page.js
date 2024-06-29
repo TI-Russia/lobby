@@ -1,91 +1,17 @@
-"use client";
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./page.module.scss";
 
 const pageCount = 3;
 
-// Функция для создания мока одной статьи
-const createMockArticle = (id, title, lead, image, pubdate) => {
-  return {
-    id,
-    title,
-    lead,
-    image,
-    pubdate,
-  };
-};
+export async function getArcticles(id) {
+  const response = await fetch(`https://declarator.org/api/v1/news`);
+  const data = await response.json();
+  return data;
+}
 
-// Заглушка для эмуляции загрузки данных с API
-const fetchData = async (page) => {
-  const page1 = [
-    createMockArticle(
-      1,
-      "Заголовок статьи 1",
-      "Краткое описание статьи 1",
-      "https://placehold.it/300x200",
-      "2022-07-01"
-    ),
-    createMockArticle(
-      2,
-      "Заголовок статьи 2",
-      "Краткое описание статьи 2",
-      "https://placehold.it/300x200",
-      "2022-07-01"
-    ),
-    createMockArticle(
-      3,
-      "Заголовок статьи 3",
-      "Краткое описание статьи 3",
-      "https://placehold.it/300x200",
-      "2022-07-01"
-    ),
-  ];
-  const page2 = [
-    createMockArticle(
-      4,
-      "Заголовок статьи 4",
-      "Краткое описание статьи 4",
-      "https://placehold.it/300x200",
-      "2022-07-01"
-    ),
-    createMockArticle(
-      5,
-      "Заголовок статьи 5",
-      "Краткое описание статьи 5",
-      "https://placehold.it/300x200",
-      "2022-07-01"
-    ),
-  ];
-
-  const data = page === 1 ? page1 : page2;
-
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        count: page === 1 ? page1.length : page2.length,
-        next: page === 1 ? 2 : null,
-        previous: page === 1 ? null : 1,
-        results: data,
-      });
-    }, 1000);
-  });
-};
-
-export default function Page({ params }) {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const loadArticles = async () => {
-      setLoading(true);
-      const data = await fetchData(1);
-      setData(data);
-      setLoading(false);
-    };
-
-    loadArticles();
-  }, []);
+export default async function Page({ params }) {
+  const data = await getArcticles(params.id);
+  const loading = false;
 
   const isEmpty = data?.results.length === 0;
   const hasMore = data && data?.next !== null;

@@ -1,9 +1,17 @@
 import { mockArticle } from "./article.mock";
 import styles from "./page.module.scss";
 
-export default function ArticlePage({ params }) {
+// https://declarator.org/api/v1/news/2
+export async function getArcticle(id) {
+  const response = await fetch(`https://declarator.org/api/v1/news/${id}`);
+  const data = await response.json();
+  return data;
+}
+
+export default async function ArticlePage({ params }) {
+  const article = await getArcticle(params.id);
   const id = params.id;
-  const article = mockArticle;
+  // const article = mockArticle;
 
   return (
     <div className={styles.page}>
