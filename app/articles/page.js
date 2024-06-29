@@ -1,75 +1,39 @@
-"use client";
-import { useState, useEffect, useCallback } from "react";
+import { use } from "react";
 import Link from "next/link";
 import styles from "./page.module.scss";
-import { useRouter, useSearchParams } from "next/navigation";
-
-const pageSize = 3;
 
 async function fetchArticles(page) {
-  try {
-    const response = await fetch(
-      `https://declarator.org/api/v1/news/?page=${page}`
-    );
-    if (!response.ok) {
-      throw new Error("Ошибка загрузки данных");
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Ошибка при загрузке статей:", error);
-    return { results: [], next: null };
+  const response = await fetch(
+    `https://declarator.org/api/v1/news/?page=${page}`,
+    { next: { revalidate: 3600 } } // Перепроверять кеш каждый час
+  );
+
+  if (!response.ok) {
+    throw new Error("Не удалось загрузить статьи");
   }
+
+  return response.json();
 }
 
-export default function Page() {
-  const [articles, setArticles] = useState([]);
-  const [hasMore, setHasMore] = useState(true);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const currentPage = parseInt(searchParams.get("page") || "1", 10);
+async function getArticles(targetPage) {
+  let allArticles = [];
+  let hasMore = true;
 
-  const loadArticles = useCallback(async (targetPage) => {
-    setLoading(true);
-    setError(null);
-    try {
-      const allArticles = [];
-      for (let page = 1; page <= targetPage; page++) {
-        const data = await fetchArticles(page);
-        allArticles.push(...data.results);
-        if (!data.next) {
-          setHasMore(false);
-          break;
-        }
-      }
-      setArticles((prevArticles) => {
-        const newArticles = [...prevArticles];
-        allArticles.forEach((article) => {
-          if (!newArticles.some((a) => a.id === article.id)) {
-            newArticles.push(article);
-          }
-        });
-        return newArticles;
-      });
-    } catch (err) {
-      setError("Не удалось загрузить статьи. Пожалуйста, попробуйте позже.");
-    } finally {
-      setLoading(false);
+  for (let page = 1; page <= targetPage; page++) {
+    const data = await fetchArticles(page);
+    allArticles.push(...data.results);
+    if (!data.next) {
+      hasMore = false;
+      break;
     }
-  }, []);
+  }
 
-  useEffect(() => {
-    loadArticles(currentPage);
-  }, [currentPage, loadArticles]);
+  return { articles: allArticles, hasMore };
+}
 
-  const loadMoreArticles = () => {
-    const nextPage = currentPage + 1;
-    router.push(`/articles?page=${nextPage}`, {
-      scroll: false,
-    });
-  };
+export default function Page({ searchParams }) {
+  const currentPage = parseInt(searchParams.page || "1", 10);
+  const { articles, hasMore } = use(getArticles(currentPage));
 
   const isEmpty = articles.length === 0;
 
@@ -82,7 +46,7 @@ export default function Page() {
         </h4>
       </div>
       <div className={styles.content}>
-        {isEmpty && !loading && !error && (
+        {isEmpty && (
           <div className={styles.empty}>
             <p>Статей нет</p>
           </div>
@@ -100,21 +64,15 @@ export default function Page() {
             </div>
           </div>
         ))}
-        {loading && (
-          <div className={styles.loading}>
-            <p>Загрузка...</p>
-          </div>
-        )}
-        {error && (
-          <div className={styles.error}>
-            <p>{error}</p>
-          </div>
-        )}
       </div>
-      {hasMore && !loading && !error && (
-        <button onClick={loadMoreArticles} className={styles.loadMore}>
+      {hasMore && (
+        <Link
+          href={`/articles?page=${currentPage + 1}`}
+          scroll={false}
+          className={styles.loadMore}
+        >
           Показать еще
-        </button>
+        </Link>
       )}
     </div>
   );
