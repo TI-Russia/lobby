@@ -33,23 +33,48 @@
       font-weight: 400;
       line-height: 26px;
 
+      @include ifdesktop {
+        color: var(--DB-Black-Text, #363636);
+        font-feature-settings: "clig" off, "liga" off;
+
+        /* Text/20px/Regular */
+        font-family: Arial;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 35px; /* 175% */
+      }
+
       img {
         width: 100%;
         aspect-ratio: 16 / 9;
         object-fit: cover;
         margin: 0 auto;
+        display: flex;
       }
 
       h1 {
         color: var(--DB-Black-Text, #363636);
         font-feature-settings: "clig" off, "liga" off;
 
-        /* Heading/06 */
+        /* Heading/07 */
         font-family: HeliosCond;
-        font-size: 28px;
+        font-size: 20px;
         font-style: normal;
         font-weight: 700;
-        line-height: 34px; /* 121.429% */
+        line-height: 28px; /* 140% */
+
+        @include ifdesktop {
+          color: var(--DB-Black-Text, #363636);
+          font-feature-settings: "clig" off, "liga" off;
+
+          /* Heading/06 */
+          font-family: HeliosCond;
+          font-size: 28px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 34px; /* 121.429% */
+        }
       }
 
       * + * {
