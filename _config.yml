@@ -109,3 +109,6 @@ exclude:
   - package.json
   - package-lock.json
   - README.md
+  - combined_build
+  - app
+  - public
