@@ -5,7 +5,6 @@ import "./modules/person-card";
 import "./tools/burger";
 import "./tools/scroll-to-top";
 
-import "./modules/data";
 import "./modules/intro";
 import "./modules/accordion";
 import "./modules/legend";

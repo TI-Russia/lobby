@@ -1,3 +1,5 @@
 User-agent: *
-Disallow: /assets/
-Disallow: /css/
+Allow: 
+Sitemap: https://dumabingo.org/sitemap.xml
+Crawl-delay: 5
+host:https://dumabingo.org/

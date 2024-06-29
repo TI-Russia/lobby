@@ -13,6 +13,7 @@ import { formatDate } from "../lib/date";
 import Data from "./data";
 import { FRACTIONS } from "../constants/fractions";
 import { addTargetBlank } from "./utils";
+import toastr from "toastr";
 
 const engine = new Liquid();
 
@@ -306,9 +307,8 @@ export function renderCard(data, cardNode = $("#card")) {
   const { square, income } = calclulateDeclarationHilights(
     declarations.results
   );
-  const { lawStatProposed, lawStatAccepted } = calculateLawStat(
-    depSuccessRate.success_rate
-  );
+  const { lawStatProposed, lawStatAccepted, lawStatLobbyist } =
+    calculateLawStat(depSuccessRate.success_rate);
   const prevConvocationUrl = calculatePrevConvocationUrl(depLobbistSmallData);
   template = engine.parse(originalTemplateHtml);
 
@@ -350,8 +350,9 @@ export function renderCard(data, cardNode = $("#card")) {
       tempComissionHtml: isSF
         ? getTempComissionText(depInfoLegacy.temp_commission)
         : "",
-      twPerson: `https://twitter.com/intent/tweet?url=http%3A%2F%2Fdumabingo.ru/${dirUrl}${depLobbistSmallData.person}&text=${depLobbistSmallData.fullname}`,
-      vkPerson: `http://vk.com/share.php?url=http%3A%2F%2Fdumabingo.ru/${dirUrl}${depLobbistSmallData.person}`,
+      shareUrl: `https://dumabingo.org/${dirUrl}${depLobbistSmallData.person}`,
+      twPerson: `https://twitter.com/intent/tweet?url=http%3A%2F%2Fdumabingo.org/${dirUrl}${depLobbistSmallData.person}&text=${depLobbistSmallData.fullname}`,
+      vkPerson: `https://vk.com/share.php?url=http%3A%2F%2Fdumabingo.org/${dirUrl}${depLobbistSmallData.person}`,
       openDeclaration: depLobbistSmallData.person
         ? `https://declarator.org/person/${depLobbistSmallData.person}`
         : null,
@@ -376,6 +377,13 @@ export function renderCard(data, cardNode = $("#card")) {
         "принят",
         "принято",
         "принято"
+      ),
+      lawStatLobbyist,
+      lawTextLobbyist: Pluralization(
+        lawStatLobbyist,
+        "потенциально лоббистская инициатива",
+        "потенциально лоббистские инициативы",
+        "потенциально лоббистских инициатив"
       ),
       lawTextDay: Pluralization(
         Math.floor(String(depRating.sred_day).replace(",", ".")),
@@ -521,12 +529,13 @@ function getLobbyMatrix(nodes, lobby_list) {
 }
 
 function calculateLawStat(depSuccessRate) {
-  const { filtered_number, approved_number } =
+  const { filtered_number, approved_number, lobbyist_number } =
     depSuccessRate[`convocation_${convocation}`] || {};
 
   return {
     lawStatProposed: filtered_number || 0,
     lawStatAccepted: approved_number || 0,
+    lawStatLobbyist: lobbyist_number || 0,
   };
 }
 
@@ -628,5 +637,20 @@ function calculatePrevConvocationUrl(depInfo) {
 
   return null;
 }
+
+function copyCardLink(shareUrl) {
+  const input = document.createElement("input");
+  input.value = shareUrl;
+  document.body.appendChild(input);
+  input.select();
+  document.execCommand("copy");
+  document.body.removeChild(input);
+
+  toastr.success("Ссылка скопирована в буфер обмена", undefined, {
+    positionClass: "toast-bottom-center",
+  });
+}
+
+window.copyCardLink = copyCardLink;
 
 export default ShowCard;

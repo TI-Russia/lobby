@@ -44,6 +44,10 @@ files.forEach(function (url) {
 });
 
 export function getFilesByType(type) {
+  if (!type) {
+    throw new Error("Type is not defined");
+  }
+
   return {
     duma_7: [
       "https://declarator.org/media/dumps/lobbist-small-d7.json",
@@ -68,8 +72,14 @@ export function getFilesByType(type) {
   }[type];
 }
 
-export async function getDataByType(type) {
+export async function test(type) {
+  return getDataByType(type);
+}
+export async function getDataByType(...args) {
+  const type = args[0];
+
   const files = getFilesByType(type);
+
   const promises = [];
 
   files.forEach(function (url) {

@@ -580,6 +580,10 @@ div#card {
         &.tw {
           background-color: #00b7f4;
         }
+        &.share {
+          background-color: #4a4a4a;
+          color: #fff;
+        }
       }
     }
   }
@@ -794,7 +798,20 @@ div#card {
     }
   }
 
+  #laws {
+    width: 100%;
+  }
+
+  #law_number_lobbyist {
+    max-width: 190px;
+
+    @include until($tablet) {
+      margin: 0 auto;
+    }
+  }
+
   .law_text {
+    width: 100%;
     padding-top: 0;
     font-size: 14px;
     color: $color-gray;

@@ -5,8 +5,12 @@ type: sf
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% include head.html %}
     <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta
       property="og:url"
       content="https://dumabingo.org/person_sf/{{page.person}}"
@@ -16,20 +20,43 @@ type: sf
       content="https://dumabingo.org/assets/images/preview_img_sf.jpg"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{site.title_sf}}: {{page.fullname}}" />
-    <meta property="og:description" content="Член Совета Федерации" />
-    <meta name="description" content="Член Совета Федерации" />
+    <meta
+      property="og:title"
+      content="{{page.fullname}} - кого лоббирует в Совфеде"
+    />
+    <meta
+      property="og:description"
+      content="Семейные связи и бизнес интересы, резонансные законы и полная биография каждого сенатора на сайте проекта о лоббизме «ДумаБинго»."
+    />
+    <meta
+      name="description"
+      content="Семейные связи и бизнес интересы, резонансные законы и полная биография каждого сенатора на сайте проекта о лоббизме «ДумаБинго»."
+    />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:description" content="Член Совета Федерации" />
+    <meta
+      property="twitter:description"
+      content="Семейные связи и бизнес интересы, резонансные законы и полная биография каждого сенатора на сайте проекта о лоббизме «ДумаБинго»."
+    />
     <meta
       property="twitter:title"
-      content="{{site.title}}: {{page.fullname}}"
+      content="{{page.fullname}} - кого лоббирует в Совфеде"
     />
     <meta
       property="twitter:image"
       content="https://dumabingo.org/assets/images/preview_img.png"
     />
-    <title>{{site.meta.title.sf}}: {{page.fullname}}</title>
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/sf.css" />
+    <link
+      rel="canonical"
+      href="https://dumabingo.org/person_sf/{{page.person}}/"
+    />
+    <!-- Подключение CSS для Toastr -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    />
+    {% include theme.html %}
+    <title>{{page.fullname}} - кого лоббирует в Совфеде</title>
   </head>
   <body>
     <script
