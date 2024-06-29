@@ -46,10 +46,6 @@ strong a {
   padding: 0;
 }
 
-a:not(.button) {
-  text-decoration: underline;
-}
-
 @mixin is-($color) {
   color: $color;
   fill: $color;

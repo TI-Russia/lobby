@@ -1,3 +1,4 @@
+import Footer from "./footer";
 import { Header } from "./header";
 
 export default function RootLayout({ children }) {
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
           }}
         />
         {children}
+        <Footer pageType="duma" />
       </body>
     </html>
   );
