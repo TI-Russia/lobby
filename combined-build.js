@@ -3,7 +3,7 @@ const fs = require("fs-extra");
 const path = require("path");
 
 const jekyllBuildDir = "_site"; // Стандартная директория сборки Jekyll
-const nextBuildDir = "out"; // Стандартная директория сборки Next.js
+const nextBuildDir = ".next"; // Стандартная директория сборки Next.js
 const combinedBuildDir = "combined_build"; // Директория для объединенной сборки
 
 function runCommand(command) {

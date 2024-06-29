@@ -42,11 +42,12 @@ const config = {
 export function Header({ pageType }) {
   const isSF = pageType === "sf" || pageType === "about_sf";
   const isDuma8 = pageType === "duma_8";
+  const isDuma7 = pageType === "duma_7";
 
-  if (isDuma8) {
-    require("../_sass/duma-8.scss");
-  } else if (!isSF) {
+  if (isDuma7) {
     require("../_sass/duma-7.scss");
+  } else if (isDuma8) {
+    require("../_sass/duma-8.scss");
   }
 
   return (

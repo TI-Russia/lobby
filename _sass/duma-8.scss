@@ -1,7 +1,7 @@
 @import url("https://use.fontawesome.com/releases/v5.15.1/css/all.css");
 
 $baseurl: "{{ site.baseurl }}";
-$key-color: $color-blue;
+$key-color: $color-dark-blue;
 
 @import "bulma/bulma.sass";
 @import "image.scss";
