@@ -1,8 +1,6 @@
 import processQuotes from "../../../utils/processQuotes";
-import { mockArticle } from "./article.mock";
 import styles from "./page.module.scss";
 
-// https://declarator.org/api/v1/news/2
 export async function getArcticle(id) {
   const response = await fetch(`https://declarator.org/api/v1/news/${id}`);
   const data = await response.json();
@@ -11,8 +9,6 @@ export async function getArcticle(id) {
 
 export default async function ArticlePage({ params }) {
   const article = await getArcticle(params.id);
-  const id = params.id;
-  // const article = mockArticle;
 
   return (
     <div className={styles.page}>
