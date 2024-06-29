@@ -27,51 +27,59 @@ const config = {
     duma_8: "https://feedback-duma-url.com",
   },
   researchUrl: "https://research-url.com",
+  metaDescription: {
+    sf: "Мы рассказываем о сенаторах Совета Федерации, которые служат не только народу",
+    about_sf:
+      "Мы рассказываем о сенаторах Совета Федерации, которые служат не только народу",
+    duma_7:
+      "Мы рассказываем о депутатах Государственной Думы, которые служат не только народу",
+    duma_8:
+      "Мы рассказываем о депутатах Государственной Думы, которые служат не только народу",
+  },
 };
 
 export function Header({ pageType }) {
-  const logoSrc = `/assets/images/logo/logo-${
-    pageType === "sf" || pageType === "about_sf"
-      ? "sf"
-      : pageType === "duma_7"
-      ? "7"
-      : "8"
-  }.svg`;
-  const logoAlt = "Лоббизм";
-  const noLogoSrc = `/assets/images/logo/lobbism_no_logo.svg`;
-
-  const isDuma8 = pageType === "duma_8";
-  const isDuma7 = pageType === "duma_7";
   const isSF = pageType === "sf" || pageType === "about_sf";
+  const isDuma8 = pageType === "duma_8";
 
   return (
     <header className="hero-head">
       <div className="columns is-mobile">
         <div className="column c1" id="header-title">
           <Link href={`${config.baseUrl}/${config.logoRedirect[pageType]}`}>
-            {isSF || isDuma7 || isDuma8 ? (
-              <img className="logo" src={logoSrc} alt={logoAlt} />
-            ) : (
-              <img className="no-logo" src={noLogoSrc} alt={logoAlt} />
+            {(pageType === "sf" || pageType === "about_sf") && (
+              <img
+                className="logo"
+                src={`${config.baseUrl}/assets/images/logo/logo-sf.svg`}
+                alt="Лоббизм"
+              />
             )}
+            {pageType === "duma_7" && (
+              <img
+                className="logo"
+                src={`${config.baseUrl}/assets/images/logo/logo-7.svg`}
+                alt="Лоббизм"
+              />
+            )}
+            {(pageType === "duma_8" || pageType === "contribute") && (
+              <img
+                className="logo"
+                src={`${config.baseUrl}/assets/images/logo/logo-8.svg`}
+                alt="Лоббизм"
+              />
+            )}
+            <img
+              className="no-logo"
+              src={`${config.baseUrl}/assets/images/logo/lobbism_no_logo.svg`}
+              alt="Лоббизм"
+            />
           </Link>
           <HeaderSelector selectedPage={pageType} />
         </div>
         <div className="column c2">
           <h2>
-            {isSF ? (
-              <>
-                <span>Какие сенаторы служат</span>
-                <br />
-                <span>не только народу</span>
-              </>
-            ) : (
-              <>
-                <span>Какие депутаты служат</span>
-                <br />
-                <span>не только народу</span>
-              </>
-            )}
+            Какие {isSF ? "сенаторы" : "депутаты"} служат <br />
+            не только народу
           </h2>
         </div>
         <div className="column is-pulled-right c3">
@@ -155,7 +163,7 @@ export function Header({ pageType }) {
           <a
             href={`https://twitter.com/intent/tweet?url=https%3A%2F%2Fdumabingo.ru%2F${
               isSF ? "sf" : ""
-            }&text=${encodeURIComponent("Описание для твита")}`}
+            }&text=${encodeURIComponent(config.metaDescription[pageType])}`}
             target="_blank"
             rel="noopener noreferrer"
             className="c5"

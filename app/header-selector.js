@@ -17,9 +17,7 @@ const HeaderSelector = (props) => {
         setIsOpen(false);
       }
     };
-
     document.addEventListener("click", handleClickOutside);
-
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
@@ -29,7 +27,7 @@ const HeaderSelector = (props) => {
     <div
       id="header-selector"
       className={clsx("selector-control", {
-        [`${"selector-control_open"}`]: isOpen,
+        "selector-control_open": isOpen,
       })}
       ref={headerSelectorRef}
       onClick={toggleOpen}
