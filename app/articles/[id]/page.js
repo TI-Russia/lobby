@@ -3,6 +3,8 @@ import processQuotes from "../../../utils/processQuotes";
 import styles from "./page.module.scss";
 import clsx from "clsx";
 import { truncate } from "../../../utils/truncate";
+import { Article } from "../../../ui/article";
+import { fetchArticles } from "../../../api/fetch-articles";
 
 export async function getArcticle(id) {
   const response = await fetch(`https://declarator.org/api/v1/news/${id}`);
@@ -14,6 +16,7 @@ const MAX_TRUNCATE = 52;
 
 export default async function ArticlePage({ params }) {
   const article = await getArcticle(params.id);
+  const data = await fetchArticles(1);
 
   return (
     <div className={styles.page}>
@@ -109,6 +112,14 @@ export default async function ArticlePage({ params }) {
           )}
         </div>
         <div className={styles.divider} />
+        <div className={styles.related}>
+          <h6 className={styles.title}>Похожие статьи</h6>
+          <div className={styles.articles}>
+            {data.results.map((item) => (
+              <Article key={item.id} item={item} />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

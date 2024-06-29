@@ -1,19 +1,8 @@
 import { use } from "react";
 import Link from "next/link";
 import styles from "./page.module.scss";
-
-async function fetchArticles(page) {
-  const response = await fetch(
-    `https://declarator.org/api/v1/news/?page=${page}`,
-    { next: { revalidate: 3600 } } // Перепроверять кеш каждый час
-  );
-
-  if (!response.ok) {
-    throw new Error("Не удалось загрузить статьи");
-  }
-
-  return response.json();
-}
+import { Article } from "../../ui/article";
+import { fetchArticles } from "../../api/fetch-articles";
 
 async function getArticles(targetPage) {
   let allArticles = [];
@@ -52,17 +41,7 @@ export default function Page({ searchParams }) {
           </div>
         )}
         {articles.map((item) => (
-          <div key={item.id} className={styles.item}>
-            <img src={item.image} alt={item.title} className={styles.image} />
-            <div className={styles.body}>
-              <p className={styles.date}>{item.pubdate}</p>
-              <h3 className={styles.title}>{item.title}</h3>
-              <p className={styles.lead}>{item.lead}</p>
-              <Link href={`/articles/${item.id}`} className={styles.link}>
-                Читать больше
-              </Link>
-            </div>
-          </div>
+          <Article key={item.id} item={item} />
         ))}
       </div>
       {hasMore && (
