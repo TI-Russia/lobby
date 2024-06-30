@@ -1,5 +1,5 @@
 import Link from "next/link";
-import processQuotes from "../../../utils/processQuotes";
+import processContent from "../../../utils/processContent";
 import styles from "./page.module.scss";
 import clsx from "clsx";
 import { truncate } from "../../../utils/truncate";
@@ -34,6 +34,7 @@ export async function generateMetadata({ params }) {
 export default async function ArticlePage({ params }) {
   const article = await getArcticle(params.id);
   const data = await fetchArticles(1);
+  const processedContent = processContent(article.content);
 
   return (
     <div className={styles.page}>
@@ -82,7 +83,9 @@ export default async function ArticlePage({ params }) {
         <div className={styles.content}>
           <div
             className={styles.body}
-            dangerouslySetInnerHTML={{ __html: processQuotes(article.content) }}
+            dangerouslySetInnerHTML={{
+              __html: processedContent,
+            }}
           ></div>
         </div>
       </div>
