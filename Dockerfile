@@ -16,7 +16,7 @@ COPY Gemfile Gemfile.lock ./
 # Установка гемов
 RUN bundle install
 
-# Копирование package.json и yarn.lock (если есть)
+# Копирование package.json
 COPY package.json package-lock.json ./
 
 # Установка npm пакетов
@@ -25,8 +25,8 @@ RUN npm install
 # Копирование остальных файлов проекта
 COPY . .
 
-# Команда для сборки приложения (замените на вашу команду)
+# Команда для сборки приложения
 RUN npm run build:combined
 
-# Команда для запуска приложения (замените на вашу команду)
+# Команда для запуска приложения
 CMD ["node", "prod-mode.js"]
