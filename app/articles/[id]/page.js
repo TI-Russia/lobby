@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { truncate } from "../../../utils/truncate";
 import { Article } from "../../../ui/article/article";
 import { fetchArticles } from "../../../api/fetch-articles";
+import { format } from "date-fns";
 
 export async function getArcticle(id) {
   const response = await fetch(`https://declarator.org/api/v1/news/${id}`, {
@@ -71,7 +72,7 @@ export default async function ArticlePage({ params }) {
                   />
                 </svg>
                 <span className={styles.text}>
-                  {article.pub_date.replace(/-/g, ".")}
+                  {format(new Date(article.pub_date), "dd.MM.yyyy")}
                 </span>
               </div>
             )}
