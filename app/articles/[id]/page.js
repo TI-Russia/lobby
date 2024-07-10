@@ -7,7 +7,9 @@ import { Article } from "../../../ui/article/article";
 import { fetchArticles } from "../../../api/fetch-articles";
 
 export async function getArcticle(id) {
-  const response = await fetch(`https://declarator.org/api/v1/news/${id}`);
+  const response = await fetch(`https://declarator.org/api/v1/news/${id}`, {
+    next: { revalidate: 3600 },
+  });
   const data = await response.json();
   return data;
 }
