@@ -52,7 +52,7 @@ export default async function ArticlePage({ params }) {
               </p>
               <h1 className={styles.title}>{article.title}</h1>
             </div>
-            {article.pubdate && (
+            {article.pub_date && (
               <div className={styles.date}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@ export default async function ArticlePage({ params }) {
                   />
                 </svg>
                 <span className={styles.text}>
-                  {article.pubdate.replace(/-/g, ".")}
+                  {article.pub_date.replace(/-/g, ".")}
                 </span>
               </div>
             )}
