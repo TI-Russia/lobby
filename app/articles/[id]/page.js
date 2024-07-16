@@ -9,7 +9,7 @@ import { format } from "date-fns";
 
 export async function getArcticle(id) {
   const response = await fetch(`https://declarator.org/api/v1/news/${id}`, {
-    next: { revalidate: 3600 },
+    cache: "no-cache",
   });
   const data = await response.json();
   return data;

@@ -1,7 +1,7 @@
 export async function fetchArticles(page) {
   const response = await fetch(
     `https://declarator.org/api/v1/news/?page=${page}`,
-    { next: { revalidate: 3600 } } // Перепроверять кеш каждый час
+    { cache: "no-cache" }
   );
 
   if (!response.ok) {
