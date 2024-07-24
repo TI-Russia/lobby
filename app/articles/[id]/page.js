@@ -37,6 +37,7 @@ export async function generateMetadata({ params }) {
 export default async function ArticlePage({ params }) {
   const article = await getArcticle(params.id);
   const data = await fetchArticles(1);
+  const related = data.results.filter((item) => item.id !== article.id);
   const processedContent = processContent(article.content);
 
   return (
@@ -93,56 +94,70 @@ export default async function ArticlePage({ params }) {
         </div>
       </div>
       <div className={styles.after}>
-        <div className={styles.divider} />
-        <div
-          className={clsx(styles.links, !article.previous && styles.nextOnly)}
-        >
-          {article.previous && (
-            <Link
-              className={styles.link}
-              href={`/articles/${article.previous.id}`}
+        {(article.previous || article.next) && (
+          <>
+            <div className={styles.divider} />
+            <div
+              className={clsx(
+                styles.links,
+                !article.previous && styles.nextOnly
+              )}
             >
-              <p className={styles.text}>Предыдущая</p>
-              <div className={styles.preview}>
-                <img
-                  src={"https://declarator.org" + article.previous.image}
-                  alt={article.previous.title}
-                  className={styles.image}
-                />
-                <p className={styles.title}>
-                  {truncate(article.previous.title, MAX_TRUNCATE)}
-                </p>
+              {article.previous && (
+                <Link
+                  className={styles.link}
+                  href={`/articles/${article.previous.id}`}
+                >
+                  <p className={styles.text}>Предыдущая</p>
+                  <div className={styles.preview}>
+                    <img
+                      src={"https://declarator.org" + article.previous.image}
+                      alt={article.previous.title}
+                      className={styles.image}
+                    />
+                    <p className={styles.title}>
+                      {truncate(article.previous.title, MAX_TRUNCATE)}
+                    </p>
+                  </div>
+                </Link>
+              )}
+              {article.next && (
+                <Link
+                  className={clsx(styles.link, styles.next)}
+                  href={`/articles/${article.next.id}`}
+                >
+                  <p className={styles.text}>Следующая</p>
+                  <div className={styles.preview}>
+                    <img
+                      src={"https://declarator.org" + article.next.image}
+                      alt={article.next.title}
+                      className={styles.image}
+                    />
+                    <p className={styles.title}>
+                      {truncate(article.next.title, MAX_TRUNCATE)}
+                    </p>
+                  </div>
+                </Link>
+              )}
+            </div>
+          </>
+        )}
+
+        {related.length > 0 && (
+          <>
+            (
+            <div className={styles.divider} />
+            <div className={styles.related}>
+              <h6 className={styles.title}>Похожие статьи</h6>
+              <div className={styles.articles}>
+                {related.map((item) => (
+                  <Article key={item.id} item={item} />
+                ))}
               </div>
-            </Link>
-          )}
-          {article.next && (
-            <Link
-              className={clsx(styles.link, styles.next)}
-              href={`/articles/${article.next.id}`}
-            >
-              <p className={styles.text}>Следующая</p>
-              <div className={styles.preview}>
-                <img
-                  src={"https://declarator.org" + article.next.image}
-                  alt={article.next.title}
-                  className={styles.image}
-                />
-                <p className={styles.title}>
-                  {truncate(article.next.title, MAX_TRUNCATE)}
-                </p>
-              </div>
-            </Link>
-          )}
-        </div>
-        <div className={styles.divider} />
-        <div className={styles.related}>
-          <h6 className={styles.title}>Похожие статьи</h6>
-          <div className={styles.articles}>
-            {data.results.map((item) => (
-              <Article key={item.id} item={item} />
-            ))}
-          </div>
-        </div>
+            </div>
+            )
+          </>
+        )}
       </div>
     </div>
   );
