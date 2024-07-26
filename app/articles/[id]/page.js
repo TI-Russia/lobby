@@ -142,10 +142,8 @@ export default async function ArticlePage({ params }) {
             </div>
           </>
         )}
-
         {related.length > 0 && (
           <>
-            (
             <div className={styles.divider} />
             <div className={styles.related}>
               <h6 className={styles.title}>Похожие статьи</h6>
@@ -155,7 +153,6 @@ export default async function ArticlePage({ params }) {
                 ))}
               </div>
             </div>
-            )
           </>
         )}
       </div>

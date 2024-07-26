@@ -11,7 +11,7 @@
 
   @include iftablet {
     width: 100%;
-    max-width: 480px;
+    max-width: 70%;
     margin: 0 auto;
   }
 
@@ -46,7 +46,8 @@
       }
 
       img {
-        width: 100%;
+        height: auto !important;
+        width: 100% !important;
         aspect-ratio: 16 / 9;
         object-fit: cover;
         margin: 0 auto;
