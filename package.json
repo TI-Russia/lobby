@@ -18,7 +18,8 @@
     "build:next": "next build",
     "build:combined": "node combined-build.js",
     "serve:combined": "node serve-combined.js",
-    "dev:combined": "node dev-mode.js"
+    "dev:combined": "node dev-mode.js",
+    "docker:build": "docker build --platform linux/amd64 -t dumabingo ."
   },
   "repository": {
     "type": "git",
