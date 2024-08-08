@@ -212,11 +212,12 @@
 
   @include iftablet {
     width: 100%;
-    max-width: 480px;
+    max-width: 70%;
   }
 
   @include ifdesktop {
-    max-width: 1108px;
+    padding: 0;
+    max-width: 906px;
   }
 
   .related {
