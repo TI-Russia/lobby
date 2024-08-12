@@ -26,7 +26,6 @@ export default function RootLayout({ children }) {
         <script>
           {`
             <!-- Yandex.Metrika counter -->
-            <script type="text/javascript" >
                 (function (d, w, c) {
                     (w[c] = w[c] || []).push(function() {
                         try {
@@ -54,11 +53,18 @@ export default function RootLayout({ children }) {
                         d.addEventListener("DOMContentLoaded", f, false);
                     } else { f(); }
                 })(document, window, "yandex_metrika_callbacks");
-            </script>
-            <noscript><div><img src="https://mc.yandex.ru/watch/51964349" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
             <!-- /Yandex.Metrika counter -->
             `}
         </script>
+        <noscript>
+          <div>
+            <img
+              src="https://mc.yandex.ru/watch/51964349"
+              style="position:absolute; left:-9999px;"
+              alt=""
+            />
+          </div>
+        </noscript>
         <script
           async
           src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
