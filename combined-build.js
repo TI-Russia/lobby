@@ -28,6 +28,10 @@ async function combinedBuild() {
     console.log("Building Jekyll...");
     await runCommand("npm-run-all build:js:deps build:js:app build:jekyll");
 
+    await fs.move("_site/assets/js", "public/assets/js", {
+      overwrite: true,
+    });
+
     // Шаг 2: Сборка Next.js
     console.log("Building Next.js...");
     await runCommand("next build");

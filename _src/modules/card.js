@@ -471,9 +471,14 @@ function getPositionSF(info) {
   chem += ", ";
 
   let chlen = position + comitet.replace("Комитет ", " ");
-  if (comitet !== " ") chlen += ", ";
-  const delegirovan =
+  const isComitetHasHtmlTags = comitet.includes("<");
+
+  if (comitet !== " " && !isComitetHasHtmlTags) chlen += ", ";
+  let delegirovan =
     gender == "ж" || gender == "f" ? "делегирована " : "делегирован ";
+  if (isComitetHasHtmlTags) {
+    delegirovan = delegirovan.charAt(0).toUpperCase() + delegirovan.slice(1);
+  }
   const vsovete = "в Совете Федерации с " + info.start_year + " года";
   const predstavitel = region ? ". Представитель " + region : "";
 

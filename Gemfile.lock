@@ -71,6 +71,7 @@ GEM
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2023.3)
       tzinfo (>= 1.0.0)
+    webrick (1.8.1)
 
 PLATFORMS
   arm64-darwin-23
@@ -85,6 +86,10 @@ DEPENDENCIES
   minima (~> 2.0)
   rexml
   tzinfo-data
+  webrick (~> 1.7)
+
+RUBY VERSION
+   ruby 3.2.0p0
 
 BUNDLED WITH
    2.4.15
