@@ -60,7 +60,10 @@ export default function RootLayout({ children }) {
           <div>
             <img
               src="https://mc.yandex.ru/watch/51964349"
-              style="position:absolute; left:-9999px;"
+              style={{
+                position: "absolute",
+                left: "-9999px",
+              }}
               alt=""
             />
           </div>
