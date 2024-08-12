@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           gtag("config", "G-RB4VVKFKG4");
         `}
         </Script>
-        <script>
+        <Script>
           {`
             <!-- Yandex.Metrika counter -->
                 (function (d, w, c) {
@@ -55,7 +55,7 @@ export default function RootLayout({ children }) {
                 })(document, window, "yandex_metrika_callbacks");
             <!-- /Yandex.Metrika counter -->
             `}
-        </script>
+        </Script>
         <noscript>
           <div>
             <img
