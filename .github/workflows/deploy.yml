@@ -31,8 +31,8 @@ jobs:
             image_name=${{ github.repository }}:${{ github.sha }}
             port_mapping="3000:3000"
 
-            # Сборка с помощью Nixpacks
-            docker build . --tag $image_name
+            # Сборка с помощью Docker
+            docker build -t $image_name .
 
             # Остановка и удаление существующего контейнера
             if [ "$(docker ps -aq -f name=$container_name)" ]; then
