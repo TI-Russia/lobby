@@ -1,0 +1,45 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy and build on server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # Создание временной директории
+            temp_dir=$(mktemp -d)
+            cd $temp_dir
+
+            # Клонирование репозитория с использованием встроенного токена
+            git clone https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git app
+            cd app
+            git checkout ${{ github.ref_name }}
+
+            # Определение имени контейнера и портов
+            container_name=${{ github.event.repository.name }}
+            port_mapping="3000:3000"
+
+            # Сборка с помощью Nixpacks
+            nixpacks build . --name $container_name --build-cmd 'npm run build' --start-cmd 'npm run start'
+
+            # Остановка и удаление существующего контейнера
+            if [ "$(docker ps -aq -f name=$container_name)" ]; then
+                docker rm -f $container_name
+            fi
+
+            # Запуск нового контейнера
+            docker run -d --name $container_name -p $port_mapping $container_name
+
+            # Очистка
+            cd ../..
+            rm -rf $temp_dir
