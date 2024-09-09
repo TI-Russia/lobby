@@ -31,7 +31,7 @@ jobs:
             port_mapping="3000:3000"
 
             # Сборка с помощью Nixpacks
-            nixpacks build . -t $container_name --build-cmd 'npm run build' --start-cmd 'npm run start'
+            nixpacks build . --tag $container_name --build-cmd 'npm run build' --start-cmd 'npm run start'
 
             # Остановка и удаление существующего контейнера
             if [ "$(docker ps -aq -f name=$container_name)" ]; then
