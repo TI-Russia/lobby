@@ -28,7 +28,7 @@ jobs:
             # Определение имени контейнера и портов
             container_name=${{ github.event.repository.name }}
             image_name=${{ github.repository }}:${{ github.sha }}
-            port_mapping="3000:3000"
+            port_mapping="3000:8080"
 
             # Сборка с помощью Docker
             docker build -t $image_name .
