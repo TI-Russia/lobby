@@ -16,7 +16,6 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            sudo su <<EOF
             # Создание временной директории
             temp_dir=$(mktemp -d)
             cd $temp_dir
@@ -45,4 +44,3 @@ jobs:
             # Очистка
             cd ../..
             rm -rf $temp_dir
-            EOF
