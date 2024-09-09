@@ -27,7 +27,7 @@ jobs:
             git checkout ${{ github.ref_name }}
 
             # Определение имени контейнера и портов
-            container_name=${{ github.event.repository.name }}
+            container_name=${{ github.repository }}:${{ github.sha }}
             port_mapping="3000:3000"
 
             # Сборка с помощью Nixpacks
