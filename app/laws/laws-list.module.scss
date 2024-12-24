@@ -105,12 +105,13 @@
   flex-shrink: 0;
   flex-wrap: wrap;
   min-height: 28px;
+  width: 100%;
+  overflow: auto;
 }
 
 .keyword {
   display: flex;
   padding: 3px 12px;
-  justify-content: center;
   align-items: center;
   gap: 8px;
 
@@ -126,6 +127,13 @@
   font-style: normal;
   font-weight: 400;
   line-height: 22px; /* 157.143% */
+
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  display: block;
 }
 
 .noResults {
