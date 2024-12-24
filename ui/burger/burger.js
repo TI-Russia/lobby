@@ -37,6 +37,9 @@ const Burger = ({ pageType, config }) => {
         <Link href={`${config.baseUrl}/${config.menuAboutUrl[pageType]}`}>
           О&nbsp;проекте
         </Link>
+        <Link href={`${config.baseUrl}/${config.pageUrls.laws}`}>
+          Законопроекты
+        </Link>
         {isDuma8 && (
           <a
             href={config.researchUrl}
@@ -76,6 +79,11 @@ const Burger = ({ pageType, config }) => {
         <li>
           <Link href={`${config.baseUrl}/${config.menuAboutUrl[pageType]}`}>
             О&nbsp;проекте
+          </Link>
+        </li>
+        <li>
+          <Link href={`${config.baseUrl}/${config.pageUrls.laws}`}>
+            Законопроекты
           </Link>
         </li>
         {isDuma8 && (

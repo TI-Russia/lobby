@@ -1,97 +1,49 @@
 import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const query = searchParams.get("query")?.toLowerCase();
-  const fraction = searchParams.get("fraction")?.toLowerCase();
-  const committee = searchParams.get("committee")?.toLowerCase();
-  const convocation = searchParams.get("convocation");
-  const id = searchParams.get("id");
-  const person = searchParams.get("person");
-
   try {
-    let deputies = [];
+    // Получаем данные из обоих созывов
+    const [d7Response, d8Response] = await Promise.all([
+      fetch("https://declarator.org/media/dumps/lobbist-small-d7.json"),
+      fetch("https://declarator.org/media/dumps/lobbist-small-d8.json"),
+    ]);
 
-    if (convocation === "7") {
-      // Только 7-й созыв
-      const response = await fetch(
-        "https://declarator.org/media/dumps/lobbist-small-d7.json"
-      );
-      deputies = await response.json();
-    } else if (convocation === "8") {
-      // Только 8-й созыв
-      const response = await fetch(
-        "https://declarator.org/media/dumps/lobbist-small-d8.json"
-      );
-      deputies = await response.json();
-    } else {
-      // Получаем данные из обоих созывов
-      const [d7Response, d8Response] = await Promise.all([
-        fetch("https://declarator.org/media/dumps/lobbist-small-d7.json"),
-        fetch("https://declarator.org/media/dumps/lobbist-small-d8.json"),
-      ]);
+    const [d7Data, d8Data] = await Promise.all([
+      d7Response.json(),
+      d8Response.json(),
+    ]);
 
-      const [d7Data, d8Data] = await Promise.all([
-        d7Response.json(),
-        d8Response.json(),
-      ]);
+    // Объединяем депутатов и группируем по person ID
+    const deputiesByPerson = new Map();
 
-      deputies = [...d7Data, ...d8Data];
-    }
-
-    // Поиск по ID
-    if (id) {
-      deputies = deputies.filter((deputy) => deputy.id === parseInt(id));
-      // Если нашли депутата, сразу возвращаем его
-      if (deputies.length > 0) {
-        return NextResponse.json({
-          results: deputies,
-          total: deputies.length,
-          convocation: convocation || "all",
+    // Функция для добавления депутата в Map
+    const addDeputy = (deputy) => {
+      if (!deputiesByPerson.has(deputy.person)) {
+        deputiesByPerson.set(deputy.person, {
+          person: deputy.person,
+          fullname: deputy.fullname,
+          convocations: new Set(),
         });
       }
-    }
 
-    // Поиск по person ID
-    if (person) {
-      deputies = deputies.filter(
-        (deputy) => deputy.person === parseInt(person)
-      );
-      // Если нашли депутата, сразу возвращаем его
-      if (deputies.length > 0) {
-        return NextResponse.json({
-          results: deputies,
-          total: deputies.length,
-          convocation: convocation || "all",
-        });
-      }
-    }
+      const existingDeputy = deputiesByPerson.get(deputy.person);
+      existingDeputy.convocations.add(deputy.convocation);
+    };
 
-    // Поиск по ФИО
-    if (query) {
-      deputies = deputies.filter((deputy) =>
-        deputy.fullname.toLowerCase().includes(query)
-      );
-    }
+    // Добавляем депутатов из обоих созывов
+    [...d7Data, ...d8Data].forEach(addDeputy);
 
-    // Фильтр по фракции
-    if (fraction) {
-      deputies = deputies.filter((deputy) =>
-        deputy.fraction?.toLowerCase().includes(fraction)
-      );
-    }
-
-    // Фильтр по комитету
-    if (committee) {
-      deputies = deputies.filter((deputy) =>
-        deputy.committee?.toLowerCase().includes(committee)
-      );
-    }
+    // Преобразуем Map в массив и форматируем данные
+    const uniqueDeputies = Array.from(deputiesByPerson.values()).map(
+      (deputy) => ({
+        ...deputy,
+        convocations: Array.from(deputy.convocations),
+      })
+    );
 
     return NextResponse.json({
-      results: deputies,
-      total: deputies.length,
-      convocation: convocation || "all",
+      results: uniqueDeputies,
+      total: uniqueDeputies.length,
     });
   } catch (error) {
     return NextResponse.json(

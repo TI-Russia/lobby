@@ -21,6 +21,8 @@ export async function GET(request: Request) {
       "https://declarator.org/api/law_draft_api/?page=1"
     );
     const firstPageData = await firstPageResponse.json();
+    // TODO: remove this
+    firstPageData.count = 100;
     const totalPages = Math.ceil(firstPageData.count / ITEMS_PER_PAGE);
 
     // Получаем все страницы параллельно
@@ -61,10 +63,10 @@ export async function GET(request: Request) {
     if (query) {
       allResults = allResults.filter(
         (law) =>
-          law.name.toLowerCase().includes(query.toLowerCase()) ||
-          law.number.toLowerCase().includes(query.toLowerCase()) ||
-          law.keywords.includes(query.toLowerCase()) ||
-          law.core.toLowerCase().includes(query.toLowerCase())
+          law.name?.toLowerCase().includes(query.toLowerCase()) ||
+          law.number?.toLowerCase().includes(query.toLowerCase()) ||
+          law.keywords?.includes(query.toLowerCase()) ||
+          law.core?.toLowerCase().includes(query.toLowerCase())
       );
     }
 

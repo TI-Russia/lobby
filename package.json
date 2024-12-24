@@ -16,6 +16,7 @@
     "build:js:app": "gulp build:app",
     "dev": "next dev",
     "build:next": "next build",
+    "start:next": "next start",
     "build:combined": "node combined-build.js",
     "serve:combined": "node serve-combined.js",
     "dev:combined": "node dev-mode.js",

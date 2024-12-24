@@ -6,14 +6,7 @@ import { truncate } from "../../../utils/truncate";
 import { Article } from "../../../ui/article/article";
 import { fetchArticles } from "../../../api/fetch-articles";
 import { format } from "date-fns";
-
-export async function getArcticle(id) {
-  const response = await fetch(`https://declarator.org/api/v1/news/${id}`, {
-    cache: "no-cache",
-  });
-  const data = await response.json();
-  return data;
-}
+import { getArcticle } from "./getArcticle";
 
 const MAX_TRUNCATE = 52;
 
