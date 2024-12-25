@@ -31,6 +31,7 @@ export function FilterForm({ searchParams, deputies, themes }) {
       <div className={styles.grid}>
         {/* Поиск */}
         <div className={clsx(styles.formGroup, styles.searchFormGroup)}>
+          <label className={styles.label}>Поиск</label>
           <div className={styles.searchWrapper}>
             <input
               type="text"
@@ -44,28 +45,33 @@ export function FilterForm({ searchParams, deputies, themes }) {
 
         {/* Дата от */}
         <div className={styles.formGroup}>
-          {/* <label className={styles.label}>Дата от</label> */}
-          <input
-            type="date"
-            name="dateFrom"
-            className={styles.input}
-            defaultValue={searchParams?.dateFrom || ""}
-          />
+          <label className={styles.label}>Дата от</label>
+          <div className={styles.selectWrapper}>
+            <input
+              type="date"
+              name="dateFrom"
+              className={styles.input}
+              defaultValue={searchParams?.dateFrom || ""}
+            />
+          </div>
         </div>
 
         {/* Дата до */}
-        {/* <div className={styles.formGroup}>
+        <div className={styles.formGroup}>
           <label className={styles.label}>Дата до</label>
-          <input
-            type="date"
-            name="dateTo"
-            className={styles.input}
-            defaultValue={searchParams?.dateTo || ""}
-          />
-        </div> */}
+          <div className={styles.selectWrapper}>
+            <input
+              type="date"
+              name="dateTo"
+              className={styles.input}
+              defaultValue={searchParams?.dateTo || ""}
+            />
+          </div>
+        </div>
 
         {/* Тема */}
         <div className={styles.formGroup}>
+          <label className={styles.label}>Тема</label>
           <div className={styles.selectWrapper}>
             <select
               name="theme"
@@ -84,6 +90,7 @@ export function FilterForm({ searchParams, deputies, themes }) {
 
         {/* Депутат */}
         <div className={styles.formGroup}>
+          <label className={styles.label}>Депутат</label>
           <div className={styles.selectWrapper}>
             <select
               name="deputy"
@@ -95,28 +102,32 @@ export function FilterForm({ searchParams, deputies, themes }) {
                 ?.sort((a, b) => a.fullname.localeCompare(b.fullname))
                 .map((deputy) => (
                   <option key={deputy.person} value={deputy.person.toString()}>
-                    {deputy.fullname} -{" "}
-                    {deputy.convocations.map((c) => c + " созыв").join(", ")}
+                    {deputy.fullname}
                   </option>
                 ))}
             </select>
           </div>
         </div>
 
-        <button
-          type="button"
-          className={styles.resetButton}
-          onClick={() => {
-            router.push("/laws");
-            // Очищаем значения формы
-            const form = document.querySelector("form");
-            if (form) {
-              form.reset();
-            }
-          }}
-        >
-          Сбросить все фильтры
-        </button>
+        <div className={styles.buttonGroup}>
+          <button type="submit" className={styles.applyButton}>
+            Применить
+          </button>
+          <button
+            type="button"
+            className={styles.resetButton}
+            onClick={() => {
+              router.push("/laws");
+              // Очищаем значения формы
+              const form = document.querySelector("form");
+              if (form) {
+                form.reset();
+              }
+            }}
+          >
+            Сбросить все фильтры
+          </button>
+        </div>
       </div>
     </form>
   );

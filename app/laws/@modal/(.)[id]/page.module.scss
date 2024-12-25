@@ -1,0 +1,56 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 100;
+
+  @include iftablet {
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include ifdesktop {
+    justify-content: flex-end;
+  }
+}
+
+.content {
+  background: #f4f4f4;
+  width: 100%;
+  max-width: 506px;
+  height: auto;
+  overflow-y: auto;
+  padding: 16px;
+  position: relative;
+
+  @include iftablet {
+    height: 90vh;
+  }
+
+  @include ifdesktop {
+    height: 100%;
+    box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  font-size: 24px;
+  color: #747474;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

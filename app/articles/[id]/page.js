@@ -10,7 +10,8 @@ import { getArcticle } from "./getArcticle";
 
 const MAX_TRUNCATE = 52;
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata(props) {
+  const params = await props.params;
   // read route params
   const id = params.id;
 
@@ -27,7 +28,8 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function ArticlePage({ params }) {
+export default async function ArticlePage(props) {
+  const params = await props.params;
   const article = await getArcticle(params.id);
   const data = await fetchArticles(1);
   const related = data.results.filter((item) => item.id !== article.id);

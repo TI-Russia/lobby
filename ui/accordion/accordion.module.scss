@@ -1,0 +1,85 @@
+.accordion {
+  background-color: white;
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+  margin-left: -16px;
+  margin-right: -16px;
+
+  @include iftablet {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  & ~ & {
+    border-top: none;
+  }
+
+  &Title {
+    align-items: center;
+    display: flex;
+    height: 42px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    padding: 0 16px;
+    cursor: pointer;
+    color: #363636;
+
+    &:before {
+      content: "";
+      display: inline-flex;
+      width: 12px;
+      height: 12px;
+      margin-right: 12px;
+      background-image: url(/assets/images/arrow.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      transition: transform 0.2s ease;
+    }
+  }
+
+  &Content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.2s ease-out;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: #dbdbdb;
+      opacity: 0;
+      transition: opacity 0.2s ease-out;
+    }
+
+    > div {
+      overflow: hidden;
+    }
+  }
+
+  &_expand {
+    .accordionTitle:before {
+      transform: rotate(180deg);
+    }
+
+    .accordionContent {
+      grid-template-rows: 1fr;
+
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+
+  .inner {
+    padding: 16px;
+    font-size: 16px;
+    line-height: 21px;
+    color: #363636;
+  }
+}

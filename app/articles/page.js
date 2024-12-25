@@ -25,7 +25,8 @@ export const metadata = {
   description: "Последние статьи и ресурсы, подготовленные нашим сообществом",
 };
 
-export default function Page({ searchParams }) {
+export default function Page(props) {
+  const searchParams = use(props.searchParams);
   const currentPage = parseInt(searchParams.page || "1", 10);
   const { articles, hasMore } = use(getArticles(currentPage));
 

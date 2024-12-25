@@ -44,7 +44,8 @@ async function getData(searchParams) {
   };
 }
 
-export default function Page({ searchParams }) {
+export default function Page(props) {
+  const searchParams = use(props.searchParams);
   const data = use(getData(searchParams));
 
   return (

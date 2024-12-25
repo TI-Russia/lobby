@@ -1,6 +1,35 @@
 // app/api/laws/route.ts
 import { NextResponse } from "next/server";
 
+async function getDeputiesMap() {
+  try {
+    const [d7Response, d8Response] = await Promise.all([
+      fetch("https://declarator.org/media/dumps/lobbist-small-d7.json"),
+      fetch("https://declarator.org/media/dumps/lobbist-small-d8.json"),
+    ]);
+
+    const [d7Data, d8Data] = await Promise.all([
+      d7Response.json(),
+      d8Response.json(),
+    ]);
+
+    const deputiesMap = new Map();
+    [...d7Data, ...d8Data].forEach((deputy) => {
+      if (!deputiesMap.has(deputy.person)) {
+        deputiesMap.set(deputy.person, {
+          name: deputy.fullname,
+          id: deputy.person,
+          isSf: false,
+        });
+      }
+    });
+
+    return deputiesMap;
+  } catch (error) {
+    return new Map();
+  }
+}
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
 
@@ -15,6 +44,7 @@ export async function GET(request: Request) {
 
   try {
     const ITEMS_PER_PAGE = 100; // API возвращает по 100 элементов на страницу
+    const deputiesMap = await getDeputiesMap();
 
     // Сначала получим первую страницу, чтобы узнать общее количество страниц
     const firstPageResponse = await fetch(
@@ -81,8 +111,21 @@ export async function GET(request: Request) {
     const endIndex = startIndex + limit;
     const paginatedResults = allResults.slice(startIndex, endIndex);
 
+    // Преобразуем ID депутатов в их ФИО перед отправкой
+    const resultsWithAuthorNames = paginatedResults.map((law) => ({
+      ...law,
+      law_authors_enriched: (law.law_authors || []).map(
+        (authorId) =>
+          deputiesMap.get(authorId) || {
+            name: `ID: ${authorId}`,
+            id: authorId,
+            isSf: false,
+          }
+      ),
+    }));
+
     return NextResponse.json({
-      results: paginatedResults,
+      results: resultsWithAuthorNames,
       total: allResults.length,
       page,
       limit,
