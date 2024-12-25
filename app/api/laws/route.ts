@@ -1,7 +1,32 @@
 // app/api/laws/route.ts
 import { NextResponse } from "next/server";
+import { globalCache } from "../cache";
+
+type Deputy = {
+  name: string;
+  id: number;
+  isSf: boolean;
+};
+
+type DeputyMapEntry = [number, Deputy];
+
+type LawDraft = {
+  name?: string;
+  number?: string;
+  keywords: string[];
+  core?: string;
+  entry_date: string;
+  law_authors: number[];
+};
 
 async function getDeputiesMap() {
+  const cacheKey = "deputies-map";
+  const cachedData = globalCache.get<DeputyMapEntry[]>(cacheKey);
+
+  if (cachedData) {
+    return new Map<number, Deputy>(cachedData);
+  }
+
   try {
     const [d7Response, d8Response] = await Promise.all([
       fetch("https://declarator.org/media/dumps/lobbist-small-d7.json"),
@@ -13,8 +38,8 @@ async function getDeputiesMap() {
       d8Response.json(),
     ]);
 
-    const deputiesMap = new Map();
-    [...d7Data, ...d8Data].forEach((deputy) => {
+    const deputiesMap = new Map<number, Deputy>();
+    [...d7Data, ...d8Data].forEach((deputy: any) => {
       if (!deputiesMap.has(deputy.person)) {
         deputiesMap.set(deputy.person, {
           name: deputy.fullname,
@@ -24,16 +49,50 @@ async function getDeputiesMap() {
       }
     });
 
+    // Сохраняем в кэш как массив для сериализации
+    globalCache.set(cacheKey, Array.from(deputiesMap.entries()));
     return deputiesMap;
   } catch (error) {
-    return new Map();
+    return new Map<number, Deputy>();
+  }
+}
+
+async function getLawDrafts() {
+  const cacheKey = "law-drafts";
+  const cachedData = globalCache.get<LawDraft[]>(cacheKey);
+
+  if (cachedData) {
+    return cachedData;
+  }
+
+  try {
+    const ITEMS_PER_PAGE = 100;
+    const firstPageResponse = await fetch(
+      "https://declarator.org/api/law_draft_api/?page=1"
+    );
+    const firstPageData = await firstPageResponse.json();
+    const totalPages = Math.ceil(firstPageData.count / ITEMS_PER_PAGE);
+
+    const pagePromises = Array.from({ length: totalPages }, (_, i) =>
+      fetch(`https://declarator.org/api/law_draft_api/?page=${i + 1}`)
+        .then((res) => res.json())
+        .then((data) => data.results)
+    );
+
+    const allPagesResults = await Promise.all(pagePromises);
+    const results = allPagesResults.flat() as LawDraft[];
+
+    // Сохраняем в кэш
+    globalCache.set(cacheKey, results);
+    return results;
+  } catch (error) {
+    return [] as LawDraft[];
   }
 }
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
 
-  // Получаем параметры фильтрации из query
   const dateFrom = searchParams.get("dateFrom");
   const dateTo = searchParams.get("dateTo");
   const theme = searchParams.get("theme");
@@ -43,30 +102,15 @@ export async function GET(request: Request) {
   const limit = parseInt(searchParams.get("limit") || "10");
 
   try {
-    const ITEMS_PER_PAGE = 100; // API возвращает по 100 элементов на страницу
-    const deputiesMap = await getDeputiesMap();
+    const [deputiesMap, allResults] = await Promise.all([
+      getDeputiesMap(),
+      getLawDrafts(),
+    ]);
 
-    // Сначала получим первую страницу, чтобы узнать общее количество страниц
-    const firstPageResponse = await fetch(
-      "https://declarator.org/api/law_draft_api/?page=1"
-    );
-    const firstPageData = await firstPageResponse.json();
-    // TODO: remove this
-    firstPageData.count = 100;
-    const totalPages = Math.ceil(firstPageData.count / ITEMS_PER_PAGE);
-
-    // Получаем все страницы параллельно
-    const pagePromises = Array.from({ length: totalPages }, (_, i) =>
-      fetch(`https://declarator.org/api/law_draft_api/?page=${i + 1}`)
-        .then((res) => res.json())
-        .then((data) => data.results)
-    );
-
-    const allPagesResults = await Promise.all(pagePromises);
-    let allResults = allPagesResults.flat();
+    let filteredResults = [...allResults];
 
     // Сортируем по дате внесения (от новых к старым)
-    allResults.sort((a, b) => {
+    filteredResults.sort((a, b) => {
       const dateA = a.entry_date ? new Date(a.entry_date) : new Date(0);
       const dateB = b.entry_date ? new Date(b.entry_date) : new Date(0);
       return dateB.getTime() - dateA.getTime();
@@ -74,7 +118,7 @@ export async function GET(request: Request) {
 
     // Применяем фильтры
     if (dateFrom || dateTo) {
-      allResults = allResults.filter((law) => {
+      filteredResults = filteredResults.filter((law) => {
         const lawDate = new Date(law.entry_date);
 
         if (dateFrom && dateTo) {
@@ -94,11 +138,13 @@ export async function GET(request: Request) {
     }
 
     if (theme) {
-      allResults = allResults.filter((law) => law.keywords.includes(theme));
+      filteredResults = filteredResults.filter((law) =>
+        law.keywords.includes(theme)
+      );
     }
 
     if (query) {
-      allResults = allResults.filter(
+      filteredResults = filteredResults.filter(
         (law) =>
           law.name?.toLowerCase().includes(query.toLowerCase()) ||
           law.number?.toLowerCase().includes(query.toLowerCase()) ||
@@ -108,7 +154,7 @@ export async function GET(request: Request) {
     }
 
     if (deputy) {
-      allResults = allResults.filter((law) =>
+      filteredResults = filteredResults.filter((law) =>
         law.law_authors.includes(parseInt(deputy))
       );
     }
@@ -116,7 +162,7 @@ export async function GET(request: Request) {
     // Применяем пагинацию к отфильтрованным результатам
     const startIndex = (page - 1) * limit;
     const endIndex = startIndex + limit;
-    const paginatedResults = allResults.slice(startIndex, endIndex);
+    const paginatedResults = filteredResults.slice(startIndex, endIndex);
 
     // Преобразуем ID депутатов в их ФИО перед отправкой
     const resultsWithAuthorNames = paginatedResults.map((law) => ({
@@ -133,7 +179,7 @@ export async function GET(request: Request) {
 
     return NextResponse.json({
       results: resultsWithAuthorNames,
-      total: allResults.length,
+      total: filteredResults.length,
       page,
       limit,
     });

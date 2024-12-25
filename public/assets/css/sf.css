@@ -6790,14 +6790,14 @@ header {
     line-height: 0.99rem;
     padding: 0;
     padding-right: 24px; }
-    @media screen and (max-width: 1134px) {
+    @media screen and (max-width: 1599px) {
       header .c3 {
         padding-right: 16px; } }
-    @media screen and (min-width: 1135px) {
+    @media screen and (min-width: 1600px) {
       header .c3 .header-menu,
       header .c3 #nav-toggle {
         display: none; } }
-    @media screen and (max-width: 1134px) {
+    @media screen and (max-width: 1599px) {
       header .c3 #nav-menu {
         display: none; } }
     header .c3 a {
@@ -6808,7 +6808,7 @@ header {
     background-color: #f4f4f4;
     flex: 0 0 48px;
     padding: 0; }
-    @media screen and (max-width: 1134px) {
+    @media screen and (max-width: 1599px) {
       header .c4,
       header .c5 {
         display: none !important; } }
