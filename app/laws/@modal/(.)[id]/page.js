@@ -4,7 +4,8 @@ import LawModal from "./law-modal";
 async function getData(id) {
   try {
     const response = await fetch(
-      `https://declarator.org/api/law_draft_api/${id}`,
+      // TODO: remove this
+      `http://localhost:3000/api/laws/${id}`,
       { next: { revalidate: 3600 } }
     );
 
@@ -14,7 +15,6 @@ async function getData(id) {
 
     return response.json();
   } catch (error) {
-    console.error("Error fetching law data:", error);
     return null;
   }
 }

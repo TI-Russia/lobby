@@ -2,13 +2,6 @@
   background-color: white;
   border-top: 1px solid #dbdbdb;
   border-bottom: 1px solid #dbdbdb;
-  margin-left: -16px;
-  margin-right: -16px;
-
-  @include iftablet {
-    margin-left: 0;
-    margin-right: 0;
-  }
 
   & ~ & {
     border-top: none;

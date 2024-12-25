@@ -7,6 +7,14 @@ import clsx from "clsx";
 export function FilterForm({ searchParams, deputies, themes }) {
   const router = useRouter();
 
+  // Декодируем значение темы из URL
+  const decodedTheme = searchParams?.theme
+    ? decodeURIComponent(searchParams.theme)
+    : "";
+
+  // Создаем уникальный ключ на основе всех параметров поиска
+  const formKey = JSON.stringify(searchParams);
+
   const updateFilters = (formData) => {
     const params = new URLSearchParams();
     for (const [key, value] of formData.entries()) {
@@ -20,6 +28,7 @@ export function FilterForm({ searchParams, deputies, themes }) {
 
   return (
     <form
+      key={formKey}
       onSubmit={(e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -76,7 +85,7 @@ export function FilterForm({ searchParams, deputies, themes }) {
             <select
               name="theme"
               className={styles.select}
-              defaultValue={searchParams?.theme || ""}
+              defaultValue={decodedTheme}
             >
               <option value="">Выберите тему</option>
               {themes?.map((theme) => (

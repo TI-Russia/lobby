@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 
 async function getDeputiesMap() {
   try {
@@ -39,12 +39,13 @@ function formatName(fullName: string, id: number) {
 }
 
 export async function GET(
-  request: Request,
-  { params }: { params: { id: string } }
-) {
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+): Promise<NextResponse> {
   try {
+    const { id } = await params;
     const [lawResponse, deputiesMap] = await Promise.all([
-      fetch(`https://declarator.org/api/law_draft_api/${params.id}/`),
+      fetch(`https://declarator.org/api/law_draft_api/${id}/`),
       getDeputiesMap(),
     ]);
 
@@ -54,17 +55,32 @@ export async function GET(
 
     const lawData = await lawResponse.json();
 
+    // Форматируем дату внесения
+    const entryDate = lawData.entry_date
+      ? new Date(lawData.entry_date).toLocaleDateString("ru-RU", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })
+      : null;
+
     // Обогащаем данные об авторах
     const enrichedAuthors = (lawData.law_authors || [])
       .map((authorId) => {
         const fullname = deputiesMap.get(authorId);
-        return fullname ? formatName(fullname, authorId) : null;
+        if (!fullname) return null;
+        return {
+          person: authorId,
+          fullname: fullname,
+          short: formatName(fullname, authorId)?.short,
+        };
       })
       .filter(Boolean);
 
     return NextResponse.json({
       ...lawData,
       law_authors: enrichedAuthors,
+      entry_date: entryDate,
     });
   } catch (error) {
     return NextResponse.json(

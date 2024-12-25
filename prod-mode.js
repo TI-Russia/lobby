@@ -84,7 +84,7 @@ function createProxyServer() {
   const server = http.createServer((req, res) => {
     const jekyllTarget = `http://127.0.0.1:${JEKYLL_PORT}`;
     const nextTarget = `http://localhost:${NEXT_PORT}`;
-    const nextSegments = ["/_next", "/api", "/assets", "/articles"];
+    const nextSegments = ["/_next", "/api", "/assets", "/articles", "/laws"];
 
     if (nextSegments.some((segment) => req.url.startsWith(segment))) {
       proxy.web(req, res, { target: nextTarget }, (err) => {

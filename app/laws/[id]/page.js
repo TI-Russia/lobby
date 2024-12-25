@@ -1,14 +1,16 @@
 import { use } from "react";
-import { LawView } from "@/ui/law-view";
-import styles from "./page.module.scss";
+import { LawPageClient } from "./law-page-client";
 
 async function getData(id) {
+  if (!id || isNaN(id)) {
+    return null;
+  }
+
   try {
-    const response = await fetch(
-      // TODO: remove this
-      `http://localhost:3000/api/laws/${id}`,
-      { next: { revalidate: 3600 } }
-    );
+    // TODO: remove this
+    const response = await fetch(`http://localhost:3000/api/laws/${id}`, {
+      next: { revalidate: 3600 },
+    });
 
     if (!response.ok) {
       throw new Error("Failed to fetch data");
@@ -16,19 +18,14 @@ async function getData(id) {
 
     return response.json();
   } catch (error) {
+    console.error("Error fetching law:", error);
     return null;
   }
 }
 
 export default function Page(props) {
   const params = use(props.params);
-  const lawData = use(getData(params.id));
+  const lawData = params?.id ? use(getData(params.id)) : null;
 
-  return (
-    <div className={styles.container}>
-      <div className={styles.content}>
-        <LawView lawData={lawData} />
-      </div>
-    </div>
-  );
+  return <LawPageClient lawData={lawData} />;
 }

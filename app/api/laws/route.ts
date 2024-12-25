@@ -65,6 +65,13 @@ export async function GET(request: Request) {
     const allPagesResults = await Promise.all(pagePromises);
     let allResults = allPagesResults.flat();
 
+    // Сортируем по дате внесения (от новых к старым)
+    allResults.sort((a, b) => {
+      const dateA = a.entry_date ? new Date(a.entry_date) : new Date(0);
+      const dateB = b.entry_date ? new Date(b.entry_date) : new Date(0);
+      return dateB.getTime() - dateA.getTime();
+    });
+
     // Применяем фильтры
     if (dateFrom || dateTo) {
       allResults = allResults.filter((law) => {
