@@ -19,6 +19,30 @@ async function getData(id) {
   }
 }
 
+export async function generateMetadata({ params }) {
+  const id = (await params).id;
+  const lawData = await getData(id);
+
+  if (!lawData) {
+    return {
+      title: "Законопроект не найден",
+      description: "Запрашиваемый законопроект не найден",
+    };
+  }
+
+  const safeNumber = lawData.number ? `№ ${lawData.number}` : "Номер не указан";
+  const safeTitle = lawData.name ?? "";
+  const safeCore = lawData.core ?? "Описание отсутствует";
+  const safeKeywords = lawData.keywords ?? [];
+
+  return {
+    title: `${safeNumber}${safeTitle ? ` | ${safeTitle}` : ""}`,
+    description: safeCore,
+    keywords:
+      safeKeywords.join(", ") || "законопроект, закон, Государственная Дума",
+  };
+}
+
 export default function Page(props) {
   const params = use(props.params);
   const lawData = use(getData(params.id));
