@@ -10,22 +10,32 @@ export function LawsList({ initialLaws, initialHasMore, searchParams }) {
   const [laws, setLaws] = useState(initialLaws);
   const [hasMore, setHasMore] = useState(initialHasMore);
   const [isLoading, setIsLoading] = useState(false);
-  const currentPage = parseInt(searchParams.page || "1", 10);
+  const [page, setPage] = useState(parseInt(searchParams.page || "1", 10));
 
   useEffect(() => {
-    if (currentPage === 1) {
-      setLaws(initialLaws);
-    } else {
-      setLaws((prev) => [...prev, ...initialLaws]);
-    }
+    setLaws(initialLaws);
+    setPage(1);
     setHasMore(initialHasMore);
-  }, [initialLaws, initialHasMore, currentPage]);
+  }, [initialLaws, initialHasMore, searchParams]);
 
-  const loadMore = () => {
-    const nextPage = currentPage + 1;
-    const queryParams = new URLSearchParams(searchParams);
-    queryParams.set("page", nextPage.toString());
-    router.push(`/laws?${queryParams.toString()}`, { scroll: false });
+  const loadMore = async () => {
+    setIsLoading(true);
+    const nextPage = page + 1;
+
+    try {
+      const queryParams = new URLSearchParams(searchParams);
+      queryParams.set("page", nextPage.toString());
+      const response = await fetch(`/api/laws?${queryParams.toString()}`);
+      const data = await response.json();
+
+      setLaws((prev) => [...prev, ...data.results]);
+      setHasMore(data.total > [...laws, ...data.results].length);
+      setPage(nextPage);
+    } catch (error) {
+      console.error("Ошибка при загрузке данных:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -63,8 +73,12 @@ export function LawsList({ initialLaws, initialHasMore, searchParams }) {
 
       {hasMore && (
         <div className={styles.loadMoreWrapper}>
-          <button onClick={loadMore} className={styles.loadMore}>
-            Показать еще
+          <button
+            onClick={loadMore}
+            className={styles.loadMore}
+            disabled={isLoading}
+          >
+            {isLoading ? "Загрузка..." : "Показать еще"}
           </button>
         </div>
       )}

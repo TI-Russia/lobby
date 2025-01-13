@@ -111,11 +111,13 @@ export function FilterForm({ searchParams, deputies, themes }) {
               defaultValue={decodedTheme}
             >
               <option value="">Выберите тему</option>
-              {themes?.map((theme) => (
-                <option key={theme} value={theme}>
-                  {theme}
-                </option>
-              ))}
+              {themes
+                ?.sort((a, b) => a.localeCompare(b))
+                .map((theme) => (
+                  <option key={theme} value={theme}>
+                    {theme}
+                  </option>
+                ))}
             </select>
           </div>
         </div>
