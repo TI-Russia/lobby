@@ -2,7 +2,6 @@ import { use } from "react";
 import styles from "./page.module.scss";
 import { FilterForm } from "./filter-form";
 import { LawsList } from "./laws-list";
-import { Metadata } from "next";
 
 export const metadata = {
   title: "Законопроекты",

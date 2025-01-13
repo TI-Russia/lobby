@@ -3,9 +3,15 @@
 import { useRouter } from "next/navigation";
 import styles from "./filter-form.module.scss";
 import clsx from "clsx";
+import { DateInput } from "../components/date-input";
+import { useState } from "react";
 
 export function FilterForm({ searchParams, deputies, themes }) {
   const router = useRouter();
+  const [formValues, setFormValues] = useState({
+    dateFrom: searchParams?.dateFrom || "",
+    dateTo: searchParams?.dateTo || "",
+  });
 
   // Декодируем значение темы из URL
   const decodedTheme = searchParams?.theme
@@ -26,12 +32,24 @@ export function FilterForm({ searchParams, deputies, themes }) {
     return params.toString();
   };
 
+  const handleDateChange = (field) => (value) => {
+    setFormValues((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
+  const today = new Date();
+
   return (
     <form
       key={formKey}
       onSubmit={(e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
+        // Добавляем значения дат из состояния
+        if (formValues.dateFrom) formData.set("dateFrom", formValues.dateFrom);
+        if (formValues.dateTo) formData.set("dateTo", formValues.dateTo);
         const queryString = updateFilters(formData);
         router.push(`/laws?${queryString}`);
       }}
@@ -56,11 +74,12 @@ export function FilterForm({ searchParams, deputies, themes }) {
         <div className={styles.formGroup}>
           <label className={styles.label}>Дата от</label>
           <div className={styles.selectWrapper}>
-            <input
-              type="date"
+            <DateInput
               name="dateFrom"
+              value={formValues.dateFrom}
+              onChange={handleDateChange("dateFrom")}
               className={styles.input}
-              defaultValue={searchParams?.dateFrom || ""}
+              maxDate={today}
             />
           </div>
         </div>
@@ -69,11 +88,15 @@ export function FilterForm({ searchParams, deputies, themes }) {
         <div className={styles.formGroup}>
           <label className={styles.label}>Дата до</label>
           <div className={styles.selectWrapper}>
-            <input
-              type="date"
+            <DateInput
               name="dateTo"
+              value={formValues.dateTo}
+              onChange={handleDateChange("dateTo")}
               className={styles.input}
-              defaultValue={searchParams?.dateTo || ""}
+              minDate={
+                formValues.dateFrom ? new Date(formValues.dateFrom) : null
+              }
+              maxDate={today}
             />
           </div>
         </div>
@@ -127,7 +150,8 @@ export function FilterForm({ searchParams, deputies, themes }) {
             className={styles.resetButton}
             onClick={() => {
               router.push("/laws");
-              // Очищаем значения формы
+              // Очищаем значения формы и состояние
+              setFormValues({ dateFrom: "", dateTo: "" });
               const form = document.querySelector("form");
               if (form) {
                 form.reset();
