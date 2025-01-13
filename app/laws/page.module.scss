@@ -2,6 +2,7 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 32px 16px;
+  width: 100%;
 
   @include ifdesktop {
     padding: 56px 80px;

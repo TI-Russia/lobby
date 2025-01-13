@@ -59,7 +59,17 @@ async function getDeputiesMap() {
 
 async function getLawDrafts() {
   const cacheKey = "law-drafts";
-  const cachedData = globalCache.get<LawDraft[]>(cacheKey);
+  const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 часа
+
+  // Проверяем основной кэш
+  const cachedData = globalCache.get<{
+    data: LawDraft[];
+    indexes: {
+      byDate: Map<string, LawDraft[]>;
+      byTheme: Map<string, LawDraft[]>;
+      byDeputy: Map<number, LawDraft[]>;
+    };
+  }>(cacheKey);
 
   if (cachedData) {
     return cachedData;
@@ -82,11 +92,57 @@ async function getLawDrafts() {
     const allPagesResults = await Promise.all(pagePromises);
     const results = allPagesResults.flat() as LawDraft[];
 
-    // Сохраняем в кэш
-    globalCache.set(cacheKey, results);
-    return results;
+    // Создаем индексы для быстрого поиска
+    const indexes = {
+      byDate: new Map<string, LawDraft[]>(),
+      byTheme: new Map<string, LawDraft[]>(),
+      byDeputy: new Map<number, LawDraft[]>(),
+    };
+
+    // Индексируем данные
+    results.forEach((law) => {
+      // По дате
+      if (law.entry_date) {
+        const date = law.entry_date.split("T")[0];
+        const dateList = indexes.byDate.get(date) || [];
+        dateList.push(law);
+        indexes.byDate.set(date, dateList);
+      }
+
+      // По темам
+      law.keywords.forEach((theme) => {
+        const themeList = indexes.byTheme.get(theme) || [];
+        themeList.push(law);
+        indexes.byTheme.set(theme, themeList);
+      });
+
+      // По депутатам
+      law.law_authors.forEach((authorId) => {
+        const authorList = indexes.byDeputy.get(authorId) || [];
+        authorList.push(law);
+        indexes.byDeputy.set(authorId, authorList);
+      });
+    });
+
+    const cacheData = {
+      data: results,
+      indexes,
+    };
+
+    // Сохраняем в кэш с TTL
+    globalCache.set(cacheKey, cacheData, CACHE_TTL);
+
+    return cacheData;
   } catch (error) {
-    return [] as LawDraft[];
+    console.error("Error fetching law drafts:", error);
+    return {
+      data: [] as LawDraft[],
+      indexes: {
+        byDate: new Map(),
+        byTheme: new Map(),
+        byDeputy: new Map(),
+      },
+    };
   }
 }
 
@@ -102,45 +158,31 @@ export async function GET(request: Request) {
   const limit = parseInt(searchParams.get("limit") || "10");
 
   try {
-    const [deputiesMap, allResults] = await Promise.all([
+    const [deputiesMap, lawDraftsData] = await Promise.all([
       getDeputiesMap(),
       getLawDrafts(),
     ]);
 
-    let filteredResults = [...allResults];
+    let filteredResults = [...lawDraftsData.data];
 
-    // Сортируем по дате внесения (от новых к старым)
-    filteredResults.sort((a, b) => {
-      const dateA = a.entry_date ? new Date(a.entry_date) : new Date(0);
-      const dateB = b.entry_date ? new Date(b.entry_date) : new Date(0);
-      return dateB.getTime() - dateA.getTime();
-    });
-
-    // Применяем фильтры
+    // Используем индексы для быстрой фильтрации
     if (dateFrom || dateTo) {
+      const fromDate = dateFrom ? new Date(dateFrom) : new Date(0);
+      const toDate = dateTo ? new Date(dateTo) : new Date();
+
       filteredResults = filteredResults.filter((law) => {
-        const lawDate = new Date(law.entry_date);
-
-        if (dateFrom && dateTo) {
-          return lawDate >= new Date(dateFrom) && lawDate <= new Date(dateTo);
-        }
-
-        if (dateFrom) {
-          return lawDate >= new Date(dateFrom);
-        }
-
-        if (dateTo) {
-          return lawDate <= new Date(dateTo);
-        }
-
-        return true;
+        const lawDate = law.entry_date ? new Date(law.entry_date) : new Date(0);
+        return lawDate >= fromDate && lawDate <= toDate;
       });
     }
 
     if (theme) {
-      filteredResults = filteredResults.filter((law) =>
-        law.keywords.includes(theme)
-      );
+      const themeResults = lawDraftsData.indexes.byTheme.get(theme);
+      if (themeResults) {
+        filteredResults = filteredResults.filter((law) =>
+          themeResults.some((tr) => tr.number === law.number)
+        );
+      }
     }
 
     if (query) {
@@ -154,17 +196,29 @@ export async function GET(request: Request) {
     }
 
     if (deputy) {
-      filteredResults = filteredResults.filter((law) =>
-        law.law_authors.includes(parseInt(deputy))
+      const deputyResults = lawDraftsData.indexes.byDeputy.get(
+        parseInt(deputy)
       );
+      if (deputyResults) {
+        filteredResults = filteredResults.filter((law) =>
+          deputyResults.some((dr) => dr.number === law.number)
+        );
+      }
     }
 
-    // Применяем пагинацию к отфильтрованным результатам
+    // Сортируем по дате внесения (от новых к старым)
+    filteredResults.sort((a, b) => {
+      const dateA = a.entry_date ? new Date(a.entry_date) : new Date(0);
+      const dateB = b.entry_date ? new Date(b.entry_date) : new Date(0);
+      return dateB.getTime() - dateA.getTime();
+    });
+
+    // Применяем пагинацию
     const startIndex = (page - 1) * limit;
     const endIndex = startIndex + limit;
     const paginatedResults = filteredResults.slice(startIndex, endIndex);
 
-    // Преобразуем ID депутатов в их ФИО перед отправкой
+    // Обогащаем данными о депутатах
     const resultsWithAuthorNames = paginatedResults.map((law) => ({
       ...law,
       law_authors_enriched: (law.law_authors || []).map(

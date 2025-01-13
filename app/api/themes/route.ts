@@ -1,40 +1,91 @@
 import { NextResponse } from "next/server";
+import { globalCache } from "../cache";
 
-export async function GET(request: Request) {
+async function getThemes() {
+  const cacheKey = "themes";
+  const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 часа
+
+  const cachedData = globalCache.get<string[]>(cacheKey);
+  if (cachedData) {
+    return cachedData;
+  }
+
   try {
-    const ITEMS_PER_PAGE = 100;
-
     // Получаем первую страницу для определения общего количества
     const firstPageResponse = await fetch(
       "https://declarator.org/api/law_draft_api/?page=1"
     );
-    const firstPageData = await firstPageResponse.json();
-    firstPageData.count = 100;
-    const totalPages = Math.ceil(firstPageData.count / ITEMS_PER_PAGE);
 
-    // Получаем все страницы параллельно
+    if (!firstPageResponse.ok) {
+      throw new Error("Failed to fetch first page");
+    }
+
+    const firstPageData = await firstPageResponse.json();
+    const totalPages = Math.ceil(firstPageData.count / 100);
+
+    // Собираем все страницы
     const pagePromises = Array.from({ length: totalPages }, (_, i) =>
       fetch(`https://declarator.org/api/law_draft_api/?page=${i + 1}`)
-        .then((res) => res.json())
-        .then((data) => data.results)
+        .then((res) => {
+          if (!res.ok) throw new Error(`Failed to fetch page ${i + 1}`);
+          return res.json();
+        })
+        .then((data) => data.results || [])
+        .catch((error) => {
+          console.error(`Error fetching page ${i + 1}:`, error);
+          return [];
+        })
     );
 
-    const allPagesResults = await Promise.all(pagePromises);
-    const allResults = allPagesResults.flat();
+    const allLawDrafts = (await Promise.all(pagePromises)).flat();
 
-    // Собираем все уникальные темы
-    const uniqueThemes = new Set();
-    allResults.forEach((law) => {
-      law.keywords.forEach((keyword) => uniqueThemes.add(keyword));
+    // Собираем уникальные темы
+    const uniqueThemes = new Set<string>();
+
+    allLawDrafts.forEach((law: any) => {
+      if (law && Array.isArray(law.keywords)) {
+        law.keywords.forEach((keyword: string) => {
+          if (keyword && typeof keyword === "string") {
+            uniqueThemes.add(keyword.trim());
+          }
+        });
+      }
     });
+
+    const themes = Array.from(uniqueThemes);
+
+    // Кэшируем результат
+    globalCache.set(cacheKey, themes, CACHE_TTL);
+    return themes;
+  } catch (error) {
+    console.error("Error fetching themes:", error);
+    return [];
+  }
+}
+
+export async function GET() {
+  try {
+    const themes = await getThemes();
+
+    if (!themes || themes.length === 0) {
+      return NextResponse.json({
+        results: [],
+        total: 0,
+      });
+    }
 
     return NextResponse.json({
-      results: Array.from(uniqueThemes),
-      total: uniqueThemes.size,
+      results: themes,
+      total: themes.length,
     });
   } catch (error) {
+    console.error("Themes route error:", error);
     return NextResponse.json(
-      { error: "Failed to fetch themes" },
+      {
+        results: [],
+        total: 0,
+        error: "Failed to fetch themes",
+      },
       { status: 500 }
     );
   }
