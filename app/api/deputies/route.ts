@@ -5,10 +5,11 @@ type Deputy = {
   fullname: string;
   person: number;
   convocation: number;
+  convocations: number[];
 };
 
-async function getDeputiesWithStats() {
-  const cacheKey = "deputies-map";
+async function getDeputies() {
+  const cacheKey = "deputies";
   const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 часа
 
   const cachedData = globalCache.get<Deputy[]>(cacheKey);
@@ -32,20 +33,32 @@ async function getDeputiesWithStats() {
       d8Response.json(),
     ]);
 
-    // Создаем Map для группировки депутатов
+    // Создаем Map для группировки депутатов и их созывов
     const deputiesMap = new Map<number, Deputy>();
 
     [...d7Data, ...d8Data].forEach((deputy: any) => {
       if (deputy && deputy.person) {
-        deputiesMap.set(deputy.person, {
-          fullname: deputy.fullname || `Депутат ${deputy.person}`,
-          person: deputy.person,
-          convocation: deputy.convocation,
-        });
+        const existingDeputy = deputiesMap.get(deputy.person);
+        if (existingDeputy) {
+          // Если депутат уже есть, добавляем созыв в список
+          existingDeputy.convocations = [
+            ...new Set([
+              ...(existingDeputy.convocations || []),
+              deputy.convocation,
+            ]),
+          ];
+        } else {
+          // Если депутата нет, создаем новую запись
+          deputiesMap.set(deputy.person, {
+            fullname: deputy.fullname || `Депутат ${deputy.person}`,
+            person: deputy.person,
+            convocation: deputy.convocation,
+            convocations: [deputy.convocation],
+          });
+        }
       }
     });
 
-    // Преобразуем Map в массив депутатов
     const deputies = Array.from(deputiesMap.values());
 
     // Кэшируем результат
@@ -59,7 +72,7 @@ async function getDeputiesWithStats() {
 
 export async function GET() {
   try {
-    const deputies = await getDeputiesWithStats();
+    const deputies = await getDeputies();
 
     if (!deputies || deputies.length === 0) {
       return NextResponse.json({
