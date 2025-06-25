@@ -1,10 +1,11 @@
 import { NextResponse, NextRequest } from "next/server";
+import { DC_BASE_URL } from "../../../lib/fetchDeclarator";
 
 async function getDeputiesMap() {
   try {
     const [d7Response, d8Response] = await Promise.all([
-      fetch("https://declarator.org/media/dumps/lobbist-small-d7.json"),
-      fetch("https://declarator.org/media/dumps/lobbist-small-d8.json"),
+      fetch(`${DC_BASE_URL}/media/dumps/lobbist-small-d7.json`),
+      fetch(`${DC_BASE_URL}/media/dumps/lobbist-small-d8.json`),
     ]);
 
     const [d7Data, d8Data] = await Promise.all([
@@ -45,7 +46,7 @@ export async function GET(
   try {
     const { id } = await params;
     const [lawResponse, deputiesMap] = await Promise.all([
-      fetch(`https://declarator.org/api/law_draft_api/${id}/`),
+      fetch(`${DC_BASE_URL}/api/law_draft_api/${id}/`),
       getDeputiesMap(),
     ]);
 

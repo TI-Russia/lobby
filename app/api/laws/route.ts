@@ -1,6 +1,7 @@
 // app/api/laws/route.ts
 import { NextResponse } from "next/server";
 import { globalCache } from "../cache";
+import { DC_BASE_URL } from "../../lib/fetchDeclarator";
 
 type Deputy = {
   name: string;
@@ -29,8 +30,8 @@ async function getDeputiesMap() {
 
   try {
     const [d7Response, d8Response] = await Promise.all([
-      fetch("https://declarator.org/media/dumps/lobbist-small-d7.json"),
-      fetch("https://declarator.org/media/dumps/lobbist-small-d8.json"),
+      fetch(`${DC_BASE_URL}/media/dumps/lobbist-small-d7.json`),
+      fetch(`${DC_BASE_URL}/media/dumps/lobbist-small-d8.json`),
     ]);
 
     const [d7Data, d8Data] = await Promise.all([
@@ -78,13 +79,13 @@ async function getLawDrafts() {
   try {
     const ITEMS_PER_PAGE = 100;
     const firstPageResponse = await fetch(
-      "https://declarator.org/api/law_draft_api/?page=1"
+      `${DC_BASE_URL}/api/law_draft_api/?page=1`
     );
     const firstPageData = await firstPageResponse.json();
     const totalPages = Math.ceil(firstPageData.count / ITEMS_PER_PAGE);
 
     const pagePromises = Array.from({ length: totalPages }, (_, i) =>
-      fetch(`https://declarator.org/api/law_draft_api/?page=${i + 1}`)
+      fetch(`${DC_BASE_URL}/api/law_draft_api/?page=${i + 1}`)
         .then((res) => res.json())
         .then((data) => data.results)
     );

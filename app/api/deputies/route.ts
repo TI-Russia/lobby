@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { globalCache } from "../cache";
+import { DC_BASE_URL } from "../../lib/fetchDeclarator";
 
 type Deputy = {
   fullname: string;
@@ -20,8 +21,8 @@ async function getDeputies() {
   try {
     // Получаем базовый список депутатов
     const [d7Response, d8Response] = await Promise.all([
-      fetch("https://declarator.org/media/dumps/lobbist-small-d7.json"),
-      fetch("https://declarator.org/media/dumps/lobbist-small-d8.json"),
+      fetch(`${DC_BASE_URL}/media/dumps/lobbist-small-d7.json`),
+      fetch(`${DC_BASE_URL}/media/dumps/lobbist-small-d8.json`),
     ]);
 
     if (!d7Response.ok || !d8Response.ok) {

@@ -4,6 +4,9 @@ import { getFraction } from "../lib/fractions";
 import { getRating } from "../lib/rating";
 import { prepareConvocations } from "../lib/convocations";
 
+// Базовый адрес API Декларатор, прокидывается через envify (см. gulpfile)
+const DC = process.env.NEXT_PUBLIC_API_BASE_URL;
+
 export function getTypeByLocation() {
   const location = window.location.pathname;
   const type = location.includes("sf") ? "sf" : "duma_8";
@@ -16,22 +19,22 @@ getLayoutVars().type = getLayoutVars().type || getTypeByLocation();
 const isSF = getLayoutVars().type === "sf";
 const files = {
   duma_7: [
-    "https://declarator.org/media/dumps/lobbist-small-d7.json",
-    "https://declarator.org/api/lobby_group/",
+    `${DC}/media/dumps/lobbist-small-d7.json`,
+    `${DC}/api/lobby_group/`,
     "/assets/data/rating.json",
     "/assets/data/alias.json",
-    "https://declarator.org/api/convocations/7/person_convocations",
+    `${DC}/api/convocations/7/person_convocations`,
   ],
   duma_8: [
-    "https://declarator.org/media/dumps/lobbist-small-d8.json",
-    "https://declarator.org/api/lobby_group/",
+    `${DC}/media/dumps/lobbist-small-d8.json`,
+    `${DC}/api/lobby_group/`,
     "/assets/data/rating.json",
     "/assets/data/alias.json",
-    "https://declarator.org/api/convocations/8/person_convocations",
+    `${DC}/api/convocations/8/person_convocations`,
   ],
   sf: [
-    "https://declarator.org/media/dumps/lobbist-small-sf.json",
-    "https://declarator.org/api/lobby_group/",
+    `${DC}/media/dumps/lobbist-small-sf.json`,
+    `${DC}/api/lobby_group/`,
     "/assets/data/rating-sf.json",
     "/assets/data/alias.json",
   ],
@@ -50,22 +53,22 @@ export function getFilesByType(type) {
 
   return {
     duma_7: [
-      "https://declarator.org/media/dumps/lobbist-small-d7.json",
-      "https://declarator.org/api/lobby_group/",
+      `${DC}/media/dumps/lobbist-small-d7.json`,
+      `${DC}/api/lobby_group/`,
       "/assets/data/rating.json",
       "/assets/data/alias.json",
-      "https://declarator.org/api/convocations/7/person_convocations",
+      `${DC}/api/convocations/7/person_convocations`,
     ],
     duma_8: [
-      "https://declarator.org/media/dumps/lobbist-small-d8.json",
-      "https://declarator.org/api/lobby_group/",
+      `${DC}/media/dumps/lobbist-small-d8.json`,
+      `${DC}/api/lobby_group/`,
       "/assets/data/rating.json",
       "/assets/data/alias.json",
-      "https://declarator.org/api/convocations/8/person_convocations",
+      `${DC}/api/convocations/8/person_convocations`,
     ],
     sf: [
-      "https://declarator.org/media/dumps/lobbist-small-sf.json",
-      "https://declarator.org/api/lobby_group/",
+      `${DC}/media/dumps/lobbist-small-sf.json`,
+      `${DC}/api/lobby_group/`,
       "/assets/data/rating-sf.json",
       "/assets/data/alias.json",
     ],
@@ -178,8 +181,7 @@ function dataDepMap(rawdata, rawRating) {
     return groups.map((b) => {
       myGroups.add(b);
 
-      return {
-        ...d,
+      return Object.assign({}, d, {
         name: d.fullname,
         fraction: getFraction(d).slug,
         age: calculateAge(new Date(d.birth_date)),
@@ -191,7 +193,7 @@ function dataDepMap(rawdata, rawRating) {
         region: d.region ? d.region.name : null,
         goverment_body: d.goverment_body,
         total_years: d.total_years,
-      };
+      });
     });
   });
 

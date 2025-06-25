@@ -9,6 +9,8 @@ const source = require("vinyl-source-stream");
 const buffer = require("vinyl-buffer");
 const hash = require("gulp-hash");
 const sourcemaps = require("gulp-sourcemaps");
+const envify = require("envify/custom");
+require("dotenv").config();
 
 const packageJson = require("./gulp-package.json");
 const dependencies = Object.keys(
@@ -47,10 +49,12 @@ function bundleDeps() {
 }
 
 function bundleApp(watch) {
-  const bundler = browserify(FILES.entry, { debug: true }).transform(babelify, {
-    presets: ["@babel/preset-env"],
-    sourceMaps: true,
-  });
+  const bundler = browserify(FILES.entry, { debug: true })
+    .transform(babelify, {
+      presets: ["@babel/preset-env"],
+      sourceMaps: true,
+    })
+    .transform(envify(process.env), { global: true });
 
   if (watch) {
     bundler.plugin(watchify);
@@ -96,10 +100,12 @@ function bundleApp(watch) {
 }
 
 function injectScripts(name) {
-  const injectTraget = gulp.src(FILES.injectTarget);
-  const injectFiles = gulp.src(DIRS.dist + `${name}-*.js`, { read: false });
+  const pattern = DIRS.dist + `${name}-*.js`;
 
-  return injectTraget
+  const injectTarget = gulp.src(FILES.injectTarget);
+  const injectFiles = gulp.src(pattern, { read: false });
+
+  return injectTarget
     .pipe(inject(injectFiles, { quiet: true, name: `inject:${name}` }))
     .pipe(gulp.dest(DIRS.inject));
 }

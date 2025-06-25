@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { globalCache } from "../cache";
+import { DC_BASE_URL } from "../../lib/fetchDeclarator";
 
 async function getThemes() {
   const cacheKey = "themes";
@@ -13,7 +14,7 @@ async function getThemes() {
   try {
     // Получаем первую страницу для определения общего количества
     const firstPageResponse = await fetch(
-      "https://declarator.org/api/law_draft_api/?page=1"
+      `${DC_BASE_URL}/api/law_draft_api/?page=1`
     );
 
     if (!firstPageResponse.ok) {
@@ -25,7 +26,7 @@ async function getThemes() {
 
     // Собираем все страницы
     const pagePromises = Array.from({ length: totalPages }, (_, i) =>
-      fetch(`https://declarator.org/api/law_draft_api/?page=${i + 1}`)
+      fetch(`${DC_BASE_URL}/api/law_draft_api/?page=${i + 1}`)
         .then((res) => {
           if (!res.ok) throw new Error(`Failed to fetch page ${i + 1}`);
           return res.json();

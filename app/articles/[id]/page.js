@@ -7,6 +7,7 @@ import { Article } from "../../../ui/article/article";
 import { fetchArticles } from "../../../api/fetch-articles";
 import { format } from "date-fns";
 import { getArcticle } from "./getArcticle";
+import { DC_BASE_URL } from "../../lib/fetchDeclarator";
 
 const MAX_TRUNCATE = 52;
 
@@ -106,7 +107,7 @@ export default async function ArticlePage(props) {
                   <p className={styles.text}>Предыдущая</p>
                   <div className={styles.preview}>
                     <img
-                      src={"https://declarator.org" + article.previous.image}
+                      src={DC_BASE_URL + article.previous.image}
                       alt={article.previous.title}
                       className={styles.image}
                     />
@@ -124,7 +125,7 @@ export default async function ArticlePage(props) {
                   <p className={styles.text}>Следующая</p>
                   <div className={styles.preview}>
                     <img
-                      src={"https://declarator.org" + article.next.image}
+                      src={DC_BASE_URL + article.next.image}
                       alt={article.next.title}
                       className={styles.image}
                     />

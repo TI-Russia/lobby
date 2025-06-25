@@ -17,6 +17,7 @@ import toastr from "toastr";
 
 const engine = new Liquid();
 
+const DK = getLayoutVars().declaratorUrl;
 const isDefaultLayout = getLayoutVars().layout === "default";
 const isSF = getLayoutVars().type === "sf";
 let convocation = pageTypeToConvocation(getLayoutVars().type);
@@ -315,8 +316,8 @@ export function renderCard(data, cardNode = $("#card")) {
   cardNode.html(
     engine.renderSync(template, {
       photo: isSF
-        ? depInfoLegacy.photo
-        : `https://declarator.org/media/${depInfo.photo}`,
+        ? depInfoLegacy.photo?.replace("https://declarator.org", DK)
+        : `${DK}/media/${depInfo.photo}`,
       bio: addTargetBlank(isSF ? depInfoLegacy.bio : depInfo.bio) || null,
       submitted:
         addTargetBlank(isSF ? depInfoLegacy.submitted : depInfo.submitted) ||
