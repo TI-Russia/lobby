@@ -24,6 +24,7 @@ jobs:
             git clone https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git app
             cd app
             git checkout ${{ github.ref_name }}
+            echo "${{ vars.ENV }}" > ./.env
 
             # Определение имени контейнера и портов
             container_name=${{ github.event.repository.name }}
